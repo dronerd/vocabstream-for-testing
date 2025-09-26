@@ -1,0 +1,96 @@
+{
+  "lesson_id": "eiken-1-4",
+  "title": "Lesson 4",
+  "words": [
+    {
+      "word": "albeit",
+      "meaning": "although, even though",
+      "japaneseMeaning": "〜ではあるが、〜にもかかわらず",
+      "synonyms": "although, though, even though",
+      "antonyms": "because, since, therefore",
+      "example": "He made progress, albeit slowly.",
+      "japaneseExample": "彼は進歩したが、それはゆっくりだった。"
+    },
+    {
+      "word": "alienate",
+      "meaning": "to make someone feel isolated or estranged",
+      "japaneseMeaning": "疎外する、遠ざける",
+      "synonyms": "estrange, distance, isolate",
+      "antonyms": "befriend, unite, reconcile",
+      "example": "His rude remarks alienated his colleagues.",
+      "japaneseExample": "彼の無礼な発言は同僚を疎外した。"
+    },
+    {
+      "word": "allay",
+      "meaning": "to diminish or put at rest (fear, suspicion, or worry)",
+      "japaneseMeaning": "和らげる、鎮める",
+      "synonyms": "calm, soothe, ease",
+      "antonyms": "aggravate, intensify, provoke",
+      "example": "The doctor tried to allay the patient's fears.",
+      "japaneseExample": "医者は患者の不安を和らげようとした。"
+    },
+    {
+      "word": "alleviate",
+      "meaning": "to make suffering or a problem less severe",
+      "japaneseMeaning": "軽減する、緩和する",
+      "synonyms": "ease, relieve, mitigate",
+      "antonyms": "aggravate, worsen, intensify",
+      "example": "The medication helped alleviate her pain.",
+      "japaneseExample": "薬が彼女の痛みを和らげた。"
+    },
+    {
+      "word": "allocate",
+      "meaning": "to distribute resources or duties for a specific purpose",
+      "japaneseMeaning": "割り当てる、配分する",
+      "synonyms": "assign, distribute, allot",
+      "antonyms": "withhold, retain, keep",
+      "example": "The government allocated funds for education.",
+      "japaneseExample": "政府は教育のために資金を配分した。"
+    },
+    {
+      "word": "altruistic",
+      "meaning": "showing a selfless concern for the well-being of others",
+      "japaneseMeaning": "利他的な、無私の",
+      "synonyms": "selfless, unselfish, charitable",
+      "antonyms": "selfish, egotistic, self-centered",
+      "example": "He is known for his altruistic deeds.",
+      "japaneseExample": "彼は利他的な行動で知られている。"
+    },
+    {
+      "word": "amalgamate",
+      "meaning": "to combine or unite to form one organization or structure",
+      "japaneseMeaning": "合併する、統合する",
+      "synonyms": "merge, unite, combine",
+      "antonyms": "separate, divide, split",
+      "example": "The two companies decided to amalgamate.",
+      "japaneseExample": "その二社は合併することに決めた。"
+    },
+    {
+      "word": "ambience",
+      "meaning": "the character or atmosphere of a place",
+      "japaneseMeaning": "雰囲気、環境",
+      "synonyms": "atmosphere, environment, mood",
+      "antonyms": "disorder, chaos, unpleasantness",
+      "example": "The restaurant has a cozy ambience.",
+      "japaneseExample": "そのレストランは居心地の良い雰囲気がある。"
+    },
+    {
+      "word": "ambiguous",
+      "meaning": "open to more than one interpretation; unclear",
+      "japaneseMeaning": "曖昧な、多義の",
+      "synonyms": "unclear, vague, equivocal",
+      "antonyms": "clear, definite, obvious",
+      "example": "The message was ambiguous and confusing.",
+      "japaneseExample": "そのメッセージは曖昧で混乱を招いた。"
+    },
+    {
+      "word": "ambivalent",
+      "meaning": "having mixed feelings or contradictory ideas about something",
+      "japaneseMeaning": "相反する感情を持つ、迷っている",
+      "synonyms": "uncertain, conflicted, mixed",
+      "antonyms": "certain, clear, decided",
+      "example": "She felt ambivalent about moving to a new city.",
+      "japaneseExample": "彼女は新しい街に引っ越すことについて迷いがあった。"
+    }
+  ]
+}

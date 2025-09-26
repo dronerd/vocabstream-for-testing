@@ -1,0 +1,96 @@
+{
+  "lesson_id": "eiken-1-30",
+  "title": "Lesson 30",
+  "words": [
+    {
+      "word": "explicit",
+      "meaning": "clearly stated or shown; leaving no room for confusion",
+      "japaneseMeaning": "明確な、はっきりした",
+      "synonyms": "clear, definite, unambiguous",
+      "antonyms": "implicit, vague, ambiguous",
+      "example": "The teacher gave explicit instructions for the assignment.",
+      "japaneseExample": "教師は課題について明確な指示を出した。"
+    },
+    {
+      "word": "expunge",
+      "meaning": "to erase or remove completely",
+      "japaneseMeaning": "抹消する、消し去る",
+      "synonyms": "erase, delete, obliterate",
+      "antonyms": "retain, preserve, record",
+      "example": "The judge ordered the record to be expunged.",
+      "japaneseExample": "裁判官は記録を抹消するよう命じた。"
+    },
+    {
+      "word": "extemporaneous",
+      "meaning": "spoken or done without preparation; impromptu",
+      "japaneseMeaning": "即席の、準備なしの",
+      "synonyms": "impromptu, spontaneous, unrehearsed",
+      "antonyms": "prepared, rehearsed, planned",
+      "example": "He gave an extemporaneous speech at the meeting.",
+      "japaneseExample": "彼は会議で即席のスピーチを行った。"
+    },
+    {
+      "word": "extenuate",
+      "meaning": "to make a fault or offense seem less serious",
+      "japaneseMeaning": "情状を酌む、軽減する",
+      "synonyms": "mitigate, excuse, lessen",
+      "antonyms": "aggravate, worsen, intensify",
+      "example": "He tried to extenuate his mistake by explaining the circumstances.",
+      "japaneseExample": "彼は状況を説明して自分の過ちを軽減しようとした。"
+    },
+    {
+      "word": "extol",
+      "meaning": "to praise enthusiastically",
+      "japaneseMeaning": "称賛する、褒めたたえる",
+      "synonyms": "praise, glorify, laud",
+      "antonyms": "criticize, condemn, denounce",
+      "example": "The teacher extolled the student’s creativity.",
+      "japaneseExample": "教師はその生徒の創造性を称賛した。"
+    },
+    {
+      "word": "extraneous",
+      "meaning": "irrelevant or unrelated to the subject being dealt with",
+      "japaneseMeaning": "余分な、無関係な",
+      "synonyms": "irrelevant, unrelated, unnecessary",
+      "antonyms": "relevant, essential, pertinent",
+      "example": "Please ignore extraneous information in the report.",
+      "japaneseExample": "報告書の余分な情報は無視してください。"
+    },
+    {
+      "word": "extrapolate",
+      "meaning": "to infer or estimate something based on known information",
+      "japaneseMeaning": "推定する、外挿する",
+      "synonyms": "infer, deduce, predict",
+      "antonyms": "ignore, disregard, question",
+      "example": "Scientists extrapolated future climate trends from past data.",
+      "japaneseExample": "科学者たちは過去のデータから将来の気候傾向を推定した。"
+    },
+    {
+      "word": "extricate",
+      "meaning": "to free someone or something from a constraint or difficulty",
+      "japaneseMeaning": "救い出す、脱出させる",
+      "synonyms": "free, release, disentangle",
+      "antonyms": "entangle, trap, confine",
+      "example": "The firefighter extricated the child from the wreckage.",
+      "japaneseExample": "消防士は瓦礫から子供を救い出した。"
+    },
+    {
+      "word": "facetious",
+      "meaning": "treating serious issues with deliberately inappropriate humor",
+      "japaneseMeaning": "ふざけた、冗談の",
+      "synonyms": "flippant, joking, sarcastic",
+      "antonyms": "serious, solemn, earnest",
+      "example": "He made a facetious remark during the meeting.",
+      "japaneseExample": "彼は会議中にふざけた発言をした。"
+    },
+    {
+      "word": "fallacious",
+      "meaning": "based on a mistaken belief or unsound reasoning",
+      "japaneseMeaning": "誤った、間違いに基づく",
+      "synonyms": "false, misleading, erroneous",
+      "antonyms": "true, valid, sound",
+      "example": "The argument was fallacious and easily refuted.",
+      "japaneseExample": "その議論は誤りに基づいており、簡単に反論された。"
+    }
+  ]
+}
