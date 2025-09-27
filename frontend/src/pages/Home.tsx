@@ -35,11 +35,11 @@ export default function Home() {
       }}>
       <strong>VocabStream</strong>
       は、
-      <a href="https:yutokuroki/profile.com" target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline" }}>
+      <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline" }}>
       <strong>黒木勇人</strong>
       </a>
       が創設し個人で開発・運営している
-      <a href="https:yutokuroki/projectfluence.com" target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline" }}>
+      <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline" }}>
       <strong>「Project Fluence」</strong>
       </a>
       の一環として制作された、無料の英単語学習アプリです。

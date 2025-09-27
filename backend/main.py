@@ -58,14 +58,14 @@ def genres(): # no parameters here
     # ここで返す id は data フォルダのサブフォルダ名と一致させること（例: "eiken-pre2"）
     return { #this function returns a JSON object, with one key "genres"
         "genres": [
-            {"id": "word-intermediate", "title": "単語初級~中級 (CEFRA2~B1)"},
-            {"id": "word-high-intermediate", "title": "単語中上級 (CEFRB2)"},
-            {"id": "word-advanced", "title": "単語上級 (CEFRC1)"},
-            {"id": "word-proficiency", "title": "単語熟達 (CEFRC2)"},
-            {"id": "idioms-intermediate", "title": "熟語初級~中級 (CEFRA2~B1)"},
-            {"id": "idioms-advanced", "title": "熟語上級 (CEFRC1)"},
-            {"id": "idioms-high-intermediate", "title": "熟語中上級 (CEFRB2)"},
-            {"id": "idioms-proficiency", "title": "熟語熟達 (CEFRC2)"},
+            {"id": "word-intermediate", "title": "単語初級~中級 (CEFR A2~B1)"},
+            {"id": "word-high-intermediate", "title": "単語中上級 (CEFR B2)"},
+            {"id": "word-advanced", "title": "単語上級 (CEFR C1)"},
+            {"id": "word-proficiency", "title": "単語熟達 (CEFR C2)"},
+            {"id": "idioms-intermediate", "title": "熟語初級~中級 (CEFR A2~B1)"},
+            {"id": "idioms-advanced", "title": "熟語上級 (CEFR C1)"},
+            {"id": "idioms-high-intermediate", "title": "熟語中上級 (CEFR B2)"},
+            {"id": "idioms-proficiency", "title": "熟語熟達 (CEFR C2)"},
             {"id": "business-entry", "title": "ビジネス入門レベル"},
             {"id": "business-intermediate", "title": "ビジネス実践レベル"},
             {"id": "business-global", "title": "ビジネスグローバルレベル"},

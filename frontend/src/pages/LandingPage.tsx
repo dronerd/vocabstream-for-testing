@@ -34,7 +34,7 @@ export default function LandingPage() {
 
           <div style={{ marginTop: 30, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/")}
               style={{
                 padding: "14px 26px",
                 borderRadius: 10,
@@ -46,11 +46,12 @@ export default function LandingPage() {
                 boxShadow: "0 8px 22px rgba(35,78,82,0.12)",
               }}
             >
-              ログインして使用する
+              アプリを使用する
             </button>
 
-            <button
-              onClick={() => navigate("/")}
+            <a
+              href="https://projectfluence.vercel.app"
+              target="_blank"
               style={{
                 padding: "14px 22px",
                 borderRadius: 10,
@@ -61,11 +62,12 @@ export default function LandingPage() {
                 cursor: "pointer",
               }}
             >
-              ログインせずに試す
-            </button>
+              Project Fluenceのホームページ
+            </a>
 
-            <button
-              onClick={() => navigate("/note")}
+            <a
+              href="https://note.com/projectfluence"
+              target="_blank"
               style={{
                 padding: "14px 22px",
                 borderRadius: 10,
@@ -77,7 +79,23 @@ export default function LandingPage() {
               }}
             >
               Note をフォロー
-            </button>
+            </a>
+
+            <a
+              href="https://yutokuroki.vercel.app"
+              target="_blank"
+              style={{
+                padding: "14px 22px",
+                borderRadius: 10,
+                border: "1px solid #ddd",
+                background: "white",
+                color: "#222",
+                fontSize: 17,
+                cursor: "pointer",
+              }}
+            >
+              黒木勇人のプロファイルを見る
+            </a>
 
             <p style={{ margin: 0, color: "#666", fontSize: 15 }}>*ログインして使用すると進歩状況を保存できます</p>
           </div>
@@ -133,7 +151,7 @@ export default function LandingPage() {
 
           <article style={{ background: "white", padding: 28, borderRadius: 14, boxShadow: "0 8px 28px rgba(20,40,80,0.04)" }}>
             <h2 style={{ marginTop: 0, fontSize: 26 }}>アプリ作成者・運営者</h2>
-            <p style={{ margin: 0, fontWeight: 700, fontSize: 17 }}>黒木 勇人 (Yuto Kuroki)</p>
+            <a href="https://yutokuroki.vercel.app" target="_blank" style={{ margin: 0, fontWeight: 700, fontSize: 17 }}>黒木 勇人 (Yuto Kuroki)</a>
             <p style={{ margin: "6px 0", color: "#666", fontSize: 16 }}>早稲田大学 基幹理工学部 1年</p>
 
             <p style={{ color: "#444", lineHeight: 1.7, fontSize: 17, wordBreak: "break-word" }}>
@@ -145,11 +163,11 @@ export default function LandingPage() {
               <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" style={{ fontSize: 16, textDecoration: "none", color: "#234E52" }}>→ LinkedIn</a>
             </div>
 
-            <p style={{ marginTop: 12, fontSize: 15, color: "#999" }}>
-              連絡: ...@gmail.com
+            <p style={{ marginTop: 12, fontSize: 15 }}>
+              連絡: yutokuroki.projectfluence@gmail.com
             </p>
 
-            <p style={{ marginTop: 12, fontSize: 14, color: "#999" }}>
+            <p style={{ marginTop: 12, fontSize: 14 }}>
               ＊大学生による個人プロジェクトのため、アプリの機能が安定していない可能性があります。ご意見やフィードバックは大歓迎です。
             </p>
           </article>

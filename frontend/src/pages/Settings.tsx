@@ -56,6 +56,7 @@ export default function Settings() {
         </div>
         <span>音声再生</span>
       </div>
+      <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
     </div>
   );
 }

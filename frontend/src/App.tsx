@@ -20,8 +20,8 @@ import ReviewMeaning_weak from "./pages/ReviewMeaning_weak";
 import ReadingComprehension from "./pages/ReadingComprehension";
 import ReadingComprehensionList from "./pages/ReadingComprehension_list";
 import LandingPage from "./pages/LandingPage";
+import Privacy from "./pages/Privacy";
  
-
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { token } = useAuth();
   if (!token) return <Navigate to="/login" replace />;
@@ -64,6 +64,7 @@ export default function App() {
           <Route path="/reading_comprehension_list" element={<ReadingComprehensionList />} />
           <Route path="/landing_page" element={<LandingPage />} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </div>
 
