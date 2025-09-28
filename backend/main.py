@@ -80,47 +80,7 @@ def genres(): # no parameters here
 
 @app.get("/api/lessons/{genre_id}")
 def lessons_for_genre(genre_id: str):
-    # data/<genre_id>/ 内の Lesson*.json を数えて動的に返す（ファイルが無ければ 404）
-    genre_dir = DATA_DIR / genre_id
-    if not genre_dir.exists() or not genre_dir.is_dir():
-        raise HTTPException(status_code=404, detail="genre not found")
-
-    # 見つかった LessonNN.json を列挙して Lesson 数を決定
-    lesson_files = sorted([   #ここのsortではアルファベット順になってしまう
-        p.name
-        for p in genre_dir.iterdir()
-        #p.is_file()でファイルのみ数える、
-        #p.name.lower().startswith("lesson")でlessonから始まるファイルだけ数えられる
-        #p.suffix.lower()=".json"で.jsonファイルだけ数える
-        if p.is_file() and p.name.lower().startswith("lesson") and p.suffix.lower() == ".json"])
-        #以上のコードの実行によりlesson_files は["Lesson1.json", "Lesson2.json", "Lesson10.json"]のようになる
-    lessons = [] 
-    for p in lesson_files:
-        # p 例: Lesson1.json -> extract number
-        name = p  # file name, like "Lesson1.json"
-        import re
-        #this extracts number from filename.
-        #lesson is to match the word lesson
-        #\s* allows optinonal spaces
-        #\([0-9]+) captures one or more digits
-        #example, "Lesson1.json" matches 1
-        m = re.search(r"lesson\s*([0-9]+)", name, flags=re.IGNORECASE)
-        if m:
-            num = int(m.group(1))
-        else:
-            # skip if no number found
-            continue
-        #lessonのリストに入れる, creates dictionary for each lesson
-        lessons.append({
-            "id": f"{genre_id}-lesson-{num}", 
-            "title": f"Lesson {num}", 
-            "progress": 0
-        })
-
-    # sort by lesson number
-    # x["id"].rsplit("-", 1)[1]は"word-intermediate-lesson-10" → ["word-intermediate-lesson", "10"] → "10".のように抽出できる
-    lessons.sort(key=lambda x: int(x["id"].rsplit("-", 1)[1])) #intで囲んで整数にしてる
-    return {"genre": genre_id, "lessons": lessons}
+    raise HTTPException(status_code=410, detail="Lesson files moved to frontend public/data")
 
 def _load_lesson_file(lesson_id: str): #this is an internal helper function, not API route
     """
@@ -156,79 +116,10 @@ def _load_lesson_file(lesson_id: str): #this is an internal helper function, not
     #if no candidate file matched, 
     raise HTTPException(status_code=404, detail="lesson file not found")
 
-
 @app.get("/api/lesson/{lesson_id}")
 def lesson_detail(lesson_id: str):
-    data = _load_lesson_file(lesson_id) #上で作った関数を使用している
-    # basic fields
-    words = data.get("words", [])
-    title = data.get("title", f"Lesson {lesson_id}")
-    paragraph = data.get("paragraph", "")
-
-    # review paragraphs (support a couple of common key variants)
-    paragraph_review1 = data.get("paragraph_review1") or data.get("paragraphReview1") or data.get("paragraph_review_1") or ""
-    paragraph_review2 = data.get("paragraph_review2") or data.get("paragraphReview2") or data.get("paragraph_review_2") or ""
-    paragraph_review3 = data.get("paragraph_review3") or data.get("paragraphReview3") or data.get("paragraph_review_3") or ""
-
-    return {
-        "lesson_id": lesson_id,
-        "title": title,
-        "paragraph": paragraph,
-        "paragraph_review1": paragraph_review1,
-        "paragraph_review2": paragraph_review2,
-        "paragraph_review3": paragraph_review3,
-        "words": words,
-        "total_words": len(words),
-        "raw": data,   
-    }
-
+     raise HTTPException(status_code=410, detail="Lesson files moved to frontend public/data. Use frontend local files under /data/... or restore backend/data.")
 
 @app.get("/api/lesson/{lesson_id}/quiz")
 def lesson_quiz(lesson_id: str):
-    data = _load_lesson_file(lesson_id)
-    words = data.get("words", [])
-    if not words:
-        raise HTTPException(status_code=404, detail="no words in lesson")
-
-    # quiz 用に word と example（あるいは meaning）を用いる
-    # 例: 穴埋めは example 中の単語を下線に置き換える。選択肢は同レッスン中の他の単語から選ぶ。
-    # here, a pool of usable words are being made
-    #only words with "word" field are kept
-    pool = [{"word": w.get("word"), "example": w.get("example", "")} for w in words if w.get("word")]
-    if len(pool) < 3:
-        # 最低 3 語必要（正答 + 2 誤答）
-        #at least three words are required
-        raise HTTPException(status_code=400, detail="not enough words for quiz")
-
-    #generate the questions
-    questions = [] #the list to store questions
-    for w in pool:
-        correct = w["word"] 
-        # distractors: 同レッスンからランダムに2つ
-        #すでに選んだcorrectじゃないものを選んでリストを作っている
-        other_words = [x["word"] for x in pool if x["word"] != correct] 
-        #すぐ上で作ったother_wordsリストからランダムで２つ選んでいる
-        distractors = random.sample(other_words, k=2) if len(other_words) >= 2 else other_words
-        choices = distractors + [correct] #choices is a new list
-        random.shuffle(choices) #shuffle the order of contents in list
-        answer_index = choices.index(correct) #the position of correct word
-
-        # blank sentence: example 中の正答を置換（大文字小文字を考慮）
-        example = w.get("example", "")
-        blank_sentence = example.replace(correct, "____") #replaces the correct word with ___
-        if blank_sentence == example:  #this == means turning into ___ was unsuccessful
-            # then, try capitalized first letter
-            blank_sentence = example.replace(correct.capitalize(), "____")
-            if blank_sentence == example: # even this does not work... then last resort
-                blank_sentence = "____ " + example #puts ___ at start of sentnece
-        
-        #store the question object
-        questions.append({
-            "word": correct,
-            "sentence": example,
-            "blank_sentence": blank_sentence,
-            "choices": choices,
-            "answer_index": answer_index
-        })
-
-    return {"lesson_id": lesson_id, "questions": questions}
+   raise HTTPException(status_code=410, detail="Quiz generation moved to frontend. Generate quiz client-side from /data/... JSON files.")

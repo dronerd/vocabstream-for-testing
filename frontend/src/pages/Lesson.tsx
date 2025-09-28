@@ -1,6 +1,24 @@
+// src/pages/Lesson.tsx
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { apiLessonDetail } from "../api";
+
+interface LessonWord {
+  word: string;
+  example?: string;
+  meaning?: string;
+  japaneseMeaning?: string;
+  synonyms?: string;
+  antonyms?: string;
+  // allow extra fields from JSON
+  [k: string]: any;
+}
+
+interface LessonData {
+  title?: string;
+  paragraph?: string;
+  words: LessonWord[];
+  [k: string]: any;
+}
 
 interface QuizQuestion {
   word: string;
@@ -10,119 +28,146 @@ interface QuizQuestion {
   answer_index: number;
 }
 
-export default function Lesson() {
+const Lesson: React.FC = () => {
   const { lessonId } = useParams<{ lessonId: string }>();
-  const [step, setStep] = useState(0);
-  const [lesson, setLesson] = useState<any>(null);
+  const [step, setStep] = useState<number>(0);
+  const [lesson, setLesson] = useState<LessonData | null>(null);
   const nav = useNavigate();
 
   // --- quiz state ---
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
-  const [quizIndex, setQuizIndex] = useState(0);
-  const [quizScore, setQuizScore] = useState(0);
-  const [quizLoading, setQuizLoading] = useState(false);
-  const [quizError, setQuizError] = useState(false);
+  const [quizIndex, setQuizIndex] = useState<number>(0);
+  const [quizScore, setQuizScore] = useState<number>(0);
+  const [quizLoading, setQuizLoading] = useState<boolean>(false);
+  const [quizError, setQuizError] = useState<boolean>(false);
   const [finalScore, setFinalScore] = useState<number | null>(null);
-  const [selectedChoice, setSelectedChoice] = useState<number | null>(null); // selected answer
+  const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
 
   // --- paragraph (drag & drop) state ---
-  // placedChoices: index = slotIndex (0..n-1) => value = choiceIndex or null
   const [placedChoices, setPlacedChoices] = useState<(number | null)[]>([]);
-  const [slotCorrectWord, setSlotCorrectWord] = useState<string[]>([]); // correct word (lemma) for each slot
-  const [slotSuffixes, setSlotSuffixes] = useState<string[]>([]); // detected suffix for each slot (e.g. "ed", "ing", "s")
-  const [renderParts, setRenderParts] = useState<(string | { slotIndex: number })[]>([]); // for rendering paragraph with slot tokens
-  const [graded, setGraded] = useState(false);
+  const [slotCorrectWord, setSlotCorrectWord] = useState<string[]>([]);
+  const [slotSuffixes, setSlotSuffixes] = useState<string[]>([]);
+  const [renderParts, setRenderParts] = useState<(string | { slotIndex: number })[]>([]);
+  const [graded, setGraded] = useState<boolean>(false);
   const [slotResults, setSlotResults] = useState<("idle" | "correct" | "wrong" | "revealed")[]>([]);
-  const [showRevealButton, setShowRevealButton] = useState(false);
+  const [showRevealButton, setShowRevealButton] = useState<boolean>(false);
   const [paragraphScore, setParagraphScore] = useState<number | null>(null);
 
-  // load lesson metadata / words
+  // Helper: try fetch JSON and return parsed object or null
+  async function tryFetchJson(path: string): Promise<any | null> {
+    try {
+      const r = await fetch(path, { cache: "no-cache" });
+      if (!r.ok) return null;
+      return await r.json();
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // --- load lesson metadata / words from public/data/ ---
   useEffect(() => {
     if (!lessonId) return;
-    apiLessonDetail(lessonId).then((res) => setLesson(res));
+    let cancelled = false;
+
+    async function loadLocalLesson(id: string): Promise<LessonData | null> {
+      if (!id.includes("-lesson-")) {
+        console.error("invalid lesson id format:", id);
+        return null;
+      }
+      const [genreFolder, numStr] = id.split("-lesson-");
+      if (!genreFolder || !numStr) return null;
+
+      // Candidate file paths under public/data (served at /data/...)
+      const candidates = [
+        `/data/${genreFolder}/Lesson${numStr}.json`,
+        `/data/${genreFolder}/lesson${numStr}.json`,
+        `/data/${genreFolder}/Lesson${parseInt(numStr, 10)}.json`,
+        `/data/${genreFolder}/lesson${parseInt(numStr, 10)}.json`,
+      ];
+
+      for (const p of candidates) {
+        const res = await tryFetchJson(p);
+        if (res) return res as LessonData;
+      }
+      return null;
+    }
+
+    setLesson(null);
+    loadLocalLesson(lessonId).then((data) => {
+      if (cancelled) return;
+      if (!data) {
+        console.warn("lesson file not found locally for", lessonId);
+        setLesson({ words: [] });
+      } else {
+        setLesson(data);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [lessonId]);
 
-  // fetch quiz when user moves to quiz step
+  // --- generate quiz locally when user moves to quiz step ---
   useEffect(() => {
     if (!lesson) return;
-    const totalWords = lesson.words.length;
+    const totalWords = lesson.words ? lesson.words.length : 0;
     if (step === totalWords + 1) {
       setQuizLoading(true);
       setQuizError(false);
-      fetch(`http://localhost:8000/api/lesson/${lessonId}/quiz`)
-        .then((r) => {
-          if (!r.ok) throw new Error("quiz fetch failed");
-          return r.json();
-        })
-        .then((data) => {
-          setQuizQuestions(data.questions || []);
-          setQuizIndex(0);
-          setQuizScore(0);
-          setFinalScore(null);
-          setSelectedChoice(null);
-        })
-        .catch((e) => {
-          console.error("quiz fetch failed", e);
-          setQuizQuestions([]);
-          setQuizError(true);
-        })
-        .finally(() => setQuizLoading(false));
+      try {
+        const generated = generateQuizFromLesson(lesson);
+        setQuizQuestions(generated);
+        setQuizIndex(0);
+        setQuizScore(0);
+        setFinalScore(null);
+        setSelectedChoice(null);
+      } catch (e) {
+        console.error("quiz generation failed", e);
+        setQuizQuestions([]);
+        setQuizError(true);
+      } finally {
+        setQuizLoading(false);
+      }
     }
-  }, [step, lessonId, lesson]);
+  }, [step, lesson]);
 
   // Build paragraph slots when lesson loaded and when entering paragraph step
   const choiceWords = useMemo<string[]>(() => {
-    if (!lesson) return [] as string[];
-    // show up to 10 words as choices
-    return lesson.words.slice(0, 10).map((w: any) => w.word);
+    if (!lesson) return [];
+    return lesson.words.slice(0, 10).map((w: LessonWord) => w.word);
   }, [lesson]);
 
   useEffect(() => {
     const totalWords = lesson ? lesson.words.length : 0;
-    const paragraphStep = totalWords + 3; // step number for paragraph interaction
+    const paragraphStep = totalWords + 3;
     if (!lesson) return;
     if (step === paragraphStep) {
-      const paragraphRaw: string = lesson.paragraph
-        ? lesson.paragraph
-        : lesson.words.map((w: any) => w.example || w.word).join(" ");
+      const paragraphRaw: string =
+        lesson.paragraph || lesson.words.map((w: LessonWord) => w.example || w.word).join(" ");
 
-      // We'll process `paragraphRaw`, find first occurrence of each choice lemma (allow simple suffixes),
-      // replace with tokens and record the detected suffix (if any).
       let processed = paragraphRaw;
       const tokens: string[] = [];
       const slotWords: string[] = [];
       const detectedSuffixes: string[] = [];
-
-      // explicit slot counter (safer than relying on tokens.length inside replace)
       let slotIndexCounter = 0;
-
-      // Heuristic suffix pattern — adjust / expand as needed.
-      // This captures common inflections: 's, s, es, ed, ing, en, ly
-      // Note: we intentionally avoid overly broad patterns to reduce false positives.
       const SUFFIX_PATTERN = "(?:'(?:s|re|ve|ll)|s|es|ed|ing|en|ly)?";
 
       choiceWords.forEach((cw: string) => {
         if (!cw) return;
-        // escape special regex chars in cw (lemma)
         const escaped = cw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        // Build regex that captures lemma and suffix separately; case-insensitive (i) and unicode (u)
-        // No 'g' flag — replace will only run once per call, which is what we want: first occurrence
         const re = new RegExp("\\b(" + escaped + ")(" + SUFFIX_PATTERN + ")\\b", "iu");
 
-        // Use replace callback to capture the suffix and replace with a token.
-        // Only the first occurrence will be replaced because re has no 'g'.
         processed = processed.replace(re, (match: string, p1: string, p2: string) => {
           tokens.push(`[[SLOT_${slotIndexCounter}]]`);
-          slotWords.push(cw); // store lemma (original choiceWords entry)
-          detectedSuffixes.push(p2 || ""); // record suffix (might be "")
-
+          slotWords.push(cw);
+          detectedSuffixes.push(p2 || "");
           const token = `[[SLOT_${slotIndexCounter}]]`;
           slotIndexCounter++;
           return token;
         });
       });
 
-      // fallback: if nothing matched, insert a few slots at the beginning (as in your original)
       if (tokens.length === 0) {
         processed = `[[SLOT_0]] [[SLOT_1]] [[SLOT_2]] ` + processed;
         slotWords.push(...choiceWords.slice(0, 3));
@@ -131,7 +176,6 @@ export default function Lesson() {
         slotIndexCounter = slotWords.length;
       }
 
-      // split processed into array of strings and tokens
       const parts: (string | { slotIndex: number })[] = [];
       const tokenRe = /\[\[SLOT_(\d+)\]\]/g;
       let lastIndex = 0;
@@ -139,19 +183,16 @@ export default function Lesson() {
 
       while ((m = tokenRe.exec(processed)) !== null) {
         const idx = m.index;
-        if (idx > lastIndex) {
-          parts.push(processed.substring(lastIndex, idx));
-        }
+        if (idx > lastIndex) parts.push(processed.substring(lastIndex, idx));
         const slotIndex = Number(m[1]);
         parts.push({ slotIndex });
         lastIndex = idx + m[0].length;
       }
       if (lastIndex < processed.length) parts.push(processed.substring(lastIndex));
 
-      // update states (use slotWords.length for sizes)
       setRenderParts(parts);
-      setSlotCorrectWord(slotWords); // lemmas for grading
-      setSlotSuffixes(detectedSuffixes); // suffix hints for display (rendered *next to* the slot)
+      setSlotCorrectWord(slotWords);
+      setSlotSuffixes(detectedSuffixes);
       setPlacedChoices(Array(slotWords.length).fill(null));
       setSlotResults(Array(slotWords.length).fill("idle"));
       setGraded(false);
@@ -176,16 +217,16 @@ export default function Lesson() {
   } as React.CSSProperties;
 
   function handleChoose(choiceIndex: number) {
-    if (!quizQuestions[quizIndex] || selectedChoice !== null) return; // prevent multiple clicks
+    if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
     const q = quizQuestions[quizIndex];
     const isCorrect = choiceIndex === q.answer_index;
     setSelectedChoice(choiceIndex);
+    if (isCorrect) setQuizScore((s) => s + 1);
   }
 
   // Drag/drop handlers
   function handleDragStart(e: React.DragEvent, choiceIndex: number) {
     e.dataTransfer.setData("text/plain", String(choiceIndex));
-    // optional: allow move effect
     e.dataTransfer.effectAllowed = "move";
   }
 
@@ -200,17 +241,14 @@ export default function Lesson() {
     const choiceIndex = Number(data);
     if (Number.isNaN(choiceIndex)) return;
 
-    // If that choice is already placed elsewhere, remove it from previous slot
     setPlacedChoices((prev) => {
       const next = [...prev];
-      // remove from other slots
       for (let i = 0; i < next.length; i++) {
         if (next[i] === choiceIndex) next[i] = null;
       }
       next[slotIndex] = choiceIndex;
       return next;
     });
-    // reset result state for that slot (so UI updates)
     setSlotResults((prev) => {
       const next = [...prev];
       next[slotIndex] = "idle";
@@ -232,8 +270,7 @@ export default function Lesson() {
   }
 
   function handleGrade() {
-    // Only consider the slots that have correct words mapped (slotCorrectWord)
-    const results: ("idle" | "correct" | "wrong")[] = slotCorrectWord.map((correctWord, idx) => {
+    const results: ("idle" | "correct" | "wrong")[] = slotCorrectWord.map((correctWord: string, idx: number) => {
       const placed = placedChoices[idx];
       if (placed === null || placed === undefined) return "wrong";
       return choiceWords[placed] === correctWord ? "correct" : "wrong";
@@ -242,20 +279,16 @@ export default function Lesson() {
     setGraded(true);
     const anyWrong = results.some((r) => r !== "correct");
     setShowRevealButton(anyWrong);
-
-    // paragraph score: 1 point per correct (max = number of slots)
     const correctCount = results.filter((r) => r === "correct").length;
     setParagraphScore(correctCount);
   }
 
   function handleRevealAnswers() {
-    // map each slot to the index of its correct word in choiceWords
-    const placedForSlots = slotCorrectWord.map((w) => {
+    const placedForSlots = slotCorrectWord.map((w: string) => {
       const idx = choiceWords.findIndex((cw) => cw === w);
       return idx >= 0 ? idx : null;
     });
 
-    // placedChoices should be an array sized by number of slots
     setPlacedChoices(() => {
       const next = Array(slotCorrectWord.length).fill(null as number | null);
       for (let i = 0; i < placedForSlots.length; i++) {
@@ -267,7 +300,6 @@ export default function Lesson() {
     setSlotResults(placedForSlots.map((p) => (p === null ? "wrong" : "revealed")));
     setShowRevealButton(false);
 
-    // set paragraph score to number of slots that were filled with correct words
     const revealedCorrect = placedForSlots.filter((p) => p !== null).length;
     setParagraphScore(revealedCorrect);
     setGraded(true);
@@ -294,7 +326,6 @@ export default function Lesson() {
     );
   }
 
-  // UI
   const paragraphSlotCount = slotCorrectWord.length || choiceWords.length;
 
   return (
@@ -322,7 +353,7 @@ export default function Lesson() {
         <div>
           <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>今日の単語</h2>
           <ul style={{ listStyle: "none", padding: 0 }}>
-            {lesson.words.slice(0, 10).map((w: any, i: number) => (
+            {lesson.words.slice(0, 10).map((w: LessonWord, i: number) => (
               <li key={i} style={{ fontWeight: "bold", fontSize: "40px", marginBottom: "5px" }}>
                 {w.word}
               </li>
@@ -364,7 +395,7 @@ export default function Lesson() {
             <p>クイズを読み込み中...</p>
           ) : quizError ? (
             <div>
-              <p>クイズの取得に失敗しました。</p>
+              <p>クイズの作成に失敗しました。</p>
               <button
                 onClick={() => {
                   setFinalScore(0);
@@ -395,29 +426,23 @@ export default function Lesson() {
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
                 {quizQuestions[quizIndex].choices.map((c: string, i: number) => {
-                  let backgroundColor = "#003366"; // default blue
+                  let backgroundColor = "#003366";
                   if (selectedChoice !== null) {
-                    if (i === quizQuestions[quizIndex].answer_index) backgroundColor = "green"; // correct
-                    else if (i === selectedChoice) backgroundColor = "red"; // wrong
+                    if (i === quizQuestions[quizIndex].answer_index) backgroundColor = "green";
+                    else if (i === selectedChoice) backgroundColor = "red";
                   }
                   return (
                     <button
                       key={i}
-                      onClick={() => {
-                        if (selectedChoice === null) {
-                          setSelectedChoice(i);
-                          if (i === quizQuestions[quizIndex].answer_index) setQuizScore((prev) => prev + 1);
-                        }
-                      }}
+                      onClick={() => handleChoose(i)}
                       style={{ ...blueButtonStyle, fontSize: 20, padding: "8px 16px", width: 360, backgroundColor }}
-                      disabled={selectedChoice !== null} // disable after selection
+                      disabled={selectedChoice !== null}
                     >
                       {c}
                     </button>
                   );
                 })}
               </div>
-              {/* Next button appears after selecting an answer */}
               {selectedChoice !== null && (
                 <button
                   onClick={() => {
@@ -425,9 +450,8 @@ export default function Lesson() {
                       setQuizIndex(quizIndex + 1);
                       setSelectedChoice(null);
                     } else {
-                      // finalize quiz score and go to results
                       setFinalScore(quizScore);
-                      setStep(totalWords + 2); // show results
+                      setStep(totalWords + 2);
                     }
                   }}
                   style={{ ...blueButtonStyle, marginTop: 20 }}
@@ -435,13 +459,15 @@ export default function Lesson() {
                   次の問題へ
                 </button>
               )}
-              <p style={{ marginTop: 16, fontSize: 18 }}>{quizIndex + 1} / {quizQuestions.length}</p>
+              <p style={{ marginTop: 16, fontSize: 18 }}>
+                {quizIndex + 1} / {quizQuestions.length}
+              </p>
             </div>
           )}
         </div>
       )}
 
-      {/* --- 結果表示（ここから段階的に段落穴埋めへ移動） --- */}
+      {/* --- 結果表示 --- */}
       {step === totalWords + 2 && (
         <div>
           <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>結果</h2>
@@ -452,8 +478,12 @@ export default function Lesson() {
             {finalScore !== null ? `正答率: ${Math.round((finalScore / (quizQuestions.length || 1)) * 100)}%` : ""}
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 20 }}>
-            <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>単語穴埋めに進む</button>
-            <button onClick={() => nav(-1)} style={blueButtonStyle}>終了する</button>
+            <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>
+              単語穴埋めに進む
+            </button>
+            <button onClick={() => nav(-1)} style={blueButtonStyle}>
+              終了する
+            </button>
           </div>
         </div>
       )}
@@ -485,24 +515,24 @@ export default function Lesson() {
                         border: "2px dashed #003366",
                         borderRadius: 6,
                         backgroundColor: bg,
-                        verticalAlign: 'middle'
+                        verticalAlign: "middle",
                       }}
                     >
                       {placed === null ? (
-                        // ALWAYS show the generic placeholder inside the drop box
-                        <em style={{ color: "#666" }}>
-                          ここにドラッグ
-                        </em>
+                        <em style={{ color: "#666" }}>ここにドラッグ</em>
                       ) : (
                         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
                           <div style={{ fontWeight: 700 }}>{choiceWords[placed]}</div>
-                          <button onClick={() => removeFromSlot(slotIndex)} style={{ border: "none", background: "transparent", cursor: "pointer" }}>✕</button>
+                          <button onClick={() => removeFromSlot(slotIndex)} style={{ border: "none", background: "transparent", cursor: "pointer" }}>
+                            ✕
+                          </button>
                         </div>
                       )}
                     </span>
-                    {/* Render the detected suffix (if any) as part of the paragraph, outside the slot box */}
                     {slotSuffixes[slotIndex] ? (
-                      <span key={`suf-${i}`} style={{ marginLeft: 6, color: '#666', fontStyle: 'italic' }}>{slotSuffixes[slotIndex]}</span>
+                      <span key={`suf-${i}`} style={{ marginLeft: 6, color: "#666", fontStyle: "italic" }}>
+                        {slotSuffixes[slotIndex]}
+                      </span>
                     ) : null}
                   </React.Fragment>
                 );
@@ -515,35 +545,43 @@ export default function Lesson() {
             <h3 style={{ marginBottom: 12 }}>単語（ドラッグしてください）</h3>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
               {choiceWords.map((w: string, i: number) => {
-                // disabled if already placed
                 const isPlaced = placedChoices.includes(i);
-                return (
-                  <ChoiceBox key={i} word={w} idx={i} disabled={isPlaced} />
-                );
+                return <ChoiceBox key={i} word={w} idx={i} disabled={isPlaced} />;
               })}
             </div>
           </div>
 
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center" }}>
             {!graded && (
-              <button onClick={handleGrade} style={blueButtonStyle}>採点する</button>
+              <button onClick={handleGrade} style={blueButtonStyle}>
+                採点する
+              </button>
             )}
             {showRevealButton && (
-              <button onClick={handleRevealAnswers} style={blueButtonStyle}>解答を表示</button>
+              <button onClick={handleRevealAnswers} style={blueButtonStyle}>
+                解答を表示
+              </button>
             )}
-            {(graded && !showRevealButton) && (
-              <button onClick={() => { setStep(totalWords + 4); }} style={blueButtonStyle}>次に行く</button>
+            {graded && !showRevealButton && (
+              <button
+                onClick={() => {
+                  setStep(totalWords + 4);
+                }}
+                style={blueButtonStyle}
+              >
+                次に行く
+              </button>
             )}
-            {(!graded && !showRevealButton) && (
-              <button onClick={() => nav(-1)} style={{ ...blueButtonStyle, backgroundColor: "#999" }}>スキップして終了</button>
+            {!graded && !showRevealButton && (
+              <button onClick={() => nav(-1)} style={{ ...blueButtonStyle, backgroundColor: "#999" }}>
+                スキップして終了
+              </button>
             )}
           </div>
 
-          {/* paragraph score display */}
           {graded && paragraphScore !== null && (
             <p style={{ marginTop: 18, fontSize: 18 }}>穴埋め得点: {paragraphScore} / {slotCorrectWord.length || choiceWords.length}</p>
           )}
-
         </div>
       )}
 
@@ -568,7 +606,62 @@ export default function Lesson() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
+
+/* -------------------------
+ helper: generate quiz from lesson (client-side)
+---------------------------*/
+function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
+  const words: LessonWord[] = lesson.words || [];
+  const pool = words.filter((w: LessonWord) => w.word).map((w: LessonWord) => ({ word: w.word, example: w.example || "" }));
+  if (pool.length < 3) throw new Error("not enough words for quiz");
+
+  function sample<T>(arr: T[], k: number): T[] {
+    const copy = arr.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy.slice(0, k);
+  }
+
+  const questions: QuizQuestion[] = [];
+
+  for (const item of pool) {
+    const correct = item.word;
+    const otherWords: string[] = pool.map((p: { word: string }) => p.word).filter((w: string) => w !== correct);
+    const distractors = sample(otherWords, Math.min(2, otherWords.length));
+    const choices = [...distractors, correct];
+    const shuffled = sample(choices, choices.length);
+    const answer_index = shuffled.indexOf(correct);
+
+    let blank_sentence = item.example || "";
+    if (blank_sentence) {
+      const re = new RegExp(correct.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+      if (re.test(blank_sentence)) {
+        blank_sentence = blank_sentence.replace(re, "____");
+      } else {
+        const cap = correct.charAt(0).toUpperCase() + correct.slice(1);
+        const re2 = new RegExp(cap.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+        if (re2.test(blank_sentence)) blank_sentence = blank_sentence.replace(re2, "____");
+        else blank_sentence = "____ " + blank_sentence;
+      }
+    } else {
+      blank_sentence = "____";
+    }
+
+    questions.push({
+      word: correct,
+      sentence: item.example || "",
+      blank_sentence,
+      choices: shuffled,
+      answer_index,
+    });
+  }
+
+  return questions;
+}
+
+export default Lesson;

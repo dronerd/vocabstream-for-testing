@@ -1,6 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react"; 
+import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { apiLessonDetail } from "../api";
+
+// --- EDIT THIS LIST to change which genres are shown in the frontend ---
+export const FRONTEND_GENRES = [
+  "Business",
+  "Technology",
+  "Culture",
+];
 
 interface ParagraphSlotBuildResult {
   renderParts: (string | { slotIndex: number })[];
@@ -11,6 +18,7 @@ interface ParagraphSlotBuildResult {
 export default function Lesson() {
   const { lessonId } = useParams<{ lessonId: string }>();
   const [lesson, setLesson] = useState<any>(null);
+  const [genres, setGenres] = useState<string[]>(FRONTEND_GENRES);
   const nav = useNavigate();
 
   // UI step:
@@ -51,7 +59,16 @@ export default function Lesson() {
 
   useEffect(() => {
     if (!lessonId) return;
-    apiLessonDetail(lessonId).then((res) => setLesson(res));
+    apiLessonDetail(lessonId).then((res) => {
+      // IMPORTANT: ignore genres coming from backend — override with frontend list
+      // This ensures genres are not retrieved from backend and the frontend list is used instead.
+      const cleaned = { ...res };
+      if ('genres' in cleaned) delete cleaned.genres;
+      setLesson(cleaned);
+
+      // (optional) if you want to vary frontend genres by lessonId, do it here.
+      setGenres(FRONTEND_GENRES);
+    });
   }, [lessonId]);
 
   // load persisted review-finished flag for this lesson
@@ -132,7 +149,7 @@ export default function Lesson() {
       // try replace first occurrence of each choice lemma
       choiceWordsLocal.forEach((cw) => {
         if (!cw) return;
-        const escaped = cw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const escaped = cw.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
         const re = new RegExp("\\b(" + escaped + ")(" + SUFFIX_PATTERN + ")\\b", "iu");
         processed = processed.replace(re, (match: string, p1: string, p2: string) => {
           const token = `[[SLOT_${slotCounter}]]`;
@@ -288,6 +305,13 @@ export default function Lesson() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif', textAlign: 'center' }}>
       <button onClick={() => nav(-1)} style={{ marginBottom: 20, padding: '8px 4px', borderRadius: 8, border: 'none', backgroundColor: '#555', color: '#fff', cursor: 'pointer' }}>レッスン一覧に戻る</button>
+
+      {/* Frontend genres (no backend retrieval) */}
+      <div style={{ marginBottom: 12 }}>
+        {genres.map((g, i) => (
+          <span key={i} style={{ display: 'inline-block', padding: '6px 10px', margin: '0 6px', borderRadius: 999, backgroundColor: '#eef', color: '#003366', fontWeight: 600 }}>{g}</span>
+        ))}
+      </div>
 
       {/* 今日の単語 - choose to go directly to paragraph or view slides */}
       {step === 0 && (

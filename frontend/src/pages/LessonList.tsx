@@ -40,29 +40,29 @@ function makeLessons(genreId: string, count: number): Lesson[] {
 // Edit these numbers to match how many lessons you actually want visible in the frontend.
 const LESSON_COUNT_BY_GENRE: Record<string, number> = {
   // word levels: show 12 lessons each by default
-  "word-intermediate": 12,
-  "word-high-intermediate": 12,
-  "word-advanced": 12,
-  "word-proficiency": 12,
+  "word-intermediate": 71,
+  "word-high-intermediate": 71,
+  "word-advanced": 71,
+  "word-proficiency": 71,
 
   // idioms: fewer by default
-  "idioms-intermediate": 8,
-  "idioms-high-intermediate": 8,
-  "idioms-advanced": 8,
-  "idioms-proficiency": 8,
+  "idioms-intermediate": 71,
+  "idioms-high-intermediate": 71,
+  "idioms-advanced": 71,
+  "idioms-proficiency": 71,
 
   // business
-  "business-entry": 6,
-  "business-intermediate": 6,
-  "business-global": 6,
+  "business-entry": 71,
+  "business-intermediate": 71,
+  "business-global": 71,
 
   // specialized categories
-  "computer-science": 10,
-  "medicine": 10,
-  "economics-business": 10,
-  "environment": 10,
-  "law": 10,
-  "engineering": 10,
+  "computer-science": 71,
+  "medicine": 71,
+  "economics-business": 71,
+  "environment": 71,
+  "law": 71,
+  "engineering": 71,
 };
 
 export default function LessonList() {
