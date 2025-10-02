@@ -22,7 +22,8 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ padding: 20, fontFamily: "sans-serif" }}>
+    
+    <div style={{ padding: 20, paddingTop: 92, fontFamily: "sans-serif" }}>
       {/* Main heading */}
       <h1 style={{ fontSize: 50, margin: "4px 0" }}>Home</h1>
 
@@ -87,6 +88,7 @@ export default function Home() {
           </button>
         ))}
       </div>
+      <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
     </div>
   );
 }

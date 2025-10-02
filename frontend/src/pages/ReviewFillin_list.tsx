@@ -100,7 +100,7 @@ export default function ReviewFillinList() {
   }
 
   return (
-    <div style={{ padding: 20 }}>
+    <div style={{ padding: 20, paddingTop: 92 }}>
       <h2 style={{ fontSize: 28, marginBottom: 20 }}>{genreTitle} - Fill-in レビュー</h2>
       <button
         onClick={() => nav("/review")}

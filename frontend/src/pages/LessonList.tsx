@@ -105,7 +105,7 @@ export default function LessonList() {
   }
 
   return (
-    <div style={{ padding: 20 }}>
+    <div style={{ padding: 20 , paddingTop : 92 }}>
       <h2 style={{ fontSize: 28, marginBottom: 20 }}>{genreTitle} - レッスン一覧</h2>
       <button
         onClick={() => nav("/learn")}

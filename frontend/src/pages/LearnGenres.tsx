@@ -88,8 +88,11 @@ export default function LearnGenres() {
     return levelOrder[categoryName] ? levelColors[index] || "#f9f9f9" : termColors[index % termColors.length];
   }
 
+const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ56、それ以外は72
+const basePadding = isSmall ? 12 : 20; // 既存の padding
+  
   return (
-    <div style={{ padding: isSmall ? 12 : 20 }}>
+    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT }}>
       <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>単語の学習</h2>
       <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 10 }}>ジャンル選択</h3>
 

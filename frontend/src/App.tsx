@@ -4,7 +4,6 @@ import { AuthProvider, useAuth } from "./AuthContext";
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
 
-import Login from "./pages/Login";
 import Home from "./pages/Home";
 import LearnGenres from "./pages/LearnGenres";
 import LessonList from "./pages/LessonList";
@@ -47,7 +46,6 @@ export default function App() {
 
       <div style={{ padding: 16, paddingBottom: 80 }}>
         <Routes>
-          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/learn" element={<LearnGenres />} />
           <Route path="/learn/:genreId" element={<LessonList />} />

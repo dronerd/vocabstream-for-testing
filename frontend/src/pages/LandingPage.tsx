@@ -13,17 +13,18 @@ export default function LandingPage() {
     <div className="landing-root" style={{ fontFamily: "Inter, Arial, sans-serif" }}>
       <style>{`
         :root{
-          --accent:#234E52;
+          --accent:#234E52; /* original accent (teal) kept for small elements */
           --muted:#666;
-          /* 背景をやや濃いめの薄グレーに調整（ユーザー指定: あと少し濃く） */
-          --page-bg: #e6eaec;
+          /* ページ全体の背景を画面いっぱいに広げる（薄いグレー・青みを含む） */
+          --page-bg: #eef3f6;
           --card-bg: #ffffff;
           --chip-bg: #f1f3f4;
-          --btn-bg: #0B3D91;
+          --btn-bg: #0B3D91; /* 紺ボタン */
+          --card-border: rgba(11,61,145,0.06); /* 細い紺の枠線 */
         }
         *{box-sizing:border-box}
-        html,body,#root{height:100%}
-        .landing-root{color:#222;width:100%;min-height:100vh;overflow-x:hidden;background:var(--page-bg)}
+        html,body,#root{height:100%; margin:0; padding:0; background:var(--page-bg)}
+        .landing-root{color:#222;width:100%;min-height:100vh;overflow-x:hidden;background:transparent}
 
         /* Responsive typography */
         :root { --base-font: clamp(13px, 1.6vw, 18px); }
@@ -32,7 +33,7 @@ export default function LandingPage() {
         /* Layout */
         .hero{padding:28px 5vw 20px;background:transparent}
         .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
-        .hero-card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(20,40,80,0.04)}
+        .hero-card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(20,40,80,0.04); border: 1px solid var(--card-border)}
         /* profile card: ensure flex children can shrink properly */
         .profile-card{
           background:var(--card-bg);
@@ -42,6 +43,7 @@ export default function LandingPage() {
           gap:12px;
           align-items:center;
           max-width:100%;
+          border: 1px solid var(--card-border);
         }
         /* image sizing + prevent growth */
         .profile-card img{
@@ -64,9 +66,10 @@ export default function LandingPage() {
           gap:10px;
           flex-wrap:wrap;
         }
+        /* 創設者 / 開発・運営 を黒に変更 */
         .role-label{
           background:transparent;
-          color:var(--accent);
+          color:#000;
           font-weight:700;
           font-size:0.95em;
           white-space:nowrap;
@@ -97,7 +100,7 @@ export default function LandingPage() {
 
         main{width:100%;padding:24px 5vw}
         .grid-stack{max-width:1100px;margin:0 auto;display:grid;gap:18px}
-        .card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 5px 16px rgba(20,40,80,0.03)}
+        .card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 5px 16px rgba(20,40,80,0.03); border: 1px solid var(--card-border)}
         footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
         a.inline-link{color:var(--accent);text-decoration:underline}
 
@@ -121,6 +124,25 @@ export default function LandingPage() {
 
         /* profile text */
         .bio{color:#444;font-size: clamp(13px, 1.6vw, 15px);line-height:1.6;margin-top:8px; overflow-wrap:anywhere}
+
+        /* email below に余白を設ける */
+        .email{margin-top:6px; margin-bottom:12px; font-size:0.95em}
+
+        /* Social buttons (Profile, LinkedIn, Note, GitHub) */
+        .social-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+        .social-btn{
+          background:var(--btn-bg);
+          color:#fff;
+          padding:8px 12px;
+          border-radius:10px;
+          text-decoration:none;
+          font-weight:700;
+          display:inline-flex;
+          align-items:center;
+          gap:8px;
+          min-width:0;
+        }
+        .social-btn.secondary{background:transparent; color:var(--btn-bg); border:1px solid var(--btn-bg)}
 
         @media(min-width:600px){
           .hero { padding:48px 6vw 30px; }
@@ -210,17 +232,23 @@ export default function LandingPage() {
               </div>
 
               <div style={{ marginTop: 6, fontSize: "0.95em" }}>早稲田大学 基幹理工学部 1年</div>
-              <div style={{ marginTop: 4, fontSize: "0.95em" }}>yutokuroki.projectfluence@gmail.com</div>
+              <div className="email">yutokuroki.projectfluence@gmail.com</div>
 
               <p className="bio" aria-live="polite">
                 英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に合格（上位1%）。現在はTOEFL iBT 116/120、TOEIC 990/990。ドイツ語はC1取得。専門は情報工学。ISEFなど国際イベントでの発表経験あり。
               </p>
 
-              <div style={{ display: "flex", gap: 10, marginTop: 8, flexWrap: "wrap" }}>
-                <Link to="/profile" style={{ textDecoration: "none", fontWeight: 700 }} onClick={scrollToTop}>→ プロフィール</Link>
-                <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", fontWeight: 700 }}>
-                  → LinkedIn
-                </a>
+              <div className="social-row">
+                {/* Internal route to profile */}
+                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" className="social-btn">プロフィール</a>
+
+
+                {/* External links */}
+                <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer" className="social-btn">LinkedIn</a>
+
+                {/* Placeholders - you can replace the hrefs later */}
+                <a href="https://note.com/projectfluence" target="_blank" rel="noopener noreferrer" className="social-btn">Note</a>
+                <a href="https://github.com/dronerd" target="_blank" rel="noopener noreferrer" className="social-btn">GitHub</a>
               </div>
             </div>
           </aside>
@@ -275,6 +303,7 @@ export default function LandingPage() {
       <footer style={{ padding: 20, textAlign: "center", color: "#666" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>© Project Fluence — VocabStream</div>
       </footer>
+      <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
     </div>
   );
 }

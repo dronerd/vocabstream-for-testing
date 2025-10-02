@@ -83,8 +83,11 @@ export default function ReviewList() {
       : termColors[index % termColors.length];
   }
 
+const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ56、それ以外は72
+const basePadding = isSmall ? 12 : 20; // 既存の padding
+
   return (
-    <div style={{ padding: isSmall ? 12 : 20 }}>
+    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT}}>
       {/* 復習方法に戻るボタン */}
       <button
         onClick={() => nav("/review")}

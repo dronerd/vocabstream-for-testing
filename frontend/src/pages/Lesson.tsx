@@ -337,6 +337,7 @@ const Lesson: React.FC = () => {
         justifyContent: "center",
         minHeight: "100vh",
         padding: "20px",
+        paddingTop : "92px",
         fontFamily: "sans-serif",
         textAlign: "center",
       }}

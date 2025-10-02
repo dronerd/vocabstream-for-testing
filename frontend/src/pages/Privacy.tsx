@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function PrivacyPage() {
   return (
-    <main className="p-6 max-w-3xl mx-auto">
+
+    <main className="p-6 max-w-3xl mx-auto" style={{ paddingTop: "92px" }}>
       <h1 className="text-2xl font-bold mb-4">Privacy Policy / プライバシーポリシー</h1>
 
       {/* 英語版 */}
@@ -42,7 +43,7 @@ export default function PrivacyPage() {
           href="/"
           className="text-blue-600 hover:underline font-medium"
         >
-          ← Back to Home / ホームに戻る
+          <strong>← Back to Home / ホームに戻る</strong>
         </a>
       </div>
     </main>

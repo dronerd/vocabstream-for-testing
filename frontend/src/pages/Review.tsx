@@ -21,7 +21,7 @@ export default function Review() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px" , paddingTop: "92px"}}>
       <h2 style={{ fontSize: 32, marginBottom: 14 }}>単語の復習</h2>
       <h3 style={{ fontSize: 26, marginBottom: 20 }}>復習方法</h3>
       <div

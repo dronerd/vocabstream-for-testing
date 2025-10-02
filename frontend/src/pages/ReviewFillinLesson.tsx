@@ -303,7 +303,7 @@ export default function Lesson() {
   const scaledScore30 = Math.round((totalRawCorrect / totalRawPossible) * 30);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif', textAlign: 'center' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px', paddingTop: '92px', fontFamily: 'sans-serif', textAlign: 'center' }}>
       <button onClick={() => nav(-1)} style={{ marginBottom: 20, padding: '8px 4px', borderRadius: 8, border: 'none', backgroundColor: '#555', color: '#fff', cursor: 'pointer' }}>レッスン一覧に戻る</button>
 
       {/* Frontend genres (no backend retrieval) */}

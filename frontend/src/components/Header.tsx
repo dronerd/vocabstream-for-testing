@@ -35,18 +35,22 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
   return (
     <>
       <style>{`
+        /* Header の CSS（差し替え部分） */
         .app-header {
+          position: fixed;    /* ← fixed に変更 */
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          background: white;
           padding: 8px 14px;
           border-bottom: 1px solid #ddd;
           display: grid;
           grid-template-columns: auto 1fr auto;
           align-items: center;
           gap: 12px;
-          position: sticky;   /* ← relative → sticky */
-          top: 0;             /* ← stick to top */
-          z-index: 1000;      /* ← make sure it’s above page sections */
-          background: white;  /* ← so content doesn’t show through */
-          min-height: 72px;
+          min-height: 72px;   /* この高さに合わせてコンテンツ側に余白を追加する */
+          width: 100%;
         }
         .header-left { display:flex; gap:12px; align-items:center; z-index: 3; }
         .header-right { display:flex; gap:8px; align-items:center; justify-self:end; z-index: 3; }
@@ -100,6 +104,19 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           border: 1px solid transparent;
           color: #007bff;
           font-weight: 700;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        /* フルテキスト / 短縮テキストを切り替えるためのユーティリティ */
+        .intro-full { display: inline; }
+        .intro-short { display: none; }
+
+        /* ブレークポイント：必要ならここを調整してください（例: 420px） */
+        @media (max-width: 420px) {
+          .intro-full { display: none; }
+          .intro-short { display: inline; }
         }
 
         .link-as-btn { display:inline-block; }
@@ -139,7 +156,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
               <Link to="/">
                 <img src="/logo.png" alt="App Logo" style={{ height: 60, width: "auto" }} />
               </Link>
-              <Link to="/" className="home-link">ホームに戻る</Link>
+              <Link to="/" className="home-link">Homeに戻る</Link>
               {title && <h3 className="small-title">{title}</h3>}
             </>
           )}
@@ -155,12 +172,13 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           {/* （変更）単独の紹介ボタンは未ログインのときだけ表示する */}
           {!isLandingPage && !user && (
             <button className="intro-btn" onClick={() => navigate("/landing_page")} aria-label="紹介ページへ">
-              Vocabstreamの紹介ページ
+              <span className="intro-full">Vocabstreamの紹介ページ</span>
+              <span className="intro-short">紹介ページ</span>
             </button>
           )}
 
           {isLandingPage ? (
-            <button className="cta-btn" onClick={() => navigate("/")}>ログインせずに試す</button>
+            <button className="cta-btn" onClick={() => navigate("/")}>アプリを使用する</button>
           ) : isLoginPage ? (
             null
           ) : user ? (
@@ -172,7 +190,8 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
               </button>
             </>
           ) : (
-            <Link to="/login" className="cta-btn link-as-btn">ログイン</Link>
+            // ログインボタンは非表示のまま
+            null
           )}
         </div>
       </header>

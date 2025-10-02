@@ -34,7 +34,7 @@ export default function Settings() {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div style={{ padding: "20px", paddingTop: "92px", fontFamily: "Arial, sans-serif" }}>
       <h2 style={{ fontSize: "32px", marginBottom: "30px" }}>設定</h2>
 
       <div style={optionStyle}>
