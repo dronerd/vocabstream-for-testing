@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -13,157 +13,101 @@ export default function LandingPage() {
     <div className="landing-root" style={{ fontFamily: "Inter, Arial, sans-serif" }}>
       <style>{`
         :root{
-          --accent:#234E52; /* original accent (teal) kept for small elements */
+          --accent:#234E52;
           --muted:#666;
-          /* ページ全体の背景を画面いっぱいに広げる（薄いグレー・青みを含む） */
           --page-bg: #eef3f6;
           --card-bg: #ffffff;
           --chip-bg: #f1f3f4;
-          --btn-bg: #0B3D91; /* 紺ボタン */
-          --card-border: rgba(11,61,145,0.06); /* 細い紺の枠線 */
+          --btn-bg: #0B3D91;
+          --card-border: rgba(11,61,145,0.06);
+          --radius: 12px;
         }
+
+        /* reset / layout */
         *{box-sizing:border-box}
         html,body,#root{height:100%; margin:0; padding:0; background:var(--page-bg)}
         .landing-root{color:#222;width:100%;min-height:100vh;overflow-x:hidden;background:transparent}
 
-        /* Responsive typography */
-        :root { --base-font: clamp(13px, 1.6vw, 18px); }
-        body, .landing-root { font-size: var(--base-font); }
+        /* responsive base font using clamp */
+        :root { --base-font: clamp(13px, 1.8vw, 16px); }
+        .landing-root{font-size:var(--base-font)}
 
-        /* Layout */
-        .hero{padding:28px 5vw 20px;background:transparent}
-        .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
-        .hero-card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(20,40,80,0.04); border: 1px solid var(--card-border)}
-        /* profile card: ensure flex children can shrink properly */
-        .profile-card{
-          background:var(--card-bg);
-          padding:14px;
-          border-radius:12px;
-          display:flex;
-          gap:12px;
-          align-items:center;
-          max-width:100%;
-          border: 1px solid var(--card-border);
-        }
-        /* image sizing + prevent growth */
-        .profile-card img{
-          flex: 0 0 auto;
-          width:64px;
-          height:64px;
-          border-radius:12px;
-          object-fit:cover;
-        }
-        /* meta area can shrink and wrap */
-        .profile-card .profile-meta{
-          min-width:0;
-          flex:1 1 auto;
-          overflow:hidden;
-        }
-        /* inline row: role label next to image */
-        .profile-top-row{
-          display:flex;
-          align-items:center;
-          gap:10px;
-          flex-wrap:wrap;
-        }
-        /* 創設者 / 開発・運営 を黒に変更 */
-        .role-label{
-          background:transparent;
-          color:#000;
-          font-weight:700;
-          font-size:0.95em;
-          white-space:nowrap;
-        }
-        .profile-name{
-          font-size:1.05em;
-          font-weight:700;
-          color:#222;
-          text-decoration:none;
-        }
+        /* Hero */
+        .hero{padding:20px 5vw 18px}
+        .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
 
-        /* ensure text wraps safely */
-        .profile-card .profile-meta a,
-        .profile-card .profile-meta div,
-        .profile-card .profile-meta p {
-          overflow-wrap: anywhere;
-          word-break: break-word;
-          white-space: normal;
-          margin:0;
-        }
+        /* cards */
+        .hero-card, .card{background:var(--card-bg);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,40,80,0.04); border: 1px solid var(--card-border)}
 
-        h1{font-size: clamp(24px, 6vw, 40px); margin:6px 0;line-height:1.08}
-        h2{font-size: clamp(16px, 2.6vw, 22px); margin:0 0 8px}
-        p.lead{margin-top:10px;color:#444;font-size: clamp(13px, 2.2vw, 18px);max-width:980px}
+        /* profile (aside) */
+        .profile-card{background:var(--card-bg);padding:12px;border-radius:var(--radius);display:flex;gap:12px;align-items:center;max-width:100%;border: 1px solid var(--card-border)}
+        .profile-card img{flex:0 0 auto;width:56px;height:56px;border-radius:10px;object-fit:cover}
+        .profile-meta{min-width:0;flex:1 1 auto;overflow:hidden}
+        .profile-top-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+        .role-label{background:transparent;color:#000;font-weight:700;font-size:0.95em;white-space:nowrap}
+        .profile-name{font-size:1.02em;font-weight:700;color:#222;text-decoration:none}
 
-        .chips{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-        .chip{background:var(--chip-bg);padding:8px 12px;border-radius:999px;font-size:13px;color:#222}
+        h1{font-size: clamp(20px, 6vw, 36px); margin:6px 0;line-height:1.08}
+        h2{font-size: clamp(15px, 2.6vw, 20px); margin:0 0 8px}
+        p.lead{margin-top:8px;color:#444;font-size: clamp(13px, 2.2vw, 16px);max-width:980px}
 
-        main{width:100%;padding:24px 5vw}
-        .grid-stack{max-width:1100px;margin:0 auto;display:grid;gap:18px}
-        .card{background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:0 5px 16px rgba(20,40,80,0.03); border: 1px solid var(--card-border)}
+        .chips{margin-top:10px;display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}
+        .chip{background:var(--chip-bg);padding:8px 12px;border-radius:999px;font-size:13px;color:#222;flex:0 0 auto}
+
+        main{width:100%;padding:18px 5vw}
+        .grid-stack{max-width:1100px;margin:0 auto;display:grid;gap:14px}
+
         footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
         a.inline-link{color:var(--accent);text-decoration:underline}
 
-        /* Buttons */
-        .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+        /* Buttons: stack on small screens, inline on larger */
+        .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;flex-direction:column}
         .btn-primary, .btn-secondary {
-          appearance:none;
-          border:0;
-          cursor:pointer;
-          padding:12px 16px;
-          border-radius:12px;
-          font-weight:700;
-          font-size: clamp(14px, 1.6vw, 16px);
-          min-height:48px;
-          display:inline-flex;
-          align-items:center;
-          justify-content:center;
+          appearance:none;border:0;cursor:pointer;padding:12px 14px;border-radius:12px;font-weight:700;font-size: clamp(14px, 1.6vw, 15px);min-height:44px;display:inline-flex;align-items:center;justify-content:center;width:100%;
         }
-        .btn-primary{background:var(--btn-bg);color:#fff;flex:1 1 auto; min-width:0}
-        .btn-secondary{background:var(--card-bg);border:1px solid #e6e8ea;color:#222;flex:1 1 auto; min-width:0}
+        .btn-primary{background:var(--btn-bg);color:#fff}
+        .btn-secondary{background:transparent;border:1px solid rgba(0,0,0,0.06);color:#222}
 
-        /* profile text */
-        .bio{color:#444;font-size: clamp(13px, 1.6vw, 15px);line-height:1.6;margin-top:8px; overflow-wrap:anywhere}
-
-        /* email below に余白を設ける */
-        .email{margin-top:6px; margin-bottom:12px; font-size:0.95em}
-
-        /* Social buttons (Profile, LinkedIn, Note, GitHub) */
+        /* social */
         .social-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-        .social-btn{
-          background:var(--btn-bg);
-          color:#fff;
-          padding:8px 12px;
-          border-radius:10px;
-          text-decoration:none;
-          font-weight:700;
-          display:inline-flex;
-          align-items:center;
-          gap:8px;
-          min-width:0;
-        }
-        .social-btn.secondary{background:transparent; color:var(--btn-bg); border:1px solid var(--btn-bg)}
+        .social-btn{background:var(--btn-bg);color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px}
+        .social-btn.secondary{background:transparent;color:var(--btn-bg);border:1px solid var(--btn-bg)}
 
-        @media(min-width:600px){
-          .hero { padding:48px 6vw 30px; }
-        }
+        /* bio */
+        .bio{color:#444;font-size: clamp(13px, 1.6vw, 15px);line-height:1.6;margin-top:8px;overflow-wrap:anywhere}
+        .email{margin-top:6px;margin-bottom:12px;font-size:0.95em}
 
-        @media(min-width:960px){
-          .hero-inner{grid-template-columns:2fr 360px;gap:20px}
-          .hero{padding:92px 6vw 40px}
-          .hero-card{padding:28px;border-radius:16px}
-          /* On wide screens put profile as column, but still keep the role visible near the top */
-          .profile-card{flex-direction:column;align-items:flex-start;padding:22px;border-radius:14px}
+        /* focus styles */
+        .btn-primary:focus, .btn-secondary:focus, .social-btn:focus, a:focus{outline:3px solid rgba(11,61,145,0.16);outline-offset:2px}
+
+        /* larger screens adjustments */
+        @media(min-width:760px){
+          .hero{padding:36px 6vw 28px}
+          .hero-inner{grid-template-columns:1fr 320px;gap:20px}
+          .btn-row{flex-direction:row}
+          .btn-primary, .btn-secondary{width:auto;min-width:140px}
+          .profile-card{flex-direction:column;align-items:flex-start;padding:18px;border-radius:14px}
           .profile-card img{width:76px;height:76px}
-          .profile-card .profile-meta{width:100%}
-          .btn-primary, .btn-secondary { flex:unset; }
-          .profile-top-row{align-items:center}
+          .profile-meta{width:100%}
+          /* make aside sticky so it stays visible on larger viewports */
+          .profile-card{position:sticky;top:24px}
+        }
+
+        /* very large screens */
+        @media(min-width:1100px){
+          .hero-inner{max-width:1200px}
+          .grid-stack{grid-template-columns:repeat(2, minmax(0,1fr));gap:18px}
+        }
+
+        /* small-screen polish */
+        @media(max-width:420px){
+          .profile-card img{width:48px;height:48px}
+          h1{font-size:20px}
         }
 
         .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
       `}</style>
 
-      {/* Hero */}
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-inner">
           <div className="hero-card" role="region" aria-labelledby="hero-title">
@@ -204,7 +148,7 @@ export default function LandingPage() {
               </a>
             </div>
 
-            <p style={{ marginTop: 10, fontSize: "0.85em" }}>
+            <p style={{ marginTop: 10, fontSize: "0.9em" }}>
               *大学生による個人プロジェクトのため、アプリの機能が安定していない可能性があります。ご意見やフィードバックは大歓迎です。
             </p>
 
@@ -217,13 +161,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Profile */}
           <aside className="profile-card" aria-labelledby="profile-title">
-            <img
-              src="/profile.JPG"
-              alt="Yuto Kuroki"
-              loading="lazy"
-            />
+            <img src="/profile.JPG" alt="Yuto Kuroki" loading="lazy" />
 
             <div className="profile-meta">
               <div className="profile-top-row" aria-hidden>
@@ -233,20 +172,14 @@ export default function LandingPage() {
 
               <div style={{ marginTop: 6, fontSize: "0.95em" }}>早稲田大学 基幹理工学部 1年</div>
               <div className="email">yutokuroki.projectfluence@gmail.com</div>
-              <br />
+
               <p className="bio" aria-live="polite">
                 英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に合格（上位1%）。現在はTOEFL iBT 116/120、TOEIC 990/990。ドイツ語はC1取得。専門は情報工学。ISEFなど国際イベントでの発表経験あり。
               </p>
 
               <div className="social-row">
-                {/* Internal route to profile */}
                 <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" className="social-btn">プロフィール</a>
-
-
-                {/* External links */}
                 <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer" className="social-btn">LinkedIn</a>
-
-                {/* Placeholders - you can replace the hrefs later */}
                 <a href="https://note.com/projectfluence" target="_blank" rel="noopener noreferrer" className="social-btn">Note</a>
                 <a href="https://github.com/dronerd" target="_blank" rel="noopener noreferrer" className="social-btn">GitHub</a>
               </div>
@@ -255,7 +188,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Main stacked content */}
       <main>
         <div className="grid-stack">
           <article className="card" role="article" aria-labelledby="vocabstream-title">
@@ -298,13 +230,15 @@ export default function LandingPage() {
             </ul>
           </article>
         </div>
-         <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
+
+        <div style={{ maxWidth: 1100, margin: "18px auto 0" }}>
+          <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
+        </div>
       </main>
 
       <footer style={{ padding: 20, textAlign: "center", color: "#666" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>© Project Fluence — VocabStream</div>
       </footer>
-     
     </div>
   );
 }

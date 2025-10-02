@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
@@ -6,15 +6,14 @@ export default function Home() {
   const { user } = useAuth();
   const nav = useNavigate();
 
-
-  const buttonStyles = [ //リストを作っていて、あとで使用する。インデックスで呼び出す
-  { backgroundColor: "#6fa8dc" }, // 柔らかいブルー
-  { backgroundColor: "#e9967a" }, // サーモン系のレッド
-  { backgroundColor: "#77dd77" }, // パステルグリーン
-  { backgroundColor: "#b0b0b0" }, // ライトグレー
+  const buttonStyles = [
+    { backgroundColor: "#6fa8dc" }, // 柔らかいブルー
+    { backgroundColor: "#e9967a" }, // サーモン系のレッド
+    { backgroundColor: "#77dd77" }, // パステルグリーン
+    { backgroundColor: "#b0b0b0" }, // ライトグレー
   ];
 
-  const options = [ //リストを作っていて、あとで使用する
+  const options = [
     { label: "単語を学習する", path: "/learn" },
     { label: "単語を復習する", path: "/review" },
     { label: "統計を見る", path: "/stats" },
@@ -22,73 +21,150 @@ export default function Home() {
   ];
 
   return (
-    
-    <div style={{ padding: 20, paddingTop: 92, fontFamily: "sans-serif" }}>
+    <div className="home-container">
+      {/* Inline CSS so you can drop this file in immediately */}
+      <style>{`
+        .home-container {
+          padding: 20px;
+          padding-top: 92px;
+          font-family: sans-serif;
+          color: #1c1c1c;
+        }
+
+        .heading {
+          font-size: 50px;
+          margin: 4px 0;
+        }
+
+        .subtitle {
+          font-size: 20px;
+          color: #000;
+          margin: 8px 0 20px 0;
+          line-height: 1.6;
+        }
+
+        .user-box {
+          padding: 12px;
+          border: 1px solid #eee;
+          border-radius: 12px;
+          margin-bottom: 12px;
+          font-size: 30px;
+          background: #fff;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .options-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          align-items: stretch;
+        }
+
+        .option-btn {
+          padding: 40px;
+          border: none;
+          border-radius: 12px;
+          color: #1c1c1c;
+          font-size: 40px;
+          font-weight: 700;
+          cursor: pointer;
+          text-align: center;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+          transition: transform .12s ease, box-shadow .12s ease;
+        }
+
+        .option-btn:active {
+          transform: translateY(1px);
+        }
+
+        .privacy-link {
+          grid-column: 1 / -1;
+          padding-top: 8px;
+        }
+
+        /* ===== Mobile / small screens ===== */
+        @media (max-width: 600px) {
+          .heading {
+            font-size: 28px;
+          }
+          .subtitle {
+            font-size: 14px;
+          }
+          .user-box {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 10px;
+          }
+          .options-grid {
+            grid-template-columns: 1fr;
+            gap: 10px;
+          }
+          .option-btn {
+            padding: 14px 16px;
+            font-size: 16px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            font-weight: 700;
+            text-align: left; /* easier to scan on mobile */
+          }
+          .subtitle a {
+            word-break: break-word;
+          }
+        }
+      `}</style>
+
       {/* Main heading */}
-      <h1 style={{ fontSize: 50, margin: "4px 0" }}>Home</h1>
+      <h1 className="heading">Home</h1>
 
       {/* Subtitle / description */}
-      <p style={{ 
-        fontSize: 20, 
-        color: "black", 
-        margin: "8px 0 20px 0", 
-        lineHeight: 1.6 
-      }}>
-      <strong>VocabStream</strong>
-      は、
-      <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline" }}>
-      <strong>黒木勇人</strong>
-      </a>
-      が創設し個人で開発・運営している
-      <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: "underline" }}>
-      <strong>「Project Fluence」</strong>
-      </a>
-      の一環として制作された、無料の英単語学習アプリです。
+      <p className="subtitle">
+        <strong>VocabStream</strong> は、
+        <a
+          href="https://yutokuroki.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "underline", margin: "0 4px" }}
+        >
+          <strong>黒木勇人</strong>
+        </a>
+        が創設し個人で開発・運営している
+        <a
+          href="https://projectfluence.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "underline", margin: "0 4px" }}
+        >
+          <strong>「Project Fluence」</strong>
+        </a>
+        の一環として制作された、無料の英単語学習アプリです。
       </p>
 
       {/* User info box */}
-      <div
-        style={{
-          padding: 12,
-          border: "1px solid #eee",
-          borderRadius: 12,
-          marginBottom: 12,
-          fontSize: 30,
-        }}
-      >
-        <div>Level: <strong>{user?.level ?? "—"}</strong></div>
-        <div>累計獲得単語数: <strong>{user?.total_words ?? 0}</strong></div>
+      <div className="user-box">
+        <div>
+          Level: <strong>{user?.level ?? "—"}</strong>
+        </div>
+        <div>
+          累計獲得単語数: <strong>{user?.total_words ?? 0}</strong>
+        </div>
       </div>
 
       {/* Option buttons */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 16,
-        }}
-      >
+      <div className="options-grid">
         {options.map((opt, idx) => (
           <button
             key={idx}
             onClick={() => nav(opt.path)}
-            style={{
-              ...buttonStyles[idx],
-              padding: 40,
-              border: "none",
-              borderRadius: 12,
-              color: "#1c1c1c",
-              
-              fontSize: 40,
-              fontWeight: "bold",
-              cursor: "pointer",
-            }}
+            className="option-btn"
+            style={{ ...buttonStyles[idx] }}
           >
             {opt.label}
           </button>
-          
         ))}
-        <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
+
+        <a className="privacy-link" href="/privacy" target="_blank" rel="noopener noreferrer">
+          <strong>Privacy Policy</strong>
+        </a>
       </div>
     </div>
   );

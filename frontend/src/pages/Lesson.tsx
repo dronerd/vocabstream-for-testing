@@ -9,7 +9,6 @@ interface LessonWord {
   japaneseMeaning?: string;
   synonyms?: string;
   antonyms?: string;
-  // allow extra fields from JSON
   [k: string]: any;
 }
 
@@ -53,6 +52,11 @@ const Lesson: React.FC = () => {
   const [showRevealButton, setShowRevealButton] = useState<boolean>(false);
   const [paragraphScore, setParagraphScore] = useState<number | null>(null);
 
+  // --- responsive / touch state ---
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
+  const [activeChoice, setActiveChoice] = useState<number | null>(null); // for mobile tap-to-place
+
   // Helper: try fetch JSON and return parsed object or null
   async function tryFetchJson(path: string): Promise<any | null> {
     try {
@@ -77,7 +81,6 @@ const Lesson: React.FC = () => {
       const [genreFolder, numStr] = id.split("-lesson-");
       if (!genreFolder || !numStr) return null;
 
-      // Candidate file paths under public/data (served at /data/...)
       const candidates = [
         `/data/${genreFolder}/Lesson${numStr}.json`,
         `/data/${genreFolder}/lesson${numStr}.json`,
@@ -97,7 +100,7 @@ const Lesson: React.FC = () => {
       if (cancelled) return;
       if (!data) {
         console.warn("lesson file not found locally for", lessonId);
-        setLesson({ words: [] });
+        setLesson({ words: [] } as LessonData);
       } else {
         setLesson(data);
       }
@@ -107,6 +110,28 @@ const Lesson: React.FC = () => {
       cancelled = true;
     };
   }, [lessonId]);
+
+  // detect small screen & touch
+  useEffect(() => {
+    function update() {
+      try {
+        const small = window.matchMedia && window.matchMedia("(max-width: 600px)").matches;
+        setIsSmallScreen(Boolean(small));
+      } catch {
+        setIsSmallScreen(window.innerWidth <= 600);
+      }
+      const touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      setIsTouchDevice(Boolean(touch));
+    }
+    update();
+    window.addEventListener("resize", update);
+    // also listen for orientation changes as helpful
+    window.addEventListener("orientationchange", update);
+    return () => {
+      window.removeEventListener("resize", update);
+      window.removeEventListener("orientationchange", update);
+    };
+  }, []);
 
   // --- generate quiz locally when user moves to quiz step ---
   useEffect(() => {
@@ -198,6 +223,7 @@ const Lesson: React.FC = () => {
       setGraded(false);
       setShowRevealButton(false);
       setParagraphScore(null);
+      setActiveChoice(null);
     }
   }, [step, lesson, choiceWords]);
 
@@ -205,16 +231,27 @@ const Lesson: React.FC = () => {
   const totalWords = lesson.words.length;
   const slideStep = step - 1;
   const isSlide = step > 0 && slideStep < totalWords;
-  const blueButtonStyle = {
-    fontSize: "24px",
-    padding: "10px 20px",
-    marginTop: "30px",
+
+  // responsive sizes
+  const headingSize = isSmallScreen ? 20 : 32;
+  const mainWordSize = isSmallScreen ? 28 : 48;
+  const wordListSize = isSmallScreen ? 20 : 40;
+  const paragraphFontSize = isSmallScreen ? 14 : 20;
+  const quizTextSize = isSmallScreen ? 16 : 28;
+  const buttonFontSize = isSmallScreen ? 16 : 24;
+  const buttonWidth = isSmallScreen ? "100%" : 360;
+
+  const blueButtonStyle: React.CSSProperties = {
+    fontSize: buttonFontSize,
+    padding: isSmallScreen ? "8px 12px" : "10px 20px",
+    marginTop: 16,
     backgroundColor: "#003366",
     color: "#fff",
     border: "none",
     borderRadius: 8,
     cursor: "pointer",
-  } as React.CSSProperties;
+    width: buttonWidth,
+  };
 
   function handleChoose(choiceIndex: number) {
     if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
@@ -224,7 +261,7 @@ const Lesson: React.FC = () => {
     if (isCorrect) setQuizScore((s) => s + 1);
   }
 
-  // Drag/drop handlers
+  // Drag/drop handlers (desktop)
   function handleDragStart(e: React.DragEvent, choiceIndex: number) {
     e.dataTransfer.setData("text/plain", String(choiceIndex));
     e.dataTransfer.effectAllowed = "move";
@@ -241,8 +278,14 @@ const Lesson: React.FC = () => {
     const choiceIndex = Number(data);
     if (Number.isNaN(choiceIndex)) return;
 
+    placeChoiceToSlot(choiceIndex, slotIndex);
+  }
+
+  // place choice helper used by both drag & tap-to-place
+  function placeChoiceToSlot(choiceIndex: number, slotIndex: number) {
     setPlacedChoices((prev) => {
       const next = [...prev];
+      // remove same choice if placed elsewhere
       for (let i = 0; i < next.length; i++) {
         if (next[i] === choiceIndex) next[i] = null;
       }
@@ -254,6 +297,8 @@ const Lesson: React.FC = () => {
       next[slotIndex] = "idle";
       return next;
     });
+    // after placing on mobile, clear activeChoice
+    setActiveChoice(null);
   }
 
   function removeFromSlot(slotIndex: number) {
@@ -267,6 +312,7 @@ const Lesson: React.FC = () => {
       next[slotIndex] = "idle";
       return next;
     });
+    setActiveChoice(null);
   }
 
   function handleGrade() {
@@ -307,19 +353,37 @@ const Lesson: React.FC = () => {
 
   // Helper to render choice box
   function ChoiceBox({ word, idx, disabled }: { word: string; idx: number; disabled: boolean }) {
+    const isSelected = activeChoice === idx;
+    const baseStyle: React.CSSProperties = {
+      minWidth: isSmallScreen ? 92 : 120,
+      padding: isSmallScreen ? "6px 8px" : "8px 12px",
+      borderRadius: 8,
+      border: `2px solid ${isSelected ? "#ffcc00" : "#003366"}`,
+      backgroundColor: disabled ? "#ddd" : "#fff",
+      cursor: disabled ? "not-allowed" : isTouchDevice ? "pointer" : "grab",
+      textAlign: "center",
+      userSelect: "none",
+      display: "inline-block",
+      marginBottom: 8,
+    };
+
+    const handleClick = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (disabled) return;
+      if (isTouchDevice) {
+        // tap to select / deselect on touch devices
+        setActiveChoice((prev) => (prev === idx ? null : idx));
+      }
+    };
+
     return (
       <div
-        draggable={!disabled}
-        onDragStart={(e) => handleDragStart(e, idx)}
-        style={{
-          minWidth: 120,
-          padding: "8px 12px",
-          borderRadius: 8,
-          border: "2px solid #003366",
-          backgroundColor: disabled ? "#ddd" : "#fff",
-          cursor: disabled ? "not-allowed" : "grab",
-          textAlign: "center",
-        }}
+        draggable={!isTouchDevice && !disabled}
+        onDragStart={(e) => !isTouchDevice && handleDragStart(e as any, idx)}
+        onClick={handleClick}
+        role="button"
+        aria-pressed={isSelected}
+        style={baseStyle}
       >
         {word}
       </div>
@@ -334,44 +398,54 @@ const Lesson: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         minHeight: "100vh",
-        padding: "20px",
-        paddingTop : "92px",
+        padding: isSmallScreen ? "12px" : "20px",
+        paddingTop: "92px",
         fontFamily: "sans-serif",
         textAlign: "center",
       }}
     >
       <button
         onClick={() => nav(-1)}
-        style={{ marginBottom: 20, padding: "8px 4px", borderRadius: 8, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}
+        style={{
+          marginBottom: 12,
+          padding: isSmallScreen ? "6px 8px" : "8px 4px",
+          borderRadius: 8,
+          border: "none",
+          backgroundColor: "#555",
+          color: "#fff",
+          cursor: "pointer",
+        }}
       >
         レッスン一覧に戻る
       </button>
 
       {/* --- 今日の単語 --- */}
       {step === 0 && (
-        <div>
-          <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>今日の単語</h2>
+        <div style={{ width: "100%", maxWidth: 900 }}>
+          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>今日の単語</h2>
           <ul style={{ listStyle: "none", padding: 0 }}>
             {lesson.words.slice(0, 10).map((w: LessonWord, i: number) => (
-              <li key={i} style={{ fontWeight: "bold", fontSize: "40px", marginBottom: "5px" }}>
+              <li key={i} style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: 6 }}>
                 {w.word}
               </li>
             ))}
           </ul>
-          <button onClick={() => setStep(1)} style={blueButtonStyle}>
-            次へ（スライド）
-          </button>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button onClick={() => setStep(1)} style={blueButtonStyle}>
+              次へ（スライド）
+            </button>
+          </div>
         </div>
       )}
 
       {/* --- 単語スライド --- */}
       {isSlide && (
-        <div>
-          <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>単語スライド</h2>
-          <p style={{ fontSize: "48px", fontWeight: "bold", marginBottom: "20px" }}>{lesson.words[slideStep].word}</p>
-          <p style={{ fontSize: "28px", lineHeight: "1.8" }}>
+        <div style={{ width: "100%", maxWidth: 900 }}>
+          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>単語スライド</h2>
+          <p style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: 12 }}>{lesson.words[slideStep].word}</p>
+          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: "left" }}>
             <strong>Meaning:</strong> {lesson.words[slideStep].meaning}
             <br />
             <strong>日本語訳:</strong> {lesson.words[slideStep].japaneseMeaning || "なし"}
@@ -382,47 +456,53 @@ const Lesson: React.FC = () => {
             <br />
             <strong>例文:</strong> {lesson.words[slideStep].example || "なし"}
           </p>
-          <button onClick={() => setStep(step + 1)} style={blueButtonStyle}>
-            {slideStep + 1 < totalWords ? "次の単語" : "ミニテストへ"}
-          </button>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button onClick={() => setStep(step + 1)} style={blueButtonStyle}>
+              {slideStep + 1 < totalWords ? "次の単語" : "ミニテストへ"}
+            </button>
+          </div>
         </div>
       )}
 
       {/* --- クイズ（穴埋め 3択） --- */}
       {step === totalWords + 1 && (
-        <div>
-          <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>穴埋めクイズ（3択）</h2>
+        <div style={{ width: "100%", maxWidth: 900 }}>
+          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>穴埋めクイズ（3択）</h2>
           {quizLoading ? (
             <p>クイズを読み込み中...</p>
           ) : quizError ? (
             <div>
               <p>クイズの作成に失敗しました。</p>
-              <button
-                onClick={() => {
-                  setFinalScore(0);
-                  setStep(totalWords + 2);
-                }}
-                style={blueButtonStyle}
-              >
-                採点へ
-              </button>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <button
+                  onClick={() => {
+                    setFinalScore(0);
+                    setStep(totalWords + 2);
+                  }}
+                  style={blueButtonStyle}
+                >
+                  採点へ
+                </button>
+              </div>
             </div>
           ) : quizQuestions.length === 0 ? (
             <div>
               <p>クイズが見つかりません。</p>
-              <button
-                onClick={() => {
-                  setFinalScore(0);
-                  setStep(totalWords + 2);
-                }}
-                style={blueButtonStyle}
-              >
-                採点へ
-              </button>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <button
+                  onClick={() => {
+                    setFinalScore(0);
+                    setStep(totalWords + 2);
+                  }}
+                  style={blueButtonStyle}
+                >
+                  採点へ
+                </button>
+              </div>
             </div>
           ) : (
             <div>
-              <p style={{ fontSize: "28px", marginBottom: "20px" }}>
+              <p style={{ fontSize: quizTextSize, marginBottom: 12, textAlign: "left" }}>
                 <span dangerouslySetInnerHTML={{ __html: quizQuestions[quizIndex].blank_sentence }} />
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
@@ -436,7 +516,13 @@ const Lesson: React.FC = () => {
                     <button
                       key={i}
                       onClick={() => handleChoose(i)}
-                      style={{ ...blueButtonStyle, fontSize: 20, padding: "8px 16px", width: 360, backgroundColor }}
+                      style={{
+                        ...blueButtonStyle,
+                        fontSize: isSmallScreen ? 16 : 20,
+                        padding: isSmallScreen ? "8px 12px" : "8px 16px",
+                        width: isSmallScreen ? "100%" : 360,
+                        backgroundColor,
+                      }}
                       disabled={selectedChoice !== null}
                     >
                       {c}
@@ -445,22 +531,24 @@ const Lesson: React.FC = () => {
                 })}
               </div>
               {selectedChoice !== null && (
-                <button
-                  onClick={() => {
-                    if (quizIndex + 1 < quizQuestions.length) {
-                      setQuizIndex(quizIndex + 1);
-                      setSelectedChoice(null);
-                    } else {
-                      setFinalScore(quizScore);
-                      setStep(totalWords + 2);
-                    }
-                  }}
-                  style={{ ...blueButtonStyle, marginTop: 20 }}
-                >
-                  次の問題へ
-                </button>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <button
+                    onClick={() => {
+                      if (quizIndex + 1 < quizQuestions.length) {
+                        setQuizIndex(quizIndex + 1);
+                        setSelectedChoice(null);
+                      } else {
+                        setFinalScore(quizScore);
+                        setStep(totalWords + 2);
+                      }
+                    }}
+                    style={{ ...blueButtonStyle, marginTop: 12 }}
+                  >
+                    次の問題へ
+                  </button>
+                </div>
               )}
-              <p style={{ marginTop: 16, fontSize: 18 }}>
+              <p style={{ marginTop: 12, fontSize: 14 }}>
                 {quizIndex + 1} / {quizQuestions.length}
               </p>
             </div>
@@ -470,15 +558,15 @@ const Lesson: React.FC = () => {
 
       {/* --- 結果表示 --- */}
       {step === totalWords + 2 && (
-        <div>
-          <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>結果</h2>
-          <p style={{ fontSize: "28px" }}>
+        <div style={{ width: "100%", maxWidth: 900 }}>
+          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>結果</h2>
+          <p style={{ fontSize: paragraphFontSize }}>
             {finalScore !== null ? `正答数: ${finalScore} / ${quizQuestions.length}` : "正答率: 0%"}
           </p>
-          <p style={{ fontSize: "20px", marginTop: 10 }}>
+          <p style={{ fontSize: isSmallScreen ? 16 : 20, marginTop: 8 }}>
             {finalScore !== null ? `正答率: ${Math.round((finalScore / (quizQuestions.length || 1)) * 100)}%` : ""}
           </p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 20 }}>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
             <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>
               単語穴埋めに進む
             </button>
@@ -489,12 +577,32 @@ const Lesson: React.FC = () => {
         </div>
       )}
 
-      {/* --- 段落穴埋め（ドラッグ＆ドロップ） --- */}
+      {/* --- 段落穴埋め（ドラッグ＆ドロップ OR tap-to-place on mobile） --- */}
       {step === totalWords + 3 && (
-        <div style={{ maxWidth: 900 }}>
-          <h2 style={{ fontSize: 32, marginBottom: 20 }}>段落穴埋め（ドラッグして空欄に入れてください）</h2>
+        // For small screen we split into two stacked areas: paragraph (top) and choices (bottom panel)
+        <div
+          style={{
+            width: "100%",
+            maxWidth: 900,
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+          }}
+        >
+          <h2 style={{ fontSize: headingSize, marginBottom: 8 }}>段落穴埋め（ドラッグして空欄に入れてください）</h2>
 
-          <div style={{ fontSize: 20, lineHeight: 1.8, border: "1px solid #ddd", padding: 20, borderRadius: 8, minHeight: 120 }}>
+          {/* top: paragraph / blanks */}
+          <div
+            style={{
+              fontSize: paragraphFontSize,
+              lineHeight: 1.6,
+              border: "1px solid #ddd",
+              padding: isSmallScreen ? 12 : 20,
+              borderRadius: 8,
+              minHeight: 140,
+              textAlign: "left",
+            }}
+          >
             {renderParts.map((p, i) => {
               if (typeof p === "string") {
                 return <span key={i}>{p}</span>;
@@ -503,35 +611,67 @@ const Lesson: React.FC = () => {
                 const placed = placedChoices[slotIndex];
                 const status = slotResults[slotIndex] || "idle";
                 const bg = status === "idle" ? "#fff" : status === "correct" || status === "revealed" ? "#c8f7c5" : "#f7c5c5";
+                const slotStyle: React.CSSProperties = {
+                  display: "inline-block",
+                  minWidth: isSmallScreen ? 90 : 140,
+                  padding: isSmallScreen ? "6px 8px" : "6px 10px",
+                  margin: "0 6px",
+                  border: "2px dashed #003366",
+                  borderRadius: 6,
+                  backgroundColor: bg,
+                  verticalAlign: "middle",
+                  cursor: isTouchDevice ? "pointer" : "auto",
+                };
+
+                const handleSlotClick = (e?: React.MouseEvent) => {
+                  if (!isTouchDevice) return;
+                  // if a choice is active, place it
+                  if (activeChoice !== null) {
+                    placeChoiceToSlot(activeChoice, slotIndex);
+                    return;
+                  }
+                  // if tapped on an already placed slot, remove it
+                  if (placed !== null) {
+                    removeFromSlot(slotIndex);
+                  }
+                };
+
                 return (
                   <React.Fragment key={i}>
                     <span
                       onDragOver={handleDragOver}
                       onDrop={(e) => handleDrop(e, slotIndex)}
-                      style={{
-                        display: "inline-block",
-                        minWidth: 140,
-                        padding: "6px 10px",
-                        margin: "0 6px",
-                        border: "2px dashed #003366",
-                        borderRadius: 6,
-                        backgroundColor: bg,
-                        verticalAlign: "middle",
-                      }}
+                      onClick={handleSlotClick}
+                      style={slotStyle}
                     >
                       {placed === null ? (
-                        <em style={{ color: "#666" }}>ここにドラッグ</em>
+                        <em style={{ color: "#666", fontSize: isSmallScreen ? 12 : 14 }}>ここにドラッグ{isTouchDevice ? " またはタップして配置" : ""}</em>
                       ) : (
-                        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
-                          <div style={{ fontWeight: 700 }}>{choiceWords[placed]}</div>
-                          <button onClick={() => removeFromSlot(slotIndex)} style={{ border: "none", background: "transparent", cursor: "pointer" }}>
-                            ✕
-                          </button>
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: 8,
+                            fontSize: isSmallScreen ? 14 : 16,
+                            fontWeight: 700,
+                          }}
+                        >
+                          <div>{choiceWords[placed]}</div>
+                          {/* small cross for desktop; on mobile tapping the placed area removes */}
+                          {!isTouchDevice && (
+                            <button
+                              onClick={() => removeFromSlot(slotIndex)}
+                              style={{ border: "none", background: "transparent", cursor: "pointer", fontSize: 16 }}
+                            >
+                              ✕
+                            </button>
+                          )}
                         </div>
                       )}
                     </span>
                     {slotSuffixes[slotIndex] ? (
-                      <span key={`suf-${i}`} style={{ marginLeft: 6, color: "#666", fontStyle: "italic" }}>
+                      <span key={`suf-${i}`} style={{ marginLeft: 6, color: "#666", fontStyle: "italic", fontSize: paragraphFontSize }}>
                         {slotSuffixes[slotIndex]}
                       </span>
                     ) : null}
@@ -541,18 +681,66 @@ const Lesson: React.FC = () => {
             })}
           </div>
 
-          {/* choices area */}
-          <div style={{ marginTop: 20 }}>
-            <h3 style={{ marginBottom: 12 }}>単語（ドラッグしてください）</h3>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+          {/* bottom: choices area */}
+          <div
+            style={{
+              marginTop: 4,
+              // On small screen make bottom panel more prominent and scrollable
+              borderTop: isSmallScreen ? "1px solid #eee" : undefined,
+              paddingTop: isSmallScreen ? 8 : 0,
+            }}
+          >
+            {isTouchDevice && (
+              <div style={{ fontSize: 13, color: "#444", marginBottom: 8, textAlign: "left" }}>
+                操作方法: 単語をタップ → 空欄をタップで配置。配置済みの空欄をタップすると取り外せます。
+              </div>
+            )}
+
+            <h3 style={{ marginBottom: 8, fontSize: isSmallScreen ? 16 : 20 }}>単語（ドラッグしてください）</h3>
+
+            {/* choices container: horizontally scrollable on mobile, wrapped on desktop */}
+            <div
+              style={{
+                display: "flex",
+                gap: 8,
+                flexWrap: isSmallScreen ? "nowrap" : "wrap",
+                justifyContent: isSmallScreen ? "flex-start" : "center",
+                overflowX: isSmallScreen ? "auto" : "visible",
+                paddingBottom: isSmallScreen ? 8 : 0,
+                alignItems: "center",
+              }}
+              onClick={() => {
+                // tapping empty space clears activeChoice
+                if (isTouchDevice) setActiveChoice(null);
+              }}
+            >
               {choiceWords.map((w: string, i: number) => {
                 const isPlaced = placedChoices.includes(i);
-                return <ChoiceBox key={i} word={w} idx={i} disabled={isPlaced} />;
+                return (
+                  <div key={i} style={{ display: "inline-flex", alignItems: "center" }}>
+                    <ChoiceBox word={w} idx={i} disabled={isPlaced} />
+                  </div>
+                );
               })}
             </div>
+
+            {/* mobile helper: show currently selected choice */}
+            {isTouchDevice && (
+              <div style={{ marginTop: 8, display: "flex", gap: 8, alignItems: "center", justifyContent: "flex-start", overflowX: "auto" }}>
+                <div style={{ fontSize: 13, color: "#666", minWidth: 90 }}>選択中：</div>
+                <div style={{ minWidth: 90 }}>
+                  {activeChoice === null ? (
+                    <div style={{ fontSize: 13, color: "#999" }}>なし</div>
+                  ) : (
+                    <div style={{ fontWeight: 700 }}>{choiceWords[activeChoice]}</div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
-          <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center" }}>
+          {/* controls */}
+          <div style={{ marginTop: 12, display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap" }}>
             {!graded && (
               <button onClick={handleGrade} style={blueButtonStyle}>
                 採点する
@@ -581,35 +769,37 @@ const Lesson: React.FC = () => {
           </div>
 
           {graded && paragraphScore !== null && (
-            <p style={{ marginTop: 18, fontSize: 18 }}>穴埋め得点: {paragraphScore} / {slotCorrectWord.length || choiceWords.length}</p>
+            <p style={{ marginTop: 12, fontSize: isSmallScreen ? 14 : 18 }}>
+              穴埋め得点: {paragraphScore} / {slotCorrectWord.length || choiceWords.length}
+            </p>
           )}
         </div>
       )}
 
       {/* --- 最終サマリー（クイズ + 段落） --- */}
       {step === totalWords + 4 && (
-        <div>
-          <h2 style={{ fontSize: 32, marginBottom: 20 }}>レッスン合計スコア</h2>
-          <div style={{ fontSize: 20, marginBottom: 12 }}>
+        <div style={{ width: "100%", maxWidth: 900 }}>
+          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
+          <div style={{ fontSize: paragraphFontSize, marginBottom: 12, textAlign: "left" }}>
             <p>単語クイズ: {quizScore} / {quizQuestions.length}</p>
             <p>単語穴埋め: {paragraphScore ?? 0} / {slotCorrectWord.length || choiceWords.length}</p>
             <hr style={{ margin: "12px 0" }} />
-            <p style={{ fontSize: 22, fontWeight: 700 }}>
+            <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>
               合計: {quizScore + (paragraphScore ?? 0)} / {quizQuestions.length + (slotCorrectWord.length || choiceWords.length)}
             </p>
-            <p style={{ fontSize: 18, marginTop: 8 }}>
+            <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>
               正答率: {Math.round(((quizScore + (paragraphScore ?? 0)) / (quizQuestions.length + (slotCorrectWord.length || choiceWords.length) || 1)) * 100)}%
             </p>
           </div>
 
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 20 }}>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
             <button onClick={() => nav(-1)} style={blueButtonStyle}>レッスンを終了して一覧へ</button>
           </div>
         </div>
       )}
     </div>
   );
-}
+};
 
 /* -------------------------
  helper: generate quiz from lesson (client-side)
