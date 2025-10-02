@@ -233,7 +233,7 @@ export default function LandingPage() {
 
               <div style={{ marginTop: 6, fontSize: "0.95em" }}>早稲田大学 基幹理工学部 1年</div>
               <div className="email">yutokuroki.projectfluence@gmail.com</div>
-
+              <br />
               <p className="bio" aria-live="polite">
                 英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に合格（上位1%）。現在はTOEFL iBT 116/120、TOEIC 990/990。ドイツ語はC1取得。専門は情報工学。ISEFなど国際イベントでの発表経験あり。
               </p>
@@ -298,12 +298,13 @@ export default function LandingPage() {
             </ul>
           </article>
         </div>
+         <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
       </main>
 
       <footer style={{ padding: 20, textAlign: "center", color: "#666" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>© Project Fluence — VocabStream</div>
       </footer>
-      <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
+     
     </div>
   );
 }

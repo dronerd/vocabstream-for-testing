@@ -20,13 +20,12 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // ログアウトして紹介ページへ遷移（async/awaitでTypeScriptの'void'チェック問題回避）
+  // ログアウトして紹介ページへ遷移
   const handleLogoutAndGotoLanding = async () => {
     try {
-      await logout?.(); // logout が同期でも Promise<void> でも問題なし
+      await logout?.();
     } catch (err) {
       console.error("logout error:", err);
-      // エラー時に遷移させたくない場合はここで return する
     } finally {
       navigate("/landing_page");
     }
@@ -35,9 +34,8 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
   return (
     <>
       <style>{`
-        /* Header の CSS（差し替え部分） */
         .app-header {
-          position: fixed;    /* ← fixed に変更 */
+          position: fixed;
           top: 0;
           left: 0;
           right: 0;
@@ -49,7 +47,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           grid-template-columns: auto 1fr auto;
           align-items: center;
           gap: 12px;
-          min-height: 72px;   /* この高さに合わせてコンテンツ側に余白を追加する */
+          min-height: 72px;
           width: 100%;
         }
         .header-left { display:flex; gap:12px; align-items:center; z-index: 3; }
@@ -64,7 +62,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           width: min(60%, 640px);
           text-align: center;
         }
-        
+
         .vocab-title {
           margin:0;
           font-weight:700;
@@ -79,7 +77,6 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
         .home-link { text-decoration:none; color:#007bff; font-weight:700; font-size: clamp(14px, 1.6vw, 20px); white-space:nowrap; cursor:pointer; }
         .welcome { font-weight:700; font-size: clamp(14px, 1.6vw, 20px); white-space:nowrap; }
 
-        /* CTA（太字・青・枠） */
         .cta-btn {
           font-weight: 700;
           color: #007bff;
@@ -94,7 +91,6 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           cursor: pointer;
         }
 
-        /* 紹介ボタン（目立ちすぎない別スタイル）*/
         .intro-btn {
           font-size: clamp(12px, 1.6vw, 16px);
           padding: 6px 10px;
@@ -109,24 +105,46 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           gap: 6px;
         }
 
-        /* フルテキスト / 短縮テキストを切り替えるためのユーティリティ */
+        /* フルテキスト / 短縮テキスト（CTA） */
+        .cta-full { display: inline; }
+        .cta-short { display: none; }
+
+        /* フルテキスト / 短縮テキスト（紹介ボタン） */
         .intro-full { display: inline; }
         .intro-short { display: none; }
 
-        /* ブレークポイント：必要ならここを調整してください（例: 420px） */
+        /* ページトップ用クラス */
+        .page-top { display: inline; }
+
+        /* ブレークポイント（スマホ） */
+        @media (max-width: 520px) {
+          .app-header { padding: 8px 10px; }
+          .header-left, .header-right { gap:6px; }
+          .vocab-title { font-size: 18px; }
+          .header-center { width: 70%; }
+
+          /* スマホではページトップを非表示にする */
+          .page-top { display: none; }
+
+          /* CTA は短縮版を表示 */
+          .cta-full { display: none; }
+          .cta-short { display: inline; }
+
+          /* 紹介ボタンも短縮 */
+          .intro-full { display: none; }
+          .intro-short { display: inline; }
+
+          /* ロゴを小さく（任意） */
+          .app-header img { height: 44px !important; }
+        }
+
+        /* さらに狭い画面向け */
         @media (max-width: 420px) {
           .intro-full { display: none; }
           .intro-short { display: inline; }
         }
 
         .link-as-btn { display:inline-block; }
-
-        @media (max-width: 520px) {
-          .app-header { padding: 8px 10px; }
-          .header-left, .header-right { gap:6px; }
-          .vocab-title { font-size: 18px; }
-          .header-center { width: 70%; }
-        }
       `}</style>
 
       <header className="app-header" role="banner">
@@ -147,7 +165,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
                 style={{ height: 60, width: "auto", cursor: "pointer" }}
                 onClick={scrollToTop}
               />
-              <span className="home-link" onClick={scrollToTop}>
+              <span className="home-link page-top" onClick={scrollToTop}>
                 ページトップ
               </span>
             </>
@@ -169,7 +187,6 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
 
         {/* 右 */}
         <div className="header-right">
-          {/* （変更）単独の紹介ボタンは未ログインのときだけ表示する */}
           {!isLandingPage && !user && (
             <button className="intro-btn" onClick={() => navigate("/landing_page")} aria-label="紹介ページへ">
               <span className="intro-full">Vocabstreamの紹介ページ</span>
@@ -178,19 +195,21 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           )}
 
           {isLandingPage ? (
-            <button className="cta-btn" onClick={() => navigate("/")}>アプリを使用する</button>
+            <button className="cta-btn" onClick={() => navigate("/")} aria-label="アプリを使用する">
+              <span className="cta-full">アプリを使用する</span>
+              <span className="cta-short">アプリを使用</span>
+            </button>
           ) : isLoginPage ? (
             null
           ) : user ? (
             <>
               <span className="welcome">Welcome, {user.username}</span>
-              {/* 統合ボタンのみ表示（これを押すと logout -> /landing_page） */}
               <button className="cta-btn" onClick={handleLogoutAndGotoLanding} aria-label="ログアウトして紹介ページへ">
-                ログアウト（VocabStreamの紹介ページへ）
+                <span className="cta-full">ログアウト（VocabStreamの紹介ページへ）</span>
+                <span className="cta-short">ログアウト</span>
               </button>
             </>
           ) : (
-            // ログインボタンは非表示のまま
             null
           )}
         </div>

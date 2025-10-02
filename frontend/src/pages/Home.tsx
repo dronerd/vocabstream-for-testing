@@ -86,9 +86,10 @@ export default function Home() {
           >
             {opt.label}
           </button>
+          
         ))}
+        <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
       </div>
-      <a href="/privacy" target="_blank"><strong>Privacy Policy</strong></a>
     </div>
   );
 }

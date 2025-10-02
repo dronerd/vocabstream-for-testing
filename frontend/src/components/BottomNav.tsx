@@ -1,7 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function BottomNav() {
+  const location = useLocation();
+
+  // "/privacy" では非表示
+  if (location.pathname === "/privacy") {
+    return null;
+  }
+
   const linkStyle = {
     fontSize: "24px",
     fontWeight: "bold",
@@ -18,10 +25,10 @@ export default function BottomNav() {
         right: 0,
         borderTop: "1px solid #ddd",
         background: "#fff",
-        padding: "16px 8px", // increased vertical padding
+        padding: "16px 8px",
         display: "flex",
         justifyContent: "space-around",
-        height: "40px" // optional: set a specific height
+        height: "40px"
       }}
     >
       <Link style={linkStyle} to="/">Home</Link>
