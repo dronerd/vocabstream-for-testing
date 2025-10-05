@@ -15,12 +15,10 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
 
   const isLandingPage = location.pathname === "/landing_page";
 
-  // ページトップにスクロール
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // ログアウトして紹介ページへ遷移
   const handleLogoutAndGotoLanding = async () => {
     try {
       await logout?.();
@@ -34,7 +32,6 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
   return (
     <>
       <style>{`
-        /* Header wrapper: centered with a max-width so it can appear narrower on small screens */
         .app-header {
           position: fixed;
           top: 0;
@@ -51,6 +48,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           min-height: 72px;
           width: 100%;
           box-sizing: border-box;
+          overflow-x: hidden; /* prevent horizontal scroll or extra space */
         }
 
         .header-left { display:flex; gap:12px; align-items:center; z-index: 3; }
@@ -76,9 +74,8 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           overflow: hidden;
           text-overflow: ellipsis;
         }
-        .small-title { margin:0; font-size: clamp(14px, 1.6vw, 18px); white-space:nowrap; }
 
-        /* Home link ("Homeに戻る") - will be hidden on small screens via media query */
+        .small-title { margin:0; font-size: clamp(14px, 1.6vw, 18px); white-space:nowrap; }
         .home-link { text-decoration:none; color:#007bff; font-weight:700; font-size: clamp(14px, 1.6vw, 20px); white-space:nowrap; cursor:pointer; display:inline-block; }
         .welcome { font-weight:700; font-size: clamp(14px, 1.6vw, 20px); white-space:nowrap; }
 
@@ -110,62 +107,41 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           gap: 6px;
         }
 
-        /* フルテキスト / 短縮テキスト（CTA） */
         .cta-full { display: inline; }
         .cta-short { display: none; }
-
-        /* フルテキスト / 短縮テキスト（紹介ボタン） */
         .intro-full { display: inline; }
         .intro-short { display: none; }
-
-        /* ページトップ用クラス */
         .page-top { display: inline; }
 
-        /* ブレークポイント（スマホ） */
         @media (max-width: 520px) {
+          html, body { margin: 0; padding: 0; overflow-x: hidden; }
           .app-header {
             padding: 8px 10px;
-            max-width: 360px; /* make header narrower on small screens */
             min-height: 60px;
             box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+            width: 100%;
+            overflow-x: hidden;
           }
-
           .header-left, .header-right { gap:6px; }
           .vocab-title { font-size: 18px; }
           .header-center { width: 70%; }
-
-          /* スマホではページトップを非表示にする */
           .page-top { display: none; }
-
-          /* ホームに戻るボタンは非表示にする */
           .home-link { display: none; }
-
-          /* CTA は短縮版を表示 */
           .cta-full { display: none; }
           .cta-short { display: inline; }
-
-          /* 紹介ボタンも短縮 */
           .intro-full { display: none; }
           .intro-short { display: inline; }
-
-          /* ロゴを小さく（強制） */
           .app-header img { height: 44px !important; }
         }
 
-        /* さらに狭い画面向け */
         @media (max-width: 420px) {
           .intro-full { display: none; }
           .intro-short { display: inline; }
-
-          /* Slightly reduce center title width so it doesn't collide */
           .header-center { width: 75%; }
         }
-
-        .link-as-btn { display:inline-block; }
       `}</style>
 
       <header className="app-header" role="banner">
-        {/* 左 */}
         <div className="header-left">
           {isLoginPage ? (
             <img
@@ -191,21 +167,16 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
               <Link to="/">
                 <img src="/logo.png" alt="App Logo" style={{ height: 60, width: "auto" }} />
               </Link>
-
-              {/* "Homeに戻る" は小さいスクリーンでは CSS によって非表示になります */}
               <Link to="/" className="home-link">Homeに戻る</Link>
-
               {title && <h3 className="small-title">{title}</h3>}
             </>
           )}
         </div>
 
-        {/* 中央（常に中央） */}
         <div className="header-center" aria-hidden>
           <h1 className="vocab-title">VocabStream</h1>
         </div>
 
-        {/* 右 */}
         <div className="header-right">
           {!isLandingPage && !user && (
             <button className="intro-btn" onClick={() => navigate("/landing_page")} aria-label="紹介ページへ">
