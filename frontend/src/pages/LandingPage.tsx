@@ -87,18 +87,18 @@ export default function LandingPage() {
           .card{padding:12px}
 
           /* founder box ensure it stays within the card and doesn't overflow */
-          .founder-box{width:100%;padding:10px;border-radius:10px}
+          .founder-box{width:110%;padding:5px;border-radius:5px}
           .founder-top{gap:10px;align-items:center}
-          .founder-avatar{width:64px;height:64px}
+          .founder-avatar{width:70px;height:70px}
 
           .founder-meta {
-            font-size: 0.82em; /* 通常より少し小さく */
+            font-size: 0.86em; /* 通常より少し小さく */
           }
 
           /* さらに小さい画面ではもっと小さく */
           @media(max-width:450px){
             .founder-meta {
-              font-size: 0.75em;
+              font-size: 0.8em;
             }
           }
 
@@ -167,7 +167,7 @@ export default function LandingPage() {
 
                 <div>
                   <div className="founder-name">
-                  <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" >黒木勇人</a>
+                  <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{fontSize: "3em"}}>黒木勇人</a>
                   </div>
 
 
