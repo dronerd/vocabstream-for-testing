@@ -78,11 +78,9 @@ export default function LandingPage() {
         /* MOBILE-SPECIFIC: make white boxes extend closer to the edges and prevent overflow */
         @media(max-width:700px){
           /* reduce wrapper padding so white cards reach near edges */
-          .hero-wrap{padding:6px 6px}
-          main{padding:6px 6px}
-
-          /* make the hero card use almost full width on phones (keep <12px total gap -> 6px each side) */
-          .hero-card{border-radius:12px;padding:14px;max-width:calc(100% - 12px);}
+          .hero-wrap{padding:4px 4px;}
+          main{padding:4px 4px;}
+          .hero-card{max-width:calc(100% - 8px);}
 
           /* grid becomes single column; cards take full width */
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
