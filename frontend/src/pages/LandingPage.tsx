@@ -180,21 +180,19 @@ export default function LandingPage() {
         <div className="grid-stack">
           <article className="card">
             <h2 style={{ marginTop: 0 }}>About</h2>
-            <img
-              src="/vocabstream_small.jpg"
-              alt="VocabStream"
-              className="app_logo !w-[16px] !h-[16px] object-contain flex-shrink-0"
-            />
 
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              効率的に英語を学び、世界で活躍する力を身につける。Project Fluenceはそんな学びを応援する個人プロジェクトです。最新情報はNoteをフォローしてください。
+              VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。
+              主な機能：
+              使い方：
             </p>
           </article>
 
           <article className="card">
-            <h2 style={{ marginTop: 0 }}>英語学習アプリ</h2>
+            <h2 style={{ marginTop: 0 }}>Project Fluenceについて</h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              英単語学習アプリ <a href="https://vocabstream.vercel.app" target="_blank" rel="noopener noreferrer"><strong>VocabStream</strong></a> を近日公開します。お楽しみに！
+              英語と専門分野の力で夢を実現する人を増やすことを目指し、Project Fluenceを立ち上げ、開発・運営を個人で行っています。Noteでの解説や無料アプリ提供を通じて支援していきます。
+              効率的に英語を学び、世界で活躍する力を身につける。Project Fluenceはそんな学びを応援する個人プロジェクトです。最新情報はNoteをフォローしてください。
             </p>
           </article>
 
@@ -202,20 +200,43 @@ export default function LandingPage() {
             <h2 style={{ marginTop: 0 }}>なぜ英語を学ぶのか</h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
               英語を学ぶことで出会える人や文化、広がる可能性は、学習の努力をはるかに上回る価値を持っています。
+              中高では成績や受験に、大学では授業や研究に、そして社会人になれば海外とのやり取りや情報収集に大きな力を発揮します。 翻訳を待たずに世界中の情報にアクセスでき、キャリアや人生の選択肢を大きく広げてくれるのです。これほどリターンの大きい学習分野は他に多くありません。
+              もちろん、英語学習は時に大変で、思わず投げ出したくなる瞬間もあるでしょう。 しかし、コツコツ続けていけば必ず「自分の言葉で伝えられる」日がやってきます。 そのときの達成感は何ものにも代えがたいはずです。 そして英語を通じて海外の人とつながれれば、新しい価値観や考え方に触れ、自分の世界も大きく広がっていきます。
             </p>
           </article>
 
           <article className="card">
-            <h2 style={{ marginTop: 0 }}>効果的な学習 — 単語は英語で学ぶ</h2>
+            <h2 style={{ marginTop: 0 }}>効果的な学習方法 — 単語は英語で学ぶ</h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              英単語を英語で学ぶことで、意味をそのまま理解し、使える語彙として定着させます。
+              1: 英単語は「英語で」学ぶ
+              英単語を日本語訳で覚えるのではなく、英語の定義や例文と結びつけて学ぶことをおすすめします。 これは、私たちが日本語の知らない単語を国語辞典で調べ、よりやさしい日本語で説明を理解するのと同じ仕組みです。 英語の定義や例文と結び付けて学ぶと、以下のような細かい部分が分かるようになるというメリットもあります。
+              ・どんな場面で使えるのか
+              ・どんな文で自然に使われるのか
+              ・細かなニュアンスの違いは何か
+
+              例：Perseverence (忍耐)
+              (定義)"Perseverance means keeping on and not giving up, even when something is hard or takes a long time."
+              (例文) "She showed great perseverance by practicing the piano every day until she finally mastered the song."
+              (類義語) Determination, Persistence, Dedication, Endurance
+              (対義語) Giving up, Surrender
+              英英辞書・英英単語帳を使い、この学習方法を実践できます。
+
+              また、ChatGPTなどの生成AIに以下のように質問することも効果的です。
+              （その他の機能からアクセスできます）
+              単語の説明を求める
+              Can you give me the definition, an example sentence, synonyms, and antonyms for the word (“ “)? Please use words that are easier than the word itself to explain.
+              Copy
+              自作した例文の添削
+              Can you correct and improve this sentence for me?
+              Copy
+              この学習法を効率化するために、英単語アプリVocabStreamを開発しました。
             </p>
           </article>
         </div>
 
-        <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "#666" }}>
+        <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "white" }}>
           <div>© Project Fluence — VocabStream</div>
-          <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: '#0b3d91', textDecoration: 'underline' }}>Privacy Policy</a></div>
+          <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: 'white', textDecoration: 'underline' }}>Privacy Policy</a></div>
         </footer>
       </main>
     </div>
