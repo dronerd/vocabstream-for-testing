@@ -61,7 +61,7 @@ export default function LandingPage() {
 
         /* larger screens: hero becomes 2 columns (main + founder box) and grid below becomes 2x2 */
         @media(min-width:760px){
-          .hero-grid{grid-template-columns:1fr 360px;gap:24px}
+          .hero-grid{grid-template-columns:1fr 450px;gap:24px}
           .hero-card{padding:28px}
           .grid-stack{grid-template-columns:repeat(2, minmax(0,1fr));grid-auto-rows:1fr}
           .card{height:100%;display:flex;flex-direction:column}
@@ -78,9 +78,9 @@ export default function LandingPage() {
         /* MOBILE-SPECIFIC: make white boxes extend closer to the edges and prevent overflow */
         @media(max-width:700px){
           /* reduce wrapper padding so white cards reach near edges */
-          .hero-wrap{padding:2px 2px;}
-          main{padding:2px 2px;}
-          .hero-card{max-width:calc(100% - 4px);}
+          .hero-wrap{padding:1px 1px;}
+          main{padding:1px 1px;}
+          .hero-card{max-width:calc(100% - 2px);}
 
           /* grid becomes single column; cards take full width */
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
@@ -121,27 +121,27 @@ export default function LandingPage() {
                 </button>
 
                 <a
-                  href="https://projectfluence.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                  role="button"
-                  aria-label="Project Fluenceのホームページ（新しいタブで開く）"
-                  style={{ padding: "10px 14px", borderRadius: 12, border: "1px solid rgba(0,0,0,0.06)", textDecoration: "none", color: "#0b3d91", fontWeight: 700 }}
-                >
-                  ホームページ
-                </a>
-
-                <a
                   href="https://note.com/projectfluence"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
                   role="button"
-                  aria-label="Note をフォロー（新しいタブで開く）"
-                  style={{ padding: "10px 14px", borderRadius: 12, border: "1px solid rgba(0,0,0,0.06)", textDecoration: "none", color: "#0b3d91", fontWeight: 700 }}
+                  aria-label="Project Fluenceのホームページ（新しいタブで開く）"
+                  style={{ padding: "10px 14px", borderRadius: 12, border: "4px solid rgba(19, 1, 1, 0.36)", textDecoration: "none", color: "#0b3d91", fontWeight: 700 }}
                 >
-                  Note をフォロー
+                  Noteを見る
+                </a>
+
+                <a
+                  href="https://projectfluence.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  role="button"
+                  aria-label="Note をフォロー（新しいタブで開く）"
+                  style={{ padding: "10px 14px", borderRadius: 12, border: "4px solid rgba(19, 1, 1, 0.36)", textDecoration: "none", color: "#0b3d91", fontWeight: 700 }}
+                >
+                  Project Fluenceのホームページ
                 </a>
               </div>
 
@@ -155,21 +155,22 @@ export default function LandingPage() {
                 <img src="/profile.JPG" alt="Yuto Kuroki" className="founder-avatar" />
 
                 <div>
-                  <div className="founder-name">黒木 勇人</div>
-                  <div className="founder-meta">早稲田大学 基幹理工学部</div>
-                  <div className="founder-meta">yutokuroki.projectfluence@gmail.com</div>
+                  <div className="founder-name">
+                  <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" >黒木勇人</a>
+                  </div>
+
+
+                  <div className="founder-meta">早稲田大学 基幹理工学部(情報系)</div>
+                  <div className="founder-meta text-xs">yutokuroki.projectfluence@gmail.com</div>
                 </div>
               </div>
 
               <p style={{ marginTop: 12, color: "#333", fontSize: "0.95em", lineHeight: 1.5 }}>
                 英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に合格（上位1%）。現在はTOEFL iBT 116/120、TOEIC 990/990。ドイツ語はC1取得。専門は情報工学。
-              </p>
-
-              <div style={{ marginTop: 10, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", color: "#0b3d91" }}>プロフィール</a>
-                <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", color: "#0b3d91" }}>LinkedIn</a>
-              </div>
-
+              </p>           
+              <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer"><strong>→ プロフィール</strong></a>
+              <br />
+              <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer"><strong>→ LinkedIn</strong></a>
             </div>
           </div>
         </div>
@@ -179,6 +180,12 @@ export default function LandingPage() {
         <div className="grid-stack">
           <article className="card">
             <h2 style={{ marginTop: 0 }}>About</h2>
+            <img
+              src="/vocabstream_small.jpg"
+              alt="VocabStream"
+              className="app_logo !w-[16px] !h-[16px] object-contain flex-shrink-0"
+            />
+
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
               効率的に英語を学び、世界で活躍する力を身につける。Project Fluenceはそんな学びを応援する個人プロジェクトです。最新情報はNoteをフォローしてください。
             </p>
