@@ -80,11 +80,11 @@ export default function LandingPage() {
           /* reduce wrapper padding so white cards reach near edges */
           .hero-wrap{padding:1px 1px;}
           main{padding:1px 1px;}
-          .hero-card{max-width:calc(100% - 2px);}
+          .hero-card{max-width:calc(120% - 2px);}
 
           /* grid becomes single column; cards take full width */
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
-          .card{padding:12px}
+          .card{padding:6px}
 
           /* founder box ensure it stays within the card and doesn't overflow */
           .founder-box{width:100%;padding:10px;border-radius:10px}
