@@ -16,9 +16,9 @@ export default function LandingPage() {
           --accent:#234E52;
           --muted:#666;
           /* 全体の薄い青グレー背景 */
-          --page-bg: #e6eef2;
+          --page-bg: #0f2740;
           --card-bg: #ffffff;
-          --subcard-bg: #f3f6f8; /* 創設者用の薄いグレー箱 */
+          --subcard-bg: #e0e4e7; /* 創設者用の薄いグレー箱 */
           --chip-bg: #f1f3f4;
           --btn-bg: #0B3D91;
           --card-border: rgba(11,61,145,0.06);
@@ -76,10 +76,10 @@ export default function LandingPage() {
         }
 
         /* MOBILE-SPECIFIC: make white boxes extend closer to the edges and prevent overflow */
-        @media(max-width:600px){
+        @media(max-width:700px){
           /* reduce wrapper padding so white cards reach near edges */
-          .hero-wrap{padding:12px 6px}
-          main{padding:12px 6px}
+          .hero-wrap{padding:6px 6px}
+          main{padding:6px 6px}
 
           /* make the hero card use almost full width on phones (keep <12px total gap -> 6px each side) */
           .hero-card{border-radius:12px;padding:14px;max-width:calc(100% - 12px);}
@@ -99,7 +99,7 @@ export default function LandingPage() {
         }
 
         /* small screens polish */
-        @media(max-width:420px){
+        @media(max-width:450px){
           .founder-avatar{width:56px;height:56px}
           h1{font-size:20px}
         }
