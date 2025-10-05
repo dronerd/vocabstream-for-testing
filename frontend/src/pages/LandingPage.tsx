@@ -119,7 +119,8 @@ export default function LandingPage() {
         <div className="hero-card" role="region" aria-labelledby="hero-title">
           <div className="hero-grid">
             <div className="hero-main">
-              <h1 id="hero-title">〜英単語は「英語で」学ぶ！〜</h1>
+              <h1 id="hero-title">VocabStream</h1>
+              <p><strong>〜英単語は「英語で」学ぶ！〜</strong></p>
               <p className="lead">VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。</p>
 
               <div className="actions" role="navigation" aria-label="Primary actions">
@@ -177,7 +178,7 @@ export default function LandingPage() {
               </div>
 
               <p style={{ marginTop: 12, color: "#333", fontSize: "0.95em", lineHeight: 1.5 }}>
-                英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に合格（上位1%）。現在はTOEFL iBT 116/120、TOEIC 990/990。ドイツ語はC1取得。専門は情報工学。
+              英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116/120点, TOEIC満点 990/990点。ドイツ語もネイティブレベル(Goethe Zertifikat C1)を達成。専門は情報工学で、ISEFなどの国際イベントにて研究発表の経験を持つ。
               </p>           
               <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer"><strong>→ プロフィール</strong></a>
               <br />
