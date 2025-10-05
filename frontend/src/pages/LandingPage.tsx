@@ -78,18 +78,18 @@ export default function LandingPage() {
         /* MOBILE-SPECIFIC: make white boxes extend closer to the edges and prevent overflow */
         @media(max-width:600px){
           /* reduce wrapper padding so white cards reach near edges */
-          .hero-wrap{padding:12px 10px}
-          main{padding:12px 10px}
+          .hero-wrap{padding:12px 6px}
+          main{padding:12px 6px}
 
-          /* make the hero card use almost full width on phones */
-          .hero-card{border-radius:12px;padding:16px;max-width:calc(100% - 20px);}
+          /* make the hero card use almost full width on phones (keep <12px total gap -> 6px each side) */
+          .hero-card{border-radius:12px;padding:14px;max-width:calc(100% - 12px);}
 
           /* grid becomes single column; cards take full width */
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
-          .card{padding:14px}
+          .card{padding:12px}
 
           /* founder box ensure it stays within the card and doesn't overflow */
-          .founder-box{width:100%;padding:12px;border-radius:10px}
+          .founder-box{width:100%;padding:10px;border-radius:10px}
           .founder-top{gap:10px;align-items:center}
           .founder-avatar{width:64px;height:64px}
 
