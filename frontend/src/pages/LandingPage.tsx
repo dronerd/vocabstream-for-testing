@@ -23,7 +23,7 @@ export default function LandingPage() {
           --btn-bg: #0B3D91;
           --card-border: rgba(11,61,145,0.06);
           --radius: 14px;
-          --container-max: 1600px; /* ボックスを左右に広げるための最大幅 */
+          --container-max: 1800px; /* ボックスを左右にさらに広げるための最大幅 */
         }
 
         *{box-sizing:border-box}
@@ -34,30 +34,30 @@ export default function LandingPage() {
         .landing-root{font-size:var(--base-font)}
 
         /* Top hero card that stretches across on large screens */
-        .hero-wrap{padding:18px 4vw} /* 横の余白を少し減らして箱を広く見せる */
-        .hero-card{background:var(--card-bg);border-radius:20px;padding:20px;box-shadow:0 8px 24px rgba(20,40,80,0.06);border:1px solid var(--card-border);max-width:var(--container-max);margin:0 auto}
+        .hero-wrap{padding:18px 3.5vw} /* 横の余白を減らして箱をより広く見せる */
+        .hero-card{background:var(--card-bg);border-radius:20px;padding:22px;box-shadow:0 8px 24px rgba(20,40,80,0.06);border:1px solid var(--card-border);max-width:var(--container-max);margin:0 auto;width:100%;box-sizing:border-box}
 
         .hero-grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
-        .hero-main{padding-right:8px}
+        .hero-main{padding-right:8px;min-width:0}
 
-        h1{font-size: clamp(22px, 4.5vw, 38px); margin:6px 0;line-height:1.08}
-        p.lead{margin-top:8px;color:#444;font-size: clamp(14px, 1.9vw, 16px);max-width:980px}
+        h1{font-size: clamp(22px, 4.5vw, 38px); margin:6px 0;line-height:1.08;overflow-wrap:break-word;word-break:break-word}
+        p.lead{margin-top:8px;color:#444;font-size: clamp(14px, 1.9vw, 16px);max-width:980px;overflow-wrap:break-word}
 
         .actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
         .btn-primary{background:var(--btn-bg);color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
 
         /* inside hero card: founder box that is a subtle gray box */
-        .founder-box{background:var(--subcard-bg);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+        .founder-box{background:var(--subcard-bg);padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);box-sizing:border-box;max-width:100%;overflow:hidden}
         .founder-top{display:flex;gap:12px;align-items:center}
-        .founder-avatar{width:72px;height:72px;border-radius:12px;object-fit:cover;flex-shrink:0}
+        .founder-avatar{width:72px;height:72px;border-radius:12px;object-fit:cover;flex-shrink:0;max-width:100%}
         .founder-name{font-weight:700;font-size:1.05em}
         .founder-meta{color:#333}
 
         /* main content grid for feature cards below */
-        main{width:100%;padding:18px 4vw}
+        main{width:100%;padding:18px 3.5vw}
         .grid-stack{max-width:var(--container-max);margin:0 auto;display:grid;gap:18px}
 
-        .card{background:var(--card-bg);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(20,40,80,0.04);border:1px solid var(--card-border)}
+        .card{background:var(--card-bg);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(20,40,80,0.04);border:1px solid var(--card-border);box-sizing:border-box}
 
         /* larger screens: hero becomes 2 columns (main + founder box) and grid below becomes 2x2 */
         @media(min-width:760px){
@@ -69,10 +69,33 @@ export default function LandingPage() {
           .card p{flex:1 1 auto}
         }
 
-        /* very large screens: keep 2 columns but increase gap */
+        /* ensure very large screens keep layout but do not change look */
         @media(min-width:1100px){
           .hero-card{max-width:calc(var(--container-max) - 40px)}
           .grid-stack{gap:24px}
+        }
+
+        /* MOBILE-SPECIFIC: make white boxes extend closer to the edges and prevent overflow */
+        @media(max-width:600px){
+          /* reduce wrapper padding so white cards reach near edges */
+          .hero-wrap{padding:12px 10px}
+          main{padding:12px 10px}
+
+          /* make the hero card use almost full width on phones */
+          .hero-card{border-radius:12px;padding:16px;max-width:calc(100% - 20px);}
+
+          /* grid becomes single column; cards take full width */
+          .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
+          .card{padding:14px}
+
+          /* founder box ensure it stays within the card and doesn't overflow */
+          .founder-box{width:100%;padding:12px;border-radius:10px}
+          .founder-top{gap:10px;align-items:center}
+          .founder-avatar{width:64px;height:64px}
+
+          /* prevent any content inside from causing horizontal scroll */
+          .hero-main, .hero-main *{min-width:0}
+          h1, p.lead{word-break:break-word;overflow-wrap:break-word}
         }
 
         /* small screens polish */
