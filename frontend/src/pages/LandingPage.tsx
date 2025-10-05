@@ -87,7 +87,7 @@ export default function LandingPage() {
           .card{padding:12px}
 
           /* founder box ensure it stays within the card and doesn't overflow */
-          .founder-box{width:110%;padding:5px;border-radius:5px}
+          .founder-box{width:100%;padding:10px;border-radius:10px}
           .founder-top{gap:10px;align-items:center}
           .founder-avatar{width:70px;height:70px}
 
@@ -167,7 +167,7 @@ export default function LandingPage() {
 
                 <div>
                   <div className="founder-name">
-                  <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{fontSize: "3em"}}>黒木勇人</a>
+                  <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{fontSize: "1.6em"}}>黒木勇人</a>
                   </div>
 
 
