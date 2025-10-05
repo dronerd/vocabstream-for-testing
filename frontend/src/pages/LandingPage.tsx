@@ -10,7 +10,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="landing-root" style={{ fontFamily: "Inter, Arial, sans-serif" }}>
+    <div className="landing-root" style={{ padding: "20px", paddingTop: "92px", fontFamily: "Inter, Arial, sans-serif" }}>
       <style>{`
         :root{
           --accent:#234E52;
@@ -111,10 +111,10 @@ export default function LandingPage() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-inner">
           <div className="hero-card" role="region" aria-labelledby="hero-title">
-            <h1 id="hero-title">〜あなたの未来に、英語の力を〜</h1>
+            <h1 id="hero-title">〜英単語は「英語で」学ぶ！〜</h1>
             <p className="lead">
-              効率的に英語を学び、世界で活躍する力を身につける。Project Fluenceはそんな学びを応援する個人プロジェクトです。最新情報はNoteをフォローしてください。
-            </p>
+            VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。 
+           </p>
 
             <div className="btn-row" role="navigation" aria-label="Primary actions">
               <button
@@ -191,10 +191,10 @@ export default function LandingPage() {
       <main>
         <div className="grid-stack">
           <article className="card" role="article" aria-labelledby="vocabstream-title">
-            <h2 id="vocabstream-title">VocabStream とは</h2>
+            <h2 id="vocabstream-title">Project Fluecneとは</h2>
             <p style={{ marginTop: 0, color: "#444", lineHeight: 1.8 }}>
-              VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。
-            </p>
+              効率的に英語を学び、世界で活躍する力を身につける。Project Fluenceはそんな学びを応援する個人プロジェクトです。最新情報はNoteをフォローしてください。
+                     </p>
 
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
               <span className="chip">中級〜超上級語彙</span>
@@ -206,16 +206,45 @@ export default function LandingPage() {
           <article className="card" role="article" aria-labelledby="why-title">
             <h2 id="why-title">なぜ英語を学ぶのか</h2>
             <p style={{ color: "#444", lineHeight: 1.8 }}>
-              英語は人生で非常に役立つスキルです。成績や受験、大学での研究、社会人になってからの海外とのやり取りや情報収集など、活用範囲が広く効果が長く続きます。翻訳を待たず世界中の情報にアクセスでき、キャリアアップにもつながります。
+              英語を学ぶことで出会える人や文化、広がる可能性は、学習の努力をはるかに上回る価値を持っています。英語はまさに「一生もののスキル」です。
+              中高では成績や受験に、大学では授業や研究に、そして社会人になれば海外とのやり取りや情報収集に大きな力を発揮します。 翻訳を待たずに世界中の情報にアクセスでき、キャリアや人生の選択肢を大きく広げてくれるのです。これほどリターンの大きい学習分野は他に多くありません。
+              もちろん、英語学習は時に大変で、思わず投げ出したくなる瞬間もあるでしょう。 しかし、コツコツ続けていけば必ず「自分の言葉で伝えられる」日がやってきます。 そのときの達成感は何ものにも代えがたいはずです。 そして英語を通じて海外の人とつながれれば、新しい価値観や考え方に触れ、自分の世界も大きく広がっていきます。
             </p>
           </article>
 
           <article className="card" role="article" aria-labelledby="method-title">
             <h2 id="method-title">効果的な学習 — 単語は英語で学ぶ</h2>
             <p style={{ color: "#444", lineHeight: 1.8 }}>
-              単語を日本語訳で覚えるのではなく、英語の定義や例文と結びつけます。
-              例: comfortable → “A chair is comfortable if it feels nice and soft.”
-              この学習法を効率化するために、VocabStreamを開発しました。
+              効果的な英語学習方法
+              (＊詳しくはNoteをご覧ください) 
+             多くの日本人の英語学習には２つの特徴があります。
+             日英変換：英単語や英文を日本語に置き換えて理解する方法。多くの単語帳やフラッシュカードはこの仕組みです。
+             文法の論理的理解：be動詞、否定文、仮定法などを段階的に学び、問題集で繰り返し練習します。
+             これらは試験対策には有効ですが、「学ぶ」と「使えるようになる」は別物です。単語や文法を覚えても、
+
+             相手の言葉が聞き取れない
+             思考が翻訳で遅くなる
+             言いたいことが出てこない
+              といった問題が残ります。文法中心だと一語一句を日本語に変換し、文法の正しさを気にしすぎてしまうのです。
+
+              本質的な英語力とは、日本語と同じように意味をそのまま理解し、アイデアを直接言葉にできること。 日本語の文をいちいち分解しないように、英語も自然に理解・発信できる状態が理想です。
+
+
+              英単語を日本語訳で覚えるのではなく、英語の定義や例文と結びつけて学ぶことをおすすめします。 これは、私たちが日本語の知らない単語を国語辞典で調べ、よりやさしい日本語で説明を理解するのと同じ仕組みです。 英語の定義や例文と結び付けて学ぶと、以下のような細かい部分が分かるようになるというメリットもあります。
+              ・どんな場面で使えるのか
+              ・どんな文で自然に使われるのか
+              ・細かなニュアンスの違いは何か
+
+
+              例：Perseverence (忍耐)
+              (定義)"Perseverance means keeping on and not giving up, even when something is hard or takes a long time."
+              (例文) "She showed great perseverance by practicing the piano every day until she finally mastered the song."
+              (類義語) Determination, Persistence, Dedication, Endurance
+              (対義語) Giving up, Surrender
+              英英辞書・英英単語帳を使い、この学習方法を実践できます。
+              この方法をさらに効率化するために作られたアプリがVocabStreamです！
+             
+              
             </p>
           </article>
 

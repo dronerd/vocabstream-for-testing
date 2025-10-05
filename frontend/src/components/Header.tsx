@@ -34,6 +34,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
   return (
     <>
       <style>{`
+        /* Header wrapper: centered with a max-width so it can appear narrower on small screens */
         .app-header {
           position: fixed;
           top: 0;
@@ -49,7 +50,9 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           gap: 12px;
           min-height: 72px;
           width: 100%;
+          box-sizing: border-box;
         }
+
         .header-left { display:flex; gap:12px; align-items:center; z-index: 3; }
         .header-right { display:flex; gap:8px; align-items:center; justify-self:end; z-index: 3; }
         .header-center {
@@ -74,7 +77,9 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           text-overflow: ellipsis;
         }
         .small-title { margin:0; font-size: clamp(14px, 1.6vw, 18px); white-space:nowrap; }
-        .home-link { text-decoration:none; color:#007bff; font-weight:700; font-size: clamp(14px, 1.6vw, 20px); white-space:nowrap; cursor:pointer; }
+
+        /* Home link ("Homeに戻る") - will be hidden on small screens via media query */
+        .home-link { text-decoration:none; color:#007bff; font-weight:700; font-size: clamp(14px, 1.6vw, 20px); white-space:nowrap; cursor:pointer; display:inline-block; }
         .welcome { font-weight:700; font-size: clamp(14px, 1.6vw, 20px); white-space:nowrap; }
 
         .cta-btn {
@@ -118,13 +123,22 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
 
         /* ブレークポイント（スマホ） */
         @media (max-width: 520px) {
-          .app-header { padding: 8px 10px; }
+          .app-header {
+            padding: 8px 10px;
+            max-width: 360px; /* make header narrower on small screens */
+            min-height: 60px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+          }
+
           .header-left, .header-right { gap:6px; }
           .vocab-title { font-size: 18px; }
           .header-center { width: 70%; }
 
           /* スマホではページトップを非表示にする */
           .page-top { display: none; }
+
+          /* ホームに戻るボタンは非表示にする */
+          .home-link { display: none; }
 
           /* CTA は短縮版を表示 */
           .cta-full { display: none; }
@@ -134,7 +148,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           .intro-full { display: none; }
           .intro-short { display: inline; }
 
-          /* ロゴを小さく（任意） */
+          /* ロゴを小さく（強制） */
           .app-header img { height: 44px !important; }
         }
 
@@ -142,6 +156,9 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
         @media (max-width: 420px) {
           .intro-full { display: none; }
           .intro-short { display: inline; }
+
+          /* Slightly reduce center title width so it doesn't collide */
+          .header-center { width: 75%; }
         }
 
         .link-as-btn { display:inline-block; }
@@ -174,7 +191,10 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
               <Link to="/">
                 <img src="/logo.png" alt="App Logo" style={{ height: 60, width: "auto" }} />
               </Link>
+
+              {/* "Homeに戻る" は小さいスクリーンでは CSS によって非表示になります */}
               <Link to="/" className="home-link">Homeに戻る</Link>
+
               {title && <h3 className="small-title">{title}</h3>}
             </>
           )}

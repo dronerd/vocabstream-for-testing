@@ -4,103 +4,140 @@ import { Link, useLocation } from "react-router-dom";
 export default function BottomNav() {
   const location = useLocation();
 
-  // "/privacy" では非表示
-  if (location.pathname === "/privacy") {
-    return null;
-  }
+  // hide on /privacy
+  if (location.pathname === "/privacy") return null;
 
-  return (
-    <>
-      {/* Inline stylesheet so you can drop this component in without adding files */}
-      <style>{`
-        .nav-bottom {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          border-top: 1px solid #ddd;
-          background: #fff;
-          padding: 16px 8px;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          height: 40px; /* desktop default kept */
-          z-index: 50;
-        }
+  var style = `
+    /* Container: centered and slightly lifted so it doesn't sit flush with the absolute bottom */
+    .nav-bottom {
+      position: fixed;
+      bottom: 12px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
 
-        .nav-bottom .bottom-link {
-          font-size: 24px;
-          font-weight: 700;
-          text-decoration: none;
-          color: #000;
-          display: inline-block;
-          text-align: center;
-          padding: 2px 6px;
-          white-space: nowrap;
-        }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-        .nav-bottom .bottom-link.active {
-          color: #0b63d6;
-        }
+      gap: 8px;
+      padding: 8px;
 
-        /* ===== Mobile / small screen adjustments =====
-           Only applies when viewport width <= 640px.
-           These styles reduce font size and allow links to wrap into two rows,
-           preventing overlap while keeping desktop unchanged.
-        */
-        @media (max-width: 640px) {
-          .nav-bottom {
-            padding: 8px 6px;
-            height: auto;            /* allow two-row layout */
-            flex-wrap: wrap;        /* wrap links to next line */
-            gap: 4px;               /* small gap between items */
-          }
+      /* width control: stays narrow on phones but grows on larger screens */
+      width: calc(100% - 32px);
+      max-width: 900px;
 
-          .nav-bottom .bottom-link {
-            font-size: 14px;        /* much smaller on phones */
-            font-weight: 600;
-            padding: 6px 4px;
-            flex: 0 0 50%;          /* two items per row (3rd row will contain remaining) */
-            box-sizing: border-box;
-          }
+      background: #fff;
+      border: 2px solid #001f3f; /* dark-blue border around the entire nav — change to #000 for black */
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 
-          /* If you prefer three items on first row and two on second, change flex to 33.33% for first three using nth-child,
-             but the 50% rule is a simple robust choice for many devices. */
-        }
-      `}</style>
+      z-index: 50;
 
-      <nav className="nav-bottom" aria-label="Bottom navigation">
-        <Link
-          to="/"
-          className={`bottom-link ${location.pathname === "/" ? "active" : ""}`}
-        >
-          Home
-        </Link>
-        <Link
-          to="/learn"
-          className={`bottom-link ${location.pathname === "/learn" ? "active" : ""}`}
-        >
-          学習
-        </Link>
-        <Link
-          to="/review"
-          className={`bottom-link ${location.pathname === "/review" ? "active" : ""}`}
-        >
-          復習
-        </Link>
-        <Link
-          to="/stats"
-          className={`bottom-link ${location.pathname === "/stats" ? "active" : ""}`}
-        >
-          統計
-        </Link>
-        <Link
-          to="/settings"
-          className={`bottom-link ${location.pathname === "/settings" ? "active" : ""}`}
-        >
-          アプリについて
-        </Link>
-      </nav>
-    </>
+      /* keep items on a single horizontal line; allow horizontal scroll if needed */
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* hide ugly scrollbars on webkit while still allowing scroll (optional) */
+    .nav-bottom::-webkit-scrollbar { height: 6px; }
+    .nav-bottom::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 6px; }
+
+    .nav-bottom .bottom-link {
+      flex: 1 1 0; /* each link grows equally */
+      min-width: 0; /* important so text-overflow works inside flex */
+
+      display: inline-block;
+      text-align: center;
+
+      font-size: 16px;  /* desktop default */
+      font-weight: 600;
+      text-decoration: none;
+      color: #000;
+
+      padding: 6px 8px;
+
+      /* force long labels to truncate instead of wrapping to multiple lines */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-bottom .bottom-link.active {
+      color: #0b63d6;
+    }
+
+    /* Mobile / small screens: make the nav narrower and text smaller */
+    @media (max-width: 640px) {
+      .nav-bottom {
+        max-width: 480px;   /* narrower on mobile */
+        width: calc(100% - 24px);
+        padding: 6px;
+        gap: 6px;
+        bottom: 8px;
+        border-radius: 10px;
+      }
+
+      .nav-bottom .bottom-link {
+        font-size: 13px;   /* much smaller on phones */
+        padding: 6px 6px;
+      }
+    }
+
+    /* Extra small / very constrained widths: let user scroll horizontally */
+    @media (max-width: 360px) {
+      .nav-bottom { width: calc(100% - 12px); max-width: 360px; }
+      .nav-bottom .bottom-link { font-size: 12px; }
+    }
+  `;
+
+  return React.createElement(
+    React.Fragment,
+    null,
+    React.createElement("style", null, style),
+    React.createElement(
+      "nav",
+      { className: "nav-bottom", "aria-label": "Bottom navigation" },
+      React.createElement(
+        Link,
+        {
+          to: "/",
+          className: "bottom-link " + (location.pathname === "/" ? "active" : ""),
+          "aria-current": location.pathname === "/" ? "page" : undefined,
+        },
+        "Home"
+      ),
+
+      React.createElement(
+        Link,
+        {
+          to: "/learn",
+          className: "bottom-link " + (location.pathname === "/learn" ? "active" : ""),
+          "aria-current": location.pathname === "/learn" ? "page" : undefined,
+        },
+        "学習"
+      ),
+
+      React.createElement(
+        Link,
+        {
+          to: "/review",
+          className: "bottom-link " + (location.pathname === "/review" ? "active" : ""),
+          "aria-current": location.pathname === "/review" ? "page" : undefined,
+        },
+        "復習"
+      ),
+
+      React.createElement(
+        Link,
+        {
+          to: "/stats",
+          className: "bottom-link " + (location.pathname === "/stats" ? "active" : ""),
+          "aria-current": location.pathname === "/stats" ? "page" : undefined,
+        },
+        "その他の機能"
+      )
+    )
   );
 }
