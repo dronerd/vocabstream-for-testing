@@ -80,16 +80,27 @@ export default function LandingPage() {
           /* reduce wrapper padding so white cards reach near edges */
           .hero-wrap{padding:1px 1px;}
           main{padding:1px 1px;}
-          .hero-card{max-width:calc(120% - 2px);}
+          .hero-card{max-width:calc(140% - 2px);}
 
           /* grid becomes single column; cards take full width */
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
-          .card{padding:6px}
+          .card{padding:12px}
 
           /* founder box ensure it stays within the card and doesn't overflow */
           .founder-box{width:100%;padding:10px;border-radius:10px}
           .founder-top{gap:10px;align-items:center}
           .founder-avatar{width:64px;height:64px}
+
+          .founder-meta {
+            font-size: 0.82em; /* 通常より少し小さく */
+          }
+
+          /* さらに小さい画面ではもっと小さく */
+          @media(max-width:450px){
+            .founder-meta {
+              font-size: 0.75em;
+            }
+          }
 
           /* prevent any content inside from causing horizontal scroll */
           .hero-main, .hero-main *{min-width:0}
