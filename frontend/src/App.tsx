@@ -13,7 +13,6 @@ import ReviewFillin from "./pages/ReviewFillin";
 import ReviewFillinList from "./pages/ReviewFillin_list"
 import ReviewFillinLesson from "./pages/ReviewFillinLesson"
 import ReviewMeaning from "./pages/ReviewMeaning";
-import Settings from "./pages/Settings";
 import Stats from "./pages/Stats";
 import ReviewMeaning_weak from "./pages/ReviewMeaning_weak";
 import ReadingComprehension from "./pages/ReadingComprehension";
@@ -55,7 +54,6 @@ export default function App() {
           <Route path="/review_fillin_list/:genreId" element={<ReviewFillinList />} />
           <Route path="/review_fillin_lesson/:lessonId" element={<ReviewFillinLesson />} />
           <Route path="/review_meaning" element={<ReviewMeaning />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="/stats" element={<Stats />} />
           <Route path="/review_meaning_weak" element={<ReviewMeaning_weak />} />
           <Route path="/reading_comprehension" element={<ReadingComprehension />} />

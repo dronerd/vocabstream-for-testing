@@ -16,8 +16,7 @@ export default function Home() {
   const options = [
     { label: "単語を学習する", path: "/learn" },
     { label: "単語を復習する", path: "/review" },
-    { label: "統計を見る", path: "/stats" },
-    { label: "このアプリについて", path: "/settings" },
+    { label: "その他の機能", path: "/stats" },
   ];
 
   return (
@@ -53,6 +52,8 @@ export default function Home() {
           box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
 
+        /* Default (large screens) grid: two columns.
+           The third option will span both columns and be centered. */
         .options-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -75,6 +76,15 @@ export default function Home() {
 
         .option-btn:active {
           transform: translateY(1px);
+        }
+
+        /* Make the third (index 2) button span the full row and be centered
+           on large screens so it appears centered under the top two buttons. */
+        .option-third {
+          grid-column: 1 / -1;
+          justify-self: center;
+          width: 60%;
+          max-width: 520px;
         }
 
         .privacy-link {
@@ -107,6 +117,15 @@ export default function Home() {
             font-weight: 700;
             text-align: left; /* easier to scan on mobile */
           }
+
+          /* Override: on small screens the third option returns to full-width
+             and the centered narrower look is removed so mobile is unchanged. */
+          .option-third {
+            width: 100%;
+            justify-self: stretch;
+            text-align: left;
+          }
+
           .subtitle a {
             word-break: break-word;
           }
@@ -155,7 +174,7 @@ export default function Home() {
           <button
             key={idx}
             onClick={() => nav(opt.path)}
-            className="option-btn"
+            className={`option-btn ${idx === 2 ? "option-third" : ""}`}
             style={{ ...buttonStyles[idx] }}
           >
             {opt.label}
