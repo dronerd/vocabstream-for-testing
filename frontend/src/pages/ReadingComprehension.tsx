@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { apiGenres } from "../api";
 import { useNavigate } from "react-router-dom";
 
 type Lesson = {
@@ -11,14 +10,32 @@ type LevelOrder = {
   [key: string]: string[];
 };
 
-export default function TestPage() {
-  const [genres, setGenres] = useState<Lesson[]>([]);
+// Static genres (copied from your backend /api/genres)
+const STATIC_GENRES: Lesson[] = [
+  { id: "word-intermediate", title: "単語初級~中級 (CEFR A2~B1)" },
+  { id: "word-high-intermediate", title: "単語中上級 (CEFR B2)" },
+  { id: "word-advanced", title: "単語上級 (CEFR C1)" },
+  { id: "word-proficiency", title: "単語熟達 (CEFR C2)" },
+  { id: "idioms-intermediate", title: "熟語初級~中級 (CEFR A2~B1)" },
+  { id: "idioms-advanced", title: "熟語上級 (CEFR C1)" },
+  { id: "idioms-high-intermediate", title: "熟語中上級 (CEFR B2)" },
+  { id: "idioms-proficiency", title: "熟語熟達 (CEFR C2)" },
+  { id: "business-entry", title: "ビジネス入門レベル" },
+  { id: "business-intermediate", title: "ビジネス実践レベル" },
+  { id: "business-global", title: "ビジネスグローバルレベル" },
+  { id: "computer-science", title: "Computer Science & Technology" },
+  { id: "medicine", title: "Medicine & Health" },
+  { id: "economics-business", title: "Business & Economics" },
+  { id: "environment", title: "Environmental Science & Sustainability" },
+  { id: "law", title: "Law & Politics" },
+  { id: "engineering", title: "Engineering" },
+];
+
+export default function ReviewList() {
+  // use the static list instead of fetching from backend
+  const [genres] = useState<Lesson[]>(STATIC_GENRES);
   const [isSmall, setIsSmall] = useState<boolean>(false);
   const nav = useNavigate();
-
-  useEffect(() => {
-    apiGenres().then((res) => setGenres(res.genres || []));
-  }, []);
 
   useEffect(() => {
     function update() {
@@ -51,13 +68,12 @@ export default function TestPage() {
     "engineering": "/Engineering.png",
   };
 
-    
   const levelOrder: LevelOrder = {
     単語: ["word-intermediate", "word-high-intermediate", "word-advanced", "word-proficiency"],
     熟語: ["idioms-intermediate", "idioms-high-intermediate", "idioms-advanced", "idioms-proficiency"],
     ビジネス表現: ["business-entry", "business-intermediate", "business-global"],
   };
- 
+
   const levelColors = ["#ffcccc", "#fff5cc", "#ccffcc", "#cce5ff"];
   const termColors = ["#ffe4b5", "#d8bfd8", "#afeeee", "#f5deb3", "#e6e6fa", "#f08080"];
 
@@ -71,7 +87,7 @@ const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ5
 const basePadding = isSmall ? 12 : 20; // 既存の padding
 
   return (
-    <div style={{ padding: basePadding , paddingTop: basePadding + HEADER_HEIGHT}}>
+    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT}}>
       {/* 復習方法に戻るボタン */}
       <button
         onClick={() => nav("/review")}
@@ -88,8 +104,8 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
         復習方法選択に戻る
       </button>
 
-      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>実践読解テスト</h2>
-      <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 10 }}>復習する分野を選択</h3>
+      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>文章穴埋め方式</h2>
+      <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>復習する分野を選択</h3>
 
       {Object.entries(categories).map(([categoryName, lessons]) => {
         const order = levelOrder[categoryName];
@@ -97,7 +113,9 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
           lessons.sort((a, b) => {
             const idxA = order.indexOf(a.id.toLowerCase());
             const idxB = order.indexOf(b.id.toLowerCase());
-            return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+            const A = idxA === -1 ? 999 : idxA;
+            const B = idxB === -1 ? 999 : idxB;
+            return A - B;
           });
         }
 
@@ -139,7 +157,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
               {lessons.map((lesson, index) => (
                 <div
                   key={lesson.id}
-                  onClick={() => nav("/reading_comprehension_list")}
+                  onClick={() => nav(`/reading_comprehension_list`)}
                   style={{
                     padding: 12,
                     background: cardBackground(categoryName, index),
