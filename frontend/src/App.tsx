@@ -20,6 +20,8 @@ import ReadingComprehension from "./pages/ReadingComprehension";
 import ReadingComprehensionList from "./pages/ReadingComprehension_list";
 import LandingPage from "./pages/LandingPage";
 import Privacy from "./pages/Privacy";
+import Prompts from "./pages/ChatGPT_prompts";
+import ProgressTransport from "./pages/Progress_transport";
  
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { token } = useAuth();
@@ -63,6 +65,8 @@ export default function App() {
           <Route path="/landing_page" element={<LandingPage />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/prompts" element={<Prompts />} />
+          <Route path="/progress_transport" element={<ProgressTransport />} />
         </Routes>
       </div>
 

@@ -104,7 +104,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
         復習方法選択に戻る
       </button>
 
-      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>文章穴埋め方式</h2>
+      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>例文ミニテスト方式</h2>
       <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>復習する分野を選択</h3>
 
       {Object.entries(categories).map(([categoryName, lessons]) => {

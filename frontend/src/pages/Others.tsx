@@ -98,32 +98,32 @@ export default function Review() {
         }
       `}</style>
 
-      <h2 className="heading">単語の復習</h2>
-      <h3 className="subheading">復習方法</h3>
+      <h2 className="heading">その他の機能</h2>
+      <h3 className="subheading">機能を選択</h3>
 
       <div className="options-grid">
         <button
           className="option-btn"
-          onClick={() => nav("/review_meaning")}
+          onClick={() => nav("/prompts")}
           style={{ backgroundColor: buttonColors[0] }}
         >
-          例文ミニテスト方式
+          ChatGPTのプロンプト
         </button>
 
         <button
           className="option-btn"
-          onClick={() => nav("/review_fillin")}
+          onClick={() => nav("/progress_transport")}
           style={{ backgroundColor: buttonColors[2] }}
         >
-          文章穴埋め方式
+          学習経過を他のデバイスに移動
         </button>
 
         <button
           className="option-btn option-third"
-          onClick={() => nav("/reading_comprehension")}
+          onClick={() => nav("/privacy")}
           style={{ backgroundColor: buttonColors[3] }}
         >
-          実践読解テスト
+          フィードバック送信・Privacy Policyを確認
         </button>
       </div>
     </div>
