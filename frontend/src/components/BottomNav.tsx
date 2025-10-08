@@ -132,9 +132,9 @@ export default function BottomNav() {
       React.createElement(
         Link,
         {
-          to: "/stats",
-          className: "bottom-link " + (location.pathname === "/stats" ? "active" : ""),
-          "aria-current": location.pathname === "/stats" ? "page" : undefined,
+          to: "/others",
+          className: "bottom-link " + (location.pathname === "/others" ? "active" : ""),
+          "aria-current": location.pathname === "/others" ? "page" : undefined,
         },
         "その他の機能"
       )

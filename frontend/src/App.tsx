@@ -10,10 +10,12 @@ import LessonList from "./pages/LessonList";
 import Lesson from "./pages/Lesson";
 import Review from "./pages/Review";
 import ReviewFillin from "./pages/ReviewFillin";
-import ReviewFillinList from "./pages/ReviewFillin_list"
-import ReviewFillinLesson from "./pages/ReviewFillinLesson"
+import ReviewFillinList from "./pages/ReviewFillin_list";
+import ReviewFillinLesson from "./pages/ReviewFillinLesson";
 import ReviewMeaning from "./pages/ReviewMeaning";
-import Stats from "./pages/Stats";
+import ReviewMeaningList from "./pages/ReviewMeaning_list";
+import ReviewMeaningLesson from "./pages/ReviewMeaningLesson";
+import Others from "./pages/Others";
 import ReadingComprehension from "./pages/ReadingComprehension";
 import ReadingComprehensionList from "./pages/ReadingComprehension_list";
 import LandingPage from "./pages/LandingPage";
@@ -53,7 +55,9 @@ export default function App() {
           <Route path="/review_fillin_list/:genreId" element={<ReviewFillinList />} />
           <Route path="/review_fillin_lesson/:lessonId" element={<ReviewFillinLesson />} />
           <Route path="/review_meaning" element={<ReviewMeaning />} />
-          <Route path="/stats" element={<Stats />} />
+          <Route path="/review_meaning_list/:genreId" element={<ReviewMeaningList />} />
+          <Route path="/review_meaning_lesson/:genreId" element={<ReviewMeaningLesson />} />
+          <Route path="/others" element={<Others />} />
           <Route path="/reading_comprehension" element={<ReadingComprehension />} />
           <Route path="/reading_comprehension_list" element={<ReadingComprehensionList />} />
           <Route path="/landing_page" element={<LandingPage />} />

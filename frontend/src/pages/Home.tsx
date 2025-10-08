@@ -16,7 +16,7 @@ export default function Home() {
   const options = [
     { label: "単語を学習する", path: "/learn" },
     { label: "単語を復習する", path: "/review" },
-    { label: "その他の機能", path: "/stats" },
+    { label: "その他の機能", path: "/others" },
   ];
 
   return (
