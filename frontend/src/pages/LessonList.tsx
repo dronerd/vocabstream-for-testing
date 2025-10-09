@@ -6,7 +6,6 @@ type Lesson = {
   title: string;
 };
 
-// Static mapping of genre titles (copied / matched from your backend)
 const STATIC_GENRE_TITLES: Record<string, string> = {
   "word-intermediate": "単語初級~中級 (CEFR A2~B1)",
   "word-high-intermediate": "単語中上級 (CEFR B2)",
@@ -27,36 +26,24 @@ const STATIC_GENRE_TITLES: Record<string, string> = {
   "engineering": "Engineering",
 };
 
-// Helper to generate placeholder lesson objects in-frontend
 function makeLessons(genreId: string, count: number): Lesson[] {
   const arr: Lesson[] = [];
-  for (let i = 1; i <= count; i++) {
-    arr.push({ id: `${genreId}-lesson-${i}`, title: `Lesson ${i}` });
-  }
+  for (let i = 1; i <= count; i++) arr.push({ id: `${genreId}-lesson-${i}`, title: `Lesson ${i}` });
   return arr;
 }
 
-// Configure how many placeholder lesson boxes to show per genre.
-// Edit these numbers to match how many lessons you actually want visible in the frontend.
 const LESSON_COUNT_BY_GENRE: Record<string, number> = {
-  // word levels: show 12 lessons each by default
   "word-intermediate": 71,
   "word-high-intermediate": 71,
   "word-advanced": 71,
   "word-proficiency": 71,
-
-  // idioms: fewer by default
   "idioms-intermediate": 71,
   "idioms-high-intermediate": 71,
   "idioms-advanced": 71,
   "idioms-proficiency": 71,
-
-  // business
   "business-entry": 71,
   "business-intermediate": 71,
   "business-global": 71,
-
-  // specialized categories
   "computer-science": 71,
   "medicine": 71,
   "economics-business": 71,
@@ -73,101 +60,148 @@ export default function LessonList() {
 
   useEffect(() => {
     if (!genreId) return;
-
-    // Use the static title mapping (fallback to raw id)
     setGenreTitle(STATIC_GENRE_TITLES[genreId] || genreId);
-
-    // Generate static lesson boxes for this genre (client-side)
-    const count = LESSON_COUNT_BY_GENRE[genreId] ?? 10; // default to 10 if not configured
-    const generated = makeLessons(genreId, count);
-    setLessons(generated);
+    const count = LESSON_COUNT_BY_GENRE[genreId] ?? 10;
+    setLessons(makeLessons(genreId, count));
   }, [genreId]);
 
-  if (!genreId) {
+  if (!genreId)
     return (
-      <div style={{ padding: 20 }}>
-        <h2 style={{ fontSize: 28, marginBottom: 20 }}>ジャンルが指定されていません</h2>
-        <button
-          onClick={() => nav("/learn")}
-          style={{
-            padding: "8px 16px",
-            borderRadius: 8,
-            border: "none",
-            backgroundColor: "#555",
-            color: "#fff",
-            cursor: "pointer",
-          }}
-        >
-          ジャンル選択に戻る
-        </button>
+      <div className="page-root">
+        <h2 className="page-title">ジャンルが指定されていません</h2>
+        <button className="back-btn" onClick={() => nav("/learn")}>ジャンル選択に戻る</button>
+        <style>{styles}</style>
       </div>
     );
-  }
 
   return (
-    <div style={{ padding: 20 , paddingTop : 92 }}>
-      <h2 style={{ fontSize: 28, marginBottom: 20 }}>{genreTitle} - レッスン一覧</h2>
-      <button
-        onClick={() => nav("/learn")}
-        style={{
-          marginBottom: 20,
-          padding: "8px 16px",
-          borderRadius: 8,
-          border: "none",
-          backgroundColor: "#555",
-          color: "#fff",
-          cursor: "pointer",
-        }}
-      >
-        ジャンル選択に戻る
-      </button>
+    <div className="page-root">
+      <h2 className="page-title">{genreTitle} - レッスン一覧</h2>
+      <button className="back-btn" onClick={() => nav("/learn")}>ジャンル選択に戻る</button>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+      {/* Lessons grid: responsive so that on small screens cards are smaller and more columns fit */}
+      <div className="lessons-grid">
         {lessons.map((l) => (
-          <div
+          <article
             key={l.id}
-            style={{
-              flex: "0 0 calc(25% - 16px)",
-              backgroundColor: "#cce7ff",
-              borderRadius: 12,
-              padding: 20,
-              boxSizing: "border-box",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-              transition: "transform 0.2s",
-              cursor: "default",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            className="lesson-card"
+            onClick={() => nav(`/lesson/${l.id}`)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && nav(`/lesson/${l.id}`)}
           >
-            <div>
-              <div style={{ fontSize: 20, fontWeight: "bold", marginBottom: 8 }}>{l.title}</div>
-              <div style={{ fontSize: 12, color: "#666" }}>最終テスト: —</div>
+            <div className="lesson-info">
+              <div className="lesson-title">{l.title}</div>
+              <div className="lesson-meta">最終テスト: —</div>
             </div>
 
             <button
-              onClick={() => nav(`/lesson/${l.id}`)}
-              style={{
-                marginTop: 12,
-                padding: "10px 16px",
-                borderRadius: 8,
-                border: "none",
-                backgroundColor: "#1E3A8A",
-                color: "#fff",
-                fontWeight: "bold",
-                cursor: "pointer",
-                transition: "background-color 0.2s",
+              className="start-btn"
+              onClick={(ev) => {
+                ev.stopPropagation();
+                nav(`/lesson/${l.id}`);
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#163375")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1E3A8A")}
             >
               開始
             </button>
-          </div>
+          </article>
         ))}
       </div>
+
+      <style>{styles}</style>
     </div>
   );
 }
+
+const styles = `
+.page-root {
+  padding: 20px;
+  padding-top: 92px;
+  font-family: Inter, Arial, sans-serif;
+}
+.page-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.back-btn {
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Grid container: use flexbox with wrapping for simple distribution */
+.lessons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Default (desktop): 4 columns */
+.lesson-card {
+  flex: 0 0 calc(25% - 12px);
+  background-color: #cce7ff;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.12s ease;
+  cursor: pointer;
+  min-width: 110px; /* prevents collapsing too small on ultra-narrow containers */
+}
+
+.lesson-card:focus { outline: 2px solid rgba(30,58,138,0.3); }
+.lesson-card:hover { transform: translateY(-4px); }
+
+.lesson-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.lesson-meta { font-size: 12px; color: #666; }
+.start-btn {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1E3A8A;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.start-btn:active { transform: translateY(1px); }
+
+/* ----- Responsive tweaks -----
+   Goal: make cards and text smaller on narrow screens so 3 or 4 items can fit in a row.
+   We progressively reduce the card width, padding and font sizes. */
+
+/* Tablets / medium screens: 3 columns */
+@media (max-width: 900px) {
+  .lesson-card { flex: 0 0 calc(33.333% - 12px); padding: 12px; }
+  .lesson-title { font-size: 14px; }
+  .start-btn { padding: 7px 10px; font-size: 13px; }
+}
+
+/* Small phones: prefer 3 columns but slightly smaller card to try fit 4 when possible */
+@media (max-width: 520px) {
+  .lesson-card { flex: 0 0 calc(33.333% - 10px); padding: 8px; border-radius: 10px; }
+  .lesson-title { font-size: 12px; }
+  .lesson-meta { font-size: 10px; }
+  .start-btn { padding: 6px 8px; font-size: 12px; border-radius: 6px; }
+}
+
+/* Very small / narrow devices: try 4 columns (may be tiny on <360px screens) */
+@media (max-width: 380px) {
+  .lesson-card { flex: 0 0 calc(25% - 8px); padding: 6px; min-width: 56px; }
+  .lesson-title { font-size: 11px; }
+  .lesson-meta { font-size: 9px; }
+  .start-btn { padding: 5px 6px; font-size: 10px; }
+}
+
+/* Remove hover transform on touch devices for smoother UX */
+@media (hover: none) {
+  .lesson-card:hover { transform: none; }
+}
+`;
