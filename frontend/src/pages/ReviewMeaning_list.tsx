@@ -117,12 +117,18 @@ export default function ReviewMiniTestList() {
 }
 
 const styles = `
+:root{
+  --gap: 14px;
+  --card-radius: 14px;
+  --page-padding: 10px;
+}
+
+/* Page layout */
 .page-root {
-  padding: 10px 8px;
+  padding: var(--page-padding) 8px;
   padding-top: 92px;
   font-family: Inter, Arial, sans-serif;
 }
-
 .page-title { font-size: 24px; margin-bottom: 10px; }
 .page-title.smaller { font-size: 22px; }
 .back-btn {
@@ -135,29 +141,28 @@ const styles = `
   cursor: pointer;
 }
 
-/* --- KEEP LARGER / BIG SCREENS EXACTLY AS BEFORE --- */
-
-/* Layout grid (original: flex with wrap for larger screens) */
+/* Layout (flex) - default: FOUR per row */
 .items-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: var(--gap);
   justify-content: space-between;
 }
 
-/* Card style (desktop default: 4 columns via calc(25% - 14px)) */
+/* Card style: set to 4-per-row by default */
 .item-card {
-  flex: 0 0 calc(25% - 14px);
+  flex: 0 0 calc(25% - var(--gap)); /* FOUR per row */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 14px;
+  border-radius: var(--card-radius);
   background: linear-gradient(135deg, #ffd6c9, #ffb6a0);
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
   overflow: hidden;
-  min-width: 120px;
+  min-width: 140px; /* prevent extremely narrow cards */
+  box-sizing: border-box;
 }
 
 .item-card:hover {
@@ -201,13 +206,17 @@ const styles = `
   color: #000;
 }
 
-/* Keep the medium breakpoint exactly as before (3 columns) */
-@media (min-width: 900px) and (max-width: 1199px) {
-  .item-card { flex: 0 0 calc(33.333% - 14px); }
+/* Keep FOUR columns on very large screens */
+@media (min-width: 1200px) {
+  .item-card { flex: 0 0 calc(25% - var(--gap)); min-height: 150px; }
 }
 
-/* --- MOBILE/SMALL SCREENS: change to 2 columns while keeping larger screens unchanged --- */
-/* For <=768px, force two columns (so two boxes sit next to each other on phones/tablets) */
+/* Keep FOUR columns also for mid-large screens (900 - 1199) — user requested 4 */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .item-card { flex: 0 0 calc(25% - var(--gap)); min-height: 140px; }
+}
+
+/* Mobile / small screens: TWO per row */
 @media (max-width: 768px) {
   .item-card { flex: 0 0 calc(50% - 12px); min-width: 0; }
   .item-title { font-size: 16px; }
@@ -215,9 +224,10 @@ const styles = `
   .start-btn { font-size: 14px; padding: 8px 0; }
 }
 
-/* For extra small phones: still two columns but tighten spacing */
+/* Extra small phones: keep two columns but tighten spacing */
 @media (max-width: 480px) {
-  .item-card { flex: 0 0 calc(50% - 12px); }
+  .items-grid { gap: 10px; }
+  .item-card { flex: 0 0 calc(50% - 10px); }
   .item-title { font-size: 15px; }
   .item-sub { font-size: 12px; }
   .start-btn { font-size: 13px; padding: 7px 0; }
