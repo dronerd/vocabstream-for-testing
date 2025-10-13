@@ -1,86 +1,28 @@
-{
-  "lesson_id": "eiken-pre2-6",
-  "title": "Lesson 6",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-6",
+    "title": "Lesson 6",
+    "paragraph": "Health is important for daily life; caring for the body prevents illness and speeds recovery. Regular exercise, a balanced diet, and timely medical advice help people stay well. Hospitals, nurses and doctors support patients when they need treatment.",
+    "words": [
+      { "word": "ache", "meaning": "a continuous, dull pain", "japaneseMeaning": "痛み", "synonyms": "pain, soreness", "antonyms": "comfort, relief", "example": "I have an ache in my lower back." },
+      { "word": "ankle", "meaning": "the joint connecting foot and leg", "japaneseMeaning": "足首", "synonyms": "joint, articulation", "antonyms": "", "example": "She twisted her ankle while running." },
+      { "word": "blood", "meaning": "the red fluid that circulates in the body", "japaneseMeaning": "血液", "synonyms": "", "antonyms": "", "example": "They tested his blood for infections." },
+      { "word": "bone", "meaning": "hard tissue forming the skeleton", "japaneseMeaning": "骨", "synonyms": "skeletal part", "antonyms": "muscle, soft tissue", "example": "He broke a bone in his arm." },
+      { "word": "brain", "meaning": "the organ that controls thought and body functions", "japaneseMeaning": "脳", "synonyms": "mind, intellect", "antonyms": "", "example": "The brain processes information quickly." },
+      { "word": "breathe", "meaning": "to take air into and out of the lungs", "japaneseMeaning": "呼吸する", "synonyms": "respire, inhale", "antonyms": "suffocate, hold breath", "example": "Remember to breathe slowly during the exercise." },
+      { "word": "chest", "meaning": "the upper front part of the body containing the heart and lungs", "japaneseMeaning": "胸", "synonyms": "torso, thorax", "antonyms": "", "example": "He felt tightness in his chest." },
+      { "word": "cure", "meaning": "to make a disease or condition go away", "japaneseMeaning": "治す、治療", "synonyms": "heal, remedy", "antonyms": "worsen, incurable", "example": "Doctors hope to find a cure for the disease." },
+      { "word": "dentist", "meaning": "a doctor who treats teeth", "japaneseMeaning": "歯科医", "synonyms": "dental surgeon, tooth doctor", "antonyms": "", "example": "I visited the dentist for a check-up." },
+      { "word": "diet", "meaning": "the food a person eats regularly", "japaneseMeaning": "食事、食生活", "synonyms": "nutrition, eating plan", "antonyms": "overeating, junk food", "example": "She changed her diet to include more vegetables." },
+      { "word": "disease", "meaning": "a disorder that affects health", "japaneseMeaning": "病気", "synonyms": "illness, sickness", "antonyms": "health, wellness", "example": "They studied how to prevent the disease." },
+      { "word": "exercise", "meaning": "physical activity to keep the body fit", "japaneseMeaning": "運動", "synonyms": "workout, training", "antonyms": "rest, inactivity", "example": "Daily exercise improves stamina." },
+      { "word": "fever", "meaning": "an abnormally high body temperature", "japaneseMeaning": "熱", "synonyms": "high temperature, pyrexia", "antonyms": "normal temperature", "example": "He stayed home because of a fever." },
+      { "word": "hospital", "meaning": "a place where sick or injured people receive treatment", "japaneseMeaning": "病院", "synonyms": "clinic, medical center", "antonyms": "home, outpatient", "example": "She visited the hospital for surgery." },
+      { "word": "illness", "meaning": "a state of poor health", "japaneseMeaning": "病気", "synonyms": "sickness, ailment", "antonyms": "health, wellness", "example": "He missed work due to illness." },
+      { "word": "knee", "meaning": "the joint between the thigh and lower leg", "japaneseMeaning": "膝", "synonyms": "joint, articulation", "antonyms": "", "example": "She injured her knee while playing soccer." },
+      { "word": "medicine", "meaning": "a substance used to treat illnesses", "japaneseMeaning": "薬", "synonyms": "drug, medication", "antonyms": "placebo, home remedy", "example": "Take the medicine twice a day." },
+      { "word": "muscle", "meaning": "tissue that produces movement in the body", "japaneseMeaning": "筋肉", "synonyms": "tissue, sinew", "antonyms": "bone, fat", "example": "Strong muscles help protect joints." },
+      { "word": "nurse", "meaning": "a healthcare professional who cares for patients", "japaneseMeaning": "看護師", "synonyms": "caregiver, medical staff", "antonyms": "", "example": "The nurse checked the patient's vitals." },
+      { "word": "patient", "meaning": "a person receiving medical care", "japaneseMeaning": "患者", "synonyms": "sick person, case", "antonyms": "doctor, nurse", "example": "The patient recovered after treatment." }
+    ]
+  }
+  

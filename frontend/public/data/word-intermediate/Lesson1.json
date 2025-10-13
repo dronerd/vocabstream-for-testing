@@ -1,88 +1,29 @@
+
 {
-  "lesson_id": "eiken-pre2-1",
-  "title": "Lesson 1",
-  "paragraph": "Being confident is essential when you face a challenging situation. A supportive environment can increase your chances of finding an effective solution. Your choices can influence others in a significant way, and every difficulty is an opportunity to learn and improve.",
-  
-  "words": [
-    {
-        "word": "confident",
-        "meaning": "feeling or showing certainty about something",
-        "japaneseMeaning": "自信がある",
-        "synonyms": "self-assured, poised",
-        "antonyms": "insecure, unsure",
-        "example": "She felt confident before giving her presentation."
-    },
-    {
-        "word": "challenging",
-        "meaning": "difficult in an interesting or stimulating way",
-        "japaneseMeaning": "やりがいのある",
-        "synonyms": "difficult, demanding",
-        "antonyms": "easy, simple",
-        "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-        "word": "solution",
-        "meaning": "a means of solving a problem or dealing with a difficult situation",
-        "japaneseMeaning": "解決策",
-        "synonyms": "answer, resolution",
-        "antonyms": "problem, issue",
-        "example": "We need to find a solution to this problem quickly."
-    },
-    {
-        "word": "influence",
-        "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-        "japaneseMeaning": "影響",
-        "synonyms": "impact, effect",
-        "antonyms": "insignificance, powerlessness",
-        "example": "His advice had a positive influence on my decision."
-    },
-    {
-        "word": "environment",
-        "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-        "japaneseMeaning": "環境",
-        "synonyms": "surroundings, ecosystem",
-        "antonyms": "pollution, degradation",
-        "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-        "word": "effective",
-        "meaning": "successful in producing a desired or intended result",
-        "japaneseMeaning": "効果的な",
-        "synonyms": "efficient, successful",
-        "antonyms": "ineffective, useless",
-        "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-        "word": "increase",
-        "meaning": "become or make greater in size, amount, or degree",
-        "japaneseMeaning": "増やす",
-        "synonyms": "raise, grow",
-        "antonyms": "decrease, reduce",
-        "example": "We need to increase our efforts to improve results."
-    },
-    {
-        "word": "opportunity",
-        "meaning": "a set of circumstances that makes it possible to do something",
-        "japaneseMeaning": "機会",
-        "synonyms": "chance, prospect",
-        "antonyms": "obstacle, setback",
-        "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-        "word": "essential",
-        "meaning": "absolutely necessary; extremely important",
-        "japaneseMeaning": "不可欠な",
-        "synonyms": "necessary, vital",
-        "antonyms": "unnecessary, optional",
-        "example": "Good communication skills are essential in the workplace."
-    },
-    {
-        "word": "significant",
-        "meaning": "important or noticeable",
-        "japaneseMeaning": "重要な、顕著な",
-        "synonyms": "important, meaningful, notable",
-        "antonyms": "insignificant, trivial",
-        "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+    "lesson_id": "eiken-pre2-1",
+    "title": "Lesson 1",
+    "paragraph": "People form many types of relationships during their lives. Family members, friends, colleagues and partners each play different roles, and meeting strangers or guests can lead to new connections. Respect and trust help maintain healthy relationships across generations.",
+    "words": [
+      { "word": "adult", "meaning": "a fully grown person", "japaneseMeaning": "大人", "synonyms": "grown-up, mature", "antonyms": "child, minor", "example": "She became an adult at eighteen." },
+      { "word": "aunt", "meaning": "a parent's sister or sister-in-law", "japaneseMeaning": "おば", "synonyms": "relative, kin", "antonyms": "", "example": "My aunt sent me a birthday card." },
+      { "word": "boyfriend", "meaning": "a male partner in a romantic relationship", "japaneseMeaning": "彼氏", "synonyms": "partner, companion", "antonyms": "ex, stranger", "example": "Her boyfriend joined us for dinner." },
+      { "word": "colleague", "meaning": "a person you work with", "japaneseMeaning": "同僚", "synonyms": "co-worker, associate", "antonyms": "rival, stranger", "example": "I discussed the report with a colleague." },
+      { "word": "couple", "meaning": "two people in a relationship or paired together", "japaneseMeaning": "カップル、二人組", "synonyms": "pair, duo", "antonyms": "individual, single", "example": "The couple walked along the beach." },
+      { "word": "cousin", "meaning": "a child of your aunt or uncle", "japaneseMeaning": "いとこ", "synonyms": "relative, kin", "antonyms": "", "example": "My cousin lives in Osaka." },
+      { "word": "customer", "meaning": "someone who buys goods or services", "japaneseMeaning": "客", "synonyms": "client, buyer", "antonyms": "seller, vendor", "example": "The customer asked for a refund." },
+      { "word": "guest", "meaning": "a person invited to visit or stay", "japaneseMeaning": "客、来訪者", "synonyms": "visitor, invitee", "antonyms": "host, resident", "example": "We prepared dinner for our guests." },
+      { "word": "neighbour", "meaning": "a person living near you", "japaneseMeaning": "隣人", "synonyms": "resident, local", "antonyms": "stranger, foreigner", "example": "My neighbour watered my plants while I was away." },
+      { "word": "stranger", "meaning": "a person you do not know", "japaneseMeaning": "見知らぬ人", "synonyms": "unknown, outsider", "antonyms": "acquaintance, friend", "example": "She asked a stranger for directions." },
+      { "word": "twin", "meaning": "one of two children born at the same birth", "japaneseMeaning": "双子", "synonyms": "sibling, pair", "antonyms": "single, only child", "example": "The twins look very similar." },
+      { "word": "youth", "meaning": "the time of being young; a young person", "japaneseMeaning": "若者、青春期", "synonyms": "youngster, adolescent", "antonyms": "elder, adult", "example": "Many youths volunteered at the event." },
+      { "word": "employer", "meaning": "a person or organization that hires people", "japaneseMeaning": "雇用者、雇い主", "synonyms": "boss, company", "antonyms": "employee, worker", "example": "The employer posted a new job opening." },
+      { "word": "employee", "meaning": "a person hired to work for someone", "japaneseMeaning": "従業員", "synonyms": "worker, staff", "antonyms": "employer, boss", "example": "The employee completed the task on time." },
+      { "word": "partner", "meaning": "a person who works with or is in a relationship with you", "japaneseMeaning": "パートナー", "synonyms": "companion, associate", "antonyms": "rival, stranger", "example": "They became business partners last year." },
+      { "word": "relative", "meaning": "a person connected by blood or marriage", "japaneseMeaning": "親戚", "synonyms": "kin, family member", "antonyms": "stranger, outsider", "example": "Many relatives came to the reunion." },
+      { "word": "boss", "meaning": "a person in charge at work", "japaneseMeaning": "上司", "synonyms": "manager, superior", "antonyms": "subordinate, employee", "example": "The boss approved my vacation request." },
+      { "word": "passenger", "meaning": "a person traveling in a vehicle but not driving", "japaneseMeaning": "乗客", "synonyms": "traveler, rider", "antonyms": "driver, pilot", "example": "The passenger fastened the seatbelt." },
+      { "word": "visitor", "meaning": "a person who visits a place", "japaneseMeaning": "訪問者", "synonyms": "guest, caller", "antonyms": "resident, local", "example": "A visitor asked about the museum opening hours." },
+      { "word": "teenager", "meaning": "a person aged between 13 and 19", "japaneseMeaning": "10代の若者", "synonyms": "adolescent, teen", "antonyms": "child, adult", "example": "The teenager studied for exams all week." }
+    ]
+  }
+ 
