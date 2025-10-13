@@ -24,6 +24,7 @@ export default function LandingPage() {
           --card-border: rgba(11,61,145,0.06);
           --radius: 14px;
           --container-max: 1800px; /* ボックスを左右にさらに広げるための最大幅 */
+          --hero-bottom-gap-mobile: 22px; /* mobile gap between hero and main — tweakable */
         }
 
         *{box-sizing:border-box}
@@ -34,7 +35,7 @@ export default function LandingPage() {
         .landing-root{font-size:var(--base-font)}
 
         /* Top hero card that stretches across on large screens */
-        .hero-wrap{padding:18px 3.5vw} /* 横の余白を減らして箱をより広く見せる */
+        .hero-wrap{padding:18px 3.5vw}
         .hero-card{background:var(--card-bg);border-radius:20px;padding:22px;box-shadow:0 8px 24px rgba(20,40,80,0.06);border:1px solid var(--card-border);max-width:var(--container-max);margin:0 auto;width:100%;box-sizing:border-box}
 
         .hero-grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
@@ -63,10 +64,12 @@ export default function LandingPage() {
         @media(min-width:760px){
           .hero-grid{grid-template-columns:1fr 450px;gap:24px}
           .hero-card{padding:28px}
-          .grid-stack{grid-template-columns:repeat(2, minmax(0,1fr));grid-auto-rows:1fr}
-          .card{height:100%;display:flex;flex-direction:column}
-          .card > *{flex:0 0 auto}
-          .card p{flex:1 1 auto}
+          /* Allow cards to size to their content instead of stretching to match each other */
+          .grid-stack{grid-template-columns:repeat(2, minmax(0,1fr));grid-auto-rows:auto}
+          .card{display:block;height:auto}
+          /* remove forced flex children so vertical whitespace is determined by content */
+          .card > *{flex:initial}
+          .card p{flex:initial}
         }
 
         /* ensure very large screens keep layout but do not change look */
@@ -77,10 +80,13 @@ export default function LandingPage() {
 
         /* MOBILE-SPECIFIC: make white boxes extend closer to the edges and prevent overflow */
         @media(max-width:700px){
-          /* reduce wrapper padding so white cards reach near edges */
-          .hero-wrap{padding:1px 1px;}
-          main{padding:1px 1px;}
-          .hero-card{max-width:calc(140% - 2px);}
+          /* increase bottom gap of the hero so 'About' doesn't sit too close */
+          .hero-wrap{padding:8px 10px; margin-bottom: var(--hero-bottom-gap-mobile);} 
+          /* slightly larger main top padding so it visually separates from hero */
+          main{padding:8px 10px; margin-top: 8px;}
+
+          /* make hero-card not overflow and reach full width */
+          .hero-card{max-width:100%;}
 
           /* grid becomes single column; cards take full width */
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
