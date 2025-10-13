@@ -117,12 +117,18 @@ export default function ReviewMiniTestList() {
 }
 
 const styles = `
+:root{
+  --gap: 14px;
+  --card-radius: 14px;
+  --page-padding: 10px;
+}
+
+/* Page layout */
 .page-root {
-  padding: 10px 8px;
+  padding: var(--page-padding) 8px;
   padding-top: 92px;
   font-family: Inter, Arial, sans-serif;
 }
-
 .page-title { font-size: 24px; margin-bottom: 10px; }
 .page-title.smaller { font-size: 22px; }
 .back-btn {
@@ -135,28 +141,28 @@ const styles = `
   cursor: pointer;
 }
 
-/* Layout grid: use CSS Grid for predictable columns */
+/* Layout (flex) - default: FOUR per row */
 .items-grid {
-  display: grid;
-  /* auto-fill of minmax gives flexible columns on wide screens */
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 14px;
-  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  justify-content: space-between;
 }
 
-/* Card style */
+/* Card style: set to 4-per-row by default */
 .item-card {
+  flex: 0 0 calc(25% - var(--gap)); /* FOUR per row */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 14px;
+  border-radius: var(--card-radius);
   background: linear-gradient(135deg, #ffd6c9, #ffb6a0);
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
   overflow: hidden;
-  width: 100%;   /* grid item should fill the grid cell */
-  min-width: 0;  /* allow shrinking in narrow containers */
+  min-width: 140px; /* prevent extremely narrow cards */
+  box-sizing: border-box;
 }
 
 .item-card:hover {
@@ -200,30 +206,28 @@ const styles = `
   color: #000;
 }
 
-/* Breakpoints: adapt column counts */
+/* Keep FOUR columns on very large screens */
+@media (min-width: 1200px) {
+  .item-card { flex: 0 0 calc(25% - var(--gap)); min-height: 150px; }
+}
 
-/* medium-large: three columns-ish */
+/* Keep FOUR columns also for mid-large screens (900 - 1199) — user requested 4 */
 @media (min-width: 900px) and (max-width: 1199px) {
-  .items-grid { grid-template-columns: repeat(3, 1fr); }
+  .item-card { flex: 0 0 calc(25% - var(--gap)); min-height: 140px; }
 }
 
-/* tablet / small desktop: two columns */
-@media (max-width: 899px) and (min-width: 769px) {
-  .items-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* default for <=768: two columns (mobile & small screens) */
-/* This forces two boxes next to each other on typical mobile widths */
+/* Mobile / small screens: TWO per row */
 @media (max-width: 768px) {
-  .items-grid { grid-template-columns: repeat(2, 1fr); }
+  .item-card { flex: 0 0 calc(50% - 12px); min-width: 0; }
   .item-title { font-size: 16px; }
   .item-sub { font-size: 13px; }
   .start-btn { font-size: 14px; padding: 8px 0; }
 }
 
-/* extra small phones: still two columns but slightly tighter */
+/* Extra small phones: keep two columns but tighten spacing */
 @media (max-width: 480px) {
-  .items-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .items-grid { gap: 10px; }
+  .item-card { flex: 0 0 calc(50% - 10px); }
   .item-title { font-size: 15px; }
   .item-sub { font-size: 12px; }
   .start-btn { font-size: 13px; padding: 7px 0; }

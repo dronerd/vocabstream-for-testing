@@ -7,6 +7,7 @@ type ReviewItem = {
   subtitle?: string;
 };
 
+// Reuse the same static genre title map from LessonList so the UI remains consistent
 const STATIC_GENRE_TITLES: Record<string, string> = {
   "word-intermediate": "単語初級~中級 (CEFR A2~B1)",
   "word-high-intermediate": "単語中上級 (CEFR B2)",
@@ -27,6 +28,7 @@ const STATIC_GENRE_TITLES: Record<string, string> = {
   "engineering": "Engineering",
 };
 
+// Configure how many review boxes to show per genre (adjustable)
 const REVIEW_COUNT_BY_GENRE: Record<string, number> = {
   "word-intermediate": 64,
   "word-high-intermediate": 71,
@@ -47,15 +49,20 @@ const REVIEW_COUNT_BY_GENRE: Record<string, number> = {
   "engineering": 71,
 };
 
+// Helper to generate frontend-only review items
 function makeReviewItems(genreId: string, count: number): ReviewItem[] {
   const arr: ReviewItem[] = [];
   for (let i = 1; i <= count; i++) {
-    arr.push({ id: `${genreId}-review-minitest-${i}`, title: `MiniTest ${i}`, subtitle: `最終テスト: %`});
+    arr.push({
+      id: `${genreId}-review-fillin-${i}`,
+      title: `Fill-in Review ${i}`,
+      subtitle: `練習問題 ${i}`,
+    });
   }
   return arr;
 }
 
-export default function ReviewMiniTestList() {
+export default function ReviewFillinList() {
   const { genreId } = useParams<{ genreId: string }>();
   const [items, setItems] = useState<ReviewItem[]>([]);
   const [genreTitle, setGenreTitle] = useState<string>("");
@@ -63,178 +70,100 @@ export default function ReviewMiniTestList() {
 
   useEffect(() => {
     if (!genreId) return;
+
     setGenreTitle(STATIC_GENRE_TITLES[genreId] || genreId);
+
     const count = REVIEW_COUNT_BY_GENRE[genreId] ?? 10;
-    setItems(makeReviewItems(genreId, count));
+    const generated = makeReviewItems(genreId, count);
+    setItems(generated);
   }, [genreId]);
 
   if (!genreId) {
     return (
-      <div className="page-root">
-        <h2 className="page-title">ジャンルが指定されていません</h2>
-        <button className="back-btn" onClick={() => nav("/review")}>復習方法の一覧に戻る</button>
-        <style>{styles}</style>
+      <div style={{ padding: 20 }}>
+        <h2 style={{ fontSize: 28, marginBottom: 20 }}>ジャンルが指定されていません</h2>
+        <button
+          onClick={() => nav("/review")}
+          style={{
+            padding: "8px 16px",
+            borderRadius: 8,
+            border: "none",
+            backgroundColor: "#555",
+            color: "#fff",
+            cursor: "pointer",
+          }}
+        >
+          復習一覧に戻る
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="page-root">
-      <h2 className="page-title smaller">{genreTitle} 例文ミニテストの復習</h2>
-      <button className="back-btn" onClick={() => nav("/review")}>復習方法の一覧に戻る</button>
+    <div style={{ padding: 20, paddingTop: 92 }}>
+      <h2 style={{ fontSize: 28, marginBottom: 20 }}>{genreTitle} 文章穴埋めの復習</h2>
+      <button
+        onClick={() => nav("/review")}
+        style={{
+          marginBottom: 20,
+          padding: "8px 16px",
+          borderRadius: 8,
+          border: "none",
+          backgroundColor: "#555",
+          color: "#fff",
+          cursor: "pointer",
+        }}
+      >
+        復習方法選択に戻る
+      </button>
 
-      <div className="items-grid">
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
         {items.map((it) => (
-          <article
+          <div
             key={it.id}
-            className="item-card"
-            onClick={() => nav(`/review/minitest/${it.id}`)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => e.key === "Enter" && nav(`/review/minitest/${it.id}`)}
+            style={{
+              flex: "0 0 calc(25% - 16px)",
+              backgroundColor: "#fef3c7",
+              borderRadius: 12,
+              padding: 20,
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxShadow: "0 4px 8px rgba(0,0,0,0.08)",
+              transition: "transform 0.2s",
+              cursor: "default",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
-            <div className="item-content">
-              <div className="item-title">{it.title}</div>
-              <div className="item-sub">{it.subtitle}</div>
+            <div>
+              <div style={{ fontSize: 18, fontWeight: "bold", marginBottom: 8 }}>{it.title}</div>
+              <div style={{ fontSize: 12, color: "#666" }}>{it.subtitle}</div>
             </div>
 
-            <button
-              className="start-btn"
-              onClick={(ev) => {
-                ev.stopPropagation();
-                nav(`/review/minitest/${it.id}`);
-              }}
-            >
-              開始
-            </button>
-          </article>
+            <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+              <button
+                onClick={() => nav(`/review/fillin/${it.id}`)}
+                style={{
+                  padding: "10px 12px",
+                  borderRadius: 8,
+                  border: "none",
+                  backgroundColor: "#065f46",
+                  color: "#fff",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
+                開始
+              </button>
+
+            </div>
+          </div>
         ))}
       </div>
-
-      <style>{styles}</style>
     </div>
   );
 }
-
-const styles = `
-:root{
-  --gap: 14px;
-  --card-radius: 14px;
-  --page-padding: 10px;
-}
-
-/* Page layout */
-.page-root {
-  padding: var(--page-padding) 8px;
-  padding-top: 92px;
-  font-family: Inter, Arial, sans-serif;
-}
-.page-title { font-size: 24px; margin-bottom: 10px; }
-.page-title.smaller { font-size: 22px; }
-.back-btn {
-  margin-bottom: 14px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  background-color: #555;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* Layout (flex) - default: FOUR per row */
-.items-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap);
-  justify-content: space-between;
-}
-
-/* Card style: set to 4-per-row by default */
-.item-card {
-  flex: 0 0 calc(25% - var(--gap)); /* FOUR per row */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: var(--card-radius);
-  background: linear-gradient(135deg, #ffd6c9, #ffb6a0);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  cursor: pointer;
-  overflow: hidden;
-  min-width: 140px; /* prevent extremely narrow cards */
-  box-sizing: border-box;
-}
-
-.item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 150, 120, 0.25);
-}
-
-.item-content {
-  padding: 14px;
-}
-
-.item-title {
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 6px;
-  color: #3b0b0b;
-}
-
-.item-sub {
-  font-size: 14px;
-  color: #5a2e2e;
-}
-
-/* Full-width bottom button */
-.start-btn {
-  width: 100%;
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(6px);
-  padding: 10px 0;
-  font-size: 15px;
-  font-weight: 700;
-  color: #3b0b0b;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.start-btn:hover {
-  background: rgba(255,255,255,0.5);
-  color: #000;
-}
-
-/* Keep FOUR columns on very large screens */
-@media (min-width: 1200px) {
-  .item-card { flex: 0 0 calc(25% - var(--gap)); min-height: 150px; }
-}
-
-/* Keep FOUR columns also for mid-large screens (900 - 1199) — user requested 4 */
-@media (min-width: 900px) and (max-width: 1199px) {
-  .item-card { flex: 0 0 calc(25% - var(--gap)); min-height: 140px; }
-}
-
-/* Mobile / small screens: TWO per row */
-@media (max-width: 768px) {
-  .item-card { flex: 0 0 calc(50% - 12px); min-width: 0; }
-  .item-title { font-size: 16px; }
-  .item-sub { font-size: 13px; }
-  .start-btn { font-size: 14px; padding: 8px 0; }
-}
-
-/* Extra small phones: keep two columns but tighten spacing */
-@media (max-width: 480px) {
-  .items-grid { gap: 10px; }
-  .item-card { flex: 0 0 calc(50% - 10px); }
-  .item-title { font-size: 15px; }
-  .item-sub { font-size: 12px; }
-  .start-btn { font-size: 13px; padding: 7px 0; }
-}
-
-/* Remove hover transform on touch devices */
-@media (hover: none) {
-  .item-card:hover { transform: none; }
-}
-`;
