@@ -135,17 +135,19 @@ const styles = `
   cursor: pointer;
 }
 
-/* Layout grid: use CSS Grid for predictable columns */
+/* --- KEEP LARGER / BIG SCREENS EXACTLY AS BEFORE --- */
+
+/* Layout grid (original: flex with wrap for larger screens) */
 .items-grid {
-  display: grid;
-  /* auto-fill of minmax gives flexible columns on wide screens */
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 14px;
-  align-items: stretch;
+  justify-content: space-between;
 }
 
-/* Card style */
+/* Card style (desktop default: 4 columns via calc(25% - 14px)) */
 .item-card {
+  flex: 0 0 calc(25% - 14px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,8 +157,7 @@ const styles = `
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
   overflow: hidden;
-  width: 100%;   /* grid item should fill the grid cell */
-  min-width: 0;  /* allow shrinking in narrow containers */
+  min-width: 120px;
 }
 
 .item-card:hover {
@@ -200,30 +201,23 @@ const styles = `
   color: #000;
 }
 
-/* Breakpoints: adapt column counts */
-
-/* medium-large: three columns-ish */
+/* Keep the medium breakpoint exactly as before (3 columns) */
 @media (min-width: 900px) and (max-width: 1199px) {
-  .items-grid { grid-template-columns: repeat(3, 1fr); }
+  .item-card { flex: 0 0 calc(33.333% - 14px); }
 }
 
-/* tablet / small desktop: two columns */
-@media (max-width: 899px) and (min-width: 769px) {
-  .items-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* default for <=768: two columns (mobile & small screens) */
-/* This forces two boxes next to each other on typical mobile widths */
+/* --- MOBILE/SMALL SCREENS: change to 2 columns while keeping larger screens unchanged --- */
+/* For <=768px, force two columns (so two boxes sit next to each other on phones/tablets) */
 @media (max-width: 768px) {
-  .items-grid { grid-template-columns: repeat(2, 1fr); }
+  .item-card { flex: 0 0 calc(50% - 12px); min-width: 0; }
   .item-title { font-size: 16px; }
   .item-sub { font-size: 13px; }
   .start-btn { font-size: 14px; padding: 8px 0; }
 }
 
-/* extra small phones: still two columns but slightly tighter */
+/* For extra small phones: still two columns but tighten spacing */
 @media (max-width: 480px) {
-  .items-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .item-card { flex: 0 0 calc(50% - 12px); }
   .item-title { font-size: 15px; }
   .item-sub { font-size: 12px; }
   .start-btn { font-size: 13px; padding: 7px 0; }
