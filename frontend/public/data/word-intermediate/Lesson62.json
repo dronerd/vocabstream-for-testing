@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-pre2-62",
-  "title": "Lesson 62",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-62",
+    "title": "Lesson 62",
+    "paragraph": "Adjectives for reasonableness, reality and simplicity — handy for evaluations and descriptions.",
+    "words": [
+      { "word": "quiet", "meaning": "making little or no noise; calm", "japaneseMeaning": "静かな／穏やかな", "synonyms": "silent, peaceful", "antonyms": "loud, noisy", "example": "The library is quiet during study hours." },
+      { "word": "rare", "meaning": "not occurring very often; uncommon", "japaneseMeaning": "珍しい／まれな", "synonyms": "uncommon, scarce", "antonyms": "common, frequent", "example": "A total eclipse is a rare event." },
+      { "word": "real", "meaning": "actually existing as a thing or occurring in fact", "japaneseMeaning": "本当の／実際の", "synonyms": "genuine, authentic", "antonyms": "fake, imaginary", "example": "Is this a real antique?" },
+      { "word": "reasonable", "meaning": "fair and sensible; not extreme", "japaneseMeaning": "合理的な／妥当な", "synonyms": "fair, sensible", "antonyms": "unreasonable, excessive", "example": "The price seems reasonable for such quality." },
+      { "word": "recent", "meaning": "having happened or started only a short time ago", "japaneseMeaning": "最近の／新しい", "synonyms": "new, current", "antonyms": "ancient, distant", "example": "Have you read the recent report?" },
+      { "word": "regular", "meaning": "occurring at fixed intervals; usual", "japaneseMeaning": "定期的な／規則的な", "synonyms": "steady, routine", "antonyms": "irregular, sporadic", "example": "She visits the gym on a regular schedule." },
+      { "word": "rich", "meaning": "having a great deal of money or valuable resources", "japaneseMeaning": "裕福な／豊かな", "synonyms": "wealthy, affluent", "antonyms": "poor, impoverished", "example": "The region is rich in natural resources." },
+      { "word": "right", "meaning": "correct or morally good; also direction 'opposite of left'", "japaneseMeaning": "正しい／右の", "synonyms": "correct, proper", "antonyms": "wrong, incorrect", "example": "You were right about the answer." },
+      { "word": "safe", "meaning": "protected from danger or risk; secure", "japaneseMeaning": "安全な／安心な", "synonyms": "secure, protected", "antonyms": "dangerous, risky", "example": "Keep important documents in a safe place." },
+      { "word": "serious", "meaning": "not joking; of great consequence", "japaneseMeaning": "真剣な／重大な", "synonyms": "grave, solemn", "antonyms": "frivolous, light", "example": "This is a serious decision — think carefully." },
+      { "word": "short", "meaning": "measuring a small distance from end to end; brief", "japaneseMeaning": "短い／短時間の", "synonyms": "brief, concise", "antonyms": "long, lengthy", "example": "He gave a short summary of the meeting." },
+      { "word": "simple", "meaning": "easy to understand or do; not complex", "japaneseMeaning": "簡単な／単純な", "synonyms": "easy, straightforward", "antonyms": "complex, complicated", "example": "The recipe is simple and quick to make." }
+    ]
+  }

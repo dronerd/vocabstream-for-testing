@@ -1,86 +1,20 @@
-{
-  "lesson_id": "eiken-pre2-64",
-  "title": "Lesson 64",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-64",
+    "title": "Lesson 64",
+    "paragraph": "Final adjectives — tradition, truth, rarity and value; good for concluding descriptions.",
+    "words": [
+      { "word": "traditional", "meaning": "based on long-established customs or beliefs", "japaneseMeaning": "伝統的な／従来の", "synonyms": "conventional, customary", "antonyms": "modern, innovative", "example": "They celebrated with traditional songs and dances." },
+      { "word": "true", "meaning": "in accordance with fact or reality", "japaneseMeaning": "本当の／真実の", "synonyms": "real, factual", "antonyms": "false, untrue", "example": "Is that true or just a rumor?" },
+      { "word": "typical", "meaning": "having the usual characteristics of a type", "japaneseMeaning": "典型的な／普通の", "synonyms": "representative, characteristic", "antonyms": "atypical, unusual", "example": "A typical summer day here is warm and sunny." },
+      { "word": "unusual", "meaning": "not common; different from what is usual", "japaneseMeaning": "珍しい／普通でない", "synonyms": "strange, rare", "antonyms": "usual, ordinary", "example": "It's unusual to see such a large crowd on a weekday." },
+      { "word": "useful", "meaning": "able to be used to achieve a purpose; practical", "japaneseMeaning": "役に立つ／有用な", "synonyms": "helpful, practical", "antonyms": "useless, pointless", "example": "This tool is useful for many DIY projects." },
+      { "word": "valuable", "meaning": "worth a lot of money or important in use", "japaneseMeaning": "価値のある／有益な", "synonyms": "precious, worthwhile", "antonyms": "worthless, cheap", "example": "The advice she gave was very valuable to me." },
+      { "word": "weak", "meaning": "lacking physical strength or effectiveness", "japaneseMeaning": "弱い／力のない", "synonyms": "feeble, frail", "antonyms": "strong, robust", "example": "The bridge looked weak and needed repair." },
+      { "word": "wide", "meaning": "having a great extent from side to side", "japaneseMeaning": "広い／幅のある", "synonyms": "broad, expansive", "antonyms": "narrow, limited", "example": "They walked down a wide boulevard." },
+      { "word": "wild", "meaning": "living in a natural state; not tamed", "japaneseMeaning": "野生の／荒々しい", "synonyms": "untamed, feral", "antonyms": "domesticated, tame", "example": "We saw wild deer in the forest." },
+      { "word": "wonderful", "meaning": "extremely good; inspiring delight", "japaneseMeaning": "素晴らしい／素敵な", "synonyms": "marvelous, delightful", "antonyms": "terrible, awful", "example": "They had a wonderful time at the festival." },
+      { "word": "wrong", "meaning": "not correct or true; mistaken", "japaneseMeaning": "間違った／誤った", "synonyms": "incorrect, mistaken", "antonyms": "right, correct", "example": "You took the wrong exit on the highway." },
+      { "word": "young", "meaning": "having lived or existed for only a short time; not old", "japaneseMeaning": "若い／年少の", "synonyms": "youthful, juvenile", "antonyms": "old, aged", "example": "She is still young and has many years ahead." }
+    ]
+  }
+

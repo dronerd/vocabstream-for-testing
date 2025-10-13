@@ -1,86 +1,19 @@
 {
   "lesson_id": "eiken-pre2-31",
-  "title": "Lesson 31",
+  "title": "Lesson 6",
+  "paragraph": "Verbs for introducing people, joining groups, and actions of possession and learning — useful in personal and educational contexts.",
   "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
+    { "word": "introduce", "meaning": "to present someone or something to another person or group", "japaneseMeaning": "紹介する", "synonyms": "present, acquaint", "antonyms": "hide, withdraw", "example": "Let me introduce my colleague." },
+    { "word": "invite", "meaning": "to ask someone to go somewhere or do something", "japaneseMeaning": "招待する／誘う", "synonyms": "ask, request", "antonyms": "exclude, reject", "example": "We invited them to dinner." },
+    { "word": "join", "meaning": "to become part of something", "japaneseMeaning": "参加する／加わる", "synonyms": "enter, connect", "antonyms": "leave, separate", "example": "She joined the club last month." },
+    { "word": "keep", "meaning": "to have or retain possession of", "japaneseMeaning": "保つ／保持する", "synonyms": "retain, hold", "antonyms": "lose, give up", "example": "Keep your receipt for returns." },
+    { "word": "kill", "meaning": "to cause the death of someone or something", "japaneseMeaning": "殺す", "synonyms": "slay, eliminate", "antonyms": "save, revive", "example": "The disease killed many plants." },
+    { "word": "learn", "meaning": "to gain knowledge or skill through study or experience", "japaneseMeaning": "学ぶ／習得する", "synonyms": "study, acquire", "antonyms": "forget, ignore", "example": "She learned French in school." },
+    { "word": "lend", "meaning": "to give something temporarily expecting it back", "japaneseMeaning": "貸す", "synonyms": "loan, give temporarily", "antonyms": "borrow, keep", "example": "Can you lend me $10?" },
+    { "word": "lie (not tell the truth)", "meaning": "to say something untrue with intent to deceive", "japaneseMeaning": "嘘をつく", "synonyms": "fabricate, deceive", "antonyms": "truth, confess", "example": "He lied about his age." },
+    { "word": "lie (on the ground)", "meaning": "to rest in a flat position", "japaneseMeaning": "横たわる", "synonyms": "recline, rest", "antonyms": "stand, rise", "example": "She lay on the grass and watched clouds." },
+    { "word": "like", "meaning": "to find something enjoyable or attractive", "japaneseMeaning": "好きである", "synonyms": "enjoy, prefer", "antonyms": "dislike, hate", "example": "I like chocolate ice cream." },
+    { "word": "listen", "meaning": "to pay attention to sound or speech", "japaneseMeaning": "聞く／耳を傾ける", "synonyms": "hear, attend", "antonyms": "ignore, tune out", "example": "Listen carefully to the teacher." },
+    { "word": "lose", "meaning": "to no longer have something or be unable to find it", "japaneseMeaning": "失う／なくす", "synonyms": "misplace, forfeit", "antonyms": "find, win", "example": "I lost my wallet yesterday." }
   ]
 }

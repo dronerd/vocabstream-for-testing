@@ -1,86 +1,19 @@
 {
   "lesson_id": "eiken-pre2-32",
-  "title": "Lesson 32",
+  "title": "Lesson 7",
+  "paragraph": "This lesson covers strong feelings, management verbs, and meeting-related actions — practical for social and administrative contexts.",
   "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
+    { "word": "love", "meaning": "to have a deep affection or strong liking for", "japaneseMeaning": "愛する／大好きである", "synonyms": "adore, cherish", "antonyms": "hate, dislike", "example": "I love spending time with family." },
+    { "word": "manage", "meaning": "to be in charge of or succeed in doing something", "japaneseMeaning": "管理する／なんとかやり遂げる", "synonyms": "handle, oversee", "antonyms": "mismanage, fail", "example": "She manages a small team." },
+    { "word": "mean", "meaning": "to intend to convey or express", "japaneseMeaning": "意味する／意図する", "synonyms": "intend, signify", "antonyms": "misinterpret, confuse", "example": "What do you mean by that?" },
+    { "word": "measure", "meaning": "to ascertain the size, amount, or degree of something", "japaneseMeaning": "測定する／測る", "synonyms": "gauge, assess", "antonyms": "guess, estimate", "example": "Measure the length carefully." },
+    { "word": "meet", "meaning": "to come into the presence of someone or be introduced", "japaneseMeaning": "会う／出会う", "synonyms": "encounter, greet", "antonyms": "avoid, part", "example": "I will meet him at the station." },
+    { "word": "miss", "meaning": "to fail to hit, reach, or attend", "japaneseMeaning": "逃す／会えない", "synonyms": "fail to catch, skip", "antonyms": "hit, attend", "example": "I missed the bus." },
+    { "word": "move", "meaning": "to change position or location", "japaneseMeaning": "動く／移動する", "synonyms": "shift, relocate", "antonyms": "stay, remain", "example": "They moved to a new city." },
+    { "word": "need", "meaning": "to require something because it is necessary", "japaneseMeaning": "必要とする", "synonyms": "require, demand", "antonyms": "want, reject", "example": "You need a passport to travel." },
+    { "word": "offer", "meaning": "to present or propose something for acceptance", "japaneseMeaning": "申し出る／提供する", "synonyms": "propose, present", "antonyms": "withdraw, refuse", "example": "They offered help immediately." },
+    { "word": "open", "meaning": "to move something so it is no longer closed", "japaneseMeaning": "開ける／開く", "synonyms": "unfasten, unlock", "antonyms": "close, shut", "example": "Open the window, please." },
+    { "word": "order", "meaning": "to request goods or services or to command", "japaneseMeaning": "注文する／命じる", "synonyms": "request, command", "antonyms": "cancel, refuse", "example": "I ordered dinner online." },
+    { "word": "own", "meaning": "to have something as property", "japaneseMeaning": "所有する", "synonyms": "possess, hold", "antonyms": "lack, relinquish", "example": "She owns a small business." }
   ]
 }

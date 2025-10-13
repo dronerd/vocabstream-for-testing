@@ -1,86 +1,27 @@
-{
-  "lesson_id": "eiken-pre2-24",
-  "title": "Lesson 24",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-24",
+    "title": "Lesson 24",
+    "paragraph": "Health and safety at work protect people from accidents and illness. Wearing protective equipment, following rules and receiving proper training reduce risks and keep workplaces safer.",
+    "words": [
+      { "word": "hazard", "meaning": "something that can cause harm or danger", "japaneseMeaning": "危険、ハザード", "synonyms": "danger, risk", "antonyms": "safety, protection", "example": "Wet floors are a hazard at the entrance." },
+      { "word": "first aid", "meaning": "immediate care given to someone who is injured", "japaneseMeaning": "応急処置", "synonyms": "emergency care", "antonyms": "", "example": "Learn basic first aid for injuries." },
+      { "word": "helmet", "meaning": "protective headgear to prevent injury", "japaneseMeaning": "ヘルメット", "synonyms": "hard hat, head protector", "antonyms": "", "example": "Wear a helmet when riding a bike." },
+      { "word": "goggles", "meaning": "protective eyewear", "japaneseMeaning": "ゴーグル、保護眼鏡", "synonyms": "safety glasses", "antonyms": "", "example": "Use goggles when working with chemicals." },
+      { "word": "safety", "meaning": "the condition of being protected from danger", "japaneseMeaning": "安全", "synonyms": "security, protection", "antonyms": "danger, risk", "example": "Safety is the company's top priority." },
+      { "word": "risk", "meaning": "the chance of something bad happening", "japaneseMeaning": "リスク、危険性", "synonyms": "hazard, exposure", "antonyms": "safety, certainty", "example": "Assess the risk before starting the task." },
+      { "word": "emergency", "meaning": "a sudden, dangerous situation requiring immediate action", "japaneseMeaning": "緊急事態", "synonyms": "crisis, urgent situation", "antonyms": "routine", "example": "Call this number in an emergency." },
+      { "word": "fire extinguisher", "meaning": "a device used to put out small fires", "japaneseMeaning": "消火器", "synonyms": "fire suppressor", "antonyms": "", "example": "Locate the nearest fire extinguisher." },
+      { "word": "precaution", "meaning": "an action taken to prevent harm", "japaneseMeaning": "予防策、用心", "synonyms": "measure, safeguard", "antonyms": "carelessness", "example": "Take extra precautions in icy weather." },
+      { "word": "protective", "meaning": "intended to keep someone safe from harm", "japaneseMeaning": "保護する、安全を守る", "synonyms": "shielding, defensive", "antonyms": "exposed", "example": "Protective gloves kept hands safe." },
+      { "word": "injury", "meaning": "harm or damage to the body", "japaneseMeaning": "けが、負傷", "synonyms": "wound, harm", "antonyms": "health, wellbeing", "example": "He had a small injury on his arm." },
+      { "word": "regulation", "meaning": "a rule made by authority to control activity", "japaneseMeaning": "規則、規制", "synonyms": "rule, law", "antonyms": "freedom (unregulated)", "example": "Follow safety regulations at all times." },
+      { "word": "insurance", "meaning": "protection against financial loss", "japaneseMeaning": "保険", "synonyms": "coverage, policy", "antonyms": "", "example": "The company offers health insurance to staff." },
+      { "word": "inspection", "meaning": "a careful check to ensure safety or quality", "japaneseMeaning": "点検、検査", "synonyms": "examination, review", "antonyms": "", "example": "An inspection found a broken ladder." },
+      { "word": "training", "meaning": "instruction to learn skills or safety procedures", "japaneseMeaning": "研修、訓練", "synonyms": "coaching, education", "antonyms": "ignorance", "example": "Attend safety training next week." },
+      { "word": "protocol", "meaning": "an official set of procedures to follow", "japaneseMeaning": "手順、プロトコル", "synonyms": "procedure, guideline", "antonyms": "", "example": "Follow the emergency protocol during drills." },
+      { "word": "evacuation", "meaning": "the process of moving people away from danger", "japaneseMeaning": "避難、立ち退き", "synonyms": "withdrawal, escape", "antonyms": "", "example": "Evacuation routes are posted by the exits." },
+      { "word": "compliance", "meaning": "following rules or requests", "japaneseMeaning": "遵守、従うこと", "synonyms": "adherence, conformity", "antonyms": "violation", "example": "Ensure compliance with safety standards." },
+      { "word": "helmet", "meaning": "protective headwear to reduce injury", "japaneseMeaning": "ヘルメット", "synonyms": "hard hat", "antonyms": "", "example": "Construction workers must wear a helmet." }
+    ]
+  }
+  

@@ -1,86 +1,57 @@
 {
   "lesson_id": "eiken-pre2-21",
-  "title": "Lesson 21",
+  "title": "House, Buildings & Places",
+  "paragraph": "Buildings are places where people live, work, and meet. Every room has a purpose, and cities are made of many buildings like schools, hospitals, and offices. Parks and museums make a city more enjoyable to live in.",
   "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
+    {"word": "apartment", "definition": "a set of rooms where someone lives, usually in a building"},
+    {"word": "balcony", "definition": "a small outside area on an upper floor of a building"},
+    {"word": "basement", "definition": "a room below the ground floor"},
+    {"word": "block (of flats)", "definition": "a large building with many apartments"},
+    {"word": "bridge", "definition": "a structure built over a river or road to cross it"},
+    {"word": "building", "definition": "a structure with walls and a roof"},
+    {"word": "castle", "definition": "a large, strong old building once used for defense"},
+    {"word": "cathedral", "definition": "a large, important church"},
+    {"word": "ceiling", "definition": "the top inside surface of a room"},
+    {"word": "church", "definition": "a building for Christian worship"},
+    {"word": "city", "definition": "a large town"},
+    {"word": "corner", "definition": "the point where two walls or roads meet"},
+    {"word": "cottage", "definition": "a small house in the countryside"},
+    {"word": "crossroads", "definition": "the place where two or more roads meet"},
+    {"word": "department store", "definition": "a large shop that sells many different goods"},
+    {"word": "downtown", "definition": "the central part of a city"},
+    {"word": "entrance", "definition": "a way into a place"},
+    {"word": "factory", "definition": "a building where goods are made"},
+    {"word": "farm", "definition": "land used for growing crops or keeping animals"},
+    {"word": "flat", "definition": "a British word for apartment"},
+    {"word": "floor", "definition": "the surface you walk on in a room"},
+    {"word": "garage", "definition": "a building for keeping a car"},
+    {"word": "garden", "definition": "a place where plants, flowers, or vegetables grow"},
+    {"word": "ground floor", "definition": "the floor of a building at street level"},
+    {"word": "hall", "definition": "a corridor or a large room for events"},
+    {"word": "hospital", "definition": "a place where sick people are treated"},
+    {"word": "house", "definition": "a building where people live"},
+    {"word": "kitchen", "definition": "a room where food is cooked"},
+    {"word": "library", "definition": "a place where you can read or borrow books"},
+    {"word": "lift (elevator)", "definition": "a machine that carries people between floors"},
+    {"word": "market", "definition": "a place where people buy and sell goods"},
+    {"word": "mosque", "definition": "a building where Muslims pray"},
+    {"word": "museum", "definition": "a place where art or historical items are shown"},
+    {"word": "office", "definition": "a place where people work at desks"},
+    {"word": "park", "definition": "a public area with grass and trees for people to relax"},
+    {"word": "pavement", "definition": "a path for people to walk beside the road"},
+    {"word": "playground", "definition": "an outdoor area for children to play"},
+    {"word": "police station", "definition": "a building where police work"},
+    {"word": "port", "definition": "a town or place where ships load or unload"},
+    {"word": "post office", "definition": "a place where you can send letters or buy stamps"},
+    {"word": "restaurant", "definition": "a place where meals are served to customers"},
+    {"word": "roof", "definition": "the top covering of a building"},
+    {"word": "room", "definition": "a part of a building separated by walls"},
+    {"word": "school", "definition": "a place where children learn"},
+    {"word": "shop", "definition": "a place where you buy things"},
+    {"word": "square", "definition": "an open area in a city surrounded by buildings"},
+    {"word": "stairs", "definition": "a set of steps for going up or down between floors"},
+    {"word": "station", "definition": "a place where trains or buses stop"},
+    {"word": "street", "definition": "a road in a city or town"},
+    {"word": "supermarket", "definition": "a large store selling food and other goods"}
   ]
 }

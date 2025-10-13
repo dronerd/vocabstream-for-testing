@@ -1,86 +1,103 @@
-{
-  "lesson_id": "eiken-pre2-56",
-  "title": "Lesson 56",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-56",
+    "title": "Lesson 56",
+    "paragraph": "Feelings continuing into positive emotions and more subtle states, plus surprise adjectives.",
+    "words": [
+      {
+        "word": "worried",
+        "meaning": "anxious or troubled about actual or potential problems",
+        "japaneseMeaning": "心配している",
+        "synonyms": "concerned, anxious",
+        "antonyms": "carefree, untroubled",
+        "example": "She was worried about the exam results."
+      },
+      {
+        "word": "wonderful",
+        "meaning": "extremely good; marvelous",
+        "japaneseMeaning": "素晴らしい",
+        "synonyms": "marvelous, amazing",
+        "antonyms": "terrible, awful",
+        "example": "We had a wonderful time at the concert."
+      },
+      {
+        "word": "delighted",
+        "meaning": "very pleased and happy",
+        "japaneseMeaning": "大喜びの／嬉しい",
+        "synonyms": "thrilled, pleased",
+        "antonyms": "disappointed, upset",
+        "example": "She was delighted to receive the scholarship."
+      },
+      {
+        "word": "eager",
+        "meaning": "very interested and excited about something that will happen",
+        "japaneseMeaning": "熱心な／待ち望む",
+        "synonyms": "keen, enthusiastic",
+        "antonyms": "reluctant, indifferent",
+        "example": "He is eager to start the new project."
+      },
+      {
+        "word": "fearful",
+        "meaning": "feeling afraid or anxious; full of fear",
+        "japaneseMeaning": "恐れている／怖がる",
+        "synonyms": "afraid, apprehensive",
+        "antonyms": "brave, confident",
+        "example": "Many people felt fearful during the storm."
+      },
+      {
+        "word": "sensitive",
+        "meaning": "easily affected by external influences or emotions",
+        "japaneseMeaning": "敏感な／感受性の強い",
+        "synonyms": "touchy, receptive",
+        "antonyms": "insensitive, thick-skinned",
+        "example": "Be careful — she is very sensitive about the topic."
+      },
+      {
+        "word": "serious",
+        "meaning": "showing deep thought or concern; not joking",
+        "japaneseMeaning": "真剣な／深刻な",
+        "synonyms": "grave, solemn",
+        "antonyms": "frivolous, lighthearted",
+        "example": "This is a serious problem that needs solving."
+      },
+      {
+        "word": "suspicious",
+        "meaning": "having doubts or mistrust about something",
+        "japaneseMeaning": "疑わしい／疑い深い",
+        "synonyms": "distrustful, wary",
+        "antonyms": "trusting, confident",
+        "example": "The cashier became suspicious when the bill looked fake."
+      },
+      {
+        "word": "amazing",
+        "meaning": "causing great surprise or wonder; astonishing",
+        "japaneseMeaning": "驚くべき／すばらしい",
+        "synonyms": "astonishing, incredible",
+        "antonyms": "ordinary, unimpressive",
+        "example": "The view from the mountain was amazing."
+      },
+      {
+        "word": "ancient",
+        "meaning": "very old; from a long time ago",
+        "japaneseMeaning": "古代の／大昔の",
+        "synonyms": "antique, old",
+        "antonyms": "modern, recent",
+        "example": "They explored the ancient ruins."
+      },
+      {
+        "word": "awful",
+        "meaning": "very bad or unpleasant",
+        "japaneseMeaning": "ひどい／恐ろしい",
+        "synonyms": "terrible, dreadful",
+        "antonyms": "pleasant, wonderful",
+        "example": "The weather was awful during our trip."
+      },
+      {
+        "word": "basic",
+        "meaning": "forming an essential foundation; simple and fundamental",
+        "japaneseMeaning": "基本的な",
+        "synonyms": "fundamental, elementary",
+        "antonyms": "advanced, complex",
+        "example": "You need basic knowledge before taking the course."
+      }
+    ]
+  }

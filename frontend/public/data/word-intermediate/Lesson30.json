@@ -1,86 +1,19 @@
 {
   "lesson_id": "eiken-pre2-30",
-  "title": "Lesson 30",
+  "title": "Lesson 5",
+  "paragraph": "This lesson groups verbs about fixing, following, forgetting, and emotional responses — important for describing relationships and troubleshooting.",
   "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
+    { "word": "fix", "meaning": "to repair or make something work correctly", "japaneseMeaning": "修理する／直す", "synonyms": "repair, mend", "antonyms": "break, damage", "example": "Can you fix the printer?" },
+    { "word": "follow", "meaning": "to go after or come behind someone/something", "japaneseMeaning": "従う／ついていく", "synonyms": "pursue, adhere", "antonyms": "lead, ignore", "example": "Follow the instructions carefully." },
+    { "word": "forget", "meaning": "to fail to remember", "japaneseMeaning": "忘れる", "synonyms": "omit, overlook", "antonyms": "remember, recall", "example": "I forgot my password." },
+    { "word": "forgive", "meaning": "to stop feeling angry toward someone for an offense", "japaneseMeaning": "許す", "synonyms": "pardon, excuse", "antonyms": "blame, resent", "example": "She forgave him for the mistake." },
+    { "word": "guess", "meaning": "to form an opinion without sufficient information", "japaneseMeaning": "推測する", "synonyms": "estimate, suppose", "antonyms": "know, calculate", "example": "Can you guess the answer?" },
+    { "word": "happen", "meaning": "to take place; occur", "japaneseMeaning": "起こる", "synonyms": "occur, transpire", "antonyms": "stop, prevent", "example": "What happened here?" },
+    { "word": "hate", "meaning": "to feel intense dislike", "japaneseMeaning": "嫌う／憎む", "synonyms": "detest, loathe", "antonyms": "love, like", "example": "I hate being late." },
+    { "word": "hear", "meaning": "to perceive sound with the ear", "japaneseMeaning": "聞く／聞こえる", "synonyms": "listen, perceive", "antonyms": "ignore, miss", "example": "Did you hear that noise?" },
+    { "word": "help", "meaning": "to give assistance", "japaneseMeaning": "助ける", "synonyms": "assist, aid", "antonyms": "hinder, obstruct", "example": "Can you help me move this?" },
+    { "word": "hope", "meaning": "to want something to happen and think it possible", "japaneseMeaning": "望む／期待する", "synonyms": "wish, desire", "antonyms": "despair, doubt", "example": "I hope it doesn't rain tomorrow." },
+    { "word": "imagine", "meaning": "to form a mental picture of something not present", "japaneseMeaning": "想像する", "synonyms": "envision, picture", "antonyms": "forget, ignore", "example": "Imagine living by the sea." },
+    { "word": "include", "meaning": "to contain as part of something", "japaneseMeaning": "含める", "synonyms": "incorporate, involve", "antonyms": "exclude, omit", "example": "Please include all receipts." }
   ]
 }

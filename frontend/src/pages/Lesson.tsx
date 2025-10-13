@@ -568,7 +568,7 @@ const Lesson: React.FC = () => {
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
             <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>
-              単語穴埋めに進む
+              段落穴埋めに進む
             </button>
             <button onClick={() => nav(-1)} style={blueButtonStyle}>
               終了する
@@ -589,7 +589,8 @@ const Lesson: React.FC = () => {
             gap: 12,
           }}
         >
-          <h2 style={{ fontSize: headingSize, marginBottom: 8 }}>段落穴埋め（ドラッグして空欄に入れてください）</h2>
+          <h2 style={{ fontSize: headingSize, marginBottom: 8 }}>段落穴埋め</h2>
+     
 
           {/* top: paragraph / blanks */}
           <div
@@ -645,7 +646,7 @@ const Lesson: React.FC = () => {
                       style={slotStyle}
                     >
                       {placed === null ? (
-                        <em style={{ color: "#666", fontSize: isSmallScreen ? 12 : 14 }}>ここにドラッグ{isTouchDevice ? " またはタップして配置" : ""}</em>
+                        <em style={{ color: "#666", fontSize: isSmallScreen ? 12 : 14 }}>ここに単語を挿入</em>
                       ) : (
                         <div
                           style={{
@@ -692,11 +693,11 @@ const Lesson: React.FC = () => {
           >
             {isTouchDevice && (
               <div style={{ fontSize: 13, color: "#444", marginBottom: 8, textAlign: "left" }}>
-                操作方法: 単語をタップ → 空欄をタップで配置。配置済みの空欄をタップすると取り外せます。
+                <strong>操作方法: 単語をタップ → 空欄をタップで配置。配置済みの空欄をタップすると取り外せます。</strong>
               </div>
             )}
 
-            <h3 style={{ marginBottom: 8, fontSize: isSmallScreen ? 16 : 20 }}>単語（ドラッグしてください）</h3>
+            <h3 style={{ marginBottom: 8, fontSize: isSmallScreen ? 16 : 20 }}>単語（タップして選択してください）</h3>
 
             {/* choices container: horizontally scrollable on mobile, wrapped on desktop */}
             <div

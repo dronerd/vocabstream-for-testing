@@ -1,86 +1,104 @@
-{
-  "lesson_id": "eiken-pre2-49",
-  "title": "Lesson 49",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-49",
+    "title": "Lesson 49",
+    "paragraph": "This lesson (Lesson 49) continues describing people: intelligence, creativity and friendliness among common traits.",
+    "words": [
+      {
+        "word": "clever",
+        "meaning": "quick to understand, learn, or devise",
+        "japaneseMeaning": "賢い／利口な",
+        "synonyms": "smart, bright",
+        "antonyms": "dull, stupid",
+        "example": "She is clever and solves problems quickly."
+      },
+      {
+        "word": "confident",
+        "meaning": "feeling sure of oneself; self-assured",
+        "japaneseMeaning": "自信のある",
+        "synonyms": "self-assured, poised",
+        "antonyms": "insecure, unsure",
+        "example": "He felt confident before the interview."
+      },
+      {
+        "word": "creative",
+        "meaning": "using imagination to produce original ideas",
+        "japaneseMeaning": "創造的な",
+        "synonyms": "innovative, inventive",
+        "antonyms": "unimaginative, dull",
+        "example": "The team proposed a creative solution."
+      },
+      {
+        "word": "cruel",
+        "meaning": "willfully causing pain or suffering to others",
+        "japaneseMeaning": "残酷な",
+        "synonyms": "brutal, heartless",
+        "antonyms": "kind, compassionate",
+        "example": "It was cruel to tease the puppy."
+      },
+      {
+        "word": "curious",
+        "meaning": "eager to know or learn something",
+        "japaneseMeaning": "好奇心の強い",
+        "synonyms": "inquisitive, interested",
+        "antonyms": "indifferent, uninterested",
+        "example": "The child was curious about the insects."
+      },
+      {
+        "word": "energetic",
+        "meaning": "having or showing a lot of energy",
+        "japaneseMeaning": "精力的な",
+        "synonyms": "active, lively",
+        "antonyms": "lethargic, sluggish",
+        "example": "She is energetic and always on the move."
+      },
+      {
+        "word": "friendly",
+        "meaning": "kind and pleasant to others",
+        "japaneseMeaning": "親しみやすい",
+        "synonyms": "amiable, kind",
+        "antonyms": "unfriendly, hostile",
+        "example": "Our neighbors are very friendly."
+      },
+      {
+        "word": "funny",
+        "meaning": "causing laughter or amusement",
+        "japaneseMeaning": "面白い",
+        "synonyms": "humorous, amusing",
+        "antonyms": "serious, dull",
+        "example": "He told a funny story at lunch."
+      },
+      {
+        "word": "generous",
+        "meaning": "willing to give more of something than is necessary",
+        "japaneseMeaning": "寛大な",
+        "synonyms": "giving, liberal",
+        "antonyms": "stingy, selfish",
+        "example": "She was generous with her time and helped everyone."
+      },
+      {
+        "word": "gentle",
+        "meaning": "kind, mild, or soft in manner",
+        "japaneseMeaning": "優しい／穏やかな",
+        "synonyms": "kind, mild",
+        "antonyms": "rough, harsh",
+        "example": "The doctor has a gentle manner with patients."
+      },
+      {
+        "word": "hard-working",
+        "meaning": "putting a lot of effort into work",
+        "japaneseMeaning": "勤勉な／よく働く",
+        "synonyms": "diligent, industrious",
+        "antonyms": "lazy, idle",
+        "example": "She is hard-working and always completes tasks on time."
+      },
+      {
+        "word": "honest",
+        "meaning": "truthful; free from deceit",
+        "japaneseMeaning": "正直な",
+        "synonyms": "truthful, sincere",
+        "antonyms": "dishonest, deceitful",
+        "example": "He is honest and returns lost items."
+      }
+    ]
+  }
+

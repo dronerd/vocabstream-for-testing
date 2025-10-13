@@ -1,86 +1,20 @@
-{
-  "lesson_id": "eiken-pre2-61",
-  "title": "Lesson 61",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-pre2-61",
+    "title": "Lesson 61",
+    "paragraph": "Adjectives for novelty, typicality and quality — good for opinions and comparisons.",
+    "words": [
+      { "word": "new", "meaning": "recently created, discovered, or come into existence", "japaneseMeaning": "新しい", "synonyms": "brand-new, fresh", "antonyms": "old, used", "example": "I bought a new laptop yesterday." },
+      { "word": "normal", "meaning": "usual, expected, or typical", "japaneseMeaning": "普通の／通常の", "synonyms": "typical, ordinary", "antonyms": "abnormal, unusual", "example": "It’s normal to feel nervous before exams." },
+      { "word": "old-fashioned", "meaning": "not modern; out of date", "japaneseMeaning": "古風な／時代遅れの", "synonyms": "outdated, traditional", "antonyms": "modern, trendy", "example": "That hat looks old-fashioned but charming." },
+      { "word": "ordinary", "meaning": "with no special or distinctive features; normal", "japaneseMeaning": "普通の／ありふれた", "synonyms": "common, usual", "antonyms": "extraordinary, special", "example": "It was just an ordinary day at work." },
+      { "word": "original", "meaning": "existing from the beginning; unique and creative", "japaneseMeaning": "独創的な／元の", "synonyms": "innovative, unique", "antonyms": "unoriginal, copied", "example": "Her idea for the project was very original." },
+      { "word": "particular", "meaning": "specific or special; single out", "japaneseMeaning": "特定の／特別な", "synonyms": "specific, distinct", "antonyms": "general, vague", "example": "I was looking for a particular book about history." },
+      { "word": "perfect", "meaning": "having all the required qualities; without faults", "japaneseMeaning": "完璧な／申し分のない", "synonyms": "flawless, ideal", "antonyms": "imperfect, flawed", "example": "The performance was nearly perfect." },
+      { "word": "pleasant", "meaning": "giving a sense of happy satisfaction or enjoyment", "japaneseMeaning": "快い／心地よい", "synonyms": "enjoyable, agreeable", "antonyms": "unpleasant, disagreeable", "example": "We had a pleasant afternoon at the park." },
+      { "word": "poor", "meaning": "lacking sufficient money or of low quality", "japaneseMeaning": "貧しい／品質が悪い", "synonyms": "impoverished, inferior", "antonyms": "rich, excellent", "example": "The roads are in poor condition after the storm." },
+      { "word": "possible", "meaning": "able to be done or achieved; feasible", "japaneseMeaning": "可能な／あり得る", "synonyms": "feasible, achievable", "antonyms": "impossible, unattainable", "example": "Is it possible to finish this by Friday?" },
+      { "word": "powerful", "meaning": "having great power or strength", "japaneseMeaning": "強力な／力のある", "synonyms": "strong, potent", "antonyms": "weak, powerless", "example": "She gave a powerful speech." },
+      { "word": "quick", "meaning": "moving or doing something with speed", "japaneseMeaning": "速い／迅速な", "synonyms": "fast, rapid", "antonyms": "slow, leisurely", "example": "He is quick to understand new ideas." }
+    ]
+  }
+ 

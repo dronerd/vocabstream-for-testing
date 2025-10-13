@@ -1,86 +1,19 @@
 {
   "lesson_id": "eiken-pre2-33",
-  "title": "Lesson 33",
+  "title": "Lesson 8",
+  "paragraph": "Verbs in this lesson relate to money, planning, and promises — essential for talking about transactions, decisions, and commitments.",
   "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
+    { "word": "pay", "meaning": "to give money for goods or services", "japaneseMeaning": "支払う", "synonyms": "settle, compensate", "antonyms": "receive, owe", "example": "Please pay the bill at the counter." },
+    { "word": "pick", "meaning": "to choose or to take hold of something", "japaneseMeaning": "選ぶ／拾う", "synonyms": "select, pluck", "antonyms": "drop, abandon", "example": "Pick a card from the deck." },
+    { "word": "plan", "meaning": "to decide on and arrange in advance", "japaneseMeaning": "計画する", "synonyms": "arrange, schedule", "antonyms": "improvise, neglect", "example": "We plan to visit Kyoto next month." },
+    { "word": "prefer", "meaning": "to like one thing more than another", "japaneseMeaning": "〜の方を好む", "synonyms": "favor, choose", "antonyms": "dislike, reject", "example": "I prefer tea to coffee." },
+    { "word": "prepare", "meaning": "to make ready beforehand", "japaneseMeaning": "準備する", "synonyms": "get ready, arrange", "antonyms": "neglect, delay", "example": "Prepare your presentation tonight." },
+    { "word": "promise", "meaning": "to assure someone that one will definitely do something", "japaneseMeaning": "約束する", "synonyms": "assure, vow", "antonyms": "renege, break", "example": "He promised to call later." },
+    { "word": "protect", "meaning": "to keep someone or something safe from harm", "japaneseMeaning": "守る／保護する", "synonyms": "shield, defend", "antonyms": "endanger, expose", "example": "Wear a helmet to protect your head." },
+    { "word": "provide", "meaning": "to supply or make available", "japaneseMeaning": "提供する", "synonyms": "supply, furnish", "antonyms": "withhold, deprive", "example": "They provided food for the refugees." },
+    { "word": "pull", "meaning": "to apply force to move something toward oneself", "japaneseMeaning": "引く", "synonyms": "tug, draw", "antonyms": "push, shove", "example": "Pull the door to open it." },
+    { "word": "push", "meaning": "to apply force to move something away", "japaneseMeaning": "押す", "synonyms": "shove, thrust", "antonyms": "pull, drag", "example": "Push the button to start." },
+    { "word": "reach", "meaning": "to arrive at or attain something", "japaneseMeaning": "到達する／手が届く", "synonyms": "attain, get to", "antonyms": "miss, fall short", "example": "We reached the summit at sunset." },
+    { "word": "receive", "meaning": "to be given or presented with something", "japaneseMeaning": "受け取る", "synonyms": "accept, obtain", "antonyms": "give, send", "example": "I received a parcel today." }
   ]
 }

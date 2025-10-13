@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-pre2-52",
-  "title": "Lesson 52",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-52",
+    "title": "Lesson 52",
+    "paragraph": "Achievement and talent adjectives, followed by basic feeling words to describe emotional states.",
+    "words": [
+      { "word": "successful", "meaning": "achieving desired aims or results", "japaneseMeaning": "成功した／うまくいっている", "synonyms": "accomplished, prosperous", "antonyms": "unsuccessful, failing", "example": "Their project was successful and well received." },
+      { "word": "talented", "meaning": "having a natural aptitude or skill", "japaneseMeaning": "才能のある", "synonyms": "gifted, skilled", "antonyms": "untalented, inept", "example": "She is a talented musician." },
+      { "word": "talkative", "meaning": "fond of talking a lot", "japaneseMeaning": "お喋りな", "synonyms": "loquacious, chatty", "antonyms": "quiet, reticent", "example": "My friend is very talkative on the phone." },
+      { "word": "tidy", "meaning": "neat and in good order", "japaneseMeaning": "きちんとした／整頓された", "synonyms": "neat, orderly", "antonyms": "messy, untidy", "example": "Keep your desk tidy for study." },
+      { "word": "unfriendly", "meaning": "not friendly; hostile", "japaneseMeaning": "不親切な／不愛想な", "synonyms": "cold, hostile", "antonyms": "friendly, cordial", "example": "He seemed unfriendly at the meeting." },
+      { "word": "weak", "meaning": "lacking physical strength or power", "japaneseMeaning": "弱い", "synonyms": "feeble, frail", "antonyms": "strong, robust", "example": "After the flu, she still feels weak." },
+      { "word": "afraid", "meaning": "feeling fear or anxiety; frightened", "japaneseMeaning": "怖がっている／恐れている", "synonyms": "scared, fearful", "antonyms": "brave, confident", "example": "He is afraid of the dark." },
+      { "word": "angry", "meaning": "feeling strong annoyance or displeasure", "japaneseMeaning": "怒っている", "synonyms": "furious, irritated", "antonyms": "calm, pleased", "example": "She was angry about the delay." },
+      { "word": "annoyed", "meaning": "slightly angry; irritated", "japaneseMeaning": "苛立っている／うんざりしている", "synonyms": "irritated, bothered", "antonyms": "pleased, delighted", "example": "He was annoyed by the loud noise." },
+      { "word": "anxious", "meaning": "experiencing worry or unease", "japaneseMeaning": "不安な／心配している", "synonyms": "worried, uneasy", "antonyms": "calm, relaxed", "example": "She felt anxious before the exam." },
+      { "word": "ashamed", "meaning": "feeling embarrassed or guilty about one's actions", "japaneseMeaning": "恥ずかしい／罪悪感のある", "synonyms": "embarrassed, guilty", "antonyms": "proud, unashamed", "example": "He was ashamed of his behavior." },
+      { "word": "bored", "meaning": "feeling weary because one is unoccupied or uninterested", "japaneseMeaning": "退屈している", "synonyms": "uninterested, dull", "antonyms": "engaged, interested", "example": "I get bored during long meetings." }
+    ]
+  }

@@ -1,86 +1,20 @@
-{
-  "lesson_id": "eiken-pre2-53",
-  "title": "Lesson 53",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-pre2-53",
+    "title": "Lesson 53",
+    "paragraph": "Feelings and emotional states — words to describe moods and reactions.",
+    "words": [
+      { "word": "calm", "meaning": "not showing or feeling nervousness, anger, or other strong emotions", "japaneseMeaning": "落ち着いた／冷静な", "synonyms": "peaceful, composed", "antonyms": "agitated, nervous", "example": "Try to stay calm during the test." },
+      { "word": "cheerful", "meaning": "noticeably happy and optimistic", "japaneseMeaning": "陽気な／快活な", "synonyms": "happy, upbeat", "antonyms": "sad, gloomy", "example": "She was cheerful despite the rain." },
+      { "word": "comfortable", "meaning": "feeling physically relaxed and at ease", "japaneseMeaning": "快適な／心地よい", "synonyms": "cozy, relaxed", "antonyms": "uncomfortable, uneasy", "example": "This chair is very comfortable to sit in." },
+      { "word": "confident", "meaning": "feeling sure of oneself; self-assured", "japaneseMeaning": "自信のある", "synonyms": "self-assured, poised", "antonyms": "insecure, doubtful", "example": "She felt confident about her performance." },
+      { "word": "confused", "meaning": "unable to think clearly or understand", "japaneseMeaning": "混乱した／わからない", "synonyms": "perplexed, bewildered", "antonyms": "clear, certain", "example": "I was confused by the instructions." },
+      { "word": "depressed", "meaning": "in a very low mood; sad and without hope", "japaneseMeaning": "落ち込んでいる／憂鬱な", "synonyms": "downcast, despondent", "antonyms": "cheerful, upbeat", "example": "He felt depressed after losing his job." },
+      { "word": "disappointed", "meaning": "sad because something was not as good as expected", "japaneseMeaning": "失望した", "synonyms": "let down, dissatisfied", "antonyms": "pleased, satisfied", "example": "She was disappointed by the exam results." },
+      { "word": "embarrassed", "meaning": "feeling awkward or self-conscious", "japaneseMeaning": "恥ずかしい／当惑した", "synonyms": "ashamed, humiliated", "antonyms": "proud, confident", "example": "He felt embarrassed when he forgot her name." },
+      { "word": "excited", "meaning": "very enthusiastic and eager", "japaneseMeaning": "わくわくした／興奮した", "synonyms": "thrilled, eager", "antonyms": "calm, indifferent", "example": "The children were excited about the trip." },
+      { "word": "frightened", "meaning": "feeling afraid or anxious because of danger", "japaneseMeaning": "怖がっている／おびえている", "synonyms": "scared, terrified", "antonyms": "brave, confident", "example": "She was frightened by the thunder." },
+      { "word": "frustrated", "meaning": "feeling annoyed because of inability to change or achieve something", "japaneseMeaning": "欲求不満の／いらいらした", "synonyms": "irritated, exasperated", "antonyms": "satisfied, content", "example": "He was frustrated by the slow progress." },
+      { "word": "glad", "meaning": "feeling pleasure or happiness", "japaneseMeaning": "うれしい／満足した", "synonyms": "happy, pleased", "antonyms": "sad, unhappy", "example": "I’m glad you could come." }
+    ]
+  }
+ 

@@ -1,86 +1,20 @@
-{
-  "lesson_id": "eiken-pre2-51",
-  "title": "Lesson 51",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-pre2-51",
+    "title": "Lesson 51",
+    "paragraph": "More personality adjectives — attitudes, organization, and social style.",
+    "words": [
+      { "word": "optimistic", "meaning": "hopeful and confident about the future", "japaneseMeaning": "楽観的な", "synonyms": "positive, hopeful", "antonyms": "pessimistic, doubtful", "example": "She is optimistic about the job interview." },
+      { "word": "organized", "meaning": "arranged in a systematic and efficient way", "japaneseMeaning": "組織的な／整理された", "synonyms": "systematic, tidy", "antonyms": "chaotic, messy", "example": "An organized schedule helps reduce stress." },
+      { "word": "patient", "meaning": "able to wait calmly without frustration", "japaneseMeaning": "忍耐強い／我慢強い", "synonyms": "tolerant, calm", "antonyms": "impatient, hasty", "example": "The teacher is patient with beginners." },
+      { "word": "polite", "meaning": "showing good manners toward others", "japaneseMeaning": "礼儀正しい", "synonyms": "courteous, respectful", "antonyms": "rude, impolite", "example": "Be polite when you meet new people." },
+      { "word": "popular", "meaning": "liked or admired by many people", "japaneseMeaning": "人気のある", "synonyms": "well-liked, favored", "antonyms": "unpopular, disliked", "example": "That singer is very popular among teenagers." },
+      { "word": "rude", "meaning": "offensive or impolite in behavior or speech", "japaneseMeaning": "無礼な", "synonyms": "impolite, discourteous", "antonyms": "polite, respectful", "example": "It’s rude to interrupt someone." },
+      { "word": "selfish", "meaning": "concerned only with one's own interests", "japaneseMeaning": "利己的な", "synonyms": "self-centered, greedy", "antonyms": "generous, unselfish", "example": "Don’t be selfish — share with others." },
+      { "word": "shy", "meaning": "nervous or timid in the company of others", "japaneseMeaning": "内気な／恥ずかしがりの", "synonyms": "timid, reserved", "antonyms": "outgoing, confident", "example": "He is shy and doesn’t speak much." },
+      { "word": "smart", "meaning": "intelligent or well-dressed", "japaneseMeaning": "賢い／きちんとした", "synonyms": "clever, bright", "antonyms": "dull, unkempt", "example": "She is smart and always prepared for class." },
+      { "word": "social", "meaning": "enjoying the company of others; outgoing", "japaneseMeaning": "社交的な", "synonyms": "sociable, friendly", "antonyms": "lonely, antisocial", "example": "He is social and makes friends easily." },
+      { "word": "strict", "meaning": "demanding that rules are followed", "japaneseMeaning": "厳格な", "synonyms": "firm, severe", "antonyms": "lenient, permissive", "example": "My teacher is strict about homework." },
+      { "word": "strong", "meaning": "having great physical power or emotional resilience", "japaneseMeaning": "強い", "synonyms": "powerful, robust", "antonyms": "weak, frail", "example": "She is strong enough to lift the box." }
+    ]
+  }
+ 

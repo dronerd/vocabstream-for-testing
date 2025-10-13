@@ -28,7 +28,7 @@ const STATIC_GENRE_TITLES: Record<string, string> = {
 };
 
 const REVIEW_COUNT_BY_GENRE: Record<string, number> = {
-  "word-intermediate": 71,
+  "word-intermediate": 64,
   "word-high-intermediate": 71,
   "word-advanced": 71,
   "word-proficiency": 71,
@@ -50,7 +50,7 @@ const REVIEW_COUNT_BY_GENRE: Record<string, number> = {
 function makeReviewItems(genreId: string, count: number): ReviewItem[] {
   const arr: ReviewItem[] = [];
   for (let i = 1; i <= count; i++) {
-    arr.push({ id: `${genreId}-review-minitest-${i}`, title: `MiniTest ${i}`, subtitle: `例文 ${i}` });
+    arr.push({ id: `${genreId}-review-minitest-${i}`, title: `MiniTest ${i}`, subtitle: `最終テスト: %` });
   }
   return arr;
 }
@@ -93,22 +93,20 @@ export default function ReviewMiniTestList() {
             tabIndex={0}
             onKeyDown={(e) => e.key === "Enter" && nav(`/review/minitest/${it.id}`)}
           >
-            <div>
+            <div className="item-content">
               <div className="item-title">{it.title}</div>
               <div className="item-sub">{it.subtitle}</div>
             </div>
 
-            <div className="item-actions">
-              <button
-                className="start-btn"
-                onClick={(ev) => {
-                  ev.stopPropagation();
-                  nav(`/review/minitest/${it.id}`);
-                }}
-              >
-                開始
-              </button>
-            </div>
+            <button
+              className="start-btn"
+              onClick={(ev) => {
+                ev.stopPropagation();
+                nav(`/review/minitest/${it.id}`);
+              }}
+            >
+              開始
+            </button>
           </article>
         ))}
       </div>
@@ -120,15 +118,16 @@ export default function ReviewMiniTestList() {
 
 const styles = `
 .page-root {
-  padding: 8px 6px; /* even less side padding so 4 columns fit comfortably */
+  padding: 10px 8px;
   padding-top: 92px;
   font-family: Inter, Arial, sans-serif;
 }
-.page-title { font-size: 24px; margin-bottom: 8px; }
-.page-title.smaller { font-size: 20px; }
+
+.page-title { font-size: 24px; margin-bottom: 10px; }
+.page-title.smaller { font-size: 22px; }
 .back-btn {
-  margin-bottom: 10px;
-  padding: 6px 10px;
+  margin-bottom: 14px;
+  padding: 8px 12px;
   border-radius: 8px;
   border: none;
   background-color: #555;
@@ -136,52 +135,85 @@ const styles = `
   cursor: pointer;
 }
 
+/* Layout grid */
 .items-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* reduced gap */
+  gap: 14px;
   justify-content: space-between;
 }
 
+/* Card style */
 .item-card {
-  flex: 0 0 calc(25% - 8px); /* 4 items per row */
-  background-color: #fef3c7;
-  border-radius: 8px;
-  padding: 8px;
-  box-sizing: border-box;
+  flex: 0 0 calc(25% - 14px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.06);
-  transition: transform 0.12s ease;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffd6c9, #ffb6a0);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
-  min-width: 72px;
+  overflow: hidden;
+  min-width: 120px;
 }
 
-.item-card:focus { outline: 2px solid rgba(6,95,70,0.18); }
-.item-card:hover { transform: translateY(-3px); }
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 150, 120, 0.25);
+}
 
-.item-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
-.item-sub { font-size: 10px; color: #666; }
+.item-content {
+  padding: 14px;
+}
 
-.item-actions { display: flex; gap: 6px; margin-top: 8px; }
+.item-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #3b0b0b;
+}
+
+.item-sub {
+  font-size: 14px;
+  color: #5a2e2e;
+}
+
+/* Full-width bottom button */
 .start-btn {
-  padding: 6px 8px;
-  border-radius: 6px;
+  width: 100%;
   border: none;
-  background-color: #065f46;
-  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  padding: 10px 0;
+  font-size: 15px;
   font-weight: 700;
+  color: #3b0b0b;
   cursor: pointer;
-  font-size: 12px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* small screens: keep 4 columns but slightly reduce sizes so they fit */
-@media (max-width: 520px) {
-  .item-card { flex: 0 0 calc(25% - 6px); padding: 6px; }
-  .item-title { font-size: 11px; }
-  .item-sub { font-size: 9px; }
-  .start-btn { font-size: 10px; padding: 4px 6px; }
+.start-btn:hover {
+  background: rgba(255,255,255,0.5);
+  color: #000;
+}
+
+/* Responsive grid */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .item-card { flex: 0 0 calc(33.333% - 14px); }
+}
+@media (max-width: 768px) {
+  .item-card { flex: 0 0 calc(50% - 12px); }
+  .item-title { font-size: 16px; }
+  .item-sub { font-size: 13px; }
+  .start-btn { font-size: 14px; padding: 8px 0; }
+}
+@media (max-width: 480px) {
+  .item-card { flex: 0 0 100%; }
+  .item-title { font-size: 16px; }
+  .item-sub { font-size: 13px; }
+  .start-btn { font-size: 14px; }
 }
 
 @media (hover: none) {

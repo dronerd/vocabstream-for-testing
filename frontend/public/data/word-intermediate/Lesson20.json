@@ -1,86 +1,57 @@
 {
   "lesson_id": "eiken-pre2-20",
-  "title": "Lesson 20",
+  "title": "Clothes & Fashion",
+  "paragraph": "Fashion is a way to express yourself. People choose their clothes based on comfort, culture, and trends. Accessories like hats, jewelry, and scarves can complete an outfit and show personal style.",
   "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
+    {"word": "bag", "definition": "a container used for carrying things"},
+    {"word": "belt", "definition": "a strip of material worn around the waist to hold clothes up"},
+    {"word": "blouse", "definition": "a light shirt worn by women"},
+    {"word": "boot", "definition": "a type of shoe that covers the ankle or leg"},
+    {"word": "cap", "definition": "a soft, flat hat with a curved part at the front"},
+    {"word": "clothes", "definition": "things you wear to cover your body"},
+    {"word": "coat", "definition": "a warm outer piece of clothing worn in cold weather"},
+    {"word": "costume", "definition": "special clothes worn for a play or event"},
+    {"word": "cotton", "definition": "a soft, white material from a plant used to make fabric"},
+    {"word": "dress", "definition": "a piece of clothing for women that covers the body and legs"},
+    {"word": "fashion", "definition": "the popular style of clothes at a certain time"},
+    {"word": "fit", "definition": "to be the right size or shape for someone"},
+    {"word": "glasses", "definition": "lenses in frames worn to help you see"},
+    {"word": "glove", "definition": "a piece of clothing worn on the hand"},
+    {"word": "hat", "definition": "something worn on the head for style or protection"},
+    {"word": "jacket", "definition": "a short coat"},
+    {"word": "jeans", "definition": "trousers made from denim"},
+    {"word": "jewelry", "definition": "decorative items such as rings or necklaces"},
+    {"word": "leather", "definition": "material made from animal skin"},
+    {"word": "makeup", "definition": "cosmetics used to change or improve appearance"},
+    {"word": "material", "definition": "cloth or fabric used to make clothes"},
+    {"word": "model", "definition": "a person who wears clothes for display"},
+    {"word": "necklace", "definition": "a piece of jewelry worn around the neck"},
+    {"word": "outfit", "definition": "a set of clothes worn together"},
+    {"word": "pocket", "definition": "a small bag sewn into clothes for carrying small things"},
+    {"word": "purse", "definition": "a small bag for carrying money or personal items"},
+    {"word": "raincoat", "definition": "a coat that keeps you dry in the rain"},
+    {"word": "ring", "definition": "a piece of jewelry worn on the finger"},
+    {"word": "scarf", "definition": "a long piece of cloth worn around the neck"},
+    {"word": "shirt", "definition": "a piece of clothing for the upper body with sleeves and buttons"},
+    {"word": "shoe", "definition": "something you wear on your feet"},
+    {"word": "shorts", "definition": "short trousers that end above the knees"},
+    {"word": "skirt", "definition": "a piece of clothing that hangs from the waist and covers part of the legs"},
+    {"word": "sleeve", "definition": "the part of a piece of clothing that covers the arm"},
+    {"word": "sock", "definition": "a piece of clothing worn on the foot"},
+    {"word": "style", "definition": "a particular way of dressing or designing"},
+    {"word": "suit", "definition": "a set of matching clothes, usually a jacket and trousers"},
+    {"word": "sunglasses", "definition": "dark glasses that protect your eyes from the sun"},
+    {"word": "sweater", "definition": "a warm knitted piece of clothing for the upper body"},
+    {"word": "swimsuit", "definition": "clothing worn for swimming"},
+    {"word": "tie", "definition": "a long piece of cloth worn around the neck with a shirt"},
+    {"word": "tights", "definition": "a piece of clothing that covers the legs and hips, usually worn by women"},
+    {"word": "top", "definition": "a piece of clothing worn on the upper body"},
+    {"word": "tracksuit", "definition": "a loose suit worn for exercise"},
+    {"word": "trainer", "definition": "a comfortable shoe for sports or exercise"},
+    {"word": "trousers", "definition": "a piece of clothing that covers each leg separately"},
+    {"word": "T-shirt", "definition": "a casual short-sleeved shirt"},
+    {"word": "uniform", "definition": "special clothes worn by members of an organization"},
+    {"word": "wardrobe", "definition": "a piece of furniture for storing clothes"},
+    {"word": "wool", "definition": "material made from sheep’s hair"}
   ]
 }

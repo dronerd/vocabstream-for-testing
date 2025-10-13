@@ -30,7 +30,7 @@ const STATIC_GENRE_TITLES: Record<string, string> = {
 
 // Configure how many review boxes to show per genre (adjustable)
 const REVIEW_COUNT_BY_GENRE: Record<string, number> = {
-  "word-intermediate": 71,
+  "word-intermediate": 64,
   "word-high-intermediate": 71,
   "word-advanced": 71,
   "word-proficiency": 71,

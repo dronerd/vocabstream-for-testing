@@ -33,7 +33,7 @@ function makeLessons(genreId: string, count: number): Lesson[] {
 }
 
 const LESSON_COUNT_BY_GENRE: Record<string, number> = {
-  "word-intermediate": 71,
+  "word-intermediate": 64,
   "word-high-intermediate": 71,
   "word-advanced": 71,
   "word-proficiency": 71,
@@ -89,7 +89,7 @@ export default function LessonList() {
             tabIndex={0}
             onKeyDown={(e) => e.key === "Enter" && nav(`/lesson/${l.id}`)}
           >
-            <div className="lesson-info">
+            <div className="lesson-content">
               <div className="lesson-title">{l.title}</div>
               <div className="lesson-meta">最終テスト: —</div>
             </div>
@@ -113,13 +113,20 @@ export default function LessonList() {
 }
 
 const styles = `
+:root{
+  --card-gap: 12px;
+  --card-radius: 10px;
+  --card-padding: 12px;
+}
+
+/* Page layout */
 .page-root {
-  padding: 10px 8px; /* reduced side padding */
+  padding: 10px 8px;
   padding-top: 92px;
   font-family: Inter, Arial, sans-serif;
 }
 .page-title {
-  font-size: 24px; /* smaller title */
+  font-size: 24px;
   margin-bottom: 10px;
 }
 .page-title.smaller {
@@ -135,49 +142,94 @@ const styles = `
   cursor: pointer;
 }
 
+/* Grid */
 .lessons-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* reduced gap */
+  gap: var(--card-gap);
   justify-content: space-between;
 }
 
+/* Card: blue version with previous original sizing */
 .lesson-card {
-  flex: 0 0 calc(25% - 8px); /* ensure 4 fit per row */
-  background-color: #cce7ff;
-  border-radius: 10px;
-  padding: 10px;
+  flex: 0 0 calc(25% - var(--card-gap)); /* FOUR per row by default */
+  background: linear-gradient(135deg, #dbeafe 0%, #a8d1ff 100%);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  transition: transform 0.12s ease;
+  box-shadow: 0 6px 12px rgba(11,75,155,0.08);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
   cursor: pointer;
-  min-width: 80px;
+  min-width: 100px;
+
+  /* follow previous original size */
+  min-height: 130px;
 }
 
-.lesson-card:focus { outline: 2px solid rgba(30,58,138,0.3); }
-.lesson-card:hover { transform: translateY(-4px); }
+/* Hover / focus */
+.lesson-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(11,75,155,0.12);
+}
+.lesson-card:focus { outline: 3px solid rgba(11,75,155,0.12); }
 
-.lesson-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-.lesson-meta { font-size: 10px; color: #666; }
+/* Content */
+.lesson-content { padding: 0; } /* padding already on card */
+.lesson-title { font-size: 20px; font-weight: 800; margin-bottom: 6px; color: #06204a; }
+.lesson-meta { font-size: 14px; color: #0d2a56; }
+
+/* Full-width dark blue button */
 .start-btn {
-  margin-top: 8px;
-  padding: 6px 8px;
-  border-radius: 6px;
+  width: 100%;
   border: none;
-  background-color: #1E3A8A;
-  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: #04275f; /* darker solid blue */
+  padding: 12px 0;
+  font-size: 15px;
   font-weight: 700;
+  color: #ffffff;
   cursor: pointer;
-  font-size: 12px;
+  transition: background 0.15s ease, transform 0.08s ease;
 }
 
+.start-btn:hover { background: #02183f; transform: translateY(-1px); }
+
+/* Keep 4 columns on large and medium large screens (user requested 4 instead of 3) */
+@media (min-width: 1200px) {
+  :root { --card-gap: 16px; --card-padding: 14px; }
+  .lesson-card {
+    flex: 0 0 calc(25% - var(--card-gap));
+    min-height: 160px; /* slightly taller on very large screens */
+    padding: var(--card-padding);
+  }
+}
+
+/* Ensure 4 columns also for mid-large screens (no 3-column behavior) */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .lesson-card {
+    flex: 0 0 calc(25% - var(--card-gap)); /* keep 4 per row */
+    min-height: 140px;
+  }
+}
+
+/* Mobile: two-per-row */
 @media (max-width: 520px) {
-  .lesson-card { flex: 0 0 calc(25% - 6px); padding: 8px; }
-  .lesson-title { font-size: 12px; }
-  .lesson-meta { font-size: 9px; }
-  .start-btn { font-size: 11px; padding: 5px 6px; }
+  .lessons-grid { gap: 8px; }
+  .lesson-card {
+    flex: 0 0 calc(50% - 8px);
+    padding: 10px;
+    min-height: 110px;
+  }
+  .lesson-title { font-size: 16px; }
+  .lesson-meta { font-size: 12px; }
+  .start-btn { font-size: 13px; padding: 10px 0; }
+}
+
+/* Touch devices: disable hover transform */
+@media (hover: none) {
+  .lesson-card:hover { transform: none; }
 }
 `;
