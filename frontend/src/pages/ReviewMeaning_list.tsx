@@ -50,7 +50,7 @@ const REVIEW_COUNT_BY_GENRE: Record<string, number> = {
 function makeReviewItems(genreId: string, count: number): ReviewItem[] {
   const arr: ReviewItem[] = [];
   for (let i = 1; i <= count; i++) {
-    arr.push({ id: `${genreId}-review-minitest-${i}`, title: `MiniTest ${i}`, subtitle: `最終テスト: %` });
+    arr.push({ id: `${genreId}-review-minitest-${i}`, title: `MiniTest ${i}`, subtitle: `最終テスト: %`});
   }
   return arr;
 }
@@ -135,17 +135,17 @@ const styles = `
   cursor: pointer;
 }
 
-/* Layout grid */
+/* Layout grid: use CSS Grid for predictable columns */
 .items-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  /* auto-fill of minmax gives flexible columns on wide screens */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 14px;
-  justify-content: space-between;
+  align-items: stretch;
 }
 
 /* Card style */
 .item-card {
-  flex: 0 0 calc(25% - 14px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,7 +155,8 @@ const styles = `
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
   overflow: hidden;
-  min-width: 120px;
+  width: 100%;   /* grid item should fill the grid cell */
+  min-width: 0;  /* allow shrinking in narrow containers */
 }
 
 .item-card:hover {
@@ -199,23 +200,36 @@ const styles = `
   color: #000;
 }
 
-/* Responsive grid */
+/* Breakpoints: adapt column counts */
+
+/* medium-large: three columns-ish */
 @media (min-width: 900px) and (max-width: 1199px) {
-  .item-card { flex: 0 0 calc(33.333% - 14px); }
+  .items-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* tablet / small desktop: two columns */
+@media (max-width: 899px) and (min-width: 769px) {
+  .items-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* default for <=768: two columns (mobile & small screens) */
+/* This forces two boxes next to each other on typical mobile widths */
 @media (max-width: 768px) {
-  .item-card { flex: 0 0 calc(50% - 12px); }
+  .items-grid { grid-template-columns: repeat(2, 1fr); }
   .item-title { font-size: 16px; }
   .item-sub { font-size: 13px; }
   .start-btn { font-size: 14px; padding: 8px 0; }
 }
+
+/* extra small phones: still two columns but slightly tighter */
 @media (max-width: 480px) {
-  .item-card { flex: 0 0 100%; }
-  .item-title { font-size: 16px; }
-  .item-sub { font-size: 13px; }
-  .start-btn { font-size: 14px; }
+  .items-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .item-title { font-size: 15px; }
+  .item-sub { font-size: 12px; }
+  .start-btn { font-size: 13px; padding: 7px 0; }
 }
 
+/* Remove hover transform on touch devices */
 @media (hover: none) {
   .item-card:hover { transform: none; }
 }
