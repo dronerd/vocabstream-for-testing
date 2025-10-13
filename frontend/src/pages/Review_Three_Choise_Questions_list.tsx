@@ -72,7 +72,7 @@ export default function ReviewMiniTestList() {
     return (
       <div className="page-root">
         <h2 className="page-title">ジャンルが指定されていません</h2>
-        <button className="back-btn" onClick={() => nav("/review")}>復習方法の一覧に戻る</button>
+        <button className="back-btn" onClick={() => nav(-1)}>復習する分野の一覧に戻る</button>
         <style>{styles}</style>
       </div>
     );
@@ -80,8 +80,8 @@ export default function ReviewMiniTestList() {
 
   return (
     <div className="page-root">
-      <h2 className="page-title smaller">{genreTitle} 例文ミニテストの復習</h2>
-      <button className="back-btn" onClick={() => nav("/review")}>復習方法の一覧に戻る</button>
+      <h2 className="page-title smaller">{genreTitle} ３択の例文ミニテスト方式の復習  ーレッスン一覧</h2>
+      <button className="back-btn" onClick={() => nav(-1)}>復習する分野の一覧に戻る</button>
 
       <div className="items-grid">
         {items.map((it) => (
@@ -102,7 +102,7 @@ export default function ReviewMiniTestList() {
               className="start-btn"
               onClick={(ev) => {
                 ev.stopPropagation();
-                nav(`/review/minitest/${it.id}`);
+                nav(`/review_three_choise_questions_lesson/${it.id}`);
               }}
             >
               開始

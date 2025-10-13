@@ -9,15 +9,15 @@ import LearnGenres from "./pages/LearnGenres";
 import LessonList from "./pages/LessonList";
 import Lesson from "./pages/Lesson";
 import Review from "./pages/Review";
-import ReviewFillin from "./pages/ReviewFillin";
-import ReviewFillinList from "./pages/ReviewFillin_list";
-import ReviewFillinLesson from "./pages/ReviewFillinLesson";
-import ReviewMeaning from "./pages/ReviewMeaning";
-import ReviewMeaningList from "./pages/ReviewMeaning_list";
-import ReviewMeaningLesson from "./pages/ReviewMeaningLesson";
+import ReviewParagraphFillin from "./pages/Review_Paragraph_Fillin";
+import ReviewParagraphFillinList from "./pages/Review_Paragraph_Fillin_list";
+import ReviewParagraphFillinLesson from "./pages/Review_Paragraph_Fillin_Lesson";
+import ReviewThreeChoiseQuestions from "./pages/Review_Three_Choise_Questions";
+import ReviewThreeChoiseQuestionsList from "./pages/Review_Three_Choise_Questions_list";
+import ReviewThreeChoiseQuestionsLesson from "./pages/Review_Three_Choise_Questions_Lesson";
 import Others from "./pages/Others";
-import ReadingComprehension from "./pages/ReadingComprehension";
-import ReadingComprehensionList from "./pages/ReadingComprehension_list";
+import ReviewReadingComprehension from "./pages/Review_ReadingComprehension";
+import ReviewReadingComprehensionList from "./pages/Review_ReadingComprehension_list";
 import LandingPage from "./pages/LandingPage";
 import Privacy from "./pages/Privacy";
 import Prompts from "./pages/ChatGPT_prompts";
@@ -53,15 +53,15 @@ export default function App() {
           <Route path="/learn/:genreId" element={<LessonList />} />
           <Route path="/lesson/:lessonId" element={<Lesson />} />
           <Route path="/review" element={<Review />} />
-          <Route path="/review_fillin" element={<ReviewFillin />} />
-          <Route path="/review_fillin_list/:genreId" element={<ReviewFillinList />} />
-          <Route path="/review_fillin_lesson/:lessonId" element={<ReviewFillinLesson />} />
-          <Route path="/review_meaning" element={<ReviewMeaning />} />
-          <Route path="/review_meaning_list/:genreId" element={<ReviewMeaningList />} />
-          <Route path="/review_meaning_lesson/:genreId" element={<ReviewMeaningLesson />} />
+          <Route path="/review_paragraph_fillin" element={<ReviewParagraphFillin />} />
+          <Route path="/review_paragraph_fillin_list/:genreId" element={<ReviewParagraphFillinList />} />
+          <Route path="/review_paragraph_fillin_lesson/:lessonId" element={<ReviewParagraphFillinLesson />} />
+          <Route path="/review_three_choise_questions" element={<ReviewThreeChoiseQuestions />} />
+          <Route path="/review_three_choise_questions_list/:genreId" element={<ReviewThreeChoiseQuestionsList />} />
+          <Route path="/review_three_choise_questions_lesson/:genreId" element={<ReviewThreeChoiseQuestionsLesson />} />
           <Route path="/others" element={<Others />} />
-          <Route path="/reading_comprehension" element={<ReadingComprehension />} />
-          <Route path="/reading_comprehension_list" element={<ReadingComprehensionList />} />
+          <Route path="/review_reading_comprehension" element={<ReviewReadingComprehension />} />
+          <Route path="/review_reading_comprehension_list" element={<ReviewReadingComprehensionList />} />
           <Route path="/landing_page" element={<LandingPage />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/privacy" element={<Privacy />} />

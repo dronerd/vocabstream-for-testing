@@ -104,7 +104,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
         復習方法選択に戻る
       </button>
 
-      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>実践読解テスト</h2>
+      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>3択の例文ミニテスト方式</h2>
       <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>復習する分野を選択</h3>
 
       {Object.entries(categories).map(([categoryName, lessons]) => {
@@ -157,7 +157,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
               {lessons.map((lesson, index) => (
                 <div
                   key={lesson.id}
-                  onClick={() => nav(`/reading_comprehension_list`)}
+                  onClick={() => nav(`/review_three_choise_questions_list/${lesson.id}`)}
                   style={{
                     padding: 12,
                     background: cardBackground(categoryName, index),

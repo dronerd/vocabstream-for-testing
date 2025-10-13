@@ -104,15 +104,15 @@ export default function Review() {
       <div className="options-grid">
         <button
           className="option-btn"
-          onClick={() => nav("/review_meaning")}
+          onClick={() => nav("/review_three_choise_questions")}
           style={{ backgroundColor: buttonColors[0] }}
         >
-          例文ミニテスト方式
+          ３択の例文ミニテスト方式
         </button>
 
         <button
           className="option-btn"
-          onClick={() => nav("/review_fillin")}
+          onClick={() => nav("/review_paragraph_fillin")}
           style={{ backgroundColor: buttonColors[2] }}
         >
           文章穴埋め方式
@@ -120,10 +120,10 @@ export default function Review() {
 
         <button
           className="option-btn option-third"
-          onClick={() => nav("/reading_comprehension")}
+          onClick={() => nav("/review_reading_comprehension")}
           style={{ backgroundColor: buttonColors[3] }}
         >
-          実践読解テスト
+          実践読解テスト方式
         </button>
       </div>
     </div>

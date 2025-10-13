@@ -31,8 +31,8 @@ const STATIC_GENRES: Lesson[] = [
   { id: "engineering", title: "Engineering" },
 ];
 
-export default function LearnGenres() {
-  // using the static list instead of fetching from backend
+export default function ReviewList() {
+  // use the static list instead of fetching from backend
   const [genres] = useState<Lesson[]>(STATIC_GENRES);
   const [isSmall, setIsSmall] = useState<boolean>(false);
   const nav = useNavigate();
@@ -47,7 +47,6 @@ export default function LearnGenres() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  // Use lowercase checks so we match backend ids regardless of case
   const categories: Record<string, Lesson[]> = {
     単語: genres.filter((g) => g.id.toLowerCase().startsWith("word")),
     熟語: genres.filter((g) => g.id.toLowerCase().startsWith("idioms")),
@@ -60,7 +59,6 @@ export default function LearnGenres() {
     ),
   };
 
-  // keys should match the genre folder ids returned by backend (lowercased)
   const lessonImages: Record<string, string> = {
     "computer-science": "/CS.png",
     "medicine": "/Medicine.png",
@@ -70,36 +68,48 @@ export default function LearnGenres() {
     "engineering": "/Engineering.png",
   };
 
-  const levelColors = ["#ffcccc", "#fff5cc", "#ccffcc", "#cce5ff"];
-  const termColors = ["#ffe4b5", "#d8bfd8", "#afeeee", "#f5deb3", "#e6e6fa", "#f08080"];
-
   const levelOrder: LevelOrder = {
-    単語: [
-      "word-intermediate",
-      "word-high-intermediate",
-      "word-advanced",
-      "word-proficiency",
-    ],
+    単語: ["word-intermediate", "word-high-intermediate", "word-advanced", "word-proficiency"],
     熟語: ["idioms-intermediate", "idioms-high-intermediate", "idioms-advanced", "idioms-proficiency"],
     ビジネス表現: ["business-entry", "business-intermediate", "business-global"],
   };
 
+  const levelColors = ["#ffcccc", "#fff5cc", "#ccffcc", "#cce5ff"];
+  const termColors = ["#ffe4b5", "#d8bfd8", "#afeeee", "#f5deb3", "#e6e6fa", "#f08080"];
+
   function cardBackground(categoryName: string, index: number) {
-    return levelOrder[categoryName] ? levelColors[index] || "#f9f9f9" : termColors[index % termColors.length];
+    return levelOrder[categoryName]
+      ? levelColors[index] || "#f9f9f9"
+      : termColors[index % termColors.length];
   }
 
 const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ56、それ以外は72
 const basePadding = isSmall ? 12 : 20; // 既存の padding
-  
+
   return (
-    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT }}>
-      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>単語の学習</h2>
-      <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 10 }}>学習する分野の選択</h3>
+    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT}}>
+      {/* 復習方法に戻るボタン */}
+      <button
+        onClick={() => nav("/review")}
+        style={{
+          marginBottom: 5,
+          padding: "8px 16px",
+          borderRadius: 8,
+          border: "none",
+          backgroundColor: "#555",
+          color: "#fff",
+          cursor: "pointer",
+        }}
+      >
+        復習方法選択に戻る
+      </button>
+
+      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>文章穴埋め方式の復習</h2>
+      <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>復習する分野を選択</h3>
 
       {Object.entries(categories).map(([categoryName, lessons]) => {
         const order = levelOrder[categoryName];
         if (order) {
-          // sort using lowercase ids and fall back to end if not found
           lessons.sort((a, b) => {
             const idxA = order.indexOf(a.id.toLowerCase());
             const idxB = order.indexOf(b.id.toLowerCase());
@@ -112,7 +122,14 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
         return (
           <div
             key={categoryName}
-            style={{ marginTop: 10, marginBottom: 20, padding: 12, background: "#fff", border: "3px solid #666", borderRadius: 10 }}
+            style={{
+              marginTop: 10,
+              marginBottom: 20,
+              padding: 12,
+              background: "#fff",
+              border: "3px solid #666",
+              borderRadius: 10,
+            }}
           >
             <div
               style={{
@@ -124,7 +141,9 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
                 textAlign: isSmall ? "center" : "left",
               }}
             >
-              <h3 style={{ fontSize: isSmall ? 18 : 24, fontWeight: "bold", margin: 0 }}>{categoryName}</h3>
+              <h3 style={{ fontSize: isSmall ? 18 : 24, fontWeight: "bold", margin: 0 }}>
+                {categoryName}
+              </h3>
             </div>
 
             <div
@@ -138,7 +157,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
               {lessons.map((lesson, index) => (
                 <div
                   key={lesson.id}
-                  onClick={() => nav(`/learn/${lesson.id}`)}
+                  onClick={() => nav(`/review_paragraph_fillin_list/${lesson.id}`)}
                   style={{
                     padding: 12,
                     background: cardBackground(categoryName, index),
@@ -149,6 +168,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
                     alignItems: "center",
                     justifyContent: "space-between",
                     gap: 10,
+                    minHeight: ["英検", "TOEFL", "TOEIC"].includes(categoryName) ? 50 : "auto",
                     flexDirection: isSmall ? "column" : "row",
                     textAlign: isSmall ? "center" : "left",
                   }}
