@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-32",
-  "title": "Lesson 32",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-32",
+    "title": "Lesson 32",
+    "paragraph": "Regional and economic factors influence trade and development. Understanding industries, revealing trends, and resolving issues ensures balanced growth.",
+    "words": [
+      { "word": "economywide", "meaning": "affecting the whole economy", "japaneseMeaning": "経済全体の", "synonyms": "macroeconomic, national", "antonyms": "local, microeconomic", "example": "Economywide reforms improved productivity." },
+      { "word": "revealable", "meaning": "capable of being disclosed", "japaneseMeaning": "明らかにできる", "synonyms": "disclosable, exposable", "antonyms": "concealed, hidden", "example": "The hidden data is revealable upon request." },
+      { "word": "regionally", "meaning": "in a specific geographic area", "japaneseMeaning": "地域的に", "synonyms": "locally, territorially", "antonyms": "nationally, globally", "example": "The service is offered regionally." },
+      { "word": "acclaim", "meaning": "praise or approval", "japaneseMeaning": "称賛", "synonyms": "praise, recognition", "antonyms": "criticism, disapproval", "example": "The novel received international acclaim." },
+      { "word": "deposit", "meaning": "to put money or something valuable in a safe place", "japaneseMeaning": "預ける、保証金", "synonyms": "place, lodge", "antonyms": "withdraw, take", "example": "He deposited his paycheck in the bank." },
+      { "word": "resolve", "meaning": "to find a solution", "japaneseMeaning": "解決する、決意する", "synonyms": "settle, solve", "antonyms": "leave unresolved, ignore", "example": "They resolved the conflict quickly." },
+      { "word": "submit", "meaning": "to present for consideration", "japaneseMeaning": "提出する", "synonyms": "present, deliver", "antonyms": "withhold, retract", "example": "Please submit your application by Friday." },
+      { "word": "fair", "meaning": "just or impartial", "japaneseMeaning": "公平な", "synonyms": "just, equitable", "antonyms": "unfair, biased", "example": "The judge made a fair decision." },
+      { "word": "fame", "meaning": "being well-known or recognized", "japaneseMeaning": "名声", "synonyms": "renown, reputation", "antonyms": "obscurity, anonymity", "example": "Her fame spread across the globe." },
+      { "word": "industry", "meaning": "a particular business sector", "japaneseMeaning": "産業、業界", "synonyms": "sector, trade", "antonyms": "", "example": "The automotive industry is growing rapidly." }
+    ]
+  }

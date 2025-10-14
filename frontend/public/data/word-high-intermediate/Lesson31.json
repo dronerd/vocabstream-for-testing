@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-2-31",
-  "title": "Lesson 31",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-31",
+    "title": "Lesson 31",
+    "paragraph": "Arts and publication convey ideas and culture. Authors, broadcasters, and creative minds illuminate, recall, and preserve artistic expressions for society.",
+    "words": [
+      { "word": "recall", "meaning": "to bring back to mind", "japaneseMeaning": "思い出す", "synonyms": "remember, recollect", "antonyms": "forget, ignore", "example": "I recall my childhood summers vividly." },
+      { "word": "authorial", "meaning": "relating to an author", "japaneseMeaning": "著者の、作者の", "synonyms": "writerly, literary", "antonyms": "readerly", "example": "The book has a strong authorial voice." },
+      { "word": "broadcasted", "meaning": "transmitted to the public via media", "japaneseMeaning": "放送された", "synonyms": "aired, transmitted", "antonyms": "hidden, withheld", "example": "The news was broadcasted live." },
+      { "word": "exile", "meaning": "forced absence from one's country", "japaneseMeaning": "亡命、追放", "synonyms": "banishment, deportation", "antonyms": "return, repatriation", "example": "The writer lived in exile for decades." },
+      { "word": "exist", "meaning": "to be real or present", "japaneseMeaning": "存在する", "synonyms": "live, occur", "antonyms": "cease, disappear", "example": "Dinosaurs no longer exist." },
+      { "word": "keen", "meaning": "having sharp interest or ability", "japaneseMeaning": "熱心な、鋭い", "synonyms": "eager, sharp", "antonyms": "indifferent, dull", "example": "She has a keen sense of style." },
+      { "word": "illuminate", "meaning": "to light up or clarify", "japaneseMeaning": "照らす、明らかにする", "synonyms": "light, clarify", "antonyms": "obscure, darken", "example": "The lecture illuminated complex ideas." },
+      { "word": "implant", "meaning": "to insert or establish firmly", "japaneseMeaning": "埋め込む、定着させる", "synonyms": "insert, embed", "antonyms": "remove, extract", "example": "They implanted the device under the skin." },
+      { "word": "designery", "meaning": "related to creative design work", "japaneseMeaning": "デザインの、設計の", "synonyms": "creative, artistic", "antonyms": "uncreative, mundane", "example": "The designery firm specializes in interiors." },
+      { "word": "abide", "meaning": "to follow or tolerate", "japaneseMeaning": "従う、我慢する", "synonyms": "obey, accept", "antonyms": "violate, resist", "example": "We must abide by the rules." }
+    ]
+  }
+ 

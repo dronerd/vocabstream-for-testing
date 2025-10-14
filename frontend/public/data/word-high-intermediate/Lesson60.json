@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-60",
-  "title": "Lesson 60",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-60",
+    "title": "Lesson 60",
+    "paragraph": "Urban planning and sustainability balance growth with efficiency. Generating solutions, converting resources, and dramatizing awareness support sustainable cities.",
+    "words": [
+      { "word": "urban", "meaning": "relating to cities or towns", "japaneseMeaning": "都市の、都会の", "synonyms": "city, metropolitan", "antonyms": "rural, countryside", "example": "Urban areas are densely populated." },
+      { "word": "vence", "meaning": "to overcome or win", "japaneseMeaning": "克服する、勝つ", "synonyms": "overcome, conquer", "antonyms": "fail, lose", "example": "She vence all obstacles to succeed." },
+      { "word": "redeem", "meaning": "to recover or improve", "japaneseMeaning": "償う、回復する", "synonyms": "recover, restore", "antonyms": "lose, fail", "example": "He redeemed himself with excellent work." },
+      { "word": "electricityless", "meaning": "without electricity", "japaneseMeaning": "電気のない", "synonyms": "non-electric, powerless", "antonyms": "powered, electric", "example": "The village was electricityless for hours." },
+      { "word": "focus", "meaning": "to concentrate attention or effort", "japaneseMeaning": "集中する、焦点", "synonyms": "concentrate, target", "antonyms": "distract, ignore", "example": "Students must focus on their studies." },
+      { "word": "articulate", "meaning": "able to express clearly", "japaneseMeaning": "はっきり述べる、明瞭な", "synonyms": "expressive, coherent", "antonyms": "inarticulate, unclear", "example": "She articulated her ideas convincingly." },
+      { "word": "dramatize", "meaning": "to present or exaggerate for effect", "japaneseMeaning": "劇化する、誇張する", "synonyms": "exaggerate, emphasize", "antonyms": "understate, minimize", "example": "The speaker dramatized the problem to capture attention." },
+      { "word": "counterpart", "meaning": "a person or thing with a similar function", "japaneseMeaning": "相当するもの、対照物", "synonyms": "equivalent, peer", "antonyms": "opposite, unrelated", "example": "The mayor met his counterpart in the neighboring city." },
+      { "word": "generate", "meaning": "to produce or create", "japaneseMeaning": "生み出す、発生させる", "synonyms": "create, produce", "antonyms": "destroy, eliminate", "example": "The factory generates electricity." },
+      { "word": "convertor", "meaning": "a device that changes form or function", "japaneseMeaning": "変換器", "synonyms": "adapter, transformer", "antonyms": "", "example": "The convertor changed DC to AC current." }
+    ]
+  }
+

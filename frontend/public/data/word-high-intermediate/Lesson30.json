@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-30",
-  "title": "Lesson 30",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-30",
+    "title": "Lesson 30",
+    "paragraph": "Borders and scale affect logistics and planning. Understanding dependencies, managing resources, and handling large-scale operations ensures smooth cross-border projects.",
+    "words": [
+      { "word": "subtle", "meaning": "not obvious or delicate", "japaneseMeaning": "微妙な、巧妙な", "synonyms": "delicate, understated", "antonyms": "obvious, blatant", "example": "He made a subtle change to the design." },
+      { "word": "nutritive", "meaning": "providing nutrition", "japaneseMeaning": "栄養のある", "synonyms": "nourishing, healthy", "antonyms": "unhealthy, empty", "example": "Milk is highly nutritive for children." },
+      { "word": "dependent", "meaning": "relying on someone or something", "japaneseMeaning": "依存している", "synonyms": "reliant, subordinate", "antonyms": "independent, self-sufficient", "example": "Many animals are dependent on water for survival." },
+      { "word": "crash", "meaning": "to collide or fail suddenly", "japaneseMeaning": "衝突する、故障する", "synonyms": "collide, fail", "antonyms": "function, succeed", "example": "The car crashed into a tree." },
+      { "word": "expandible", "meaning": "able to increase in size", "japaneseMeaning": "拡張可能な", "synonyms": "expandable, extendable", "antonyms": "fixed, rigid", "example": "The storage is expandible to hold more files." },
+      { "word": "enormous", "meaning": "very large", "japaneseMeaning": "巨大な", "synonyms": "huge, massive", "antonyms": "tiny, small", "example": "They live in an enormous house." },
+      { "word": "prior", "meaning": "earlier or previous", "japaneseMeaning": "前の、事前の", "synonyms": "previous, earlier", "antonyms": "later, subsequent", "example": "She had no prior experience in teaching." },
+      { "word": "remain", "meaning": "to continue to exist", "japaneseMeaning": "残る、留まる", "synonyms": "stay, persist", "antonyms": "disappear, leave", "example": "Only a few ruins remain of the ancient city." },
+      { "word": "border", "meaning": "a dividing line or boundary", "japaneseMeaning": "国境、境界", "synonyms": "boundary, edge", "antonyms": "center, interior", "example": "They crossed the border legally." },
+      { "word": "divide", "meaning": "to separate into parts", "japaneseMeaning": "分ける、分割する", "synonyms": "split, separate", "antonyms": "combine, unite", "example": "The cake was divided among ten people." }
+    ]
+  }
+

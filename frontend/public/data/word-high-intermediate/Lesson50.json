@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-50",
-  "title": "Lesson 50",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-50",
+    "title": "Lesson 50",
+    "paragraph": "Transport and freight management ensures goods move efficiently. Elevating, preparing, and donating resources responsibly helps maintain reliable logistics.",
+    "words": [
+      { "word": "elevate", "meaning": "to lift or raise to a higher level", "japaneseMeaning": "高める、持ち上げる", "synonyms": "raise, uplift", "antonyms": "lower, depress", "example": "The platform elevates workers to the desired height." },
+      { "word": "freight", "meaning": "goods transported in bulk", "japaneseMeaning": "貨物、運送", "synonyms": "cargo, shipment", "antonyms": "", "example": "The freight was delayed due to weather." },
+      { "word": "outline", "meaning": "a general description or plan", "japaneseMeaning": "概要、輪郭", "synonyms": "summary, sketch", "antonyms": "detail, expansion", "example": "Please outline the project proposal." },
+      { "word": "donateable", "meaning": "capable of being given as a gift", "japaneseMeaning": "寄付可能な", "synonyms": "contributable, giftable", "antonyms": "non-donatable, restricted", "example": "Clothes are donateable to charity." },
+      { "word": "considerate", "meaning": "showing concern for others", "japaneseMeaning": "思いやりのある", "synonyms": "thoughtful, mindful", "antonyms": "inconsiderate, rude", "example": "He is always considerate of others' feelings." },
+      { "word": "afford", "meaning": "to have the means to do or buy", "japaneseMeaning": "余裕がある、提供する", "synonyms": "provide, manage", "antonyms": "deny, lack", "example": "We cannot afford any delays in the project." },
+      { "word": "slight", "meaning": "small in degree or amount", "japaneseMeaning": "わずかな、軽い", "synonyms": "minor, small", "antonyms": "major, significant", "example": "There is a slight chance of rain." },
+      { "word": "prepare", "meaning": "to make ready for use or action", "japaneseMeaning": "準備する", "synonyms": "ready, arrange", "antonyms": "neglect, ignore", "example": "She prepared the documents for the meeting." },
+      { "word": "initial", "meaning": "first or beginning", "japaneseMeaning": "初期の、最初の", "synonyms": "first, primary", "antonyms": "final, last", "example": "The initial phase of the project is complete." },
+      { "word": "ignore", "meaning": "to refuse to notice or acknowledge", "japaneseMeaning": "無視する", "synonyms": "disregard, overlook", "antonyms": "notice, attend", "example": "He chose to ignore the warning signs." }
+    ]
+  }

@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-54",
-  "title": "Lesson 54",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-54",
+    "title": "Lesson 54",
+    "paragraph": "Service and governance rely on structured support and management. Integration, adjustment, and financeability enhance institutional effectiveness.",
+    "words": [
+      { "word": "servant", "meaning": "one who performs duties for others", "japaneseMeaning": "使用人、従者", "synonyms": "attendant, helper", "antonyms": "master, employer", "example": "The servant prepared the house for the guests." },
+      { "word": "district", "meaning": "an administrative area", "japaneseMeaning": "地区、行政区", "synonyms": "region, zone", "antonyms": "whole, country", "example": "The district covers several towns." },
+      { "word": "impressible", "meaning": "capable of being influenced or impressed", "japaneseMeaning": "感銘を受けやすい", "synonyms": "receptive, sensitive", "antonyms": "unimpressionable, indifferent", "example": "Children are highly impressible." },
+      { "word": "integrate", "meaning": "to combine into a whole", "japaneseMeaning": "統合する、組み込む", "synonyms": "unify, merge", "antonyms": "separate, divide", "example": "The new system integrates multiple services." },
+      { "word": "assume", "meaning": "to take on responsibility or belief", "japaneseMeaning": "引き受ける、仮定する", "synonyms": "take on, presume", "antonyms": "reject, abandon", "example": "He assumed the role of manager." },
+      { "word": "magnitude", "meaning": "great size or importance", "japaneseMeaning": "大きさ、規模", "synonyms": "size, extent", "antonyms": "smallness, insignificance", "example": "The earthquake was of high magnitude." },
+      { "word": "steady", "meaning": "firm and consistent", "japaneseMeaning": "安定した、一定の", "synonyms": "stable, constant", "antonyms": "unsteady, erratic", "example": "The table remained steady." },
+      { "word": "adjuster", "meaning": "one who modifies or adapts", "japaneseMeaning": "調整者", "synonyms": "modifier, regulator", "antonyms": "", "example": "The adjuster calibrated the machinery." },
+      { "word": "financeable", "meaning": "able to be financed", "japaneseMeaning": "資金調達可能な", "synonyms": "fundable, fundable", "antonyms": "unfinanceable", "example": "The project is financeable by investors." },
+      { "word": "preferenceable", "meaning": "desirable or favored", "japaneseMeaning": "望ましい、好ましい", "synonyms": "desirable, favorable", "antonyms": "undesirable, inferior", "example": "This method is preferenceable for beginners." }
+    ]
+  }

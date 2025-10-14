@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-44",
-  "title": "Lesson 44",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-44",
+    "title": "Lesson 44",
+    "paragraph": "Functions and detection focus on operations and protection. Detecting threats, impeding risks, and formalizing processes help ensure safety and efficiency.",
+    "words": [
+      { "word": "function", "meaning": "a purpose or role of something", "japaneseMeaning": "機能、役割", "synonyms": "role, purpose", "antonyms": "dysfunction, failure", "example": "The primary function of the heart is to pump blood." },
+      { "word": "detectible", "meaning": "able to be discovered or noticed", "japaneseMeaning": "検出可能な", "synonyms": "observable, noticeable", "antonyms": "hidden, invisible", "example": "The leak is detectible with special equipment." },
+      { "word": "impede", "meaning": "to obstruct or slow down", "japaneseMeaning": "妨げる", "synonyms": "hinder, obstruct", "antonyms": "facilitate, aid", "example": "Heavy traffic can impede progress." },
+      { "word": "safe-guard", "meaning": "to protect from harm", "japaneseMeaning": "保護する", "synonyms": "protect, secure", "antonyms": "endanger, expose", "example": "The firewall will safe-guard your data." },
+      { "word": "prompt", "meaning": "to cause or encourage action", "japaneseMeaning": "促す、刺激する", "synonyms": "encourage, trigger", "antonyms": "deter, delay", "example": "The teacher’s question prompted discussion." },
+      { "word": "formalize", "meaning": "to make official or structured", "japaneseMeaning": "公式化する、形式化する", "synonyms": "standardize, legitimize", "antonyms": "informalize, ignore", "example": "They formalized the agreement in writing." },
+      { "word": "advancement", "meaning": "progress or development", "japaneseMeaning": "進展、発展", "synonyms": "progress, growth", "antonyms": "regression, decline", "example": "Technological advancement drives industry." },
+      { "word": "diminish", "meaning": "to make smaller or less", "japaneseMeaning": "減少させる", "synonyms": "reduce, decrease", "antonyms": "increase, enhance", "example": "Stress can diminish productivity." },
+      { "word": "demographic", "meaning": "relating to population characteristics", "japaneseMeaning": "人口統計の", "synonyms": "population, societal", "antonyms": "", "example": "Marketing targets specific demographic groups." },
+      { "word": "employ", "meaning": "to hire or make use of", "japaneseMeaning": "雇う、利用する", "synonyms": "hire, utilize", "antonyms": "fire, ignore", "example": "The company employs over 200 workers." }
+    ]
+  }
+ 

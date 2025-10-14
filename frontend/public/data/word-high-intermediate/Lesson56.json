@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-56",
-  "title": "Lesson 56",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-56",
+    "title": "Lesson 56",
+    "paragraph": "Narratives and inquiries explore knowledge and experience. Using models, legal frameworks, and responsive actions helps absorb and analyze information effectively.",
+    "words": [
+      { "word": "narrative", "meaning": "a story or account of events", "japaneseMeaning": "物語、話の筋", "synonyms": "story, account", "antonyms": "nonfiction, fact", "example": "The teacher told a narrative about ancient civilizations." },
+      { "word": "quest", "meaning": "a pursuit or search for something", "japaneseMeaning": "探求、追求", "synonyms": "search, mission", "antonyms": "avoidance, neglect", "example": "The scientist embarked on a quest for a cure." },
+      { "word": "model", "meaning": "a representation or example to follow", "japaneseMeaning": "モデル、模範", "synonyms": "example, prototype", "antonyms": "copycat, error", "example": "The architect built a model of the building." },
+      { "word": "legalize", "meaning": "to make lawful", "japaneseMeaning": "合法化する", "synonyms": "authorize, permit", "antonyms": "prohibit, ban", "example": "Some countries have legalized same-sex marriage." },
+      { "word": "dictateable", "meaning": "able to be dictated or instructed", "japaneseMeaning": "指示可能な", "synonyms": "controllable, governable", "antonyms": "independent, autonomous", "example": "The terms are dictateable by the manager." },
+      { "word": "field", "meaning": "an area of study or activity", "japaneseMeaning": "分野、領域", "synonyms": "area, domain", "antonyms": "ignore, void", "example": "She is an expert in the medical field." },
+      { "word": "absorbent", "meaning": "capable of taking in liquid or knowledge", "japaneseMeaning": "吸収性のある", "synonyms": "soaking, receptive", "antonyms": "repellent, impermeable", "example": "The sponge is highly absorbent." },
+      { "word": "respond", "meaning": "to reply or react", "japaneseMeaning": "応答する、反応する", "synonyms": "answer, react", "antonyms": "ignore, neglect", "example": "He responded promptly to the email." },
+      { "word": "clientele", "meaning": "a group of customers or clients", "japaneseMeaning": "顧客、取引先", "synonyms": "customers, patrons", "antonyms": "suppliers, vendors", "example": "The café has a loyal clientele." },
+      { "word": "market", "meaning": "an environment for buying and selling", "japaneseMeaning": "市場", "synonyms": "trade, commerce", "antonyms": "supply shortage, void", "example": "The company expanded into a new market." }
+    ]
+  }

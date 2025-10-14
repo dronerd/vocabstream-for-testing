@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-2-36",
-  "title": "Lesson 36",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-36",
+    "title": "Lesson 36",
+    "paragraph": "Giving and moderation balance generosity with prudence. Delivering aid, donating, and conducting actions carefully ensures fairness and positive outcomes.",
+    "words": [
+      { "word": "deliver", "meaning": "to bring or hand over", "japaneseMeaning": "届ける、配達する", "synonyms": "bring, transport", "antonyms": "withhold, retain", "example": "The courier will deliver the package tomorrow." },
+      { "word": "donate", "meaning": "to give for a good cause", "japaneseMeaning": "寄付する", "synonyms": "contribute, gift", "antonyms": "hoard, take", "example": "They donated books to the library." },
+      { "word": "moderate", "meaning": "to keep within reasonable limits", "japaneseMeaning": "控えめにする、穏やかにする", "synonyms": "temper, regulate", "antonyms": "exceed, intensify", "example": "We must moderate our spending." },
+      { "word": "impression", "meaning": "an effect or feeling produced", "japaneseMeaning": "印象、感銘", "synonyms": "effect, impact", "antonyms": "indifference, neglect", "example": "She left a strong impression on her teacher." },
+      { "word": "version", "meaning": "a particular form or variant", "japaneseMeaning": "版、バージョン", "synonyms": "edition, variant", "antonyms": "", "example": "I prefer the latest version of the software." },
+      { "word": "conduct", "meaning": "to organize or carry out", "japaneseMeaning": "行う、実施する", "synonyms": "perform, execute", "antonyms": "neglect, mismanage", "example": "The scientists conducted an experiment." },
+      { "word": "configure", "meaning": "to arrange or set up", "japaneseMeaning": "設定する、構成する", "synonyms": "set up, arrange", "antonyms": "disorganize, unset", "example": "Please configure the software before use." },
+      { "word": "foreseeability", "meaning": "the ability to predict or anticipate", "japaneseMeaning": "予見可能性", "synonyms": "predictability, anticipation", "antonyms": "unpredictability, uncertainty", "example": "The contract limits liability for unforeseeability." },
+      { "word": "bargainable", "meaning": "negotiable in price or terms", "japaneseMeaning": "交渉可能な", "synonyms": "negotiable, flexible", "antonyms": "fixed, nonnegotiable", "example": "The price is bargainable at the market." },
+      { "word": "bound", "meaning": "obligated or certain", "japaneseMeaning": "義務のある、確実な", "synonyms": "obliged, certain", "antonyms": "free, uncertain", "example": "She is bound by contract to finish the project." }
+    ]
+  }
+ 

@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-20",
-  "title": "Lesson 20",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-20",
+    "title": "Lesson 20",
+    "paragraph": "Mobility and time management are vital in daily life. Using mobile devices, careful planning, archives, and guides help coordinate tasks and maintain schedules efficiently.",
+    "words": [
+      { "word": "mobile", "meaning": "able to move or be moved easily", "japaneseMeaning": "移動可能な、携帯の", "synonyms": "movable, portable", "antonyms": "stationary, fixed", "example": "Mobile phones have changed communication habits." },
+      { "word": "decade", "meaning": "a period of ten years", "japaneseMeaning": "10年", "synonyms": "ten years, ten-year period", "antonyms": "", "example": "The technology has evolved over the last decade." },
+      { "word": "formulaic", "meaning": "following a fixed or conventional form", "japaneseMeaning": "型通りの、公式の", "synonyms": "standardized, conventional", "antonyms": "innovative, original", "example": "The speech was criticized as formulaic." },
+      { "word": "instrumented", "meaning": "equipped with instruments", "japaneseMeaning": "器具を装備した", "synonyms": "equipped, furnished", "antonyms": "bare, unprepared", "example": "The lab was fully instrumented for experiments." },
+      { "word": "briefcase", "meaning": "a flat, rectangular container for carrying papers", "japaneseMeaning": "ブリーフケース", "synonyms": "portfolio, case", "antonyms": "", "example": "He carried important documents in his briefcase." },
+      { "word": "correspond", "meaning": "to communicate by exchanging letters or messages", "japaneseMeaning": "通信する、対応する", "synonyms": "communicate, exchange", "antonyms": "ignore, neglect", "example": "They correspond regularly by email." },
+      { "word": "careful", "meaning": "taking precautions to avoid mistakes or harm", "japaneseMeaning": "注意深い", "synonyms": "cautious, attentive", "antonyms": "careless, reckless", "example": "She was careful when handling fragile items." },
+      { "word": "archive", "meaning": "a collection of records or historical documents", "japaneseMeaning": "アーカイブ、記録保管所", "synonyms": "repository, collection", "antonyms": "", "example": "The university archives important manuscripts." },
+      { "word": "appeal", "meaning": "a request or plea for help or understanding", "japaneseMeaning": "訴え、魅力", "synonyms": "request, attraction", "antonyms": "refusal, repulsion", "example": "The charity made an appeal for donations." },
+      { "word": "guidebook", "meaning": "a book providing information for travelers", "japaneseMeaning": "ガイドブック", "synonyms": "manual, handbook", "antonyms": "", "example": "We used a guidebook to explore the city." }
+    ]
+  }

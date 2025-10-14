@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-2-51",
-  "title": "Lesson 51",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-51",
+    "title": "Lesson 51",
+    "paragraph": "Systems and reform involve structured changes to improve efficiency and fairness. Equalizing, constraining, and centralizing processes can enhance functionality across organizations.",
+    "words": [
+      { "word": "regular", "meaning": "occurring at uniform intervals", "japaneseMeaning": "定期的な、規則正しい", "synonyms": "routine, consistent", "antonyms": "irregular, sporadic", "example": "She attends regular meetings every week." },
+      { "word": "radical", "meaning": "relating to thorough change", "japaneseMeaning": "根本的な、過激な", "synonyms": "extreme, fundamental", "antonyms": "conservative, minor", "example": "The company underwent radical restructuring." },
+      { "word": "equalityize", "meaning": "to make equal or fair", "japaneseMeaning": "平等にする", "synonyms": "equalize, balance", "antonyms": "discriminate, favor", "example": "Policies were introduced to equalityize opportunities." },
+      { "word": "minority", "meaning": "a smaller segment of a population", "japaneseMeaning": "少数派", "synonyms": "small group, subgroup", "antonyms": "majority, dominant group", "example": "The rights of the minority were protected." },
+      { "word": "constrain", "meaning": "to limit or restrict", "japaneseMeaning": "制約する、抑制する", "synonyms": "restrict, confine", "antonyms": "allow, free", "example": "Budget limitations constrain project options." },
+      { "word": "motor", "meaning": "a machine producing movement or power", "japaneseMeaning": "モーター、動力装置", "synonyms": "engine, machine", "antonyms": "", "example": "The motor powers the conveyor belt." },
+      { "word": "regionwide", "meaning": "covering an entire region", "japaneseMeaning": "地域全体にわたる", "synonyms": "regional, area-wide", "antonyms": "local, specific", "example": "The alert was issued regionwide." },
+      { "word": "convertible", "meaning": "able to be changed into another form", "japaneseMeaning": "変換可能な", "synonyms": "adaptable, changeable", "antonyms": "fixed, permanent", "example": "The funds are convertible into shares." },
+      { "word": "centrality", "meaning": "the state of being central or important", "japaneseMeaning": "中心性、重要性", "synonyms": "importance, prominence", "antonyms": "marginality, insignificance", "example": "The centrality of education in society is evident." },
+      { "word": "niche", "meaning": "a specialized role or position", "japaneseMeaning": "適所、専門領域", "synonyms": "specialty, segment", "antonyms": "general, broad", "example": "She found her niche in digital marketing." }
+    ]
+  }
+ 

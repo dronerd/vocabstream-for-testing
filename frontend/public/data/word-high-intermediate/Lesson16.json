@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-16",
-  "title": "Lesson 16",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-16",
+    "title": "Lesson 16",
+    "paragraph": "Technical formats help streamline work and communication. Adopting networks, foreseeability, agriculture systems, and acquiring elements allow smooth operations and proper implementation of processes.",
+    "words": [
+      { "word": "filterable", "meaning": "able to be filtered or refined", "japaneseMeaning": "フィルタ可能な", "synonyms": "refinable, screenable", "antonyms": "unfilterable", "example": "The data set is filterable by date and category." },
+      { "word": "formula", "meaning": "a method or rule expressed symbolically", "japaneseMeaning": "公式、方式", "synonyms": "equation, method", "antonyms": "", "example": "He solved the problem using a simple formula." },
+      { "word": "adoptive", "meaning": "related to adoption or being chosen", "japaneseMeaning": "養子の、採用の", "synonyms": "chosen, selected", "antonyms": "biological, natural", "example": "They joined an adoptive family program." },
+      { "word": "network", "meaning": "a system of interconnected people or things", "japaneseMeaning": "ネットワーク、網", "synonyms": "system, web", "antonyms": "isolation", "example": "He built a professional network across industries." },
+      { "word": "acquirement", "meaning": "the act of gaining or obtaining something", "japaneseMeaning": "習得、取得", "synonyms": "obtaining, learning", "antonyms": "loss, forfeiture", "example": "Language acquirement takes time and practice." },
+      { "word": "foresee", "meaning": "to anticipate or predict", "japaneseMeaning": "予見する", "synonyms": "anticipate, predict", "antonyms": "ignore, overlook", "example": "She could foresee potential challenges." },
+      { "word": "recruit", "meaning": "to enlist or hire new members or employees", "japaneseMeaning": "採用する、募集する", "synonyms": "hire, enlist", "antonyms": "dismiss, fire", "example": "The company recruited new graduates for its program." },
+      { "word": "agriculture", "meaning": "the practice of farming", "japaneseMeaning": "農業", "synonyms": "farming, cultivation", "antonyms": "", "example": "Sustainable agriculture benefits the environment." },
+      { "word": "element", "meaning": "a fundamental or essential part", "japaneseMeaning": "要素、成分", "synonyms": "component, factor", "antonyms": "whole, entirety", "example": "Trust is an important element of teamwork." },
+      { "word": "imply", "meaning": "to suggest without explicitly stating", "japaneseMeaning": "ほのめかす、示唆する", "synonyms": "suggest, indicate", "antonyms": "declare, state", "example": "His tone implied disagreement without saying it." }
+    ]
+  }

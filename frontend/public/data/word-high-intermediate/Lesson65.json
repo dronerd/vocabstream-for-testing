@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-65",
-  "title": "Lesson 65",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-65",
+    "title": "Lesson 65",
+    "paragraph": "Logistics and support enable smooth operations. Accepting, equipping, and sponsoring resources ensures efficient delivery and communication.",
+    "words": [
+      { "word": "figure", "meaning": "a number, symbol, or person; to calculate", "japaneseMeaning": "数字、人物、計算する", "synonyms": "number, person, calculate", "antonyms": "ignore, miscalculate", "example": "She calculated the figure carefully." },
+      { "word": "station", "meaning": "a place where services are provided or people are positioned", "japaneseMeaning": "駅、配置場所", "synonyms": "location, post", "antonyms": "move, depart", "example": "The soldiers were stationed along the border." },
+      { "word": "sponsor", "meaning": "to support or fund", "japaneseMeaning": "スポンサー、支援する", "synonyms": "support, back", "antonyms": "oppose, neglect", "example": "The company sponsored the charity event." },
+      { "word": "accept", "meaning": "to receive willingly", "japaneseMeaning": "受け入れる", "synonyms": "receive, agree", "antonyms": "refuse, reject", "example": "He accepted the award with gratitude." },
+      { "word": "container", "meaning": "an object for holding or transporting items", "japaneseMeaning": "容器、コンテナ", "synonyms": "box, vessel", "antonyms": "empty space", "example": "The goods were loaded into a container." },
+      { "word": "radicalize", "meaning": "to cause to adopt extreme views or actions", "japaneseMeaning": "過激化する", "synonyms": "extremize, mobilize", "antonyms": "moderate, pacify", "example": "The propaganda aimed to radicalize youth." },
+      { "word": "earnest", "meaning": "serious and sincere", "japaneseMeaning": "真剣な、熱心な", "synonyms": "serious, sincere", "antonyms": "frivolous, insincere", "example": "She made an earnest appeal for help." },
+      { "word": "refer", "meaning": "to direct attention or information", "japaneseMeaning": "参照する、言及する", "synonyms": "mention, direct", "antonyms": "ignore, conceal", "example": "Please refer to the handbook for details." },
+      { "word": "equip", "meaning": "to provide with necessary items", "japaneseMeaning": "装備する、備え付ける", "synonyms": "outfit, furnish", "antonyms": "deprive, strip", "example": "The lab was equipped with new microscopes." },
+      { "word": "dialogue", "meaning": "a conversation between people", "japaneseMeaning": "対話、会話", "synonyms": "conversation, discussion", "antonyms": "monologue, silence", "example": "The dialogue helped resolve the conflict." }
+    ]
+  }
+

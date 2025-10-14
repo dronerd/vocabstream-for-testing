@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-10",
-  "title": "Lesson 10",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-10",
+    "title": "Lesson 10",
+    "paragraph": "Trade and distribution depend on persistence, insight, and evolving strategies. By retaining knowledge and emulating best practices, organizations can breed success and institute effective methods for global commerce.",
+    "words": [
+      { "word": "retain", "meaning": "to keep possession of or continue to have", "japaneseMeaning": "保持する、保つ", "synonyms": "keep, maintain", "antonyms": "lose, relinquish", "example": "She retained her position in the company." },
+      { "word": "breed", "meaning": "to produce or cause something to develop", "japaneseMeaning": "繁殖させる、育む", "synonyms": "produce, foster", "antonyms": "destroy, prevent", "example": "The program breeds innovation among young entrepreneurs." },
+      { "word": "distribute", "meaning": "to give out or deliver to multiple recipients", "japaneseMeaning": "配布する、分配する", "synonyms": "dispense, allocate", "antonyms": "collect, withhold", "example": "The charity distributed food to the needy." },
+      { "word": "insight", "meaning": "a deep understanding of a situation", "japaneseMeaning": "洞察、見識", "synonyms": "understanding, perception", "antonyms": "ignorance, confusion", "example": "Her insight helped solve the complex problem." },
+      { "word": "evolve", "meaning": "to develop gradually over time", "japaneseMeaning": "進化する、発展する", "synonyms": "develop, progress", "antonyms": "regress, stagnate", "example": "The company evolved its business model successfully." },
+      { "word": "struggle", "meaning": "to make forceful or difficult efforts", "japaneseMeaning": "努力する、奮闘する", "synonyms": "fight, strive", "antonyms": "surrender, give up", "example": "They struggled to meet the deadline." },
+      { "word": "persist", "meaning": "to continue firmly in an action or belief", "japaneseMeaning": "固執する、続ける", "synonyms": "persevere, continue", "antonyms": "quit, abandon", "example": "He persisted despite many setbacks." },
+      { "word": "institute", "meaning": "to establish or set in motion", "japaneseMeaning": "設立する、施行する", "synonyms": "establish, introduce", "antonyms": "abolish, terminate", "example": "The government instituted new regulations." },
+      { "word": "emulate", "meaning": "to imitate or strive to match", "japaneseMeaning": "見習う、模倣する", "synonyms": "imitate, follow", "antonyms": "neglect, ignore", "example": "Young athletes emulate their role models." },
+      { "word": "global", "meaning": "relating to the whole world", "japaneseMeaning": "世界的な、地球規模の", "synonyms": "international, worldwide", "antonyms": "local, regional", "example": "Global trade affects many countries." }
+    ]
+  }

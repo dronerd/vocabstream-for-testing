@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-4",
-  "title": "Lesson 4",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-4",
+    "title": "Lesson 4",
+    "paragraph": "Understanding the economy requires exploring regions, federal systems, and interior development. Excluding irrelevant data, justifying decisions, and evolving policies are essential for managing a sustainable economic environment.",
+    "words": [
+      { "word": "explore", "meaning": "to investigate or study something systematically", "japaneseMeaning": "探検する、調査する", "synonyms": "investigate, examine", "antonyms": "ignore, neglect", "example": "Scientists explore new planets for potential life." },
+      { "word": "federal", "meaning": "relating to a system of government with a central authority", "japaneseMeaning": "連邦の、中央政府の", "synonyms": "national, central", "antonyms": "local, state", "example": "Federal laws apply throughout the country." },
+      { "word": "exclude", "meaning": "to prevent someone or something from being included", "japaneseMeaning": "除外する", "synonyms": "omit, leave out", "antonyms": "include, admit", "example": "They decided to exclude irrelevant data from the report." },
+      { "word": "economy", "meaning": "the system of production, distribution, and consumption of goods", "japaneseMeaning": "経済", "synonyms": "market, financial system", "antonyms": "", "example": "The country's economy is growing steadily." },
+      { "word": "interior", "meaning": "inside part of something", "japaneseMeaning": "内部、室内", "synonyms": "inside, inner", "antonyms": "exterior, outside", "example": "The interior of the house was beautifully decorated." },
+      { "word": "region", "meaning": "an area or part of a country or the world", "japaneseMeaning": "地域、地方", "synonyms": "area, zone", "antonyms": "global, universal", "example": "The northern region experiences heavy snowfall." },
+      { "word": "famous", "meaning": "well-known or recognized by many people", "japaneseMeaning": "有名な", "synonyms": "renowned, celebrated", "antonyms": "unknown, obscure", "example": "He is a famous actor worldwide." },
+      { "word": "adopt", "meaning": "to take up or start to use something", "japaneseMeaning": "採用する、取り入れる", "synonyms": "embrace, implement", "antonyms": "reject, abandon", "example": "The school adopted a new teaching method." },
+      { "word": "justify", "meaning": "to show or prove something to be right or reasonable", "japaneseMeaning": "正当化する、弁護する", "synonyms": "defend, validate", "antonyms": "condemn, refute", "example": "He justified his decision with solid evidence." },
+      { "word": "evolve", "meaning": "to develop gradually over time", "japaneseMeaning": "進化する、発展する", "synonyms": "develop, grow", "antonyms": "regress, stagnate", "example": "Technology continues to evolve rapidly." }
+    ]
+  }

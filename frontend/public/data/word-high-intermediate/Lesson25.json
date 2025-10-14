@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-25",
-  "title": "Lesson 25",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-25",
+    "title": "Lesson 25",
+    "paragraph": "Values and qualities define character and conduct. Honesty, emulation, delicacy, and insistence reflect individual traits and influence interactions positively.",
+    "words": [
+      { "word": "honest", "meaning": "truthful and fair", "japaneseMeaning": "正直な", "synonyms": "truthful, sincere", "antonyms": "dishonest, deceitful", "example": "He is honest about his mistakes." },
+      { "word": "worth", "meaning": "value or merit", "japaneseMeaning": "価値、重要性", "synonyms": "value, merit", "antonyms": "worthlessness, insignificance", "example": "The painting is worth a lot of money." },
+      { "word": "delicate", "meaning": "easily broken or sensitive", "japaneseMeaning": "繊細な、微妙な", "synonyms": "fragile, sensitive", "antonyms": "sturdy, robust", "example": "She handled the delicate china carefully." },
+      { "word": "distinguish", "meaning": "to recognize differences", "japaneseMeaning": "区別する", "synonyms": "differentiate, discern", "antonyms": "confuse, mix up", "example": "It is hard to distinguish between the twins." },
+      { "word": "fraction", "meaning": "a small part or segment", "japaneseMeaning": "分数、部分", "synonyms": "portion, segment", "antonyms": "whole, entirety", "example": "Only a fraction of the students passed the test." },
+      { "word": "hundred", "meaning": "the number 100", "japaneseMeaning": "百", "synonyms": "century, C", "antonyms": "", "example": "She counted a hundred coins." },
+      { "word": "phenomena", "meaning": "observable events or occurrences", "japaneseMeaning": "現象", "synonyms": "events, occurrences", "antonyms": "", "example": "Natural phenomena like rainbows fascinate scientists." },
+      { "word": "delight", "meaning": "great pleasure or joy", "japaneseMeaning": "喜び、楽しみ", "synonyms": "joy, pleasure", "antonyms": "displeasure, sadness", "example": "The children's laughter was a delight." },
+      { "word": "insistence", "meaning": "the act of demanding something firmly", "japaneseMeaning": "主張、要求", "synonyms": "persistence, assertion", "antonyms": "yielding, concession", "example": "Her insistence on fairness impressed everyone." },
+      { "word": "emulateable", "meaning": "capable of being imitated or copied", "japaneseMeaning": "模倣可能な", "synonyms": "imitable, replicable", "antonyms": "unique, uncopyable", "example": "His achievements are emulateable for aspiring artists." }
+    ]
+  }
+

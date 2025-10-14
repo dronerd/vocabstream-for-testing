@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-40",
-  "title": "Lesson 40",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-40",
+    "title": "Lesson 40",
+    "paragraph": "Scarcity and occupation challenge resource management. Ensuring supply, pursuing goals, and renewing efforts maintain balance in work and society.",
+    "words": [
+      { "word": "rate", "meaning": "a measure, quantity, or speed", "japaneseMeaning": "率、速度、料金", "synonyms": "ratio, speed, price", "antonyms": "stagnation, constancy", "example": "The interest rate increased this month." },
+      { "word": "scarce", "meaning": "insufficient for the need", "japaneseMeaning": "不足している、希少な", "synonyms": "rare, limited", "antonyms": "abundant, plentiful", "example": "Water became scarce during the drought." },
+      { "word": "occupy", "meaning": "to take up space or engage", "japaneseMeaning": "占める、従事する", "synonyms": "engage, inhabit", "antonyms": "vacate, release", "example": "The troops occupy the region." },
+      { "word": "coincide", "meaning": "to occur at the same time", "japaneseMeaning": "同時に起こる、一致する", "synonyms": "concur, match", "antonyms": "differ, diverge", "example": "The festival coincides with the national holiday." },
+      { "word": "moderateable", "meaning": "capable of being moderated", "japaneseMeaning": "調整可能な", "synonyms": "adjustable, controllable", "antonyms": "uncontrollable, extreme", "example": "The volume is moderateable." },
+      { "word": "transmit", "meaning": "to send or pass along", "japaneseMeaning": "送る、伝える", "synonyms": "send, convey", "antonyms": "receive, withhold", "example": "The station transmits radio signals." },
+      { "word": "compassion", "meaning": "sympathy for others' suffering", "japaneseMeaning": "思いやり、慈悲", "synonyms": "empathy, kindness", "antonyms": "indifference, cruelty", "example": "She showed compassion to the homeless." },
+      { "word": "renew", "meaning": "to make new again", "japaneseMeaning": "新しくする、更新する", "synonyms": "refresh, restore", "antonyms": "expire, neglect", "example": "He renewed his subscription." },
+      { "word": "pursue", "meaning": "to follow or strive for", "japaneseMeaning": "追求する、従事する", "synonyms": "chase, seek", "antonyms": "avoid, abandon", "example": "She pursues a career in medicine." },
+      { "word": "ensure", "meaning": "to make certain", "japaneseMeaning": "確実にする、保証する", "synonyms": "guarantee, secure", "antonyms": "risk, neglect", "example": "We must ensure safety standards." }
+    ]
+  }
+

@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-45",
-  "title": "Lesson 45",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-45",
+    "title": "Lesson 45",
+    "paragraph": "Opposition and respect balance critique with civility. Dignifying opponents, acknowledging expertise, and commenting responsibly maintain constructive discourse.",
+    "words": [
+      { "word": "opponent", "meaning": "someone who competes or disagrees", "japaneseMeaning": "対戦相手、反対者", "synonyms": "rival, adversary", "antonyms": "ally, supporter", "example": "The opponent challenged his strategy in the debate." },
+      { "word": "dignify", "meaning": "to make noble or worthy", "japaneseMeaning": "威厳を与える、尊重する", "synonyms": "honor, respect", "antonyms": "humiliate, degrade", "example": "She dignified the ceremony with her presence." },
+      { "word": "conservative", "meaning": "favoring traditional values", "japaneseMeaning": "保守的な", "synonyms": "traditional, cautious", "antonyms": "progressive, liberal", "example": "He has a conservative approach to investing." },
+      { "word": "appealable", "meaning": "capable of being appealed", "japaneseMeaning": "上訴可能な", "synonyms": "contestable, challengeable", "antonyms": "final, irreversible", "example": "The court decision is appealable." },
+      { "word": "comment", "meaning": "to express an opinion", "japaneseMeaning": "コメントする、意見を述べる", "synonyms": "remark, observe", "antonyms": "ignore, silence", "example": "She commented on the new policy." },
+      { "word": "agent", "meaning": "a representative or actor", "japaneseMeaning": "代理人、作用因", "synonyms": "representative, factor", "antonyms": "", "example": "The agent handled the contract." },
+      { "word": "clusterization", "meaning": "grouping into clusters", "japaneseMeaning": "クラスタ化", "synonyms": "grouping, categorization", "antonyms": "dispersal, scattering", "example": "Clusterization helps organize large datasets." },
+      { "word": "expertise", "meaning": "specialized skill or knowledge", "japaneseMeaning": "専門知識、熟練", "synonyms": "skill, proficiency", "antonyms": "ignorance, inexperience", "example": "Her expertise in finance is impressive." },
+      { "word": "ignite", "meaning": "to start or stimulate", "japaneseMeaning": "点火する、刺激する", "synonyms": "spark, kindle", "antonyms": "extinguish, suppress", "example": "The speech ignited a wave of protest." },
+      { "word": "brilliant", "meaning": "exceptionally clever or impressive", "japaneseMeaning": "素晴らしい、輝かしい", "synonyms": "excellent, brilliant", "antonyms": "mediocre, dull", "example": "She gave a brilliant performance on stage." }
+    ]
+  }
+

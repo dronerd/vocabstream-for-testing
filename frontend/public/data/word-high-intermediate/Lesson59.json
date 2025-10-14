@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-59",
-  "title": "Lesson 59",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-59",
+    "title": "Lesson 59",
+    "paragraph": "Division and labeling help organize information effectively. Binding, refining, and creating commitable records improve clarity and accountability.",
+    "words": [
+      { "word": "band", "meaning": "a group or strip", "japaneseMeaning": "帯、バンド", "synonyms": "strip, group", "antonyms": "single, individual", "example": "A band of soldiers marched through the town." },
+      { "word": "corner", "meaning": "a point where two edges meet", "japaneseMeaning": "角、隅", "synonyms": "angle, junction", "antonyms": "center, middle", "example": "She turned the corner quickly." },
+      { "word": "segment", "meaning": "a part or section of a whole", "japaneseMeaning": "区分、部分", "synonyms": "section, division", "antonyms": "whole, entirety", "example": "Each segment of the market is analyzed." },
+      { "word": "label", "meaning": "a tag or identifier", "japaneseMeaning": "ラベル、表示", "synonyms": "tag, marker", "antonyms": "unmarked, anonymous", "example": "The label indicates the contents." },
+      { "word": "bind", "meaning": "to tie or connect firmly", "japaneseMeaning": "結ぶ、束ねる", "synonyms": "tie, fasten", "antonyms": "loosen, free", "example": "They binded the packages with string." },
+      { "word": "refine", "meaning": "to improve or purify", "japaneseMeaning": "精製する、洗練する", "synonyms": "improve, polish", "antonyms": "coarsen, degrade", "example": "The company refined its manufacturing process." },
+      { "word": "existable", "meaning": "capable of existing or being recognized", "japaneseMeaning": "存在可能な", "synonyms": "viable, possible", "antonyms": "impossible, fictitious", "example": "The concept is existable in theory." },
+      { "word": "commitable", "meaning": "able to be committed or assigned", "japaneseMeaning": "コミット可能な", "synonyms": "assignable, actionable", "antonyms": "unassignable", "example": "Tasks are commitable to team members." },
+      { "word": "genuineable", "meaning": "capable of being genuine or authentic", "japaneseMeaning": "本物らしくできる", "synonyms": "authentic, real", "antonyms": "fake, counterfeit", "example": "The artifact is genuineable after verification." },
+      { "word": "householdable", "meaning": "suitable for household use", "japaneseMeaning": "家庭向けの", "synonyms": "domestic, home-use", "antonyms": "industrial, commercial", "example": "The appliance is householdable." }
+    ]
+  }
+ 

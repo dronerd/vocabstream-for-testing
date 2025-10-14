@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-47",
-  "title": "Lesson 47",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-47",
+    "title": "Lesson 47",
+    "paragraph": "Environment and incentives guide behavior and performance. Aspiring, endorsing, and spreading best practices create a supportive and motivating system.",
+    "words": [
+      { "word": "dust", "meaning": "fine particles in the air or on surfaces", "japaneseMeaning": "ほこり、塵", "synonyms": "powder, debris", "antonyms": "cleanliness, polish", "example": "She wiped the dust off the shelf." },
+      { "word": "incentive", "meaning": "something that motivates action", "japaneseMeaning": "動機、報奨", "synonyms": "motivation, encouragement", "antonyms": "deterrent, disincentive", "example": "Tax breaks provide an incentive to invest." },
+      { "word": "spread", "meaning": "to extend over a range or area", "japaneseMeaning": "広げる、普及させる", "synonyms": "distribute, expand", "antonyms": "contain, restrict", "example": "The virus can spread quickly." },
+      { "word": "square", "meaning": "to make consistent or aligned", "japaneseMeaning": "正方形にする、調整する", "synonyms": "align, balance", "antonyms": "misalign, distort", "example": "We need to square the accounts." },
+      { "word": "unit", "meaning": "a single part of a system", "japaneseMeaning": "単位、部品", "synonyms": "component, element", "antonyms": "whole, entirety", "example": "Each unit has its own function." },
+      { "word": "aspireable", "meaning": "capable of being aimed for or desired", "japaneseMeaning": "志向可能な", "synonyms": "achievable, attainable", "antonyms": "unreachable, impossible", "example": "The goals are highly aspireable." },
+      { "word": "endorse", "meaning": "to support or approve publicly", "japaneseMeaning": "支持する、承認する", "synonyms": "support, approve", "antonyms": "oppose, reject", "example": "The celebrity endorsed the new brand." },
+      { "word": "grip", "meaning": "to hold tightly", "japaneseMeaning": "握る、把握する", "synonyms": "hold, grasp", "antonyms": "release, loosen", "example": "He gripped the rope firmly." },
+      { "word": "formulae", "meaning": "mathematical or chemical expressions", "japaneseMeaning": "公式、化学式", "synonyms": "formulas, equations", "antonyms": "", "example": "Students must memorize the formulae for exams." },
+      { "word": "capacitywise", "meaning": "in terms of capacity", "japaneseMeaning": "容量的に", "synonyms": "regarding capacity, volume-wise", "antonyms": "", "example": "The hall is sufficient capacitywise for the event." }
+    ]
+  }
+ 

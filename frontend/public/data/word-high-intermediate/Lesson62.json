@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-62",
-  "title": "Lesson 62",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-62",
+    "title": "Lesson 62",
+    "paragraph": "Tidiness and the right tools improve efficiency. Manual handling, proper restoration, and organization ensure smooth workflow.",
+    "words": [
+      { "word": "tidy", "meaning": "neat and organized", "japaneseMeaning": "きちんとした、整頓された", "synonyms": "orderly, neat", "antonyms": "messy, cluttered", "example": "Keep your desk tidy to focus better." },
+      { "word": "funnel", "meaning": "to channel or direct something through a narrow opening", "japaneseMeaning": "漏斗、集める", "synonyms": "channel, guide", "antonyms": "scatter, disperse", "example": "Information was funneled to the manager." },
+      { "word": "manual", "meaning": "done by hand or a handbook", "japaneseMeaning": "手作業の、マニュアル", "synonyms": "hand-operated, guide", "antonyms": "automatic, digital", "example": "The technician followed the manual instructions." },
+      { "word": "restoreable", "meaning": "capable of being restored", "japaneseMeaning": "修復可能な", "synonyms": "repairable, recoverable", "antonyms": "irreparable, broken", "example": "The old building is restoreable with proper care." },
+      { "word": "stoke", "meaning": "to stir up or add fuel to", "japaneseMeaning": "かき立てる、燃料をくべる", "synonyms": "ignite, encourage", "antonyms": "dampen, extinguish", "example": "The teacher stoked the students’ curiosity." },
+      { "word": "freeze", "meaning": "to turn into ice or stop movement", "japaneseMeaning": "凍る、停止する", "synonyms": "solidify, halt", "antonyms": "melt, continue", "example": "Water freezes at zero degrees Celsius." },
+      { "word": "charge", "meaning": "to demand payment or take responsibility", "japaneseMeaning": "請求する、担当する", "synonyms": "bill, assign", "antonyms": "refund, release", "example": "They charged a fee for the service." },
+      { "word": "possession", "meaning": "the state of owning something", "japaneseMeaning": "所有物、所持", "synonyms": "ownership, property", "antonyms": "loss, relinquishment", "example": "The necklace was in her possession." },
+      { "word": "method", "meaning": "a way of doing something systematically", "japaneseMeaning": "方法、手法", "synonyms": "technique, procedure", "antonyms": "improvisation, randomness", "example": "The scientist used a new method to test the hypothesis." },
+      { "word": "prospect", "meaning": "the possibility of future success or outlook", "japaneseMeaning": "見込み、展望", "synonyms": "possibility, outlook", "antonyms": "impossibility, hopelessness", "example": "There are good prospects for growth in the market." }
+    ]
+  }
+ 

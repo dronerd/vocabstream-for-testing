@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-2-6",
-  "title": "Lesson 6",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-6",
+    "title": "Lesson 6",
+    "paragraph": "Arts and media thrive on creativity and expression. Detecting emotions, activating ideas, and allocating resources effectively allow composers and performers to cheer audiences and deliver fragmentary works into cohesive pieces.",
+    "words": [
+      { "word": "boast", "meaning": "to talk with pride about something one possesses or achieved", "japaneseMeaning": "自慢する", "synonyms": "brag, show off", "antonyms": "modest, conceal", "example": "He boasted about winning the competition." },
+      { "word": "fragmentary", "meaning": "consisting of small, disconnected parts", "japaneseMeaning": "断片的な", "synonyms": "partial, incomplete", "antonyms": "complete, whole", "example": "The evidence was fragmentary but still useful." },
+      { "word": "activate", "meaning": "to make something active or operative", "japaneseMeaning": "活性化する、作動させる", "synonyms": "start, trigger", "antonyms": "deactivate, stop", "example": "She activated the alarm system before leaving." },
+      { "word": "emotion", "meaning": "a strong feeling such as joy, anger, or fear", "japaneseMeaning": "感情", "synonyms": "feeling, sentiment", "antonyms": "indifference, apathy", "example": "The movie stirred deep emotion in the audience." },
+      { "word": "detect", "meaning": "to discover or identify the presence of something", "japaneseMeaning": "検出する、見つける", "synonyms": "discover, notice", "antonyms": "overlook, miss", "example": "The device can detect even small amounts of radiation." },
+      { "word": "finance", "meaning": "to provide funds for a project or activity", "japaneseMeaning": "資金を供給する", "synonyms": "fund, sponsor", "antonyms": "defund, withhold", "example": "The government financed the new research center." },
+      { "word": "composer", "meaning": "a person who writes music", "japaneseMeaning": "作曲家", "synonyms": "musician, songwriter", "antonyms": "", "example": "The composer premiered his latest symphony." },
+      { "word": "copy", "meaning": "to reproduce or imitate something", "japaneseMeaning": "コピーする、模倣する", "synonyms": "replicate, duplicate", "antonyms": "original, create", "example": "She copied the design from a magazine." },
+      { "word": "allocate", "meaning": "to assign resources or duties for a specific purpose", "japaneseMeaning": "割り当てる", "synonyms": "distribute, assign", "antonyms": "withhold, retain", "example": "The manager allocated tasks among team members." },
+      { "word": "cheer", "meaning": "to shout in support or encouragement", "japaneseMeaning": "応援する、歓声をあげる", "synonyms": "applaud, acclaim", "antonyms": "boo, discourage", "example": "The crowd cheered for the winning team." }
+    ]
+  }
+ 

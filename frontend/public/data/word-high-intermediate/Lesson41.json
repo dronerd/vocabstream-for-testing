@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-41",
-  "title": "Lesson 41",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-41",
+    "title": "Lesson 41",
+    "paragraph": "Regimes and processes rely on structure and oversight. Accumulating resources, instructing effectively, and scheduling systematically ensures smooth operations.",
+    "words": [
+      { "word": "regime", "meaning": "a government or system of rule", "japaneseMeaning": "政権、体制", "synonyms": "government, administration", "antonyms": "anarchy, disorder", "example": "The new regime introduced reforms." },
+      { "word": "fractioning", "meaning": "dividing into parts", "japaneseMeaning": "分割、部分化", "synonyms": "partitioning, segmenting", "antonyms": "combining, uniting", "example": "The chemical process involves fractioning liquids." },
+      { "word": "accumulate", "meaning": "to gather or collect over time", "japaneseMeaning": "蓄積する、集める", "synonyms": "gather, amass", "antonyms": "disperse, scatter", "example": "They accumulate data for research." },
+      { "word": "instructive", "meaning": "providing useful information or guidance", "japaneseMeaning": "教育的な、有益な", "synonyms": "educational, informative", "antonyms": "misleading, unhelpful", "example": "The lecture was highly instructive." },
+      { "word": "occurrence", "meaning": "an event or incident", "japaneseMeaning": "出来事、発生", "synonyms": "event, incident", "antonyms": "", "example": "Rain is a common occurrence in spring." },
+      { "word": "imposeable", "meaning": "capable of being enforced", "japaneseMeaning": "課せられる", "synonyms": "enforceable, obligatory", "antonyms": "optional, unenforceable", "example": "New rules are imposeable by law." },
+      { "word": "overflow", "meaning": "excess beyond capacity", "japaneseMeaning": "溢れる、過剰", "synonyms": "spill, exceed", "antonyms": "contain, hold", "example": "The river may overflow after heavy rain." },
+      { "word": "attach", "meaning": "to fasten or connect", "japaneseMeaning": "取り付ける、添付する", "synonyms": "connect, affix", "antonyms": "detach, remove", "example": "Please attach the files to the email." },
+      { "word": "schedule", "meaning": "a plan of activities or events", "japaneseMeaning": "予定表、計画", "synonyms": "timetable, plan", "antonyms": "disorganization, chaos", "example": "We need to schedule the meeting." },
+      { "word": "authority", "meaning": "power to make decisions or enforce rules", "japaneseMeaning": "権威、権限", "synonyms": "power, control", "antonyms": "subordination, weakness", "example": "Teachers have authority in the classroom." }
+    ]
+  }

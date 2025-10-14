@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-28",
-  "title": "Lesson 28",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-28",
+    "title": "Lesson 28",
+    "paragraph": "Tempo and repair influence productivity. Performing tasks with purpose, restoring equipment, and maintaining structural integrity ensures continuous progress.",
+    "words": [
+      { "word": "tempo", "meaning": "speed or pace of an activity", "japaneseMeaning": "テンポ、速度", "synonyms": "pace, rhythm", "antonyms": "slowness, delay", "example": "The orchestra maintained a steady tempo." },
+      { "word": "fixable", "meaning": "capable of being repaired", "japaneseMeaning": "修理可能な", "synonyms": "repairable, mendable", "antonyms": "irreparable, broken", "example": "The broken screen is fixable." },
+      { "word": "restore", "meaning": "to return to a former condition", "japaneseMeaning": "回復する、復元する", "synonyms": "renew, repair", "antonyms": "damage, ruin", "example": "They restored the old painting." },
+      { "word": "purposeful", "meaning": "having intention or determination", "japaneseMeaning": "意図的な、有意義な", "synonyms": "intentional, determined", "antonyms": "aimless, random", "example": "She took purposeful steps toward her goal." },
+      { "word": "briefed", "meaning": "given essential information", "japaneseMeaning": "報告された、説明された", "synonyms": "informed, updated", "antonyms": "uninformed, unaware", "example": "The team was briefed before the mission." },
+      { "word": "structural", "meaning": "relating to the construction of something", "japaneseMeaning": "構造の", "synonyms": "architectural, framework", "antonyms": "nonstructural", "example": "Structural improvements were made to the bridge." },
+      { "word": "simple", "meaning": "easily understood or not complicated", "japaneseMeaning": "簡単な、単純な", "synonyms": "easy, straightforward", "antonyms": "complex, complicated", "example": "The instructions were simple to follow." },
+      { "word": "perform", "meaning": "to carry out or execute an action", "japaneseMeaning": "行う、実行する", "synonyms": "execute, accomplish", "antonyms": "neglect, fail", "example": "The surgeon performed the operation successfully." },
+      { "word": "persistent", "meaning": "continuing firmly despite difficulties", "japaneseMeaning": "粘り強い", "synonyms": "tenacious, determined", "antonyms": "quit, fleeting", "example": "Her persistent efforts paid off." },
+      { "word": "portal", "meaning": "a doorway or gateway", "japaneseMeaning": "入口、門", "synonyms": "gateway, entrance", "antonyms": "exit, closure", "example": "The castle had a grand portal." }
+    ]
+  }

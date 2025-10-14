@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-24",
-  "title": "Lesson 24",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-24",
+    "title": "Lesson 24",
+    "paragraph": "Collaboration and roles are crucial in team work. Involving colleagues, committing to tasks, and imposing structured excerpts ensures efficiency and success.",
+    "words": [
+      { "word": "colleague", "meaning": "a person you work with", "japaneseMeaning": "同僚", "synonyms": "co-worker, associate", "antonyms": "rival, stranger", "example": "I met my colleague for lunch." },
+      { "word": "insist", "meaning": "to demand firmly", "japaneseMeaning": "主張する、要求する", "synonyms": "demand, persist", "antonyms": "yield, concede", "example": "She insisted on completing the project herself." },
+      { "word": "involve", "meaning": "to include or engage someone", "japaneseMeaning": "巻き込む、関与させる", "synonyms": "engage, include", "antonyms": "exclude, ignore", "example": "The project will involve multiple departments." },
+      { "word": "admit", "meaning": "to allow entry or acknowledge something", "japaneseMeaning": "認める、入れる", "synonyms": "acknowledge, accept", "antonyms": "deny, reject", "example": "He admitted his mistake openly." },
+      { "word": "commit", "meaning": "to dedicate or pledge oneself", "japaneseMeaning": "コミットする、約束する", "synonyms": "dedicate, pledge", "antonyms": "abandon, withdraw", "example": "She committed to the volunteer program." },
+      { "word": "sector", "meaning": "a distinct part of society or economy", "japaneseMeaning": "部門、分野", "synonyms": "division, area", "antonyms": "", "example": "He works in the healthcare sector." },
+      { "word": "galaxy", "meaning": "a system of stars and celestial bodies", "japaneseMeaning": "銀河、星系", "synonyms": "star system, cosmos", "antonyms": "", "example": "The Milky Way is our galaxy." },
+      { "word": "impose", "meaning": "to force something to be accepted", "japaneseMeaning": "課す、押し付ける", "synonyms": "enforce, apply", "antonyms": "remove, withdraw", "example": "The government imposed new regulations." },
+      { "word": "excerpt", "meaning": "a short portion taken from a text", "japaneseMeaning": "抜粋、引用", "synonyms": "passage, extract", "antonyms": "whole, entirety", "example": "The book included an excerpt from a famous poem." },
+      { "word": "guard", "meaning": "to protect or watch over", "japaneseMeaning": "守る、警備する", "synonyms": "protect, watch", "antonyms": "neglect, abandon", "example": "Security guards protect the building at night." }
+    ]
+  }
+ 
