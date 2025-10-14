@@ -181,7 +181,7 @@ export default function Home() {
           </button>
         ))}
 
-        <a className="privacy-link" href="/privacy" target="_blank" rel="noopener noreferrer">
+        <a className="privacy-link" href="/privacy">
           <strong>Privacy Policy</strong>
         </a>
       </div>

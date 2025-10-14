@@ -39,12 +39,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* 戻るボタン */}
-      <div className="mt-8">
+      <div className="mt-8 flex justify-center">
         <button
           onClick={() => navigate(-1)} // ✅ go back one page
-          className="text-blue-600 hover:underline font-medium"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-xl shadow-md transition duration-200 hover:scale-105 active:scale-95"
         >
-          <strong>← Go Back / 戻る</strong>
+          ← Go Back / 戻る
         </button>
       </div>
     </main>
