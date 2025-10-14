@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-6",
-  "title": "Lesson 6",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-6",
+    "title": "Lesson 6",
+    "paragraph": "Knowledge and intelligence enable insight and understanding. Awareness, reasoning, and erudition allow individuals to make informed decisions and solve complex problems.",
+    "words": [
+      {"word": "insight", "meaning": "deep understanding of a situation", "japaneseMeaning": "洞察力", "synonyms": "awareness, perception", "antonyms": "ignorance, misunderstanding", "example": "Her insight helped solve the problem."},
+      {"word": "intellect", "meaning": "the ability to think and understand", "japaneseMeaning": "知性", "synonyms": "intelligence, mind", "antonyms": "stupidity, ignorance", "example": "His intellect impressed everyone."},
+      {"word": "acumen", "meaning": "keen insight or judgment", "japaneseMeaning": "洞察力", "synonyms": "shrewdness, insight", "antonyms": "naivety, ignorance", "example": "She showed business acumen in negotiations."},
+      {"word": "perception", "meaning": "the ability to see or understand", "japaneseMeaning": "認識、知覚", "synonyms": "awareness, understanding", "antonyms": "ignorance, misunderstanding", "example": "His perception of the situation was accurate."},
+      {"word": "cognition", "meaning": "the mental process of acquiring knowledge", "japaneseMeaning": "認知", "synonyms": "understanding, thought", "antonyms": "ignorance, oblivion", "example": "Cognition is essential for learning."},
+      {"word": "reasoning", "meaning": "the action of thinking logically", "japaneseMeaning": "推論", "synonyms": "logic, deduction", "antonyms": "illogic, confusion", "example": "His reasoning was clear and precise."},
+      {"word": "discernment", "meaning": "the ability to judge well", "japaneseMeaning": "洞察力", "synonyms": "judgment, perception", "antonyms": "ignorance, folly", "example": "Discernment is vital in decision making."},
+      {"word": "awareness", "meaning": "knowledge of a situation or fact", "japaneseMeaning": "意識、認識", "synonyms": "consciousness, recognition", "antonyms": "ignorance, unawareness", "example": "Awareness of cultural differences is important."},
+      {"word": "erudition", "meaning": "extensive knowledge gained from reading", "japaneseMeaning": "博学", "synonyms": "learning, scholarship", "antonyms": "ignorance, illiteracy", "example": "His erudition impressed the professors."},
+      {"word": "comprehension", "meaning": "the ability to understand", "japaneseMeaning": "理解力", "synonyms": "understanding, grasp", "antonyms": "misunderstanding, ignorance", "example": "Her comprehension of the text was excellent."}
+    ]
+  }
+ 

@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-2",
-  "title": "Lesson 2",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-2",
+    "title": "Lesson 2",
+    "paragraph": "Progress requires effort, skill, and continual learning. Achieving goals involves enhancing abilities, innovating, and refining methods. Success is marked by overcoming challenges and celebrating triumphs.",
+    "words": [
+      {"word": "attain", "meaning": "to achieve or accomplish something", "japaneseMeaning": "達成する", "synonyms": "achieve, reach", "antonyms": "fail, lose", "example": "She attained her career goals last year."},
+      {"word": "accomplish", "meaning": "to successfully complete a task", "japaneseMeaning": "成し遂げる", "synonyms": "achieve, fulfill", "antonyms": "fail, neglect", "example": "He accomplished all the tasks on time."},
+      {"word": "excel", "meaning": "to be exceptionally good at something", "japaneseMeaning": "優れる", "synonyms": "shine, outperform", "antonyms": "struggle, fail", "example": "She excels in mathematics."},
+      {"word": "enhance", "meaning": "to improve or increase", "japaneseMeaning": "高める", "synonyms": "improve, augment", "antonyms": "reduce, diminish", "example": "The new software enhances productivity."},
+      {"word": "innovate", "meaning": "to introduce new ideas or methods", "japaneseMeaning": "革新する", "synonyms": "invent, create", "antonyms": "stagnate, repeat", "example": "Companies must innovate to stay competitive."},
+      {"word": "advance", "meaning": "to move forward or make progress", "japaneseMeaning": "進歩する", "synonyms": "progress, improve", "antonyms": "retreat, decline", "example": "Technology continues to advance rapidly."},
+      {"word": "refine", "meaning": "to improve by making small changes", "japaneseMeaning": "洗練する", "synonyms": "polish, perfect", "antonyms": "worsen, corrupt", "example": "She refined her essay before submission."},
+      {"word": "consolidate", "meaning": "to combine and strengthen", "japaneseMeaning": "統合する", "synonyms": "unite, reinforce", "antonyms": "separate, weaken", "example": "They consolidated their resources for efficiency."},
+      {"word": "overcome", "meaning": "to successfully deal with a problem", "japaneseMeaning": "克服する", "synonyms": "conquer, prevail", "antonyms": "yield, succumb", "example": "She overcame her fear of heights."},
+      {"word": "triumph", "meaning": "a great victory or achievement", "japaneseMeaning": "勝利、成功", "synonyms": "victory, success", "antonyms": "defeat, failure", "example": "The team's triumph was celebrated widely."}
+    ]
+  }
+ 

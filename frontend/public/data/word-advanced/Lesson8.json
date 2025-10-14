@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-pre1-8",
-  "title": "Lesson 8",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-8",
+    "title": "Lesson 8",
+    "paragraph": "Planning and organization are essential to achieve goals efficiently. By structuring, prioritizing, and implementing tasks, individuals can coordinate activities successfully.",
+    "words": [
+      {"word": "strategize", "meaning": "to plan a strategy", "japaneseMeaning": "戦略を立てる", "synonyms": "plan, design", "antonyms": "improvise, neglect", "example": "They strategized to win the competition."},
+      {"word": "coordinate", "meaning": "to organize activities effectively", "japaneseMeaning": "調整する", "synonyms": "organize, align", "antonyms": "disorder, confuse", "example": "She coordinated the event efficiently."},
+      {"word": "structure", "meaning": "to arrange systematically", "japaneseMeaning": "構造化する", "synonyms": "organize, arrange", "antonyms": "disorganize, scatter", "example": "He structured his essay logically."},
+      {"word": "outline", "meaning": "to give a summary", "japaneseMeaning": "概略を示す", "synonyms": "summarize, draft", "antonyms": "expand, detail", "example": "She outlined the key points."},
+      {"word": "allocate", "meaning": "to distribute resources", "japaneseMeaning": "割り当てる", "synonyms": "assign, distribute", "antonyms": "withhold, hoard", "example": "Funds were allocated for the project."},
+      {"word": "prioritize", "meaning": "to rank by importance", "japaneseMeaning": "優先順位をつける", "synonyms": "emphasize, rank", "antonyms": "neglect, ignore", "example": "He prioritized urgent tasks first."},
+      {"word": "implement", "meaning": "to put into effect", "japaneseMeaning": "実行する", "synonyms": "execute, apply", "antonyms": "ignore, abandon", "example": "They implemented the new policy quickly."},
+      {"word": "designate", "meaning": "to officially assign", "japaneseMeaning": "指定する", "synonyms": "appoint, assign", "antonyms": "ignore, dismiss", "example": "She was designated team leader."},
+      {"word": "orchestrate", "meaning": "to organize carefully", "japaneseMeaning": "取りまとめる", "synonyms": "coordinate, arrange", "antonyms": "neglect, mismanage", "example": "He orchestrated the project flawlessly."},
+      {"word": "monitor", "meaning": "to observe and check", "japaneseMeaning": "監視する", "synonyms": "track, oversee", "antonyms": "ignore, neglect", "example": "They monitored the progress daily."}
+    ]
+  }

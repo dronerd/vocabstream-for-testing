@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-pre1-4",
-  "title": "Lesson 4",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-4",
+    "title": "Lesson 4",
+    "paragraph": "Learning requires understanding and insight. Comprehending, interpreting, and synthesizing information allows individuals to make better decisions and gain knowledge effectively.",
+    "words": [
+      {"word": "comprehend", "meaning": "to understand fully", "japaneseMeaning": "理解する", "synonyms": "grasp, understand", "antonyms": "misunderstand, confuse", "example": "She comprehended the complex theory easily."},
+      {"word": "discern", "meaning": "to perceive or recognize clearly", "japaneseMeaning": "見分ける", "synonyms": "detect, distinguish", "antonyms": "overlook, ignore", "example": "He could discern subtle differences in the design."},
+      {"word": "deduce", "meaning": "to draw a conclusion from evidence", "japaneseMeaning": "推論する", "synonyms": "infer, conclude", "antonyms": "guess, assume", "example": "From the clues, she deduced the answer."},
+      {"word": "interpret", "meaning": "to explain the meaning of", "japaneseMeaning": "解釈する", "synonyms": "explain, clarify", "antonyms": "misinterpret, confuse", "example": "He interpreted the poem in his own way."},
+      {"word": "evaluate", "meaning": "to judge the value or quality", "japaneseMeaning": "評価する", "synonyms": "assess, appraise", "antonyms": "ignore, overlook", "example": "The teacher evaluated the students’ essays."},
+      {"word": "infer", "meaning": "to deduce information from evidence", "japaneseMeaning": "推測する", "synonyms": "deduce, conclude", "antonyms": "misinterpret, neglect", "example": "We inferred her mood from her expression."},
+      {"word": "illuminate", "meaning": "to clarify or explain", "japaneseMeaning": "明らかにする", "synonyms": "clarify, enlighten", "antonyms": "obscure, confuse", "example": "The professor illuminated the concept for students."},
+      {"word": "grasp", "meaning": "to understand something fully", "japaneseMeaning": "理解する", "synonyms": "comprehend, seize", "antonyms": "misunderstand, lose", "example": "He grasped the main idea quickly."},
+      {"word": "synthesize", "meaning": "to combine ideas into a coherent whole", "japaneseMeaning": "統合する", "synonyms": "integrate, combine", "antonyms": "separate, divide", "example": "She synthesized information from various sources."},
+      {"word": "elucidate", "meaning": "to make clear", "japaneseMeaning": "明らかにする", "synonyms": "clarify, explain", "antonyms": "confuse, obscure", "example": "The lecturer elucidated the difficult concept."}
+    ]
+  }
