@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-35",
-  "title": "Lesson 35",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-35",
+    "title": "Lesson 35",
+    "paragraph": "Behavior and attitude reflect character through arrogance, consideration, and resilience. Flexibility, humility, and independence influence actions.",
+    "words": [
+      {"word": "arrogant", "meaning": "having an exaggerated sense of self-importance", "japaneseMeaning": "傲慢な", "synonyms": "haughty, prideful", "antonyms": "humble, modest", "example": "His arrogant tone annoyed others."},
+      {"word": "considerate", "meaning": "thoughtful of others", "japaneseMeaning": "思いやりのある", "synonyms": "thoughtful, kind", "antonyms": "inconsiderate, selfish", "example": "Being considerate improves relationships."},
+      {"word": "resilient", "meaning": "able to recover quickly", "japaneseMeaning": "回復力のある", "synonyms": "strong, adaptable", "antonyms": "fragile, weak", "example": "Resilient people overcome setbacks."},
+      {"word": "flexible", "meaning": "able to adjust easily", "japaneseMeaning": "柔軟な", "synonyms": "adaptable, versatile", "antonyms": "rigid, inflexible", "example": "A flexible approach helps solve problems."},
+      {"word": "stubborn", "meaning": "unwilling to change", "japaneseMeaning": "頑固な", "synonyms": "obstinate, inflexible", "antonyms": "flexible, compliant", "example": "He was stubborn about his opinion."},
+      {"word": "humble", "meaning": "modest and respectful", "japaneseMeaning": "謙虚な", "synonyms": "modest, unpretentious", "antonyms": "arrogant, prideful", "example": "She remained humble despite fame."},
+      {"word": "assertive", "meaning": "confidently expressing oneself", "japaneseMeaning": "自己主張の強い", "synonyms": "confident, decisive", "antonyms": "passive, submissive", "example": "Being assertive helps negotiations."},
+      {"word": "reflective", "meaning": "thoughtful or contemplative", "japaneseMeaning": "熟考する、反省する", "synonyms": "thoughtful, contemplative", "antonyms": "thoughtless, impulsive", "example": "He was reflective about past actions."},
+      {"word": "cautious", "meaning": "careful to avoid danger", "japaneseMeaning": "慎重な", "synonyms": "careful, wary", "antonyms": "reckless, careless", "example": "Being cautious prevented accidents."},
+      {"word": "independent", "meaning": "self-reliant", "japaneseMeaning": "独立した", "synonyms": "self-sufficient, autonomous", "antonyms": "dependent, reliant", "example": "She is an independent thinker."}
+    ]
+  }
+

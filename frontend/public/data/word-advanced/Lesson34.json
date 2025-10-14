@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-34",
-  "title": "Lesson 34",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-34",
+    "title": "Lesson 34",
+    "paragraph": "Relationships and trust are built through affection, empathy, and rapport. Loyalty, cooperation, and understanding strengthen bonds and community.",
+    "words": [
+      {"word": "affection", "meaning": "fondness or love", "japaneseMeaning": "愛情", "synonyms": "fondness, warmth", "antonyms": "hatred, indifference", "example": "Affection fosters strong relationships."},
+      {"word": "empathy", "meaning": "understanding others' feelings", "japaneseMeaning": "共感", "synonyms": "compassion, understanding", "antonyms": "indifference, apathy", "example": "Empathy is key in friendships."},
+      {"word": "rapport", "meaning": "harmonious relationship", "japaneseMeaning": "信頼関係", "synonyms": "connection, understanding", "antonyms": "discord, hostility", "example": "They developed a good rapport."},
+      {"word": "loyalty", "meaning": "faithfulness", "japaneseMeaning": "忠誠心", "synonyms": "faithfulness, allegiance", "antonyms": "betrayal, disloyalty", "example": "Loyalty strengthens bonds."},
+      {"word": "reconciliation", "meaning": "restoring friendly relations", "japaneseMeaning": "和解", "synonyms": "settlement, resolution", "antonyms": "conflict, dispute", "example": "The reconciliation ended the feud."},
+      {"word": "harmony", "meaning": "peaceful agreement", "japaneseMeaning": "調和", "synonyms": "peace, concord", "antonyms": "discord, conflict", "example": "Harmony improves teamwork."},
+      {"word": "cooperation", "meaning": "working together", "japaneseMeaning": "協力", "synonyms": "collaboration, teamwork", "antonyms": "opposition, obstruction", "example": "Cooperation leads to success."},
+      {"word": "understanding", "meaning": "comprehension and empathy", "japaneseMeaning": "理解", "synonyms": "insight, perception", "antonyms": "misunderstanding, ignorance", "example": "Understanding others fosters trust."},
+      {"word": "sincerity", "meaning": "genuine honesty", "japaneseMeaning": "誠実さ", "synonyms": "honesty, genuineness", "antonyms": "dishonesty, deceit", "example": "Sincerity builds relationships."},
+      {"word": "dependency", "meaning": "reliance on others", "japaneseMeaning": "依存", "synonyms": "reliance, reliance", "antonyms": "independence, self-sufficiency", "example": "Reducing dependency encourages growth."}
+    ]
+  }
+ 

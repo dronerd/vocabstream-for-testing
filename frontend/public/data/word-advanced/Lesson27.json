@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-27",
-  "title": "Lesson 27",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-27",
+    "title": "Lesson 27",
+    "paragraph": "Art and culture express heritage, aesthetics, and creativity. Interpretation, narrative, and appreciation cultivate cultural understanding.",
+    "words": [
+      {"word": "heritage", "meaning": "traditions or culture passed down", "japaneseMeaning": "遺産、伝統", "synonyms": "tradition, legacy", "antonyms": "novelty, modernity", "example": "Preserving cultural heritage is important."},
+      {"word": "aesthetics", "meaning": "study of beauty or art", "japaneseMeaning": "美学", "synonyms": "beauty, artistry", "antonyms": "ugliness, inelegance", "example": "The aesthetics of the painting impressed viewers."},
+      {"word": "expression", "meaning": "communication of thoughts or feelings", "japaneseMeaning": "表現", "synonyms": "manifestation, articulation", "antonyms": "suppression, concealment", "example": "Expression through music is universal."},
+      {"word": "composition", "meaning": "structure of a work of art", "japaneseMeaning": "構成、作曲", "synonyms": "structure, arrangement", "antonyms": "chaos, disorder", "example": "The composition of the photograph was perfect."},
+      {"word": "interpretation", "meaning": "understanding or explanation", "japaneseMeaning": "解釈", "synonyms": "explanation, analysis", "antonyms": "misunderstanding, confusion", "example": "Her interpretation of the poem was insightful."},
+      {"word": "narrative", "meaning": "story or account of events", "japaneseMeaning": "物語", "synonyms": "story, tale", "antonyms": "nonstory, randomness", "example": "The narrative captivated the audience."},
+      {"word": "authenticity", "meaning": "being genuine or true", "japaneseMeaning": "本物、真正", "synonyms": "genuineness, legitimacy", "antonyms": "fake, imitation", "example": "The authenticity of the artwork was confirmed."},
+      {"word": "innovation", "meaning": "introduction of new ideas", "japaneseMeaning": "革新", "synonyms": "invention, creativity", "antonyms": "stagnation, repetition", "example": "Innovation is key in modern art."},
+      {"word": "appreciation", "meaning": "recognition of value", "japaneseMeaning": "鑑賞、感謝", "synonyms": "recognition, gratitude", "antonyms": "ignorance, neglect", "example": "Appreciation of art enhances understanding."},
+      {"word": "creativity", "meaning": "ability to produce new ideas", "japaneseMeaning": "創造性", "synonyms": "imagination, innovation", "antonyms": "conformity, imitation", "example": "Creativity drives artistic expression."}
+    ]
+  }
+ 

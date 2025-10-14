@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-pre1-31",
-  "title": "Lesson 31",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-31",
+    "title": "Lesson 31",
+    "paragraph": "Emotions and feelings encompass ecstasy, anxiety, affection, and gratitude. Compassion, frustration, empathy, and confidence shape human experience.",
+    "words": [
+      {"word": "ecstasy", "meaning": "intense joy or delight", "japaneseMeaning": "恍惚、至福", "synonyms": "bliss, rapture", "antonyms": "misery, despair", "example": "She was in ecstasy after hearing the news."},
+      {"word": "anxiety", "meaning": "feeling of worry or unease", "japaneseMeaning": "不安、心配", "synonyms": "worry, apprehension", "antonyms": "calm, serenity", "example": "He felt anxiety before the exam."},
+      {"word": "affection", "meaning": "fondness or love", "japaneseMeaning": "愛情", "synonyms": "love, fondness", "antonyms": "hatred, indifference", "example": "She showed affection for her pet."},
+      {"word": "gratitude", "meaning": "thankfulness", "japaneseMeaning": "感謝", "synonyms": "thankfulness, appreciation", "antonyms": "ingratitude, resentment", "example": "He expressed gratitude to his teacher."},
+      {"word": "despair", "meaning": "complete loss of hope", "japaneseMeaning": "絶望", "synonyms": "hopelessness, misery", "antonyms": "hope, optimism", "example": "She fell into despair after the failure."},
+      {"word": "pride", "meaning": "self-respect or satisfaction", "japaneseMeaning": "誇り", "synonyms": "self-esteem, dignity", "antonyms": "shame, humility", "example": "He took pride in his work."},
+      {"word": "compassion", "meaning": "sympathy for others' suffering", "japaneseMeaning": "思いやり", "synonyms": "empathy, kindness", "antonyms": "indifference, cruelty", "example": "Compassion drives acts of charity."},
+      {"word": "frustration", "meaning": "feeling of being upset due to obstacles", "japaneseMeaning": "欲求不満", "synonyms": "irritation, annoyance", "antonyms": "contentment, satisfaction", "example": "He felt frustration when the plan failed."},
+      {"word": "empathy", "meaning": "ability to understand others' feelings", "japaneseMeaning": "共感", "synonyms": "understanding, compassion", "antonyms": "indifference, apathy", "example": "Empathy strengthens relationships."},
+      {"word": "confidence", "meaning": "belief in oneself", "japaneseMeaning": "自信", "synonyms": "self-assurance, trust", "antonyms": "doubt, insecurity", "example": "She spoke with confidence."}
+    ]
+  }
+ 

@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-26",
-  "title": "Lesson 26",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-26",
+    "title": "Lesson 26",
+    "paragraph": "Education and development involve curriculum, literacy, and assessment. Scholarship, mentorship, and training enhance knowledge and personal growth.",
+    "words": [
+      {"word": "curriculum", "meaning": "set of courses or lessons", "japaneseMeaning": "カリキュラム", "synonyms": "syllabus, program", "antonyms": "improvisation, randomness", "example": "The school updated its curriculum."},
+      {"word": "literacy", "meaning": "ability to read and write", "japaneseMeaning": "識字能力", "synonyms": "education, knowledge", "antonyms": "illiteracy, ignorance", "example": "Literacy is essential for learning."},
+      {"word": "pedagogy", "meaning": "method of teaching", "japaneseMeaning": "教育法", "synonyms": "instruction, teaching", "antonyms": "neglect, ignorance", "example": "Modern pedagogy emphasizes critical thinking."},
+      {"word": "assessment", "meaning": "evaluation of knowledge or skills", "japaneseMeaning": "評価", "synonyms": "evaluation, test", "antonyms": "guesswork, ignorance", "example": "Assessment helps measure student progress."},
+      {"word": "qualification", "meaning": "credential or skill", "japaneseMeaning": "資格", "synonyms": "certification, competence", "antonyms": "incompetence, disqualification", "example": "He earned a professional qualification."},
+      {"word": "scholarship", "meaning": "academic study or financial aid", "japaneseMeaning": "奨学金、学問", "synonyms": "grant, study", "antonyms": "ignorance, negligence", "example": "She received a scholarship for excellence."},
+      {"word": "institution", "meaning": "organization for education or society", "japaneseMeaning": "機関、施設", "synonyms": "organization, establishment", "antonyms": "disorganization, chaos", "example": "The university is a respected institution."},
+      {"word": "mentorship", "meaning": "guidance from an experienced person", "japaneseMeaning": "指導、メンタリング", "synonyms": "guidance, coaching", "antonyms": "neglect, abandonment", "example": "He benefited from mentorship in his career."},
+      {"word": "training", "meaning": "practical instruction or practice", "japaneseMeaning": "訓練", "synonyms": "practice, preparation", "antonyms": "neglect, idleness", "example": "Training improved employee performance."},
+      {"word": "improvement", "meaning": "process of getting better", "japaneseMeaning": "改善、向上", "synonyms": "enhancement, progress", "antonyms": "decline, deterioration", "example": "The course led to improvement in skills."}
+    ]
+  }
