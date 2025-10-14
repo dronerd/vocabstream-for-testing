@@ -72,7 +72,7 @@ export default function TestPage() {
   return (
     <div style={{ paddingTop: "92px" }}>
       <button
-        onClick={() => nav("/ohers")}
+        onClick={() => nav("/others")}
         style={{
           marginBottom: 12,
           padding: "8px 16px",

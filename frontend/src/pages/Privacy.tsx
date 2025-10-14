@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function PrivacyPage() {
-  return (
+  const navigate = useNavigate(); // ✅ initialize navigate
 
+  return (
     <main className="p-6 max-w-3xl mx-auto" style={{ paddingTop: "92px" }}>
       <h1 className="text-2xl font-bold mb-4">Privacy Policy / プライバシーポリシー</h1>
 
@@ -37,14 +38,14 @@ export default function PrivacyPage() {
         </p>
       </section>
 
-      {/* 戻るリンク */}
+      {/* 戻るボタン */}
       <div className="mt-8">
-        <a
-          href="/"
+        <button
+          onClick={() => navigate(-1)} // ✅ go back one page
           className="text-blue-600 hover:underline font-medium"
         >
-          <strong>← Back to Home / ホームに戻る</strong>
-        </a>
+          <strong>← Go Back / 戻る</strong>
+        </button>
       </div>
     </main>
   );

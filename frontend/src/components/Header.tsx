@@ -51,8 +51,9 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           overflow-x: hidden; /* prevent horizontal scroll or extra space */
         }
 
-        .header-left { display:flex; gap:12px; align-items:center; z-index: 3; }
-        .header-right { display:flex; gap:8px; align-items:center; justify-self:end; z-index: 3; }
+        /* MADE POSITIONED so z-index works on mobile overlapping cases */
+        .header-left { position: relative; display:flex; gap:12px; align-items:center; z-index: 3; }
+        .header-right { position: relative; display:flex; gap:8px; align-items:center; justify-self:end; z-index: 3; }
         .header-center {
           position: absolute;
           left: 50%;
@@ -132,6 +133,9 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           .intro-full { display: none; }
           .intro-short { display: inline; }
           .app-header img { height: 44px !important; }
+
+          /* ensure logo receives touch events reliably on mobile */
+          .header-left img, .header-right img { pointer-events: auto; touch-action: manipulation; cursor: pointer; }
         }
 
         @media (max-width: 420px) {
@@ -149,6 +153,14 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
               alt="App Logo"
               style={{ height: 60, width: "auto", cursor: "pointer" }}
               onClick={() => navigate("/landing_page")}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  navigate("/landing_page");
+                }
+              }}
             />
           ) : isLandingPage ? (
             <>
@@ -157,6 +169,14 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
                 alt="App Logo"
                 style={{ height: 60, width: "auto", cursor: "pointer" }}
                 onClick={scrollToTop}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    scrollToTop();
+                  }
+                }}
               />
               <span className="home-link page-top" onClick={scrollToTop}>
                 ページトップ

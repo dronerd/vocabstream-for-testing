@@ -99,7 +99,7 @@ export default function Review() {
       `}</style>
 
       <h2 className="heading">単語の復習</h2>
-      <h3 className="subheading">復習方法</h3>
+      <h3 className="subheading">復習方法を選択</h3>
 
       <div className="options-grid">
         <button
