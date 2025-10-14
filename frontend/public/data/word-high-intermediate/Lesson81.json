@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-2-81",
-  "title": "Lesson 81",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-81",
+    "title": "Lesson 81",
+    "paragraph": "Advocacy and boundaries help maintain fairness and protect interests. Champions set limits, signal priorities, and dedicate resources responsibly.",
+    "words": [
+      { "word": "champion", "meaning": "someone who supports or defends a cause", "japaneseMeaning": "擁護者、支持者", "synonyms": "advocate, defender", "antonyms": "opponent, critic", "example": "She is a champion for environmental protection." },
+      { "word": "boundary", "meaning": "a limit that defines an area or behavior", "japaneseMeaning": "境界、限界", "synonyms": "border, limit", "antonyms": "unbounded, limitless", "example": "Respecting personal boundaries is important." },
+      { "word": "seldom", "meaning": "rarely or infrequently", "japaneseMeaning": "めったに～ない", "synonyms": "rarely, infrequently", "antonyms": "often, frequently", "example": "He seldom travels abroad." },
+      { "word": "library", "meaning": "a collection of books or resources for reading", "japaneseMeaning": "図書館", "synonyms": "archive, collection", "antonyms": "wasteland, emptiness", "example": "She spent the afternoon in the library studying." },
+      { "word": "signal", "meaning": "to communicate a message or indication", "japaneseMeaning": "信号、合図", "synonyms": "indicate, gesture", "antonyms": "ignore, conceal", "example": "He signaled to stop with his hand." },
+      { "word": "material", "meaning": "resources or substance used for a purpose", "japaneseMeaning": "材料、資材", "synonyms": "substance, resource", "antonyms": "waste, uselessness", "example": "The teacher provided study material to the students." },
+      { "word": "dedicate", "meaning": "to commit or devote to a task or purpose", "japaneseMeaning": "捧げる、専念する", "synonyms": "devote, commit", "antonyms": "neglect, abandon", "example": "She dedicated her life to helping others." },
+      { "word": "sheet", "meaning": "a flat piece of material", "japaneseMeaning": "シート、紙片", "synonyms": "page, layer", "antonyms": "clump, mass", "example": "He wrote notes on a sheet of paper." },
+      { "word": "income", "meaning": "money received, especially regularly", "japaneseMeaning": "収入", "synonyms": "earnings, revenue", "antonyms": "expense, loss", "example": "Her monthly income comes from multiple sources." },
+      { "word": "periodical", "meaning": "a publication issued at regular intervals", "japaneseMeaning": "定期刊行物", "synonyms": "magazine, journal", "antonyms": "one-time publication", "example": "The library subscribes to several periodicals." }
+    ]
+  }
+ 

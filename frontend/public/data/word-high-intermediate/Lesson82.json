@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-82",
-  "title": "Lesson 82",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-82",
+    "title": "Lesson 82",
+    "paragraph": "Fitness and engagement promote efficiency and well-being. Participation, precision, and civil responsibility enhance outcomes in activities.",
+    "words": [
+      { "word": "fitness", "meaning": "the condition of being physically or mentally healthy", "japaneseMeaning": "健康、体力", "synonyms": "health, wellbeing", "antonyms": "unfitness, weakness", "example": "Regular exercise improves overall fitness." },
+      { "word": "involveable", "meaning": "able to be included or engaged", "japaneseMeaning": "参加可能な、関与できる", "synonyms": "engageable, participatory", "antonyms": "excluded, detached", "example": "Students are involveable in community projects." },
+      { "word": "engageable", "meaning": "capable of attracting interest or participation", "japaneseMeaning": "関与可能な、魅力的な", "synonyms": "interesting, participatory", "antonyms": "boring, disengageable", "example": "The topic is highly engageable for young learners." },
+      { "word": "degrade", "meaning": "to lower in quality or status", "japaneseMeaning": "劣化させる、落とす", "synonyms": "deteriorate, diminish", "antonyms": "improve, enhance", "example": "Pollution can degrade the environment." },
+      { "word": "civil", "meaning": "polite, courteous, or relating to citizens", "japaneseMeaning": "市民の、礼儀正しい", "synonyms": "polite, civic", "antonyms": "rude, uncivil", "example": "We should maintain civil behavior in public." },
+      { "word": "precise", "meaning": "exact and accurate", "japaneseMeaning": "正確な、精密な", "synonyms": "accurate, exact", "antonyms": "imprecise, vague", "example": "The engineer made precise measurements." },
+      { "word": "article", "meaning": "a written composition on a topic", "japaneseMeaning": "記事、文章", "synonyms": "essay, report", "antonyms": "speech, verbal", "example": "The newspaper published an article about climate change." },
+      { "word": "modify", "meaning": "to change or adjust", "japaneseMeaning": "修正する、変更する", "synonyms": "adjust, alter", "antonyms": "preserve, maintain", "example": "The designer modified the plan to improve safety." },
+      { "word": "impedeable", "meaning": "able to be obstructed", "japaneseMeaning": "妨げられる可能性のある", "synonyms": "blockable, hinderable", "antonyms": "unhindered, free", "example": "Traffic is impedeable during rush hour." },
+      { "word": "inform", "meaning": "to give knowledge or news", "japaneseMeaning": "知らせる、通知する", "synonyms": "notify, communicate", "antonyms": "conceal, withhold", "example": "The manager informed staff of the schedule changes." }
+    ]
+  }

@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-83",
-  "title": "Lesson 83",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-83",
+    "title": "Lesson 83",
+    "paragraph": "Cascades and normalization help streamline processes. Cooperation, optimism, and proper reflection ensure smooth organizational function.",
+    "words": [
+      { "word": "cascade", "meaning": "a series of events or steps happening in order", "japaneseMeaning": "連鎖、段階的な流れ", "synonyms": "sequence, flow", "antonyms": "chaos, interruption", "example": "The system failure caused a cascade of problems." },
+      { "word": "explode", "meaning": "to burst violently", "japaneseMeaning": "爆発する、急増する", "synonyms": "erupt, detonate", "antonyms": "implode, diminish", "example": "The fireworks exploded in the sky." },
+      { "word": "normalize", "meaning": "to make standard or usual", "japaneseMeaning": "標準化する、正常化する", "synonyms": "standardize, regularize", "antonyms": "abnormalize, disrupt", "example": "They worked to normalize relations between the countries." },
+      { "word": "co-operate", "meaning": "to work together for a common goal", "japaneseMeaning": "協力する", "synonyms": "collaborate, assist", "antonyms": "oppose, resist", "example": "Teams must co-operate to complete the project." },
+      { "word": "draw", "meaning": "to produce a picture or pull toward", "japaneseMeaning": "描く、引き寄せる", "synonyms": "sketch, attract", "antonyms": "push, ignore", "example": "He drew a map of the area." },
+      { "word": "optimistic", "meaning": "hopeful and confident about the future", "japaneseMeaning": "楽観的な", "synonyms": "hopeful, positive", "antonyms": "pessimistic, doubtful", "example": "She remained optimistic despite challenges." },
+      { "word": "reflectable", "meaning": "able to be mirrored or thought about", "japaneseMeaning": "反射可能な、熟考可能な", "synonyms": "thoughtful, mirrorable", "antonyms": "unreflective, opaque", "example": "The material is highly reflectable." },
+      { "word": "lecture", "meaning": "a formal talk on a subject", "japaneseMeaning": "講義、講演", "synonyms": "speech, presentation", "antonyms": "discussion, informal talk", "example": "The professor gave a lecture on history." },
+      { "word": "depositable", "meaning": "able to be placed or stored", "japaneseMeaning": "預けられる、蓄えられる", "synonyms": "storable, placeable", "antonyms": "withdrawable, removable", "example": "The funds are depositable in any account." },
+      { "word": "barriered", "meaning": "protected or obstructed by a barrier", "japaneseMeaning": "障壁で囲まれた", "synonyms": "blocked, fenced", "antonyms": "open, unobstructed", "example": "The area was barriered for safety." }
+    ]
+  }

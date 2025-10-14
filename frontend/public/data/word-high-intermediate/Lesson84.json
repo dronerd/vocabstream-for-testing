@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-84",
-  "title": "Lesson 84",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-84",
+    "title": "Lesson 84",
+    "paragraph": "Functional tools ensure efficiency. Proper organization, coinciding actions, and structured pursuit help achieve objectives.",
+    "words": [
+      { "word": "functionable", "meaning": "able to perform its purpose", "japaneseMeaning": "機能可能な", "synonyms": "operable, usable", "antonyms": "nonfunctional, broken", "example": "The new software is fully functionable." },
+      { "word": "book", "meaning": "to reserve or arrange in advance", "japaneseMeaning": "予約する、本", "synonyms": "reserve, schedule", "antonyms": "cancel, release", "example": "We booked a room for the meeting." },
+      { "word": "valueable", "meaning": "having worth or importance", "japaneseMeaning": "価値のある", "synonyms": "precious, useful", "antonyms": "worthless, trivial", "example": "Her advice was extremely valuable." },
+      { "word": "tension", "meaning": "mental or emotional strain", "japaneseMeaning": "緊張、張力", "synonyms": "stress, strain", "antonyms": "relaxation, ease", "example": "There was tension in the room before the exam." },
+      { "word": "sectorize", "meaning": "to divide into sectors", "japaneseMeaning": "区分する", "synonyms": "segment, partition", "antonyms": "merge, unify", "example": "The company sectorized its operations by region." },
+      { "word": "arise", "meaning": "to occur or emerge", "japaneseMeaning": "生じる、発生する", "synonyms": "emerge, appear", "antonyms": "disappear, vanish", "example": "Problems may arise during implementation." },
+      { "word": "protest", "meaning": "to express objection or disapproval", "japaneseMeaning": "抗議する", "synonyms": "demonstrate, object", "antonyms": "accept, approve", "example": "They protested against the new law." },
+      { "word": "pursueable", "meaning": "able to be followed or pursued", "japaneseMeaning": "追求可能な", "synonyms": "achievable, attainable", "antonyms": "unattainable, impossible", "example": "The goal is pursueable with effort." },
+      { "word": "organize", "meaning": "to arrange systematically", "japaneseMeaning": "整理する、組織する", "synonyms": "arrange, coordinate", "antonyms": "disorganize, scatter", "example": "She organized the files by date." },
+      { "word": "coincideable", "meaning": "able to occur at the same time", "japaneseMeaning": "同時に起こりうる", "synonyms": "simultaneous, concurrent", "antonyms": "separate, staggered", "example": "The events are coincideable during the festival." }
+    ]
+  }

@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-68",
-  "title": "Lesson 68",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-68",
+    "title": "Lesson 68",
+    "paragraph": "Uniqueness and industry dynamics define markets. Understanding agents, energy flow, and guarantees ensures efficiency and competitiveness.",
+    "words": [
+      { "word": "inimitable", "meaning": "impossible to imitate", "japaneseMeaning": "模倣できない", "synonyms": "unique, unparalleled", "antonyms": "imitable, common", "example": "Her style is inimitable and original." },
+      { "word": "industrial", "meaning": "relating to industry or manufacturing", "japaneseMeaning": "工業の、産業の", "synonyms": "manufacturing, commercial", "antonyms": "agricultural, artisanal", "example": "Industrial growth boosted the economy." },
+      { "word": "contexture", "meaning": "the arrangement or structure of something", "japaneseMeaning": "構造、組織", "synonyms": "structure, composition", "antonyms": "chaos, disarray", "example": "The contexture of the story was complex." },
+      { "word": "lobby", "meaning": "to seek influence; an entrance hall", "japaneseMeaning": "ロビー、ロビー活動をする", "synonyms": "influence, entrance", "antonyms": "ignore, exit", "example": "Companies lobbied for regulatory changes." },
+      { "word": "agentive", "meaning": "having the power to act or cause change", "japaneseMeaning": "作用力のある、能動的な", "synonyms": "active, influential", "antonyms": "passive, inactive", "example": "The agentive force shaped the outcome." },
+      { "word": "energy", "meaning": "power for work or activity", "japaneseMeaning": "エネルギー、活力", "synonyms": "power, vigor", "antonyms": "weakness, lethargy", "example": "Solar panels generate energy efficiently." },
+      { "word": "outlineable", "meaning": "able to be summarized or outlined", "japaneseMeaning": "概説できる", "synonyms": "summarizable, describable", "antonyms": "indescribable, vague", "example": "The report is outlineable in a few paragraphs." },
+      { "word": "damp", "meaning": "slightly wet or humid", "japaneseMeaning": "湿った", "synonyms": "moist, humid", "antonyms": "dry, arid", "example": "The basement was damp after the rain." },
+      { "word": "ship", "meaning": "to transport goods; a vessel", "japaneseMeaning": "船、出荷する", "synonyms": "deliver, vessel", "antonyms": "receive, unload", "example": "They shipped the goods overseas." },
+      { "word": "guaranteeable", "meaning": "able to be guaranteed", "japaneseMeaning": "保証可能な", "synonyms": "assurable, certifiable", "antonyms": "uncertain, unreliable", "example": "The service is guaranteeable for one year." }
+    ]
+  }

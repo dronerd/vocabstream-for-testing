@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-75",
-  "title": "Lesson 75",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-75",
+    "title": "Lesson 75",
+    "paragraph": "Administration and records ensure organized management. Local governance, proper documentation, and claim handling support efficiency and accountability.",
+    "words": [
+      { "word": "financing", "meaning": "the act of providing funds", "japaneseMeaning": "資金調達、融資", "synonyms": "funding, investment", "antonyms": "debt, withdrawal", "example": "The company secured financing for the new project." },
+      { "word": "transcript", "meaning": "a written or printed version of something", "japaneseMeaning": "成績証明書、文字起こし", "synonyms": "record, copy", "antonyms": "original, audio", "example": "She submitted her transcript to the university." },
+      { "word": "local", "meaning": "relating to a particular area", "japaneseMeaning": "地域の、地元の", "synonyms": "regional, nearby", "antonyms": "national, foreign", "example": "The local government issued new regulations." },
+      { "word": "thin", "meaning": "having little thickness", "japaneseMeaning": "薄い、細い", "synonyms": "slim, narrow", "antonyms": "thick, wide", "example": "The thin layer of ice cracked underfoot." },
+      { "word": "municipal", "meaning": "related to a city or town government", "japaneseMeaning": "市の、自治体の", "synonyms": "city, local", "antonyms": "national, federal", "example": "The municipal office handles permits and taxes." },
+      { "word": "public", "meaning": "relating to all people; open", "japaneseMeaning": "公共の、一般の", "synonyms": "communal, open", "antonyms": "private, restricted", "example": "The park is open to the public." },
+      { "word": "manage", "meaning": "to direct or control", "japaneseMeaning": "管理する、運営する", "synonyms": "administer, supervise", "antonyms": "neglect, mismanage", "example": "She manages the team efficiently." },
+      { "word": "inner", "meaning": "located inside or within", "japaneseMeaning": "内側の、内部の", "synonyms": "internal, interior", "antonyms": "outer, external", "example": "Meditation helps focus on inner thoughts." },
+      { "word": "justifyable", "meaning": "able to be shown as reasonable or right", "japaneseMeaning": "正当化できる", "synonyms": "defensible, reasonable", "antonyms": "unjustifiable, wrongful", "example": "His actions were justifyable under the circumstances." },
+      { "word": "claimable", "meaning": "able to be claimed or demanded", "japaneseMeaning": "請求できる", "synonyms": "assertable, demandable", "antonyms": "unclaimable, invalid", "example": "The insurance payment is claimable by the policyholder." }
+    ]
+  }
+

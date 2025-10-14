@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-74",
-  "title": "Lesson 74",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-74",
+    "title": "Lesson 74",
+    "paragraph": "Direction and mode guide navigation and behavior. Awareness of artifacts, norms, and operational methods ensures efficiency and safety.",
+    "words": [
+      { "word": "orient", "meaning": "to position or align relative to points", "japaneseMeaning": "方向付ける、適応させる", "synonyms": "align, adjust", "antonyms": "misorient, confuse", "example": "He oriented the map toward north." },
+      { "word": "mode", "meaning": "a particular way or manner of doing something", "japaneseMeaning": "方法、様式", "synonyms": "manner, method", "antonyms": "chaos, disorder", "example": "The device has several operating modes." },
+      { "word": "tragedy", "meaning": "a disastrous event", "japaneseMeaning": "悲劇", "synonyms": "disaster, catastrophe", "antonyms": "comedy, success", "example": "The earthquake was a national tragedy." },
+      { "word": "back", "meaning": "toward the rear; support", "japaneseMeaning": "後ろ、支える", "synonyms": "rear, support", "antonyms": "front, oppose", "example": "He backed the team in every decision." },
+      { "word": "artifact", "meaning": "an object made by humans", "japaneseMeaning": "人工物、遺物", "synonyms": "relic, object", "antonyms": "natural object", "example": "The museum displayed ancient artifacts." },
+      { "word": "celebrate", "meaning": "to honor or observe with festivities", "japaneseMeaning": "祝う", "synonyms": "honor, observe", "antonyms": "ignore, mourn", "example": "They celebrated their victory with a party." },
+      { "word": "discount", "meaning": "a reduction in price", "japaneseMeaning": "割引、割引する", "synonyms": "reduction, rebate", "antonyms": "increase, surcharge", "example": "The store offered a 20% discount." },
+      { "word": "norm", "meaning": "a standard or usual practice", "japaneseMeaning": "基準、規範", "synonyms": "standard, rule", "antonyms": "abnormality, exception", "example": "It is the norm to greet colleagues in the morning." },
+      { "word": "meet", "meaning": "to come together or fulfill requirements", "japaneseMeaning": "会う、満たす", "synonyms": "encounter, satisfy", "antonyms": "miss, fail", "example": "They met for a discussion on the project." },
+      { "word": "operate", "meaning": "to control or function", "japaneseMeaning": "操作する、運営する", "synonyms": "run, manage", "antonyms": "halt, malfunction", "example": "The machine operates smoothly." }
+    ]
+  }

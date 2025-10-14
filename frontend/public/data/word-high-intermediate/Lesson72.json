@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-72",
-  "title": "Lesson 72",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-72",
+    "title": "Lesson 72",
+    "paragraph": "Usability and intensity guide performance. Clear concepts, sustained focus, and proper integration enhance effectiveness.",
+    "words": [
+      { "word": "handleable", "meaning": "able to be managed or handled", "japaneseMeaning": "扱いやすい", "synonyms": "manageable, controllable", "antonyms": "unmanageable, difficult", "example": "The equipment is handleable even by beginners." },
+      { "word": "delightable", "meaning": "able to give pleasure or joy", "japaneseMeaning": "喜ばせられる", "synonyms": "pleasing, enjoyable", "antonyms": "displeasing, boring", "example": "The movie was delightable to children." },
+      { "word": "intense", "meaning": "extremely strong or concentrated", "japaneseMeaning": "強烈な、激しい", "synonyms": "strong, powerful", "antonyms": "weak, mild", "example": "The heat was so intense that everyone stayed indoors." },
+      { "word": "raw", "meaning": "unprocessed or natural", "japaneseMeaning": "生の、未加工の", "synonyms": "unprocessed, natural", "antonyms": "cooked, processed", "example": "He prefers raw vegetables in his salad." },
+      { "word": "concept", "meaning": "an abstract idea or principle", "japaneseMeaning": "概念、考え", "synonyms": "idea, notion", "antonyms": "concreteness, fact", "example": "The concept of freedom is central to the discussion." },
+      { "word": "quiet", "meaning": "making little or no noise", "japaneseMeaning": "静かな", "synonyms": "silent, calm", "antonyms": "noisy, loud", "example": "The library was quiet and peaceful." },
+      { "word": "confide", "meaning": "to trust someone with private information", "japaneseMeaning": "打ち明ける、信頼する", "synonyms": "trust, reveal", "antonyms": "conceal, withhold", "example": "She confided her secrets to her best friend." },
+      { "word": "reaffirm", "meaning": "to state again as true", "japaneseMeaning": "再確認する、再表明する", "synonyms": "confirm, endorse", "antonyms": "deny, revoke", "example": "He reaffirmed his commitment to the project." },
+      { "word": "sustainment", "meaning": "the act of maintaining or supporting", "japaneseMeaning": "維持、支援", "synonyms": "maintenance, support", "antonyms": "neglect, abandonment", "example": "The sustainment of resources is crucial for long-term projects." },
+      { "word": "integrateable", "meaning": "able to be combined into a whole", "japaneseMeaning": "統合可能な", "synonyms": "compatible, incorporable", "antonyms": "isolated, separate", "example": "The new software is integrateable with existing systems." }
+    ]
+  }
