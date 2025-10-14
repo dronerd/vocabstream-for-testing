@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-94",
-  "title": "Lesson 94",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-94",
+    "title": "Lesson 94",
+    "paragraph": "Scale and revision involve evaluating and adjusting work. Concepts are refined, contexts checked, and appointments managed to ensure accuracy and effectiveness.",
+    "words": [
+      { "word": "massive", "meaning": "very large or heavy", "japaneseMeaning": "大規模な、巨大な", "synonyms": "huge, enormous", "antonyms": "small, tiny", "example": "They built a massive bridge across the river." },
+      { "word": "conceptable", "meaning": "able to be conceived or imagined", "japaneseMeaning": "概念化可能な", "synonyms": "imaginable, thinkable", "antonyms": "unthinkable, impossible", "example": "The idea is conceptable in theory." },
+      { "word": "revise", "meaning": "to review and improve or correct", "japaneseMeaning": "改訂する、修正する", "synonyms": "edit, amend", "antonyms": "ignore, neglect", "example": "The essay was revised for clarity." },
+      { "word": "contextable", "meaning": "able to be placed in context", "japaneseMeaning": "文脈に置ける", "synonyms": "relatable, applicable", "antonyms": "isolated, irrelevant", "example": "The quote is contextable within the article." },
+      { "word": "reflectible", "meaning": "capable of being reflected or considered", "japaneseMeaning": "反映可能な、熟考可能な", "synonyms": "ponderable, mirrorable", "antonyms": "ignored, opaque", "example": "The study is reflectible of social trends." },
+      { "word": "detectible3", "meaning": "able to be detected (third version)", "japaneseMeaning": "検出可能な (3版)", "synonyms": "noticeable, observable", "antonyms": "hidden, invisible", "example": "Errors are detectible3 with advanced software." },
+      { "word": "appointment", "meaning": "a scheduled meeting or arrangement", "japaneseMeaning": "約束、予約", "synonyms": "meeting, engagement", "antonyms": "cancellation, omission", "example": "She kept her doctor's appointment on time." },
+      { "word": "traffic", "meaning": "movement of vehicles or people", "japaneseMeaning": "交通、往来", "synonyms": "transport, flow", "antonyms": "halt, blockage", "example": "Traffic increased during rush hour." },
+      { "word": "fine", "meaning": "of high quality; a penalty payment", "japaneseMeaning": "優れた、罰金", "synonyms": "excellent, penalty", "antonyms": "poor, default", "example": "The painting is of fine quality." },
+      { "word": "exotic", "meaning": "foreign, unusual, or strikingly different", "japaneseMeaning": "異国の、珍しい", "synonyms": "foreign, unusual", "antonyms": "familiar, native", "example": "The garden featured exotic plants." }
+    ]
+  }

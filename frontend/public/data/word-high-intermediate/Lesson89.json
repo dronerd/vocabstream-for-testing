@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-89",
-  "title": "Lesson 89",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-89",
+    "title": "Lesson 89",
+    "paragraph": "Transit and pace ensure efficiency in movement. Coordination, gradual progression, and trust create substantial benefits in logistics and operations.",
+    "words": [
+      { "word": "transit", "meaning": "the act of passing through or across", "japaneseMeaning": "輸送、通過", "synonyms": "transport, passage", "antonyms": "stay, halt", "example": "Goods are in transit to the warehouse." },
+      { "word": "gradual", "meaning": "happening slowly over time", "japaneseMeaning": "徐々の、段階的な", "synonyms": "slow, step-by-step", "antonyms": "sudden, abrupt", "example": "Recovery was gradual but steady." },
+      { "word": "nasty", "meaning": "unpleasant or offensive", "japaneseMeaning": "不快な、いやな", "synonyms": "unpleasant, disagreeable", "antonyms": "pleasant, agreeable", "example": "He made a nasty comment about the work." },
+      { "word": "informable", "meaning": "able to be informed", "japaneseMeaning": "知らせることができる", "synonyms": "notifiable, teachable", "antonyms": "uninformable, ignorant", "example": "The staff is informable about all procedures." },
+      { "word": "financeful", "meaning": "having financial resources", "japaneseMeaning": "資金のある", "synonyms": "wealthy, funded", "antonyms": "poor, bankrupt", "example": "The financeful company supported the charity." },
+      { "word": "gatherable", "meaning": "able to be collected or assembled", "japaneseMeaning": "集められる", "synonyms": "collectible, harvestable", "antonyms": "dispersed, scattered", "example": "Information from surveys is gatherable online." },
+      { "word": "combine", "meaning": "to join or merge together", "japaneseMeaning": "結合する、組み合わせる", "synonyms": "merge, unite", "antonyms": "separate, split", "example": "We combined our efforts to complete the task." },
+      { "word": "cohere", "meaning": "to stick together or make sense as a whole", "japaneseMeaning": "まとまる、結合する", "synonyms": "unite, integrate", "antonyms": "fragment, separate", "example": "The ideas in the essay cohere well." },
+      { "word": "trust", "meaning": "firm belief in reliability or ability", "japaneseMeaning": "信頼", "synonyms": "confidence, faith", "antonyms": "distrust, doubt", "example": "Team members must have trust in each other." },
+      { "word": "substantial", "meaning": "large in amount, value, or importance", "japaneseMeaning": "実質的な、重要な", "synonyms": "significant, considerable", "antonyms": "insignificant, minor", "example": "The project made a substantial impact." }
+    ]
+  }
+ 

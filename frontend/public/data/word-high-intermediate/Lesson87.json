@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-2-87",
-  "title": "Lesson 87",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-87",
+    "title": "Lesson 87",
+    "paragraph": "Maintenance and terminals require organization and regular attention. Proper proceeding, minimal disruption, and orderly arrangement are essential for smooth operations.",
+    "words": [
+      { "word": "greet", "meaning": "to welcome or acknowledge someone", "japaneseMeaning": "挨拶する", "synonyms": "welcome, acknowledge", "antonyms": "ignore, neglect", "example": "The receptionist greeted all visitors warmly." },
+      { "word": "maintain", "meaning": "to keep in proper condition", "japaneseMeaning": "維持する", "synonyms": "preserve, uphold", "antonyms": "neglect, abandon", "example": "They maintain the building regularly." },
+      { "word": "attribute", "meaning": "a quality or feature regarded as characteristic", "japaneseMeaning": "特性、属性", "synonyms": "trait, characteristic", "antonyms": "anomaly, exception", "example": "Patience is an important attribute of a teacher." },
+      { "word": "proceedable", "meaning": "able to continue or move forward", "japaneseMeaning": "進行可能な", "synonyms": "continuable, advanceable", "antonyms": "halted, stopped", "example": "The project is proceedable after approval." },
+      { "word": "coral", "meaning": "a marine organism or its skeleton; pinkish color", "japaneseMeaning": "サンゴ、コーラル色", "synonyms": "reef, pink", "antonyms": "stone, dull", "example": "The reef was full of colorful coral." },
+      { "word": "minimal", "meaning": "the least possible amount", "japaneseMeaning": "最小限の", "synonyms": "slight, negligible", "antonyms": "maximum, excessive", "example": "Use minimal force to avoid damage." },
+      { "word": "channelize", "meaning": "to direct or guide along a route", "japaneseMeaning": "導く、誘導する", "synonyms": "direct, guide", "antonyms": "scatter, mislead", "example": "They channelized water into the reservoir." },
+      { "word": "arrange", "meaning": "to put in order or organize", "japaneseMeaning": "整理する、手配する", "synonyms": "organize, order", "antonyms": "disorganize, scatter", "example": "She arranged the flowers in a vase." },
+      { "word": "terminal", "meaning": "an end point or station; a device for data input/output", "japaneseMeaning": "端末、終点", "synonyms": "station, endpoint", "antonyms": "origin, start", "example": "He waited at the airport terminal for his flight." },
+      { "word": "registerable", "meaning": "able to be officially recorded or enrolled", "japaneseMeaning": "登録可能な", "synonyms": "enrollable, recordable", "antonyms": "unregistrable, illegal", "example": "The company name is registerable online." }
+    ]
+  }

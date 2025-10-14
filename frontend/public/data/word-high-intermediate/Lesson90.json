@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-2-90",
-  "title": "Lesson 90",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-90",
+    "title": "Lesson 90",
+    "paragraph": "Authorship and guidance provide direction for learning and creativity. Clear mentoring, organized crafting, and energized support foster successful outcomes.",
+    "words": [
+      { "word": "authorial", "meaning": "relating to the writer of a work", "japaneseMeaning": "著者の、作者の", "synonyms": "writerly, creative", "antonyms": "unwritten, reader", "example": "The novel has a strong authorial voice." },
+      { "word": "agendaable", "meaning": "able to be included on an agenda", "japaneseMeaning": "議題に載せられる", "synonyms": "scheduleable, discussable", "antonyms": "excluded, irrelevant", "example": "The issue is agendaable for tomorrow's meeting." },
+      { "word": "craftable", "meaning": "able to be skillfully made", "japaneseMeaning": "制作可能な、巧みに作れる", "synonyms": "skillful, buildable", "antonyms": "unworkable, poor", "example": "The model is craftable from simple materials." },
+      { "word": "mentor", "meaning": "an experienced adviser or guide", "japaneseMeaning": "指導者、助言者", "synonyms": "advisor, coach", "antonyms": "mentee, beginner", "example": "He served as a mentor for young professionals." },
+      { "word": "clarify", "meaning": "to make clear or understandable", "japaneseMeaning": "明確にする、はっきりさせる", "synonyms": "explain, elucidate", "antonyms": "confuse, obscure", "example": "Please clarify the instructions for the team." },
+      { "word": "determineable", "meaning": "able to be decided or established", "japaneseMeaning": "決定可能な", "synonyms": "decidable, ascertainable", "antonyms": "uncertain, ambiguous", "example": "The cause of the problem is determineable." },
+      { "word": "alien", "meaning": "foreign or unfamiliar", "japaneseMeaning": "異質な、外国の", "synonyms": "foreign, strange", "antonyms": "native, familiar", "example": "The concept seemed alien to him at first." },
+      { "word": "donor", "meaning": "someone who gives something, especially to charity", "japaneseMeaning": "寄付者、提供者", "synonyms": "giver, benefactor", "antonyms": "recipient, taker", "example": "The donor contributed generously to the cause." },
+      { "word": "energize", "meaning": "to give energy or enthusiasm", "japaneseMeaning": "活気づける", "synonyms": "invigorate, stimulate", "antonyms": "drain, weaken", "example": "The coach energized the team before the match." },
+      { "word": "clusterable", "meaning": "able to be grouped together", "japaneseMeaning": "クラスター化可能な", "synonyms": "groupable, collectable", "antonyms": "dispersible, separate", "example": "Data points are clusterable for analysis." }
+    ]
+  }
+
