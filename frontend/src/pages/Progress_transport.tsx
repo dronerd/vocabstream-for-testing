@@ -7,6 +7,8 @@ export default function TestPage(){
   return (
     <div
     style={{ paddingTop: "92px" }}>
+      
+      <h2>学習経過を他のデバイスに移動する</h2>
       <button
         onClick={() => nav("/ohers")}
         style={{
@@ -21,7 +23,6 @@ export default function TestPage(){
       >
         その他の機能一覧に戻る
       </button>
-      <h2>学習経過を他のデバイスに移動する</h2>
     </div>
   );
 }

@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-pre1-17",
-  "title": "Lesson 17",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-17",
+    "title": "Lesson 17",
+    "paragraph": "Power and control influence outcomes and behaviors. Leaders dominate, manipulate, and regulate while asserting authority over situations effectively.",
+    "words": [
+      {"word": "dominate", "meaning": "to have control over", "japaneseMeaning": "支配する", "synonyms": "control, rule", "antonyms": "submit, yield", "example": "He dominated the discussion."},
+      {"word": "suppress", "meaning": "to restrain or hold back", "japaneseMeaning": "抑える", "synonyms": "restrain, stifle", "antonyms": "encourage, allow", "example": "The government suppressed the uprising."},
+      {"word": "command", "meaning": "to have authority over", "japaneseMeaning": "指揮する", "synonyms": "lead, direct", "antonyms": "obey, follow", "example": "She commanded the troops efficiently."},
+      {"word": "regulate", "meaning": "to control by rules", "japaneseMeaning": "規制する", "synonyms": "control, supervise", "antonyms": "neglect, ignore", "example": "Authorities regulate traffic flow."},
+      {"word": "manipulate", "meaning": "to control cleverly or unfairly", "japaneseMeaning": "操作する", "synonyms": "influence, control", "antonyms": "assist, support", "example": "He manipulated the situation for his gain."},
+      {"word": "dictate", "meaning": "to give orders", "japaneseMeaning": "指示する", "synonyms": "command, prescribe", "antonyms": "follow, submit", "example": "She dictated the terms of the agreement."},
+      {"word": "assert", "meaning": "to state confidently", "japaneseMeaning": "主張する", "synonyms": "affirm, declare", "antonyms": "deny, retreat", "example": "He asserted his opinion firmly."},
+      {"word": "constrain", "meaning": "to limit or restrict", "japaneseMeaning": "制約する", "synonyms": "restrict, limit", "antonyms": "allow, free", "example": "Budget constraints limited the project."},
+      {"word": "govern", "meaning": "to conduct policy or affairs", "japaneseMeaning": "統治する", "synonyms": "rule, manage", "antonyms": "misrule, neglect", "example": "The council governs the district."},
+      {"word": "influence", "meaning": "the power to affect", "japaneseMeaning": "影響する", "synonyms": "affect, sway", "antonyms": "ignore, resist", "example": "She influenced the final decision."}
+    ]
+  }

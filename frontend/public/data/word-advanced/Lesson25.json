@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-25",
-  "title": "Lesson 25",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-25",
+    "title": "Lesson 25",
+    "paragraph": "Health and medicine focus on diagnosis, treatment, and prevention. Therapy, recovery, and nutrition support well-being and combat disorders effectively.",
+    "words": [
+      {"word": "diagnosis", "meaning": "identifying an illness", "japaneseMeaning": "診断", "synonyms": "identification, analysis", "antonyms": "ignorance, oversight", "example": "The doctor made an accurate diagnosis."},
+      {"word": "treatment", "meaning": "medical care given for illness", "japaneseMeaning": "治療", "synonyms": "therapy, care", "antonyms": "neglect, harm", "example": "The patient received treatment for infection."},
+      {"word": "symptom", "meaning": "sign of disease", "japaneseMeaning": "症状", "synonyms": "sign, indication", "antonyms": "health, wellness", "example": "Fever is a symptom of infection."},
+      {"word": "therapy", "meaning": "treatment to heal", "japaneseMeaning": "治療法", "synonyms": "treatment, rehabilitation", "antonyms": "neglect, harm", "example": "Physical therapy helped his recovery."},
+      {"word": "recovery", "meaning": "return to health", "japaneseMeaning": "回復", "synonyms": "healing, improvement", "antonyms": "decline, deterioration", "example": "Recovery took several weeks."},
+      {"word": "immune", "meaning": "resistant to disease", "japaneseMeaning": "免疫のある", "synonyms": "resistant, protected", "antonyms": "vulnerable, susceptible", "example": "Vaccines help the body become immune."},
+      {"word": "nutrition", "meaning": "process of nourishing the body", "japaneseMeaning": "栄養", "synonyms": "diet, sustenance", "antonyms": "malnutrition, starvation", "example": "Good nutrition improves health."},
+      {"word": "disorder", "meaning": "abnormal condition", "japaneseMeaning": "障害、疾患", "synonyms": "illness, condition", "antonyms": "health, order", "example": "Sleep disorder affects daily life."},
+      {"word": "prevention", "meaning": "action to stop disease", "japaneseMeaning": "予防", "synonyms": "protection, precaution", "antonyms": "neglect, exposure", "example": "Prevention is better than cure."},
+      {"word": "rehabilitation", "meaning": "restoring health or abilities", "japaneseMeaning": "リハビリ", "synonyms": "recovery, therapy", "antonyms": "deterioration, decline", "example": "He underwent rehabilitation after surgery."}
+    ]
+  }
+

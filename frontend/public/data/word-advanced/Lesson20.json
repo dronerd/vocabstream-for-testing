@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-20",
-  "title": "Lesson 20",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-20",
+    "title": "Lesson 20",
+    "paragraph": "Politics and government organize societies through policy, administration, and governance. Representation, diplomacy, and regulation maintain order and guide civic life.",
+    "words": [
+      {"word": "reform", "meaning": "to improve or change", "japaneseMeaning": "改革", "synonyms": "improve, amend", "antonyms": "deteriorate, worsen", "example": "The government promised reform."},
+      {"word": "policy", "meaning": "a plan of action", "japaneseMeaning": "政策", "synonyms": "guideline, strategy", "antonyms": "chaos, disorder", "example": "The company adopted a new policy."},
+      {"word": "ideology", "meaning": "system of beliefs", "japaneseMeaning": "イデオロギー", "synonyms": "belief, doctrine", "antonyms": "indifference, skepticism", "example": "The ideology influenced the election."},
+      {"word": "administration", "meaning": "management of affairs", "japaneseMeaning": "行政、管理", "synonyms": "management, governance", "antonyms": "mismanagement, neglect", "example": "The administration implemented new laws."},
+      {"word": "governance", "meaning": "act of governing", "japaneseMeaning": "統治、ガバナンス", "synonyms": "management, control", "antonyms": "misrule, anarchy", "example": "Good governance ensures stability."},
+      {"word": "regulation", "meaning": "rule or directive", "japaneseMeaning": "規制", "synonyms": "rule, guideline", "antonyms": "freedom, chaos", "example": "Regulations control emissions."},
+      {"word": "democracy", "meaning": "government by the people", "japaneseMeaning": "民主主義", "synonyms": "self-rule, representation", "antonyms": "dictatorship, autocracy", "example": "Democracy empowers citizens."},
+      {"word": "legislature", "meaning": "body that makes laws", "japaneseMeaning": "立法府", "synonyms": "parliament, congress", "antonyms": "executive, judiciary", "example": "The legislature passed the bill."},
+      {"word": "representation", "meaning": "act of speaking or acting for someone", "japaneseMeaning": "代表", "synonyms": "advocacy, delegation", "antonyms": "neglect, omission", "example": "They demanded better representation."},
+      {"word": "diplomacy", "meaning": "managing international relations", "japaneseMeaning": "外交", "synonyms": "negotiation, tact", "antonyms": "conflict, hostility", "example": "Diplomacy prevented a crisis."}
+    ]
+  }
+
