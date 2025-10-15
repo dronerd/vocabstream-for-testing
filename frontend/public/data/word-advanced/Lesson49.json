@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-49",
-  "title": "Lesson 49",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-49",
+    "title": "Lesson 49",
+    "paragraph": "Possibility and probability involve potential, likelihood, and uncertainty. Speculation, assumptions, prospects, and scenarios explore outcomes and expectations.",
+    "words": [
+      {"word": "potential", "meaning": "capability of becoming something", "japaneseMeaning": "可能性", "synonyms": "capability, ability", "antonyms": "inability, incapacity", "example": "She has great potential."},
+      {"word": "likelihood", "meaning": "probability of occurrence", "japaneseMeaning": "可能性", "synonyms": "probability, chance", "antonyms": "impossibility, unlikelihood", "example": "The likelihood of rain is high."},
+      {"word": "uncertainty", "meaning": "state of being unsure", "japaneseMeaning": "不確実性", "synonyms": "doubt, unpredictability", "antonyms": "certainty, sureness", "example": "Uncertainty made decisions difficult."},
+      {"word": "speculation", "meaning": "guessing without certainty", "japaneseMeaning": "推測", "synonyms": "guess, conjecture", "antonyms": "knowledge, fact", "example": "Speculation about the outcome was rampant."},
+      {"word": "assumption", "meaning": "accepted belief without proof", "japaneseMeaning": "仮定", "synonyms": "presumption, supposition", "antonyms": "fact, certainty", "example": "The plan was based on assumptions."},
+      {"word": "contingency", "meaning": "possible event or circumstance", "japaneseMeaning": "偶発事", "synonyms": "possibility, eventuality", "antonyms": "certainty, inevitability", "example": "They prepared for contingencies."},
+      {"word": "hypothesis", "meaning": "proposed explanation", "japaneseMeaning": "仮説", "synonyms": "theory, assumption", "antonyms": "fact, proof", "example": "The hypothesis was tested scientifically."},
+      {"word": "prospect", "meaning": "future possibility", "japaneseMeaning": "見込み", "synonyms": "expectation, likelihood", "antonyms": "improbability, hopelessness", "example": "The job prospect looks good."},
+      {"word": "expectation", "meaning": "belief about future events", "japaneseMeaning": "期待", "synonyms": "anticipation, hope", "antonyms": "doubt, pessimism", "example": "The expectation was high."},
+      {"word": "scenario", "meaning": "possible sequence of events", "japaneseMeaning": "シナリオ", "synonyms": "situation, plan", "antonyms": "", "example": "The worst-case scenario was considered."}
+    ]
+  }
+ 

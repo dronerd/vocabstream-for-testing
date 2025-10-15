@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-39",
-  "title": "Lesson 39",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-39",
+    "title": "Lesson 39",
+    "paragraph": "Sensation and awareness require perceiving, detecting, and identifying stimuli. Distinguishing, comprehending, sensing, acknowledging, and discerning deepen understanding.",
+    "words": [
+      {"word": "perceive", "meaning": "to become aware of", "japaneseMeaning": "知覚する", "synonyms": "observe, notice", "antonyms": "ignore, overlook", "example": "She perceived a subtle change in the atmosphere."},
+      {"word": "detect", "meaning": "to discover or identify", "japaneseMeaning": "検出する", "synonyms": "discover, notice", "antonyms": "miss, overlook", "example": "He detected a mistake in the report."},
+      {"word": "identify", "meaning": "to recognize or establish", "japaneseMeaning": "特定する", "synonyms": "recognize, determine", "antonyms": "confuse, misidentify", "example": "They identified the suspect quickly."},
+      {"word": "distinguish", "meaning": "to recognize differences", "japaneseMeaning": "区別する", "synonyms": "differentiate, discern", "antonyms": "confuse, mix up", "example": "She could distinguish between the twins."},
+      {"word": "comprehend", "meaning": "to understand", "japaneseMeaning": "理解する", "synonyms": "understand, grasp", "antonyms": "misunderstand, ignore", "example": "He comprehended the instructions."},
+      {"word": "realize", "meaning": "to become aware of", "japaneseMeaning": "気づく", "synonyms": "understand, perceive", "antonyms": "ignore, overlook", "example": "She realized her mistake immediately."},
+      {"word": "sense", "meaning": "to perceive by senses", "japaneseMeaning": "感知する", "synonyms": "perceive, detect", "antonyms": "ignore, miss", "example": "He could sense danger nearby."},
+      {"word": "acknowledge", "meaning": "to recognize as true", "japaneseMeaning": "認める", "synonyms": "admit, recognize", "antonyms": "deny, ignore", "example": "She acknowledged his contribution."},
+      {"word": "intuit", "meaning": "to understand instinctively", "japaneseMeaning": "直感的に理解する", "synonyms": "perceive, sense", "antonyms": "analyze, reason", "example": "He intuited her feelings immediately."},
+      {"word": "discern", "meaning": "to perceive clearly", "japaneseMeaning": "見分ける", "synonyms": "detect, recognize", "antonyms": "overlook, ignore", "example": "She discerned a hidden pattern."}
+    ]
+  }
+ 

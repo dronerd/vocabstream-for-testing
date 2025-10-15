@@ -1,86 +1,18 @@
 {
-  "lesson_id": "eiken-pre1-52",
-  "title": "Lesson 52",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+    "lesson_id": "eiken-2-52",
+    "title": "Lesson 52",
+    "paragraph": "Quantity and measurement involve magnitude, proportion, and scale. Estimating ratios, dimensions, and volumes ensures accurate evaluation.",
+    "words": [
+      {"word": "magnitude", "meaning": "size or extent", "japaneseMeaning": "大きさ", "synonyms": "extent, scale", "antonyms": "smallness, insignificance", "example": "The earthquake's magnitude was high."},
+      {"word": "proportion", "meaning": "relative size or ratio", "japaneseMeaning": "比率", "synonyms": "ratio, fraction", "antonyms": "disproportion, imbalance", "example": "The proportion of students increased."},
+      {"word": "extent", "meaning": "range or scope", "japaneseMeaning": "範囲", "synonyms": "scope, range", "antonyms": "limitation, restriction", "example": "The extent of damage was serious."},
+      {"word": "ratio", "meaning": "relationship between numbers", "japaneseMeaning": "比率", "synonyms": "proportion, fraction", "antonyms": "", "example": "The student-teacher ratio is 20:1."},
+      {"word": "estimate", "meaning": "rough calculation", "japaneseMeaning": "見積もり", "synonyms": "approximation, assessment", "antonyms": "exact, precise", "example": "The cost was estimated at $500."},
+      {"word": "scale", "meaning": "size or level", "japaneseMeaning": "規模", "synonyms": "size, level", "antonyms": "", "example": "The project was done on a large scale."},
+      {"word": "metric", "meaning": "standard for measurement", "japaneseMeaning": "指標", "synonyms": "measure, standard", "antonyms": "", "example": "Productivity is an important metric."},
+      {"word": "fraction", "meaning": "part of a whole", "japaneseMeaning": "分数、一部", "synonyms": "part, portion", "antonyms": "whole, entirety", "example": "Only a small fraction participated."},
+      {"word": "dimension", "meaning": "measure of size", "japaneseMeaning": "寸法、次元", "synonyms": "measure, extent", "antonyms": "", "example": "The dimensions of the room are 5x6 meters."},
+      {"word": "volume", "meaning": "amount of space occupied", "japaneseMeaning": "容量、体積", "synonyms": "capacity, size", "antonyms": "", "example": "The volume of water increased."}
+    ]
+  }
+ 

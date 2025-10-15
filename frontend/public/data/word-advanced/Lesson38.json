@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-38",
-  "title": "Lesson 38",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-38",
+    "title": "Lesson 38",
+    "paragraph": "Experience and memory involve recalling, perceiving, and observing. Recognizing patterns, reflecting, retaining knowledge, and reliving moments strengthen understanding.",
+    "words": [
+      {"word": "recall", "meaning": "to remember", "japaneseMeaning": "思い出す", "synonyms": "remember, recollect", "antonyms": "forget, overlook", "example": "He recalled the details of the event."},
+      {"word": "reminisce", "meaning": "to think about past experiences", "japaneseMeaning": "思い出にふける", "synonyms": "remember, reflect", "antonyms": "ignore, forget", "example": "They reminisced about childhood days."},
+      {"word": "perceive", "meaning": "to become aware of through senses", "japaneseMeaning": "知覚する", "synonyms": "observe, discern", "antonyms": "ignore, overlook", "example": "She perceived a change in his tone."},
+      {"word": "recognize", "meaning": "to identify or acknowledge", "japaneseMeaning": "認識する", "synonyms": "identify, notice", "antonyms": "ignore, overlook", "example": "He recognized his old friend in the crowd."},
+      {"word": "reflect", "meaning": "to think deeply", "japaneseMeaning": "反省する、熟考する", "synonyms": "contemplate, ponder", "antonyms": "ignore, neglect", "example": "She reflected on her mistakes."},
+      {"word": "retain", "meaning": "to keep in memory", "japaneseMeaning": "保持する", "synonyms": "remember, preserve", "antonyms": "forget, lose", "example": "He retained the information from class."},
+      {"word": "associate", "meaning": "to connect ideas or things", "japaneseMeaning": "結びつける", "synonyms": "link, connect", "antonyms": "disconnect, separate", "example": "People often associate smell with memories."},
+      {"word": "observe", "meaning": "to notice carefully", "japaneseMeaning": "観察する", "synonyms": "watch, monitor", "antonyms": "ignore, neglect", "example": "She observed the behavior of the birds."},
+      {"word": "relive", "meaning": "to experience again", "japaneseMeaning": "再体験する", "synonyms": "reexperience, recall", "antonyms": "forget, ignore", "example": "He relived his childhood memories."},
+      {"word": "interpret", "meaning": "to explain meaning", "japaneseMeaning": "解釈する", "synonyms": "explain, understand", "antonyms": "misunderstand, confuse", "example": "They interpreted the results carefully."}
+    ]
+  }
+ 

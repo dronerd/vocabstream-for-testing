@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-45",
-  "title": "Lesson 45",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-45",
+    "title": "Lesson 45",
+    "paragraph": "Problem and solution involve identifying obstacles and applying strategies. Innovations, interventions, adaptations, and initiatives bring breakthroughs and improvements.",
+    "words": [
+      {"word": "obstacle", "meaning": "something that blocks progress", "japaneseMeaning": "障害", "synonyms": "barrier, hindrance", "antonyms": "aid, advantage", "example": "They overcame many obstacles."},
+      {"word": "strategy", "meaning": "plan for achieving goals", "japaneseMeaning": "戦略", "synonyms": "plan, approach", "antonyms": "improvisation, randomness", "example": "The strategy led to success."},
+      {"word": "resolution", "meaning": "solution to a problem", "japaneseMeaning": "解決", "synonyms": "solution, answer", "antonyms": "problem, conflict", "example": "The resolution was accepted."},
+      {"word": "alternative", "meaning": "another option or choice", "japaneseMeaning": "代替案", "synonyms": "option, substitute", "antonyms": "necessity, requirement", "example": "They proposed an alternative plan."},
+      {"word": "innovation", "meaning": "introducing new methods or ideas", "japaneseMeaning": "革新", "synonyms": "invention, novelty", "antonyms": "stagnation, tradition", "example": "Innovation drives progress."},
+      {"word": "intervention", "meaning": "action to improve a situation", "japaneseMeaning": "介入", "synonyms": "interference, involvement", "antonyms": "neglect, avoidance", "example": "Intervention prevented the crisis."},
+      {"word": "adaptation", "meaning": "modifying to suit new conditions", "japaneseMeaning": "適応", "synonyms": "adjustment, modification", "antonyms": "resistance, rigidity", "example": "Adaptation helped them survive."},
+      {"word": "initiative", "meaning": "ability to start actions", "japaneseMeaning": "主導権、率先力", "synonyms": "enterprise, action", "antonyms": "laziness, inaction", "example": "He showed initiative in solving problems."},
+      {"word": "breakthrough", "meaning": "significant progress", "japaneseMeaning": "飛躍的進展", "synonyms": "advance, discovery", "antonyms": "setback, failure", "example": "The breakthrough improved technology."},
+      {"word": "improvement", "meaning": "making something better", "japaneseMeaning": "改善", "synonyms": "enhancement, advancement", "antonyms": "decline, deterioration", "example": "They focused on improvement in quality."}
+    ]
+  }
+

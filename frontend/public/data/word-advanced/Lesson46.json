@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-pre1-46",
-  "title": "Lesson 46",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-46",
+    "title": "Lesson 46",
+    "paragraph": "Challenge and effort involve endeavoring, confronting, and persisting. Overcoming obstacles, struggling, and exerting determination build resilience and success.",
+    "words": [
+      {"word": "endeavor", "meaning": "a serious effort or attempt", "japaneseMeaning": "努力", "synonyms": "attempt, effort", "antonyms": "neglect, idleness", "example": "She endeavored to complete the project."},
+      {"word": "confront", "meaning": "to face boldly", "japaneseMeaning": "立ち向かう", "synonyms": "face, challenge", "antonyms": "avoid, evade", "example": "He confronted his fears."},
+      {"word": "persist", "meaning": "to continue firmly", "japaneseMeaning": "持続する", "synonyms": "persevere, endure", "antonyms": "quit, surrender", "example": "They persisted despite difficulties."},
+      {"word": "overcome", "meaning": "to successfully deal with", "japaneseMeaning": "克服する", "synonyms": "conquer, defeat", "antonyms": "yield, fail", "example": "She overcame her anxiety."},
+      {"word": "persevere", "meaning": "to continue despite obstacles", "japaneseMeaning": "粘り強く続ける", "synonyms": "persist, endure", "antonyms": "give up, quit", "example": "He persevered until he succeeded."},
+      {"word": "struggle", "meaning": "to strive against difficulty", "japaneseMeaning": "奮闘する", "synonyms": "fight, contend", "antonyms": "relax, surrender", "example": "They struggled to finish on time."},
+      {"word": "withstand", "meaning": "to resist or endure", "japaneseMeaning": "耐える", "synonyms": "endure, resist", "antonyms": "succumb, yield", "example": "The structure can withstand strong winds."},
+      {"word": "recover", "meaning": "to return to normal condition", "japaneseMeaning": "回復する", "synonyms": "regain, heal", "antonyms": "worsen, decline", "example": "He recovered quickly from illness."},
+      {"word": "exert", "meaning": "to apply effort or influence", "japaneseMeaning": "努力する、及ぼす", "synonyms": "apply, wield", "antonyms": "neglect, ignore", "example": "She exerted pressure to achieve results."},
+      {"word": "resolve", "meaning": "firm determination", "japaneseMeaning": "決意", "synonyms": "determination, commitment", "antonyms": "hesitation, doubt", "example": "He showed resolve in difficult times."}
+    ]
+  }
+ 

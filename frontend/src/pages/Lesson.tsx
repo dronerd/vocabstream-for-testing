@@ -424,7 +424,7 @@ const Lesson: React.FC = () => {
       {/* --- 今日の単語 --- */}
       {step === 0 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>今日の単語</h2>
+          <h2 style={{ fontSize: headingSize, marginBottom: 6 }}>今日の単語</h2>
           <ul style={{ listStyle: "none", padding: 0 }}>
             {lesson.words.slice(0, 10).map((w: LessonWord, i: number) => (
               <li key={i} style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: 6 }}>
@@ -792,6 +792,7 @@ const Lesson: React.FC = () => {
               正答率: {Math.round(((quizScore + (paragraphScore ?? 0)) / (quizQuestions.length + (slotCorrectWord.length || choiceWords.length) || 1)) * 100)}%
             </p>
           </div>
+          
 
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
             <button onClick={() => nav(-1)} style={blueButtonStyle}>レッスンを終了して一覧へ</button>
