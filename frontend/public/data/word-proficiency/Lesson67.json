@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-67",
-  "title": "Lesson 67",
-  "words": [
-    {
-      "word": "stoic",
-      "meaning": "enduring pain or hardship without showing feelings or complaining",
-      "japaneseMeaning": "ストイックな、感情を表さない",
-      "synonyms": "unemotional, impassive, enduring",
-      "antonyms": "emotional, sensitive, complaining",
-      "example": "He remained stoic despite the bad news.",
-      "japaneseExample": "悪い知らせにもかかわらず、彼は感情を見せなかった。"
-    },
-    {
-      "word": "strident",
-      "meaning": "loud and harsh; grating",
-      "japaneseMeaning": "耳障りな、きつい",
-      "synonyms": "harsh, shrill, grating",
-      "antonyms": "soft, mellow, gentle",
-      "example": "Her strident voice annoyed everyone in the room.",
-      "japaneseExample": "彼女の耳障りな声は部屋の皆を苛立たせた。"
-    },
-    {
-      "word": "stringent",
-      "meaning": "strict, precise, and exacting",
-      "japaneseMeaning": "厳格な、厳しい",
-      "synonyms": "strict, severe, rigorous",
-      "antonyms": "lenient, relaxed, flexible",
-      "example": "The company has stringent quality control standards.",
-      "japaneseExample": "その会社には厳格な品質管理基準がある。"
-    },
-    {
-      "word": "subjugate",
-      "meaning": "to bring under domination or control, especially by conquest",
-      "japaneseMeaning": "征服する、従わせる",
-      "synonyms": "conquer, dominate, overpower",
-      "antonyms": "liberate, free, empower",
-      "example": "The invaders sought to subjugate the local population.",
-      "japaneseExample": "侵略者は地元住民を従わせようとした。"
-    },
-    {
-      "word": "sublime",
-      "meaning": "of such excellence, grandeur, or beauty as to inspire admiration",
-      "japaneseMeaning": "崇高な、壮大な",
-      "synonyms": "exalted, majestic, magnificent",
-      "antonyms": "ordinary, lowly, mediocre",
-      "example": "The view from the mountain was sublime.",
-      "japaneseExample": "山からの景色は壮大だった。"
-    },
-    {
-      "word": "substantiate",
-      "meaning": "to provide evidence to support or prove the truth of something",
-      "japaneseMeaning": "立証する、実証する",
-      "synonyms": "prove, verify, confirm",
-      "antonyms": "disprove, refute, invalidate",
-      "example": "The scientist substantiated her theory with experimental data.",
-      "japaneseExample": "その科学者は実験データで理論を立証した。"
-    },
-    {
-      "word": "subtle",
-      "meaning": "so delicate or precise as to be difficult to analyze or describe",
-      "japaneseMeaning": "微妙な、巧妙な",
-      "synonyms": "delicate, nuanced, fine",
-      "antonyms": "obvious, blatant, coarse",
-      "example": "The artist used subtle colors to create depth.",
-      "japaneseExample": "その画家は深みを出すために微妙な色を使った。"
-    },
-    {
-      "word": "succinct",
-      "meaning": "briefly and clearly expressed",
-      "japaneseMeaning": "簡潔な、明瞭な",
-      "synonyms": "concise, terse, brief",
-      "antonyms": "verbose, wordy, long-winded",
-      "example": "Her presentation was succinct and informative.",
-      "japaneseExample": "彼女のプレゼンは簡潔で有益だった。"
-    },
-    {
-      "word": "supercilious",
-      "meaning": "behaving or looking as though one thinks one is superior to others",
-      "japaneseMeaning": "横柄な、高慢な",
-      "synonyms": "arrogant, haughty, condescending",
-      "antonyms": "humble, modest, respectful",
-      "example": "His supercilious attitude annoyed everyone.",
-      "japaneseExample": "彼の横柄な態度は皆を苛立たせた。"
-    },
-    {
-      "word": "superfluous",
-      "meaning": "unnecessary, especially through being more than enough",
-      "japaneseMeaning": "余分な、不必要な",
-      "synonyms": "redundant, excessive, unnecessary",
-      "antonyms": "necessary, essential, required",
-      "example": "Remove any superfluous words from your essay.",
-      "japaneseExample": "エッセイから不要な言葉を取り除きなさい。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-67",
+    "title": "Lesson 67",
+    "paragraph": "This lesson focuses on light and clarity, including luminosity, brilliance, and transparency.",
+    "words": [
+      {
+        "word": "luminous",
+        "meaning": "emitting or reflecting light; shining",
+        "japaneseMeaning": "光を発する、明るい",
+        "synonyms": "radiant, glowing",
+        "antonyms": "dim, dark",
+        "example": "The luminous moon lit the night sky."
+      },
+      {
+        "word": "radiant",
+        "meaning": "sending out light or energy; shining brightly",
+        "japaneseMeaning": "輝く、光り輝く",
+        "synonyms": "bright, glowing",
+        "antonyms": "dull, dark",
+        "example": "Her radiant smile warmed everyone’s hearts."
+      },
+      {
+        "word": "transparent",
+        "meaning": "allowing light to pass through; clear",
+        "japaneseMeaning": "透明な、明白な",
+        "synonyms": "clear, see-through",
+        "antonyms": "opaque, cloudy",
+        "example": "The water was transparent and pure."
+      },
+      {
+        "word": "pristine",
+        "meaning": "in its original, unspoiled condition",
+        "japaneseMeaning": "原始の、汚れていない",
+        "synonyms": "immaculate, pure",
+        "antonyms": "tainted, spoiled",
+        "example": "The mountain lake remained pristine."
+      },
+      {
+        "word": "unblemished",
+        "meaning": "free from flaws or imperfections",
+        "japaneseMeaning": "傷のない、欠点のない",
+        "synonyms": "perfect, flawless",
+        "antonyms": "blemished, flawed",
+        "example": "Her reputation remained unblemished despite the scandal."
+      },
+      {
+        "word": "brilliant",
+        "meaning": "shining brightly; exceptionally clever or talented",
+        "japaneseMeaning": "輝かしい、優れた",
+        "synonyms": "bright, exceptional",
+        "antonyms": "dull, mediocre",
+        "example": "The scientist’s brilliant idea revolutionized the field."
+      },
+      {
+        "word": "crystalline",
+        "meaning": "having the structure and form of a crystal; clear",
+        "japaneseMeaning": "結晶のような、透明な",
+        "synonyms": "clear, transparent",
+        "antonyms": "cloudy, opaque",
+        "example": "The ice was crystalline under the sunlight."
+      },
+      {
+        "word": "pellucid",
+        "meaning": "translucently clear; easily understood",
+        "japaneseMeaning": "透明な、明快な",
+        "synonyms": "clear, transparent",
+        "antonyms": "obscure, opaque",
+        "example": "The instructions were pellucid and easy to follow."
+      },
+      {
+        "word": "lucid",
+        "meaning": "expressed clearly; easy to understand",
+        "japaneseMeaning": "明晰な、分かりやすい",
+        "synonyms": "clear, understandable",
+        "antonyms": "confusing, obscure",
+        "example": "His explanation was lucid and concise."
+      },
+      {
+        "word": "incandescent",
+        "meaning": "emitting light as a result of being heated; brilliant",
+        "japaneseMeaning": "白熱の、輝く",
+        "synonyms": "glowing, radiant",
+        "antonyms": "dim, dull",
+        "example": "The incandescent lamp lit the room warmly."
+      }
+    ]
+  }
+

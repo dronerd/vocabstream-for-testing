@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-64",
-  "title": "Lesson 64",
-  "words": [
-    {
-      "word": "reticent",
-      "meaning": "not revealing one’s thoughts or feelings readily",
-      "japaneseMeaning": "控えめな、口数の少ない",
-      "synonyms": "reserved, taciturn, quiet",
-      "antonyms": "talkative, outspoken, communicative",
-      "example": "He was reticent about his personal life.",
-      "japaneseExample": "彼は私生活について控えめだった。"
-    },
-    {
-      "word": "retrospect",
-      "meaning": "a review or contemplation of past events",
-      "japaneseMeaning": "回顧、振り返り",
-      "synonyms": "review, recollection, hindsight",
-      "antonyms": "foresight, anticipation, prediction",
-      "example": "In retrospect, the decision was the best one.",
-      "japaneseExample": "振り返ってみると、その決定が最良だった。"
-    },
-    {
-      "word": "reverent",
-      "meaning": "feeling or showing deep respect or admiration",
-      "japaneseMeaning": "敬意を表する、崇敬の念を持つ",
-      "synonyms": "respectful, admiring, worshipful",
-      "antonyms": "disrespectful, irreverent, rude",
-      "example": "The audience was reverent during the ceremony.",
-      "japaneseExample": "式典中、聴衆は敬意を表していた。"
-    },
-    {
-      "word": "rhetoric",
-      "meaning": "the art of effective or persuasive speaking or writing",
-      "japaneseMeaning": "修辞学、雄弁術",
-      "synonyms": "oratory, eloquence, persuasion",
-      "antonyms": "plainness, simplicity, conciseness",
-      "example": "The politician’s rhetoric inspired many.",
-      "japaneseExample": "その政治家の雄弁術は多くの人を感動させた。"
-    },
-    {
-      "word": "rudimentary",
-      "meaning": "involving or limited to basic principles; elementary",
-      "japaneseMeaning": "基本的な、初歩的な",
-      "synonyms": "basic, fundamental, elementary",
-      "antonyms": "advanced, complex, sophisticated",
-      "example": "He has only a rudimentary understanding of physics.",
-      "japaneseExample": "彼は物理学について初歩的な理解しか持っていない。"
-    },
-    {
-      "word": "sagacious",
-      "meaning": "having or showing keen mental discernment and good judgment; wise",
-      "japaneseMeaning": "賢明な、洞察力のある",
-      "synonyms": "wise, shrewd, astute",
-      "antonyms": "foolish, ignorant, unwise",
-      "example": "The sagacious leader guided the country through difficult times.",
-      "japaneseExample": "その賢明な指導者は困難な時期に国を導いた。"
-    },
-    {
-      "word": "salient",
-      "meaning": "most noticeable or important",
-      "japaneseMeaning": "顕著な、重要な",
-      "synonyms": "prominent, outstanding, notable",
-      "antonyms": "minor, insignificant, inconspicuous",
-      "example": "The report highlighted the salient points of the study.",
-      "japaneseExample": "報告書は研究の重要な点を強調した。"
-    },
-    {
-      "word": "sanctimonious",
-      "meaning": "making a show of being morally superior to others",
-      "japaneseMeaning": "偽善的な、道徳的に見せかける",
-      "synonyms": "self-righteous, hypocritical, pious",
-      "antonyms": "humble, sincere, modest",
-      "example": "His sanctimonious attitude annoyed everyone at the meeting.",
-      "japaneseExample": "彼の偽善的な態度は会議の全員を苛立たせた。"
-    },
-    {
-      "word": "sanguine",
-      "meaning": "optimistic or positive, especially in an apparently bad situation",
-      "japaneseMeaning": "楽観的な、前向きな",
-      "synonyms": "optimistic, hopeful, confident",
-      "antonyms": "pessimistic, gloomy, doubtful",
-      "example": "She is sanguine about the company’s future.",
-      "japaneseExample": "彼女は会社の将来について楽観的である。"
-    },
-    {
-      "word": "sardonic",
-      "meaning": "grimly mocking or cynical",
-      "japaneseMeaning": "皮肉な、冷笑的な",
-      "synonyms": "mocking, sarcastic, cynical",
-      "antonyms": "kind, sincere, gentle",
-      "example": "His sardonic remarks offended many people.",
-      "japaneseExample": "彼の皮肉な発言は多くの人々を不快にさせた。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-64",
+    "title": "Lesson 64",
+    "paragraph": "This lesson focuses on performance and drama, including theatrical, expressive, and interpretive skills.",
+    "words": [
+      {
+        "word": "theatrical",
+        "meaning": "relating to acting or drama; exaggerated or dramatic",
+        "japaneseMeaning": "演劇の、芝居がかった",
+        "synonyms": "dramatic, staged",
+        "antonyms": "natural, subdued",
+        "example": "His theatrical gestures amused the audience."
+      },
+      {
+        "word": "emotive",
+        "meaning": "arousing strong feelings or emotions",
+        "japaneseMeaning": "感情的な、情緒的な",
+        "synonyms": "expressive, touching",
+        "antonyms": "neutral, unemotional",
+        "example": "The film’s emotive scenes brought tears to many eyes."
+      },
+      {
+        "word": "expressive",
+        "meaning": "effectively conveying thought or feeling",
+        "japaneseMeaning": "表現力のある、感情を表す",
+        "synonyms": "articulate, emotive",
+        "antonyms": "inexpressive, dull",
+        "example": "Her expressive face revealed her inner thoughts."
+      },
+      {
+        "word": "performative",
+        "meaning": "related to or constituting an action or performance",
+        "japaneseMeaning": "パフォーマンス的な、演技的な",
+        "synonyms": "demonstrative, theatrical",
+        "antonyms": "authentic, natural",
+        "example": "The poet’s reading was highly performative."
+      },
+      {
+        "word": "dramatic",
+        "meaning": "exciting or impressive; relating to drama",
+        "japaneseMeaning": "劇的な、演劇の",
+        "synonyms": "theatrical, striking",
+        "antonyms": "ordinary, mundane",
+        "example": "The play had a dramatic climax."
+      },
+      {
+        "word": "evocative",
+        "meaning": "bringing strong images, memories, or feelings to mind",
+        "japaneseMeaning": "喚起する、思い起こさせる",
+        "synonyms": "suggestive, reminiscent",
+        "antonyms": "dull, uninspiring",
+        "example": "The painting is evocative of childhood memories."
+      },
+      {
+        "word": "charismatic",
+        "meaning": "possessing an appealing charm or influence",
+        "japaneseMeaning": "カリスマ的な、人を引きつける",
+        "synonyms": "magnetic, charming",
+        "antonyms": "unremarkable, dull",
+        "example": "The charismatic leader inspired the crowd."
+      },
+      {
+        "word": "flamboyant",
+        "meaning": "showy, flashy, or extravagant",
+        "japaneseMeaning": "派手な、目立つ",
+        "synonyms": "showy, extravagant",
+        "antonyms": "modest, subdued",
+        "example": "He wore a flamboyant costume to the party."
+      },
+      {
+        "word": "spontaneous",
+        "meaning": "performed or occurring as a result of impulse rather than planning",
+        "japaneseMeaning": "自発的な、自然な",
+        "synonyms": "impromptu, unplanned",
+        "antonyms": "planned, deliberate",
+        "example": "Their spontaneous applause surprised the performers."
+      },
+      {
+        "word": "interpretive",
+        "meaning": "relating to or providing an interpretation",
+        "japaneseMeaning": "解釈の、表現の",
+        "synonyms": "analytical, elucidative",
+        "antonyms": "literal, unexplanatory",
+        "example": "The dancer gave an interpretive performance of the poem."
+      }
+    ]
+  }
+ 

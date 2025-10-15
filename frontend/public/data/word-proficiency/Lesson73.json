@@ -1,96 +1,89 @@
-{
-  "lesson_id": "eiken-1-73",
-  "title": "Lesson 73",
-  "words": [
-    {
-      "word": "vindicate",
-      "meaning": "to clear someone of blame or suspicion; justify",
-      "japaneseMeaning": "正当性を証明する、無実を立証する",
-      "synonyms": "justify, exonerate, acquit",
-      "antonyms": "condemn, blame, accuse",
-      "example": "The evidence vindicated her claims.",
-      "japaneseExample": "その証拠が彼女の主張の正当性を証明した。"
-    },
-    {
-      "word": "vindictive",
-      "meaning": "having or showing a strong desire for revenge",
-      "japaneseMeaning": "復讐心の強い、執念深い",
-      "synonyms": "revengeful, spiteful, vengeful",
-      "antonyms": "forgiving, merciful, compassionate",
-      "example": "He was vindictive toward anyone who crossed him.",
-      "japaneseExample": "彼は自分に逆らった者に復讐心を抱いた。"
-    },
-    {
-      "word": "virtuoso",
-      "meaning": "a person highly skilled in a particular art, especially music",
-      "japaneseMeaning": "名人、達人",
-      "synonyms": "expert, master, prodigy",
-      "antonyms": "amateur, novice, beginner",
-      "example": "He is a virtuoso pianist.",
-      "japaneseExample": "彼はピアノの名人だ。"
-    },
-    {
-      "word": "virulent",
-      "meaning": "extremely severe or harmful in its effects; bitterly hostile",
-      "japaneseMeaning": "有害な、悪意のある",
-      "synonyms": "poisonous, hostile, venomous",
-      "antonyms": "harmless, benign, friendly",
-      "example": "The virulent disease spread quickly.",
-      "japaneseExample": "その有害な病気は急速に広がった。"
-    },
-    {
-      "word": "visceral",
-      "meaning": "relating to deep inward feelings rather than intellect",
-      "japaneseMeaning": "本能的な、直感的な",
-      "synonyms": "instinctive, intuitive, gut",
-      "antonyms": "rational, logical, intellectual",
-      "example": "He had a visceral reaction to the news.",
-      "japaneseExample": "彼はそのニュースに直感的な反応を示した。"
-    },
-    {
-      "word": "vitiate",
-      "meaning": "to spoil or impair the quality or effectiveness of something",
-      "japaneseMeaning": "損なう、無効にする",
-      "synonyms": "corrupt, spoil, weaken",
-      "antonyms": "enhance, improve, strengthen",
-      "example": "The scandal vitiated the reputation of the company.",
-      "japaneseExample": "そのスキャンダルは会社の評判を損なった。"
-    },
-    {
-      "word": "vivacious",
-      "meaning": "attractively lively and animated",
-      "japaneseMeaning": "活発な、生き生きとした",
-      "synonyms": "lively, animated, energetic",
-      "antonyms": "dull, lifeless, lethargic",
-      "example": "She is a vivacious host who keeps the party going.",
-      "japaneseExample": "彼女は活発なホストで、パーティを盛り上げる。"
-    },
-    {
-      "word": "vociferous",
-      "meaning": "expressing opinions or feelings loudly and forcefully",
-      "japaneseMeaning": "声高な、騒々しい",
-      "synonyms": "loud, outspoken, clamorous",
-      "antonyms": "quiet, subdued, restrained",
-      "example": "The protesters were vociferous in their demands.",
-      "japaneseExample": "抗議者たちは要求を声高に叫んだ。"
-    },
-    {
-      "word": "volatile",
-      "meaning": "liable to change rapidly and unpredictably, especially for the worse",
-      "japaneseMeaning": "不安定な、揮発性の",
-      "synonyms": "unstable, unpredictable, explosive",
-      "antonyms": "stable, predictable, constant",
-      "example": "The stock market is volatile.",
-      "japaneseExample": "株式市場は不安定だ。"
-    },
-    {
-      "word": "voluminous",
-      "meaning": "occupying or containing much space; large in volume",
-      "japaneseMeaning": "大容量の、膨大な",
-      "synonyms": "ample, extensive, copious",
-      "antonyms": "small, limited, scanty",
-      "example": "She wrote a voluminous report on the project.",
-      "japaneseExample": "彼女はそのプロジェクトについて膨大な報告書を書いた。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-73",
+    "title": "Lesson 73",
+    "paragraph": "This lesson focuses on emotion and control, including restraint, poise, and judiciousness.",
+    "words": [
+      {
+        "word": "restrained",
+        "meaning": "characterized by self-control; not excessive",
+        "japaneseMeaning": "抑制された、控えめな",
+        "synonyms": "controlled, moderate",
+        "antonyms": "excessive, unrestrained",
+        "example": "She spoke in a restrained tone during the meeting."
+      },
+      {
+        "word": "measured",
+        "meaning": "carefully considered; deliberate",
+        "japaneseMeaning": "慎重な、計画的な",
+        "synonyms": "deliberate, calculated",
+        "antonyms": "hasty, impulsive",
+        "example": "His response was measured and thoughtful."
+      },
+      {
+        "word": "tempered",
+        "meaning": "moderated in effect; made less intense",
+        "japaneseMeaning": "和らげられた、調整された",
+        "synonyms": "moderated, balanced",
+        "antonyms": "unrestrained, extreme",
+        "example": "Her enthusiasm was tempered by caution."
+      },
+      {
+        "word": "poised",
+        "meaning": "having a composed and self-assured manner",
+        "japaneseMeaning": "落ち着いた、泰然とした",
+        "synonyms": "composed, balanced",
+        "antonyms": "flustered, anxious",
+        "example": "He remained poised during the crisis."
+      },
+      {
+        "word": "balanced",
+        "meaning": "being in a state of equilibrium; rational",
+        "japaneseMeaning": "バランスのとれた、公正な",
+        "synonyms": "stable, rational",
+        "antonyms": "biased, unstable",
+        "example": "She offered a balanced perspective on the issue."
+      },
+      {
+        "word": "equable",
+        "meaning": "not easily disturbed or angered; calm",
+        "japaneseMeaning": "穏やかな、冷静な",
+        "synonyms": "even-tempered, composed",
+        "antonyms": "irritable, volatile",
+        "example": "His equable demeanor made him a great mediator."
+      },
+      {
+        "word": "calm",
+        "meaning": "free from agitation or excitement",
+        "japaneseMeaning": "落ち着いた、静かな",
+        "synonyms": "tranquil, composed",
+        "antonyms": "agitated, anxious",
+        "example": "She remained calm under pressure."
+      },
+      {
+        "word": "deliberate",
+        "meaning": "done consciously and intentionally",
+        "japaneseMeaning": "意図的な、慎重な",
+        "synonyms": "intentional, calculated",
+        "antonyms": "accidental, impulsive",
+        "example": "His actions were deliberate and well thought out."
+      },
+      {
+        "word": "composed",
+        "meaning": "having control of one’s emotions; calm",
+        "japaneseMeaning": "落ち着いた、冷静な",
+        "synonyms": "poised, collected",
+        "antonyms": "flustered, agitated",
+        "example": "She remained composed despite the chaos."
+      },
+      {
+        "word": "judicious",
+        "meaning": "having or showing good judgment",
+        "japaneseMeaning": "賢明な、判断力のある",
+        "synonyms": "wise, prudent",
+        "antonyms": "foolish, reckless",
+        "example": "It was a judicious decision to wait."
+      }
+    ]
+  }
+ 

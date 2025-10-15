@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-68",
-  "title": "Lesson 68",
-  "words": [
-    {
-      "word": "supersede",
-      "meaning": "to take the place of a person or thing previously in authority or use",
-      "japaneseMeaning": "取って代わる、置き換える",
-      "synonyms": "replace, supplant, succeed",
-      "antonyms": "retain, keep, continue",
-      "example": "Digital cameras have largely superseded film cameras.",
-      "japaneseExample": "デジタルカメラはフィルムカメラにほぼ取って代わった。"
-    },
-    {
-      "word": "surreptitious",
-      "meaning": "kept secret, especially because it would not be approved of",
-      "japaneseMeaning": "秘密の、こっそりとした",
-      "synonyms": "secretive, stealthy, clandestine",
-      "antonyms": "open, overt, public",
-      "example": "They had a surreptitious meeting at night.",
-      "japaneseExample": "彼らは夜にこっそりと会合を持った。"
-    },
-    {
-      "word": "susceptible",
-      "meaning": "likely or liable to be influenced or harmed by something",
-      "japaneseMeaning": "影響を受けやすい、かかりやすい",
-      "synonyms": "vulnerable, sensitive, prone",
-      "antonyms": "resistant, immune, unaffected",
-      "example": "Children are more susceptible to certain diseases.",
-      "japaneseExample": "子供は特定の病気にかかりやすい。"
-    },
-    {
-      "word": "synergy",
-      "meaning": "the interaction of elements that when combined produce a total effect greater than the sum of the individual effects",
-      "japaneseMeaning": "相乗効果、協力効果",
-      "synonyms": "cooperation, collaboration, teamwork",
-      "antonyms": "conflict, discord, opposition",
-      "example": "The merger created a synergy between the two companies.",
-      "japaneseExample": "合併により、両社間に相乗効果が生まれた。"
-    },
-    {
-      "word": "tacit",
-      "meaning": "understood or implied without being stated",
-      "japaneseMeaning": "暗黙の、言外の",
-      "synonyms": "implicit, unspoken, understood",
-      "antonyms": "explicit, stated, expressed",
-      "example": "There was a tacit agreement between them.",
-      "japaneseExample": "彼らの間には暗黙の了解があった。"
-    },
-    {
-      "word": "taciturn",
-      "meaning": "reserved or uncommunicative in speech; saying little",
-      "japaneseMeaning": "無口な、口数の少ない",
-      "synonyms": "reserved, reticent, quiet",
-      "antonyms": "talkative, loquacious, garrulous",
-      "example": "He was a taciturn man who rarely spoke.",
-      "japaneseExample": "彼はめったに話さない無口な人だった。"
-    },
-    {
-      "word": "tangible",
-      "meaning": "perceptible by touch; clear and definite",
-      "japaneseMeaning": "触れられる、具体的な",
-      "synonyms": "palpable, concrete, real",
-      "antonyms": "intangible, abstract, unreal",
-      "example": "There was tangible evidence of the crime.",
-      "japaneseExample": "その犯罪の具体的な証拠があった。"
-    },
-    {
-      "word": "tantamount",
-      "meaning": "equivalent in seriousness to; virtually the same as",
-      "japaneseMeaning": "同等の、ほとんど同じ",
-      "synonyms": "equivalent, equal, identical",
-      "antonyms": "different, unequal, incomparable",
-      "example": "His refusal was tantamount to an admission of guilt.",
-      "japaneseExample": "彼の拒否は罪の自白にほとんど等しかった。"
-    },
-    {
-      "word": "tedium",
-      "meaning": "the state of being tedious or boring",
-      "japaneseMeaning": "退屈、単調さ",
-      "synonyms": "boredom, monotony, dullness",
-      "antonyms": "excitement, interest, amusement",
-      "example": "He endured the tedium of long meetings.",
-      "japaneseExample": "彼は長い会議の退屈に耐えた。"
-    },
-    {
-      "word": "temerity",
-      "meaning": "excessive confidence or boldness; audacity",
-      "japaneseMeaning": "向こう見ず、大胆不敵",
-      "synonyms": "audacity, boldness, recklessness",
-      "antonyms": "caution, prudence, modesty",
-      "example": "She had the temerity to challenge her boss.",
-      "japaneseExample": "彼女は上司に挑戦する大胆さを持っていた。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-68",
+    "title": "Lesson 68",
+    "paragraph": "This lesson focuses on emotion and catharsis, including anguish, elation, and rapture.",
+    "words": [
+      {
+        "word": "anguish",
+        "meaning": "severe mental or physical pain or suffering",
+        "japaneseMeaning": "苦悩、苦痛",
+        "synonyms": "agony, torment",
+        "antonyms": "joy, comfort",
+        "example": "He felt deep anguish after losing his job."
+      },
+      {
+        "word": "elation",
+        "meaning": "great happiness and exhilaration",
+        "japaneseMeaning": "高揚、歓喜",
+        "synonyms": "joy, delight",
+        "antonyms": "depression, sorrow",
+        "example": "She was filled with elation when she won the prize."
+      },
+      {
+        "word": "rapture",
+        "meaning": "a feeling of intense pleasure or joy",
+        "japaneseMeaning": "歓喜、陶酔",
+        "synonyms": "bliss, ecstasy",
+        "antonyms": "misery, sorrow",
+        "example": "The audience listened to the music in rapture."
+      },
+      {
+        "word": "agony",
+        "meaning": "extreme physical or mental suffering",
+        "japaneseMeaning": "苦痛、激痛",
+        "synonyms": "pain, torment",
+        "antonyms": "pleasure, comfort",
+        "example": "He was in agony after the accident."
+      },
+      {
+        "word": "despair",
+        "meaning": "the complete loss of hope",
+        "japaneseMeaning": "絶望、失望",
+        "synonyms": "hopelessness, anguish",
+        "antonyms": "hope, optimism",
+        "example": "She sank into despair after the failure."
+      },
+      {
+        "word": "bliss",
+        "meaning": "perfect happiness; great joy",
+        "japaneseMeaning": "至福、幸福",
+        "synonyms": "happiness, joy",
+        "antonyms": "misery, sorrow",
+        "example": "The couple experienced marital bliss."
+      },
+      {
+        "word": "sorrow",
+        "meaning": "a feeling of deep distress caused by loss or misfortune",
+        "japaneseMeaning": "悲しみ、哀悼",
+        "synonyms": "grief, sadness",
+        "antonyms": "joy, happiness",
+        "example": "He expressed sorrow over his friend’s death."
+      },
+      {
+        "word": "ardor",
+        "meaning": "enthusiasm or passion",
+        "japaneseMeaning": "熱情、情熱",
+        "synonyms": "passion, zeal",
+        "antonyms": "apathy, indifference",
+        "example": "She pursued her goals with great ardor."
+      },
+      {
+        "word": "jubilation",
+        "meaning": "a feeling of great happiness and triumph",
+        "japaneseMeaning": "歓喜、喜び",
+        "synonyms": "celebration, exultation",
+        "antonyms": "grief, sadness",
+        "example": "The team celebrated their victory with jubilation."
+      },
+      {
+        "word": "desolation",
+        "meaning": "a state of emptiness or loneliness; devastation",
+        "japaneseMeaning": "荒廃、孤独",
+        "synonyms": "devastation, loneliness",
+        "antonyms": "comfort, joy",
+        "example": "The abandoned town was filled with desolation."
+      }
+    ]
+  }

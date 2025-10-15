@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-70",
-  "title": "Lesson 70",
-  "words": [
-    {
-      "word": "transcendent",
-      "meaning": "beyond or above the range of normal or physical human experience",
-      "japaneseMeaning": "超越した、卓越した",
-      "synonyms": "superior, surpassing, extraordinary",
-      "antonyms": "ordinary, mediocre, mundane",
-      "example": "The music was transcendent and deeply moving.",
-      "japaneseExample": "その音楽は超越的で非常に感動的だった。"
-    },
-    {
-      "word": "transient",
-      "meaning": "lasting only for a short time; impermanent",
-      "japaneseMeaning": "一時的な、短命の",
-      "synonyms": "temporary, fleeting, short-lived",
-      "antonyms": "permanent, enduring, lasting",
-      "example": "The transient beauty of the sunset was breathtaking.",
-      "japaneseExample": "夕日の一時的な美しさは息をのむほどだった。"
-    },
-    {
-      "word": "trepidation",
-      "meaning": "a feeling of fear or agitation about something that may happen",
-      "japaneseMeaning": "恐怖、戦慄",
-      "synonyms": "fear, apprehension, anxiety",
-      "antonyms": "calm, confidence, composure",
-      "example": "She approached the stage with trepidation.",
-      "japaneseExample": "彼女は恐怖心を抱えながら舞台に向かった。"
-    },
-    {
-      "word": "trenchant",
-      "meaning": "vigorous or incisive in expression or style",
-      "japaneseMeaning": "鋭い、痛烈な",
-      "synonyms": "incisive, sharp, keen",
-      "antonyms": "blunt, dull, vague",
-      "example": "His trenchant analysis exposed the flaws in the plan.",
-      "japaneseExample": "彼の鋭い分析は計画の欠陥を暴いた。"
-    },
-    {
-      "word": "trivial",
-      "meaning": "of little value or importance",
-      "japaneseMeaning": "些細な、取るに足らない",
-      "synonyms": "insignificant, minor, petty",
-      "antonyms": "important, significant, substantial",
-      "example": "They argued over trivial matters.",
-      "japaneseExample": "彼らは些細なことで口論した。"
-    },
-    {
-      "word": "turbulent",
-      "meaning": "characterized by conflict, disorder, or confusion; not controlled",
-      "japaneseMeaning": "荒れ狂う、混乱した",
-      "synonyms": "chaotic, tumultuous, unstable",
-      "antonyms": "calm, peaceful, stable",
-      "example": "The country went through a turbulent period of political unrest.",
-      "japaneseExample": "その国は政治的不安定な荒れ狂う時期を経験した。"
-    },
-    {
-      "word": "turpitude",
-      "meaning": "depravity; wickedness",
-      "japaneseMeaning": "堕落、邪悪",
-      "synonyms": "depravity, wickedness, corruption",
-      "antonyms": "virtue, morality, integrity",
-      "example": "He was condemned for acts of moral turpitude.",
-      "japaneseExample": "彼は道徳的堕落の行為で非難された。"
-    },
-    {
-      "word": "ubiquitous",
-      "meaning": "present, appearing, or found everywhere",
-      "japaneseMeaning": "至る所にある、遍在する",
-      "synonyms": "omnipresent, pervasive, universal",
-      "antonyms": "rare, scarce, limited",
-      "example": "Smartphones have become ubiquitous in modern society.",
-      "japaneseExample": "スマートフォンは現代社会で至る所に普及している。"
-    },
-    {
-      "word": "unassailable",
-      "meaning": "unable to be attacked, questioned, or defeated",
-      "japaneseMeaning": "非難できない、揺るぎない",
-      "synonyms": "inviolable, impregnable, undeniable",
-      "antonyms": "vulnerable, questionable, disputable",
-      "example": "Her argument was unassailable.",
-      "japaneseExample": "彼女の議論は揺るぎなかった。"
-    },
-    {
-      "word": "uncanny",
-      "meaning": "strange or mysterious, especially in an unsettling way",
-      "japaneseMeaning": "不気味な、異常な",
-      "synonyms": "eerie, mysterious, extraordinary",
-      "antonyms": "ordinary, normal, common",
-      "example": "He has an uncanny ability to predict events.",
-      "japaneseExample": "彼は出来事を予測する不思議な能力を持っている。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-70",
+    "title": "Lesson 70",
+    "paragraph": "This lesson focuses on inquiry and discovery, including exploration, investigation, and scrutiny.",
+    "words": [
+      {
+        "word": "exploration",
+        "meaning": "the action of traveling in or through an unfamiliar area to learn about it",
+        "japaneseMeaning": "探検、探査",
+        "synonyms": "investigation, examination",
+        "antonyms": "neglect, ignorance",
+        "example": "The expedition focused on the exploration of uncharted territories."
+      },
+      {
+        "word": "revelation",
+        "meaning": "a surprising and previously unknown fact",
+        "japaneseMeaning": "啓示、発見",
+        "synonyms": "disclosure, discovery",
+        "antonyms": "concealment, secret",
+        "example": "The scientist’s research led to a groundbreaking revelation."
+      },
+      {
+        "word": "investigation",
+        "meaning": "a systematic examination or inquiry",
+        "japaneseMeaning": "調査、捜査",
+        "synonyms": "inquiry, examination",
+        "antonyms": "ignorance, neglect",
+        "example": "The police conducted a thorough investigation."
+      },
+      {
+        "word": "discernment",
+        "meaning": "the ability to judge well; insight",
+        "japaneseMeaning": "識別力、洞察力",
+        "synonyms": "perception, insight",
+        "antonyms": "ignorance, naivety",
+        "example": "Her discernment in choosing investments was impressive."
+      },
+      {
+        "word": "analysis",
+        "meaning": "detailed examination of the elements of something",
+        "japaneseMeaning": "分析、解析",
+        "synonyms": "examination, scrutiny",
+        "antonyms": "synthesis, guesswork",
+        "example": "The report included a careful analysis of the data."
+      },
+      {
+        "word": "observation",
+        "meaning": "the act of noticing and recording something",
+        "japaneseMeaning": "観察、注視",
+        "synonyms": "monitoring, examination",
+        "antonyms": "neglect, ignorance",
+        "example": "Astronomers made an important observation about the star."
+      },
+      {
+        "word": "experiment",
+        "meaning": "a scientific procedure to test a hypothesis",
+        "japaneseMeaning": "実験、試み",
+        "synonyms": "trial, test",
+        "antonyms": "assumption, speculation",
+        "example": "The students conducted a chemistry experiment."
+      },
+      {
+        "word": "inference",
+        "meaning": "a conclusion reached based on evidence and reasoning",
+        "japaneseMeaning": "推論、結論",
+        "synonyms": "deduction, conclusion",
+        "antonyms": "ignorance, guess",
+        "example": "From the clues, she made a logical inference."
+      },
+      {
+        "word": "deduction",
+        "meaning": "the process of reasoning from general principles to a specific conclusion",
+        "japaneseMeaning": "演繹、推論",
+        "synonyms": "reasoning, inference",
+        "antonyms": "induction, guesswork",
+        "example": "His deduction solved the mystery."
+      },
+      {
+        "word": "scrutiny",
+        "meaning": "critical observation or examination",
+        "japaneseMeaning": "精査、注意深い観察",
+        "synonyms": "inspection, analysis",
+        "antonyms": "overlook, neglect",
+        "example": "The documents were under close scrutiny."
+      }
+    ]
+  }
+ 

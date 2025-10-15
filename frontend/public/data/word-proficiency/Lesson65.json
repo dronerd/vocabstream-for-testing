@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-65",
-  "title": "Lesson 65",
-  "words": [
-    {
-      "word": "scanty",
-      "meaning": "small or insufficient in quantity or amount",
-      "japaneseMeaning": "わずかな、乏しい",
-      "synonyms": "meager, insufficient, sparse",
-      "antonyms": "ample, abundant, sufficient",
-      "example": "The evidence was scanty and inconclusive.",
-      "japaneseExample": "証拠は乏しく、結論を出せなかった。"
-    },
-    {
-      "word": "scathing",
-      "meaning": "witheringly scornful; severely critical",
-      "japaneseMeaning": "痛烈な、手厳しい",
-      "synonyms": "severe, harsh, blistering",
-      "antonyms": "mild, gentle, flattering",
-      "example": "The critic’s scathing review damaged the play’s reputation.",
-      "japaneseExample": "批評家の痛烈なレビューはその劇の評判を傷つけた。"
-    },
-    {
-      "word": "scrupulous",
-      "meaning": "diligent, thorough, and extremely attentive to details; morally upright",
-      "japaneseMeaning": "良心的な、几帳面な",
-      "synonyms": "meticulous, conscientious, careful",
-      "antonyms": "careless, dishonest, negligent",
-      "example": "She is scrupulous about following the rules.",
-      "japaneseExample": "彼女は規則を守ることに非常に几帳面である。"
-    },
-    {
-      "word": "secular",
-      "meaning": "not connected with religious or spiritual matters",
-      "japaneseMeaning": "世俗的な、宗教と無関係の",
-      "synonyms": "nonreligious, temporal, worldly",
-      "antonyms": "religious, sacred, spiritual",
-      "example": "The school has a secular curriculum.",
-      "japaneseExample": "その学校は世俗的なカリキュラムを持っている。"
-    },
-    {
-      "word": "sedentary",
-      "meaning": "characterized by much sitting and little physical activity",
-      "japaneseMeaning": "座りがちの、運動不足の",
-      "synonyms": "inactive, stationary, seated",
-      "antonyms": "active, mobile, energetic",
-      "example": "A sedentary lifestyle can lead to health problems.",
-      "japaneseExample": "座りがちな生活は健康上の問題を引き起こすことがある。"
-    },
-    {
-      "word": "serendipity",
-      "meaning": "the occurrence of events by chance in a happy or beneficial way",
-      "japaneseMeaning": "偶然の幸運、思いがけない発見",
-      "synonyms": "chance, fluke, coincidence",
-      "antonyms": "misfortune, bad luck, accident",
-      "example": "Finding that rare book in the small shop was pure serendipity.",
-      "japaneseExample": "その小さな店でその珍しい本を見つけるのは純粋な偶然の幸運だった。"
-    },
-    {
-      "word": "servile",
-      "meaning": "having or showing an excessive willingness to serve or please others",
-      "japaneseMeaning": "卑屈な、従順すぎる",
-      "synonyms": "subservient, fawning, obsequious",
-      "antonyms": "assertive, independent, dominant",
-      "example": "He treated his colleagues in a servile manner.",
-      "japaneseExample": "彼は同僚たちに卑屈な態度で接した。"
-    },
-    {
-      "word": "simulate",
-      "meaning": "to imitate the appearance or character of",
-      "japaneseMeaning": "模倣する、シミュレートする",
-      "synonyms": "imitate, replicate, mimic",
-      "antonyms": "authentic, real, genuine",
-      "example": "The flight simulator allows pilots to simulate real conditions.",
-      "japaneseExample": "フライトシミュレーターは、パイロットが実際の条件を模擬することを可能にする。"
-    },
-    {
-      "word": "skeptical",
-      "meaning": "not easily convinced; having doubts or reservations",
-      "japaneseMeaning": "懐疑的な、疑い深い",
-      "synonyms": "doubtful, suspicious, incredulous",
-      "antonyms": "trusting, confident, credulous",
-      "example": "He was skeptical about the effectiveness of the new drug.",
-      "japaneseExample": "彼は新薬の効果について懐疑的だった。"
-    },
-    {
-      "word": "slovenly",
-      "meaning": "messy or careless in appearance or habits",
-      "japaneseMeaning": "だらしない、みだらな",
-      "synonyms": "untidy, messy, careless",
-      "antonyms": "tidy, neat, meticulous",
-      "example": "His slovenly room made his parents upset.",
-      "japaneseExample": "彼のだらしない部屋は両親を怒らせた。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-65",
+    "title": "Lesson 65",
+    "paragraph": "This lesson focuses on beauty and perception, including aesthetics, grace, and refinement.",
+    "words": [
+      {
+        "word": "aesthetic",
+        "meaning": "concerned with beauty or the appreciation of beauty",
+        "japaneseMeaning": "美的な、美学の",
+        "synonyms": "artistic, tasteful",
+        "antonyms": "ugly, unartistic",
+        "example": "The gallery’s aesthetic design impressed visitors."
+      },
+      {
+        "word": "symmetrical",
+        "meaning": "well-proportioned; balanced on both sides",
+        "japaneseMeaning": "対称の、均整のとれた",
+        "synonyms": "balanced, proportional",
+        "antonyms": "asymmetrical, uneven",
+        "example": "The building had a symmetrical façade."
+      },
+      {
+        "word": "graceful",
+        "meaning": "having elegance or beauty of form or movement",
+        "japaneseMeaning": "優雅な、上品な",
+        "synonyms": "elegant, poised",
+        "antonyms": "awkward, clumsy",
+        "example": "The ballerina’s movements were graceful."
+      },
+      {
+        "word": "exquisite",
+        "meaning": "extremely beautiful and delicate",
+        "japaneseMeaning": "絶妙な、非常に美しい",
+        "synonyms": "beautiful, delicate",
+        "antonyms": "coarse, ugly",
+        "example": "The jeweler crafted an exquisite necklace."
+      },
+      {
+        "word": "ornate",
+        "meaning": "decorated with complex patterns or details",
+        "japaneseMeaning": "華美な、装飾の多い",
+        "synonyms": "decorative, elaborate",
+        "antonyms": "plain, simple",
+        "example": "The ornate hall impressed the guests."
+      },
+      {
+        "word": "refined",
+        "meaning": "cultivated and polished in manners, taste, or style",
+        "japaneseMeaning": "洗練された、上品な",
+        "synonyms": "polished, cultured",
+        "antonyms": "crude, unrefined",
+        "example": "Her refined taste was evident in her home décor."
+      },
+      {
+        "word": "delicate",
+        "meaning": "fine in texture or structure; subtle and sensitive",
+        "japaneseMeaning": "繊細な、精巧な",
+        "synonyms": "fragile, subtle",
+        "antonyms": "coarse, robust",
+        "example": "The delicate porcelain required careful handling."
+      },
+      {
+        "word": "ethereal",
+        "meaning": "extremely delicate and light in a way that seems not of this world",
+        "japaneseMeaning": "空気のような、非現実的な",
+        "synonyms": "delicate, celestial",
+        "antonyms": "earthly, heavy",
+        "example": "The ethereal music transported the audience."
+      },
+      {
+        "word": "picturesque",
+        "meaning": "visually attractive, like a picture",
+        "japaneseMeaning": "絵のように美しい、風光明媚な",
+        "synonyms": "scenic, charming",
+        "antonyms": "ugly, unattractive",
+        "example": "The village is picturesque and serene."
+      },
+      {
+        "word": "resplendent",
+        "meaning": "shining brilliantly; characterized by a glowing appearance",
+        "japaneseMeaning": "華麗な、輝かしい",
+        "synonyms": "splendid, magnificent",
+        "antonyms": "dull, drab",
+        "example": "The bride looked resplendent in her gown."
+      }
+    ]
+  }
+ 

@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-63",
-  "title": "Lesson 63",
-  "words": [
-    {
-      "word": "reprimand",
-      "meaning": "a formal expression of disapproval",
-      "japaneseMeaning": "叱責、戒告",
-      "synonyms": "rebuke, scold, censure",
-      "antonyms": "praise, commend, endorse",
-      "example": "The teacher reprimanded the students for being late.",
-      "japaneseExample": "先生は遅刻した生徒たちを叱責した。"
-    },
-    {
-      "word": "reproach",
-      "meaning": "to express disapproval or disappointment",
-      "japaneseMeaning": "非難する、責める",
-      "synonyms": "criticize, rebuke, scold",
-      "antonyms": "praise, commend, approve",
-      "example": "She reproached him for neglecting his duties.",
-      "japaneseExample": "彼女は彼の義務怠慢を非難した。"
-    },
-    {
-      "word": "reprove",
-      "meaning": "to reprimand or censure someone",
-      "japaneseMeaning": "叱責する、非難する",
-      "synonyms": "rebuke, scold, admonish",
-      "antonyms": "praise, commend, endorse",
-      "example": "The manager reproved the employee for missing deadlines.",
-      "japaneseExample": "マネージャーは期限を守らなかった社員を叱責した。"
-    },
-    {
-      "word": "repudiate",
-      "meaning": "to refuse to accept or be associated with; reject",
-      "japaneseMeaning": "拒絶する、関係を否定する",
-      "synonyms": "reject, renounce, disavow",
-      "antonyms": "accept, embrace, endorse",
-      "example": "He repudiated the accusations against him.",
-      "japaneseExample": "彼は自分に対する非難を否定した。"
-    },
-    {
-      "word": "rescind",
-      "meaning": "to revoke, cancel, or repeal a law, order, or agreement",
-      "japaneseMeaning": "取り消す、廃止する",
-      "synonyms": "revoke, annul, cancel",
-      "antonyms": "enact, enforce, uphold",
-      "example": "The company rescinded the job offer due to budget cuts.",
-      "japaneseExample": "会社は予算削減のため内定を取り消した。"
-    },
-    {
-      "word": "resilient",
-      "meaning": "able to recover quickly from difficulties; tough",
-      "japaneseMeaning": "回復力のある、強靭な",
-      "synonyms": "strong, hardy, adaptable",
-      "antonyms": "fragile, weak, vulnerable",
-      "example": "Children are often resilient and adapt quickly to change.",
-      "japaneseExample": "子供はしばしば回復力があり、変化にすぐ適応する。"
-    },
-    {
-      "word": "resolute",
-      "meaning": "admirably purposeful, determined, and unwavering",
-      "japaneseMeaning": "断固とした、揺るぎない",
-      "synonyms": "determined, steadfast, unwavering",
-      "antonyms": "indecisive, wavering, hesitant",
-      "example": "She remained resolute in her decision to pursue medicine.",
-      "japaneseExample": "彼女は医学を志す決意に揺るぎなかった。"
-    },
-    {
-      "word": "resonate",
-      "meaning": "to produce or be filled with a deep, full sound; to have meaning or importance",
-      "japaneseMeaning": "共鳴する、響く",
-      "synonyms": "echo, reverberate, relate",
-      "antonyms": "dull, mute, silence",
-      "example": "His speech resonated with the audience.",
-      "japaneseExample": "彼の演説は聴衆の心に響いた。"
-    },
-    {
-      "word": "respite",
-      "meaning": "a short period of rest or relief from something difficult or unpleasant",
-      "japaneseMeaning": "休息、ひとときの猶予",
-      "synonyms": "break, relief, pause",
-      "antonyms": "continuation, stress, exertion",
-      "example": "The sunny weather gave them a respite from the storm.",
-      "japaneseExample": "晴れた天気が嵐からのひとときの休息を与えた。"
-    },
-    {
-      "word": "restitution",
-      "meaning": "the restoration of something lost or stolen to its proper owner; compensation",
-      "japaneseMeaning": "返還、賠償",
-      "synonyms": "reparation, compensation, restoration",
-      "antonyms": "theft, loss, deprivation",
-      "example": "The thief was ordered to make restitution to his victims.",
-      "japaneseExample": "泥棒は被害者に賠償をするよう命じられた。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-63",
+    "title": "Lesson 63",
+    "paragraph": "This lesson focuses on artistry and craft, including mastery, finesse, and precision.",
+    "words": [
+      {
+        "word": "mastery",
+        "meaning": "comprehensive knowledge or skill in a subject or activity",
+        "japaneseMeaning": "熟達、支配",
+        "synonyms": "expertise, proficiency",
+        "antonyms": "incompetence, novice",
+        "example": "Her mastery of the violin impressed the audience."
+      },
+      {
+        "word": "finesse",
+        "meaning": "delicate skill and subtlety in handling situations",
+        "japaneseMeaning": "技巧、巧妙さ",
+        "synonyms": "skill, sophistication",
+        "antonyms": "clumsiness, ineptitude",
+        "example": "Negotiating the deal required great finesse."
+      },
+      {
+        "word": "virtuosity",
+        "meaning": "great technical skill in a particular art",
+        "japaneseMeaning": "名人芸、卓越した技量",
+        "synonyms": "expertise, brilliance",
+        "antonyms": "amateurishness, mediocrity",
+        "example": "The pianist's virtuosity amazed the audience."
+      },
+      {
+        "word": "craftsmanship",
+        "meaning": "skill in a particular craft or art",
+        "japaneseMeaning": "職人技、技巧",
+        "synonyms": "skill, artistry",
+        "antonyms": "ineptitude, amateurism",
+        "example": "The furniture displayed excellent craftsmanship."
+      },
+      {
+        "word": "technique",
+        "meaning": "a way of carrying out a particular task, especially in art or science",
+        "japaneseMeaning": "技術、手法",
+        "synonyms": "method, skill",
+        "antonyms": "ineptitude, clumsiness",
+        "example": "Her painting technique is unique and refined."
+      },
+      {
+        "word": "execution",
+        "meaning": "the carrying out or putting into effect of a plan, skill, or art",
+        "japaneseMeaning": "実行、遂行",
+        "synonyms": "performance, implementation",
+        "antonyms": "failure, neglect",
+        "example": "The execution of the project was flawless."
+      },
+      {
+        "word": "precision",
+        "meaning": "the quality of being exact and accurate",
+        "japaneseMeaning": "正確さ、精密",
+        "synonyms": "accuracy, exactness",
+        "antonyms": "imprecision, inaccuracy",
+        "example": "Precision is critical in scientific experiments."
+      },
+      {
+        "word": "fluidity",
+        "meaning": "smoothness and grace in movement or style",
+        "japaneseMeaning": "流動性、滑らかさ",
+        "synonyms": "gracefulness, flexibility",
+        "antonyms": "stiffness, rigidity",
+        "example": "The dancer moved with remarkable fluidity."
+      },
+      {
+        "word": "style",
+        "meaning": "a distinctive manner of expression in art or behavior",
+        "japaneseMeaning": "様式、スタイル",
+        "synonyms": "manner, technique",
+        "antonyms": "plainness, uniformity",
+        "example": "Her writing style is elegant and persuasive."
+      },
+      {
+        "word": "detail",
+        "meaning": "attention given to small elements of work or design",
+        "japaneseMeaning": "細部、詳細",
+        "synonyms": "particulars, intricacy",
+        "antonyms": "generalization, overlook",
+        "example": "The painting’s detail reveals the artist’s dedication."
+      }
+    ]
+  }
