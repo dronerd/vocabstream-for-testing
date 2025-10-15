@@ -1,96 +1,89 @@
-{
-  "lesson_id": "eiken-1-13",
-  "title": "Lesson 13",
-  "words": [
-    {
-      "word": "charismatic",
-      "meaning": "exercising a compelling charm which inspires devotion",
-      "japaneseMeaning": "カリスマ的な、人を引きつける",
-      "synonyms": "charming, magnetic, compelling",
-      "antonyms": "unattractive, repulsive, dull",
-      "example": "The charismatic leader drew huge crowds.",
-      "japaneseExample": "カリスマ的なリーダーは多くの人々を惹きつけた。"
-    },
-    {
-      "word": "chastise",
-      "meaning": "to reprimand or punish severely",
-      "japaneseMeaning": "厳しく叱る、懲戒する",
-      "synonyms": "rebuke, reprimand, scold",
-      "antonyms": "praise, commend, reward",
-      "example": "The coach chastised the players for their poor performance.",
-      "japaneseExample": "コーチは選手たちの不十分なパフォーマンスを厳しく叱った。"
-    },
-    {
-      "word": "chauvinistic",
-      "meaning": "excessively patriotic or biased towards one's own group",
-      "japaneseMeaning": "盲目的愛国主義の、偏狭な",
-      "synonyms": "nationalistic, biased, prejudiced",
-      "antonyms": "impartial, fair, tolerant",
-      "example": "His chauvinistic attitudes offended many colleagues.",
-      "japaneseExample": "彼の偏狭な態度は多くの同僚を怒らせた。"
-    },
-    {
-      "word": "chicanery",
-      "meaning": "the use of trickery to achieve a political, financial, or legal purpose",
-      "japaneseMeaning": "策略、詐欺",
-      "synonyms": "deception, trickery, fraud",
-      "antonyms": "honesty, integrity, sincerity",
-      "example": "The politician resorted to chicanery to win the election.",
-      "japaneseExample": "その政治家は選挙に勝つために策略を用いた。"
-    },
-    {
-      "word": "circumspect",
-      "meaning": "wary and unwilling to take risks",
-      "japaneseMeaning": "慎重な、用心深い",
-      "synonyms": "cautious, careful, prudent",
-      "antonyms": "reckless, careless, rash",
-      "example": "He was circumspect in his financial investments.",
-      "japaneseExample": "彼は投資において慎重だった。"
-    },
-    {
-      "word": "circumvent",
-      "meaning": "to find a way around an obstacle; to overcome a problem cleverly",
-      "japaneseMeaning": "回避する、うまく切り抜ける",
-      "synonyms": "bypass, evade, dodge",
-      "antonyms": "confront, face, encounter",
-      "example": "They found a way to circumvent the rules.",
-      "japaneseExample": "彼らは規則を回避する方法を見つけた。"
-    },
-    {
-      "word": "cogent",
-      "meaning": "clear, logical, and convincing",
-      "japaneseMeaning": "説得力のある、納得のいく",
-      "synonyms": "convincing, compelling, persuasive",
-      "antonyms": "unconvincing, weak, illogical",
-      "example": "She presented a cogent argument for the proposal.",
-      "japaneseExample": "彼女はその提案について説得力のある議論を展開した。"
-    },
-    {
-      "word": "cogitate",
-      "meaning": "to think deeply about something; meditate or reflect",
-      "japaneseMeaning": "熟考する、思索する",
-      "synonyms": "ponder, contemplate, reflect",
-      "antonyms": "ignore, neglect, overlook",
-      "example": "He cogitated on the consequences of his actions.",
-      "japaneseExample": "彼は自分の行動の結果について熟考した。"
-    },
-    {
-      "word": "cohesive",
-      "meaning": "forming a united whole; sticking together",
-      "japaneseMeaning": "結束した、まとまりのある",
-      "synonyms": "united, connected, consistent",
-      "antonyms": "disjointed, fragmented, incoherent",
-      "example": "The team was cohesive and worked well together.",
-      "japaneseExample": "チームは結束しており、うまく協力していた。"
-    },
-    {
-      "word": "collate",
-      "meaning": "to collect, compare, and arrange information systematically",
-      "japaneseMeaning": "照合する、集めて整理する",
-      "synonyms": "assemble, organize, compile",
-      "antonyms": "scatter, disperse, separate",
-      "example": "She collated the data from several surveys.",
-      "japaneseExample": "彼女は複数の調査データを照合した。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-13",
+    "title": "Lesson 13",
+    "paragraph": "This lesson examines society and hierarchy, exploring social classes, structures, and organization.",
+    "words": [
+      {
+        "word": "stratification",
+        "meaning": "the arrangement or classification of something into layers or ranks",
+        "japaneseMeaning": "階層化、層別",
+        "synonyms": "layering, hierarchy",
+        "antonyms": "equality, uniformity",
+        "example": "Social stratification often determines access to resources."
+      },
+      {
+        "word": "proletariat",
+        "meaning": "workers or working-class people, regarded collectively",
+        "japaneseMeaning": "労働者階級、プロレタリアート",
+        "synonyms": "working class, laborers",
+        "antonyms": "bourgeoisie, elite",
+        "example": "The revolution aimed to empower the proletariat."
+      },
+      {
+        "word": "bourgeoisie",
+        "meaning": "the middle/upper-middle class, typically with materialistic values",
+        "japaneseMeaning": "ブルジョワ、資本家階級",
+        "synonyms": "middle class, upper class",
+        "antonyms": "proletariat, working class",
+        "example": "The bourgeoisie often owned the means of production."
+      },
+      {
+        "word": "aristocracy",
+        "meaning": "a class of people holding exceptional rank and privileges",
+        "japaneseMeaning": "貴族、上流階級",
+        "synonyms": "nobility, elite",
+        "antonyms": "commoners, proletariat",
+        "example": "The aristocracy controlled much of the land and wealth."
+      },
+      {
+        "word": "meritocracy",
+        "meaning": "a system in which people are promoted based on ability or talent",
+        "japaneseMeaning": "能力主義、実力主義",
+        "synonyms": "achievement-based, talentocracy",
+        "antonyms": "nepotism, favoritism",
+        "example": "The company claims to operate as a meritocracy."
+      },
+      {
+        "word": "bureaucracy",
+        "meaning": "a system of government or management with many rules and procedures",
+        "japaneseMeaning": "官僚制、官僚機構",
+        "synonyms": "administration, civil service",
+        "antonyms": "anarchy, informal system",
+        "example": "The bureaucracy slowed down the approval process."
+      },
+      {
+        "word": "oligarchy",
+        "meaning": "a government controlled by a small group of people",
+        "japaneseMeaning": "寡頭制、少数支配",
+        "synonyms": "elitism, select rule",
+        "antonyms": "democracy, egalitarianism",
+        "example": "The country was ruled by an oligarchy of wealthy merchants."
+      },
+      {
+        "word": "technocracy",
+        "meaning": "government or control by technical experts",
+        "japaneseMeaning": "技術官僚制",
+        "synonyms": "expert rule, merit-based governance",
+        "antonyms": "democracy, populism",
+        "example": "Some propose a technocracy to manage complex modern problems."
+      },
+      {
+        "word": "gentry",
+        "meaning": "people of high social standing or landowners",
+        "japaneseMeaning": "上流階級、地主階級",
+        "synonyms": "nobility, elite",
+        "antonyms": "commoners, peasants",
+        "example": "The gentry often had political influence in local communities."
+      },
+      {
+        "word": "caste",
+        "meaning": "a hereditary social group with fixed status",
+        "japaneseMeaning": "カースト、身分制度",
+        "synonyms": "social class, rank",
+        "antonyms": "egalitarianism, classlessness",
+        "example": "The society was divided into strict castes."
+      }
+    ]
+  }
+ 

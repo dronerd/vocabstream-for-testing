@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-10",
-  "title": "Lesson 10",
-  "words": [
-    {
-      "word": "bellicose",
-      "meaning": "demonstrating aggression and willingness to fight",
-      "japaneseMeaning": "好戦的な、けんか腰の",
-      "synonyms": "aggressive, warlike, combative",
-      "antonyms": "peaceful, conciliatory, calm",
-      "example": "The politician’s bellicose rhetoric alarmed many.",
-      "japaneseExample": "その政治家の好戦的な言動は多くの人を驚かせた。"
-    },
-    {
-      "word": "belligerent",
-      "meaning": "hostile and aggressive",
-      "japaneseMeaning": "敵対的な、攻撃的な",
-      "synonyms": "hostile, aggressive, antagonistic",
-      "antonyms": "friendly, peaceful, cooperative",
-      "example": "He was belligerent during the debate.",
-      "japaneseExample": "彼は討論中に攻撃的だった。"
-    },
-    {
-      "word": "benevolent",
-      "meaning": "well meaning and kindly",
-      "japaneseMeaning": "慈悲深い、親切な",
-      "synonyms": "kind, charitable, altruistic",
-      "antonyms": "malevolent, cruel, unkind",
-      "example": "She is a benevolent leader who cares for her team.",
-      "japaneseExample": "彼女はチームを思いやる慈悲深いリーダーだ。"
-    },
-    {
-      "word": "benighted",
-      "meaning": "in a state of ignorance or moral darkness",
-      "japaneseMeaning": "無知な、暗黒の",
-      "synonyms": "ignorant, unenlightened, primitive",
-      "antonyms": "enlightened, informed, educated",
-      "example": "The region remained benighted and undeveloped.",
-      "japaneseExample": "その地域は無知で未開発のままだった。"
-    },
-    {
-      "word": "benign",
-      "meaning": "gentle, kind, and not harmful",
-      "japaneseMeaning": "良性の、温和な",
-      "synonyms": "kind, gentle, harmless",
-      "antonyms": "malignant, harmful, hostile",
-      "example": "The tumor was benign and required no surgery.",
-      "japaneseExample": "その腫瘍は良性で手術の必要はなかった。"
-    },
-    {
-      "word": "bequeath",
-      "meaning": "to leave property or money to someone in a will",
-      "japaneseMeaning": "遺贈する、譲り渡す",
-      "synonyms": "leave, pass on, endow",
-      "antonyms": "take, withhold, seize",
-      "example": "He bequeathed his estate to his children.",
-      "japaneseExample": "彼は財産を子供たちに遺贈した。"
-    },
-    {
-      "word": "berate",
-      "meaning": "to scold or criticize angrily",
-      "japaneseMeaning": "叱責する、非難する",
-      "synonyms": "scold, rebuke, reprimand",
-      "antonyms": "praise, commend, flatter",
-      "example": "The manager berated the employees for the mistake.",
-      "japaneseExample": "マネージャーはそのミスで従業員を叱責した。"
-    },
-    {
-      "word": "bewilder",
-      "meaning": "to confuse or puzzle completely",
-      "japaneseMeaning": "当惑させる、混乱させる",
-      "synonyms": "confuse, perplex, baffle",
-      "antonyms": "clarify, explain, enlighten",
-      "example": "The complex instructions bewildered the students.",
-      "japaneseExample": "複雑な指示は学生を混乱させた。"
-    },
-    {
-      "word": "blatant",
-      "meaning": "very obvious and offensive",
-      "japaneseMeaning": "明白な、露骨な",
-      "synonyms": "obvious, conspicuous, flagrant",
-      "antonyms": "subtle, hidden, inconspicuous",
-      "example": "His blatant lies were easy to detect.",
-      "japaneseExample": "彼の露骨な嘘は見破るのが簡単だった。"
-    },
-    {
-      "word": "blight",
-      "meaning": "something that spoils or damages",
-      "japaneseMeaning": "害するもの、荒廃",
-      "synonyms": "disease, decay, affliction",
-      "antonyms": "beauty, blessing, prosperity",
-      "example": "The drought was a blight on the crops.",
-      "japaneseExample": "干ばつは作物にとっての害だった。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-10",
+    "title": "Lesson 10",
+    "paragraph": "This lesson covers politics and diplomacy, including negotiation, agreements, and international relations.",
+    "words": [
+      {
+        "word": "bipartisan",
+        "meaning": "involving cooperation of two political parties",
+        "japaneseMeaning": "二党制の",
+        "synonyms": "cooperative, cross-party",
+        "antonyms": "partisan, one-sided",
+        "example": "The bill received bipartisan support in the legislature."
+      },
+      {
+        "word": "sanction",
+        "meaning": "a penalty or coercive measure; approval or permission",
+        "japaneseMeaning": "制裁、承認",
+        "synonyms": "penalty, approval",
+        "antonyms": "",
+        "example": "The UN imposed sanctions on the country."
+      },
+      {
+        "word": "ratify",
+        "meaning": "to formally approve or confirm",
+        "japaneseMeaning": "批准する、承認する",
+        "synonyms": "approve, endorse",
+        "antonyms": "reject, revoke",
+        "example": "The parliament ratified the new treaty."
+      },
+      {
+        "word": "appease",
+        "meaning": "to pacify or placate someone by acceding to their demands",
+        "japaneseMeaning": "なだめる、宥める",
+        "synonyms": "pacify, placate",
+        "antonyms": "provoke, antagonize",
+        "example": "The government attempted to appease protesters."
+      },
+      {
+        "word": "concord",
+        "meaning": "agreement or harmony between people or groups",
+        "japaneseMeaning": "一致、和合",
+        "synonyms": "harmony, accord",
+        "antonyms": "discord, conflict",
+        "example": "The nations reached a concord after months of negotiation."
+      },
+      {
+        "word": "entente",
+        "meaning": "a friendly understanding or informal alliance",
+        "japaneseMeaning": "協調、友好関係",
+        "synonyms": "agreement, understanding",
+        "antonyms": "hostility, discord",
+        "example": "The countries maintained an entente to prevent conflict."
+      },
+      {
+        "word": "factional",
+        "meaning": "relating to a group within a larger group, often causing conflict",
+        "japaneseMeaning": "派閥の、分派の",
+        "synonyms": "partisan, sectarian",
+        "antonyms": "unified, cohesive",
+        "example": "Factional disputes weakened the party."
+      },
+      {
+        "word": "dissident",
+        "meaning": "a person who opposes official policy, especially in authoritarian states",
+        "japaneseMeaning": "反体制派",
+        "synonyms": "rebel, protester",
+        "antonyms": "supporter, conformist",
+        "example": "The dissident spoke out against the government."
+      },
+      {
+        "word": "envoy",
+        "meaning": "a messenger or representative, especially in diplomacy",
+        "japaneseMeaning": "使節、代表",
+        "synonyms": "emissary, delegate",
+        "antonyms": "",
+        "example": "An envoy was sent to negotiate peace terms."
+      },
+      {
+        "word": "accord",
+        "meaning": "an official agreement or treaty",
+        "japaneseMeaning": "協定、一致",
+        "synonyms": "agreement, pact",
+        "antonyms": "disagreement, conflict",
+        "example": "The nations signed a historic accord."
+      }
+    ]
+  }
+ 

@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-35",
-  "title": "Lesson 35",
-  "words": [
-    {
-      "word": "hapless",
-      "meaning": "unfortunate; having no luck",
-      "japaneseMeaning": "不運な、運のない",
-      "synonyms": "unlucky, unfortunate, ill-fated",
-      "antonyms": "fortunate, lucky, blessed",
-      "example": "The hapless traveler lost his passport.",
-      "japaneseExample": "不運な旅行者はパスポートを失くした。"
-    },
-    {
-      "word": "harangue",
-      "meaning": "a lengthy and aggressive speech",
-      "japaneseMeaning": "長々しい説教、熱弁",
-      "synonyms": "tirade, lecture, diatribe",
-      "antonyms": "praise, compliment, eulogy",
-      "example": "He delivered a harangue about the importance of discipline.",
-      "japaneseExample": "彼は規律の重要性について熱弁をふるった。"
-    },
-    {
-      "word": "harbinger",
-      "meaning": "a person or thing that announces or signals the approach of another",
-      "japaneseMeaning": "先触れ、前兆",
-      "synonyms": "forerunner, precursor, omen",
-      "antonyms": "result, effect, consequence",
-      "example": "The crocus is a harbinger of spring.",
-      "japaneseExample": "クロッカスは春の先触れである。"
-    },
-    {
-      "word": "harried",
-      "meaning": "feeling strained as a result of having demands persistently made on one",
-      "japaneseMeaning": "悩まされる、追い詰められた",
-      "synonyms": "harassed, stressed, pressured",
-      "antonyms": "calm, relaxed, untroubled",
-      "example": "She was harried by constant phone calls.",
-      "japaneseExample": "彼女は絶え間ない電話に悩まされていた。"
-    },
-    {
-      "word": "haughty",
-      "meaning": "arrogantly superior and disdainful",
-      "japaneseMeaning": "高慢な、傲慢な",
-      "synonyms": "arrogant, proud, disdainful",
-      "antonyms": "humble, modest, respectful",
-      "example": "The haughty manager ignored the suggestions of his team.",
-      "japaneseExample": "高慢なマネージャーはチームの提案を無視した。"
-    },
-    {
-      "word": "hedonist",
-      "meaning": "a person who believes that the pursuit of pleasure is the most important thing in life",
-      "japaneseMeaning": "快楽主義者",
-      "synonyms": "pleasure-seeker, sybarite, libertine",
-      "antonyms": "ascetic, puritan, self-denying",
-      "example": "He lived like a hedonist, enjoying every luxury.",
-      "japaneseExample": "彼は快楽主義者のように、すべての贅沢を楽しんで生きた。"
-    },
-    {
-      "word": "heinous",
-      "meaning": "utterly odious or wicked",
-      "japaneseMeaning": "極悪な、許しがたい",
-      "synonyms": "atrocious, wicked, abhorrent",
-      "antonyms": "admirable, commendable, virtuous",
-      "example": "The crime was described as heinous by the authorities.",
-      "japaneseExample": "その犯罪は当局によって極悪なものと表現された。"
-    },
-    {
-      "word": "heretic",
-      "meaning": "a person holding beliefs that are contrary to established religious doctrines",
-      "japaneseMeaning": "異端者、反逆者",
-      "synonyms": "dissenter, nonconformist, apostate",
-      "antonyms": "believer, conformist, orthodox",
-      "example": "He was branded a heretic for challenging traditional views.",
-      "japaneseExample": "伝統的な見解に異議を唱えたことで彼は異端者とされた。"
-    },
-    {
-      "word": "hiatus",
-      "meaning": "a pause or gap in a sequence, series, or process",
-      "japaneseMeaning": "中断、休止",
-      "synonyms": "pause, break, gap",
-      "antonyms": "continuation, sequence, flow",
-      "example": "The show returned after a brief hiatus.",
-      "japaneseExample": "その番組は短い中断の後、再開された。"
-    },
-    {
-      "word": "histrionic",
-      "meaning": "overly theatrical or melodramatic in character or style",
-      "japaneseMeaning": "演劇じみた、芝居がかった",
-      "synonyms": "theatrical, dramatic, exaggerated",
-      "antonyms": "subdued, restrained, natural",
-      "example": "Her histrionic behavior annoyed everyone at the party.",
-      "japaneseExample": "彼女の芝居がかった行動はパーティーの皆を苛立たせた。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-35",
+    "title": "Lesson 35",
+    "paragraph": "This lesson examines philosophy and ethics, including existential thought, utilitarianism, and moral reasoning.",
+    "words": [
+      {
+        "word": "existential",
+        "meaning": "relating to human existence and experience",
+        "japaneseMeaning": "実存の、存在に関する",
+        "synonyms": "philosophical, humanistic",
+        "antonyms": "",
+        "example": "Existential questions often explore the meaning of life."
+      },
+      {
+        "word": "utilitarian",
+        "meaning": "designed to be useful rather than purely attractive; ethical doctrine focused on outcomes",
+        "japaneseMeaning": "功利主義の、有用な",
+        "synonyms": "practical, outcome-based",
+        "antonyms": "idealistic, theoretical",
+        "example": "Utilitarian principles aim to maximize overall happiness."
+      },
+      {
+        "word": "nihilistic",
+        "meaning": "believing life is meaningless and rejecting moral principles",
+        "japaneseMeaning": "虚無主義の、無価値の",
+        "synonyms": "pessimistic, skeptical",
+        "antonyms": "optimistic, meaningful",
+        "example": "His nihilistic view led him to question societal norms."
+      },
+      {
+        "word": "stoic",
+        "meaning": "enduring pain or hardship without showing feelings",
+        "japaneseMeaning": "ストイックな、冷静な",
+        "synonyms": "unemotional, resilient",
+        "antonyms": "emotional, sensitive",
+        "example": "She remained stoic despite the difficult circumstances."
+      },
+      {
+        "word": "moralistic",
+        "meaning": "overly concerned with principles of right and wrong",
+        "japaneseMeaning": "道徳的な、説教的な",
+        "synonyms": "ethical, didactic",
+        "antonyms": "amoral, indifferent",
+        "example": "His moralistic tone annoyed his peers."
+      },
+      {
+        "word": "transcendental",
+        "meaning": "beyond ordinary experience; spiritual or philosophical",
+        "japaneseMeaning": "超越的な、先験的な",
+        "synonyms": "spiritual, metaphysical",
+        "antonyms": "material, mundane",
+        "example": "Transcendental meditation emphasizes spiritual awareness."
+      },
+      {
+        "word": "relativist",
+        "meaning": "believing that points of view have no absolute truth",
+        "japaneseMeaning": "相対主義者、相対的な",
+        "synonyms": "subjectivist, contextualist",
+        "antonyms": "absolutist, universalist",
+        "example": "Relativist ethics argue that morality depends on context."
+      },
+      {
+        "word": "empiricist",
+        "meaning": "someone who believes knowledge comes from experience",
+        "japaneseMeaning": "経験主義者",
+        "synonyms": "pragmatist, observationalist",
+        "antonyms": "rationalist, theoretician",
+        "example": "The empiricist relied on observation rather than theory."
+      },
+      {
+        "word": "rationalist",
+        "meaning": "someone who believes reason is the chief source of knowledge",
+        "japaneseMeaning": "合理主義者",
+        "synonyms": "logical thinker, philosopher",
+        "antonyms": "empiricist, intuitive",
+        "example": "Rationalist philosophers emphasize logic over experience."
+      },
+      {
+        "word": "fatalist",
+        "meaning": "believing that all events are predetermined and inevitable",
+        "japaneseMeaning": "運命論者",
+        "synonyms": "determinist, predestinarian",
+        "antonyms": "free-willer, agent",
+        "example": "The fatalist accepted the outcome without protest."
+      }
+    ]
+  }
+ 

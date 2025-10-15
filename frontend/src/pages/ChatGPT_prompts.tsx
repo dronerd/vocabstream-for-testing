@@ -71,6 +71,7 @@ export default function TestPage() {
 
   return (
     <div style={{ paddingTop: "92px" }}>
+      <h2 style={{ marginBottom: 12 }}>ChatGPTのプロンプト</h2>
       <button
         onClick={() => nav("/others")}
         style={{
@@ -86,7 +87,6 @@ export default function TestPage() {
         その他の機能一覧に戻る
       </button>
 
-      <h2 style={{ marginBottom: 12 }}>ChatGPTのプロンプト</h2>
 
       <p style={{ marginTop: 0, marginBottom: 16, maxWidth: 760 }}>
         下のカードのボタンでプロンプトをコピーできます。クリップボードAPIは安全なコンテキスト（https）で動作します。古いブラウザや非安全なコンテキストではフォールバック（テキストエリア経由）を使います。
@@ -106,7 +106,7 @@ export default function TestPage() {
               </button>
             </div>
             <pre className="prompt-text" aria-hidden>
-{p.text}
+              {p.text}
             </pre>
           </article>
         ))}

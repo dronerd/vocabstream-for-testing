@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-30",
-  "title": "Lesson 30",
-  "words": [
-    {
-      "word": "explicit",
-      "meaning": "clearly stated or shown; leaving no room for confusion",
-      "japaneseMeaning": "明確な、はっきりした",
-      "synonyms": "clear, definite, unambiguous",
-      "antonyms": "implicit, vague, ambiguous",
-      "example": "The teacher gave explicit instructions for the assignment.",
-      "japaneseExample": "教師は課題について明確な指示を出した。"
-    },
-    {
-      "word": "expunge",
-      "meaning": "to erase or remove completely",
-      "japaneseMeaning": "抹消する、消し去る",
-      "synonyms": "erase, delete, obliterate",
-      "antonyms": "retain, preserve, record",
-      "example": "The judge ordered the record to be expunged.",
-      "japaneseExample": "裁判官は記録を抹消するよう命じた。"
-    },
-    {
-      "word": "extemporaneous",
-      "meaning": "spoken or done without preparation; impromptu",
-      "japaneseMeaning": "即席の、準備なしの",
-      "synonyms": "impromptu, spontaneous, unrehearsed",
-      "antonyms": "prepared, rehearsed, planned",
-      "example": "He gave an extemporaneous speech at the meeting.",
-      "japaneseExample": "彼は会議で即席のスピーチを行った。"
-    },
-    {
-      "word": "extenuate",
-      "meaning": "to make a fault or offense seem less serious",
-      "japaneseMeaning": "情状を酌む、軽減する",
-      "synonyms": "mitigate, excuse, lessen",
-      "antonyms": "aggravate, worsen, intensify",
-      "example": "He tried to extenuate his mistake by explaining the circumstances.",
-      "japaneseExample": "彼は状況を説明して自分の過ちを軽減しようとした。"
-    },
-    {
-      "word": "extol",
-      "meaning": "to praise enthusiastically",
-      "japaneseMeaning": "称賛する、褒めたたえる",
-      "synonyms": "praise, glorify, laud",
-      "antonyms": "criticize, condemn, denounce",
-      "example": "The teacher extolled the student’s creativity.",
-      "japaneseExample": "教師はその生徒の創造性を称賛した。"
-    },
-    {
-      "word": "extraneous",
-      "meaning": "irrelevant or unrelated to the subject being dealt with",
-      "japaneseMeaning": "余分な、無関係な",
-      "synonyms": "irrelevant, unrelated, unnecessary",
-      "antonyms": "relevant, essential, pertinent",
-      "example": "Please ignore extraneous information in the report.",
-      "japaneseExample": "報告書の余分な情報は無視してください。"
-    },
-    {
-      "word": "extrapolate",
-      "meaning": "to infer or estimate something based on known information",
-      "japaneseMeaning": "推定する、外挿する",
-      "synonyms": "infer, deduce, predict",
-      "antonyms": "ignore, disregard, question",
-      "example": "Scientists extrapolated future climate trends from past data.",
-      "japaneseExample": "科学者たちは過去のデータから将来の気候傾向を推定した。"
-    },
-    {
-      "word": "extricate",
-      "meaning": "to free someone or something from a constraint or difficulty",
-      "japaneseMeaning": "救い出す、脱出させる",
-      "synonyms": "free, release, disentangle",
-      "antonyms": "entangle, trap, confine",
-      "example": "The firefighter extricated the child from the wreckage.",
-      "japaneseExample": "消防士は瓦礫から子供を救い出した。"
-    },
-    {
-      "word": "facetious",
-      "meaning": "treating serious issues with deliberately inappropriate humor",
-      "japaneseMeaning": "ふざけた、冗談の",
-      "synonyms": "flippant, joking, sarcastic",
-      "antonyms": "serious, solemn, earnest",
-      "example": "He made a facetious remark during the meeting.",
-      "japaneseExample": "彼は会議中にふざけた発言をした。"
-    },
-    {
-      "word": "fallacious",
-      "meaning": "based on a mistaken belief or unsound reasoning",
-      "japaneseMeaning": "誤った、間違いに基づく",
-      "synonyms": "false, misleading, erroneous",
-      "antonyms": "true, valid, sound",
-      "example": "The argument was fallacious and easily refuted.",
-      "japaneseExample": "その議論は誤りに基づいており、簡単に反論された。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-30",
+    "title": "Lesson 30",
+    "paragraph": "This lesson covers psychology and behavior, including cognition, motivation, and mental patterns.",
+    "words": [
+      {
+        "word": "cognition",
+        "meaning": "the mental process of acquiring knowledge and understanding",
+        "japaneseMeaning": "認知、認識",
+        "synonyms": "thinking, understanding",
+        "antonyms": "",
+        "example": "Cognition involves attention, memory, and reasoning."
+      },
+      {
+        "word": "motivation",
+        "meaning": "the reason or desire that drives behavior",
+        "japaneseMeaning": "動機、やる気",
+        "synonyms": "drive, incentive",
+        "antonyms": "apathy, indifference",
+        "example": "Students’ motivation affects their learning outcomes."
+      },
+      {
+        "word": "perception",
+        "meaning": "the way in which something is regarded or understood",
+        "japaneseMeaning": "知覚、認識",
+        "synonyms": "awareness, understanding",
+        "antonyms": "",
+        "example": "His perception of the event differed from reality."
+      },
+      {
+        "word": "neurotic",
+        "meaning": "suffering from emotional instability or anxiety",
+        "japaneseMeaning": "神経症の、情緒不安定な",
+        "synonyms": "anxious, obsessive",
+        "antonyms": "stable, calm",
+        "example": "She showed neurotic tendencies under stress."
+      },
+      {
+        "word": "introspective",
+        "meaning": "characterized by examining one's own thoughts and feelings",
+        "japaneseMeaning": "内省的な、自己観察的な",
+        "synonyms": "reflective, contemplative",
+        "antonyms": "outgoing, unreflective",
+        "example": "He became introspective after the life-changing event."
+      },
+      {
+        "word": "compulsive",
+        "meaning": "resulting from irresistible urges",
+        "japaneseMeaning": "強迫的な、衝動的な",
+        "synonyms": "obsessive, uncontrollable",
+        "antonyms": "controlled, voluntary",
+        "example": "He has a compulsive habit of checking emails repeatedly."
+      },
+      {
+        "word": "analytical",
+        "meaning": "relating to logical reasoning or systematic examination",
+        "japaneseMeaning": "分析的な",
+        "synonyms": "logical, methodical",
+        "antonyms": "intuitive, impulsive",
+        "example": "Analytical skills are essential for problem-solving."
+      },
+      {
+        "word": "dissociative",
+        "meaning": "characterized by a disconnection between thoughts, identity, or consciousness",
+        "japaneseMeaning": "解離性の、分離的な",
+        "synonyms": "detached, disconnected",
+        "antonyms": "integrated, connected",
+        "example": "The patient exhibited dissociative episodes under stress."
+      },
+      {
+        "word": "impulsive",
+        "meaning": "acting without forethought",
+        "japaneseMeaning": "衝動的な",
+        "synonyms": "spontaneous, hasty",
+        "antonyms": "cautious, deliberate",
+        "example": "His impulsive decisions often got him into trouble."
+      },
+      {
+        "word": "psychotic",
+        "meaning": "relating to a severe mental disorder in which thought and emotions are impaired",
+        "japaneseMeaning": "精神病の、精神障害の",
+        "synonyms": "mentally ill, disturbed",
+        "antonyms": "sane, healthy",
+        "example": "The patient exhibited psychotic symptoms requiring hospitalization."
+      }
+    ]
+  }
+ 

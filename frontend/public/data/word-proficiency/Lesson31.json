@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-31",
-  "title": "Lesson 31",
-  "words": [
-    {
-      "word": "fastidious",
-      "meaning": "very attentive to and concerned about accuracy and detail",
-      "japaneseMeaning": "細かいことにこだわる、几帳面な",
-      "synonyms": "meticulous, picky, precise",
-      "antonyms": "careless, sloppy, negligent",
-      "example": "She is fastidious about her appearance.",
-      "japaneseExample": "彼女は外見に非常にこだわる。"
-    },
-    {
-      "word": "fathom",
-      "meaning": "to understand after much thought; to measure the depth of",
-      "japaneseMeaning": "理解する、測る",
-      "synonyms": "comprehend, grasp, discern",
-      "antonyms": "misunderstand, confuse, misinterpret",
-      "example": "He could not fathom why she was upset.",
-      "japaneseExample": "彼はなぜ彼女が怒っているのか理解できなかった。"
-    },
-    {
-      "word": "fatuous",
-      "meaning": "silly and pointless",
-      "japaneseMeaning": "愚かな、無意味な",
-      "synonyms": "inane, foolish, absurd",
-      "antonyms": "sensible, intelligent, meaningful",
-      "example": "It was a fatuous comment that annoyed everyone.",
-      "japaneseExample": "それは皆を苛立たせる愚かな発言だった。"
-    },
-    {
-      "word": "fecund",
-      "meaning": "intellectually productive or fertile; producing abundant offspring",
-      "japaneseMeaning": "多産の、創造的な",
-      "synonyms": "fertile, prolific, fruitful",
-      "antonyms": "barren, infertile, unproductive",
-      "example": "The artist had a fecund imagination.",
-      "japaneseExample": "その芸術家は創造的な想像力を持っていた。"
-    },
-    {
-      "word": "feeble",
-      "meaning": "lacking physical strength; weak",
-      "japaneseMeaning": "弱々しい、力のない",
-      "synonyms": "weak, frail, delicate",
-      "antonyms": "strong, robust, powerful",
-      "example": "The patient felt too feeble to walk.",
-      "japaneseExample": "患者は歩くにはあまりにも弱々しかった。"
-    },
-    {
-      "word": "felicity",
-      "meaning": "intense happiness; the ability to find appropriate expression for one's thoughts",
-      "japaneseMeaning": "幸福、巧みさ",
-      "synonyms": "happiness, bliss, delight",
-      "antonyms": "misery, unhappiness, sorrow",
-      "example": "Her speech was full of felicity and charm.",
-      "japaneseExample": "彼女のスピーチは幸福感と魅力にあふれていた。"
-    },
-    {
-      "word": "fervent",
-      "meaning": "having or displaying passionate intensity",
-      "japaneseMeaning": "熱烈な、情熱的な",
-      "synonyms": "passionate, ardent, zealous",
-      "antonyms": "apathetic, indifferent, unemotional",
-      "example": "He is a fervent supporter of the arts.",
-      "japaneseExample": "彼は芸術の熱心な支持者だ。"
-    },
-    {
-      "word": "fervid",
-      "meaning": "intensely enthusiastic or passionate, especially to an excessive degree",
-      "japaneseMeaning": "熱烈な、熱心な",
-      "synonyms": "passionate, fervent, ardent",
-      "antonyms": "apathetic, indifferent, lukewarm",
-      "example": "The politician gave a fervid speech to rally support.",
-      "japaneseExample": "政治家は支持を集めるために熱烈な演説を行った。"
-    },
-    {
-      "word": "fetter",
-      "meaning": "to restrain with chains or shackles; to restrict freedom",
-      "japaneseMeaning": "束縛する、拘束する",
-      "synonyms": "restrain, bind, shackle",
-      "antonyms": "free, liberate, release",
-      "example": "He felt fettered by the rules of the organization.",
-      "japaneseExample": "彼は組織の規則に束縛されていると感じた。"
-    },
-    {
-      "word": "fiasco",
-      "meaning": "a complete failure, especially in a humiliating way",
-      "japaneseMeaning": "大失敗、惨事",
-      "synonyms": "debacle, disaster, flop",
-      "antonyms": "success, triumph, achievement",
-      "example": "The event turned into a fiasco due to poor planning.",
-      "japaneseExample": "そのイベントは計画の不備で大失敗に終わった。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-31",
+    "title": "Lesson 31",
+    "paragraph": "This lesson focuses on social dynamics, including conformity, integration, and marginalization.",
+    "words": [
+      {
+        "word": "conformity",
+        "meaning": "compliance with standards, rules, or laws",
+        "japaneseMeaning": "順応、従順",
+        "synonyms": "compliance, obedience",
+        "antonyms": "nonconformity, rebellion",
+        "example": "Social pressure can lead to conformity among peers."
+      },
+      {
+        "word": "deviance",
+        "meaning": "behavior that violates social norms",
+        "japaneseMeaning": "逸脱、常識外れ",
+        "synonyms": "abnormality, transgression",
+        "antonyms": "normality, conformity",
+        "example": "Deviance is studied in sociology to understand social control."
+      },
+      {
+        "word": "ostracism",
+        "meaning": "exclusion from a society or group",
+        "japaneseMeaning": "追放、排斥",
+        "synonyms": "exclusion, banishment",
+        "antonyms": "inclusion, acceptance",
+        "example": "He suffered ostracism after breaking the community rules."
+      },
+      {
+        "word": "inclusion",
+        "meaning": "the act of including people or groups",
+        "japaneseMeaning": "包含、参加",
+        "synonyms": "integration, acceptance",
+        "antonyms": "exclusion, segregation",
+        "example": "Policies promoted inclusion of marginalized groups."
+      },
+      {
+        "word": "assimilation",
+        "meaning": "the process of adapting or integrating into a group",
+        "japaneseMeaning": "同化、吸収",
+        "synonyms": "integration, absorption",
+        "antonyms": "alienation, isolation",
+        "example": "Immigrants often face pressure for cultural assimilation."
+      },
+      {
+        "word": "integration",
+        "meaning": "the process of combining parts into a whole",
+        "japaneseMeaning": "統合、融和",
+        "synonyms": "unification, incorporation",
+        "antonyms": "segregation, separation",
+        "example": "Integration of technology in education enhances learning."
+      },
+      {
+        "word": "marginalization",
+        "meaning": "treatment of a person or group as insignificant",
+        "japaneseMeaning": "社会的疎外、周縁化",
+        "synonyms": "exclusion, neglect",
+        "antonyms": "inclusion, recognition",
+        "example": "The policies led to the marginalization of certain communities."
+      },
+      {
+        "word": "solidarity",
+        "meaning": "unity among individuals with common interests",
+        "japaneseMeaning": "連帯、団結",
+        "synonyms": "unity, cohesion",
+        "antonyms": "division, discord",
+        "example": "Workers showed solidarity during the strike."
+      },
+      {
+        "word": "alienation",
+        "meaning": "feeling of being isolated from a group or society",
+        "japaneseMeaning": "疎外、孤立",
+        "synonyms": "estrangement, isolation",
+        "antonyms": "integration, connection",
+        "example": "He experienced alienation in the new school."
+      },
+      {
+        "word": "stratification",
+        "meaning": "arrangement into social layers or classes",
+        "japaneseMeaning": "階層化、層別",
+        "synonyms": "hierarchy, layering",
+        "antonyms": "equality, leveling",
+        "example": "Socioeconomic stratification affects access to resources."
+      }
+    ]
+  }
+ 

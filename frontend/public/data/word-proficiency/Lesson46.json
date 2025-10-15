@@ -1,96 +1,87 @@
-{
-  "lesson_id": "eiken-1-46",
-  "title": "Lesson 46",
-  "words": [
-    {
-      "word": "magnanimous",
-      "meaning": "generous and forgiving; noble in spirit",
-      "japaneseMeaning": "寛大な、度量の大きい",
-      "synonyms": "generous, noble, charitable",
-      "antonyms": "selfish, petty, vindictive",
-      "example": "She was magnanimous in victory, praising her opponent.",
-      "japaneseExample": "彼女は勝利において寛大で、対戦相手を称賛した。"
-    },
-    {
-      "word": "malevolent",
-      "meaning": "having or showing a wish to do evil to others",
-      "japaneseMeaning": "悪意のある、邪悪な",
-      "synonyms": "malicious, evil, spiteful",
-      "antonyms": "benevolent, kind, good-natured",
-      "example": "The malevolent character plotted against the hero.",
-      "japaneseExample": "その悪意のある人物は英雄に対して陰謀を企てた。"
-    },
-    {
-      "word": "malleable",
-      "meaning": "capable of being shaped or influenced; adaptable",
-      "japaneseMeaning": "柔軟な、影響を受けやすい",
-      "synonyms": "pliable, adaptable, ductile",
-      "antonyms": "rigid, inflexible, unyielding",
-      "example": "Young minds are malleable and receptive to new ideas.",
-      "japaneseExample": "若い心は柔軟で、新しい考えを受け入れやすい。"
-    },
-    {
-      "word": "manifest",
-      "meaning": "clear or obvious to the mind or eye; to display or show",
-      "japaneseMeaning": "明白な、はっきりした；示す",
-      "synonyms": "obvious, apparent, evident",
-      "antonyms": "hidden, obscure, latent",
-      "example": "Her joy was manifest in her bright smile.",
-      "japaneseExample": "彼女の喜びは明白で、輝く笑顔に表れていた。"
-    },
-    {
-      "word": "marred",
-      "meaning": "damaged or spoiled to a certain extent",
-      "japaneseMeaning": "損なわれた、傷ついた",
-      "synonyms": "damaged, blemished, impaired",
-      "antonyms": "perfect, unspoiled, intact",
-      "example": "The painting was marred by water stains.",
-      "japaneseExample": "その絵は水染みによって損なわれていた。"
-    },
-    {
-      "word": "maudlin",
-      "meaning": "overly sentimental, often through drunkenness",
-      "japaneseMeaning": "感傷的な、涙もろい",
-      "synonyms": "sentimental, tearful, lachrymose",
-      "antonyms": "unemotional, stoic, unsentimental",
-      "example": "He became maudlin after a few drinks.",
-      "japaneseExample": "彼は少し酒を飲むと感傷的になった。"
-    },
-    {
-      "word": "meander",
-      "meaning": "to wander aimlessly or follow a winding course",
-      "japaneseMeaning": "曲がりくねって進む、ぶらぶら歩く",
-      "synonyms": "wander, roam, drift",
-      "antonyms": "rush, direct, proceed straight",
-      "example": "They meandered through the streets of the old town.",
-      "japaneseExample": "彼らは旧市街の通りをぶらぶら歩いた。"
-    },
-    {
-      "word": "mediocre",
-      "meaning": "of only average quality; not very good",
-      "japaneseMeaning": "平凡な、二流の",
-      "synonyms": "average, ordinary, unremarkable",
-      "antonyms": "excellent, outstanding, exceptional",
-      "example": "The performance was mediocre and failed to impress.",
-      "japaneseExample": "その演技は平凡で、印象に残らなかった。"
-    },
-    {
-      "word": "melancholy",
-      "meaning": "a feeling of deep sadness; gloomy",
-      "japaneseMeaning": "憂鬱、哀愁",
-      "synonyms": "sadness, gloom, sorrowful",
-      "antonyms": "happiness, joy, cheerfulness",
-      "example": "A sense of melancholy hung over the old house.",
-      "japaneseExample": "古い家には哀愁が漂っていた。"
-    },
-    {
-      "word": "menace",
-      "meaning": "a threat or danger; to threaten",
-      "japaneseMeaning": "脅威、危険；脅かす",
-      "synonyms": "threat, danger, hazard",
-      "antonyms": "safety, protection, security",
-      "example": "The storm posed a menace to the coastal town.",
-      "japaneseExample": "嵐は沿岸の町に脅威を与えた。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-46",
+    "title": "Lesson 46",
+    "paragraph": "This lesson focuses on justice and lawfulness, covering fairness, legality, and enforcement.",
+    "words": [
+      {
+        "word": "impartiality",
+        "meaning": "treating all parties equally; fairness",
+        "japaneseMeaning": "公平、公正",
+        "synonyms": "neutrality, fairness",
+        "antonyms": "bias, prejudice",
+        "example": "Judges must maintain impartiality in court."
+      },
+      {
+        "word": "jurisprudence",
+        "meaning": "the theory or philosophy of law",
+        "japaneseMeaning": "法学、法律学",
+        "synonyms": "law, legal theory",
+        "antonyms": "",
+        "example": "He studied jurisprudence at university."
+      },
+      {
+        "word": "equity",
+        "meaning": "fairness or justice in the way people are treated",
+        "japaneseMeaning": "公平、衡平",
+        "synonyms": "fairness, justice",
+        "antonyms": "injustice, bias",
+        "example": "The new policy ensured equity for all employees."
+      },
+      {
+        "word": "retribution",
+        "meaning": "punishment inflicted as vengeance for a wrong",
+        "japaneseMeaning": "報復、天罰",
+        "synonyms": "vengeance, punishment",
+        "antonyms": "forgiveness, mercy",
+        "example": "The criminal faced retribution for his crimes."
+      },
+      {
+        "word": "deterrence",
+        "meaning": "the action of discouraging criminal behavior through fear of punishment",
+        "japaneseMeaning": "抑止、阻止",
+        "synonyms": "prevention, discouragement",
+        "antonyms": "encouragement, incitement",
+        "example": "Strict laws act as deterrence to crime."
+      },
+      {
+        "word": "legitimacy",
+        "meaning": "lawfulness or authority according to rules",
+        "japaneseMeaning": "正当性、合法性",
+        "synonyms": "validity, legality",
+        "antonyms": "illegitimacy, invalidity",
+        "example": "The government’s legitimacy was questioned after the scandal."
+      },
+      {
+        "word": "vindication",
+        "meaning": "clearance from blame or suspicion",
+        "japaneseMeaning": "正当化、無実の証明",
+        "synonyms": "exoneration, justification",
+        "antonyms": "condemnation, blame",
+        "example": "The evidence led to his vindication."
+      },
+      {
+        "word": "amnesty",
+        "meaning": "an official pardon for people convicted of offenses",
+        "japaneseMeaning": "恩赦、特赦",
+        "synonyms": "pardon, clemency",
+        "antonyms": "punishment, sentence",
+        "example": "The government granted amnesty to political prisoners."
+      },
+      {
+        "word": "arbitration",
+        "meaning": "settlement of a dispute by an impartial third party",
+        "japaneseMeaning": "仲裁、調停",
+        "synonyms": "mediation, conciliation",
+        "antonyms": "conflict, litigation",
+        "example": "The labor dispute was resolved through arbitration."
+      },
+      {
+        "word": "tribunal",
+        "meaning": "a body established to settle certain types of disputes",
+        "japaneseMeaning": "裁判所、裁定機関",
+        "synonyms": "court, panel",
+        "antonyms": "",
+        "example": "The tribunal ruled in favor of the plaintiff."
+      }
+    ]
+  }

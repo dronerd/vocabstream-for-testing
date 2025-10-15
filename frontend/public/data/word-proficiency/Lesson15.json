@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-15",
-  "title": "Lesson 15",
-  "words": [
-    {
-      "word": "conducive",
-      "meaning": "making a certain situation or outcome likely or possible",
-      "japaneseMeaning": "役立つ、助けとなる",
-      "synonyms": "helpful, favorable, beneficial",
-      "antonyms": "harmful, detrimental, obstructive",
-      "example": "A quiet room is conducive to studying.",
-      "japaneseExample": "静かな部屋は勉強に適している。"
-    },
-    {
-      "word": "confound",
-      "meaning": "to cause surprise or confusion; to mix up",
-      "japaneseMeaning": "困惑させる、混乱させる",
-      "synonyms": "confuse, perplex, astonish",
-      "antonyms": "clarify, explain, enlighten",
-      "example": "The unexpected result confounded the scientists.",
-      "japaneseExample": "予期せぬ結果は科学者たちを困惑させた。"
-    },
-    {
-      "word": "conflagration",
-      "meaning": "a large destructive fire",
-      "japaneseMeaning": "大火災",
-      "synonyms": "fire, blaze, inferno",
-      "antonyms": "extinguishment, containment, calm",
-      "example": "The conflagration destroyed several buildings.",
-      "japaneseExample": "大火災は複数の建物を破壊した。"
-    },
-    {
-      "word": "confluence",
-      "meaning": "the junction of two rivers; an act of merging",
-      "japaneseMeaning": "合流、集合",
-      "synonyms": "junction, meeting, convergence",
-      "antonyms": "division, divergence, separation",
-      "example": "The town is located at the confluence of two rivers.",
-      "japaneseExample": "その町は二つの川の合流点に位置している。"
-    },
-    {
-      "word": "conjecture",
-      "meaning": "an opinion or conclusion formed on the basis of incomplete information",
-      "japaneseMeaning": "推測、憶測",
-      "synonyms": "guess, speculation, hypothesis",
-      "antonyms": "fact, certainty, proof",
-      "example": "The cause of the event remains a matter of conjecture.",
-      "japaneseExample": "その出来事の原因は未だ推測の域を出ない。"
-    },
-    {
-      "word": "connoisseur",
-      "meaning": "an expert judge in matters of taste or art",
-      "japaneseMeaning": "鑑識家、通",
-      "synonyms": "expert, specialist, authority",
-      "antonyms": "novice, amateur, beginner",
-      "example": "He is a connoisseur of fine wines.",
-      "japaneseExample": "彼は高級ワインの鑑識家だ。"
-    },
-    {
-      "word": "consensus",
-      "meaning": "general agreement among a group",
-      "japaneseMeaning": "合意、総意",
-      "synonyms": "agreement, accord, unanimity",
-      "antonyms": "disagreement, conflict, dissent",
-      "example": "The team reached a consensus on the project plan.",
-      "japaneseExample": "チームはプロジェクト計画について合意に達した。"
-    },
-    {
-      "word": "conspicuous",
-      "meaning": "standing out so as to be clearly visible",
-      "japaneseMeaning": "目立つ、顕著な",
-      "synonyms": "noticeable, prominent, striking",
-      "antonyms": "inconspicuous, hidden, obscure",
-      "example": "Her bright red coat made her conspicuous in the crowd.",
-      "japaneseExample": "彼女の真っ赤なコートは群衆の中で目立っていた。"
-    },
-    {
-      "word": "construe",
-      "meaning": "to interpret or understand the meaning of something",
-      "japaneseMeaning": "解釈する、理解する",
-      "synonyms": "interpret, understand, explain",
-      "antonyms": "misinterpret, confuse, misunderstand",
-      "example": "Her comments were construed as criticism.",
-      "japaneseExample": "彼女のコメントは批判と解釈された。"
-    },
-    {
-      "word": "contravene",
-      "meaning": "to go against or violate a law or rule",
-      "japaneseMeaning": "違反する、反する",
-      "synonyms": "violate, breach, infringe",
-      "antonyms": "obey, comply, conform",
-      "example": "The company contravened environmental regulations.",
-      "japaneseExample": "その会社は環境規制に違反した。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-15",
+    "title": "Lesson 15",
+    "paragraph": "This lesson covers business and strategy, including organizational management and corporate tactics.",
+    "words": [
+      {
+        "word": "leverage",
+        "meaning": "use of resources to achieve a desired outcome",
+        "japaneseMeaning": "影響力、てこの作用",
+        "synonyms": "advantage, influence",
+        "antonyms": "",
+        "example": "The company leveraged its brand to enter new markets."
+      },
+      {
+        "word": "consolidate",
+        "meaning": "to combine or unify into a stronger whole",
+        "japaneseMeaning": "統合する、強化する",
+        "synonyms": "merge, unify",
+        "antonyms": "fragment, separate",
+        "example": "The firm consolidated its operations in Asia."
+      },
+      {
+        "word": "diversify",
+        "meaning": "to expand into different areas or products",
+        "japaneseMeaning": "多角化する、分散する",
+        "synonyms": "expand, vary",
+        "antonyms": "specialize, concentrate",
+        "example": "The company diversified its portfolio to reduce risk."
+      },
+      {
+        "word": "monopolize",
+        "meaning": "to dominate or control a market exclusively",
+        "japaneseMeaning": "独占する",
+        "synonyms": "corner, dominate",
+        "antonyms": "share, compete",
+        "example": "The corporation monopolized the smartphone market."
+      },
+      {
+        "word": "incentivize",
+        "meaning": "to provide motivation or incentive",
+        "japaneseMeaning": "奨励する、刺激する",
+        "synonyms": "motivate, encourage",
+        "antonyms": "discourage, dissuade",
+        "example": "The policy incentivized employees to improve productivity."
+      },
+      {
+        "word": "delegate",
+        "meaning": "to assign responsibility or authority to someone else",
+        "japaneseMeaning": "委任する、任せる",
+        "synonyms": "assign, entrust",
+        "antonyms": "retain, withhold",
+        "example": "The manager delegated tasks to her team."
+      },
+      {
+        "word": "mitigate",
+        "meaning": "to make less severe or serious",
+        "japaneseMeaning": "軽減する、和らげる",
+        "synonyms": "alleviate, reduce",
+        "antonyms": "aggravate, worsen",
+        "example": "The company implemented measures to mitigate risks."
+      },
+      {
+        "word": "capitalize",
+        "meaning": "to take advantage of a situation for gain",
+        "japaneseMeaning": "活用する、利益を得る",
+        "synonyms": "exploit, utilize",
+        "antonyms": "",
+        "example": "They capitalized on the growing demand for electric cars."
+      },
+      {
+        "word": "streamline",
+        "meaning": "to make more efficient and effective",
+        "japaneseMeaning": "合理化する、効率化する",
+        "synonyms": "simplify, optimize",
+        "antonyms": "complicate, hinder",
+        "example": "The firm streamlined production to reduce costs."
+      },
+      {
+        "word": "restructure",
+        "meaning": "to organize differently for improvement",
+        "japaneseMeaning": "再編成する、構造を変える",
+        "synonyms": "reorganize, overhaul",
+        "antonyms": "",
+        "example": "The company restructured its departments to boost efficiency."
+      }
+    ]
+  }
+ 

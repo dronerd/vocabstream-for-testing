@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-47",
-  "title": "Lesson 47",
-  "words": [
-    {
-      "word": "mendacious",
-      "meaning": "not telling the truth; lying",
-      "japaneseMeaning": "虚偽の、うそつきの",
-      "synonyms": "dishonest, untruthful, deceitful",
-      "antonyms": "honest, truthful, sincere",
-      "example": "The politician gave a mendacious account of events.",
-      "japaneseExample": "その政治家は出来事について虚偽の説明をした。"
-    },
-    {
-      "word": "mercenary",
-      "meaning": "motivated solely by money or material gain; a professional soldier hired for pay",
-      "japaneseMeaning": "金銭目的の、傭兵の",
-      "synonyms": "greedy, money-minded, hired soldier",
-      "antonyms": "altruistic, selfless, volunteer",
-      "example": "He joined the army for mercenary reasons.",
-      "japaneseExample": "彼は金銭目的で軍隊に入った。"
-    },
-    {
-      "word": "meritorious",
-      "meaning": "deserving reward or praise",
-      "japaneseMeaning": "価値のある、称賛に値する",
-      "synonyms": "praiseworthy, commendable, admirable",
-      "antonyms": "disgraceful, unworthy, blameworthy",
-      "example": "Her meritorious efforts were recognized by the committee.",
-      "japaneseExample": "彼女の価値のある努力は委員会によって認められた。"
-    },
-    {
-      "word": "metamorphosis",
-      "meaning": "a transformation or dramatic change",
-      "japaneseMeaning": "変態、変化",
-      "synonyms": "transformation, change, alteration",
-      "antonyms": "stagnation, stability, constancy",
-      "example": "The caterpillar undergoes metamorphosis to become a butterfly.",
-      "japaneseExample": "その幼虫は蝶になるために変態を遂げる。"
-    },
-    {
-      "word": "meticulous",
-      "meaning": "showing great attention to detail; very careful and precise",
-      "japaneseMeaning": "細心の注意を払った、几帳面な",
-      "synonyms": "careful, precise, thorough",
-      "antonyms": "careless, sloppy, negligent",
-      "example": "She kept meticulous records of every transaction.",
-      "japaneseExample": "彼女はすべての取引を細心の注意で記録した。"
-    },
-    {
-      "word": "mettle",
-      "meaning": "courage and fortitude; ability to cope well with difficulties",
-      "japaneseMeaning": "度胸、気概",
-      "synonyms": "courage, spirit, resilience",
-      "antonyms": "cowardice, timidity, weakness",
-      "example": "She showed her mettle in the face of adversity.",
-      "japaneseExample": "彼女は逆境に直面しても気概を示した。"
-    },
-    {
-      "word": "misanthrope",
-      "meaning": "a person who dislikes or distrusts humankind",
-      "japaneseMeaning": "人間嫌い、厭世家",
-      "synonyms": "cynic, recluse, skeptic",
-      "antonyms": "philanthropist, humanitarian, socialite",
-      "example": "The old man was a misanthrope, avoiding contact with everyone.",
-      "japaneseExample": "その老人は人間嫌いで、誰とも接触しようとしなかった。"
-    },
-    {
-      "word": "mitigate",
-      "meaning": "to make less severe, serious, or painful",
-      "japaneseMeaning": "和らげる、軽減する",
-      "synonyms": "alleviate, reduce, lessen",
-      "antonyms": "aggravate, worsen, intensify",
-      "example": "The government took steps to mitigate the effects of the disaster.",
-      "japaneseExample": "政府は災害の影響を和らげるために措置を講じた。"
-    },
-    {
-      "word": "modicum",
-      "meaning": "a small quantity of a particular thing, especially something valuable or desirable",
-      "japaneseMeaning": "わずか、少量",
-      "synonyms": "bit, fragment, iota",
-      "antonyms": "abundance, plenty, excess",
-      "example": "He showed a modicum of respect to his critics.",
-      "japaneseExample": "彼は批評家にわずかな敬意を示した。"
-    },
-    {
-      "word": "mollify",
-      "meaning": "to appease the anger or anxiety of someone; to soften",
-      "japaneseMeaning": "なだめる、和らげる",
-      "synonyms": "placate, soothe, calm",
-      "antonyms": "aggravate, irritate, enrage",
-      "example": "She tried to mollify her angry boss.",
-      "japaneseExample": "彼女は怒った上司をなだめようとした。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-47",
+    "title": "Lesson 47",
+    "paragraph": "This lesson examines authority and control, including dominance, governance, and regulation.",
+    "words": [
+      {
+        "word": "dominance",
+        "meaning": "power and influence over others",
+        "japaneseMeaning": "支配、優勢",
+        "synonyms": "control, authority",
+        "antonyms": "subordination, weakness",
+        "example": "The dominance of the company affected market prices."
+      },
+      {
+        "word": "coercion",
+        "meaning": "forcing someone to act by threat or pressure",
+        "japaneseMeaning": "強制、威圧",
+        "synonyms": "compulsion, force",
+        "antonyms": "volition, freedom",
+        "example": "The confession was obtained under coercion."
+      },
+      {
+        "word": "subjugation",
+        "meaning": "bringing under control or domination",
+        "japaneseMeaning": "従属、征服",
+        "synonyms": "domination, control",
+        "antonyms": "liberation, freedom",
+        "example": "The subjugation of the region was complete."
+      },
+      {
+        "word": "regulation",
+        "meaning": "a rule or directive made to control conduct",
+        "japaneseMeaning": "規制、管理",
+        "synonyms": "rule, guideline",
+        "antonyms": "freedom, deregulation",
+        "example": "The government issued new safety regulations."
+      },
+      {
+        "word": "enforcement",
+        "meaning": "the act of compelling observance of a law or rule",
+        "japaneseMeaning": "執行、強制",
+        "synonyms": "implementation, imposition",
+        "antonyms": "neglect, disregard",
+        "example": "Police are responsible for law enforcement."
+      },
+      {
+        "word": "surveillance",
+        "meaning": "close observation, especially of a suspect or area",
+        "japaneseMeaning": "監視、見張り",
+        "synonyms": "monitoring, observation",
+        "antonyms": "neglect, ignorance",
+        "example": "The facility was under 24-hour surveillance."
+      },
+      {
+        "word": "governance",
+        "meaning": "the action or manner of governing",
+        "japaneseMeaning": "統治、管理",
+        "synonyms": "administration, management",
+        "antonyms": "chaos, misrule",
+        "example": "Corporate governance ensures accountability."
+      },
+      {
+        "word": "influence",
+        "meaning": "the capacity to have an effect on others",
+        "japaneseMeaning": "影響力、作用",
+        "synonyms": "impact, control",
+        "antonyms": "powerlessness, impotence",
+        "example": "Her influence shaped company policy."
+      },
+      {
+        "word": "jurisdiction",
+        "meaning": "the official power to make legal decisions",
+        "japaneseMeaning": "管轄権、裁判権",
+        "synonyms": "authority, control",
+        "antonyms": "anarchy, lawlessness",
+        "example": "The case fell under federal jurisdiction."
+      },
+      {
+        "word": "supremacy",
+        "meaning": "the state of being the highest in power or authority",
+        "japaneseMeaning": "至高、優位",
+        "synonyms": "dominance, preeminence",
+        "antonyms": "inferiority, subordination",
+        "example": "The monarchy asserted its supremacy over the region."
+      }
+    ]
+  }
+

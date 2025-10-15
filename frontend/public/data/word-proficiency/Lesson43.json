@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-43",
-  "title": "Lesson 43",
-  "words": [
-    {
-      "word": "irreproachable",
-      "meaning": "beyond criticism; faultless",
-      "japaneseMeaning": "非の打ちどころのない、完璧な",
-      "synonyms": "faultless, blameless, exemplary",
-      "antonyms": "blameworthy, faulty, imperfect",
-      "example": "Her behavior was irreproachable during the ceremony.",
-      "japaneseExample": "式典中、彼女の行動は非の打ちどころがなかった。"
-    },
-    {
-      "word": "irresolute",
-      "meaning": "showing or feeling hesitancy; uncertain",
-      "japaneseMeaning": "優柔不断な、決断力のない",
-      "synonyms": "indecisive, hesitant, wavering",
-      "antonyms": "determined, resolute, decisive",
-      "example": "He remained irresolute despite repeated advice.",
-      "japaneseExample": "何度も助言を受けても、彼は優柔不断なままだった。"
-    },
-    {
-      "word": "irrevocable",
-      "meaning": "not able to be changed, reversed, or recovered",
-      "japaneseMeaning": "取り消せない、不可逆的な",
-      "synonyms": "irreversible, unalterable, final",
-      "antonyms": "reversible, changeable, alterable",
-      "example": "The decision to resign was irrevocable.",
-      "japaneseExample": "辞職の決定は取り消せなかった。"
-    },
-    {
-      "word": "jargon",
-      "meaning": "specialized language used by a particular group or profession",
-      "japaneseMeaning": "専門用語、業界用語",
-      "synonyms": "terminology, lingo, argot",
-      "antonyms": "plain language, everyday language, layman’s terms",
-      "example": "The manual was full of technical jargon.",
-      "japaneseExample": "そのマニュアルは専門用語でいっぱいだった。"
-    },
-    {
-      "word": "jeopardy",
-      "meaning": "danger of loss, harm, or failure",
-      "japaneseMeaning": "危険、危うさ",
-      "synonyms": "danger, risk, peril",
-      "antonyms": "safety, security, protection",
-      "example": "His careless actions put the team in jeopardy.",
-      "japaneseExample": "彼の軽率な行動がチームを危険にさらした。"
-    },
-    {
-      "word": "jettison",
-      "meaning": "to discard or throw something away, often from an aircraft or ship",
-      "japaneseMeaning": "投棄する、放棄する",
-      "synonyms": "discard, dump, abandon",
-      "antonyms": "retain, keep, hold onto",
-      "example": "The pilot had to jettison fuel to land safely.",
-      "japaneseExample": "パイロットは安全に着陸するために燃料を投棄しなければならなかった。"
-    },
-    {
-      "word": "judicious",
-      "meaning": "having, showing, or done with good judgment or sense",
-      "japaneseMeaning": "賢明な、慎重な",
-      "synonyms": "wise, prudent, sensible",
-      "antonyms": "foolish, imprudent, unwise",
-      "example": "She made a judicious decision to invest in the project.",
-      "japaneseExample": "彼女はそのプロジェクトに投資する賢明な判断を下した。"
-    },
-    {
-      "word": "juxtapose",
-      "meaning": "to place side by side for comparison or contrast",
-      "japaneseMeaning": "並置する、対比する",
-      "synonyms": "compare, contrast, collate",
-      "antonyms": "separate, divide, disconnect",
-      "example": "The exhibition juxtaposes modern art with classical pieces.",
-      "japaneseExample": "その展覧会では現代美術と古典作品が並置されていた。"
-    },
-    {
-      "word": "kaleidoscopic",
-      "meaning": "having complex patterns of colors or elements that constantly change",
-      "japaneseMeaning": "万華鏡のような、多彩で変化に富む",
-      "synonyms": "multicolored, varied, changing",
-      "antonyms": "monochromatic, static, uniform",
-      "example": "The city offered a kaleidoscopic view of cultures.",
-      "japaneseExample": "その都市は多彩で変化に富む文化の光景を提供した。"
-    },
-    {
-      "word": "keen",
-      "meaning": "having a sharp edge, intense, or highly developed",
-      "japaneseMeaning": "鋭い、熱心な、敏感な",
-      "synonyms": "sharp, eager, perceptive",
-      "antonyms": "dull, indifferent, blunt",
-      "example": "She has a keen interest in environmental issues.",
-      "japaneseExample": "彼女は環境問題に強い関心を持っている。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-43",
+    "title": "Lesson 43",
+    "paragraph": "This lesson covers war and violence, including aggression, combat, and domination.",
+    "words": [
+      {
+        "word": "bellicose",
+        "meaning": "demonstrating aggression and willingness to fight",
+        "japaneseMeaning": "好戦的な、けんか腰の",
+        "synonyms": "aggressive, hostile",
+        "antonyms": "peaceful, pacifist",
+        "example": "The bellicose leader threatened neighboring countries."
+      },
+      {
+        "word": "militant",
+        "meaning": "combative and aggressive in support of a cause",
+        "japaneseMeaning": "戦闘的な、闘争的な",
+        "synonyms": "combative, aggressive",
+        "antonyms": "peaceful, passive",
+        "example": "Militant activists protested against the policy."
+      },
+      {
+        "word": "combative",
+        "meaning": "ready or eager to fight or argue",
+        "japaneseMeaning": "好戦的な、闘争的な",
+        "synonyms": "aggressive, pugnacious",
+        "antonyms": "peaceful, friendly",
+        "example": "His combative attitude caused tension in the meeting."
+      },
+      {
+        "word": "aggressive",
+        "meaning": "ready or likely to attack or confront",
+        "japaneseMeaning": "攻撃的な、積極的な",
+        "synonyms": "hostile, forceful",
+        "antonyms": "passive, peaceful",
+        "example": "The company took an aggressive approach to expand its market."
+      },
+      {
+        "word": "belligerent",
+        "meaning": "hostile and warlike",
+        "japaneseMeaning": "交戦的な、敵対的な",
+        "synonyms": "hostile, combative",
+        "antonyms": "friendly, peaceful",
+        "example": "The belligerent nations refused to negotiate."
+      },
+      {
+        "word": "insurgent",
+        "meaning": "a rebel or revolutionary",
+        "japaneseMeaning": "反乱者、暴動者",
+        "synonyms": "rebel, revolutionary",
+        "antonyms": "loyalist, supporter",
+        "example": "Insurgent forces occupied the city."
+      },
+      {
+        "word": "conquest",
+        "meaning": "the act of taking control by force",
+        "japaneseMeaning": "征服、制圧",
+        "synonyms": "capture, takeover",
+        "antonyms": "surrender, loss",
+        "example": "The conquest of the territory changed the map."
+      },
+      {
+        "word": "annihilation",
+        "meaning": "complete destruction",
+        "japaneseMeaning": "全滅、消滅",
+        "synonyms": "destruction, obliteration",
+        "antonyms": "creation, survival",
+        "example": "The city faced near-annihilation during the war."
+      },
+      {
+        "word": "incursion",
+        "meaning": "a sudden invasion or attack",
+        "japaneseMeaning": "侵入、侵攻",
+        "synonyms": "raid, invasion",
+        "antonyms": "retreat, withdrawal",
+        "example": "Enemy incursions threatened the border."
+      },
+      {
+        "word": "subjugation",
+        "meaning": "the act of bringing under control",
+        "japaneseMeaning": "征服、支配",
+        "synonyms": "domination, conquest",
+        "antonyms": "liberation, freedom",
+        "example": "The subjugation of the local population was complete."
+      }
+    ]
+  }

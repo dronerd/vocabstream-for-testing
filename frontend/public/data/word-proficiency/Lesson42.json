@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-42",
-  "title": "Lesson 42",
-  "words": [
-    {
-      "word": "inundate",
-      "meaning": "to flood or overwhelm",
-      "japaneseMeaning": "氾濫させる、圧倒する",
-      "synonyms": "flood, overwhelm, deluge",
-      "antonyms": "drain, underwhelm, dry",
-      "example": "The office was inundated with phone calls.",
-      "japaneseExample": "そのオフィスは電話で溢れかえった。"
-    },
-    {
-      "word": "inure",
-      "meaning": "to become accustomed to something unpleasant",
-      "japaneseMeaning": "慣れさせる、順応させる",
-      "synonyms": "accustom, adapt, toughen",
-      "antonyms": "sensitize, weaken, soften",
-      "example": "Years of hardship inured him to difficulties.",
-      "japaneseExample": "何年もの困難が彼を困難に慣れさせた。"
-    },
-    {
-      "word": "invective",
-      "meaning": "insulting, abusive, or highly critical language",
-      "japaneseMeaning": "罵倒、痛烈な非難",
-      "synonyms": "abuse, vitriol, criticism",
-      "antonyms": "praise, compliment, accolade",
-      "example": "He was subjected to a torrent of invective.",
-      "japaneseExample": "彼は激しい罵倒を受けた。"
-    },
-    {
-      "word": "inveigh",
-      "meaning": "to speak or write about something with great hostility",
-      "japaneseMeaning": "激しく非難する、痛烈に批判する",
-      "synonyms": "rail, protest, denounce",
-      "antonyms": "praise, support, endorse",
-      "example": "He inveighed against the new policy in his speech.",
-      "japaneseExample": "彼は演説で新しい政策を激しく非難した。"
-    },
-    {
-      "word": "inveigle",
-      "meaning": "to persuade someone to do something by means of deception or flattery",
-      "japaneseMeaning": "巧みに誘い込む、騙してさせる",
-      "synonyms": "entice, lure, seduce",
-      "antonyms": "discourage, dissuade, repel",
-      "example": "She inveigled him into joining the scheme.",
-      "japaneseExample": "彼女は彼を巧みに計画に加わらせた。"
-    },
-    {
-      "word": "inveterate",
-      "meaning": "having a particular habit, activity, or interest that is long-established and unlikely to change",
-      "japaneseMeaning": "常習的な、根深い",
-      "synonyms": "habitual, chronic, ingrained",
-      "antonyms": "occasional, sporadic, rare",
-      "example": "He is an inveterate gambler.",
-      "japaneseExample": "彼は常習的なギャンブラーだ。"
-    },
-    {
-      "word": "invidious",
-      "meaning": "likely to arouse resentment or anger in others",
-      "japaneseMeaning": "人の反感を買う、不快な",
-      "synonyms": "resentful, offensive, discriminatory",
-      "antonyms": "harmless, fair, unoffensive",
-      "example": "The manager made an invidious comparison between the employees.",
-      "japaneseExample": "マネージャーは従業員間で不快な比較をした。"
-    },
-    {
-      "word": "irascible",
-      "meaning": "easily angered; irritable",
-      "japaneseMeaning": "怒りっぽい、短気な",
-      "synonyms": "irritable, hot-tempered, touchy",
-      "antonyms": "calm, patient, easygoing",
-      "example": "He had an irascible temper that was difficult to handle.",
-      "japaneseExample": "彼は扱いにくい短気な性格だった。"
-    },
-    {
-      "word": "irrefutable",
-      "meaning": "impossible to deny or disprove",
-      "japaneseMeaning": "反論できない、議論の余地のない",
-      "synonyms": "undeniable, incontrovertible, unquestionable",
-      "antonyms": "refutable, disputable, questionable",
-      "example": "The scientist presented irrefutable evidence.",
-      "japaneseExample": "その科学者は反論できない証拠を提示した。"
-    },
-    {
-      "word": "irrelevant",
-      "meaning": "not connected with or relevant to something",
-      "japaneseMeaning": "関係のない、無関係の",
-      "synonyms": "unrelated, immaterial, extraneous",
-      "antonyms": "relevant, pertinent, applicable",
-      "example": "His comments were irrelevant to the discussion.",
-      "japaneseExample": "彼のコメントは議論に関係がなかった。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-42",
+    "title": "Lesson 42",
+    "paragraph": "This lesson examines chaos and conflict, including disorder, struggle, and upheaval.",
+    "words": [
+      {
+        "word": "anarchy",
+        "meaning": "absence of government and law; disorder",
+        "japaneseMeaning": "無政府状態、混乱",
+        "synonyms": "lawlessness, chaos",
+        "antonyms": "order, governance",
+        "example": "The collapse of the regime led to anarchy."
+      },
+      {
+        "word": "discord",
+        "meaning": "disagreement or conflict between people",
+        "japaneseMeaning": "不和、対立",
+        "synonyms": "conflict, strife",
+        "antonyms": "harmony, accord",
+        "example": "There was discord among the team members."
+      },
+      {
+        "word": "upheaval",
+        "meaning": "a violent or sudden change or disruption",
+        "japaneseMeaning": "激変、動乱",
+        "synonyms": "turmoil, disturbance",
+        "antonyms": "stability, calm",
+        "example": "The war caused social upheaval."
+      },
+      {
+        "word": "turmoil",
+        "meaning": "a state of great disturbance or confusion",
+        "japaneseMeaning": "混乱、動揺",
+        "synonyms": "chaos, confusion",
+        "antonyms": "peace, order",
+        "example": "The company was in turmoil after the CEO resigned."
+      },
+      {
+        "word": "mutiny",
+        "meaning": "rebellion against authority, especially by soldiers or sailors",
+        "japaneseMeaning": "反乱、謀反",
+        "synonyms": "rebellion, revolt",
+        "antonyms": "obedience, compliance",
+        "example": "The crew staged a mutiny against the captain."
+      },
+      {
+        "word": "insurrection",
+        "meaning": "an act of revolting against civil authority",
+        "japaneseMeaning": "暴動、反乱",
+        "synonyms": "rebellion, uprising",
+        "antonyms": "peace, submission",
+        "example": "The insurrection was quickly suppressed."
+      },
+      {
+        "word": "rebellion",
+        "meaning": "an act of violent or open resistance to authority",
+        "japaneseMeaning": "反抗、反乱",
+        "synonyms": "uprising, revolt",
+        "antonyms": "obedience, compliance",
+        "example": "The rebellion challenged the government."
+      },
+      {
+        "word": "hostility",
+        "meaning": "unfriendly or antagonistic behavior",
+        "japaneseMeaning": "敵意、対立",
+        "synonyms": "antagonism, aggression",
+        "antonyms": "friendliness, amity",
+        "example": "There was open hostility between the two nations."
+      },
+      {
+        "word": "disruption",
+        "meaning": "disturbance that interrupts normal activity",
+        "japaneseMeaning": "混乱、妨害",
+        "synonyms": "interruption, disorder",
+        "antonyms": "continuity, order",
+        "example": "The storm caused major disruption to traffic."
+      },
+      {
+        "word": "turmoil",
+        "meaning": "a state of confusion or uncertainty",
+        "japaneseMeaning": "混乱、動揺",
+        "synonyms": "chaos, disorder",
+        "antonyms": "stability, calm",
+        "example": "Political turmoil affected the entire region."
+      }
+    ]
+  }
+

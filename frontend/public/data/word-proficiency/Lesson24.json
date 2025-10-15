@@ -1,96 +1,88 @@
 {
-  "lesson_id": "eiken-1-24",
-  "title": "Lesson 24",
-  "words": [
-    {
-      "word": "dogged",
-      "meaning": "persistent and determined",
-      "japaneseMeaning": "頑固な、粘り強い",
-      "synonyms": "persistent, tenacious, determined",
-      "antonyms": "lazy, irresolute, weak",
-      "example": "Her dogged efforts eventually paid off.",
-      "japaneseExample": "彼女の粘り強い努力はついに報われた。"
-    },
-    {
-      "word": "dogmatic",
-      "meaning": "asserting opinions in an authoritative or arrogant manner",
-      "japaneseMeaning": "独断的な、教条的な",
-      "synonyms": "authoritative, opinionated, rigid",
-      "antonyms": "flexible, open-minded, tolerant",
-      "example": "His dogmatic approach alienated his colleagues.",
-      "japaneseExample": "彼の独断的な態度は同僚たちを遠ざけた。"
-    },
-    {
-      "word": "dormant",
-      "meaning": "inactive, asleep, or in a state of rest",
-      "japaneseMeaning": "休止中の、眠っている",
-      "synonyms": "inactive, latent, asleep",
-      "antonyms": "active, awake, functioning",
-      "example": "The volcano had been dormant for centuries.",
-      "japaneseExample": "その火山は何世紀も休止していた。"
-    },
-    {
-      "word": "dubious",
-      "meaning": "hesitating or doubting; questionable",
-      "japaneseMeaning": "疑わしい、不確かな",
-      "synonyms": "doubtful, uncertain, suspicious",
-      "antonyms": "certain, trustworthy, reliable",
-      "example": "He made a dubious claim about his achievements.",
-      "japaneseExample": "彼は自身の業績について疑わしい主張をした。"
-    },
-    {
-      "word": "duplicity",
-      "meaning": "deceitfulness in speech or behavior; double-dealing",
-      "japaneseMeaning": "二枚舌、詐欺",
-      "synonyms": "deceit, fraud, dishonesty",
-      "antonyms": "honesty, sincerity, integrity",
-      "example": "The spy was accused of duplicity.",
-      "japaneseExample": "そのスパイは二枚舌であると非難された。"
-    },
-    {
-      "word": "duress",
-      "meaning": "threats or pressure used to coerce someone",
-      "japaneseMeaning": "強制、圧力",
-      "synonyms": "coercion, compulsion, intimidation",
-      "antonyms": "freedom, liberty, choice",
-      "example": "He signed the contract under duress.",
-      "japaneseExample": "彼は強制のもとで契約書に署名した。"
-    },
-    {
-      "word": "ebullient",
-      "meaning": "cheerful and full of energy",
-      "japaneseMeaning": "元気いっぱいの、陽気な",
-      "synonyms": "exuberant, enthusiastic, lively",
-      "antonyms": "depressed, apathetic, gloomy",
-      "example": "She was ebullient after receiving the good news.",
-      "japaneseExample": "彼女は良い知らせを受けて元気いっぱいだった。"
-    },
-    {
-      "word": "eclectic",
-      "meaning": "deriving ideas, style, or taste from a broad and diverse range of sources",
-      "japaneseMeaning": "折衷的な、多様な要素を取り入れた",
-      "synonyms": "diverse, varied, wide-ranging",
-      "antonyms": "narrow, uniform, limited",
-      "example": "His music taste is eclectic, ranging from classical to hip-hop.",
-      "japaneseExample": "彼の音楽の趣味は折衷的で、クラシックからヒップホップまで幅広い。"
-    },
-    {
-      "word": "eclipse",
-      "meaning": "the obscuring of one thing by another; a loss of significance or power",
-      "japaneseMeaning": "食、光の遮蔽、影響力の低下",
-      "synonyms": "overshadowing, obscuration, darkening",
-      "antonyms": "reveal, illuminate, highlight",
-      "example": "Her achievements were eclipsed by her brother’s fame.",
-      "japaneseExample": "彼女の業績は兄の名声にかき消された。"
-    },
-    {
-      "word": "edify",
-      "meaning": "to instruct or improve someone morally or intellectually",
-      "japaneseMeaning": "啓発する、教化する",
-      "synonyms": "educate, enlighten, instruct",
-      "antonyms": "mislead, confuse, corrupt",
-      "example": "The teacher’s lecture aimed to edify the students.",
-      "japaneseExample": "教師の講義は学生たちを啓発することを目的としていた。"
-    }
-  ]
-}
+    "lesson_id": "eiken-1-24",
+    "title": "Lesson 24",
+    "paragraph": "This lesson focuses on literature and interpretation, including narrative structures and stylistic devices.",
+    "words": [
+      {
+        "word": "allegorical",
+        "meaning": "containing a symbolic meaning beyond the literal sense",
+        "japaneseMeaning": "寓意的な",
+        "synonyms": "symbolic, metaphorical",
+        "antonyms": "literal, factual",
+        "example": "The story is allegorical, representing political struggles."
+      },
+      {
+        "word": "metaphorical",
+        "meaning": "using metaphors to convey ideas or emotions",
+        "japaneseMeaning": "比喩的な",
+        "synonyms": "figurative, symbolic",
+        "antonyms": "literal, straightforward",
+        "example": "She used metaphorical language to describe her feelings."
+      },
+      {
+        "word": "narrative",
+        "meaning": "a spoken or written account of connected events",
+        "japaneseMeaning": "物語、話の筋",
+        "synonyms": "story, tale",
+        "antonyms": "",
+        "example": "The narrative unfolds from multiple perspectives."
+      },
+      {
+        "word": "archetypal",
+        "meaning": "representing an original model or typical example",
+        "japaneseMeaning": "典型的な、原型的な",
+        "synonyms": "typical, classic",
+        "antonyms": "atypical, unusual",
+        "example": "The hero’s journey is an archetypal narrative pattern."
+      },
+      {
+        "word": "intertextual",
+        "meaning": "relating to the relationship between texts",
+        "japaneseMeaning": "テクスト間の、相互文脈の",
+        "synonyms": "referential, cross-referential",
+        "antonyms": "",
+        "example": "The novel is intertextual, referencing several classic works."
+      },
+      {
+        "word": "parodic",
+        "meaning": "imitating a style or work for comic effect",
+        "japaneseMeaning": "パロディの、模倣的な",
+        "synonyms": "satirical, spoofing",
+        "antonyms": "",
+        "example": "The film is parodic, poking fun at traditional dramas."
+      },
+      {
+        "word": "satirical",
+        "meaning": "using humor or irony to criticize",
+        "japaneseMeaning": "風刺的な",
+        "synonyms": "ironic, mocking",
+        "antonyms": "serious, sincere",
+        "example": "The essay was a satirical critique of politics."
+      },
+      {
+        "word": "allusive",
+        "meaning": "containing indirect references to other works",
+        "japaneseMeaning": "ほのめかす、引用的な",
+        "synonyms": "referential, suggestive",
+        "antonyms": "explicit, direct",
+        "example": "Her writing is highly allusive, rich in literary references."
+      },
+      {
+        "word": "didactic",
+        "meaning": "intended to teach or instruct",
+        "japaneseMeaning": "教訓的な、説教的な",
+        "synonyms": "educational, instructive",
+        "antonyms": "amusing, entertaining",
+        "example": "The poem has a didactic message about morality."
+      },
+      {
+        "word": "tragicomic",
+        "meaning": "combining elements of tragedy and comedy",
+        "japaneseMeaning": "悲喜劇的な",
+        "synonyms": "mixed-genre, bittersweet",
+        "antonyms": "",
+        "example": "The play is tragicomic, eliciting both tears and laughter."
+      }
+    ]
+  }
+ 

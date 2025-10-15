@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-36",
-  "title": "Lesson 36",
-  "words": [
-    {
-      "word": "homogeneous",
-      "meaning": "of the same kind; alike",
-      "japaneseMeaning": "同質の、均質な",
-      "synonyms": "uniform, consistent, similar",
-      "antonyms": "heterogeneous, diverse, varied",
-      "example": "The population of the town was largely homogeneous.",
-      "japaneseExample": "その町の人口はほとんどが同質だった。"
-    },
-    {
-      "word": "hypocrisy",
-      "meaning": "the practice of claiming to have moral standards or beliefs to which one's own behavior does not conform",
-      "japaneseMeaning": "偽善、建前",
-      "synonyms": "insincerity, deceit, duplicity",
-      "antonyms": "sincerity, honesty, integrity",
-      "example": "He was accused of hypocrisy for criticizing others while being guilty himself.",
-      "japaneseExample": "自分が有罪であるのに他人を批判したことで、彼は偽善者だと非難された。"
-    },
-    {
-      "word": "hypothetical",
-      "meaning": "based on or serving as a hypothesis; supposed but not necessarily real",
-      "japaneseMeaning": "仮定の、仮説の",
-      "synonyms": "theoretical, supposed, conjectural",
-      "antonyms": "actual, real, factual",
-      "example": "They discussed a hypothetical scenario to explore solutions.",
-      "japaneseExample": "彼らは解決策を探るために仮定のシナリオを議論した。"
-    },
-    {
-      "word": "iconoclast",
-      "meaning": "a person who attacks or criticizes cherished beliefs or institutions",
-      "japaneseMeaning": "偶像破壊者、伝統破壊者",
-      "synonyms": "rebel, critic, nonconformist",
-      "antonyms": "conformist, traditionalist, believer",
-      "example": "The artist was an iconoclast, challenging conventional norms.",
-      "japaneseExample": "その芸術家は伝統的な規範に挑戦する偶像破壊者だった。"
-    },
-    {
-      "word": "idiosyncrasy",
-      "meaning": "a peculiar feature or characteristic of a person or thing",
-      "japaneseMeaning": "特異性、個性",
-      "synonyms": "quirk, trait, peculiarity",
-      "antonyms": "normality, commonality, standard",
-      "example": "Her habit of humming was just one of her idiosyncrasies.",
-      "japaneseExample": "彼女の鼻歌を歌う習慣は彼女の特異な習慣の一つだった。"
-    },
-    {
-      "word": "ignominious",
-      "meaning": "deserving or causing public disgrace or shame",
-      "japaneseMeaning": "不名誉な、恥ずべき",
-      "synonyms": "disgraceful, shameful, humiliating",
-      "antonyms": "honorable, respectable, dignified",
-      "example": "The politician faced an ignominious defeat.",
-      "japaneseExample": "その政治家は不名誉な敗北を経験した。"
-    },
-    {
-      "word": "illicit",
-      "meaning": "forbidden by law, rules, or custom",
-      "japaneseMeaning": "不法の、違法の",
-      "synonyms": "illegal, unlawful, forbidden",
-      "antonyms": "legal, lawful, permitted",
-      "example": "The police discovered an illicit drug operation.",
-      "japaneseExample": "警察は違法な麻薬取引を発見した。"
-    },
-    {
-      "word": "immaculate",
-      "meaning": "perfectly clean, neat, or free from flaw",
-      "japaneseMeaning": "汚れのない、完全な",
-      "synonyms": "spotless, flawless, pristine",
-      "antonyms": "dirty, flawed, imperfect",
-      "example": "Her room was immaculate after cleaning.",
-      "japaneseExample": "掃除後、彼女の部屋は完璧にきれいだった。"
-    },
-    {
-      "word": "imminent",
-      "meaning": "about to happen; impending",
-      "japaneseMeaning": "差し迫った、今にも起こりそうな",
-      "synonyms": "impending, approaching, looming",
-      "antonyms": "distant, delayed, avoidable",
-      "example": "The storm was imminent, so they sought shelter.",
-      "japaneseExample": "嵐が差し迫っていたので、彼らは避難した。"
-    },
-    {
-      "word": "immutable",
-      "meaning": "unchanging over time or unable to be changed",
-      "japaneseMeaning": "不変の、変えることのできない",
-      "synonyms": "unchangeable, fixed, permanent",
-      "antonyms": "changeable, variable, flexible",
-      "example": "The laws of physics are considered immutable.",
-      "japaneseExample": "物理の法則は不変であると考えられている。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-36",
+    "title": "Lesson 36",
+    "paragraph": "This lesson addresses articulation and style, emphasizing clear, persuasive, and elegant communication.",
+    "words": [
+      {
+        "word": "eloquent",
+        "meaning": "fluent and persuasive in speaking or writing",
+        "japaneseMeaning": "雄弁な、説得力のある",
+        "synonyms": "articulate, expressive",
+        "antonyms": "inarticulate, tongue-tied",
+        "example": "Her speech was eloquent and inspired the audience."
+      },
+      {
+        "word": "succinct",
+        "meaning": "brief and clearly expressed",
+        "japaneseMeaning": "簡潔な、要領よく表現された",
+        "synonyms": "concise, terse",
+        "antonyms": "verbose, wordy",
+        "example": "He gave a succinct summary of the report."
+      },
+      {
+        "word": "ornate",
+        "meaning": "elaborately decorated or detailed",
+        "japaneseMeaning": "華麗な、装飾された",
+        "synonyms": "decorative, elaborate",
+        "antonyms": "plain, simple",
+        "example": "The ornate design of the palace impressed visitors."
+      },
+      {
+        "word": "verbose",
+        "meaning": "using more words than necessary",
+        "japaneseMeaning": "冗長な、多弁な",
+        "synonyms": "wordy, long-winded",
+        "antonyms": "succinct, concise",
+        "example": "The verbose lecture lost the audience’s attention."
+      },
+      {
+        "word": "laconic",
+        "meaning": "using few words, concise",
+        "japaneseMeaning": "簡潔な、無駄のない",
+        "synonyms": "brief, terse",
+        "antonyms": "verbose, wordy",
+        "example": "His laconic reply surprised everyone."
+      },
+      {
+        "word": "florid",
+        "meaning": "excessively ornate or flowery in style",
+        "japaneseMeaning": "華美な、装飾的な",
+        "synonyms": "ornate, elaborate",
+        "antonyms": "plain, simple",
+        "example": "The author’s florid prose was admired by some but disliked by others."
+      },
+      {
+        "word": "cogent",
+        "meaning": "clear, logical, and convincing",
+        "japaneseMeaning": "説得力のある、納得のいく",
+        "synonyms": "compelling, persuasive",
+        "antonyms": "weak, unconvincing",
+        "example": "She presented a cogent argument in favor of the policy."
+      },
+      {
+        "word": "lucid",
+        "meaning": "expressed clearly; easy to understand",
+        "japaneseMeaning": "明晰な、わかりやすい",
+        "synonyms": "clear, intelligible",
+        "antonyms": "confusing, obscure",
+        "example": "His explanation of quantum mechanics was lucid."
+      },
+      {
+        "word": "mellifluous",
+        "meaning": "sweet-sounding or pleasant to hear",
+        "japaneseMeaning": "甘美な、耳に心地よい",
+        "synonyms": "harmonious, melodic",
+        "antonyms": "harsh, discordant",
+        "example": "The singer’s mellifluous voice captivated the audience."
+      },
+      {
+        "word": "articulate",
+        "meaning": "able to express ideas clearly and effectively",
+        "japaneseMeaning": "明確に表現する、雄弁な",
+        "synonyms": "eloquent, expressive",
+        "antonyms": "inarticulate, tongue-tied",
+        "example": "She is articulate in both speech and writing."
+      }
+    ]
+  }
+ 

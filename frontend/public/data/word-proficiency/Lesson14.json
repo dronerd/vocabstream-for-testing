@@ -1,96 +1,87 @@
-{
-  "lesson_id": "eiken-1-14",
-  "title": "Lesson 14",
-  "words": [
-    {
-      "word": "collaborate",
-      "meaning": "to work together with others for a common purpose",
-      "japaneseMeaning": "協力する、共同で作業する",
-      "synonyms": "cooperate, team up, join forces",
-      "antonyms": "oppose, compete, resist",
-      "example": "The scientists collaborated on the research project.",
-      "japaneseExample": "科学者たちは研究プロジェクトで協力した。"
-    },
-    {
-      "word": "comity",
-      "meaning": "courtesy and considerate behavior towards others",
-      "japaneseMeaning": "礼儀、友好",
-      "synonyms": "courtesy, civility, politeness",
-      "antonyms": "rudeness, hostility, disrespect",
-      "example": "International comity is essential for peaceful relations.",
-      "japaneseExample": "平和な関係には国際的な礼儀が不可欠だ。"
-    },
-    {
-      "word": "commensurate",
-      "meaning": "corresponding in size, degree, or proportion",
-      "japaneseMeaning": "比例した、相応の",
-      "synonyms": "proportional, corresponding, equivalent",
-      "antonyms": "disproportionate, unequal, mismatched",
-      "example": "Salary should be commensurate with experience.",
-      "japaneseExample": "給料は経験に応じて支払われるべきだ。"
-    },
-    {
-      "word": "commodious",
-      "meaning": "spacious and convenient",
-      "japaneseMeaning": "広々とした、便利な",
-      "synonyms": "spacious, roomy, comfortable",
-      "antonyms": "cramped, small, confined",
-      "example": "They moved into a commodious apartment.",
-      "japaneseExample": "彼らは広々としたアパートに引っ越した。"
-    },
-    {
-      "word": "compelling",
-      "meaning": "evoking interest, attention, or admiration in a powerful way",
-      "japaneseMeaning": "説得力のある、魅力的な",
-      "synonyms": "convincing, fascinating, irresistible",
-      "antonyms": "unconvincing, boring, dull",
-      "example": "Her story was so compelling that everyone listened attentively.",
-      "japaneseExample": "彼女の話は非常に魅力的で、皆が熱心に聞いた。"
-    },
-    {
-      "word": "complacent",
-      "meaning": "self-satisfied and unaware of potential dangers or problems",
-      "japaneseMeaning": "自己満足の、無頓着な",
-      "synonyms": "self-satisfied, smug, content",
-      "antonyms": "concerned, anxious, aware",
-      "example": "He became complacent after several successful projects.",
-      "japaneseExample": "彼はいくつかの成功したプロジェクトの後、自己満足に陥った。"
-    },
-    {
-      "word": "complement",
-      "meaning": "something that completes or enhances something else",
-      "japaneseMeaning": "補完するもの、補足",
-      "synonyms": "supplement, enhance, complete",
-      "antonyms": "diminish, reduce, subtract",
-      "example": "The wine complements the meal perfectly.",
-      "japaneseExample": "そのワインは料理を完璧に引き立てる。"
-    },
-    {
-      "word": "concede",
-      "meaning": "to admit something is true after first denying it; to yield",
-      "japaneseMeaning": "認める、譲歩する",
-      "synonyms": "admit, acknowledge, yield",
-      "antonyms": "deny, refuse, contest",
-      "example": "He conceded that he had made a mistake.",
-      "japaneseExample": "彼は自分が間違ったことを認めた。"
-    },
-    {
-      "word": "concise",
-      "meaning": "giving a lot of information clearly in a few words",
-      "japaneseMeaning": "簡潔な、明瞭な",
-      "synonyms": "succinct, brief, terse",
-      "antonyms": "verbose, long-winded, wordy",
-      "example": "Her report was concise and easy to understand.",
-      "japaneseExample": "彼女の報告は簡潔で理解しやすかった。"
-    },
-    {
-      "word": "concomitant",
-      "meaning": "naturally accompanying or associated",
-      "japaneseMeaning": "伴う、同時に起こる",
-      "synonyms": "accompanying, attendant, associated",
-      "antonyms": "unrelated, separate, independent",
-      "example": "Stress is a concomitant of modern life.",
-      "japaneseExample": "ストレスは現代生活に伴うものだ。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-14",
+    "title": "Lesson 14",
+    "paragraph": "This lesson focuses on economics and systems, exploring financial concepts and market dynamics.",
+    "words": [
+      {
+        "word": "laissez-faire",
+        "meaning": "an economic system with minimal government intervention",
+        "japaneseMeaning": "自由放任主義",
+        "synonyms": "free-market, nonintervention",
+        "antonyms": "regulated, controlled",
+        "example": "The government adopted a laissez-faire approach to business."
+      },
+      {
+        "word": "fiscal",
+        "meaning": "relating to government revenue, especially taxes",
+        "japaneseMeaning": "財政の、会計の",
+        "synonyms": "financial, budgetary",
+        "antonyms": "",
+        "example": "The government announced a new fiscal policy."
+      },
+      {
+        "word": "monetary",
+        "meaning": "relating to money or currency",
+        "japaneseMeaning": "金融の、通貨の",
+        "synonyms": "financial, fiscal",
+        "antonyms": "",
+        "example": "The central bank adjusts monetary policy to control inflation."
+      },
+      {
+        "word": "austerity",
+        "meaning": "strict economic measures to reduce spending",
+        "japaneseMeaning": "緊縮財政、倹約",
+        "synonyms": "frugality, restraint",
+        "antonyms": "extravagance, indulgence",
+        "example": "The country implemented austerity measures after the crisis."
+      },
+      {
+        "word": "inflationary",
+        "meaning": "causing an increase in prices or inflation",
+        "japaneseMeaning": "インフレの、物価上昇の",
+        "synonyms": "price-rising, escalating",
+        "antonyms": "deflationary",
+        "example": "The government feared inflationary pressures from stimulus spending."
+      },
+      {
+        "word": "recessionary",
+        "meaning": "relating to a period of economic decline",
+        "japaneseMeaning": "景気後退の",
+        "synonyms": "declining, contracting",
+        "antonyms": "expansionary, booming",
+        "example": "Recessionary trends affected employment rates."
+      },
+      {
+        "word": "mercantile",
+        "meaning": "related to trade or commerce",
+        "japaneseMeaning": "商業の、貿易の",
+        "synonyms": "commercial, trading",
+        "antonyms": "",
+        "example": "Mercantile policies encouraged international trade."
+      },
+      {
+        "word": "industrialized",
+        "meaning": "having developed industries on a large scale",
+        "japaneseMeaning": "工業化された",
+        "synonyms": "developed, mechanized",
+        "antonyms": "agrarian, undeveloped",
+        "example": "Industrialized nations produce most of the world’s manufactured goods."
+      },
+      {
+        "word": "privatized",
+        "meaning": "transferred from public to private ownership",
+        "japaneseMeaning": "民営化された",
+        "synonyms": "deregulated, corporatized",
+        "antonyms": "nationalized, public",
+        "example": "The utility company was privatized last year."
+      },
+      {
+        "word": "subsidized",
+        "meaning": "financially supported by the government",
+        "japaneseMeaning": "補助金を受けた",
+        "synonyms": "funded, supported",
+        "antonyms": "unfunded, self-sufficient",
+        "example": "Farmers received subsidized seeds to boost production."
+      }
+    ]
+  }

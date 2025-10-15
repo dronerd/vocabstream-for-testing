@@ -1,96 +1,87 @@
-{
-  "lesson_id": "eiken-1-6",
-  "title": "Lesson 6",
-  "words": [
-    {
-      "word": "antagonize",
-      "meaning": "to cause someone to become hostile",
-      "japaneseMeaning": "敵対させる、反感を買う",
-      "synonyms": "provoke, offend, irritate",
-      "antonyms": "pacify, appease, soothe",
-      "example": "His comments antagonized his coworkers.",
-      "japaneseExample": "彼のコメントは同僚の反感を買った。"
-    },
-    {
-      "word": "antediluvian",
-      "meaning": "extremely old-fashioned; antiquated",
-      "japaneseMeaning": "太古の、時代遅れの",
-      "synonyms": "ancient, outdated, archaic",
-      "antonyms": "modern, contemporary, new",
-      "example": "The antediluvian laws are no longer enforced.",
-      "japaneseExample": "その古臭い法律はもはや施行されていない。"
-    },
-    {
-      "word": "antipathy",
-      "meaning": "a deep-seated feeling of dislike",
-      "japaneseMeaning": "反感、嫌悪",
-      "synonyms": "hostility, aversion, dislike",
-      "antonyms": "affection, liking, sympathy",
-      "example": "He has a strong antipathy towards injustice.",
-      "japaneseExample": "彼は不正に強い反感を抱いている。"
-    },
-    {
-      "word": "apathy",
-      "meaning": "lack of interest, enthusiasm, or concern",
-      "japaneseMeaning": "無関心、冷淡",
-      "synonyms": "indifference, unconcern, detachment",
-      "antonyms": "interest, enthusiasm, concern",
-      "example": "Voter apathy led to low turnout in the election.",
-      "japaneseExample": "有権者の無関心で投票率は低かった。"
-    },
-    {
-      "word": "aplomb",
-      "meaning": "self-confidence or assurance, especially under pressure",
-      "japaneseMeaning": "冷静さ、落ち着き",
-      "synonyms": "poise, composure, self-assurance",
-      "antonyms": "awkwardness, uncertainty, hesitation",
-      "example": "She handled the interview with aplomb.",
-      "japaneseExample": "彼女は面接を冷静にこなした。"
-    },
-    {
-      "word": "apocryphal",
-      "meaning": "of doubtful authenticity, although widely circulated as true",
-      "japaneseMeaning": "偽の、出所不明の",
-      "synonyms": "unverified, doubtful, fictitious",
-      "antonyms": "authentic, genuine, true",
-      "example": "The story about the haunted house is apocryphal.",
-      "japaneseExample": "その幽霊屋敷の話は出所不明である。"
-    },
-    {
-      "word": "apposite",
-      "meaning": "apt in the circumstances or in relation to something",
-      "japaneseMeaning": "適切な、ふさわしい",
-      "synonyms": "appropriate, suitable, relevant",
-      "antonyms": "inappropriate, irrelevant, unsuitable",
-      "example": "His comment was apposite to the discussion.",
-      "japaneseExample": "彼のコメントは議論に適切だった。"
-    },
-    {
-      "word": "apprehensive",
-      "meaning": "anxious or fearful that something bad may happen",
-      "japaneseMeaning": "不安な、懸念している",
-      "synonyms": "anxious, worried, uneasy",
-      "antonyms": "confident, calm, assured",
-      "example": "She felt apprehensive before the exam.",
-      "japaneseExample": "彼女は試験の前に不安を感じた。"
-    },
-    {
-      "word": "arbitrament",
-      "meaning": "the decision of an arbitrator or a settlement",
-      "japaneseMeaning": "仲裁、裁定",
-      "synonyms": "judgment, decision, arbitration",
-      "antonyms": "dispute, disagreement, conflict",
-      "example": "The issue was resolved through arbitrament.",
-      "japaneseExample": "その問題は仲裁によって解決された。"
-    },
-    {
-      "word": "arbitrary",
-      "meaning": "based on random choice or personal whim, rather than reason",
-      "japaneseMeaning": "恣意的な、任意の",
-      "synonyms": "capricious, random, discretionary",
-      "antonyms": "rational, reasoned, logical",
-      "example": "The manager made arbitrary decisions without consulting the team.",
-      "japaneseExample": "マネージャーはチームに相談せず恣意的な決定を下した。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-6",
+    "title": "Lesson 6",
+    "paragraph": "This lesson discusses human nature and paradox, examining contradictions, anomalies, and unpredictable behaviors.",
+    "words": [
+      {
+        "word": "ambivalence",
+        "meaning": "having mixed or contradictory feelings about something",
+        "japaneseMeaning": "両価性、相反する感情",
+        "synonyms": "uncertainty, indecision",
+        "antonyms": "certainty, decisiveness",
+        "example": "He felt ambivalence toward leaving his hometown."
+      },
+      {
+        "word": "dichotomy",
+        "meaning": "a division or contrast between two things that are opposed or entirely different",
+        "japaneseMeaning": "二分法、対立",
+        "synonyms": "division, contrast",
+        "antonyms": "unity, similarity",
+        "example": "The dichotomy between theory and practice was evident."
+      },
+      {
+        "word": "inconsistency",
+        "meaning": "lack of consistency; contradictions",
+        "japaneseMeaning": "矛盾、不一致",
+        "synonyms": "discrepancy, contradiction",
+        "antonyms": "consistency, uniformity",
+        "example": "There was an inconsistency in his statements."
+      },
+      {
+        "word": "contradiction",
+        "meaning": "a combination of statements, ideas, or actions that are opposed to one another",
+        "japaneseMeaning": "矛盾",
+        "synonyms": "discrepancy, paradox",
+        "antonyms": "agreement, harmony",
+        "example": "The report contained a clear contradiction in the data."
+      },
+      {
+        "word": "polarity",
+        "meaning": "the presence or manifestation of two opposite principles or tendencies",
+        "japaneseMeaning": "対立、極性",
+        "synonyms": "opposition, duality",
+        "antonyms": "unity, similarity",
+        "example": "There is a polarity between tradition and modernity in society."
+      },
+      {
+        "word": "equivocation",
+        "meaning": "the use of ambiguous language to conceal the truth or avoid committing oneself",
+        "japaneseMeaning": "言い逃れ、あいまい表現",
+        "synonyms": "ambiguity, vagueness",
+        "antonyms": "clarity, directness",
+        "example": "The politician’s speech was full of equivocation."
+      },
+      {
+        "word": "anomaly",
+        "meaning": "something that deviates from what is standard or expected",
+        "japaneseMeaning": "異常、例外",
+        "synonyms": "irregularity, deviation",
+        "antonyms": "normality, conformity",
+        "example": "The scientist noted an anomaly in the experiment results."
+      },
+      {
+        "word": "paradoxical",
+        "meaning": "seemingly absurd or self-contradictory but may be true",
+        "japaneseMeaning": "逆説的な",
+        "synonyms": "contradictory, puzzling",
+        "antonyms": "logical, consistent",
+        "example": "It is paradoxical that the more you know, the more you realize you don’t know."
+      },
+      {
+        "word": "idiosyncratic",
+        "meaning": "peculiar or individualistic in nature",
+        "japaneseMeaning": "特異な、独特の",
+        "synonyms": "quirky, distinctive",
+        "antonyms": "typical, conventional",
+        "example": "Her idiosyncratic habits made her stand out in the office."
+      },
+      {
+        "word": "capricious",
+        "meaning": "given to sudden and unaccountable changes of mood or behavior",
+        "japaneseMeaning": "気まぐれな",
+        "synonyms": "fickle, unpredictable",
+        "antonyms": "steady, predictable",
+        "example": "The weather in spring is often capricious."
+      }
+    ]
+  }

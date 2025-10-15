@@ -1,96 +1,87 @@
-{
-  "lesson_id": "eiken-1-25",
-  "title": "Lesson 25",
-  "words": [
-    {
-      "word": "efficacious",
-      "meaning": "effective; producing the desired outcome",
-      "japaneseMeaning": "効果的な、効能のある",
-      "synonyms": "effective, potent, successful",
-      "antonyms": "ineffective, useless, futile",
-      "example": "The new medicine proved efficacious in treating the disease.",
-      "japaneseExample": "新しい薬はその病気の治療に効果があることが証明された。"
-    },
-    {
-      "word": "effrontery",
-      "meaning": "insolent or impertinent behavior",
-      "japaneseMeaning": "厚かましさ、ずうずうしさ",
-      "synonyms": "impudence, audacity, nerve",
-      "antonyms": "modesty, humility, respect",
-      "example": "He had the effrontery to challenge his boss openly.",
-      "japaneseExample": "彼は厚かましくも上司に公然と挑戦した。"
-    },
-    {
-      "word": "egalitarian",
-      "meaning": "believing in the principle that all people are equal",
-      "japaneseMeaning": "平等主義の",
-      "synonyms": "equal, fair-minded, unbiased",
-      "antonyms": "elitist, hierarchical, discriminatory",
-      "example": "She promoted an egalitarian workplace where everyone had a voice.",
-      "japaneseExample": "彼女は誰もが意見を持てる平等な職場を推進した。"
-    },
-    {
-      "word": "egocentric",
-      "meaning": "thinking only of oneself, self-centered",
-      "japaneseMeaning": "自己中心的な、自分本位の",
-      "synonyms": "selfish, narcissistic, self-absorbed",
-      "antonyms": "altruistic, selfless, considerate",
-      "example": "His egocentric behavior alienated his friends.",
-      "japaneseExample": "彼の自己中心的な行動は友人たちを疎遠にした。"
-    },
-    {
-      "word": "egregious",
-      "meaning": "outstandingly bad; shocking",
-      "japaneseMeaning": "ひどい、甚だしい",
-      "synonyms": "shocking, blatant, atrocious",
-      "antonyms": "minor, slight, inconspicuous",
-      "example": "The company made an egregious error in their financial report.",
-      "japaneseExample": "その会社は財務報告でひどいミスを犯した。"
-    },
-    {
-      "word": "elicit",
-      "meaning": "to draw out a response, answer, or fact from someone",
-      "japaneseMeaning": "引き出す、誘い出す",
-      "synonyms": "obtain, extract, evoke",
-      "antonyms": "suppress, conceal, hide",
-      "example": "The teacher tried to elicit answers from the students.",
-      "japaneseExample": "教師は学生から答えを引き出そうとした。"
-    },
-    {
-      "word": "elucidate",
-      "meaning": "to make something clear; explain",
-      "japaneseMeaning": "明らかにする、解明する",
-      "synonyms": "clarify, explain, illuminate",
-      "antonyms": "confuse, obscure, complicate",
-      "example": "The professor elucidated the complex theory for the students.",
-      "japaneseExample": "教授は学生たちのために複雑な理論を解明した。"
-    },
-    {
-      "word": "elusive",
-      "meaning": "difficult to find, catch, or achieve",
-      "japaneseMeaning": "捕まえにくい、理解しにくい",
-      "synonyms": "evasive, slippery, intangible",
-      "antonyms": "definite, clear, tangible",
-      "example": "The solution to the problem proved elusive.",
-      "japaneseExample": "その問題の解決策はなかなか見つからなかった。"
-    },
-    {
-      "word": "emanate",
-      "meaning": "to come out from a source; to emit",
-      "japaneseMeaning": "発する、放出する",
-      "synonyms": "emit, radiate, issue",
-      "antonyms": "absorb, conceal, withdraw",
-      "example": "A feeling of warmth emanated from the fireplace.",
-      "japaneseExample": "暖炉から温かさが漂ってきた。"
-    },
-    {
-      "word": "embellish",
-      "meaning": "to make something more attractive by adding details",
-      "japaneseMeaning": "装飾する、美化する",
-      "synonyms": "decorate, adorn, enhance",
-      "antonyms": "simplify, plain, deface",
-      "example": "She embellished her story with colorful details.",
-      "japaneseExample": "彼女は話を色彩豊かに美化して語った。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-25",
+    "title": "Lesson 25",
+    "paragraph": "This lesson covers music and harmony, including sound structures, rhythm, and tonality.",
+    "words": [
+      {
+        "word": "melodic",
+        "meaning": "having a pleasant and tuneful sound",
+        "japaneseMeaning": "旋律的な",
+        "synonyms": "tuneful, harmonious",
+        "antonyms": "discordant, harsh",
+        "example": "The song has a melodic piano accompaniment."
+      },
+      {
+        "word": "polyphonic",
+        "meaning": "consisting of multiple independent melody lines",
+        "japaneseMeaning": "多声音楽の",
+        "synonyms": "multivoiced, contrapuntal",
+        "antonyms": "monophonic",
+        "example": "The choir performed a complex polyphonic piece."
+      },
+      {
+        "word": "dissonant",
+        "meaning": "lacking harmony; clashing in sound",
+        "japaneseMeaning": "不協和音の、耳障りな",
+        "synonyms": "inharmonious, jarring",
+        "antonyms": "consonant, harmonious",
+        "example": "The dissonant chords create tension in the composition."
+      },
+      {
+        "word": "symphonic",
+        "meaning": "relating to a symphony or orchestra",
+        "japaneseMeaning": "交響曲の、交響的な",
+        "synonyms": "orchestral, harmonious",
+        "antonyms": "",
+        "example": "The symphonic arrangement included strings and brass."
+      },
+      {
+        "word": "tonal",
+        "meaning": "relating to musical key or pitch",
+        "japaneseMeaning": "音調の、調性的な",
+        "synonyms": "key-based, pitch-related",
+        "antonyms": "",
+        "example": "The piece is tonal, staying in C major throughout."
+      },
+      {
+        "word": "rhythmic",
+        "meaning": "having a strong, regular beat",
+        "japaneseMeaning": "リズムのある",
+        "synonyms": "metered, beat-driven",
+        "antonyms": "arrhythmic, irregular",
+        "example": "The drums create a steady rhythmic foundation."
+      },
+      {
+        "word": "cadential",
+        "meaning": "relating to the ending sequence of chords in music",
+        "japaneseMeaning": "終止の、カデンツ的な",
+        "synonyms": "concluding, resolving",
+        "antonyms": "",
+        "example": "The cadential progression signals the end of the piece."
+      },
+      {
+        "word": "sonorous",
+        "meaning": "having a deep, rich, and full sound",
+        "japaneseMeaning": "響きの良い、豊かな音の",
+        "synonyms": "resonant, booming",
+        "antonyms": "flat, dull",
+        "example": "The cathedral’s bells are sonorous."
+      },
+      {
+        "word": "improvisational",
+        "meaning": "created spontaneously without preparation",
+        "japaneseMeaning": "即興の",
+        "synonyms": "spontaneous, extemporaneous",
+        "antonyms": "planned, rehearsed",
+        "example": "Jazz music often features improvisational solos."
+      },
+      {
+        "word": "harmonic",
+        "meaning": "relating to harmony or pleasing combination of notes",
+        "japaneseMeaning": "和声の、調和の取れた",
+        "synonyms": "consonant, melodious",
+        "antonyms": "dissonant, clashing",
+        "example": "The choir produced a rich harmonic sound."
+      }
+    ]
+  }

@@ -1,96 +1,87 @@
-{
-  "lesson_id": "eiken-1-5",
-  "title": "Lesson 5",
-  "words": [
-    {
-      "word": "ameliorate",
-      "meaning": "to make something bad or unsatisfactory better",
-      "japaneseMeaning": "改善する、良くする",
-      "synonyms": "improve, enhance, mitigate",
-      "antonyms": "worsen, aggravate, deteriorate",
-      "example": "Policies were introduced to ameliorate living conditions.",
-      "japaneseExample": "生活環境を改善するために政策が導入された。"
-    },
-    {
-      "word": "amenable",
-      "meaning": "willing to accept or be influenced by advice or suggestion",
-      "japaneseMeaning": "従順な、素直な",
-      "synonyms": "compliant, responsive, agreeable",
-      "antonyms": "uncooperative, resistant, stubborn",
-      "example": "She was amenable to the new plan.",
-      "japaneseExample": "彼女は新しい計画に従順だった。"
-    },
-    {
-      "word": "amiable",
-      "meaning": "having a friendly and pleasant manner",
-      "japaneseMeaning": "愛想の良い、感じの良い",
-      "synonyms": "friendly, affable, genial",
-      "antonyms": "unfriendly, rude, unpleasant",
-      "example": "He is an amiable and sociable person.",
-      "japaneseExample": "彼は愛想の良く社交的な人である。"
-    },
-    {
-      "word": "amicable",
-      "meaning": "characterized by friendliness and absence of conflict",
-      "japaneseMeaning": "友好的な、平和な",
-      "synonyms": "friendly, harmonious, cordial",
-      "antonyms": "hostile, antagonistic, unfriendly",
-      "example": "They reached an amicable agreement.",
-      "japaneseExample": "彼らは友好的な合意に達した。"
-    },
-    {
-      "word": "anachronism",
-      "meaning": "something that is out of place in time",
-      "japaneseMeaning": "時代錯誤、時代遅れ",
-      "synonyms": "misplacement, chronological error, inconsistency",
-      "antonyms": "timeliness, appropriateness, contemporaneity",
-      "example": "The sword in the movie was an anachronism.",
-      "japaneseExample": "その映画に出てくる剣は時代錯誤である。"
-    },
-    {
-      "word": "analogy",
-      "meaning": "a comparison between two things for explanation or clarification",
-      "japaneseMeaning": "類推、類似",
-      "synonyms": "comparison, likeness, similarity",
-      "antonyms": "difference, dissimilarity, contrast",
-      "example": "The teacher used an analogy to explain the concept.",
-      "japaneseExample": "教師は概念を説明するために類推を使った。"
-    },
-    {
-      "word": "anathema",
-      "meaning": "something or someone that one vehemently dislikes",
-      "japaneseMeaning": "忌み嫌うもの、破門",
-      "synonyms": "abomination, outrage, detestation",
-      "antonyms": "blessing, delight, favor",
-      "example": "Racism is an anathema to modern society.",
-      "japaneseExample": "人種差別は現代社会にとって忌み嫌うものである。"
-    },
-    {
-      "word": "ancillary",
-      "meaning": "providing necessary support to the primary activities",
-      "japaneseMeaning": "補助的な、付随的な",
-      "synonyms": "supporting, auxiliary, supplementary",
-      "antonyms": "main, primary, principal",
-      "example": "The company provides ancillary services to its main business.",
-      "japaneseExample": "その会社は主業務に補助的なサービスを提供している。"
-    },
-    {
-      "word": "animosity",
-      "meaning": "strong hostility or hatred",
-      "japaneseMeaning": "敵意、憎しみ",
-      "synonyms": "hostility, hatred, antagonism",
-      "antonyms": "friendship, goodwill, affection",
-      "example": "There was deep animosity between the two rivals.",
-      "japaneseExample": "その二人のライバルの間には深い敵意があった。"
-    },
-    {
-      "word": "anomaly",
-      "meaning": "something that deviates from what is standard, normal, or expected",
-      "japaneseMeaning": "異常、例外",
-      "synonyms": "abnormality, deviation, irregularity",
-      "antonyms": "normality, regularity, standard",
-      "example": "The scientist discovered an anomaly in the data.",
-      "japaneseExample": "科学者はデータの中に異常を発見した。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-5",
+    "title": "Lesson 5",
+    "paragraph": "This lesson examines existence and reality, exploring concepts of the tangible, the empirical, and the ineffable.",
+    "words": [
+      {
+        "word": "tangible",
+        "meaning": "perceptible by touch; real and concrete",
+        "japaneseMeaning": "触れられる、有形の",
+        "synonyms": "palpable, concrete",
+        "antonyms": "intangible, abstract",
+        "example": "The tension in the room was almost tangible."
+      },
+      {
+        "word": "empirical",
+        "meaning": "based on observation or experience rather than theory",
+        "japaneseMeaning": "経験に基づく",
+        "synonyms": "observational, experiential",
+        "antonyms": "theoretical, speculative",
+        "example": "The scientist relied on empirical evidence to support the hypothesis."
+      },
+      {
+        "word": "verisimilitude",
+        "meaning": "the appearance of being true or real",
+        "japaneseMeaning": "真実らしさ",
+        "synonyms": "realism, authenticity",
+        "antonyms": "falseness, implausibility",
+        "example": "The novel's verisimilitude made the story believable."
+      },
+      {
+        "word": "semblance",
+        "meaning": "an outward appearance that is misleading",
+        "japaneseMeaning": "外見、体裁",
+        "synonyms": "appearance, facade",
+        "antonyms": "reality, truth",
+        "example": "He maintained a semblance of calm despite the chaos."
+      },
+      {
+        "word": "manifestation",
+        "meaning": "an event, action, or object that clearly shows something",
+        "japaneseMeaning": "現れ、表れ",
+        "synonyms": "demonstration, display",
+        "antonyms": "concealment, obscurity",
+        "example": "The symptoms were a clear manifestation of the disease."
+      },
+      {
+        "word": "actuality",
+        "meaning": "the state of existing in reality",
+        "japaneseMeaning": "現実、事実",
+        "synonyms": "reality, existence",
+        "antonyms": "fiction, illusion",
+        "example": "In actuality, the plan was much more difficult than expected."
+      },
+      {
+        "word": "illusory",
+        "meaning": "based on illusion; not real",
+        "japaneseMeaning": "幻想の、虚偽の",
+        "synonyms": "deceptive, false",
+        "antonyms": "real, genuine",
+        "example": "The sense of security was illusory in the unstable environment."
+      },
+      {
+        "word": "ethereal",
+        "meaning": "extremely delicate and light; otherworldly",
+        "japaneseMeaning": "空気のような、軽妙な",
+        "synonyms": "delicate, celestial",
+        "antonyms": "earthly, solid",
+        "example": "The dancer moved with ethereal grace."
+      },
+      {
+        "word": "concrete",
+        "meaning": "existing in a material or physical form; specific",
+        "japaneseMeaning": "具体的な、実在する",
+        "synonyms": "tangible, real",
+        "antonyms": "abstract, theoretical",
+        "example": "The architect presented concrete plans for the building."
+      },
+      {
+        "word": "ineffable",
+        "meaning": "too great or extreme to be expressed in words",
+        "japaneseMeaning": "言葉に表せない",
+        "synonyms": "indescribable, inexpressible",
+        "antonyms": "expressible, describable",
+        "example": "The beauty of the sunset was ineffable."
+      }
+    ]
+  }

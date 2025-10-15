@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-45",
-  "title": "Lesson 45",
-  "words": [
-    {
-      "word": "levity",
-      "meaning": "lightness of manner or speech, especially in serious situations",
-      "japaneseMeaning": "軽率、気軽さ",
-      "synonyms": "frivolity, humor, lightheartedness",
-      "antonyms": "seriousness, gravity, solemnity",
-      "example": "His levity during the meeting seemed inappropriate.",
-      "japaneseExample": "会議中の彼の軽率さは不適切に見えた。"
-    },
-    {
-      "word": "licentious",
-      "meaning": "lacking moral discipline, especially in sexual conduct",
-      "japaneseMeaning": "放縦な、淫らな",
-      "synonyms": "immoral, dissolute, unrestrained",
-      "antonyms": "moral, restrained, virtuous",
-      "example": "The novel criticized the licentious behavior of the aristocracy.",
-      "japaneseExample": "その小説は貴族の放縦な行動を批判した。"
-    },
-    {
-      "word": "lithe",
-      "meaning": "thin, supple, and graceful",
-      "japaneseMeaning": "しなやかな、柔軟な",
-      "synonyms": "flexible, supple, graceful",
-      "antonyms": "stiff, rigid, inflexible",
-      "example": "The dancer's lithe movements captivated the audience.",
-      "japaneseExample": "そのダンサーのしなやかな動きが観客を魅了した。"
-    },
-    {
-      "word": "loquacious",
-      "meaning": "very talkative",
-      "japaneseMeaning": "おしゃべりな、多弁な",
-      "synonyms": "talkative, garrulous, verbose",
-      "antonyms": "taciturn, reserved, reticent",
-      "example": "She became loquacious after a few drinks.",
-      "japaneseExample": "彼女は少しお酒を飲むとおしゃべりになった。"
-    },
-    {
-      "word": "lucid",
-      "meaning": "expressed clearly; easy to understand; clear-headed",
-      "japaneseMeaning": "明晰な、分かりやすい",
-      "synonyms": "clear, understandable, coherent",
-      "antonyms": "confused, unclear, obscure",
-      "example": "He gave a lucid explanation of the theory.",
-      "japaneseExample": "彼はその理論を明晰に説明した。"
-    },
-    {
-      "word": "lucrative",
-      "meaning": "producing a great deal of profit",
-      "japaneseMeaning": "利益の多い、もうかる",
-      "synonyms": "profitable, remunerative, gainful",
-      "antonyms": "unprofitable, losing, unremunerative",
-      "example": "She started a lucrative business in technology.",
-      "japaneseExample": "彼女は技術分野で利益の多いビジネスを始めた。"
-    },
-    {
-      "word": "ludicrous",
-      "meaning": "so foolish or unreasonable as to be amusing",
-      "japaneseMeaning": "滑稽な、ばかげた",
-      "synonyms": "ridiculous, absurd, preposterous",
-      "antonyms": "reasonable, sensible, serious",
-      "example": "The idea that pigs could fly is ludicrous.",
-      "japaneseExample": "豚が飛べるという考えは滑稽だ。"
-    },
-    {
-      "word": "lugubrious",
-      "meaning": "looking or sounding sad and dismal",
-      "japaneseMeaning": "悲しげな、陰鬱な",
-      "synonyms": "mournful, gloomy, sorrowful",
-      "antonyms": "cheerful, joyful, happy",
-      "example": "He had a lugubrious expression after hearing the news.",
-      "japaneseExample": "彼はその知らせを聞いて悲しげな表情をしていた。"
-    },
-    {
-      "word": "luminary",
-      "meaning": "a person who inspires or influences others, especially in a particular field",
-      "japaneseMeaning": "著名人、指導者",
-      "synonyms": "leader, expert, notable",
-      "antonyms": "unknown, nobody, minor figure",
-      "example": "She is a luminary in the field of medicine.",
-      "japaneseExample": "彼女は医療分野の著名人だ。"
-    },
-    {
-      "word": "lurid",
-      "meaning": "very vivid in color, especially so as to create an unpleasantly harsh or unnatural effect; shocking",
-      "japaneseMeaning": "けばけばしい、ぞっとするような",
-      "synonyms": "gruesome, sensational, shocking",
-      "antonyms": "subtle, dull, muted",
-      "example": "The newspaper published lurid details of the crime.",
-      "japaneseExample": "その新聞は犯罪のぞっとするような詳細を掲載した。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-45",
+    "title": "Lesson 45",
+    "paragraph": "This lesson addresses crime and corruption, focusing on illegal acts and misconduct.",
+    "words": [
+      {
+        "word": "extortion",
+        "meaning": "obtaining something by force or threats",
+        "japaneseMeaning": "恐喝、ゆすり",
+        "synonyms": "blackmail, coercion",
+        "antonyms": "gift, donation",
+        "example": "The gang was arrested for extortion."
+      },
+      {
+        "word": "embezzlement",
+        "meaning": "theft or misappropriation of funds",
+        "japaneseMeaning": "横領、使い込み",
+        "synonyms": "misappropriation, theft",
+        "antonyms": "honesty, restitution",
+        "example": "He was convicted of embezzlement from the company."
+      },
+      {
+        "word": "bribery",
+        "meaning": "offering money or gifts to influence someone",
+        "japaneseMeaning": "贈賄、わいろ",
+        "synonyms": "corruption, payoff",
+        "antonyms": "integrity, honesty",
+        "example": "The official was charged with bribery."
+      },
+      {
+        "word": "collusion",
+        "meaning": "secret cooperation for illegal or deceitful purposes",
+        "japaneseMeaning": "共謀、癒着",
+        "synonyms": "conspiracy, complicity",
+        "antonyms": "openness, honesty",
+        "example": "The companies acted in collusion to fix prices."
+      },
+      {
+        "word": "fraudulence",
+        "meaning": "deception intended to result in financial gain",
+        "japaneseMeaning": "詐欺、欺瞞",
+        "synonyms": "deception, scam",
+        "antonyms": "honesty, truthfulness",
+        "example": "The investigation revealed fraudulence in accounting."
+      },
+      {
+        "word": "perjury",
+        "meaning": "the offense of lying under oath",
+        "japaneseMeaning": "偽証罪",
+        "synonyms": "false testimony, lying",
+        "antonyms": "truthfulness, honesty",
+        "example": "The witness was charged with perjury."
+      },
+      {
+        "word": "larceny",
+        "meaning": "theft of personal property",
+        "japaneseMeaning": "窃盗、盗み",
+        "synonyms": "theft, stealing",
+        "antonyms": "return, restitution",
+        "example": "He was convicted of larceny after stealing jewelry."
+      },
+      {
+        "word": "malfeasance",
+        "meaning": "wrongdoing or misconduct, especially by a public official",
+        "japaneseMeaning": "不正行為、公務員の違法行為",
+        "synonyms": "misconduct, wrongdoing",
+        "antonyms": "honesty, integrity",
+        "example": "The mayor was investigated for malfeasance."
+      },
+      {
+        "word": "conspiracy",
+        "meaning": "a secret plan to commit an unlawful act",
+        "japaneseMeaning": "陰謀、共謀",
+        "synonyms": "plot, scheme",
+        "antonyms": "openness, transparency",
+        "example": "They were arrested for conspiracy to commit fraud."
+      },
+      {
+        "word": "racketeering",
+        "meaning": "engaging in dishonest and fraudulent business dealings",
+        "japaneseMeaning": "詐欺行為、組織犯罪",
+        "synonyms": "fraud, extortion",
+        "antonyms": "honesty, legality",
+        "example": "The gang was charged with racketeering."
+      }
+    ]
+  }
+ 

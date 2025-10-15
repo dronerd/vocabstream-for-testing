@@ -34,7 +34,7 @@ function makeLessons(genreId: string, count: number): Lesson[] {
 
 const LESSON_COUNT_BY_GENRE: Record<string, number> = {
   "word-intermediate": 64,
-  "word-high-intermediate": 69,
+  "word-high-intermediate": 96,
   "word-advanced": 100,
   "word-proficiency": 100,
   "idioms-intermediate": 50,

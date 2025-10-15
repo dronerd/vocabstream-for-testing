@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-38",
-  "title": "Lesson 38",
-  "words": [
-    {
-      "word": "improvident",
-      "meaning": "not having or showing foresight; spendthrift or thoughtless",
-      "japaneseMeaning": "軽率な、先見の明のない",
-      "synonyms": "reckless, careless, wasteful",
-      "antonyms": "prudent, careful, thrifty",
-      "example": "His improvident spending led to financial trouble.",
-      "japaneseExample": "彼の軽率な支出が財政的な問題を引き起こした。"
-    },
-    {
-      "word": "impugn",
-      "meaning": "to dispute the truth, validity, or honesty of a statement or motive",
-      "japaneseMeaning": "非難する、疑う",
-      "synonyms": "challenge, question, dispute",
-      "antonyms": "support, defend, uphold",
-      "example": "They impugned the accuracy of the report.",
-      "japaneseExample": "彼らはその報告書の正確性を疑った。"
-    },
-    {
-      "word": "inadvertent",
-      "meaning": "not resulting from or achieved through deliberate planning",
-      "japaneseMeaning": "不注意な、意図しない",
-      "synonyms": "unintentional, accidental, unplanned",
-      "antonyms": "intentional, deliberate, planned",
-      "example": "The error was inadvertent and quickly corrected.",
-      "japaneseExample": "その誤りは不注意によるもので、すぐに修正された。"
-    },
-    {
-      "word": "inane",
-      "meaning": "silly or stupid",
-      "japaneseMeaning": "愚かな、無意味な",
-      "synonyms": "foolish, silly, meaningless",
-      "antonyms": "meaningful, sensible, intelligent",
-      "example": "They had an inane conversation about trivial matters.",
-      "japaneseExample": "彼らは取るに足らないことで愚かな会話をした。"
-    },
-    {
-      "word": "inarticulate",
-      "meaning": "unable to express oneself clearly or effectively",
-      "japaneseMeaning": "不明瞭な、口下手な",
-      "synonyms": "tongue-tied, unexpressive, unclear",
-      "antonyms": "eloquent, articulate, expressive",
-      "example": "He was inarticulate with his feelings.",
-      "japaneseExample": "彼は自分の感情をうまく表現できなかった。"
-    },
-    {
-      "word": "incessant",
-      "meaning": "continuing without pause or interruption",
-      "japaneseMeaning": "絶え間ない、ひっきりなしの",
-      "synonyms": "continuous, unceasing, relentless",
-      "antonyms": "intermittent, occasional, sporadic",
-      "example": "The incessant noise from construction was annoying.",
-      "japaneseExample": "建設の絶え間ない騒音は迷惑だった。"
-    },
-    {
-      "word": "incisive",
-      "meaning": "intelligently analytical and clear-thinking",
-      "japaneseMeaning": "鋭い、明快な",
-      "synonyms": "sharp, keen, penetrating",
-      "antonyms": "vague, dull, obtuse",
-      "example": "Her incisive analysis impressed the committee.",
-      "japaneseExample": "彼女の鋭い分析は委員会を感心させた。"
-    },
-    {
-      "word": "inclination",
-      "meaning": "a person's natural tendency or urge to act or feel in a particular way",
-      "japaneseMeaning": "傾向、性向",
-      "synonyms": "tendency, predisposition, preference",
-      "antonyms": "disinclination, aversion, unwillingness",
-      "example": "He has an inclination toward creative writing.",
-      "japaneseExample": "彼には創作を書く傾向がある。"
-    },
-    {
-      "word": "inclusive",
-      "meaning": "including all the services or items normally expected or required",
-      "japaneseMeaning": "包括的な、全てを含む",
-      "synonyms": "comprehensive, all-encompassing, broad",
-      "antonyms": "exclusive, limited, partial",
-      "example": "The resort offered an inclusive package.",
-      "japaneseExample": "そのリゾートはすべてを含むパッケージを提供した。"
-    },
-    {
-      "word": "incoherent",
-      "meaning": "expressed in an incomprehensible or confusing way; unclear",
-      "japaneseMeaning": "支離滅裂な、一貫性のない",
-      "synonyms": "unintelligible, disjointed, confusing",
-      "antonyms": "coherent, clear, logical",
-      "example": "His explanation was incoherent and hard to follow.",
-      "japaneseExample": "彼の説明は支離滅裂で、理解するのが難しかった。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-38",
+    "title": "Lesson 38",
+    "paragraph": "This lesson covers ambition and success, emphasizing traits, determination, and achievement.",
+    "words": [
+      {
+        "word": "aspirational",
+        "meaning": "having a strong desire to achieve something",
+        "japaneseMeaning": "向上心のある、志望的な",
+        "synonyms": "ambitious, striving",
+        "antonyms": "unambitious, complacent",
+        "example": "She set aspirational goals for her career."
+      },
+      {
+        "word": "industrious",
+        "meaning": "diligent and hardworking",
+        "japaneseMeaning": "勤勉な、努力家の",
+        "synonyms": "hardworking, diligent",
+        "antonyms": "lazy, idle",
+        "example": "The industrious student completed all assignments ahead of schedule."
+      },
+      {
+        "word": "enterprising",
+        "meaning": "ready to undertake new ventures; resourceful",
+        "japaneseMeaning": "起業家精神のある、進取的な",
+        "synonyms": "innovative, ambitious",
+        "antonyms": "unadventurous, passive",
+        "example": "The enterprising entrepreneur launched a successful startup."
+      },
+      {
+        "word": "perseverant",
+        "meaning": "showing persistence in doing something despite difficulty",
+        "japaneseMeaning": "忍耐強い、粘り強い",
+        "synonyms": "persistent, determined",
+        "antonyms": "quit, faltering",
+        "example": "Her perseverant efforts led to the breakthrough discovery."
+      },
+      {
+        "word": "tenacious",
+        "meaning": "holding firmly to a course of action or belief",
+        "japaneseMeaning": "執念深い、頑固な",
+        "synonyms": "persistent, resolute",
+        "antonyms": "weak, irresolute",
+        "example": "He is tenacious in pursuing his objectives."
+      },
+      {
+        "word": "resolute",
+        "meaning": "determined and unwavering",
+        "japaneseMeaning": "断固とした、揺るぎない",
+        "synonyms": "determined, steadfast",
+        "antonyms": "indecisive, hesitant",
+        "example": "She remained resolute in defending her beliefs."
+      },
+      {
+        "word": "visionary",
+        "meaning": "having original ideas about what the future could be",
+        "japaneseMeaning": "先見の明のある、ビジョンのある",
+        "synonyms": "innovative, imaginative",
+        "antonyms": "practical, unimaginative",
+        "example": "The visionary leader transformed the company."
+      },
+      {
+        "word": "resourceful",
+        "meaning": "able to handle situations creatively and effectively",
+        "japaneseMeaning": "機転が利く、才覚のある",
+        "synonyms": "clever, inventive",
+        "antonyms": "incompetent, helpless",
+        "example": "She was resourceful in solving complex problems."
+      },
+      {
+        "word": "ambitious",
+        "meaning": "having a strong desire to succeed",
+        "japaneseMeaning": "野心的な、向上心のある",
+        "synonyms": "aspiring, driven",
+        "antonyms": "unambitious, content",
+        "example": "The ambitious student aimed for a scholarship."
+      },
+      {
+        "word": "prolific",
+        "meaning": "producing a large quantity of work",
+        "japaneseMeaning": "多作の、豊富な",
+        "synonyms": "productive, fertile",
+        "antonyms": "unproductive, barren",
+        "example": "The prolific author published ten novels in five years."
+      }
+    ]
+  }

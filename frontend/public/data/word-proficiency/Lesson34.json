@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-34",
-  "title": "Lesson 34",
-  "words": [
-    {
-      "word": "garrulous",
-      "meaning": "excessively talkative, especially on trivial matters",
-      "japaneseMeaning": "おしゃべりな、冗長な",
-      "synonyms": "talkative, loquacious, verbose",
-      "antonyms": "taciturn, reticent, reserved",
-      "example": "He became garrulous after a few drinks.",
-      "japaneseExample": "彼は少しお酒を飲むとおしゃべりになった。"
-    },
-    {
-      "word": "genial",
-      "meaning": "friendly and cheerful",
-      "japaneseMeaning": "愛想の良い、親しみやすい",
-      "synonyms": "friendly, amiable, pleasant",
-      "antonyms": "hostile, unfriendly, cold",
-      "example": "Her genial manner made everyone feel comfortable.",
-      "japaneseExample": "彼女の親しみやすい態度は皆を安心させた。"
-    },
-    {
-      "word": "germane",
-      "meaning": "relevant to a subject under consideration",
-      "japaneseMeaning": "適切な、関連のある",
-      "synonyms": "relevant, pertinent, applicable",
-      "antonyms": "irrelevant, unrelated, inappropriate",
-      "example": "His comments were not germane to the discussion.",
-      "japaneseExample": "彼のコメントは議論に関連していなかった。"
-    },
-    {
-      "word": "gluttonous",
-      "meaning": "excessively greedy, especially regarding food",
-      "japaneseMeaning": "食いしん坊の、貪欲な",
-      "synonyms": "greedy, voracious, insatiable",
-      "antonyms": "abstemious, moderate, restrained",
-      "example": "The gluttonous man ate three full dinners in one night.",
-      "japaneseExample": "その食いしん坊の男性は一晩で三回のディナーを平らげた。"
-    },
-    {
-      "word": "gregarious",
-      "meaning": "fond of company; sociable",
-      "japaneseMeaning": "社交的な、群れを好む",
-      "synonyms": "sociable, outgoing, convivial",
-      "antonyms": "unsociable, solitary, reserved",
-      "example": "She is a gregarious person who enjoys parties.",
-      "japaneseExample": "彼女は社交的でパーティーを楽しむ人だ。"
-    },
-    {
-      "word": "grievous",
-      "meaning": "causing sorrow or pain; serious or severe",
-      "japaneseMeaning": "痛ましい、深刻な",
-      "synonyms": "serious, severe, dreadful",
-      "antonyms": "minor, trivial, light",
-      "example": "The loss of the team was a grievous disappointment.",
-      "japaneseExample": "チームの敗北は非常に残念なことだった。"
-    },
-    {
-      "word": "grudging",
-      "meaning": "given, granted, or allowed only reluctantly or resentfully",
-      "japaneseMeaning": "不本意な、しぶしぶの",
-      "synonyms": "reluctant, unwilling, resentful",
-      "antonyms": "willing, generous, enthusiastic",
-      "example": "He offered a grudging apology for his mistake.",
-      "japaneseExample": "彼は自分の過ちについてしぶしぶ謝罪した。"
-    },
-    {
-      "word": "guile",
-      "meaning": "sly or cunning intelligence",
-      "japaneseMeaning": "ずる賢さ、狡猾",
-      "synonyms": "cunning, deceit, craftiness",
-      "antonyms": "honesty, openness, sincerity",
-      "example": "The con artist used guile to trick his victims.",
-      "japaneseExample": "その詐欺師はずる賢さで被害者をだました。"
-    },
-    {
-      "word": "gullible",
-      "meaning": "easily persuaded to believe something; credulous",
-      "japaneseMeaning": "だまされやすい、純真な",
-      "synonyms": "naive, trusting, credulous",
-      "antonyms": "skeptical, suspicious, wary",
-      "example": "The gullible child believed every story told to him.",
-      "japaneseExample": "その純真な子供は聞いた話をすべて信じてしまった。"
-    },
-    {
-      "word": "hamper",
-      "meaning": "to hinder or obstruct the progress of",
-      "japaneseMeaning": "妨げる、邪魔する",
-      "synonyms": "hinder, impede, obstruct",
-      "antonyms": "assist, facilitate, help",
-      "example": "Heavy traffic hampered our progress.",
-      "japaneseExample": "渋滞で私たちの進行は妨げられた。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-34",
+    "title": "Lesson 34",
+    "paragraph": "This lesson focuses on argument and debate, including rhetoric, persuasion, and critical discussion.",
+    "words": [
+      {
+        "word": "polemical",
+        "meaning": "relating to strong verbal or written attacks on ideas",
+        "japaneseMeaning": "論争的な、議論好きの",
+        "synonyms": "controversial, argumentative",
+        "antonyms": "conciliatory, agreeable",
+        "example": "He wrote a polemical essay criticizing government policy."
+      },
+      {
+        "word": "disputatious",
+        "meaning": "fond of having heated arguments",
+        "japaneseMeaning": "論争好きな、口論的な",
+        "synonyms": "argumentative, contentious",
+        "antonyms": "agreeable, conciliatory",
+        "example": "The professor is disputatious during faculty debates."
+      },
+      {
+        "word": "refutation",
+        "meaning": "the act of proving a statement or theory to be wrong",
+        "japaneseMeaning": "反証、論駁",
+        "synonyms": "rebuttal, contradiction",
+        "antonyms": "",
+        "example": "The scientist provided a refutation of the previous study."
+      },
+      {
+        "word": "rhetoric",
+        "meaning": "the art of persuasive speaking or writing",
+        "japaneseMeaning": "修辞学、説得術",
+        "synonyms": "oratory, eloquence",
+        "antonyms": "plainness, simplicity",
+        "example": "Political speeches often rely on rhetoric."
+      },
+      {
+        "word": "dialectic",
+        "meaning": "logical discussion intended to resolve disagreement",
+        "japaneseMeaning": "弁証法、討論",
+        "synonyms": "debate, reasoning",
+        "antonyms": "",
+        "example": "The philosopher used dialectic to explore ethical dilemmas."
+      },
+      {
+        "word": "contention",
+        "meaning": "an assertion in an argument or debate",
+        "japaneseMeaning": "主張、争点",
+        "synonyms": "claim, argument",
+        "antonyms": "",
+        "example": "Her contention was that education reforms were necessary."
+      },
+      {
+        "word": "rebuttal",
+        "meaning": "a response to counter an argument",
+        "japaneseMeaning": "反論、論駁",
+        "synonyms": "refutation, contradiction",
+        "antonyms": "",
+        "example": "He offered a rebuttal to the critic’s review."
+      },
+      {
+        "word": "persuasion",
+        "meaning": "the act of convincing someone to believe or do something",
+        "japaneseMeaning": "説得、説得力",
+        "synonyms": "convincing, influence",
+        "antonyms": "dissuasion, discouragement",
+        "example": "The lawyer’s persuasion helped win the case."
+      },
+      {
+        "word": "assertion",
+        "meaning": "a confident and forceful statement of fact or belief",
+        "japaneseMeaning": "断言、主張",
+        "synonyms": "claim, declaration",
+        "antonyms": "denial, doubt",
+        "example": "Her assertion about climate change was supported by research."
+      },
+      {
+        "word": "rejoinder",
+        "meaning": "a reply, especially a sharp or witty one",
+        "japaneseMeaning": "応答、返答",
+        "synonyms": "retort, response",
+        "antonyms": "",
+        "example": "His quick rejoinder silenced the critic."
+      }
+    ]
+  }
+ 

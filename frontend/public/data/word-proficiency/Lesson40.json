@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-40",
-  "title": "Lesson 40",
-  "words": [
-    {
-      "word": "inexorable",
-      "meaning": "impossible to stop or prevent",
-      "japaneseMeaning": "容赦ない、避けられない",
-      "synonyms": "relentless, unstoppable, unyielding",
-      "antonyms": "avoidable, flexible, yielding",
-      "example": "Time is an inexorable force.",
-      "japaneseExample": "時間は容赦ない力である。"
-    },
-    {
-      "word": "infallible",
-      "meaning": "incapable of making mistakes or being wrong",
-      "japaneseMeaning": "絶対に正しい、誤りのない",
-      "synonyms": "unerring, flawless, foolproof",
-      "antonyms": "fallible, imperfect, unreliable",
-      "example": "Even experts are not infallible.",
-      "japaneseExample": "専門家でさえも絶対に正しいわけではない。"
-    },
-    {
-      "word": "infamous",
-      "meaning": "well known for some bad quality or deed",
-      "japaneseMeaning": "悪名高い、ひどく評判の悪い",
-      "synonyms": "notorious, disreputable, shameful",
-      "antonyms": "famous, reputable, honorable",
-      "example": "The dictator became infamous for his cruelty.",
-      "japaneseExample": "その独裁者は残虐行為で悪名高くなった。"
-    },
-    {
-      "word": "infer",
-      "meaning": "to deduce or conclude information from evidence and reasoning",
-      "japaneseMeaning": "推測する、推論する",
-      "synonyms": "deduce, conclude, reason",
-      "antonyms": "misinterpret, misunderstand, guess blindly",
-      "example": "From the evidence, we can infer that he was lying.",
-      "japaneseExample": "証拠から、彼が嘘をついていたと推測できる。"
-    },
-    {
-      "word": "infernal",
-      "meaning": "relating to or characteristic of hell; very troublesome or annoying",
-      "japaneseMeaning": "地獄の、ひどく厄介な",
-      "synonyms": "hellish, fiendish, diabolical",
-      "antonyms": "heavenly, pleasant, delightful",
-      "example": "The infernal noise from the machines kept him awake.",
-      "japaneseExample": "機械からの地獄のような騒音で彼は眠れなかった。"
-    },
-    {
-      "word": "ingenious",
-      "meaning": "clever, original, and inventive",
-      "japaneseMeaning": "独創的な、器用な",
-      "synonyms": "clever, inventive, resourceful",
-      "antonyms": "unimaginative, dull, inept",
-      "example": "She came up with an ingenious solution to the problem.",
-      "japaneseExample": "彼女はその問題に対して独創的な解決策を考え出した。"
-    },
-    {
-      "word": "ingenuous",
-      "meaning": "innocent and unsuspecting; straightforward",
-      "japaneseMeaning": "無邪気な、素直な",
-      "synonyms": "naive, honest, sincere",
-      "antonyms": "cunning, deceitful, sophisticated",
-      "example": "The ingenuous child trusted everyone.",
-      "japaneseExample": "無邪気なその子供は誰をも信頼した。"
-    },
-    {
-      "word": "ingratiate",
-      "meaning": "bring oneself into favor with someone by flattering or trying to please them",
-      "japaneseMeaning": "機嫌を取る、取り入る",
-      "synonyms": "flatter, charm, curry favor",
-      "antonyms": "alienate, offend, displease",
-      "example": "He tried to ingratiate himself with the boss.",
-      "japaneseExample": "彼は上司に取り入ろうとした。"
-    },
-    {
-      "word": "inhibit",
-      "meaning": "to hinder, restrain, or prevent an action or process",
-      "japaneseMeaning": "抑制する、妨げる",
-      "synonyms": "restrain, hinder, impede",
-      "antonyms": "encourage, allow, facilitate",
-      "example": "Fear can inhibit creativity.",
-      "japaneseExample": "恐怖は創造性を抑制することがある。"
-    },
-    {
-      "word": "innate",
-      "meaning": "inborn; natural",
-      "japaneseMeaning": "生まれつきの、固有の",
-      "synonyms": "inborn, natural, inherent",
-      "antonyms": "acquired, learned, external",
-      "example": "She has an innate talent for music.",
-      "japaneseExample": "彼女には生まれつきの音楽の才能がある。"
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-1-40",
+    "title": "Lesson 40",
+    "paragraph": "This lesson examines change and adaptation, highlighting flexibility, growth, and evolution.",
+    "words": [
+      {
+        "word": "mutable",
+        "meaning": "liable to change or alter",
+        "japaneseMeaning": "変わりやすい、可変の",
+        "synonyms": "changeable, variable",
+        "antonyms": "constant, fixed",
+        "example": "Human moods are often mutable."
+      },
+      {
+        "word": "fluid",
+        "meaning": "not fixed; adaptable",
+        "japaneseMeaning": "流動的な、柔軟な",
+        "synonyms": "adaptable, flexible",
+        "antonyms": "rigid, fixed",
+        "example": "Her ideas about strategy were fluid and open to discussion."
+      },
+      {
+        "word": "malleable",
+        "meaning": "capable of being shaped or influenced",
+        "japaneseMeaning": "柔軟な、影響されやすい",
+        "synonyms": "pliable, adaptable",
+        "antonyms": "inflexible, rigid",
+        "example": "Young minds are malleable and easy to educate."
+      },
+      {
+        "word": "transformative",
+        "meaning": "causing a marked change",
+        "japaneseMeaning": "変革をもたらす、変化を促す",
+        "synonyms": "revolutionary, altering",
+        "antonyms": "static, unchanging",
+        "example": "The internet had a transformative effect on communication."
+      },
+      {
+        "word": "evolutionary",
+        "meaning": "relating to gradual development or change",
+        "japaneseMeaning": "進化の、段階的な発展の",
+        "synonyms": "progressive, developmental",
+        "antonyms": "stagnant, static",
+        "example": "Evolutionary theories explain species adaptation over time."
+      },
+      {
+        "word": "progressive",
+        "meaning": "favoring or promoting change and improvement",
+        "japaneseMeaning": "進歩的な、革新的な",
+        "synonyms": "forward-thinking, reformist",
+        "antonyms": "conservative, reactionary",
+        "example": "The government adopted progressive policies for education."
+      },
+      {
+        "word": "transitional",
+        "meaning": "relating to or characteristic of a process of change",
+        "japaneseMeaning": "過渡的な、移行期の",
+        "synonyms": "interim, temporary",
+        "antonyms": "permanent, stable",
+        "example": "The country was in a transitional period after the election."
+      },
+      {
+        "word": "dynamic",
+        "meaning": "constantly changing or active",
+        "japaneseMeaning": "動的な、活発な",
+        "synonyms": "energetic, changing",
+        "antonyms": "static, inert",
+        "example": "The dynamic market required flexible strategies."
+      },
+      {
+        "word": "adaptive",
+        "meaning": "able to adjust to new conditions",
+        "japaneseMeaning": "適応力のある、順応性のある",
+        "synonyms": "adjustable, flexible",
+        "antonyms": "rigid, inflexible",
+        "example": "Species must be adaptive to survive environmental changes."
+      },
+      {
+        "word": "reformative",
+        "meaning": "intended to improve by reform",
+        "japaneseMeaning": "改革的な、改善のための",
+        "synonyms": "corrective, restorative",
+        "antonyms": "corruptive, destructive",
+        "example": "The reformative policies improved public health."
+      }
+    ]
+  }
+ 

@@ -1,96 +1,89 @@
-{
-  "lesson_id": "eiken-1-18",
-  "title": "Lesson 18",
-  "words": [
-    {
-      "word": "declivity",
-      "meaning": "a downward slope",
-      "japaneseMeaning": "下り坂、傾斜",
-      "synonyms": "slope, descent, decline",
-      "antonyms": "incline, ascent, rise",
-      "example": "The road had a steep declivity.",
-      "japaneseExample": "その道は急な下り坂だった。"
-    },
-    {
-      "word": "decry",
-      "meaning": "to publicly denounce or criticize",
-      "japaneseMeaning": "公然と非難する、けなす",
-      "synonyms": "condemn, denounce, criticize",
-      "antonyms": "praise, commend, endorse",
-      "example": "The policy was decried by environmentalists.",
-      "japaneseExample": "その政策は環境保護論者により非難された。"
-    },
-    {
-      "word": "deference",
-      "meaning": "respectful submission or yielding to the judgment of another",
-      "japaneseMeaning": "敬意、服従",
-      "synonyms": "respect, regard, submission",
-      "antonyms": "disrespect, defiance, contempt",
-      "example": "He showed deference to his elders.",
-      "japaneseExample": "彼は年長者に敬意を示した。"
-    },
-    {
-      "word": "definitive",
-      "meaning": "conclusive and final; authoritative",
-      "japaneseMeaning": "決定的な、最終的な",
-      "synonyms": "conclusive, final, authoritative",
-      "antonyms": "tentative, inconclusive, uncertain",
-      "example": "This is the definitive study on climate change.",
-      "japaneseExample": "これは気候変動に関する決定的な研究だ。"
-    },
-    {
-      "word": "deleterious",
-      "meaning": "causing harm or damage",
-      "japaneseMeaning": "有害な、害を及ぼす",
-      "synonyms": "harmful, damaging, detrimental",
-      "antonyms": "beneficial, helpful, advantageous",
-      "example": "Smoking has deleterious effects on health.",
-      "japaneseExample": "喫煙は健康に有害な影響を与える。"
-    },
-    {
-      "word": "delineate",
-      "meaning": "to describe or portray in detail",
-      "japaneseMeaning": "詳しく描写する、説明する",
-      "synonyms": "describe, depict, outline",
-      "antonyms": "obscure, confuse, distort",
-      "example": "The report delineates the steps for implementation.",
-      "japaneseExample": "その報告書は実施の手順を詳述している。"
-    },
-    {
-      "word": "demagogue",
-      "meaning": "a political leader who seeks support by appealing to emotions and prejudices",
-      "japaneseMeaning": "扇動政治家、煽動者",
-      "synonyms": "agitator, rabble-rouser, instigator",
-      "antonyms": "statesman, diplomat, leader",
-      "example": "The demagogue incited the crowd with inflammatory speeches.",
-      "japaneseExample": "その扇動政治家は扇情的な演説で群衆を煽った。"
-    },
-    {
-      "word": "demarcation",
-      "meaning": "the action of fixing the boundary or limits of something",
-      "japaneseMeaning": "境界の設定、区分",
-      "synonyms": "boundary, separation, division",
-      "antonyms": "connection, unification, joining",
-      "example": "There is a clear demarcation between work and leisure.",
-      "japaneseExample": "仕事と余暇の間には明確な区分がある。"
-    },
-    {
-      "word": "demise",
-      "meaning": "death or the end of something",
-      "japaneseMeaning": "死、終焉",
-      "synonyms": "death, end, termination",
-      "antonyms": "birth, beginning, creation",
-      "example": "The sudden demise of the company shocked everyone.",
-      "japaneseExample": "その会社の突然の終焉は皆を驚かせた。"
-    },
-    {
-      "word": "demure",
-      "meaning": "reserved, modest, and shy in behavior",
-      "japaneseMeaning": "控えめな、慎み深い",
-      "synonyms": "modest, reserved, shy",
-      "antonyms": "bold, assertive, outgoing",
-      "example": "She gave him a demure smile.",
-      "japaneseExample": "彼女は控えめな笑みを彼に向けた。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-18",
+    "title": "Lesson 18",
+    "paragraph": "This lesson explores environment and sustainability, including ecological systems, conservation, and human impact.",
+    "words": [
+      {
+        "word": "ecological",
+        "meaning": "relating to the relationships between organisms and their environment",
+        "japaneseMeaning": "生態学の、生態的な",
+        "synonyms": "environmental, biological",
+        "antonyms": "",
+        "example": "Ecological studies help us understand biodiversity."
+      },
+      {
+        "word": "biotic",
+        "meaning": "relating to living organisms",
+        "japaneseMeaning": "生物の",
+        "synonyms": "living, organic",
+        "antonyms": "abiotic, nonliving",
+        "example": "Biotic factors include plants, animals, and microbes."
+      },
+      {
+        "word": "conservationist",
+        "meaning": "a person who advocates for protecting the environment",
+        "japaneseMeaning": "自然保護論者",
+        "synonyms": "environmentalist, protector",
+        "antonyms": "polluter, exploiter",
+        "example": "The conservationist campaigned to save the wetlands."
+      },
+      {
+        "word": "biodegradable",
+        "meaning": "capable of being broken down naturally by organisms",
+        "japaneseMeaning": "生分解性の",
+        "synonyms": "compostable, eco-friendly",
+        "antonyms": "non-biodegradable",
+        "example": "Biodegradable packaging reduces environmental waste."
+      },
+      {
+        "word": "deforestation",
+        "meaning": "the clearing or destruction of forests",
+        "japaneseMeaning": "森林破壊",
+        "synonyms": "logging, clearing",
+        "antonyms": "reforestation, afforestation",
+        "example": "Deforestation contributes to climate change."
+      },
+      {
+        "word": "carbon-neutral",
+        "meaning": "having net zero carbon dioxide emissions",
+        "japaneseMeaning": "カーボンニュートラル",
+        "synonyms": "net-zero, sustainable",
+        "antonyms": "carbon-emitting, polluting",
+        "example": "The company aims to become carbon-neutral by 2030."
+      },
+      {
+        "word": "sustainable",
+        "meaning": "able to be maintained over the long term without harming the environment",
+        "japaneseMeaning": "持続可能な",
+        "synonyms": "renewable, eco-friendly",
+        "antonyms": "unsustainable, destructive",
+        "example": "Sustainable farming practices preserve soil health."
+      },
+      {
+        "word": "pollutant",
+        "meaning": "a substance that contaminates the environment",
+        "japaneseMeaning": "汚染物質",
+        "synonyms": "contaminant, toxin",
+        "antonyms": "cleanser, purifier",
+        "example": "Factories release pollutants into the river."
+      },
+      {
+        "word": "ecosystemic",
+        "meaning": "relating to ecosystems and their functioning",
+        "japaneseMeaning": "生態系の",
+        "synonyms": "ecological, environmental",
+        "antonyms": "",
+        "example": "Ecosystemic health is vital for species survival."
+      },
+      {
+        "word": "preservationist",
+        "meaning": "a person who seeks to protect natural resources or heritage",
+        "japaneseMeaning": "保存主義者、保護論者",
+        "synonyms": "conservationist, protector",
+        "antonyms": "destroyer, exploiter",
+        "example": "The preservationist fought to save the ancient forest."
+      }
+    ]
+  }
+ 

@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-7",
-  "title": "Lesson 7",
-  "words": [
-    {
-      "word": "arcane",
-      "meaning": "understood by few; mysterious or secret",
-      "japaneseMeaning": "難解な、秘儀の",
-      "synonyms": "mysterious, obscure, esoteric",
-      "antonyms": "clear, obvious, simple",
-      "example": "He has an arcane knowledge of medieval history.",
-      "japaneseExample": "彼は中世史について秘儀的な知識を持っている。"
-    },
-    {
-      "word": "arduous",
-      "meaning": "involving or requiring strenuous effort; difficult and tiring",
-      "japaneseMeaning": "骨の折れる、困難な",
-      "synonyms": "difficult, laborious, strenuous",
-      "antonyms": "easy, simple, effortless",
-      "example": "Climbing the mountain was an arduous task.",
-      "japaneseExample": "山に登ることは骨の折れる作業だった。"
-    },
-    {
-      "word": "arraign",
-      "meaning": "to call or bring someone before a court to answer a charge",
-      "japaneseMeaning": "召喚する、起訴する",
-      "synonyms": "charge, indict, summon",
-      "antonyms": "acquit, release, free",
-      "example": "The suspect was arraigned in court yesterday.",
-      "japaneseExample": "容疑者は昨日裁判所に召喚された。"
-    },
-    {
-      "word": "articulate",
-      "meaning": "having or showing the ability to speak fluently and coherently",
-      "japaneseMeaning": "明確に表現する、はっきり話す",
-      "synonyms": "eloquent, expressive, fluent",
-      "antonyms": "inarticulate, unclear, tongue-tied",
-      "example": "She is articulate and expresses her ideas clearly.",
-      "japaneseExample": "彼女は明確に自分の考えを表現できる。"
-    },
-    {
-      "word": "artifice",
-      "meaning": "clever or cunning devices used to trick or deceive",
-      "japaneseMeaning": "策略、巧妙な手段",
-      "synonyms": "trick, deception, cunning",
-      "antonyms": "honesty, sincerity, straightforwardness",
-      "example": "The spy used artifice to escape detection.",
-      "japaneseExample": "スパイは発覚を避けるために策略を用いた。"
-    },
-    {
-      "word": "ascendancy",
-      "meaning": "occupation of a position of dominant power or influence",
-      "japaneseMeaning": "優勢、支配力",
-      "synonyms": "dominance, superiority, supremacy",
-      "antonyms": "inferiority, subordination, weakness",
-      "example": "The company gained ascendancy in the market.",
-      "japaneseExample": "その会社は市場で優勢を得た。"
-    },
-    {
-      "word": "ascertain",
-      "meaning": "to find out or learn with certainty",
-      "japaneseMeaning": "確認する、突き止める",
-      "synonyms": "determine, discover, verify",
-      "antonyms": "ignore, overlook, assume",
-      "example": "We need to ascertain the facts before making a decision.",
-      "japaneseExample": "決定を下す前に事実を確認する必要がある。"
-    },
-    {
-      "word": "asperity",
-      "meaning": "harshness of tone or manner; severity",
-      "japaneseMeaning": "厳しさ、荒々しさ",
-      "synonyms": "harshness, severity, roughness",
-      "antonyms": "gentleness, mildness, softness",
-      "example": "The manager spoke with asperity to the employees.",
-      "japaneseExample": "マネージャーは従業員に対して厳しく話した。"
-    },
-    {
-      "word": "assiduous",
-      "meaning": "showing great care and perseverance",
-      "japaneseMeaning": "勤勉な、根気強い",
-      "synonyms": "diligent, meticulous, persistent",
-      "antonyms": "negligent, lazy, careless",
-      "example": "She was assiduous in her research.",
-      "japaneseExample": "彼女は研究において勤勉だった。"
-    },
-    {
-      "word": "assuage",
-      "meaning": "to make an unpleasant feeling less intense",
-      "japaneseMeaning": "和らげる、なだめる",
-      "synonyms": "relieve, alleviate, ease",
-      "antonyms": "aggravate, intensify, worsen",
-      "example": "The medicine assuaged his headache.",
-      "japaneseExample": "薬が彼の頭痛を和らげた。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-7",
+    "title": "Lesson 7",
+    "paragraph": "This lesson explores language and expression, focusing on rhetoric, eloquence, and the art of communication.",
+    "words": [
+      {
+        "word": "rhetoric",
+        "meaning": "the art of effective or persuasive speaking or writing",
+        "japaneseMeaning": "修辞学、雄弁術",
+        "synonyms": "oratory, eloquence",
+        "antonyms": "plainness, simplicity",
+        "example": "The politician’s rhetoric inspired the crowd."
+      },
+      {
+        "word": "articulation",
+        "meaning": "the clear and precise pronunciation or expression of ideas",
+        "japaneseMeaning": "発音、明確な表現",
+        "synonyms": "expression, enunciation",
+        "antonyms": "mumbling, inarticulateness",
+        "example": "Her articulation of complex ideas impressed the audience."
+      },
+      {
+        "word": "eloquence",
+        "meaning": "fluent, persuasive, and expressive speech",
+        "japaneseMeaning": "雄弁、説得力",
+        "synonyms": "fluency, expressiveness",
+        "antonyms": "inarticulateness, awkwardness",
+        "example": "The lawyer’s eloquence swayed the jury."
+      },
+      {
+        "word": "verbosity",
+        "meaning": "the quality of using more words than needed",
+        "japaneseMeaning": "冗長さ、多弁",
+        "synonyms": "wordiness, prolixity",
+        "antonyms": "conciseness, brevity",
+        "example": "His verbosity made the lecture unnecessarily long."
+      },
+      {
+        "word": "circumlocution",
+        "meaning": "the use of many words to express an idea unnecessarily",
+        "japaneseMeaning": "婉曲表現、遠回しの言い方",
+        "synonyms": "periphrasis, wordiness",
+        "antonyms": "directness, conciseness",
+        "example": "He used circumlocution to avoid answering the question directly."
+      },
+      {
+        "word": "allusion",
+        "meaning": "an indirect reference to a person, place, or event",
+        "japaneseMeaning": "ほのめかし、言及",
+        "synonyms": "reference, mention",
+        "antonyms": "",
+        "example": "The poem contains an allusion to Greek mythology."
+      },
+      {
+        "word": "cadence",
+        "meaning": "the rhythmic flow of a sequence of sounds or words",
+        "japaneseMeaning": "抑揚、リズム",
+        "synonyms": "rhythm, intonation",
+        "antonyms": "",
+        "example": "The speaker’s cadence made the speech captivating."
+      },
+      {
+        "word": "intonation",
+        "meaning": "the rise and fall of the voice in speaking",
+        "japaneseMeaning": "抑揚、イントネーション",
+        "synonyms": "pitch, modulation",
+        "antonyms": "",
+        "example": "Her intonation indicated that she was asking a question."
+      },
+      {
+        "word": "prosody",
+        "meaning": "the patterns of rhythm and sound used in poetry and speech",
+        "japaneseMeaning": "韻律、韻律学",
+        "synonyms": "intonation, rhythm",
+        "antonyms": "",
+        "example": "Understanding prosody is essential for reading poetry aloud."
+      },
+      {
+        "word": "eloquent",
+        "meaning": "fluent or persuasive in speaking or writing",
+        "japaneseMeaning": "雄弁な、説得力のある",
+        "synonyms": "articulate, expressive",
+        "antonyms": "inarticulate, awkward",
+        "example": "He gave an eloquent speech that moved the audience."
+      }
+    ]
+  }
+

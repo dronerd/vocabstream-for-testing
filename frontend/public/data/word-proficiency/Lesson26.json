@@ -1,96 +1,87 @@
-{
-  "lesson_id": "eiken-1-26",
-  "title": "Lesson 26",
-  "words": [
-    {
-      "word": "embody",
-      "meaning": "to give tangible or visible form to an idea, quality, or feeling",
-      "japaneseMeaning": "具現化する、体現する",
-      "synonyms": "represent, personify, incarnate",
-      "antonyms": "abstract, disembody, detach",
-      "example": "The statue embodies the spirit of freedom.",
-      "japaneseExample": "その像は自由の精神を体現している。"
-    },
-    {
-      "word": "emend",
-      "meaning": "to correct or revise a text",
-      "japaneseMeaning": "校正する、修正する",
-      "synonyms": "correct, amend, revise",
-      "antonyms": "corrupt, distort, worsen",
-      "example": "The editor emended several passages in the manuscript.",
-      "japaneseExample": "編集者は原稿のいくつかの箇所を修正した。"
-    },
-    {
-      "word": "emulate",
-      "meaning": "to match or surpass by imitation",
-      "japaneseMeaning": "見習う、模倣して優れようとする",
-      "synonyms": "imitate, mirror, follow",
-      "antonyms": "neglect, disregard, ignore",
-      "example": "Young athletes try to emulate their idols.",
-      "japaneseExample": "若い選手たちは憧れの選手を見習おうとする。"
-    },
-    {
-      "word": "enervate",
-      "meaning": "to weaken or drain of energy",
-      "japaneseMeaning": "衰弱させる、気力を奪う",
-      "synonyms": "weaken, exhaust, debilitate",
-      "antonyms": "energize, invigorate, strengthen",
-      "example": "The long meeting enervated everyone in the room.",
-      "japaneseExample": "長い会議は部屋の全員を疲れさせた。"
-    },
-    {
-      "word": "engender",
-      "meaning": "to cause or give rise to a feeling, situation, or condition",
-      "japaneseMeaning": "引き起こす、生じさせる",
-      "synonyms": "generate, produce, provoke",
-      "antonyms": "destroy, prevent, stop",
-      "example": "His actions engendered distrust among his colleagues.",
-      "japaneseExample": "彼の行動は同僚の間に不信感を生じさせた。"
-    },
-    {
-      "word": "enigma",
-      "meaning": "a person or thing that is mysterious or difficult to understand",
-      "japaneseMeaning": "謎、不可解なもの",
-      "synonyms": "mystery, puzzle, riddle",
-      "antonyms": "clarity, solution, explanation",
-      "example": "The origin of the ancient artifact remains an enigma.",
-      "japaneseExample": "その古代の遺物の起源は依然として謎である。"
-    },
-    {
-      "word": "enigmatic",
-      "meaning": "difficult to interpret or understand; mysterious",
-      "japaneseMeaning": "謎めいた、不可解な",
-      "synonyms": "mysterious, puzzling, cryptic",
-      "antonyms": "obvious, clear, understandable",
-      "example": "Her smile was enigmatic, leaving everyone curious.",
-      "japaneseExample": "彼女の微笑は謎めいていて、皆を好奇心にさせた。"
-    },
-    {
-      "word": "enmity",
-      "meaning": "the state of being actively opposed or hostile to someone or something",
-      "japaneseMeaning": "敵意、憎しみ",
-      "synonyms": "hostility, animosity, antagonism",
-      "antonyms": "friendship, goodwill, amity",
-      "example": "There was longstanding enmity between the two families.",
-      "japaneseExample": "その二つの家族の間には長年の敵意があった。"
-    },
-    {
-      "word": "ennui",
-      "meaning": "a feeling of listlessness and dissatisfaction arising from lack of occupation or excitement",
-      "japaneseMeaning": "倦怠、退屈",
-      "synonyms": "boredom, tedium, weariness",
-      "antonyms": "excitement, enthusiasm, interest",
-      "example": "He suffered from ennui during the long summer vacation.",
-      "japaneseExample": "長い夏休みの間、彼は倦怠感に悩まされた。"
-    },
-    {
-      "word": "enumerate",
-      "meaning": "to mention (a number of things) one by one",
-      "japaneseMeaning": "列挙する、数え上げる",
-      "synonyms": "list, itemize, recite",
-      "antonyms": "generalize, summarize, condense",
-      "example": "She enumerated all the reasons for her decision.",
-      "japaneseExample": "彼女は自分の決定の理由をすべて列挙した。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-26",
+    "title": "Lesson 26",
+    "paragraph": "This lesson focuses on visual culture, including imagery, symbolism, and artistic composition.",
+    "words": [
+      {
+        "word": "imagery",
+        "meaning": "visually descriptive or figurative language or visuals in art",
+        "japaneseMeaning": "イメージ、視覚表現",
+        "synonyms": "visuals, representation",
+        "antonyms": "",
+        "example": "The film’s imagery evokes a dreamlike atmosphere."
+      },
+      {
+        "word": "iconography",
+        "meaning": "the study of symbols and images in art",
+        "japaneseMeaning": "図像学、象徴表現",
+        "synonyms": "symbolism, pictorial representation",
+        "antonyms": "",
+        "example": "Religious iconography features prominent symbolic images."
+      },
+      {
+        "word": "symbolism",
+        "meaning": "the use of symbols to represent ideas or qualities",
+        "japaneseMeaning": "象徴主義、象徴表現",
+        "synonyms": "representation, allegory",
+        "antonyms": "literalism, realism",
+        "example": "The painting’s symbolism conveys a message of hope."
+      },
+      {
+        "word": "abstraction",
+        "meaning": "art that is non-representational, focusing on shapes and forms",
+        "japaneseMeaning": "抽象、抽象化",
+        "synonyms": "nonrepresentational, conceptual",
+        "antonyms": "figurative, concrete",
+        "example": "Modern artists often explore abstraction in their work."
+      },
+      {
+        "word": "figuration",
+        "meaning": "representation of objects or figures in art",
+        "japaneseMeaning": "具象表現、形象化",
+        "synonyms": "representation, depiction",
+        "antonyms": "abstraction",
+        "example": "The artist favors figuration over abstract designs."
+      },
+      {
+        "word": "composition",
+        "meaning": "the arrangement of elements within an artwork",
+        "japaneseMeaning": "構図、配列",
+        "synonyms": "layout, design",
+        "antonyms": "",
+        "example": "The composition directs the viewer’s attention to the subject."
+      },
+      {
+        "word": "juxtaposition",
+        "meaning": "placing elements close together for contrasting effect",
+        "japaneseMeaning": "並置、対比",
+        "synonyms": "contrast, adjacency",
+        "antonyms": "",
+        "example": "The painting uses juxtaposition to highlight differences."
+      },
+      {
+        "word": "chiaroscuro",
+        "meaning": "the use of light and shadow in art",
+        "japaneseMeaning": "明暗法、キアロスクーロ",
+        "synonyms": "light-dark contrast, shading",
+        "antonyms": "",
+        "example": "The artist’s use of chiaroscuro adds depth to the portrait."
+      },
+      {
+        "word": "motif",
+        "meaning": "a recurring theme or element in a work of art",
+        "japaneseMeaning": "モチーフ、主題",
+        "synonyms": "theme, pattern",
+        "antonyms": "",
+        "example": "The flower motif repeats throughout the tapestry."
+      },
+      {
+        "word": "aestheticism",
+        "meaning": "devotion to beauty and artistic taste",
+        "japaneseMeaning": "美学主義、美的追求",
+        "synonyms": "artistry, refinement",
+        "antonyms": "crudeness, vulgarity",
+        "example": "The movement of aestheticism emphasized art for art’s sake."
+      }
+    ]
+  }

@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-1",
-  "title": "Lesson 1",
-  "words": [
-    {
-      "word": "aberration",
-      "meaning": "a departure from what is normal, usual, or expected",
-      "japaneseMeaning": "異常、逸脱",
-      "synonyms": "anomaly, deviation, irregularity",
-      "antonyms": "normality, regularity, conformity",
-      "example": "The test results were an aberration and not typical.",
-      "japaneseExample": "試験結果は異常で、通常とは異なっていた。"
-    },
-    {
-      "word": "abhorrent",
-      "meaning": "inspiring disgust and loathing",
-      "japaneseMeaning": "嫌悪すべき、忌まわしい",
-      "synonyms": "detestable, loathsome, repugnant",
-      "antonyms": "admirable, delightful, acceptable",
-      "example": "Racism is abhorrent in any form.",
-      "japaneseExample": "どのような形でも人種差別は嫌悪すべきである。"
-    },
-    {
-      "word": "abrogate",
-      "meaning": "to repeal or do away with a law, right, or formal agreement",
-      "japaneseMeaning": "廃止する、取り消す",
-      "synonyms": "revoke, annul, cancel",
-      "antonyms": "enforce, establish, uphold",
-      "example": "The government decided to abrogate the outdated law.",
-      "japaneseExample": "政府は古い法律を廃止することに決めた。"
-    },
-    {
-      "word": "abscond",
-      "meaning": "to leave hurriedly and secretly, typically to avoid punishment",
-      "japaneseMeaning": "逃亡する、姿をくらます",
-      "synonyms": "flee, escape, bolt",
-      "antonyms": "remain, stay, appear",
-      "example": "The thief absconded with the stolen jewelry.",
-      "japaneseExample": "泥棒は盗んだ宝石を持って逃亡した。"
-    },
-    {
-      "word": "abstruse",
-      "meaning": "difficult to understand; obscure",
-      "japaneseMeaning": "難解な、難しい",
-      "synonyms": "complex, perplexing, obscure",
-      "antonyms": "clear, simple, straightforward",
-      "example": "The professor's lecture was abstruse and hard to follow.",
-      "japaneseExample": "教授の講義は難解で理解しにくかった。"
-    },
-    {
-      "word": "accentuate",
-      "meaning": "to make more noticeable or prominent",
-      "japaneseMeaning": "強調する、目立たせる",
-      "synonyms": "emphasize, highlight, stress",
-      "antonyms": "downplay, diminish, obscure",
-      "example": "The bright colors accentuate the room's decor.",
-      "japaneseExample": "鮮やかな色が部屋の装飾を引き立てる。"
-    },
-    {
-      "word": "acclaim",
-      "meaning": "enthusiastic and public praise",
-      "japaneseMeaning": "称賛、喝采",
-      "synonyms": "praise, applaud, honor",
-      "antonyms": "criticize, condemn, censure",
-      "example": "The author received acclaim for her latest novel.",
-      "japaneseExample": "その作家は最新の小説で称賛を受けた。"
-    },
-    {
-      "word": "acclimate",
-      "meaning": "to adjust to a new climate, environment, or situation",
-      "japaneseMeaning": "慣れる、順応する",
-      "synonyms": "adapt, adjust, familiarize",
-      "antonyms": "resist, struggle, reject",
-      "example": "It took a week to acclimate to the new city.",
-      "japaneseExample": "新しい街に慣れるのに1週間かかった。"
-    },
-    {
-      "word": "accolade",
-      "meaning": "an award or privilege granted as a special honor",
-      "japaneseMeaning": "賞賛、栄誉",
-      "synonyms": "honor, award, recognition",
-      "antonyms": "criticism, censure, disapproval",
-      "example": "She received an accolade for her contribution to science.",
-      "japaneseExample": "彼女は科学への貢献で栄誉を受けた。"
-    },
-    {
-      "word": "accost",
-      "meaning": "to approach and address someone boldly or aggressively",
-      "japaneseMeaning": "声をかける、話しかける",
-      "synonyms": "approach, confront, address",
-      "antonyms": "avoid, ignore, evade",
-      "example": "The journalist accosted the politician with tough questions.",
-      "japaneseExample": "ジャーナリストは政治家に厳しい質問をして話しかけた。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-1",
+    "title": "Lesson 1",
+    "paragraph": "This lesson focuses on philosophical and abstract concepts that explore the nature of reality and existence.",
+    "words": [
+      {
+        "word": "ontological",
+        "meaning": "relating to the branch of metaphysics dealing with the nature of being",
+        "japaneseMeaning": "存在論の",
+        "synonyms": "metaphysical, existential",
+        "antonyms": "",
+        "example": "The philosopher presented an ontological argument for the existence of God."
+      },
+      {
+        "word": "metaphysical",
+        "meaning": "concerned with abstract thought or subjects, especially existence and reality",
+        "japaneseMeaning": "形而上学の",
+        "synonyms": "philosophical, transcendental",
+        "antonyms": "physical, tangible",
+        "example": "She enjoyed reading metaphysical poetry that explored the nature of life and death."
+      },
+      {
+        "word": "dialectical",
+        "meaning": "relating to the art of investigating or discussing the truth of opinions",
+        "japaneseMeaning": "弁証法の",
+        "synonyms": "logical, reasoned",
+        "antonyms": "irrational, illogical",
+        "example": "Hegel's dialectical method analyzes the conflict of opposites."
+      },
+      {
+        "word": "axiomatic",
+        "meaning": "self-evident or unquestionable",
+        "japaneseMeaning": "公理的な",
+        "synonyms": "self-evident, evident",
+        "antonyms": "dubious, questionable",
+        "example": "It is axiomatic that all humans require oxygen to survive."
+      },
+      {
+        "word": "epistemic",
+        "meaning": "relating to knowledge or the degree of its validation",
+        "japaneseMeaning": "認識論の",
+        "synonyms": "cognitive, intellectual",
+        "antonyms": "",
+        "example": "The debate examined epistemic justification in scientific inquiry."
+      },
+      {
+        "word": "teleological",
+        "meaning": "relating to the explanation of phenomena by the purpose they serve rather than by postulated causes",
+        "japaneseMeaning": "目的論の",
+        "synonyms": "purposive, goal-oriented",
+        "antonyms": "",
+        "example": "The teleological argument suggests that natural features exist for a purpose."
+      },
+      {
+        "word": "transcendental",
+        "meaning": "relating to a spiritual or nonphysical realm",
+        "japaneseMeaning": "超越的な",
+        "synonyms": "otherworldly, metaphysical",
+        "antonyms": "mundane, material",
+        "example": "He sought transcendental experiences through meditation."
+      },
+      {
+        "word": "reductionist",
+        "meaning": "an approach that simplifies complex phenomena to their basic parts",
+        "japaneseMeaning": "還元主義の",
+        "synonyms": "simplistic, analytical",
+        "antonyms": "holistic, comprehensive",
+        "example": "The scientist criticized the reductionist view that ignored environmental factors."
+      },
+      {
+        "word": "phenomenological",
+        "meaning": "relating to the study of structures of consciousness as experienced from the first-person point of view",
+        "japaneseMeaning": "現象学的な",
+        "synonyms": "experiential, subjective",
+        "antonyms": "",
+        "example": "The researcher applied a phenomenological approach to understand human perception."
+      },
+      {
+        "word": "solipsistic",
+        "meaning": "believing that only one's mind is sure to exist",
+        "japaneseMeaning": "唯我論的な",
+        "synonyms": "egocentric, self-centered",
+        "antonyms": "altruistic, objective",
+        "example": "His solipsistic worldview prevented him from empathizing with others."
+      }
+    ]
+  }

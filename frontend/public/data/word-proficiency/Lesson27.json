@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-27",
-  "title": "Lesson 27",
-  "words": [
-    {
-      "word": "ephemeral",
-      "meaning": "lasting for a very short time",
-      "japaneseMeaning": "儚い、一時的な",
-      "synonyms": "short-lived, transient, fleeting",
-      "antonyms": "permanent, lasting, enduring",
-      "example": "The beauty of the sunset was ephemeral.",
-      "japaneseExample": "夕日の美しさは儚かった。"
-    },
-    {
-      "word": "epicurean",
-      "meaning": "devoted to the pursuit of pleasure, especially in food and drink",
-      "japaneseMeaning": "快楽主義の、美食の",
-      "synonyms": "hedonistic, indulgent, gourmet",
-      "antonyms": "ascetic, austere, restrained",
-      "example": "He led an epicurean lifestyle, enjoying fine wines and gourmet meals.",
-      "japaneseExample": "彼は美食主義の生活を送り、上質なワインや美食を楽しんだ。"
-    },
-    {
-      "word": "epitome",
-      "meaning": "a person or thing that is a perfect example of a particular quality or type",
-      "japaneseMeaning": "典型、縮図",
-      "synonyms": "embodiment, exemplar, archetype",
-      "antonyms": "counterexample, opposite, atypical",
-      "example": "She is the epitome of grace and elegance.",
-      "japaneseExample": "彼女は優雅さと上品さの典型である。"
-    },
-    {
-      "word": "equanimity",
-      "meaning": "mental calmness, composure, and evenness of temper, especially in a difficult situation",
-      "japaneseMeaning": "平静、冷静",
-      "synonyms": "composure, calmness, serenity",
-      "antonyms": "agitation, anxiety, upset",
-      "example": "He faced the crisis with remarkable equanimity.",
-      "japaneseExample": "彼はその危機に非常に冷静に対処した。"
-    },
-    {
-      "word": "equitable",
-      "meaning": "fair and impartial",
-      "japaneseMeaning": "公平な、公正な",
-      "synonyms": "fair, just, impartial",
-      "antonyms": "unfair, biased, unequal",
-      "example": "The teacher ensured an equitable distribution of resources among the students.",
-      "japaneseExample": "教師は学生間で公平な資源の配分を確保した。"
-    },
-    {
-      "word": "equivocal",
-      "meaning": "open to more than one interpretation; ambiguous",
-      "japaneseMeaning": "あいまいな、多義的な",
-      "synonyms": "ambiguous, unclear, vague",
-      "antonyms": "clear, definite, unambiguous",
-      "example": "His answer to the question was deliberately equivocal.",
-      "japaneseExample": "彼の質問への答えは意図的にあいまいだった。"
-    },
-    {
-      "word": "eradicate",
-      "meaning": "to completely destroy or eliminate",
-      "japaneseMeaning": "根絶する、撲滅する",
-      "synonyms": "eliminate, destroy, obliterate",
-      "antonyms": "create, establish, preserve",
-      "example": "The government aims to eradicate poverty within the next decade.",
-      "japaneseExample": "政府は次の10年で貧困を根絶することを目指している。"
-    },
-    {
-      "word": "erratic",
-      "meaning": "not even or regular in pattern or movement; unpredictable",
-      "japaneseMeaning": "不規則な、突発的な",
-      "synonyms": "unpredictable, irregular, inconsistent",
-      "antonyms": "consistent, regular, predictable",
-      "example": "His erratic behavior worried his friends.",
-      "japaneseExample": "彼の不規則な行動は友人たちを心配させた。"
-    },
-    {
-      "word": "erroneous",
-      "meaning": "wrong; incorrect",
-      "japaneseMeaning": "誤った、間違った",
-      "synonyms": "incorrect, mistaken, false",
-      "antonyms": "correct, accurate, true",
-      "example": "The report contained several erroneous statements.",
-      "japaneseExample": "その報告書にはいくつかの誤った記述があった。"
-    },
-    {
-      "word": "erudite",
-      "meaning": "having or showing great knowledge or learning",
-      "japaneseMeaning": "博識な、学識豊かな",
-      "synonyms": "learned, scholarly, knowledgeable",
-      "antonyms": "ignorant, uneducated, illiterate",
-      "example": "The erudite professor was respected worldwide.",
-      "japaneseExample": "その博識な教授は世界的に尊敬されていた。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-27",
+    "title": "Lesson 27",
+    "paragraph": "This lesson introduces communication and media, including rhetoric, narrative, and broadcasting.",
+    "words": [
+      {
+        "word": "dissemination",
+        "meaning": "the act of spreading information widely",
+        "japaneseMeaning": "普及、伝播",
+        "synonyms": "distribution, propagation",
+        "antonyms": "",
+        "example": "The dissemination of news has been accelerated by social media."
+      },
+      {
+        "word": "rhetoric",
+        "meaning": "the art of effective or persuasive speaking or writing",
+        "japaneseMeaning": "修辞学、説得力のある表現",
+        "synonyms": "oratory, eloquence",
+        "antonyms": "plainness, simplicity",
+        "example": "The politician’s rhetoric convinced many voters."
+      },
+      {
+        "word": "sensationalism",
+        "meaning": "the use of shocking or exciting stories to attract attention",
+        "japaneseMeaning": "扇情主義",
+        "synonyms": "exaggeration, hype",
+        "antonyms": "objectivity, accuracy",
+        "example": "The newspaper was criticized for sensationalism."
+      },
+      {
+        "word": "propaganda",
+        "meaning": "information used to promote a political cause or point of view",
+        "japaneseMeaning": "宣伝、プロパガンダ",
+        "synonyms": "promotion, publicity",
+        "antonyms": "truth, fact",
+        "example": "The government distributed propaganda to influence public opinion."
+      },
+      {
+        "word": "narrative",
+        "meaning": "a structured account of events or story",
+        "japaneseMeaning": "物語、話の筋",
+        "synonyms": "story, account",
+        "antonyms": "",
+        "example": "The documentary presents a compelling narrative of historical events."
+      },
+      {
+        "word": "reportage",
+        "meaning": "the reporting of news or events",
+        "japaneseMeaning": "報道、取材",
+        "synonyms": "journalism, coverage",
+        "antonyms": "",
+        "example": "The reportage of the event was thorough and unbiased."
+      },
+      {
+        "word": "broadcast",
+        "meaning": "to transmit information or entertainment via radio or television",
+        "japaneseMeaning": "放送する",
+        "synonyms": "transmit, air",
+        "antonyms": "",
+        "example": "The show will be broadcast live tonight."
+      },
+      {
+        "word": "subtext",
+        "meaning": "underlying meaning not explicitly stated",
+        "japaneseMeaning": "潜在的意味、裏の意味",
+        "synonyms": "implication, nuance",
+        "antonyms": "explicit statement",
+        "example": "The movie’s subtext explores social inequality."
+      },
+      {
+        "word": "commentary",
+        "meaning": "an explanation or interpretation of events",
+        "japaneseMeaning": "解説、コメント",
+        "synonyms": "analysis, observation",
+        "antonyms": "",
+        "example": "The sports commentator provided a lively commentary during the game."
+      },
+      {
+        "word": "censorship",
+        "meaning": "the suppression of speech or content considered objectionable",
+        "japaneseMeaning": "検閲",
+        "synonyms": "suppression, restriction",
+        "antonyms": "freedom, openness",
+        "example": "The book faced censorship due to its controversial content."
+      }
+    ]
+  }
+

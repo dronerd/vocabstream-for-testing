@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-39",
-  "title": "Lesson 39",
-  "words": [
-    {
-      "word": "incongruous",
-      "meaning": "not in harmony or keeping with the surroundings or other aspects",
-      "japaneseMeaning": "不調和な、場違いな",
-      "synonyms": "inappropriate, inconsistent, unsuitable",
-      "antonyms": "harmonious, consistent, appropriate",
-      "example": "His bright tie looked incongruous with the dark suit.",
-      "japaneseExample": "彼の派手なネクタイは暗いスーツには場違いだった。"
-    },
-    {
-      "word": "incontrovertible",
-      "meaning": "not able to be denied or disputed",
-      "japaneseMeaning": "議論の余地のない、明白な",
-      "synonyms": "indisputable, undeniable, unquestionable",
-      "antonyms": "disputable, questionable, debatable",
-      "example": "The evidence provided was incontrovertible.",
-      "japaneseExample": "提供された証拠は議論の余地がなかった。"
-    },
-    {
-      "word": "incorrigible",
-      "meaning": "not able to be corrected, improved, or reformed",
-      "japaneseMeaning": "手に負えない、救いがたい",
-      "synonyms": "irredeemable, hopeless, unmanageable",
-      "antonyms": "redeemable, manageable, correctable",
-      "example": "He is an incorrigible prankster.",
-      "japaneseExample": "彼は手に負えないいたずら好きだ。"
-    },
-    {
-      "word": "indelible",
-      "meaning": "not able to be forgotten or removed",
-      "japaneseMeaning": "消せない、忘れられない",
-      "synonyms": "unforgettable, permanent, lasting",
-      "antonyms": "erasable, temporary, fleeting",
-      "example": "The experience left an indelible mark on her memory.",
-      "japaneseExample": "その経験は彼女の記憶に消せない痕跡を残した。"
-    },
-    {
-      "word": "indigent",
-      "meaning": "poor; needy",
-      "japaneseMeaning": "貧しい、困窮した",
-      "synonyms": "impoverished, needy, destitute",
-      "antonyms": "wealthy, affluent, rich",
-      "example": "The charity helps indigent families.",
-      "japaneseExample": "その慈善団体は困窮している家族を支援している。"
-    },
-    {
-      "word": "indolent",
-      "meaning": "wanting to avoid activity or exertion; lazy",
-      "japaneseMeaning": "怠惰な、無精な",
-      "synonyms": "lazy, idle, slothful",
-      "antonyms": "industrious, active, energetic",
-      "example": "The indolent student rarely completed his homework.",
-      "japaneseExample": "その怠惰な学生はめったに宿題を終えなかった。"
-    },
-    {
-      "word": "indomitable",
-      "meaning": "impossible to subdue or defeat",
-      "japaneseMeaning": "不屈の、屈服しない",
-      "synonyms": "unconquerable, invincible, resolute",
-      "antonyms": "submissive, weak, yielding",
-      "example": "Her indomitable spirit inspired everyone.",
-      "japaneseExample": "彼女の不屈の精神は皆に感動を与えた。"
-    },
-    {
-      "word": "ineffable",
-      "meaning": "too great or extreme to be expressed in words",
-      "japaneseMeaning": "言い表せない、形容しがたい",
-      "synonyms": "inexpressible, indescribable, unimaginable",
-      "antonyms": "expressible, describable, definable",
-      "example": "The beauty of the sunset was ineffable.",
-      "japaneseExample": "その夕日の美しさは言葉にできなかった。"
-    },
-    {
-      "word": "inept",
-      "meaning": "having or showing no skill; clumsy",
-      "japaneseMeaning": "不適切な、無能な",
-      "synonyms": "incompetent, unskilled, bungling",
-      "antonyms": "competent, skilled, adept",
-      "example": "His inept handling of the situation worsened things.",
-      "japaneseExample": "彼の無能な対応が事態を悪化させた。"
-    },
-    {
-      "word": "inert",
-      "meaning": "lacking the ability or strength to move",
-      "japaneseMeaning": "不活発な、無力な",
-      "synonyms": "motionless, inactive, lifeless",
-      "antonyms": "active, dynamic, energetic",
-      "example": "The chemical remained inert under normal conditions.",
-      "japaneseExample": "その化学物質は通常の条件では不活性のままだった。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-39",
+    "title": "Lesson 39",
+    "paragraph": "This lesson focuses on failure and regret, exploring disappointment, remorse, and reflection.",
+    "words": [
+      {
+        "word": "futile",
+        "meaning": "incapable of producing any useful result",
+        "japaneseMeaning": "無駄な、無益な",
+        "synonyms": "pointless, vain",
+        "antonyms": "productive, useful",
+        "example": "Their efforts to save the company were futile."
+      },
+      {
+        "word": "despondent",
+        "meaning": "in low spirits from loss of hope",
+        "japaneseMeaning": "落胆した、意気消沈した",
+        "synonyms": "discouraged, dejected",
+        "antonyms": "hopeful, optimistic",
+        "example": "She felt despondent after the failed exam."
+      },
+      {
+        "word": "remorseful",
+        "meaning": "filled with regret or guilt",
+        "japaneseMeaning": "悔恨の、後悔している",
+        "synonyms": "repentant, contrite",
+        "antonyms": "unrepentant, remorseless",
+        "example": "He was remorseful for lying to his friend."
+      },
+      {
+        "word": "disillusioned",
+        "meaning": "disappointed by discovering the truth",
+        "japaneseMeaning": "幻滅した、失望した",
+        "synonyms": "disenchanted, disappointed",
+        "antonyms": "idealistic, satisfied",
+        "example": "She became disillusioned with politics."
+      },
+      {
+        "word": "melancholic",
+        "meaning": "feeling or expressing deep sadness",
+        "japaneseMeaning": "憂鬱な、哀愁を帯びた",
+        "synonyms": "gloomy, sorrowful",
+        "antonyms": "cheerful, happy",
+        "example": "The melancholic music reflected his mood."
+      },
+      {
+        "word": "contrite",
+        "meaning": "feeling remorse for wrongdoing",
+        "japaneseMeaning": "悔恨の、罪を悔いる",
+        "synonyms": "repentant, remorseful",
+        "antonyms": "unrepentant, defiant",
+        "example": "He was contrite after breaking the vase."
+      },
+      {
+        "word": "penitent",
+        "meaning": "showing sorrow and regret for having done wrong",
+        "japaneseMeaning": "悔い改めた、懺悔の",
+        "synonyms": "repentant, remorseful",
+        "antonyms": "impenitent, unrepentant",
+        "example": "The penitent criminal apologized to the victim."
+      },
+      {
+        "word": "rueful",
+        "meaning": "expressing sorrow or regret",
+        "japaneseMeaning": "後悔している、悲しげな",
+        "synonyms": "regretful, remorseful",
+        "antonyms": "unrepentant, indifferent",
+        "example": "He gave a rueful smile after missing the train."
+      },
+      {
+        "word": "pessimistic",
+        "meaning": "tending to see the worst aspect of things",
+        "japaneseMeaning": "悲観的な、否定的な",
+        "synonyms": "negative, gloomy",
+        "antonyms": "optimistic, hopeful",
+        "example": "She felt pessimistic about the company’s future."
+      },
+      {
+        "word": "resigned",
+        "meaning": "accepting something undesirable but inevitable",
+        "japaneseMeaning": "諦めた、甘んじる",
+        "synonyms": "submissive, accepting",
+        "antonyms": "defiant, resistant",
+        "example": "He was resigned to the delay in the project."
+      }
+    ]
+  }
+ 

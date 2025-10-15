@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-12",
-  "title": "Lesson 12",
-  "words": [
-    {
-      "word": "candor",
-      "meaning": "the quality of being open and honest",
-      "japaneseMeaning": "率直さ、誠実さ",
-      "synonyms": "honesty, openness, frankness",
-      "antonyms": "deceit, dishonesty, duplicity",
-      "example": "She spoke with candor about her experiences.",
-      "japaneseExample": "彼女は自分の経験について率直に話した。"
-    },
-    {
-      "word": "capitulate",
-      "meaning": "to cease resisting; to surrender",
-      "japaneseMeaning": "降伏する、屈服する",
-      "synonyms": "surrender, yield, submit",
-      "antonyms": "resist, fight, defy",
-      "example": "The army had to capitulate after months of siege.",
-      "japaneseExample": "その軍隊は数か月の包囲の後、降伏せざるを得なかった。"
-    },
-    {
-      "word": "capitulation",
-      "meaning": "the action of surrendering or ceasing to resist",
-      "japaneseMeaning": "降伏、屈服",
-      "synonyms": "surrender, yielding, submission",
-      "antonyms": "resistance, defiance, opposition",
-      "example": "The town's capitulation ended the conflict.",
-      "japaneseExample": "町の降伏がその紛争を終わらせた。"
-    },
-    {
-      "word": "capricious",
-      "meaning": "given to sudden changes of mood or behavior",
-      "japaneseMeaning": "気まぐれな、変わりやすい",
-      "synonyms": "fickle, unpredictable, whimsical",
-      "antonyms": "stable, predictable, consistent",
-      "example": "Her capricious nature made her difficult to work with.",
-      "japaneseExample": "彼女の気まぐれな性格は仕事で付き合いにくかった。"
-    },
-    {
-      "word": "castigate",
-      "meaning": "to reprimand someone severely",
-      "japaneseMeaning": "厳しく非難する、懲戒する",
-      "synonyms": "punish, rebuke, chastise",
-      "antonyms": "praise, commend, reward",
-      "example": "The teacher castigated the students for cheating.",
-      "japaneseExample": "先生はカンニングをした学生を厳しく叱った。"
-    },
-    {
-      "word": "catalyst",
-      "meaning": "something that precipitates an event or change",
-      "japaneseMeaning": "触媒、変化のきっかけ",
-      "synonyms": "stimulus, spark, impetus",
-      "antonyms": "hindrance, obstacle, deterrent",
-      "example": "The invention of the internet was a catalyst for global communication.",
-      "japaneseExample": "インターネットの発明は世界的な通信の触媒となった。"
-    },
-    {
-      "word": "caustic",
-      "meaning": "sarcastic in a scathing and bitter way; capable of burning or corroding",
-      "japaneseMeaning": "腐食性の、辛辣な",
-      "synonyms": "sarcastic, scathing, corrosive",
-      "antonyms": "mild, gentle, complimentary",
-      "example": "His caustic remarks offended everyone.",
-      "japaneseExample": "彼の辛辣な発言は皆を怒らせた。"
-    },
-    {
-      "word": "cavil",
-      "meaning": "to make petty or unnecessary objections",
-      "japaneseMeaning": "つまらないことで難癖をつける",
-      "synonyms": "quibble, nitpick, raise objections",
-      "antonyms": "approve, accept, agree",
-      "example": "He caviled at every suggestion made by the committee.",
-      "japaneseExample": "彼は委員会の提案に対して毎回難癖をつけた。"
-    },
-    {
-      "word": "censure",
-      "meaning": "express severe disapproval of someone or something",
-      "japaneseMeaning": "非難、叱責",
-      "synonyms": "rebuke, condemn, criticize",
-      "antonyms": "praise, commend, approve",
-      "example": "The senator faced censure for his inappropriate remarks.",
-      "japaneseExample": "その上院議員は不適切な発言で非難を受けた。"
-    },
-    {
-      "word": "chagrin",
-      "meaning": "distress or embarrassment at having failed or been humiliated",
-      "japaneseMeaning": "悔しさ、失望",
-      "synonyms": "embarrassment, humiliation, annoyance",
-      "antonyms": "pleasure, delight, satisfaction",
-      "example": "To his chagrin, he forgot his speech.",
-      "japaneseExample": "彼は悔しさのあまり、スピーチを忘れた。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-12",
+    "title": "Lesson 12",
+    "paragraph": "This lesson focuses on justice and morality, exploring the principles of right and wrong, and ways to vindicate or atone.",
+    "words": [
+      {
+        "word": "vindicate",
+        "meaning": "to clear someone of blame or suspicion",
+        "japaneseMeaning": "正当性を証明する、無罪を立証する",
+        "synonyms": "justify, absolve",
+        "antonyms": "condemn, accuse",
+        "example": "New evidence served to vindicate the defendant."
+      },
+      {
+        "word": "absolve",
+        "meaning": "to free from guilt or responsibility",
+        "japaneseMeaning": "免罪する、解放する",
+        "synonyms": "exonerate, acquit",
+        "antonyms": "condemn, blame",
+        "example": "The priest absolved him of his sins."
+      },
+      {
+        "word": "condemn",
+        "meaning": "to express strong disapproval or declare someone guilty",
+        "japaneseMeaning": "非難する、宣告する",
+        "synonyms": "denounce, censure",
+        "antonyms": "praise, acquit",
+        "example": "The committee condemned the unethical practices."
+      },
+      {
+        "word": "atone",
+        "meaning": "to make amends or reparations for a wrong",
+        "japaneseMeaning": "償う、贖う",
+        "synonyms": "redeem, compensate",
+        "antonyms": "",
+        "example": "He tried to atone for his mistakes by helping others."
+      },
+      {
+        "word": "penitent",
+        "meaning": "feeling or showing sorrow for wrongdoing",
+        "japaneseMeaning": "悔い改める、反省している",
+        "synonyms": "repentant, remorseful",
+        "antonyms": "unrepentant, impenitent",
+        "example": "The penitent criminal apologized to the victims."
+      },
+      {
+        "word": "retribution",
+        "meaning": "punishment inflicted for wrongdoing",
+        "japaneseMeaning": "報復、天罰",
+        "synonyms": "punishment, vengeance",
+        "antonyms": "",
+        "example": "The court sought retribution for the criminal act."
+      },
+      {
+        "word": "exculpate",
+        "meaning": "to show or declare that someone is not guilty",
+        "japaneseMeaning": "無罪を証明する",
+        "synonyms": "acquit, absolve",
+        "antonyms": "incriminate, condemn",
+        "example": "The evidence exculpated her from any wrongdoing."
+      },
+      {
+        "word": "contrition",
+        "meaning": "the state of feeling remorseful and penitent",
+        "japaneseMeaning": "悔恨、反省",
+        "synonyms": "remorse, penitence",
+        "antonyms": "impenitence, indifference",
+        "example": "He showed genuine contrition for his actions."
+      },
+      {
+        "word": "restitution",
+        "meaning": "the restoration of something lost or stolen to its proper owner",
+        "japaneseMeaning": "賠償、返還",
+        "synonyms": "compensation, reimbursement",
+        "antonyms": "",
+        "example": "The company made restitution to customers affected by the error."
+      },
+      {
+        "word": "clemency",
+        "meaning": "mercy or lenience shown to someone",
+        "japaneseMeaning": "慈悲、寛大",
+        "synonyms": "leniency, mercy",
+        "antonyms": "harshness, severity",
+        "example": "The governor granted clemency to the prisoner."
+      }
+    ]
+  }
+
