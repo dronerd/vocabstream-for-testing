@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-pre1-84",
-  "title": "Lesson 84",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-84",
+    "title": "Lesson 84",
+    "paragraph": "Time and change focus on evolution, transition, and continuity. Adjustment and renewal help navigate life stages.",
+    "words": [
+      {"word": "evolution", "meaning": "gradual development", "japaneseMeaning": "進化", "synonyms": "growth, development", "antonyms": "stagnation, regression", "example": "Evolution occurs in nature and society."},
+      {"word": "transformation", "meaning": "complete change", "japaneseMeaning": "変革", "synonyms": "change, metamorphosis", "antonyms": "stability, constancy", "example": "Transformation improves urban planning."},
+      {"word": "continuity", "meaning": "uninterrupted state", "japaneseMeaning": "継続性", "synonyms": "persistence, consistency", "antonyms": "interruption, disruption", "example": "Continuity ensures stability."},
+      {"word": "progression", "meaning": "forward movement", "japaneseMeaning": "進展", "synonyms": "advancement, development", "antonyms": "regression, decline", "example": "Progression in learning is evident."},
+      {"word": "transition", "meaning": "process of changing from one state to another", "japaneseMeaning": "移行", "synonyms": "shift, change", "antonyms": "stagnation, immobility", "example": "Transition to adulthood can be challenging."},
+      {"word": "adjustment", "meaning": "adaptation to new conditions", "japaneseMeaning": "調整、適応", "synonyms": "adaptation, modification", "antonyms": "rigidity, inflexibility", "example": "Adjustment is necessary after moving."},
+      {"word": "revolution", "meaning": "radical change", "japaneseMeaning": "革命", "synonyms": "upheaval, transformation", "antonyms": "stagnation, continuity", "example": "The industrial revolution changed society."},
+      {"word": "fluctuation", "meaning": "variation or change", "japaneseMeaning": "変動", "synonyms": "variation, oscillation", "antonyms": "stability, constancy", "example": "Fluctuation in prices is common."},
+      {"word": "modification", "meaning": "change made to improve", "japaneseMeaning": "修正", "synonyms": "alteration, adjustment", "antonyms": "permanence, rigidity", "example": "The plan needs modification."},
+      {"word": "renewal", "meaning": "restoration or revival", "japaneseMeaning": "更新、再生", "synonyms": "revival, restoration", "antonyms": "decay, deterioration", "example": "Renewal of energy is important after rest."}
+    ]
+  }

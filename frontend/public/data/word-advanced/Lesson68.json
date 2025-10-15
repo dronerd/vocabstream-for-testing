@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-68",
-  "title": "Lesson 68",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-68",
+    "title": "Lesson 68",
+    "paragraph": "Action and movement involve initiating, executing, and managing tasks. Taking deliberate steps ensures successful outcomes.",
+    "words": [
+      {"word": "proceed", "meaning": "move forward or continue", "japaneseMeaning": "進む", "synonyms": "advance, continue", "antonyms": "halt, stop", "example": "We will proceed with the plan."},
+      {"word": "operate", "meaning": "perform a function", "japaneseMeaning": "操作する", "synonyms": "function, manage", "antonyms": "cease, halt", "example": "The machine operates automatically."},
+      {"word": "initiate", "meaning": "begin or set in motion", "japaneseMeaning": "開始する", "synonyms": "launch, commence", "antonyms": "stop, end", "example": "They will initiate the project next week."},
+      {"word": "continue", "meaning": "persist in an activity", "japaneseMeaning": "続ける", "synonyms": "persist, carry on", "antonyms": "stop, cease", "example": "We continue to work on the task."},
+      {"word": "execute", "meaning": "carry out a plan", "japaneseMeaning": "実行する", "synonyms": "implement, perform", "antonyms": "neglect, fail", "example": "The team executed the strategy perfectly."},
+      {"word": "implement", "meaning": "put into effect", "japaneseMeaning": "実施する", "synonyms": "enforce, execute", "antonyms": "ignore, abandon", "example": "The company will implement new policies."},
+      {"word": "engage", "meaning": "participate or involve", "japaneseMeaning": "従事する", "synonyms": "participate, involve", "antonyms": "avoid, disengage", "example": "Students should engage in discussions."},
+      {"word": "perform", "meaning": "carry out an action", "japaneseMeaning": "実行する", "synonyms": "execute, accomplish", "antonyms": "fail, neglect", "example": "The actor performed brilliantly."},
+      {"word": "transition", "meaning": "process of change or movement", "japaneseMeaning": "移行", "synonyms": "change, shift", "antonyms": "stagnation, stability", "example": "The company is in transition to new management."},
+      {"word": "manage", "meaning": "handle or control", "japaneseMeaning": "管理する", "synonyms": "supervise, oversee", "antonyms": "mismanage, neglect", "example": "She manages the team efficiently."}
+    ]
+  }
+ 

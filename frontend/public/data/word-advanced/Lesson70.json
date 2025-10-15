@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-70",
-  "title": "Lesson 70",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-70",
+    "title": "Lesson 70",
+    "paragraph": "Logic and reason involve deduction, justification, and objectivity. Coherent thinking leads to valid arguments and consistent conclusions.",
+    "words": [
+      {"word": "validity", "meaning": "soundness or legitimacy", "japaneseMeaning": "妥当性", "synonyms": "legitimacy, soundness", "antonyms": "invalidity, unsoundness", "example": "The validity of the study was confirmed."},
+      {"word": "coherence", "meaning": "logical connection", "japaneseMeaning": "一貫性", "synonyms": "consistency, unity", "antonyms": "incoherence, inconsistency", "example": "The essay lacked coherence."},
+      {"word": "consistency", "meaning": "reliability and uniformity", "japaneseMeaning": "一貫性", "synonyms": "stability, uniformity", "antonyms": "inconsistency, variability", "example": "Consistency is important in performance."},
+      {"word": "rationale", "meaning": "underlying reason", "japaneseMeaning": "理由、根拠", "synonyms": "reason, explanation", "antonyms": "illogic, arbitrariness", "example": "He explained the rationale behind the decision."},
+      {"word": "assumption", "meaning": "something taken for granted", "japaneseMeaning": "仮定", "synonyms": "presumption, supposition", "antonyms": "certainty, proof", "example": "The plan was based on the assumption that resources were sufficient."},
+      {"word": "deduction", "meaning": "reasoning from general to specific", "japaneseMeaning": "演繹", "synonyms": "inference, reasoning", "antonyms": "induction, guess", "example": "Detectives use deduction to solve crimes."},
+      {"word": "justification", "meaning": "proof or reasoning for an action", "japaneseMeaning": "正当化", "synonyms": "defense, explanation", "antonyms": "condemnation, blame", "example": "The lawyer provided justification for his client."},
+      {"word": "inference", "meaning": "conclusion drawn from evidence", "japaneseMeaning": "推論", "synonyms": "deduction, reasoning", "antonyms": "guess, assumption", "example": "From the clues, she made an inference."},
+      {"word": "objectivity", "meaning": "impartiality, lack of bias", "japaneseMeaning": "客観性", "synonyms": "impartiality, neutrality", "antonyms": "subjectivity, bias", "example": "Objectivity is crucial in journalism."},
+      {"word": "argument", "meaning": "reasoning in support of a claim", "japaneseMeaning": "議論", "synonyms": "reasoning, debate", "antonyms": "agreement, surrender", "example": "The debate featured strong arguments from both sides."}
+    ]
+  }
+

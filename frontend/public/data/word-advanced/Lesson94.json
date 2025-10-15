@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-94",
-  "title": "Lesson 94",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-94",
+    "title": "Lesson 94",
+    "paragraph": "Personality and identity explore traits such as assertiveness, creativity, and humility. Self-awareness shapes character.",
+    "words": [
+      {"word": "assertive", "meaning": "confidently expressing oneself", "japaneseMeaning": "自己主張の強い", "synonyms": "confident, decisive", "antonyms": "timid, passive", "example": "Being assertive helps in negotiations."},
+      {"word": "analytical", "meaning": "logical and methodical", "japaneseMeaning": "分析的", "synonyms": "logical, methodical", "antonyms": "intuitive, impulsive", "example": "Analytical skills aid problem solving."},
+      {"word": "creative", "meaning": "able to produce new ideas", "japaneseMeaning": "創造的", "synonyms": "inventive, imaginative", "antonyms": "unimaginative, conventional", "example": "Creative minds inspire innovation."},
+      {"word": "introverted", "meaning": "focused on internal thoughts", "japaneseMeaning": "内向的", "synonyms": "reserved, reflective", "antonyms": "extroverted, outgoing", "example": "Introverted people enjoy solitude."},
+      {"word": "extroverted", "meaning": "outgoing and social", "japaneseMeaning": "外向的", "synonyms": "outgoing, sociable", "antonyms": "introverted, reserved", "example": "Extroverted individuals love gatherings."},
+      {"word": "patient", "meaning": "able to wait calmly", "japaneseMeaning": "忍耐強い", "synonyms": "tolerant, enduring", "antonyms": "impatient, hasty", "example": "A patient teacher guides students effectively."},
+      {"word": "humble", "meaning": "modest, not arrogant", "japaneseMeaning": "謙虚", "synonyms": "modest, unassuming", "antonyms": "proud, arrogant", "example": "Humble leaders earn respect."},
+      {"word": "independent", "meaning": "self-reliant and autonomous", "japaneseMeaning": "自立した", "synonyms": "self-sufficient, autonomous", "antonyms": "dependent, reliant", "example": "Independent thinkers solve problems efficiently."},
+      {"word": "diligent", "meaning": "hardworking and attentive", "japaneseMeaning": "勤勉な", "synonyms": "industrious, meticulous", "antonyms": "lazy, negligent", "example": "Diligent students achieve high grades."},
+      {"word": "perceptive", "meaning": "having keen insight", "japaneseMeaning": "洞察力のある", "synonyms": "observant, insightful", "antonyms": "oblivious, unobservant", "example": "Perceptive analysts notice subtle trends."}
+    ]
+  }
+ 

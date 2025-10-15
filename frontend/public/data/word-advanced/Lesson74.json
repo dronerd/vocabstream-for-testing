@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-74",
-  "title": "Lesson 74",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-74",
+    "title": "Lesson 74",
+    "paragraph": "Economy and growth focus on productivity, revenue, and trade. Investment and stability drive prosperity and economic development.",
+    "words": [
+      {"word": "productivity", "meaning": "efficiency of production", "japaneseMeaning": "生産性", "synonyms": "efficiency, output", "antonyms": "inefficiency, idleness", "example": "Productivity increased with new methods."},
+      {"word": "inflation", "meaning": "rise in prices", "japaneseMeaning": "インフレーション", "synonyms": "price increase, escalation", "antonyms": "deflation, decrease", "example": "Inflation affects purchasing power."},
+      {"word": "revenue", "meaning": "income of an organization or government", "japaneseMeaning": "収入", "synonyms": "income, earnings", "antonyms": "expense, loss", "example": "The company's revenue grew last year."},
+      {"word": "trade", "meaning": "buying and selling goods", "japaneseMeaning": "貿易、取引", "synonyms": "commerce, exchange", "antonyms": "hoarding, isolation", "example": "International trade benefits the economy."},
+      {"word": "investment", "meaning": "putting money into assets for profit", "japaneseMeaning": "投資", "synonyms": "funding, venture", "antonyms": "spending, waste", "example": "Investment in technology increased productivity."},
+      {"word": "consumption", "meaning": "use of goods and services", "japaneseMeaning": "消費", "synonyms": "expenditure, utilization", "antonyms": "savings, conservation", "example": "High consumption drives demand."},
+      {"word": "stability", "meaning": "state of being steady", "japaneseMeaning": "安定", "synonyms": "balance, security", "antonyms": "instability, fluctuation", "example": "Economic stability attracts investors."},
+      {"word": "deficit", "meaning": "shortfall or loss", "japaneseMeaning": "赤字", "synonyms": "shortage, loss", "antonyms": "surplus, profit", "example": "The country faced a budget deficit."},
+      {"word": "prosperity", "meaning": "wealth or success", "japaneseMeaning": "繁栄", "synonyms": "affluence, success", "antonyms": "poverty, failure", "example": "Prosperity depends on economic policies."},
+      {"word": "fluctuation", "meaning": "irregular change", "japaneseMeaning": "変動", "synonyms": "variation, instability", "antonyms": "stability, constancy", "example": "Market prices show daily fluctuations."}
+    ]
+  }
+ 

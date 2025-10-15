@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-75",
-  "title": "Lesson 75",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-75",
+    "title": "Lesson 75",
+    "paragraph": "Business and management involve strategy, organization, and leadership. Efficient operations and planning ensure profitability and success.",
+    "words": [
+      {"word": "negotiation", "meaning": "discussion to reach agreement", "japaneseMeaning": "交渉", "synonyms": "bargaining, discussion", "antonyms": "refusal, confrontation", "example": "Negotiation led to a fair deal."},
+      {"word": "enterprise", "meaning": "business or company", "japaneseMeaning": "企業", "synonyms": "business, venture", "antonyms": "inactivity, closure", "example": "The new enterprise grew rapidly."},
+      {"word": "strategy", "meaning": "plan of action", "japaneseMeaning": "戦略", "synonyms": "plan, approach", "antonyms": "improvisation, chaos", "example": "The marketing strategy was effective."},
+      {"word": "profitability", "meaning": "ability to make profit", "japaneseMeaning": "収益性", "synonyms": "gain, advantage", "antonyms": "loss, deficit", "example": "Profitability depends on costs."},
+      {"word": "organization", "meaning": "structured group or system", "japaneseMeaning": "組織", "synonyms": "institution, structure", "antonyms": "disorder, chaos", "example": "The organization's hierarchy was clear."},
+      {"word": "delegation", "meaning": "assigning tasks to others", "japaneseMeaning": "委任", "synonyms": "assignment, entrustment", "antonyms": "retention, monopolization", "example": "Delegation improves efficiency."},
+      {"word": "marketing", "meaning": "promotion of products or services", "japaneseMeaning": "マーケティング", "synonyms": "advertising, promotion", "antonyms": "neglect, ignorance", "example": "Marketing boosted sales."},
+      {"word": "efficiency", "meaning": "achieving maximum productivity", "japaneseMeaning": "効率", "synonyms": "effectiveness, productivity", "antonyms": "inefficiency, waste", "example": "Efficiency reduced operational costs."},
+      {"word": "leadership", "meaning": "ability to guide or direct", "japaneseMeaning": "リーダーシップ", "synonyms": "guidance, management", "antonyms": "mismanagement, followership", "example": "Leadership is vital for teams."},
+      {"word": "structure", "meaning": "arrangement of parts", "japaneseMeaning": "構造", "synonyms": "framework, organization", "antonyms": "disorganization, chaos", "example": "The company improved its structure."}
+    ]
+  }
+

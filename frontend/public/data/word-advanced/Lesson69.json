@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-69",
-  "title": "Lesson 69",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-69",
+    "title": "Lesson 69",
+    "paragraph": "Observation and insight involve discerning, realizing, and understanding. Awareness and evaluation provide deeper comprehension of situations.",
+    "words": [
+      {"word": "intuition", "meaning": "ability to understand without reasoning", "japaneseMeaning": "直感", "synonyms": "instinct, insight", "antonyms": "analysis, reasoning", "example": "She relied on her intuition to make the choice."},
+      {"word": "discernment", "meaning": "ability to judge well", "japaneseMeaning": "識別力", "synonyms": "perception, insight", "antonyms": "ignorance, confusion", "example": "Discernment is key in decision-making."},
+      {"word": "observation", "meaning": "careful watching or noticing", "japaneseMeaning": "観察", "synonyms": "perception, scrutiny", "antonyms": "neglect, oversight", "example": "Observation of behavior is essential."},
+      {"word": "realization", "meaning": "understanding clearly", "japaneseMeaning": "認識", "synonyms": "awareness, comprehension", "antonyms": "ignorance, confusion", "example": "He had a sudden realization of the truth."},
+      {"word": "recognition", "meaning": "acknowledgment of fact or merit", "japaneseMeaning": "認識、承認", "synonyms": "acknowledgment, appreciation", "antonyms": "neglect, disregard", "example": "She received recognition for her work."},
+      {"word": "perception", "meaning": "awareness through senses or mind", "japaneseMeaning": "認識、知覚", "synonyms": "awareness, insight", "antonyms": "ignorance, blindness", "example": "Perception of color varies among people."},
+      {"word": "evaluation", "meaning": "assessment of value or quality", "japaneseMeaning": "評価", "synonyms": "assessment, appraisal", "antonyms": "neglect, ignorance", "example": "The teacher's evaluation was fair."},
+      {"word": "awareness", "meaning": "knowledge of something", "japaneseMeaning": "意識", "synonyms": "consciousness, understanding", "antonyms": "ignorance, oblivion", "example": "Public awareness is growing about climate change."},
+      {"word": "reflection", "meaning": "careful consideration", "japaneseMeaning": "熟考", "synonyms": "contemplation, thought", "antonyms": "neglect, impulsiveness", "example": "Reflection helped her make the right choice."},
+      {"word": "inference", "meaning": "conclusion drawn from evidence", "japaneseMeaning": "推論", "synonyms": "deduction, reasoning", "antonyms": "guess, assumption", "example": "The scientist made an inference from the data."}
+    ]
+  }
+ 

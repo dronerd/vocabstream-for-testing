@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-87",
-  "title": "Lesson 87",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-87",
+    "title": "Lesson 87",
+    "paragraph": "Wealth and economy cover capital, investment, and financial stability. Revenue, expenditure, and inflation shape economic health.",
+    "words": [
+      {"word": "capital", "meaning": "financial assets or resources", "japaneseMeaning": "資本", "synonyms": "funds, wealth", "antonyms": "debt, liability", "example": "Capital is needed to start a business."},
+      {"word": "revenue", "meaning": "income generated", "japaneseMeaning": "収入", "synonyms": "income, earnings", "antonyms": "expense, loss", "example": "The company's revenue increased last year."},
+      {"word": "expenditure", "meaning": "spending of money", "japaneseMeaning": "支出", "synonyms": "expense, outlay", "antonyms": "income, saving", "example": "Government expenditure affects the budget."},
+      {"word": "transaction", "meaning": "exchange or trade", "japaneseMeaning": "取引", "synonyms": "deal, trade", "antonyms": "stagnation, inactivity", "example": "The transaction was completed online."},
+      {"word": "equity", "meaning": "ownership interest in property or business", "japaneseMeaning": "株式、資本", "synonyms": "ownership, stake", "antonyms": "debt, liability", "example": "Equity investment can be profitable."},
+      {"word": "investment", "meaning": "allocation of resources for future benefit", "japaneseMeaning": "投資", "synonyms": "funding, capital allocation", "antonyms": "spending, divestment", "example": "Investment in technology boosts growth."},
+      {"word": "prosperity", "meaning": "state of being successful and wealthy", "japaneseMeaning": "繁栄", "synonyms": "wealth, success", "antonyms": "poverty, decline", "example": "Economic policies aim to increase prosperity."},
+      {"word": "deficit", "meaning": "shortfall or lack of money", "japaneseMeaning": "赤字", "synonyms": "shortfall, shortage", "antonyms": "surplus, excess", "example": "The government budget showed a deficit."},
+      {"word": "financial", "meaning": "relating to money", "japaneseMeaning": "財政の", "synonyms": "monetary, economic", "antonyms": "nonfinancial, unrelated", "example": "Financial planning ensures stability."},
+      {"word": "inflation", "meaning": "rise in prices over time", "japaneseMeaning": "インフレ", "synonyms": "price increase, escalation", "antonyms": "deflation, decrease", "example": "High inflation reduces purchasing power."}
+    ]
+  }
+ 

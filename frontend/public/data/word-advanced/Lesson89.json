@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-89",
-  "title": "Lesson 89",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-2-89",
+    "title": "Lesson 89",
+    "paragraph": "Culture and communication explore expression, narrative, and representation. Storytelling and creativity shape identity.",
+    "words": [
+      {"word": "expression", "meaning": "act of conveying thoughts or feelings", "japaneseMeaning": "表現", "synonyms": "articulation, communication", "antonyms": "suppression, concealment", "example": "Art is a form of expression."},
+      {"word": "narrative", "meaning": "story or account of events", "japaneseMeaning": "物語", "synonyms": "story, tale", "antonyms": "randomness, chaos", "example": "The narrative captivated the audience."},
+      {"word": "language", "meaning": "system of communication", "japaneseMeaning": "言語", "synonyms": "speech, tongue", "antonyms": "", "example": "Language connects cultures."},
+      {"word": "interaction", "meaning": "mutual action or influence", "japaneseMeaning": "相互作用", "synonyms": "communication, engagement", "antonyms": "isolation, separation", "example": "Interaction builds relationships."},
+      {"word": "symbolism", "meaning": "use of symbols to represent ideas", "japaneseMeaning": "象徴", "synonyms": "representation, imagery", "antonyms": "literalness, concreteness", "example": "Symbolism adds depth to literature."},
+      {"word": "story", "meaning": "narrative or tale", "japaneseMeaning": "話、物語", "synonyms": "narrative, account", "antonyms": "fact, report", "example": "She shared an inspiring story."},
+      {"word": "performance", "meaning": "presentation of art or skill", "japaneseMeaning": "演技、実演", "synonyms": "show, presentation", "antonyms": "inaction, neglect", "example": "The performance was impressive."},
+      {"word": "creativity", "meaning": "ability to produce original ideas", "japaneseMeaning": "創造性", "synonyms": "imagination, inventiveness", "antonyms": "conventionality, routine", "example": "Creativity fuels innovation."},
+      {"word": "representation", "meaning": "depiction of ideas or people", "japaneseMeaning": "表現、描写", "synonyms": "depiction, portrayal", "antonyms": "neglect, omission", "example": "The painting is a representation of hope."},
+      {"word": "identity", "meaning": "sense of self or group", "japaneseMeaning": "アイデンティティ", "synonyms": "selfhood, personality", "antonyms": "anonymity, obscurity", "example": "Cultural identity shapes behavior."}
+    ]
+  }
+ 

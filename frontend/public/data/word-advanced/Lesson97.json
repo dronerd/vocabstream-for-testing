@@ -1,86 +1,17 @@
-{
-  "lesson_id": "eiken-pre1-97",
-  "title": "Lesson 97",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-97",
+    "title": "Lesson 97",
+    "paragraph": "Responsibility and impact focus on accountability, contribution, and influence. Understanding consequences guides actions.",
+    "words": [
+      {"word": "accountability", "meaning": "being responsible for actions", "japaneseMeaning": "説明責任", "synonyms": "responsibility, liability", "antonyms": "irresponsibility, negligence", "example": "Leaders must maintain accountability."},
+      {"word": "obligation", "meaning": "duty or commitment", "japaneseMeaning": "義務", "synonyms": "duty, responsibility", "antonyms": "option, choice", "example": "He fulfilled his obligation to help."},
+      {"word": "contribution", "meaning": "something given to achieve a goal", "japaneseMeaning": "貢献", "synonyms": "input, donation", "antonyms": "neglect, obstruction", "example": "Her contribution improved the project."},
+      {"word": "influence", "meaning": "power to affect others", "japaneseMeaning": "影響", "synonyms": "impact, sway", "antonyms": "insignificance, impotence", "example": "Teachers have great influence on students."},
+      {"word": "consequence", "meaning": "result of an action", "japaneseMeaning": "結果", "synonyms": "outcome, effect", "antonyms": "cause, origin", "example": "Every action has a consequence."},
+      {"word": "effect", "meaning": "result or impact", "japaneseMeaning": "影響、効果", "synonyms": "result, outcome", "antonyms": "cause, source", "example": "The effect of pollution is visible."},
+      {"word": "participation", "meaning": "act of taking part", "japaneseMeaning": "参加", "synonyms": "involvement, engagement", "antonyms": "absence, withdrawal", "example": "Participation in class improves learning."},
+      {"word": "stewardship", "meaning": "careful management", "japaneseMeaning": "管理、保護", "synonyms": "management, oversight", "antonyms": "mismanagement, neglect", "example": "Good stewardship protects resources."},
+      {"word": "role", "meaning": "function or responsibility", "japaneseMeaning": "役割", "synonyms": "position, duty", "antonyms": "irrelevance, insignificance", "example": "He understood his role in the team."},
+      {"word": "initiative", "meaning": "ability to act independently", "japaneseMeaning": "主導権、率先力", "synonyms": "enterprise, drive", "antonyms": "hesitation, passivity", "example": "Taking initiative leads to success."}
+    ]
+  }
