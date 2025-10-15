@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-58",
-  "title": "Lesson 58",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-58",
+    "title": "Lesson 58",
+    "paragraph": "Cause and motivation involve understanding triggers, influence, and inspiration. Recognizing what stimulates action helps guide behavior and decision-making.",
+    "words": [
+      {"word": "stimulate", "meaning": "to encourage activity", "japaneseMeaning": "刺激する", "synonyms": "encourage, provoke", "antonyms": "deter, suppress", "example": "The teacher tried to stimulate interest."},
+      {"word": "incite", "meaning": "to provoke action", "japaneseMeaning": "扇動する", "synonyms": "provoke, instigate", "antonyms": "dissuade, discourage", "example": "He incited the crowd to protest."},
+      {"word": "provoke", "meaning": "to cause reaction", "japaneseMeaning": "引き起こす", "synonyms": "trigger, stir", "antonyms": "calm, suppress", "example": "The joke provoked laughter."},
+      {"word": "persuade", "meaning": "to convince", "japaneseMeaning": "説得する", "synonyms": "convince, influence", "antonyms": "dissuade, discourage", "example": "She persuaded him to join."},
+      {"word": "inspire", "meaning": "to motivate or encourage", "japaneseMeaning": "鼓舞する", "synonyms": "motivate, stimulate", "antonyms": "discourage, demotivate", "example": "His speech inspired the students."},
+      {"word": "attract", "meaning": "to draw attention or interest", "japaneseMeaning": "引きつける", "synonyms": "draw, entice", "antonyms": "repel, discourage", "example": "The festival attracts tourists."},
+      {"word": "encourage", "meaning": "to give support or confidence", "japaneseMeaning": "励ます", "synonyms": "support, motivate", "antonyms": "discourage, dishearten", "example": "Parents encourage their children."},
+      {"word": "compel", "meaning": "to force or drive", "japaneseMeaning": "強いる", "synonyms": "force, oblige", "antonyms": "allow, permit", "example": "Circumstances compelled him to act."},
+      {"word": "trigger", "meaning": "to cause something to start", "japaneseMeaning": "引き金になる", "synonyms": "cause, initiate", "antonyms": "prevent, stop", "example": "The event triggered protests."},
+      {"word": "motivate", "meaning": "to provide reason or incentive", "japaneseMeaning": "やる気を起こさせる", "synonyms": "inspire, encourage", "antonyms": "discourage, demotivate", "example": "Rewards motivate employees."}
+    ]
+  }
+ 

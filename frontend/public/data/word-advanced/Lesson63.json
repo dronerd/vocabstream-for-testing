@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-63",
-  "title": "Lesson 63",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-63",
+    "title": "Lesson 63",
+    "paragraph": "Friendship and cooperation emphasize collaboration, empathy, and trust. Mutual understanding strengthens relationships and builds solidarity.",
+    "words": [
+      {"word": "collaboration", "meaning": "working together", "japaneseMeaning": "協力", "synonyms": "cooperation, teamwork", "antonyms": "opposition, rivalry", "example": "Collaboration is key to success."},
+      {"word": "partnership", "meaning": "working relationship between two parties", "japaneseMeaning": "パートナーシップ", "synonyms": "alliance, cooperation", "antonyms": "competition, antagonism", "example": "The two companies formed a partnership."},
+      {"word": "alliance", "meaning": "union for mutual benefit", "japaneseMeaning": "同盟", "synonyms": "coalition, partnership", "antonyms": "rivalry, opposition", "example": "Countries signed an alliance treaty."},
+      {"word": "empathy", "meaning": "understanding others' feelings", "japaneseMeaning": "共感", "synonyms": "compassion, understanding", "antonyms": "indifference, apathy", "example": "Empathy helps build trust."},
+      {"word": "unity", "meaning": "state of being united", "japaneseMeaning": "団結", "synonyms": "solidarity, cohesion", "antonyms": "division, discord", "example": "The community showed unity during the crisis."},
+      {"word": "trust", "meaning": "reliance on integrity or ability", "japaneseMeaning": "信頼", "synonyms": "confidence, faith", "antonyms": "distrust, suspicion", "example": "Trust is essential in relationships."},
+      {"word": "understanding", "meaning": "ability to comprehend others", "japaneseMeaning": "理解", "synonyms": "comprehension, insight", "antonyms": "misunderstanding, ignorance", "example": "Mutual understanding avoids conflict."},
+      {"word": "solidarity", "meaning": "unity of interests or purpose", "japaneseMeaning": "連帯", "synonyms": "unity, cohesion", "antonyms": "division, separation", "example": "Workers showed solidarity during the strike."},
+      {"word": "rapport", "meaning": "harmonious relationship", "japaneseMeaning": "親密な関係", "synonyms": "connection, harmony", "antonyms": "estrangement, discord", "example": "He built rapport with his team."},
+      {"word": "support", "meaning": "help or assistance", "japaneseMeaning": "支援", "synonyms": "aid, backing", "antonyms": "obstruction, opposition", "example": "Friends provide support in difficult times."}
+    ]
+  }
+ 

@@ -14,10 +14,36 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
   const location = useLocation();
 
   const isLandingPage = location.pathname === "/landing_page";
-  const isPrivacyPage = location.pathname === "/privacy";
+  // NOTE: removed privacy exclusion per your request so the center button shows on /privacy as well
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const opts: any = { top: 0, behavior: "smooth" };
+    try {
+      // attempt several fallbacks to handle apps that scroll a container instead of window
+      if (typeof window !== "undefined" && window.scrollTo) window.scrollTo(opts);
+      if (document?.documentElement?.scrollTo) document.documentElement.scrollTo(opts);
+      if (document?.body?.scrollTo) document.body.scrollTo(opts);
+
+      // try some common container selectors that apps use for scrollable content
+      const possibleContainers = document.querySelectorAll<HTMLElement>(
+        "main, #root, .app-root, .content, .page-content, #__next"
+      );
+      possibleContainers.forEach((c) => {
+        try {
+          if (c.scrollTop !== 0 && c.scrollTo) c.scrollTo(opts);
+        } catch (e) {
+          /* ignore */
+        }
+      });
+    } catch (err) {
+      // final fallback: set immediate scroll positions
+      try {
+        document.documentElement && (document.documentElement.scrollTop = 0);
+        document.body && (document.body.scrollTop = 0);
+      } catch (e) {
+        // ignore
+      }
+    }
   };
 
   const handleLogoutAndGotoLanding = async () => {
@@ -78,7 +104,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
         .header-center > .vocab-title {
           margin:0;
           font-weight:700;
-          color:#333;
+          color:#000; /* made pure black */
           font-size: clamp(18px, 4.5vw, 36px);
           line-height:1;
           white-space:nowrap;
@@ -125,7 +151,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
         .intro-short { display: none; }
         .page-top { display: inline; }
 
-        /* LITTLE center button that appears only on small screens (and not on /privacy) */
+        /* LITTLE center button that appears only on small screens */
         .center-top-btn {
           display: none; /* hidden by default (large screens) */
           background: transparent;
@@ -139,14 +165,22 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           justify-content: center;
           gap: 4px;
           flex-direction: column;
+          -webkit-tap-highlight-color: transparent; /* remove grey flash on mobile */
+          -webkit-touch-callout: none;
+          touch-action: manipulation;
+          appearance: none;
         }
         .center-top-btn:focus {
-          outline: 3px solid rgba(0,123,255,0.15);
+          outline: 3px solid rgba(0,123,255,0.12);
           outline-offset: 3px;
+          background: transparent; /* ensure no focus bg */
+        }
+        .center-top-btn:active {
+          background: transparent; /* prevent tap highlight */
         }
         .center-top-btn .btn-title {
           font-weight: 700;
-          /* same visual style as vocab-title but we hide the main one on small screens */
+          color: #000; /* pure black for the small-screen title too */
           font-size: clamp(16px, 4.5vw, 28px);
           line-height: 1;
           white-space: nowrap;
@@ -184,7 +218,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           /* ensure logo receives touch events reliably on mobile */
           .header-left img, .header-right img { pointer-events: auto; touch-action: manipulation; cursor: pointer; }
 
-          /* show the center button on small screens (not on /privacy; see conditional render) */
+          /* show the center button on small screens (now also on /privacy as requested) */
           .center-top-btn { display: inline-flex; pointer-events: auto; }
 
           /* when small screen button is visible, hide the original (absolute) h1 to avoid duplicate visuals */
@@ -246,23 +280,21 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           )}
         </div>
 
-        <div className="header-center">
+        <div className="header-center" aria-hidden>
           {/* original title (visible on large screens) */}
           <h1 className="vocab-title">VocabStream</h1>
 
-          {/* small-screen tappable area (only rendered if NOT the privacy page) */}
-          {!isPrivacyPage && (
-            <button
-              type="button"
-              className="center-top-btn"
-              onClick={scrollToTop}
-              onKeyDown={handleKeyToScroll}
-              aria-label="スクリーントップへ（VocabStream）"
-            >
-              <span className="btn-title">VocabStream</span>
-              <span className="screen-top">スクリーントップへ</span>
-            </button>
-          )}
+          {/* small-screen tappable area (now shown on privacy as well) */}
+          <button
+            type="button"
+            className="center-top-btn"
+            onClick={scrollToTop}
+            onKeyDown={handleKeyToScroll}
+            aria-label="スクリーントップへ（VocabStream）"
+          >
+            <span className="btn-title">VocabStream</span>
+            <span className="screen-top">スクリーントップへ</span>
+          </button>
         </div>
 
         <div className="header-right">

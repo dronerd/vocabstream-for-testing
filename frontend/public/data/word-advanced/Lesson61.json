@@ -1,86 +1,19 @@
-{
-  "lesson_id": "eiken-pre1-61",
-  "title": "Lesson 61",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-2-61",
+    "title": "Lesson 61",
+    "paragraph": "Emotion and conflict explore feelings like resentment, hostility, and anxiety. Understanding these emotions helps manage tension and interpersonal challenges.",
+    "words": [
+      {"word": "resentment", "meaning": "bitterness or anger over unfair treatment", "japaneseMeaning": "恨み、憤り", "synonyms": "grudge, bitterness", "antonyms": "forgiveness, contentment", "example": "He felt resentment towards his colleague."},
+      {"word": "hostility", "meaning": "aggressive behavior or opposition", "japaneseMeaning": "敵意", "synonyms": "antagonism, animosity", "antonyms": "friendliness, goodwill", "example": "There was hostility between the groups."},
+      {"word": "jealousy", "meaning": "envy or suspicion of rivalry", "japaneseMeaning": "嫉妬", "synonyms": "envy, covetousness", "antonyms": "contentment, admiration", "example": "She felt jealousy of her friend's success."},
+      {"word": "outrage", "meaning": "strong anger or indignation", "japaneseMeaning": "激怒", "synonyms": "indignation, fury", "antonyms": "calm, satisfaction", "example": "The decision caused public outrage."},
+      {"word": "frustration", "meaning": "feeling of being upset due to obstacles", "japaneseMeaning": "欲求不満", "synonyms": "annoyance, exasperation", "antonyms": "satisfaction, contentment", "example": "He felt frustration at the delay."},
+      {"word": "tension", "meaning": "mental or emotional strain", "japaneseMeaning": "緊張", "synonyms": "stress, strain", "antonyms": "relaxation, ease", "example": "There was tension in the room."},
+      {"word": "guilt", "meaning": "feeling responsible for wrongdoing", "japaneseMeaning": "罪悪感", "synonyms": "remorse, blame", "antonyms": "innocence, blamelessness", "example": "He experienced guilt after the mistake."},
+      {"word": "discontent", "meaning": "unhappiness or dissatisfaction", "japaneseMeaning": "不満", "synonyms": "dissatisfaction, unhappiness", "antonyms": "contentment, satisfaction", "example": "The workers expressed discontent."},
+      {"word": "anxiety", "meaning": "worry or nervousness", "japaneseMeaning": "不安", "synonyms": "worry, apprehension", "antonyms": "calm, confidence", "example": "She felt anxiety before the exam."},
+      {"word": "indignation", "meaning": "anger at unfair treatment", "japaneseMeaning": "憤り", "synonyms": "outrage, resentment", "antonyms": "approval, acceptance", "example": "He expressed indignation at the decision."}
+    ]
+  }
+ 

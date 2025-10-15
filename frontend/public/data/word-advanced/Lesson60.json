@@ -1,86 +1,18 @@
-{
-  "lesson_id": "eiken-pre1-60",
-  "title": "Lesson 60",
-  "words": [
-    {
-      "word": "confident",
-      "meaning": "feeling or showing certainty about something",
-      "japaneseMeaning": "自信がある",
-      "synonyms": "self-assured, poised",
-      "antonyms": "insecure, unsure",
-      "example": "She felt confident before giving her presentation."
-    },
-    {
-      "word": "challenging",
-      "meaning": "difficult in an interesting or stimulating way",
-      "japaneseMeaning": "やりがいのある",
-      "synonyms": "difficult, demanding",
-      "antonyms": "easy, simple",
-      "example": "Learning a new language can be challenging but rewarding."
-    },
-    {
-      "word": "solution",
-      "meaning": "a means of solving a problem or dealing with a difficult situation",
-      "japaneseMeaning": "解決策",
-      "synonyms": "answer, resolution",
-      "antonyms": "problem, issue",
-      "example": "We need to find a solution to this problem quickly."
-    },
-    {
-      "word": "influence",
-      "meaning": "the capacity to have an effect on the character, development, or behavior of someone or something",
-      "japaneseMeaning": "影響",
-      "synonyms": "impact, effect",
-      "antonyms": "insignificance, powerlessness",
-      "example": "His advice had a positive influence on my decision."
-    },
-    {
-      "word": "environment",
-      "meaning": "the surroundings or conditions in which a person, animal, or plant lives or operates",
-      "japaneseMeaning": "環境",
-      "synonyms": "surroundings, ecosystem",
-      "antonyms": "pollution, degradation",
-      "example": "Protecting the environment is everyone's responsibility."
-    },
-    {
-      "word": "effective",
-      "meaning": "successful in producing a desired or intended result",
-      "japaneseMeaning": "効果的な",
-      "synonyms": "efficient, successful",
-      "antonyms": "ineffective, useless",
-      "example": "This method is very effective for memorizing vocabulary."
-    },
-    {
-      "word": "increase",
-      "meaning": "become or make greater in size, amount, or degree",
-      "japaneseMeaning": "増やす",
-      "synonyms": "raise, grow",
-      "antonyms": "decrease, reduce",
-      "example": "We need to increase our efforts to improve results."
-    },
-    {
-      "word": "opportunity",
-      "meaning": "a set of circumstances that makes it possible to do something",
-      "japaneseMeaning": "機会",
-      "synonyms": "chance, prospect",
-      "antonyms": "obstacle, setback",
-      "example": "Studying abroad was a great opportunity for me."
-    },
-    {
-      "word": "essential",
-      "meaning": "absolutely necessary; extremely important",
-      "japaneseMeaning": "不可欠な",
-      "synonyms": "necessary, vital",
-      "antonyms": "unnecessary, optional",
-      "example": "Good communication skills are essential in the workplace."
-    },
-    {
-      "word": "significant",
-      "meaning": "important or noticeable",
-      "japaneseMeaning": "重要な、顕著な",
-      "synonyms": "important, meaningful, notable",
-      "antonyms": "insignificant, trivial",
-      "example": "The discovery of the new planet was a significant achievement for the scientists."
-    }
-  ]
-}
+ {
+    "lesson_id": "eiken-2-60",
+    "title": "Lesson 60",
+    "paragraph": "Success and failure involve accomplishments, advancement, and setbacks. Recognizing opportunities, breakthroughs, and resilience leads to continuous improvement.",
+    "words": [
+      {"word": "accomplishment", "meaning": "achievement or success", "japaneseMeaning": "達成", "synonyms": "achievement, success", "antonyms": "failure, loss", "example": "Graduation is a major accomplishment."},
+      {"word": "advancement", "meaning": "progress or promotion", "japaneseMeaning": "前進、昇進", "synonyms": "progress, improvement", "antonyms": "decline, regression", "example": "Career advancement is rewarding."},
+      {"word": "victory", "meaning": "success or win", "japaneseMeaning": "勝利", "synonyms": "triumph, success", "antonyms": "defeat, loss", "example": "The team celebrated victory."},
+      {"word": "setback", "meaning": "obstacle or delay", "japaneseMeaning": "挫折", "synonyms": "obstacle, hindrance", "antonyms": "progress, advancement", "example": "The injury was a setback."},
+      {"word": "deficiency", "meaning": "lack or shortage", "japaneseMeaning": "欠乏、欠点", "synonyms": "shortage, insufficiency", "antonyms": "abundance, surplus", "example": "Vitamin deficiency affects health."},
+      {"word": "improvement", "meaning": "enhancement or growth", "japaneseMeaning": "改善", "synonyms": "enhancement, progress", "antonyms": "deterioration, decline", "example": "Practice leads to improvement."},
+      {"word": "resilience", "meaning": "ability to recover from difficulties", "japaneseMeaning": "回復力", "synonyms": "toughness, endurance", "antonyms": "fragility, weakness", "example": "Resilience is key to success."},
+      {"word": "opportunity", "meaning": "favorable chance", "japaneseMeaning": "機会", "synonyms": "chance, prospect", "antonyms": "obstacle, disadvantage", "example": "He seized the opportunity to travel."},
+      {"word": "recognition", "meaning": "acknowledgment or appreciation", "japaneseMeaning": "認識、評価", "synonyms": "acknowledgment, appreciation", "antonyms": "ignorance, neglect", "example": "Her efforts received recognition."},
+      {"word": "breakthrough", "meaning": "significant progress", "japaneseMeaning": "突破口、飛躍的進歩", "synonyms": "advance, discovery", "antonyms": "stagnation, delay", "example": "The experiment led to a breakthrough."}
+    ]
+  }
+
