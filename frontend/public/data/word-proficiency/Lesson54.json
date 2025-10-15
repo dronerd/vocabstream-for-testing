@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-54",
-  "title": "Lesson 54",
-  "words": [
-    {
-      "word": "pedantic",
-      "meaning": "excessively concerned with minor details or rules; overly scholarly",
-      "japaneseMeaning": "細かいことにうるさい、学者ぶった",
-      "synonyms": "meticulous, didactic, nitpicky",
-      "antonyms": "unconcerned, informal, simple",
-      "example": "His pedantic approach annoyed his colleagues.",
-      "japaneseExample": "彼の細かすぎる態度は同僚を苛立たせた。"
-    },
-    {
-      "word": "peevish",
-      "meaning": "easily irritated or annoyed",
-      "japaneseMeaning": "不機嫌な、いらいらしやすい",
-      "synonyms": "irritable, petulant, cranky",
-      "antonyms": "pleasant, cheerful, easygoing",
-      "example": "The peevish child complained about everything.",
-      "japaneseExample": "その不機嫌な子供はすべてに文句を言った。"
-    },
-    {
-      "word": "pejorative",
-      "meaning": "expressing contempt or disapproval",
-      "japaneseMeaning": "軽蔑的な、否定的な",
-      "synonyms": "derogatory, disparaging, insulting",
-      "antonyms": "praiseworthy, complimentary, positive",
-      "example": "He made a pejorative remark about her work.",
-      "japaneseExample": "彼は彼女の仕事について軽蔑的な発言をした。"
-    },
-    {
-      "word": "pellucid",
-      "meaning": "transparent, clear; easily understood",
-      "japaneseMeaning": "透き通った、明瞭な",
-      "synonyms": "transparent, clear, lucid",
-      "antonyms": "opaque, obscure, unclear",
-      "example": "Her writing style is pellucid and easy to follow.",
-      "japaneseExample": "彼女の文章は明瞭で理解しやすい。"
-    },
-    {
-      "word": "penchant",
-      "meaning": "a strong or habitual liking for something",
-      "japaneseMeaning": "強い好み、傾向",
-      "synonyms": "liking, fondness, inclination",
-      "antonyms": "dislike, aversion, antipathy",
-      "example": "He has a penchant for classical music.",
-      "japaneseExample": "彼はクラシック音楽が大好きだ。"
-    },
-    {
-      "word": "penitent",
-      "meaning": "feeling or showing sorrow and regret for having done wrong",
-      "japaneseMeaning": "悔い改めた、反省している",
-      "synonyms": "repentant, remorseful, contrite",
-      "antonyms": "unrepentant, unremorseful, unapologetic",
-      "example": "The penitent sinner asked for forgiveness.",
-      "japaneseExample": "悔い改めた罪人は許しを求めた。"
-    },
-    {
-      "word": "pensive",
-      "meaning": "engaged in deep or serious thought",
-      "japaneseMeaning": "物思いにふけった、考え込んだ",
-      "synonyms": "thoughtful, contemplative, reflective",
-      "antonyms": "frivolous, careless, superficial",
-      "example": "He sat in a pensive mood, staring out the window.",
-      "japaneseExample": "彼は物思いにふけりながら窓の外を見つめて座っていた。"
-    },
-    {
-      "word": "perceptive",
-      "meaning": "having or showing sensitive insight; able to notice or understand things quickly",
-      "japaneseMeaning": "洞察力のある、理解の早い",
-      "synonyms": "insightful, observant, discerning",
-      "antonyms": "obtuse, insensitive, unaware",
-      "example": "She is very perceptive and notices subtle changes in mood.",
-      "japaneseExample": "彼女は非常に洞察力があり、微妙な気分の変化にも気づく。"
-    },
-    {
-      "word": "perennial",
-      "meaning": "lasting or existing for a long or apparently infinite time; enduring",
-      "japaneseMeaning": "長く続く、永続的な",
-      "synonyms": "everlasting, enduring, perpetual",
-      "antonyms": "temporary, fleeting, short-lived",
-      "example": "He has a perennial interest in learning new languages.",
-      "japaneseExample": "彼は新しい言語を学ぶことに長年の興味を持っている。"
-    },
-    {
-      "word": "perfidy",
-      "meaning": "deceitfulness; untrustworthiness",
-      "japaneseMeaning": "裏切り、不誠実",
-      "synonyms": "treachery, betrayal, deceit",
-      "antonyms": "loyalty, faithfulness, fidelity",
-      "example": "His perfidy was discovered when he leaked confidential information.",
-      "japaneseExample": "彼が機密情報を漏らしたとき、彼の裏切りが明らかになった。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-54",
+    "title": "Lesson 54",
+    "paragraph": "This lesson explores time and temporality, including concepts like ephemeral and perennial.",
+    "words": [
+      {
+        "word": "ephemeral",
+        "meaning": "lasting for a very short time",
+        "japaneseMeaning": "儚い、一時的な",
+        "synonyms": "transient, fleeting",
+        "antonyms": "permanent, enduring",
+        "example": "The beauty of a sunset is ephemeral."
+      },
+      {
+        "word": "transitory",
+        "meaning": "not permanent; temporary",
+        "japaneseMeaning": "一時的な、つかの間の",
+        "synonyms": "temporary, fleeting",
+        "antonyms": "lasting, permanent",
+        "example": "The discomfort was transitory and soon passed."
+      },
+      {
+        "word": "perpetual",
+        "meaning": "never ending or changing",
+        "japaneseMeaning": "永続的な、絶え間ない",
+        "synonyms": "everlasting, constant",
+        "antonyms": "temporary, finite",
+        "example": "The perpetual noise disturbed the residents."
+      },
+      {
+        "word": "incessant",
+        "meaning": "continuing without pause or interruption",
+        "japaneseMeaning": "絶え間ない、ひっきりなしの",
+        "synonyms": "unceasing, nonstop",
+        "antonyms": "intermittent, occasional",
+        "example": "Incessant rain flooded the streets."
+      },
+      {
+        "word": "protracted",
+        "meaning": "lasting for a long time or longer than expected",
+        "japaneseMeaning": "長引いた、延長された",
+        "synonyms": "extended, prolonged",
+        "antonyms": "brief, short-lived",
+        "example": "The negotiation was protracted over several months."
+      },
+      {
+        "word": "fleeting",
+        "meaning": "lasting for a very short time",
+        "japaneseMeaning": "はかない、一瞬の",
+        "synonyms": "brief, ephemeral",
+        "antonyms": "permanent, lasting",
+        "example": "She felt a fleeting sense of joy."
+      },
+      {
+        "word": "momentary",
+        "meaning": "lasting for a very brief period",
+        "japaneseMeaning": "瞬間的な、つかの間の",
+        "synonyms": "brief, instantaneous",
+        "antonyms": "enduring, permanent",
+        "example": "There was a momentary pause before he answered."
+      },
+      {
+        "word": "cyclical",
+        "meaning": "occurring in cycles; recurrent",
+        "japaneseMeaning": "周期的な、循環する",
+        "synonyms": "recurrent, periodic",
+        "antonyms": "linear, unidirectional",
+        "example": "Economic patterns are often cyclical."
+      },
+      {
+        "word": "perennial",
+        "meaning": "lasting for a long or infinite time; enduring",
+        "japaneseMeaning": "多年生の、永続的な",
+        "synonyms": "everlasting, enduring",
+        "antonyms": "ephemeral, short-lived",
+        "example": "Perennial plants bloom every year."
+      },
+      {
+        "word": "intermittent",
+        "meaning": "occurring at irregular intervals; not continuous",
+        "japaneseMeaning": "断続的な、時々の",
+        "synonyms": "sporadic, periodic",
+        "antonyms": "continuous, constant",
+        "example": "The engine made intermittent noises."
+      }
+    ]
+  }
+

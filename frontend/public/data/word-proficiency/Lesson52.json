@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-52",
-  "title": "Lesson 52",
-  "words": [
-    {
-      "word": "oscillate",
-      "meaning": "to move or swing back and forth; to waver between opinions or feelings",
-      "japaneseMeaning": "振動する、揺れ動く",
-      "synonyms": "swing, fluctuate, waver",
-      "antonyms": "stay, stabilize, remain",
-      "example": "The fan oscillates to cool the room evenly.",
-      "japaneseExample": "扇風機は部屋を均等に冷やすために振動する。"
-    },
-    {
-      "word": "ostensible",
-      "meaning": "stated or appearing to be true, but not necessarily so",
-      "japaneseMeaning": "表向きの、うわべの",
-      "synonyms": "apparent, seeming, professed",
-      "antonyms": "real, actual, true",
-      "example": "His ostensible reason for visiting was to check on his friend.",
-      "japaneseExample": "彼の表向きの訪問理由は友人の安否を確認することだった。"
-    },
-    {
-      "word": "ostentatious",
-      "meaning": "characterized by vulgar or pretentious display; designed to impress",
-      "japaneseMeaning": "見せびらかしの、派手な",
-      "synonyms": "showy, pretentious, flamboyant",
-      "antonyms": "modest, plain, unassuming",
-      "example": "She wore an ostentatious diamond necklace to the party.",
-      "japaneseExample": "彼女はパーティーに派手なダイヤモンドのネックレスをつけてきた。"
-    },
-    {
-      "word": "outlandish",
-      "meaning": "looking or sounding bizarre or unfamiliar",
-      "japaneseMeaning": "風変わりな、奇抜な",
-      "synonyms": "bizarre, unusual, strange",
-      "antonyms": "ordinary, conventional, familiar",
-      "example": "His outlandish outfit drew everyone's attention.",
-      "japaneseExample": "彼の奇抜な服装はみんなの注目を集めた。"
-    },
-    {
-      "word": "overt",
-      "meaning": "done or shown openly; plainly apparent",
-      "japaneseMeaning": "公然の、明白な",
-      "synonyms": "open, obvious, manifest",
-      "antonyms": "covert, hidden, secret",
-      "example": "There was overt hostility between the two teams.",
-      "japaneseExample": "その二つのチームの間には公然の敵意があった。"
-    },
-    {
-      "word": "pacify",
-      "meaning": "to calm or soothe; to bring peace",
-      "japaneseMeaning": "なだめる、平和にする",
-      "synonyms": "calm, appease, soothe",
-      "antonyms": "provoke, agitate, inflame",
-      "example": "The mother pacified the crying baby.",
-      "japaneseExample": "母親は泣いている赤ちゃんをなだめた。"
-    },
-    {
-      "word": "painstaking",
-      "meaning": "done with or employing great care and thoroughness",
-      "japaneseMeaning": "骨折りの、入念な",
-      "synonyms": "meticulous, careful, diligent",
-      "antonyms": "careless, negligent, hasty",
-      "example": "He completed the project with painstaking attention to detail.",
-      "japaneseExample": "彼は細部にまで入念な注意を払い、プロジェクトを完成させた。"
-    },
-    {
-      "word": "palliate",
-      "meaning": "to make a problem or illness less severe without removing the cause",
-      "japaneseMeaning": "和らげる、症状を緩和する",
-      "synonyms": "alleviate, ease, soothe",
-      "antonyms": "exacerbate, intensify, worsen",
-      "example": "The medicine helped palliate his symptoms.",
-      "japaneseExample": "その薬は彼の症状を和らげるのに役立った。"
-    },
-    {
-      "word": "palpable",
-      "meaning": "able to be touched or felt; so intense as to be almost tangible",
-      "japaneseMeaning": "触れられる、明白な",
-      "synonyms": "tangible, perceptible, noticeable",
-      "antonyms": "intangible, imperceptible, subtle",
-      "example": "The tension in the room was palpable.",
-      "japaneseExample": "部屋の中の緊張感は明白だった。"
-    },
-    {
-      "word": "panacea",
-      "meaning": "a solution or remedy for all difficulties or diseases",
-      "japaneseMeaning": "万能薬、すべての解決策",
-      "synonyms": "cure-all, remedy, solution",
-      "antonyms": "problem, disease, complication",
-      "example": "There is no panacea for all the world's problems.",
-      "japaneseExample": "世界のすべての問題に対する万能薬はない。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-52",
+    "title": "Lesson 52",
+    "paragraph": "This lesson explores emotion and instinct, including empathy, desire, and passion.",
+    "words": [
+      {
+        "word": "empathy",
+        "meaning": "the ability to understand and share the feelings of another",
+        "japaneseMeaning": "共感、感情移入",
+        "synonyms": "compassion, understanding",
+        "antonyms": "indifference, apathy",
+        "example": "Her empathy allowed her to comfort friends in distress."
+      },
+      {
+        "word": "compassion",
+        "meaning": "sympathetic concern for the sufferings of others",
+        "japaneseMeaning": "思いやり、同情",
+        "synonyms": "kindness, pity",
+        "antonyms": "cruelty, indifference",
+        "example": "Compassion drives charitable acts."
+      },
+      {
+        "word": "resentment",
+        "meaning": "bitter indignation at having been treated unfairly",
+        "japaneseMeaning": "憤り、恨み",
+        "synonyms": "grudge, bitterness",
+        "antonyms": "forgiveness, contentment",
+        "example": "He felt resentment after being overlooked for promotion."
+      },
+      {
+        "word": "desire",
+        "meaning": "a strong feeling of wanting something",
+        "japaneseMeaning": "欲望、願望",
+        "synonyms": "longing, craving",
+        "antonyms": "aversion, indifference",
+        "example": "Her desire to learn was insatiable."
+      },
+      {
+        "word": "aversion",
+        "meaning": "a strong dislike or disinclination",
+        "japaneseMeaning": "嫌悪、反感",
+        "synonyms": "distaste, antipathy",
+        "antonyms": "liking, attraction",
+        "example": "He had an aversion to noisy environments."
+      },
+      {
+        "word": "euphoria",
+        "meaning": "a feeling of intense happiness or excitement",
+        "japaneseMeaning": "幸福感、陶酔感",
+        "synonyms": "elation, joy",
+        "antonyms": "despair, sadness",
+        "example": "Winning the championship brought euphoria to the team."
+      },
+      {
+        "word": "agitation",
+        "meaning": "a state of nervousness or unrest",
+        "japaneseMeaning": "動揺、興奮",
+        "synonyms": "restlessness, anxiety",
+        "antonyms": "calm, serenity",
+        "example": "He showed signs of agitation before the interview."
+      },
+      {
+        "word": "apathy",
+        "meaning": "lack of interest, enthusiasm, or concern",
+        "japaneseMeaning": "無関心、冷淡",
+        "synonyms": "indifference, unconcern",
+        "antonyms": "interest, passion",
+        "example": "Voter apathy led to low turnout."
+      },
+      {
+        "word": "nostalgia",
+        "meaning": "a sentimental longing for the past",
+        "japaneseMeaning": "郷愁、懐古",
+        "synonyms": "remembrance, wistfulness",
+        "antonyms": "anticipation, forward-looking",
+        "example": "She felt nostalgia for her childhood home."
+      },
+      {
+        "word": "zeal",
+        "meaning": "great energy or enthusiasm in pursuit of a cause",
+        "japaneseMeaning": "熱意、熱心",
+        "synonyms": "passion, fervor",
+        "antonyms": "indifference, apathy",
+        "example": "He worked with zeal to complete the project."
+      }
+    ]
+  }
+

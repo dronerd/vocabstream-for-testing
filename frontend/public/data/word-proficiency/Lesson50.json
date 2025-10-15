@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-50",
-  "title": "Lesson 50",
-  "words": [
-    {
-      "word": "obliterate",
-      "meaning": "to destroy completely; to wipe out",
-      "japaneseMeaning": "完全に消す、破壊する",
-      "synonyms": "destroy, erase, annihilate",
-      "antonyms": "preserve, create, construct",
-      "example": "The building was obliterated by the explosion.",
-      "japaneseExample": "その建物は爆発で完全に破壊された。"
-    },
-    {
-      "word": "oblivion",
-      "meaning": "the state of being unaware or unconscious of what is happening; complete forgetfulness",
-      "japaneseMeaning": "忘却、無意識の状態",
-      "synonyms": "forgetfulness, unconsciousness, obscurity",
-      "antonyms": "awareness, consciousness, recognition",
-      "example": "The ancient city fell into oblivion over time.",
-      "japaneseExample": "その古代都市は時とともに忘却の彼方に消えた。"
-    },
-    {
-      "word": "oblivious",
-      "meaning": "not aware of or concerned about what is happening around one",
-      "japaneseMeaning": "気づかない、無頓着な",
-      "synonyms": "unaware, heedless, inattentive",
-      "antonyms": "aware, conscious, attentive",
-      "example": "She was oblivious to the noise around her.",
-      "japaneseExample": "彼女は周囲の騒音に気づいていなかった。"
-    },
-    {
-      "word": "obscure",
-      "meaning": "not discovered or known about; uncertain; not clearly expressed",
-      "japaneseMeaning": "不明瞭な、知られていない",
-      "synonyms": "unclear, unknown, vague",
-      "antonyms": "clear, obvious, well-known",
-      "example": "The meaning of the poem remains obscure.",
-      "japaneseExample": "その詩の意味は不明瞭なままだ。"
-    },
-    {
-      "word": "obsequious",
-      "meaning": "excessively obedient or attentive; servile",
-      "japaneseMeaning": "へつらいの、追従的な",
-      "synonyms": "servile, fawning, subservient",
-      "antonyms": "assertive, independent, domineering",
-      "example": "The obsequious assistant agreed with everything the boss said.",
-      "japaneseExample": "へつらいの助手は上司の言うことすべてに同意した。"
-    },
-    {
-      "word": "obsolete",
-      "meaning": "no longer produced or used; out of date",
-      "japaneseMeaning": "時代遅れの、廃れた",
-      "synonyms": "outdated, archaic, old-fashioned",
-      "antonyms": "modern, current, new",
-      "example": "Typewriters have become largely obsolete.",
-      "japaneseExample": "タイプライターはほとんど廃れた。"
-    },
-    {
-      "word": "obstinate",
-      "meaning": "stubbornly refusing to change one’s opinion or chosen course of action",
-      "japaneseMeaning": "頑固な、強情な",
-      "synonyms": "stubborn, unyielding, inflexible",
-      "antonyms": "compliant, flexible, amenable",
-      "example": "He was obstinate in his refusal to apologize.",
-      "japaneseExample": "彼は謝ることを頑なに拒んだ。"
-    },
-    {
-      "word": "obtuse",
-      "meaning": "annoyingly insensitive or slow to understand",
-      "japaneseMeaning": "鈍い、理解の遅い",
-      "synonyms": "dull, slow, insensitive",
-      "antonyms": "sharp, perceptive, keen",
-      "example": "He was too obtuse to see the problem.",
-      "japaneseExample": "彼は問題に気づくにはあまりにも鈍感だった。"
-    },
-    {
-      "word": "odious",
-      "meaning": "extremely unpleasant; repulsive",
-      "japaneseMeaning": "憎むべき、不快な",
-      "synonyms": "hateful, repugnant, offensive",
-      "antonyms": "pleasant, delightful, lovable",
-      "example": "The dictator’s policies were odious to the people.",
-      "japaneseExample": "その独裁者の政策は人々にとって憎むべきものだった。"
-    },
-    {
-      "word": "officious",
-      "meaning": "assertive of authority in an annoyingly domineering way, especially with regard to trivial matters",
-      "japaneseMeaning": "おせっかいな、でしゃばりの",
-      "synonyms": "meddlesome, intrusive, overbearing",
-      "antonyms": "unintrusive, reserved, modest",
-      "example": "The officious clerk kept correcting everyone’s mistakes.",
-      "japaneseExample": "そのおせっかいな係員はみんなの間違いを直そうとした。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-50",
+    "title": "Lesson 50",
+    "paragraph": "This lesson covers knowledge and mystery, exploring insight, speculation, and revelation.",
+    "words": [
+      {
+        "word": "revelation",
+        "meaning": "a surprising and previously unknown fact made known",
+        "japaneseMeaning": "啓示、発見",
+        "synonyms": "discovery, disclosure",
+        "antonyms": "concealment, secret",
+        "example": "The revelation shocked the scientific community."
+      },
+      {
+        "word": "enigma",
+        "meaning": "a mysterious or puzzling person or thing",
+        "japaneseMeaning": "謎、不可解なもの",
+        "synonyms": "mystery, puzzle",
+        "antonyms": "clarity, solution",
+        "example": "Her sudden disappearance was an enigma."
+      },
+      {
+        "word": "paradox",
+        "meaning": "a statement that contradicts itself but may be true",
+        "japaneseMeaning": "逆説、矛盾",
+        "synonyms": "contradiction, anomaly",
+        "antonyms": "consistency, harmony",
+        "example": "It is a paradox that the rich often feel poor."
+      },
+      {
+        "word": "conjecture",
+        "meaning": "an opinion formed on incomplete information",
+        "japaneseMeaning": "推測、憶測",
+        "synonyms": "guess, speculation",
+        "antonyms": "certainty, fact",
+        "example": "Theories are based on conjecture rather than evidence."
+      },
+      {
+        "word": "hypothesis",
+        "meaning": "a proposed explanation made on limited evidence",
+        "japaneseMeaning": "仮説、前提",
+        "synonyms": "theory, assumption",
+        "antonyms": "fact, certainty",
+        "example": "The scientist tested the hypothesis with experiments."
+      },
+      {
+        "word": "supposition",
+        "meaning": "an uncertain belief or assumption",
+        "japaneseMeaning": "推定、想定",
+        "synonyms": "assumption, conjecture",
+        "antonyms": "certainty, knowledge",
+        "example": "The plan was based on the supposition that sales would increase."
+      },
+      {
+        "word": "epiphany",
+        "meaning": "a moment of sudden insight or realization",
+        "japaneseMeaning": "ひらめき、直観",
+        "synonyms": "insight, revelation",
+        "antonyms": "confusion, ignorance",
+        "example": "She had an epiphany about the solution to the problem."
+      },
+      {
+        "word": "speculation",
+        "meaning": "the forming of theories without firm evidence",
+        "japaneseMeaning": "推測、憶測",
+        "synonyms": "guess, conjecture",
+        "antonyms": "certainty, knowledge",
+        "example": "There is speculation about the company's future."
+      },
+      {
+        "word": "insight",
+        "meaning": "the ability to gain an accurate understanding of something",
+        "japaneseMeaning": "洞察、理解",
+        "synonyms": "perception, understanding",
+        "antonyms": "ignorance, misunderstanding",
+        "example": "Her insight helped solve the complex problem."
+      },
+      {
+        "word": "ambiguity",
+        "meaning": "uncertainty or inexactness in meaning",
+        "japaneseMeaning": "曖昧さ、多義性",
+        "synonyms": "uncertainty, vagueness",
+        "antonyms": "clarity, precision",
+        "example": "The ambiguity in the instructions caused confusion."
+      }
+    ]
+  }
+ 

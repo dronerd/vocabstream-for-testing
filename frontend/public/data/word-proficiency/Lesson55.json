@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-55",
-  "title": "Lesson 55",
-  "words": [
-    {
-      "word": "perfunctory",
-      "meaning": "done without care or interest; superficial",
-      "japaneseMeaning": "いい加減な、形式的な",
-      "synonyms": "cursory, superficial, indifferent",
-      "antonyms": "thorough, attentive, diligent",
-      "example": "He gave a perfunctory nod to acknowledge her presence.",
-      "japaneseExample": "彼は彼女の存在を認めるためにいい加減にうなずいた。"
-    },
-    {
-      "word": "perilous",
-      "meaning": "full of danger or risk",
-      "japaneseMeaning": "危険な、危うい",
-      "synonyms": "dangerous, hazardous, risky",
-      "antonyms": "safe, secure, harmless",
-      "example": "The hikers embarked on a perilous journey through the mountains.",
-      "japaneseExample": "登山者たちは山を越える危険な旅に出た。"
-    },
-    {
-      "word": "permeate",
-      "meaning": "to spread throughout; to penetrate",
-      "japaneseMeaning": "浸透する、広がる",
-      "synonyms": "penetrate, pervade, saturate",
-      "antonyms": "contain, restrict, block",
-      "example": "The smell of fresh bread permeated the house.",
-      "japaneseExample": "焼きたてのパンの香りが家中に広がった。"
-    },
-    {
-      "word": "pernicious",
-      "meaning": "having a harmful effect, especially in a gradual or subtle way",
-      "japaneseMeaning": "有害な、悪質な",
-      "synonyms": "harmful, destructive, detrimental",
-      "antonyms": "beneficial, harmless, advantageous",
-      "example": "The pernicious weed spread throughout the farmland.",
-      "japaneseExample": "その有害な雑草は農地全体に広がった。"
-    },
-    {
-      "word": "perpetuate",
-      "meaning": "to make something continue indefinitely",
-      "japaneseMeaning": "永続させる、存続させる",
-      "synonyms": "preserve, maintain, sustain",
-      "antonyms": "end, discontinue, abolish",
-      "example": "The monument was built to perpetuate the memory of the soldiers.",
-      "japaneseExample": "その記念碑は兵士たちの記憶を永続させるために建てられた。"
-    },
-    {
-      "word": "perquisite",
-      "meaning": "a special right or benefit received as a result of one’s position",
-      "japaneseMeaning": "特典、役得",
-      "synonyms": "perk, privilege, benefit",
-      "antonyms": "penalty, loss, disadvantage",
-      "example": "Company cars are a perquisite of the job.",
-      "japaneseExample": "社用車はその仕事の特典である。"
-    },
-    {
-      "word": "perspicacious",
-      "meaning": "having a ready insight into and understanding of things",
-      "japaneseMeaning": "洞察力の鋭い、明敏な",
-      "synonyms": "astute, perceptive, insightful",
-      "antonyms": "obtuse, ignorant, dull",
-      "example": "Her perspicacious mind quickly understood the complex problem.",
-      "japaneseExample": "彼女の明敏な頭は複雑な問題をすぐに理解した。"
-    },
-    {
-      "word": "pertinent",
-      "meaning": "relevant or applicable to a particular matter",
-      "japaneseMeaning": "適切な、関連のある",
-      "synonyms": "relevant, appropriate, applicable",
-      "antonyms": "irrelevant, unrelated, inappropriate",
-      "example": "Please keep your comments pertinent to the topic.",
-      "japaneseExample": "コメントは話題に関連するものにしてください。"
-    },
-    {
-      "word": "pervade",
-      "meaning": "to spread through and be perceived in every part of",
-      "japaneseMeaning": "行き渡る、充満する",
-      "synonyms": "permeate, infuse, saturate",
-      "antonyms": "exclude, remove, drain",
-      "example": "A sense of sadness pervaded the room.",
-      "japaneseExample": "悲しみの感情が部屋中に充満していた。"
-    },
-    {
-      "word": "petulant",
-      "meaning": "childishly sulky or bad-tempered",
-      "japaneseMeaning": "不機嫌な、気まぐれな",
-      "synonyms": "peevish, irritable, cranky",
-      "antonyms": "pleasant, good-natured, cheerful",
-      "example": "The petulant child threw a tantrum when denied candy.",
-      "japaneseExample": "その不機嫌な子供はキャンディを断られると癇癪を起こした。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-55",
+    "title": "Lesson 55",
+    "paragraph": "This lesson covers memory and reminiscence, including concepts like recollection and amnesia.",
+    "words": [
+      {
+        "word": "recollection",
+        "meaning": "the action of remembering something",
+        "japaneseMeaning": "回想、思い出",
+        "synonyms": "memory, remembrance",
+        "antonyms": "forgetfulness, oblivion",
+        "example": "Her recollection of childhood summers was vivid."
+      },
+      {
+        "word": "nostalgia",
+        "meaning": "a sentimental longing for the past",
+        "japaneseMeaning": "郷愁、懐古",
+        "synonyms": "wistfulness, reminiscence",
+        "antonyms": "indifference, present-mindedness",
+        "example": "He felt nostalgia for the music of his youth."
+      },
+      {
+        "word": "reminiscence",
+        "meaning": "a story told about a past event remembered by the narrator",
+        "japaneseMeaning": "思い出話、回顧",
+        "synonyms": "memory, recollection",
+        "antonyms": "forgetfulness, amnesia",
+        "example": "She shared reminiscences of her college days."
+      },
+      {
+        "word": "forgetfulness",
+        "meaning": "the fact of forgetting things",
+        "japaneseMeaning": "忘れっぽさ、健忘",
+        "synonyms": "absentmindedness, oblivion",
+        "antonyms": "memory, recollection",
+        "example": "His forgetfulness caused him to miss appointments."
+      },
+      {
+        "word": "amnesia",
+        "meaning": "a partial or total loss of memory",
+        "japaneseMeaning": "記憶喪失、健忘症",
+        "synonyms": "memory loss, oblivion",
+        "antonyms": "memory, recollection",
+        "example": "The patient suffered amnesia after the accident."
+      },
+      {
+        "word": "impression",
+        "meaning": "an effect produced on the mind or feelings",
+        "japaneseMeaning": "印象、感銘",
+        "synonyms": "impact, effect",
+        "antonyms": "indifference, apathy",
+        "example": "The speech left a lasting impression on the audience."
+      },
+      {
+        "word": "imprint",
+        "meaning": "a mark or effect left on the mind or memory",
+        "japaneseMeaning": "刻印、心に刻む",
+        "synonyms": "mark, impression",
+        "antonyms": "erase, forget",
+        "example": "The tragedy left an imprint on his psyche."
+      },
+      {
+        "word": "echo",
+        "meaning": "a reflection or repetition of sound or idea",
+        "japaneseMeaning": "反響、こだま",
+        "synonyms": "resonance, reverberation",
+        "antonyms": "silence, quiet",
+        "example": "Her words echoed in his mind long after the meeting."
+      },
+      {
+        "word": "vestige",
+        "meaning": "a trace or remnant of something that is disappearing or no longer exists",
+        "japaneseMeaning": "跡、痕跡",
+        "synonyms": "remnant, trace",
+        "antonyms": "whole, entirety",
+        "example": "Only vestiges of the ancient civilization remain."
+      },
+      {
+        "word": "aftermath",
+        "meaning": "the consequences or aftereffects of a significant event",
+        "japaneseMeaning": "余波、後遺症",
+        "synonyms": "consequence, result",
+        "antonyms": "preceding event, cause",
+        "example": "The aftermath of the storm caused widespread damage."
+      }
+    ]
+  }

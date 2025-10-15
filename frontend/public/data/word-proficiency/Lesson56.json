@@ -1,96 +1,87 @@
-{
-  "lesson_id": "eiken-1-56",
-  "title": "Lesson 56",
-  "words": [
-    {
-      "word": "phlegmatic",
-      "meaning": "having an unemotional and stolidly calm disposition",
-      "japaneseMeaning": "冷静な、無感動な",
-      "synonyms": "calm, composed, stoic",
-      "antonyms": "excitable, emotional, passionate",
-      "example": "His phlegmatic response helped calm the panicking team.",
-      "japaneseExample": "彼の冷静な対応は慌てたチームを落ち着かせた。"
-    },
-    {
-      "word": "pious",
-      "meaning": "devoutly religious; showing reverence for a deity",
-      "japaneseMeaning": "敬虔な、信心深い",
-      "synonyms": "devout, religious, reverent",
-      "antonyms": "irreverent, impious, godless",
-      "example": "The pious man attended church every day.",
-      "japaneseExample": "敬虔なその男は毎日教会に通った。"
-    },
-    {
-      "word": "pithy",
-      "meaning": "concise and forcefully expressive",
-      "japaneseMeaning": "簡潔で要を得た",
-      "synonyms": "concise, terse, succinct",
-      "antonyms": "verbose, long-winded, wordy",
-      "example": "She gave a pithy summary of the report.",
-      "japaneseExample": "彼女はその報告書を簡潔にまとめた。"
-    },
-    {
-      "word": "placate",
-      "meaning": "to make someone less angry or hostile",
-      "japaneseMeaning": "なだめる、和らげる",
-      "synonyms": "appease, calm, soothe",
-      "antonyms": "provoke, irritate, antagonize",
-      "example": "The manager tried to placate the upset employees.",
-      "japaneseExample": "マネージャーは怒っている従業員たちをなだめようとした。"
-    },
-    {
-      "word": "placid",
-      "meaning": "not easily upset or excited; calm and peaceful",
-      "japaneseMeaning": "穏やかな、平静な",
-      "synonyms": "calm, serene, tranquil",
-      "antonyms": "agitated, turbulent, restless",
-      "example": "The placid lake reflected the mountains beautifully.",
-      "japaneseExample": "穏やかな湖は山々を美しく映していた。"
-    },
-    {
-      "word": "plaintive",
-      "meaning": "sounding sad and mournful",
-      "japaneseMeaning": "悲しげな、哀れな",
-      "synonyms": "melancholy, mournful, sorrowful",
-      "antonyms": "cheerful, joyful, happy",
-      "example": "The plaintive song brought tears to her eyes.",
-      "japaneseExample": "その悲しげな歌で彼女は涙を流した。"
-    },
-    {
-      "word": "platitude",
-      "meaning": "a remark or statement that has been used too often to be interesting or thoughtful",
-      "japaneseMeaning": "陳腐な決まり文句",
-      "synonyms": "cliché, truism, banality",
-      "antonyms": "originality, profundity, novelty",
-      "example": "His speech was full of platitudes about hard work.",
-      "japaneseExample": "彼の演説は努力に関する陳腐な決まり文句で満ちていた。"
-    },
-    {
-      "word": "plausible",
-      "meaning": "seeming reasonable or probable",
-      "japaneseMeaning": "もっともらしい、ありそうな",
-      "synonyms": "credible, believable, reasonable",
-      "antonyms": "implausible, improbable, unlikely",
-      "example": "Her explanation was plausible enough to convince us.",
-      "japaneseExample": "彼女の説明は私たちを納得させるにはもっともらしかった。"
-    },
-    {
-      "word": "pliant",
-      "meaning": "flexible, easily influenced",
-      "japaneseMeaning": "柔軟な、従順な",
-      "synonyms": "flexible, supple, adaptable",
-      "antonyms": "rigid, inflexible, stubborn",
-      "example": "The pliant branches bent under the weight of the snow.",
-      "japaneseExample": "柔軟な枝は雪の重みでしなった。"
-    },
-    {
-      "word": "poignant",
-      "meaning": "evoking a keen sense of sadness or regret",
-      "japaneseMeaning": "胸に迫る、感動的な",
-      "synonyms": "touching, moving, affecting",
-      "antonyms": "unemotional, indifferent, dull",
-      "example": "The film ended with a poignant scene.",
-      "japaneseExample": "映画は感動的な場面で終わった。"
-    }
-  ]
-}
+  {
+    "lesson_id": "eiken-1-56",
+    "title": "Lesson 56",
+    "paragraph": "This lesson covers perception and illusion, including mirage, hallucination, and delusion.",
+    "words": [
+      {
+        "word": "mirage",
+        "meaning": "an optical illusion caused by atmospheric conditions",
+        "japaneseMeaning": "蜃気楼、幻想",
+        "synonyms": "illusion, apparition",
+        "antonyms": "reality, fact",
+        "example": "The desert travelers saw a mirage of water in the distance."
+      },
+      {
+        "word": "hallucination",
+        "meaning": "a sensory experience of something that does not exist",
+        "japaneseMeaning": "幻覚、幻視",
+        "synonyms": "vision, delusion",
+        "antonyms": "reality, perception",
+        "example": "The patient reported vivid hallucinations."
+      },
+      {
+        "word": "apparition",
+        "meaning": "a ghostly figure or unexpected appearance",
+        "japaneseMeaning": "幽霊、出現",
+        "synonyms": "ghost, specter",
+        "antonyms": "substance, reality",
+        "example": "A strange apparition appeared in the hallway."
+      },
+      {
+        "word": "phantasm",
+        "meaning": "something existing in perception only; an illusion",
+        "japaneseMeaning": "幻影、幻想",
+        "synonyms": "illusion, specter",
+        "antonyms": "reality, fact",
+        "example": "The fear he felt was a mere phantasm of his imagination."
+      },
+      {
+        "word": "figment",
+        "meaning": "a thing that someone believes to be real but exists only in their imagination",
+        "japaneseMeaning": "作り事、幻影",
+        "synonyms": "illusion, invention",
+        "antonyms": "reality, fact",
+        "example": "The dragon was a figment of the story."
+      },
+      {
+        "word": "delusion",
+        "meaning": "a false belief or opinion",
+        "japaneseMeaning": "錯覚、妄想",
+        "synonyms": "misbelief, illusion",
+        "antonyms": "truth, reality",
+        "example": "He was under the delusion that he could win easily."
+      },
+      {
+        "word": "chimera",
+        "meaning": "a thing that is hoped for but is illusory or impossible to achieve",
+        "japaneseMeaning": "幻想、架空のもの",
+        "synonyms": "illusion, fantasy",
+        "antonyms": "reality, actuality",
+        "example": "The idea of wealth without work is a chimera."
+      },
+      {
+        "word": "semblance",
+        "meaning": "the outward appearance or apparent form of something",
+        "japaneseMeaning": "外観、見せかけ",
+        "synonyms": "appearance, facade",
+        "antonyms": "reality, truth",
+        "example": "She maintained a semblance of calm despite her fear."
+      },
+      {
+        "word": "vision",
+        "meaning": "the ability to think about or plan the future with imagination",
+        "japaneseMeaning": "視覚、先見、夢想",
+        "synonyms": "insight, foresight",
+        "antonyms": "blindness, ignorance",
+        "example": "His vision of the company’s future inspired everyone."
+      },
+      {
+        "word": "specter",
+        "meaning": "a ghost or haunting presence",
+        "japaneseMeaning": "幽霊、恐怖の存在",
+        "synonyms": "ghost, apparition",
+        "antonyms": "substance, reality",
+        "example": "The specter of failure haunted the students."
+      }
+    ]
+  }

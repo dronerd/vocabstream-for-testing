@@ -1,96 +1,88 @@
-{
-  "lesson_id": "eiken-1-53",
-  "title": "Lesson 53",
-  "words": [
-    {
-      "word": "panache",
-      "meaning": "flamboyant confidence of style or manner",
-      "japaneseMeaning": "気取った様子、華やかさ",
-      "synonyms": "flair, style, flamboyance",
-      "antonyms": "plainness, dullness, simplicity",
-      "example": "She performed the dance with great panache.",
-      "japaneseExample": "彼女はそのダンスを華やかに披露した。"
-    },
-    {
-      "word": "pandemonium",
-      "meaning": "wild and noisy disorder or confusion; uproar",
-      "japaneseMeaning": "大混乱、騒動",
-      "synonyms": "chaos, uproar, turmoil",
-      "antonyms": "order, calm, peace",
-      "example": "There was pandemonium when the winner was announced.",
-      "japaneseExample": "勝者が発表されたとき、大混乱が起きた。"
-    },
-    {
-      "word": "paradigm",
-      "meaning": "a typical example or model of something",
-      "japaneseMeaning": "模範、典型",
-      "synonyms": "model, example, standard",
-      "antonyms": "exception, anomaly, deviation",
-      "example": "The company set a new paradigm for customer service.",
-      "japaneseExample": "その会社は顧客サービスの新しい模範を示した。"
-    },
-    {
-      "word": "paragon",
-      "meaning": "a person or thing regarded as a perfect example of a particular quality",
-      "japaneseMeaning": "模範、典型",
-      "synonyms": "exemplar, ideal, model",
-      "antonyms": "flaw, imperfection, failure",
-      "example": "She is a paragon of virtue.",
-      "japaneseExample": "彼女は美徳の模範である。"
-    },
-    {
-      "word": "paramount",
-      "meaning": "more important than anything else; supreme",
-      "japaneseMeaning": "最高の、非常に重要な",
-      "synonyms": "supreme, foremost, principal",
-      "antonyms": "minor, secondary, subordinate",
-      "example": "Safety is of paramount importance.",
-      "japaneseExample": "安全は最も重要である。"
-    },
-    {
-      "word": "pariah",
-      "meaning": "an outcast; someone despised or rejected by society",
-      "japaneseMeaning": "社会からの追放者、のけ者",
-      "synonyms": "outcast, exile, reject",
-      "antonyms": "insider, favorite, accepted person",
-      "example": "He became a pariah after the scandal.",
-      "japaneseExample": "彼はスキャンダルの後、社会からのけ者になった。"
-    },
-    {
-      "word": "parody",
-      "meaning": "a humorous or satirical imitation of a serious piece of literature or writing",
-      "japaneseMeaning": "パロディ、模倣作品",
-      "synonyms": "satire, spoof, caricature",
-      "antonyms": "original, serious work, homage",
-      "example": "The comedian performed a parody of the famous song.",
-      "japaneseExample": "そのコメディアンは有名な曲のパロディを披露した。"
-    },
-    {
-      "word": "parsimonious",
-      "meaning": "unwilling to spend money or use resources; stingy",
-      "japaneseMeaning": "けちな、倹約的な",
-      "synonyms": "stingy, frugal, miserly",
-      "antonyms": "generous, lavish, extravagant",
-      "example": "The parsimonious man refused to donate to charity.",
-      "japaneseExample": "そのけちな男は慈善に寄付することを拒んだ。"
-    },
-    {
-      "word": "partisan",
-      "meaning": "a strong supporter of a party, cause, or person; biased",
-      "japaneseMeaning": "党派の、偏った支持者",
-      "synonyms": "supporter, adherent, biased",
-      "antonyms": "neutral, impartial, independent",
-      "example": "The debate became increasingly partisan.",
-      "japaneseExample": "討論は次第に党派的になった。"
-    },
-    {
-      "word": "paucity",
-      "meaning": "the presence of something in only small or insufficient quantities",
-      "japaneseMeaning": "不足、欠乏",
-      "synonyms": "scarcity, lack, shortage",
-      "antonyms": "abundance, plenty, surplus",
-      "example": "There is a paucity of evidence to support the claim.",
-      "japaneseExample": "その主張を支持する証拠は不足している。"
-    }
-  ]
-}
+
+  {
+    "lesson_id": "eiken-1-53",
+    "title": "Lesson 53",
+    "paragraph": "This lesson covers language and thought, including semantics, syntax, and pragmatics.",
+    "words": [
+      {
+        "word": "semantics",
+        "meaning": "the study of meaning in language",
+        "japaneseMeaning": "意味論、語義学",
+        "synonyms": "meaning, interpretation",
+        "antonyms": "nonsense, ambiguity",
+        "example": "The linguist specialized in semantics of modern English."
+      },
+      {
+        "word": "syntax",
+        "meaning": "the arrangement of words to form sentences",
+        "japaneseMeaning": "統語法、文法構造",
+        "synonyms": "sentence structure, grammar",
+        "antonyms": "disorder, incoherence",
+        "example": "Proper syntax is essential for clear writing."
+      },
+      {
+        "word": "connotation",
+        "meaning": "the implied or suggested meaning of a word",
+        "japaneseMeaning": "含意、ニュアンス",
+        "synonyms": "implication, undertone",
+        "antonyms": "denotation, literal meaning",
+        "example": "The word 'home' has a positive connotation of comfort."
+      },
+      {
+        "word": "denotation",
+        "meaning": "the literal or primary meaning of a word",
+        "japaneseMeaning": "明示的意味、字義",
+        "synonyms": "literal meaning, definition",
+        "antonyms": "connotation, implication",
+        "example": "The denotation of 'rose' is a type of flower."
+      },
+      {
+        "word": "idiom",
+        "meaning": "a phrase whose meaning is not predictable from the usual meanings of its words",
+        "japaneseMeaning": "慣用句、イディオム",
+        "synonyms": "expression, phrase",
+        "antonyms": "literal expression, plain speech",
+        "example": "The idiom 'break the ice' means to start a conversation."
+      },
+      {
+        "word": "discourse",
+        "meaning": "written or spoken communication or debate",
+        "japaneseMeaning": "談話、会話",
+        "synonyms": "conversation, dialogue",
+        "antonyms": "silence, quiet",
+        "example": "The professor analyzed political discourse in the media."
+      },
+      {
+        "word": "rhetoric",
+        "meaning": "the art of persuasive speaking or writing",
+        "japaneseMeaning": "修辞学、説得術",
+        "synonyms": "persuasion, eloquence",
+        "antonyms": "bluntness, simplicity",
+        "example": "Her rhetoric convinced the audience to support the cause."
+      },
+      {
+        "word": "vernacular",
+        "meaning": "the language or dialect spoken by ordinary people",
+        "japaneseMeaning": "日常語、母語",
+        "synonyms": "native language, colloquial speech",
+        "antonyms": "formal language, literary language",
+        "example": "He wrote his novel in the vernacular of his region."
+      },
+      {
+        "word": "lexicon",
+        "meaning": "the vocabulary of a person, language, or subject",
+        "japaneseMeaning": "語彙、辞書",
+        "synonyms": "vocabulary, wordlist",
+        "antonyms": "ignorance, emptiness",
+        "example": "Medical students must learn the lexicon of anatomy."
+      },
+      {
+        "word": "pragmatics",
+        "meaning": "the study of language in use and context",
+        "japaneseMeaning": "語用論、実用言語学",
+        "synonyms": "contextual meaning, language use",
+        "antonyms": "literal interpretation, semantics",
+        "example": "Pragmatics helps understand indirect speech in conversation."
+      }
+    ]
+  }
