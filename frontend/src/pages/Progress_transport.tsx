@@ -10,7 +10,7 @@ export default function TestPage(){
       
       <h2>学習経過を他のデバイスに移動する</h2>
       <button
-        onClick={() => nav("/ohers")}
+        onClick={() => nav("/others")}
         style={{
           marginBottom: 5,
           padding: "8px 16px",
