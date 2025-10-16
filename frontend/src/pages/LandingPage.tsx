@@ -262,7 +262,7 @@ export default function LandingPage() {
         </div>
 
         <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "white" }}>
-          <div>© Project Fluence — VocabStream</div>
+          <div>All content © 2025 Project Fluence — 黒木 勇人</div>
           <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: 'white', textDecoration: 'underline' }}>Privacy Policy</a></div>
         </footer>
       </main>

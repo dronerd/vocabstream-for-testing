@@ -93,7 +93,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
   
   return (
     <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT }}>
-      <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>単語の学習</h2>
+      <h2 style={{ fontSize: isSmall ? 30 : 40, marginBottom: 5 }}>単語の学習</h2>
       <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 10 }}>学習する分野の選択</h3>
 
       {Object.entries(categories).map(([categoryName, lessons]) => {
