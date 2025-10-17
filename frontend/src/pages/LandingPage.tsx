@@ -43,7 +43,7 @@ export default function LandingPage() {
 
         /* title row with logo */
         .hero-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-        .hero-logo{height:160px;width:auto;object-fit:contain}
+        .hero-logo{height:180px;width:auto;object-fit:contain}
 
         h1{font-size: clamp(26px, 4.8vw, 44px); margin:6px 0;line-height:1.02;overflow-wrap:break-word;word-break:break-word}
         p.lead{margin-top:8px;color:#444;font-size: clamp(14px, 1.9vw, 17px);max-width:980px;overflow-wrap:break-word}
@@ -143,6 +143,7 @@ export default function LandingPage() {
             <div className="hero-main">
               <div style={{display:'flex',gap:8,alignItems:'center'}}>
                 <span className="hero-chip">Project Fluence</span>
+                <br />
               </div>
 
               {/* title row: title on left, logo on right (from public/logo.png) */}
@@ -201,8 +202,10 @@ export default function LandingPage() {
                   </div>
 
                   <div className="founder-meta-row">
-                    <div className="founder-meta">早稲田大学 基幹理工学部(情報系)</div>
-                    <div className="founder-meta" style={{ fontSize: "0.90em" }}>
+                    <div className="founder-meta" style={{ fontSize: "0.85em" }}>
+                      早稲田大学 基幹理工学部(情報系)
+                    </div>
+                    <div className="founder-meta" style={{ fontSize: "0.85em" }}>
                       yutokuroki.projectfluence@gmail.com
                     </div>
                   </div>
