@@ -335,7 +335,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           {isLandingPage ? (
             <button className="cta-btn" onClick={() => navigate("/")} aria-label="アプリを使用する">
               <span className="cta-full">アプリを使用する</span>
-              <span className="cta-short">アプリを使用</span>
+              <span className="cta-short">使用</span>
             </button>
           ) : isLoginPage ? (
             null
