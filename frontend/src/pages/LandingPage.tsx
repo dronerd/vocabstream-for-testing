@@ -10,7 +10,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="landing-root" style={{ padding: "20px", paddingTop: "92px", fontFamily: "Inter, Arial, sans-serif" }}>
+    <div className="landing-root" style={{ padding: "8px 2mm", paddingTop: "92px", fontFamily: "Inter, Arial, sans-serif" }}>
       <style>{`
         :root{
           --accent:#234E52;
@@ -93,10 +93,10 @@ export default function LandingPage() {
 
         /* founder box styling */
         .founder-box{background:var(--subcard-bg);padding:16px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);box-sizing:border-box;min-width:230px}
-        .founder-top{display:flex;gap:12px;align-items:center}
+        .founder-top{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
         .founder-avatar{width:72px;height:72px;border-radius:12px;object-fit:cover;flex-shrink:0;max-width:100%}
         .founder-name{font-weight:800;font-size:1.05em;color:#0f2540}
-        .founder-meta{color:#333}
+        .founder-meta{color:#333; white-space:normal; overflow-wrap:break-word; word-break:break-word}
 
         /* grid cards */
         main{width:100%;padding:18px 3.5vw}
@@ -111,14 +111,16 @@ export default function LandingPage() {
         }
 
         @media(max-width:700px){
-          .hero-wrap{padding:8px 10px; margin-bottom: var(--hero-bottom-gap-mobile);} 
-          main{padding:8px 10px; margin-top: 8px;}
+          /* reduce outer gutters to 2mm or less */
+          .hero-wrap{padding:8px 2mm; margin-bottom: var(--hero-bottom-gap-mobile);} 
+          main{padding:8px 2mm; margin-top: 8px;}
           .hero-card{max-width:100%;flex-direction:column}
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
           .card{padding:12px}
           .founder-box{width:100%;padding:12px;border-radius:10px}
           .founder-avatar{width:64px;height:64px}
-          .hero-logo{height:44px}
+          /* make the logo significantly larger on mobile */
+          .hero-logo{height:120px}
         }
 
         footer{max-width:var(--container-max);margin:28px auto 0;padding:18px;text-align:center;color:#dfeeff}
@@ -185,7 +187,7 @@ export default function LandingPage() {
               <div className="founder-top" style={{ marginTop: 12 }}>
                 <img src="/profile.JPG" alt="Yuto Kuroki" className="founder-avatar" />
 
-                <div>
+                <div style={{minWidth:0}}>
                   <div className="founder-name">
                     <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{fontSize: "1.2em", textDecoration:'none', color:'#0f2540'}}>黒木勇人</a>
                   </div>
