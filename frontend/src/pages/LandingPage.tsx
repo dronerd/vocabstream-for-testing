@@ -26,7 +26,7 @@ export default function LandingPage() {
           --card-border: rgba(11,61,145,0.06);
           --radius: 14px;
           --container-max: 1200px;
-          --hero-bottom-gap-mobile: 22px;
+          --hero-bottom-gap-mobile: 18px;
         }
 
         *{box-sizing:border-box}
@@ -95,8 +95,9 @@ export default function LandingPage() {
         .founder-box{background:var(--subcard-bg);padding:16px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);box-sizing:border-box;min-width:230px}
         .founder-top{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
         .founder-avatar{width:72px;height:72px;border-radius:12px;object-fit:cover;flex-shrink:0;max-width:100%}
-        .founder-name{font-weight:800;font-size:1.05em;color:#0f2540}
+        .founder-name{font-weight:900;font-size:1.25em;color:#0f2540}
         .founder-meta{color:#333; white-space:normal; overflow-wrap:break-word; word-break:break-word}
+        .founder-meta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px;font-size:0.95em;color:#333}
 
         /* grid cards */
         main{width:100%;padding:18px 3.5vw}
@@ -108,19 +109,26 @@ export default function LandingPage() {
           .hero-grid{grid-template-columns:1fr 380px;gap:24px}
           .hero-card{padding:32px}
           .grid-stack{grid-template-columns:repeat(2, minmax(0,1fr));grid-auto-rows:auto}
+          /* nudge logo slightly left on large screens */
+          .hero-logo{transform: translateX(-8px)}
+          .founder-avatar{width:84px;height:84px}
         }
 
         @media(max-width:700px){
           /* reduce outer gutters to 2mm or less */
           .hero-wrap{padding:8px 2mm; margin-bottom: var(--hero-bottom-gap-mobile);} 
           main{padding:8px 2mm; margin-top: 8px;}
-          .hero-card{max-width:100%;flex-direction:column}
+          .hero-card{max-width:100%;flex-direction:column;padding:16px}
           .grid-stack{max-width:100%;grid-template-columns:1fr;gap:12px}
           .card{padding:12px}
           .founder-box{width:100%;padding:12px;border-radius:10px}
-          .founder-avatar{width:64px;height:64px}
-          /* make the logo significantly larger on mobile */
+          .founder-avatar{width:64px;height:64px;border-radius:50%}
+          /* stack title and logo vertically on mobile */
+          .hero-title-row{flex-direction:column;align-items:flex-start;gap:8px}
+          /* make the logo smaller on mobile */
           .hero-logo{height:120px}
+          /* reduce the inner spacing so the inner box sits closer to outer box */
+          .hero-card{padding:14px}
         }
 
         footer{max-width:var(--container-max);margin:28px auto 0;padding:18px;text-align:center;color:#dfeeff}
@@ -151,9 +159,9 @@ export default function LandingPage() {
                 <button
                   onClick={() => { navigate("/"); scrollToTop(); }}
                   className="cta-btn"
-                  aria-label="アプリを使用する"
+                  aria-label="アプリを使用"
                 >
-                  アプリを使用する
+                  アプリを使用
                 </button>
 
                 <a
@@ -187,14 +195,17 @@ export default function LandingPage() {
               <div className="founder-top" style={{ marginTop: 12 }}>
                 <img src="/profile.JPG" alt="Yuto Kuroki" className="founder-avatar" />
 
-                <div style={{minWidth:0}}>
-                  <div className="founder-name">
-                    <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{fontSize: "1.2em", textDecoration:'none', color:'#0f2540'}}>黒木勇人</a>
+                <div style={{minWidth:0,flex:1}}>
+                  <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}}>
+                    <div className="founder-name">黒木勇人</div>
                   </div>
 
-
-                  <div className="founder-meta">早稲田大学 基幹理工学部(情報系)</div>
-                  <div className="founder-meta text-xs">yutokuroki.projectfluence@gmail.com</div>
+                  <div className="founder-meta-row">
+                    <div className="founder-meta">早稲田大学 基幹理工学部(情報系)</div>
+                    <div className="founder-meta" style={{ fontSize: "0.90em" }}>
+                      yutokuroki.projectfluence@gmail.com
+                    </div>
+                  </div>
                 </div>
               </div>
 

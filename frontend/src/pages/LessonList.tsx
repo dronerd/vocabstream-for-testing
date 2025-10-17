@@ -76,7 +76,7 @@ export default function LessonList() {
 
   return (
     <div className="page-root">
-      <h2 className="page-title smaller">{genreTitle} - レッスン一覧</h2>
+      <h2 className="page-title">{genreTitle} - レッスン一覧</h2>
       <button className="back-btn" onClick={() => nav("/learn")}>学習する分野の一覧に戻る</button>
 
       <div className="lessons-grid">
