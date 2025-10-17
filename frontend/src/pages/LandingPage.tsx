@@ -148,7 +148,7 @@ export default function LandingPage() {
 
               {/* title row: title on left, logo on right (from public/logo.png) */}
               <div className="hero-title-row">
-                <h1 id="hero-title" style={{ margin: 0 }}>VocabStream</h1>
+                <h1 id="hero-title" style={{ margin: 5 }}>VocabStream</h1>
                 {/* logo served from public/logo.png -> accessible at /logo.png */}
                 <img src="/logo.png" alt="Project Fluence logo" className="hero-logo" />
               </div>
