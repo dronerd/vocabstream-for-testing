@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
+import { Analytics } from "@vercel/analytics/react";
+
 
 export default function Home() {
   const { user } = useAuth();
@@ -189,6 +191,8 @@ export default function Home() {
           <div>All content © 2025 Project Fluence — 黒木 勇人</div>
           <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: 'white', textDecoration: 'underline' }}>Privacy Policy</a></div>
         </footer>
+      {/* Add Vercel Analytics at the bottom */}
+      <Analytics />
     </div>
   );
 }
