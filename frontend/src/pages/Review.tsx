@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -47,10 +48,16 @@ export default function Review() {
           color: #1c1c1c;
           text-align: center;
           box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-          transition: transform .12s ease, box-shadow .12s ease;
+          transition: transform .18s ease, box-shadow .18s ease;
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+
+        /* 🔹ホバー時のアニメーション */
+        .option-btn:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 22px rgba(0,0,0,0.08);
         }
 
         .option-btn:active {
@@ -84,7 +91,7 @@ export default function Review() {
             height: auto;
             border-radius: 10px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-            text-align: left; /* easier scan on mobile */
+            text-align: left;
             justify-content: flex-start;
             gap: 12px;
           }

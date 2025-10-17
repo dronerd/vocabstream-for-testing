@@ -10,7 +10,6 @@ type LevelOrder = {
   [key: string]: string[];
 };
 
-// Static genres (copied from your backend /api/genres)
 const STATIC_GENRES: Lesson[] = [
   { id: "word-intermediate", title: "単語初級~中級 (CEFR A2~B1)" },
   { id: "word-high-intermediate", title: "単語中上級 (CEFR B2)" },
@@ -32,7 +31,6 @@ const STATIC_GENRES: Lesson[] = [
 ];
 
 export default function ReviewList() {
-  // use the static list instead of fetching from backend
   const [genres] = useState<Lesson[]>(STATIC_GENRES);
   const [isSmall, setIsSmall] = useState<boolean>(false);
   const nav = useNavigate();
@@ -83,14 +81,58 @@ export default function ReviewList() {
       : termColors[index % termColors.length];
   }
 
-const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ56、それ以外は72
-const basePadding = isSmall ? 12 : 20; // 既存の padding
+  const HEADER_HEIGHT = isSmall ? 56 : 72;
+  const basePadding = isSmall ? 12 : 20;
 
   return (
-    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT}}>
+    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT }}>
+      {/* 共通スタイル：カードにホバーで上がる効果を追加 */}
+      <style>{`
+        .reviewlist-card {
+          padding: 12px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
+          will-change: transform, box-shadow;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        /* hover サポートがあるデバイスでだけ動かす */
+        @media (hover: hover) {
+          .reviewlist-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.10);
+          }
+          .reviewlist-card:focus-visible {
+            outline: none;
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.10);
+          }
+        }
+
+        /* 押したときの微調整（すばやく押すとき） */
+        .reviewlist-card:active {
+          transform: translateY(1px);
+        }
+
+        /* モーション軽減設定を尊重 */
+        @media (prefers-reduced-motion: reduce) {
+          .reviewlist-card {
+            transition: none;
+            transform: none !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+          }
+        }
+      `}</style>
+
       <h2 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>文章穴埋め方式の復習</h2>
       <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 5 }}>復習する分野を選択</h3>
-      {/* 復習方法に戻るボタン */}
+
       <button
         onClick={() => nav("/review")}
         style={{
@@ -156,20 +198,21 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
               {lessons.map((lesson, index) => (
                 <div
                   key={lesson.id}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => nav(`/still_under_development`)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      nav(`/still_under_development`);
+                    }
+                  }}
+                  className="reviewlist-card"
                   style={{
-                    padding: 12,
                     background: cardBackground(categoryName, index),
-                    border: "1px solid #ddd",
-                    borderRadius: 6,
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: 10,
-                    minHeight: ["英検", "TOEFL", "TOEIC"].includes(categoryName) ? 50 : "auto",
                     flexDirection: isSmall ? "column" : "row",
                     textAlign: isSmall ? "center" : "left",
+                    minHeight: ["英検", "TOEFL", "TOEIC"].includes(categoryName) ? 50 : undefined,
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>

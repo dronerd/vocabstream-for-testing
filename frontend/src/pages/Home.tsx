@@ -71,11 +71,26 @@ export default function Home() {
           cursor: pointer;
           text-align: center;
           box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-          transition: transform .12s ease, box-shadow .12s ease;
+          transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
+          will-change: transform, box-shadow;
         }
 
         .option-btn:active {
           transform: translateY(1px);
+        }
+
+        /* Hover lift: only apply on devices that support hover */
+        @media (hover: hover) {
+          .option-btn:hover {
+            transform: translateY(-6px); /* ほんの少し上がる */
+            box-shadow: 0 14px 30px rgba(0,0,0,0.10); /* 影を少し強める */
+          }
+          /* slightly larger lift for keyboard focus accessibility */
+          .option-btn:focus-visible {
+            outline: none;
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+          }
         }
 
         /* Make the third (index 2) button span the full row and be centered
@@ -116,6 +131,7 @@ export default function Home() {
             box-shadow: 0 3px 8px rgba(0,0,0,0.06);
             font-weight: 700;
             text-align: left; /* easier to scan on mobile */
+            transition: box-shadow .12s ease; /* keep transition but no big transform */
           }
 
           /* Override: on small screens the third option returns to full-width
@@ -185,10 +201,10 @@ export default function Home() {
           <strong>Privacy Policy</strong>
         </a>
       </div>
-         <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "white" }}>
-          <div>All content © 2025 Project Fluence — 黒木 勇人</div>
-          <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: 'white', textDecoration: 'underline' }}>Privacy Policy</a></div>
-        </footer>
+      <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "white" }}>
+        <div>All content © 2025 Project Fluence — 黒木 勇人</div>
+        <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: 'white', textDecoration: 'underline' }}>Privacy Policy</a></div>
+      </footer>
     </div>
   );
 }

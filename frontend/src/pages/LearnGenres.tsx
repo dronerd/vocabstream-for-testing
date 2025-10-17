@@ -47,7 +47,6 @@ export default function LearnGenres() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  // Use lowercase checks so we match backend ids regardless of case
   const categories: Record<string, Lesson[]> = {
     単語: genres.filter((g) => g.id.toLowerCase().startsWith("word")),
     熟語: genres.filter((g) => g.id.toLowerCase().startsWith("idioms")),
@@ -60,7 +59,6 @@ export default function LearnGenres() {
     ),
   };
 
-  // keys should match the genre folder ids returned by backend (lowercased)
   const lessonImages: Record<string, string> = {
     "computer-science": "/CS.png",
     "medicine": "/Medicine.png",
@@ -88,10 +86,9 @@ export default function LearnGenres() {
     return levelOrder[categoryName] ? levelColors[index] || "#f9f9f9" : termColors[index % termColors.length];
   }
 
-  const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ56、それ以外は72
-  const basePadding = isSmall ? 12 : 20; // 既存の padding
+  const HEADER_HEIGHT = isSmall ? 56 : 72;
+  const basePadding = isSmall ? 12 : 20;
 
-  // Only lessons with ids in here move to Lessonlist.tsx, others in still_in_development
   const allowedLessonIds = new Set([
     "word-intermediate",
     "word-high-intermediate",
@@ -107,17 +104,56 @@ export default function LearnGenres() {
       nav("/still_under_development");
     }
   }
-  // --- ここまで追加/変更 ---
 
   return (
     <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT }}>
+      {/* 追加スタイル: カード共通のホバー/フォーカス効果 */}
+      <style>{`
+        .lesson-card {
+          padding: 12px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
+          will-change: transform, box-shadow;
+        }
+
+        /* デフォルトのやさしい影（タッチ端末でも自然） */
+        .lesson-card {
+          box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        /* ホバー効果は hover サポートのあるデバイスだけに適用 */
+        @media (hover: hover) {
+          .lesson-card:hover {
+            transform: translateY(-6px); /* ここで上がる量を設定 */
+            box-shadow: 0 18px 36px rgba(0,0,0,0.10);
+          }
+          .lesson-card:focus-visible {
+            outline: none;
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.10);
+          }
+        }
+
+        /* アクセシビリティ: モーション軽減を好むユーザーにはアニメーションを減らす */
+        @media (prefers-reduced-motion: reduce) {
+          .lesson-card {
+            transition: none;
+          }
+        }
+      `}</style>
+
       <h2 style={{ fontSize: isSmall ? 25 : 32, marginBottom: 5 }}>単語の学習</h2>
       <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 10 }}>学習する分野の選択</h3>
 
       {Object.entries(categories).map(([categoryName, lessons]) => {
         const order = levelOrder[categoryName];
         if (order) {
-          // sort using lowercase ids and fall back to end if not found
           lessons.sort((a, b) => {
             const idxA = order.indexOf(a.id.toLowerCase());
             const idxB = order.indexOf(b.id.toLowerCase());
@@ -154,19 +190,16 @@ export default function LearnGenres() {
               }}
             >
               {lessons.map((lesson, index) => (
+                // ここで共通クラス lesson-card を付与。背景色はインラインで渡します（既存ロジックを維持）
                 <div
                   key={lesson.id}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => handleLessonClick(lesson.id)}
+                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleLessonClick(lesson.id); } }}
+                  className="lesson-card"
                   style={{
-                    padding: 12,
                     background: cardBackground(categoryName, index),
-                    border: "1px solid #ddd",
-                    borderRadius: 6,
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: 10,
                     flexDirection: isSmall ? "column" : "row",
                     textAlign: isSmall ? "center" : "left",
                   }}
