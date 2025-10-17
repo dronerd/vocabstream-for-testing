@@ -181,6 +181,8 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
         .center-top-btn .screen-top { display: block; font-size: clamp(10px, 1.6vw, 12px); line-height: 1; color: #666; margin-top: 2px; }
 
         /* larger touch targets on mobile */
+
+        /* --- small screen tweaks: reduce CTA size so it doesn't overlap title --- */
         @media (max-width: 520px) {
           html, body { margin: 0; padding: 0; overflow-x: hidden; }
           .app-header { padding: 8px 10px; min-height: 64px; box-shadow: 0 1px 6px rgba(0,0,0,0.04); }
@@ -208,9 +210,45 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
           /* hide large-screen title when small screen center button is present */
           .header-center > .vocab-title { display: none; }
 
-          /* increase CTA hit area on mobile */
-          .cta-btn { padding: 12px 16px; border-radius: 12px; font-size: 15px; }
-          .intro-btn { padding: 10px 14px; border-radius: 10px; }
+          /* increase CTA hit area on mobile (default) -- override to smaller below */
+          /* .cta-btn { padding: 12px 16px; border-radius: 12px; font-size: 15px; } */
+
+          /* ----- NEW: make primary CTA visually smaller on narrow screens ----- */
+          .cta-btn {
+            /* visually smaller */
+            font-size: 13px;                /* smaller text */
+            padding: 8px 10px;             /* reduce horizontal space */
+            border-radius: 10px;           /* slightly smaller radius */
+            min-width: 0;                  /* allow it to shrink */
+            max-width: 140px;              /* prevent extremely wide button */
+            white-space: nowrap;           /* prevent wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-shadow: 0 6px 12px rgba(30,136,255,0.12); /* reduced shadow */
+          }
+
+          /* show only the short label if still needed; keeps UI compact */
+          .cta-full { display: none; }
+          .cta-short { display: inline; }
+
+          /* also slightly shrink intro button */
+          .intro-btn {
+            padding: 8px 10px;
+            border-radius: 9px;
+            font-size: 13px;
+          }
+
+          /* tiny screens: make it even smaller so nothing overlaps */
+          @media (max-width: 380px) {
+            .cta-btn {
+              font-size: 12px;
+              padding: 6px 8px;
+              max-width: 110px;
+              border-radius: 8px;
+              box-shadow: 0 4px 10px rgba(30,136,255,0.10);
+            }
+            .intro-btn { font-size: 12px; padding: 6px 8px; }
+          }
         }
 
         @media (max-width: 420px) {
