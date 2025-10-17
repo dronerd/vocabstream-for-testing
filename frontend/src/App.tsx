@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AuthProvider, useAuth } from "./AuthContext";
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
-
+import { Analytics } from "@vercel/analytics/react"; 
 import Home from "./pages/Home";
 import LearnGenres from "./pages/LearnGenres";
 import LessonList from "./pages/LessonList";
@@ -22,7 +22,7 @@ import LandingPage from "./pages/LandingPage";
 import Privacy from "./pages/Privacy";
 import Prompts from "./pages/ChatGPT_prompts";
 import ProgressTransport from "./pages/Progress_transport";
- 
+
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { token } = useAuth();
   if (!token) return <Navigate to="/login" replace />;
@@ -32,15 +32,13 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 export default function App() {
   const location = useLocation();
 
-  // normalize path (remove trailing slash) so "/landing_page/" でも判定できる
+  // normalize path (remove trailing slash)
   const path = location.pathname.replace(/\/$/, "");
-
-  // Header 用の判定（必要なら残す）
   const isLoginPage = path === "/login";
 
-  // BottomNav を隠したいパスをここに列挙
+  // Hide BottomNav for these paths
   const hideBottomNavPaths = ["/login", "/landing_page"];
-  const hideBottomNav = hideBottomNavPaths.includes(path); //true or false になる
+  const hideBottomNav = hideBottomNavPaths.includes(path);
 
   return (
     <AuthProvider>
@@ -70,8 +68,10 @@ export default function App() {
         </Routes>
       </div>
 
-      {/* hideBottomNav が false のときだけ表示 */}
       {!hideBottomNav && <BottomNav />}
+
+      {/* Add Vercel Analytics globally (at the root level) */}
+      <Analytics />
     </AuthProvider>
   );
 }
