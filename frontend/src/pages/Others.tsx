@@ -112,7 +112,7 @@ export default function Review() {
 
         <button
           className="option-btn"
-          onClick={() => nav("/progress_transport")}
+          onClick={() => nav("/still_under_development")}
           style={{ backgroundColor: buttonColors[2] }}
         >
           学習経過を他のデバイスに移動

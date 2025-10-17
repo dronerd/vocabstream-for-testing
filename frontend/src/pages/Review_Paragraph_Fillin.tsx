@@ -156,7 +156,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
               {lessons.map((lesson, index) => (
                 <div
                   key={lesson.id}
-                  onClick={() => nav(`/review_paragraph_fillin_list/${lesson.id}`)}
+                  onClick={() => nav(`/still_under_development`)}
                   style={{
                     padding: 12,
                     background: cardBackground(categoryName, index),

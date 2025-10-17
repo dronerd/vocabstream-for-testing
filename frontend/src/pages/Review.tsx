@@ -120,7 +120,7 @@ export default function Review() {
 
         <button
           className="option-btn option-third"
-          onClick={() => nav("/review_reading_comprehension")}
+          onClick={() => nav("/still_under_development")}
           style={{ backgroundColor: buttonColors[3] }}
         >
           実践読解テスト方式

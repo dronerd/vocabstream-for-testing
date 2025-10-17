@@ -88,9 +88,26 @@ export default function LearnGenres() {
     return levelOrder[categoryName] ? levelColors[index] || "#f9f9f9" : termColors[index % termColors.length];
   }
 
-const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ56、それ以外は72
-const basePadding = isSmall ? 12 : 20; // 既存の padding
-  
+  const HEADER_HEIGHT = isSmall ? 56 : 72; // 例: モバイルで小さければ56、それ以外は72
+  const basePadding = isSmall ? 12 : 20; // 既存の padding
+
+  // Only lessons with ids in here move to Lessonlist.tsx, others will move to still_under_development
+  const allowedLessonIds = new Set([
+    "word-intermediate",
+    "word-high-intermediate",
+    "word-advanced",
+    "word-proficiency",
+  ]);
+
+  function handleLessonClick(lessonId: string) {
+    const id = lessonId.toLowerCase();
+    if (allowedLessonIds.has(id)) {
+      nav(`/learn/${lessonId}`);
+    } else {
+      nav("/still_under_development");
+    }
+  }
+
   return (
     <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT }}>
       <h2 style={{ fontSize: isSmall ? 25 : 32, marginBottom: 5 }}>単語の学習</h2>
@@ -138,7 +155,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
               {lessons.map((lesson, index) => (
                 <div
                   key={lesson.id}
-                  onClick={() => nav(`/learn/${lesson.id}`)}
+                  onClick={() => handleLessonClick(lesson.id)}
                   style={{
                     padding: 12,
                     background: cardBackground(categoryName, index),

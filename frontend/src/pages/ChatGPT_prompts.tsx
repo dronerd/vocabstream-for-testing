@@ -37,6 +37,18 @@ const PROMPTS: Prompt[] = [
     text:
       "Can you create a list of vocabularies and phrases you taught me today that might be useful in the future?",
   },
+  {
+    id: "vocab_learn",
+    title: "単語の説明を求める",
+    text:
+      "Can you give me the definition, an example sentence, synonyms, and antonyms for the word (' ')? Please use words that are easier than the word itself to explain.",
+  },
+  {
+    id: "sentence_correction",
+    title: "自作した例文の添削",
+    text:
+      "Can you correct and improve this sentence for me?",
+  },
 ];
 
 export default function TestPage() {
