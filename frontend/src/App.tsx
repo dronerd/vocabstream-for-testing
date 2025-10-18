@@ -47,7 +47,7 @@ export default function App() {
 
       <div style={{ padding: 16, paddingBottom: 80 }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/learn" element={<LearnGenres />} />
           <Route path="/learn/:genreId" element={<LessonList />} />
           <Route path="/lesson/:lessonId" element={<Lesson />} />
@@ -61,7 +61,7 @@ export default function App() {
           <Route path="/others" element={<Others />} />
           <Route path="/review_reading_comprehension" element={<ReviewReadingComprehension />} />
           <Route path="/review_reading_comprehension_list" element={<ReviewReadingComprehensionList />} />
-          <Route path="/landing_page" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/prompts" element={<Prompts />} />

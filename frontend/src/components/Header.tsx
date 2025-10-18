@@ -300,10 +300,10 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
             </>
           ) : (
             <>
-              <Link to="/">
+              <Link to="/home">
                 <img src="/logo.png" alt="App Logo" style={{ height: 60, width: "auto" }} />
               </Link>
-              <Link to="/" className="home-link">Homeに戻る</Link>
+              <Link to="/home" className="home-link">Homeに戻る</Link>
               {title && <h3 className="small-title">{title}</h3>}
             </>
           )}
@@ -326,14 +326,14 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
 
         <div className="header-right">
           {!isLandingPage && !user && (
-            <button className="intro-btn" onClick={() => navigate("/landing_page")} aria-label="紹介ページへ">
+            <button className="intro-btn" onClick={() => navigate("/")} aria-label="紹介ページへ">
               <span className="intro-full">Vocabstreamの紹介ページ</span>
               <span className="intro-short">紹介ページ</span>
             </button>
           )}
 
           {isLandingPage ? (
-            <button className="cta-btn" onClick={() => navigate("/")} aria-label="アプリを使用する">
+            <button className="cta-btn" onClick={() => navigate("/home")} aria-label="アプリを使用する">
               <span className="cta-full">アプリを使用する</span>
               <span className="cta-short">使用</span>
             </button>

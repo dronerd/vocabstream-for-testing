@@ -43,7 +43,7 @@ export default function LandingPage() {
 
         /* title row with logo */
         .hero-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-        .hero-logo{height:180px;width:auto;object-fit:contain}
+        .hero-logo{height:200px;width:auto;object-fit:contain}
 
         h1{font-size: clamp(26px, 4.8vw, 44px); margin:6px 0;line-height:1.02;overflow-wrap:break-word;word-break:break-word}
         p.lead{margin-top:8px;color:#444;font-size: clamp(14px, 1.9vw, 17px);max-width:980px;overflow-wrap:break-word}
@@ -154,11 +154,15 @@ export default function LandingPage() {
               </div>
 
               <p><strong>〜英単語は「英語で」学ぶ！〜</strong></p>
-              <p className="lead">VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。</p>
+              <p className="lead">VocabStreamは、
+                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>黒木勇人</strong></a>
+                が創設・開発・運営する
+                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>Project Fluence</strong></a>
+                 の一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。</p>
 
               <div className="actions" role="navigation" aria-label="Primary actions">
                 <button
-                  onClick={() => { navigate("/"); scrollToTop(); }}
+                  onClick={() => { navigate("/home"); scrollToTop(); }}
                   className="cta-btn"
                   aria-label="アプリを使用"
                 >
@@ -198,11 +202,11 @@ export default function LandingPage() {
 
                 <div style={{minWidth:0,flex:1}}>
                   <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}}>
-                    <div className="founder-name">黒木勇人</div>
+                    <a className="founder-name" href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer">黒木勇人</a>
                   </div>
 
                   <div className="founder-meta-row">
-                    <div className="founder-meta" style={{ fontSize: "0.85em" }}>
+                    <div className="founder-meta" style={{ fontSize: "0.87em" }}>
                       早稲田大学 基幹理工学部(情報系)
                     </div>
                     <div className="founder-meta" style={{ fontSize: "0.85em" }}>

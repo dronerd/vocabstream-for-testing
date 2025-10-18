@@ -78,9 +78,9 @@ export default function BottomNav() {
       <style>{style}</style>
       <nav className="nav-bottom" aria-label="Bottom navigation">
         <Link
-          to="/"
-          className={`bottom-link ${location.pathname === "/" ? "active" : ""}`}
-          aria-current={location.pathname === "/" ? "page" : undefined}
+          to="/home"
+          className={`bottom-link ${location.pathname === "/home" ? "active" : ""}`}
+          aria-current={location.pathname === "/home" ? "page" : undefined}
         >
           Home
         </Link>
