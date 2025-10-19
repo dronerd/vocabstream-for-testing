@@ -158,7 +158,7 @@ export default function LandingPage() {
                 <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
                 <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>Project Fluence</strong></a>
-                 の一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。</p>
+                 の一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。</p>
 
               <div className="actions" role="navigation" aria-label="Primary actions">
                 <button
@@ -217,7 +217,7 @@ export default function LandingPage() {
               </div>
 
               <p style={{ marginTop: 12, color: "#333", fontSize: "0.95em", lineHeight: 1.5 }}>
-                英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116/120点, TOEIC満点 990/990点。ドイツ語もネイティブレベル(Goethe Zertifikat C1)を達成。専門は情報工学で、ISEFなどの国際イベントにて研究発表の経験を持つ。
+                英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116/120点, TOEIC満点 990/990点。ドイツ語もネイティブに近いレベル(Goethe Zertifikat C1)を達成。専門は情報工学で、ISEFなどの国際イベントにて研究発表の経験を持つ。
               </p>
 
               <div style={{display:'flex',gap:8,marginTop:10}}>
@@ -235,9 +235,30 @@ export default function LandingPage() {
             <h2 style={{ marginTop: 0 }}>About</h2>
 
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英語を英語で学ぶことを通じて、自然に英語を理解・運用する力を育てます。
-              主な機能：
-              使い方：
+              <p className="lead"><strong>VocabStream</strong>は、
+                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>黒木勇人</strong></a>
+                が創設・開発・運営する
+                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>Project Fluence</strong></a>
+                 の一環として制作された無料の英単語学習アプリです。
+                 <br />
+                 <strong>Project Fluenceでは英語を英語で学ぶことで、より本質的な英語力を得ることができると考えています。</strong>Noteでご紹介している英語学習方法を効率的に実行するためのアプリを開発しており、
+                 <strong>VocabStream</strong>は単語学習にフォーカスを当てたアプリとなっています。
+                 <br />
+                 アプリは完全無料で提供し、広告により収益を得ることもありません。
+                 <br />
+                 現在は安定して動作する一部の機能のみを公開しています。現在利用可能な機能は、
+                 <a href="/learn" style={{ textDecoration: "underline" }}><strong>単語を３択レッスン・文章穴埋めを通して学習する機能</strong></a>
+                 と、
+                 英語学習に役立つ
+                 <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集をコピーする機能</strong></a>
+                 です。
+                  <br />
+                 現在開発中の機能：熟語の学習、専門分野の単語の学習、ビジネス英語表現の学習、復習機能、長文読解の機能、学習経過の保存機能
+                  <br />
+                  今後のアップデートにてこれらの機能を順次提供してまいります。楽しみにしていてください！
+                  <br />
+                  大学生による趣味の開発活動であるため、アプリの一部機能が安定していない可能性があります。
+              </p>
             </p>
           </article>
 

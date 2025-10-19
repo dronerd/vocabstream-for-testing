@@ -7,6 +7,7 @@ export default function BottomNav() {
   // 非表示にする条件
   if (
     location.pathname === "/privacy" || // privacyページ
+    location.pathname === "/" || // privacyページ
     location.pathname.startsWith("/lesson/") // lessonページ (/lesson/◯◯)
   ) {
     return null;

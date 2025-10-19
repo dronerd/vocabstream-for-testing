@@ -13,7 +13,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isLandingPage = location.pathname === "/landing_page";
+  const isLandingPage = location.pathname === "/";
 
   const scrollToTop = () => {
     const opts: any = { top: 0, behavior: "smooth" };
@@ -48,7 +48,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
     } catch (err) {
       console.error("logout error:", err);
     } finally {
-      navigate("/landing_page");
+      navigate("/");
     }
   };
 
