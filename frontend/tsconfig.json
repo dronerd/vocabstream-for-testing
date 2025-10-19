@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2017",
+    "lib": ["dom", "dom.iterable", "es2017", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["react", "react-dom"]   /* ← オプション。明示的に型パックを読み込ませたい場合のみ */
+    "types": ["react", "react-dom"]
   },
   "include": ["src"]
 }

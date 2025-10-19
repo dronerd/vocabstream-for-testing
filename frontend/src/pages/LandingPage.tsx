@@ -1,3 +1,4 @@
+// src/pages/LandingPage.tsx
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -10,17 +11,22 @@ export default function LandingPage() {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  // absolute URL used for social previews — change if your real domain differs
   const SITE_URL = "https://vocabstream.vercel.app";
   const IMAGE_URL = `${SITE_URL}/logo.png`;
 
   return (
-    <div className="landing-root" style={{ padding: "8px 2mm", paddingTop: "92px", fontFamily: "Inter, Arial, sans-serif" }}>
+    <div
+      className="landing-root"
+      style={{ padding: "8px 2mm", paddingTop: "92px", fontFamily: "Inter, Arial, sans-serif" }}
+    >
+      {/* META: Helmet must be rendered inside component JSX */}
+     
+
+      {/* --- Styles (kept inline for single-file portability) --- */}
       <style>{`
         :root{
           --accent:#234E52;
           --muted:#666;
-          /* page background: deep navy gradient */
           --page-bg-1: #081230;
           --page-bg-2: #0f2740;
           --card-bg: #ffffff;
@@ -114,13 +120,11 @@ export default function LandingPage() {
           .hero-grid{grid-template-columns:1fr 380px;gap:24px}
           .hero-card{padding:32px}
           .grid-stack{grid-template-columns:repeat(2, minmax(0,1fr));grid-auto-rows:auto}
-          /* nudge logo slightly left on large screens */
           .hero-logo{transform: translateX(-8px)}
           .founder-avatar{width:84px;height:84px}
         }
 
         @media(max-width:700px){
-          /* reduce outer gutters to 2mm or less */
           .hero-wrap{padding:8px 2mm; margin-bottom: var(--hero-bottom-gap-mobile);} 
           main{padding:8px 2mm; margin-top: 8px;}
           .hero-card{max-width:100%;flex-direction:column;padding:16px}
@@ -128,11 +132,8 @@ export default function LandingPage() {
           .card{padding:12px}
           .founder-box{width:100%;padding:12px;border-radius:10px}
           .founder-avatar{width:64px;height:64px;border-radius:50%}
-          /* stack title and logo vertically on mobile */
           .hero-title-row{flex-direction:column;align-items:flex-start;gap:8px}
-          /* make the logo smaller on mobile */
           .hero-logo{height:120px}
-          /* reduce the inner spacing so the inner box sits closer to outer box */
           .hero-card{padding:14px}
         }
 
@@ -142,72 +143,29 @@ export default function LandingPage() {
         .landing-root a:focus, .landing-root button:focus{box-shadow:0 0 0 4px rgba(30,136,255,0.12);outline:none}
       `}</style>
 
-      {/* メタデータ */}
-      <Helmet>
-        {/* Basic SEO */}
-        <title>VocabStream</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英単語を英語の定義と例文で学び、自然に英語を理解・運用する力を育てます。"
-        />
-        <meta name="keywords" content="英単語学習, Project Fluence, 黒木勇人, 英英学習, 英語アプリ" />
-        <meta name="author" content="Yuto Kuroki, 黒木 勇人" />
-        <link rel="canonical" href={SITE_URL + "/"} />
-
-        {/* Open Graph */}
-        <meta property="og:site_name" content="VocabStream" />
-        <meta property="og:title" content="VocabStream | 〜英単語は「英語で」学ぶ！〜" />
-        <meta
-          property="og:description"
-          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={SITE_URL + "/"} />
-        <meta property="og:image" content={IMAGE_URL} />
-        <meta property="og:image:alt" content="VocabStream" />
-        <meta property="og:locale" content="ja_JP" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@projectfluence" />
-        <meta name="twitter:creator" content="@projectfluence" />
-        <meta name="twitter:title" content="VocabStream | 〜英単語は「英語で」学ぶ！〜" />
-        <meta
-          name="twitter:description"
-          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。"
-        />
-        <meta name="twitter:image" content={IMAGE_URL} />
-        <meta name="twitter:image:alt" content="VocabStream" />
-
-        {/* Favicons / theme */}
-        <link rel="icon" content={IMAGE_URL} />
-        <meta name="theme-color" content="#6fa8dc" />
-      </Helmet>
-
+      {/* --- Hero / Header section --- */}
       <section className="hero-wrap">
         <div className="hero-card" role="region" aria-labelledby="hero-title">
           <div className="hero-grid">
             <div className="hero-main">
-              <div style={{display:'flex',gap:8,alignItems:'center'}}>
+              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
                 <span className="hero-chip">Project Fluence</span>
-                <br />
               </div>
 
-              {/* title row: title on left, logo on right (from public/logo.png) */}
               <div className="hero-title-row">
                 <h1 id="hero-title" style={{ margin: 5 }}>VocabStream</h1>
-                {/* logo served from public/logo.png -> accessible at /logo.png */}
                 <img src="/logo.png" alt="Project Fluence logo" className="hero-logo" />
               </div>
 
               <p><strong>〜英単語は「英語で」学ぶ！〜</strong></p>
-              <p className="lead">VocabStreamは、
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>黒木勇人</strong></a>
+
+              <p className="lead">
+                VocabStreamは、
+                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer"><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
-                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>Project Fluence</strong></a>
-                 の一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。</p>
+                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer"><strong>Project Fluence</strong></a>
+                の一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。
+              </p>
 
               <div className="actions" role="navigation" aria-label="Primary actions">
                 <button
@@ -224,7 +182,6 @@ export default function LandingPage() {
                   rel="noopener noreferrer"
                   className="intro-btn"
                   role="button"
-                  aria-label="Project Fluenceのホームページ（新しいタブで開く）"
                 >
                   Noteを見る
                 </a>
@@ -235,23 +192,25 @@ export default function LandingPage() {
                   rel="noopener noreferrer"
                   className="intro-btn"
                   role="button"
-                  aria-label="Project Fluenceのホームページ（新しいタブで開く）"
                 >
                   Project Fluenceのホームページ
                 </a>
               </div>
-
             </div>
 
-            <div className="founder-box" aria-labelledby="founder-title">
-              <h3 id="founder-title" style={{ margin: 0, fontSize: "1rem", textTransform: "uppercase", color: "#334" }}><strong>プロジェクト創設/開発・運営</strong></h3>
+            <aside className="founder-box" aria-labelledby="founder-title">
+              <h3 id="founder-title" style={{ margin: 0, fontSize: "1rem", textTransform: "uppercase", color: "#334" }}>
+                <strong>プロジェクト創設/開発・運営</strong>
+              </h3>
 
               <div className="founder-top" style={{ marginTop: 12 }}>
                 <img src="/profile.JPG" alt="Yuto Kuroki" className="founder-avatar" />
 
-                <div style={{minWidth:0,flex:1}}>
-                  <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12}}>
-                    <a className="founder-name" href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer">黒木勇人</a>
+                <div style={{ minWidth: 0, flex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
+                    <a className="founder-name" href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer">
+                      黒木勇人
+                    </a>
                   </div>
 
                   <div className="founder-meta-row">
@@ -269,66 +228,94 @@ export default function LandingPage() {
                 英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116/120点, TOEIC満点 990/990点。ドイツ語もネイティブに近いレベル(Goethe Zertifikat C1)を達成。専門は情報工学で、ISEFなどの国際イベントにて研究発表の経験を持つ。
               </p>
 
-              <div style={{display:'flex',gap:8,marginTop:10}}>
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{fontWeight:800,color:'#0b3d91'}}>→ プロフィール</a>
-                <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer" style={{fontWeight:800,color:'#0b3d91'}}>→ LinkedIn</a>
+              <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 800, color: '#0b3d91' }}>
+                  → プロフィール
+                </a>
+                <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 800, color: '#0b3d91' }}>
+                  → LinkedIn
+                </a>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
 
+      {/* --- Main content cards --- */}
       <main>
         <div className="grid-stack">
-          <article className="card">
-            <h2 style={{ marginTop: 0 }}>About</h2>
+          <article className="card" aria-labelledby="about-title">
+            <h2 id="about-title" style={{ marginTop: 0 }}>About</h2>
 
-            <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              <p className="lead"><strong>VocabStream</strong>は、
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>黒木勇人</strong></a>
+            {/* Use a div wrapper to avoid nested <p> tags */}
+            <div style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
+              <p className="lead">
+                <strong>VocabStream</strong>は、
+                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer"><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
-                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}><strong>Project Fluence</strong></a>
-                 の一環として制作された無料の英単語学習アプリです。
-                 <br />
-                 <strong>Project Fluenceでは英語を英語で学ぶことで、より本質的な英語力を得ることができると考えています。</strong>Noteでご紹介している英語学習方法を効率的に実行するためのアプリを開発しており、
-                 <strong>VocabStream</strong>は単語学習にフォーカスを当てたアプリとなっています。
-                 <br />
-                 アプリは完全無料で提供し、広告により収益を得ることもありません。
-                 <br />
-                 現在は安定して動作する一部の機能のみを公開しています。現在利用可能な機能は、
-                 <a href="/learn" style={{ textDecoration: "underline" }}><strong>単語を３択レッスン・文章穴埋めを通して学習する機能</strong></a>
-                 と、
-                 英語学習に役立つ
-                 <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集をコピーする機能</strong></a>
-                 です。
-                  <br />
-                 現在開発中の機能：熟語の学習、専門分野の単語の学習、ビジネス英語表現の学習、復習機能、長文読解の機能、学習経過の保存機能
-                  <br />
-                 今後のアップデートにてこれらの機能を順次提供してまいります。楽しみにしていてください！
-                  <br />
-                 ＊ 大学生による趣味の開発活動であるため、アプリの一部機能が安定していない可能性があります。
+                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer"><strong>Project Fluence</strong></a>
+                の一環として制作された無料の英単語学習アプリです。
+                <br />
+                <strong>Project Fluenceでは英語を英語で学ぶことで、より本質的な英語力を得ることができると考えています。</strong>Noteでご紹介している英語学習方法を効率的に実行するためのアプリを開発しており、
+                <strong>VocabStream</strong>は単語学習にフォーカスを当てたアプリとなっています。
+                <br />
+                アプリは完全無料で提供し、広告により収益を得ることもありません。
+                <br />
+                現在は安定して動作する一部の機能のみを公開しています。現在利用可能な機能は、
+                <a href="/learn" style={{ textDecoration: "underline" }}><strong>単語を３択レッスン・文章穴埋めを通して学習する機能</strong></a>
+                と、英語学習に役立つ
+                <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集をコピーする機能</strong></a>
+                です。
+                <br />
+                現在開発中の機能：熟語の学習、専門分野の単語の学習、ビジネス英語表現の学習、復習機能、長文読解の機能、学習経過の保存機能
+                <br />
+                今後のアップデートにてこれらの機能を順次提供してまいります。楽しみにしていてください！
               </p>
-            </p>
+            </div>
           </article>
 
           <article className="card">
-            <h2 style={{ marginTop: 0 }}>Project Fluenceについて</h2>
+            <h2 style={{ marginTop: 0 }}>
+              <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+                <strong>Project Fluence</strong>
+              </a>
+              について
+            </h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              英語と専門分野の力で夢を実現する人を増やすことを目指し、Project Fluenceを立ち上げ、開発・運営を個人で行っています。Noteでの解説や無料アプリ提供を通じて支援していきます。
-              効率的に英語を学び、世界で活躍する力を身につける。Project Fluenceはそんな学びを応援する個人プロジェクトです。最新情報はNoteをフォローしてください。
+              効率的に英語を学び、世界で活躍する力を身につける。
+              <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+                <strong>Project Fluence</strong>
+              </a>
+              はそんな学びを応援する個人プロジェクトです。英語＋専門分野の力で夢を実現する人を増やすことを目指しています。
+              <br />
+              <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+                <strong>黒木勇人</strong>
+              </a>
+              が効果的な英語学習法を
+              <a href="https://note.com/projectfluence" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+                <strong>Note</strong>
+              </a>
+              で紹介し、自ら開発した無料の英語学習アプリを提供します。
+              <br />
+              ＊ 大学生による趣味の開発活動であるため、アプリの一部機能が安定していない可能性があります。
             </p>
           </article>
 
           <article className="card">
             <h2 style={{ marginTop: 0 }}>なぜ英語を学ぶのか</h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              英語を学ぶことで出会える人や文化、広がる可能性は、学習の努力をはるかに上回る価値を持っています。
+              英語を学ぶことで出会える人や文化、広がる可能性は、学習の努力をはるかに上回る価値を持っています。英語はまさに「一生もののスキル」です。
+              <br />中高では成績や受験に、大学では授業や研究に、そして社会人になれば海外とのやり取りや情報収集に大きな力を発揮します。 翻訳を待たずに世界中の情報にアクセスでき、キャリアや人生の選択肢を大きく広がってくれるのです。
+              <br />これほどリターンの大きい学習分野は他に多くありません。
+              <br />もちろん、英語学習は時に大変で、思わず投げ出したくなる瞬間もあるでしょう。 しかし、コツコツ続けていけば必ず「自分の言葉で伝えられる」日がやってきます。 そのときの達成感は何ものにも代えがたいはずです。 そして英語を通じて海外の人とつながれれば、新しい価値観や考え方に触れ、自分の世界も大きく広がっていきます。
             </p>
           </article>
 
           <article className="card">
             <h2 style={{ marginTop: 0 }}>効果的な学習方法 — 単語は英語で学ぶ</h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
+
+              
               多くの日本人の英語学習には２つの特徴があります。日英変換：英単語や英文を日本語に置き換えて理解する方法。多くの単語帳やフラッシュカードはこの仕組みです。これらは試験対策には有効ですが、「学ぶ」と「使えるようになる」は別物です。
             </p>
           </article>
@@ -336,7 +323,9 @@ export default function LandingPage() {
 
         <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "#dfeeff" }}>
           <div>All content © 2025 Project Fluence — 黒木 勇人</div>
-          <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: '#dfeeff', textDecoration: 'underline' }}>Privacy Policy</a></div>
+          <div style={{ marginTop: 8 }}>
+            <a href="/privacy" style={{ color: '#dfeeff', textDecoration: 'underline' }}>Privacy Policy</a>
+          </div>
         </footer>
       </main>
     </div>
