@@ -1,4 +1,3 @@
-// src/pages/Lesson.tsx
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -33,6 +32,11 @@ const Lesson: React.FC = () => {
   const [lesson, setLesson] = useState<LessonData | null>(null);
   const nav = useNavigate();
 
+  // Toggle this to `true` to insert an extra "段落の穴埋め（単文）」 step after the quiz.
+  // The app currently behaves exactly as before when this is `false` (lesson ends after the 3択 → 結果 flow).
+  // Changing this flag makes it easy to include paragraph/sentence fill-in questions later.
+  const ENABLE_PARAGRAPH_FILL = false;
+
   // --- quiz state ---
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
   const [quizIndex, setQuizIndex] = useState<number>(0);
@@ -41,6 +45,7 @@ const Lesson: React.FC = () => {
   const [quizError, setQuizError] = useState<boolean>(false);
   const [finalScore, setFinalScore] = useState<number | null>(null);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
+  const [hoveredQuizChoice, setHoveredQuizChoice] = useState<number | null>(null);
 
   // --- paragraph (drag & drop) state ---
   const [placedChoices, setPlacedChoices] = useState<(number | null)[]>([]);
@@ -137,7 +142,8 @@ const Lesson: React.FC = () => {
   useEffect(() => {
     if (!lesson) return;
     const totalWords = lesson.words ? lesson.words.length : 0;
-    if (step === totalWords + 1) {
+    const quizStep = totalWords + 1;
+    if (step === quizStep) {
       setQuizLoading(true);
       setQuizError(false);
       try {
@@ -165,7 +171,7 @@ const Lesson: React.FC = () => {
 
   useEffect(() => {
     const totalWords = lesson ? lesson.words.length : 0;
-    const paragraphStep = totalWords + 3;
+    const paragraphStep = totalWords + 3; // same index as before
     if (!lesson) return;
     if (step === paragraphStep) {
       const paragraphRaw: string =
@@ -180,7 +186,7 @@ const Lesson: React.FC = () => {
 
       choiceWords.forEach((cw: string) => {
         if (!cw) return;
-        const escaped = cw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const escaped = cw.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
         const re = new RegExp("\\b(" + escaped + ")(" + SUFFIX_PATTERN + ")\\b", "iu");
 
         processed = processed.replace(re, (match: string, p1: string, p2: string) => {
@@ -251,6 +257,13 @@ const Lesson: React.FC = () => {
     borderRadius: 8,
     cursor: "pointer",
     width: buttonWidth,
+  };
+
+  // Next button (narrower + different color than choices)
+  const nextButtonStyle: React.CSSProperties = {
+    ...blueButtonStyle,
+    width: isSmallScreen ? "100%" : 240,
+    backgroundColor: "#ff7f50",
   };
 
   function handleChoose(choiceIndex: number) {
@@ -445,8 +458,8 @@ const Lesson: React.FC = () => {
         <div style={{ width: "100%", maxWidth: 900 }}>
           <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>単語スライド</h2>
           <p style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: 12 }}>{lesson.words[slideStep].word}</p>
-          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: "left" }}>
-            <strong>Meaning:</strong> {lesson.words[slideStep].meaning}
+          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: isSmallScreen ? "left" : "center" }}>
+            <strong>意味:</strong> {lesson.words[slideStep].meaning}
             <br />
             <strong>日本語訳:</strong> {lesson.words[slideStep].japaneseMeaning || "なし"}
             <br />
@@ -468,6 +481,7 @@ const Lesson: React.FC = () => {
       {step === totalWords + 1 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
           <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>穴埋めクイズ（3択）</h2>
+          <p style={{ fontSize: isSmallScreen ? 14 : 16, color: "#444", marginTop: 4 }}>空欄に入るもっとも適切な単語をクリックしてください</p>
           {quizLoading ? (
             <p>クイズを読み込み中...</p>
           ) : quizError ? (
@@ -502,26 +516,61 @@ const Lesson: React.FC = () => {
             </div>
           ) : (
             <div>
-              <p style={{ fontSize: quizTextSize, marginBottom: 12, textAlign: "left" }}>
+              <p style={{ fontSize: quizTextSize, marginBottom: 12, textAlign: "center" }}>
                 <span dangerouslySetInnerHTML={{ __html: quizQuestions[quizIndex].blank_sentence }} />
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
                 {quizQuestions[quizIndex].choices.map((c: string, i: number) => {
-                  let backgroundColor = "#003366";
-                  if (selectedChoice !== null) {
-                    if (i === quizQuestions[quizIndex].answer_index) backgroundColor = "green";
-                    else if (i === selectedChoice) backgroundColor = "red";
+                  // compute styles for hover / correct / wrong with nicer color effects
+                  const isHovered = hoveredQuizChoice === i && selectedChoice === null && !isTouchDevice;
+                  const isCorrect = selectedChoice !== null && i === quizQuestions[quizIndex].answer_index;
+                  const isWrongSelected = selectedChoice !== null && i === selectedChoice && i !== quizQuestions[quizIndex].answer_index;
+
+                  let background = "#003366";
+                  let boxShadow = "none";
+                  let transform = isHovered ? "translateY(-6px)" : "translateY(0)";
+
+                  if (selectedChoice === null) {
+                    // not yet chosen — provide subtle hover lift
+                    if (isHovered) {
+                      boxShadow = "0 8px 20px rgba(0,0,0,0.12)";
+                    }
+                  } else {
+                    // after chosen — show cool gradients and glow
+                    if (isCorrect) {
+                      background = "linear-gradient(90deg,#34d399,#16a34a)"; // green gradient
+                      boxShadow = "0 12px 30px rgba(16,185,129,0.18)";
+                      transform = "translateY(-4px) scale(1.02)";
+                    } else if (isWrongSelected) {
+                      background = "linear-gradient(90deg,#ff7a7a,#ff4d4d)"; // red-ish gradient
+                      boxShadow = "0 12px 30px rgba(255,99,71,0.18)";
+                      transform = "translateY(-2px) scale(0.99)";
+                    } else {
+                      // other unselected choices — fade out a bit
+                      background = "linear-gradient(90deg,#dbeafe,#bfdbfe)"; // light bluish
+                      boxShadow = "none";
+                      transform = "translateY(0)";
+                    }
                   }
+
                   return (
                     <button
                       key={i}
                       onClick={() => handleChoose(i)}
+                      onMouseEnter={() => setHoveredQuizChoice(i)}
+                      onMouseLeave={() => setHoveredQuizChoice(null)}
                       style={{
                         ...blueButtonStyle,
                         fontSize: isSmallScreen ? 16 : 20,
                         padding: isSmallScreen ? "8px 12px" : "8px 16px",
                         width: isSmallScreen ? "100%" : 360,
-                        backgroundColor,
+                        background: background,
+                        color: selectedChoice !== null ? (isCorrect ? "#052e16" : isWrongSelected ? "#330000" : "#0f172a") : "#fff",
+                        boxShadow,
+                        transform,
+                        transition: "transform 0.18s ease, box-shadow 0.2s ease, background 0.25s ease",
+                        border: "none",
+                        cursor: selectedChoice !== null ? "default" : "pointer",
                       }}
                       disabled={selectedChoice !== null}
                     >
@@ -530,6 +579,16 @@ const Lesson: React.FC = () => {
                   );
                 })}
               </div>
+
+              {/* feedback message shown between choices and next button */}
+              {selectedChoice !== null && (
+                <div style={{ marginTop: 12, display: "flex", justifyContent: "center" }}>
+                  <div style={{ fontSize: isSmallScreen ? 16 : 20, fontWeight: 700, color: selectedChoice === quizQuestions[quizIndex].answer_index ? "green" : "#ff6600" }}>
+                    {selectedChoice === quizQuestions[quizIndex].answer_index ? "正解です！" : "惜しい！"}
+                  </div>
+                </div>
+              )}
+
               {selectedChoice !== null && (
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <button
@@ -539,10 +598,10 @@ const Lesson: React.FC = () => {
                         setSelectedChoice(null);
                       } else {
                         setFinalScore(quizScore);
-                        setStep(totalWords + 2);
+                        setStep(totalWords + 2); // go to result / 採点
                       }
                     }}
-                    style={{ ...blueButtonStyle, marginTop: 12 }}
+                    style={{ ...nextButtonStyle, marginTop: 12 }}
                   >
                     次の問題へ
                   </button>
@@ -567,9 +626,11 @@ const Lesson: React.FC = () => {
             {finalScore !== null ? `正答率: ${Math.round((finalScore / (quizQuestions.length || 1)) * 100)}%` : ""}
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-            <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>
-              段落穴埋めに進む
-            </button>
+            {ENABLE_PARAGRAPH_FILL ? (
+              <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>
+                段落穴埋めに進む
+              </button>
+            ) : null}
             <button onClick={() => nav(-1)} style={blueButtonStyle}>
               終了する
             </button>
@@ -590,7 +651,6 @@ const Lesson: React.FC = () => {
           }}
         >
           <h2 style={{ fontSize: headingSize, marginBottom: 8 }}>段落穴埋め</h2>
-     
 
           {/* top: paragraph / blanks */}
           <div
@@ -601,7 +661,7 @@ const Lesson: React.FC = () => {
               padding: isSmallScreen ? 12 : 20,
               borderRadius: 8,
               minHeight: 140,
-              textAlign: "left",
+              textAlign: isSmallScreen ? "left" : "center",
             }}
           >
             {renderParts.map((p, i) => {
@@ -792,7 +852,6 @@ const Lesson: React.FC = () => {
               正答率: {Math.round(((quizScore + (paragraphScore ?? 0)) / (quizQuestions.length + (slotCorrectWord.length || choiceWords.length) || 1)) * 100)}%
             </p>
           </div>
-          
 
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
             <button onClick={() => nav(-1)} style={blueButtonStyle}>レッスンを終了して一覧へ</button>
@@ -832,12 +891,12 @@ function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
 
     let blank_sentence = item.example || "";
     if (blank_sentence) {
-      const re = new RegExp(correct.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+      const re = new RegExp(correct.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&"), "i");
       if (re.test(blank_sentence)) {
         blank_sentence = blank_sentence.replace(re, "____");
       } else {
         const cap = correct.charAt(0).toUpperCase() + correct.slice(1);
-        const re2 = new RegExp(cap.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+        const re2 = new RegExp(cap.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&"), "i");
         if (re2.test(blank_sentence)) blank_sentence = blank_sentence.replace(re2, "____");
         else blank_sentence = "____ " + blank_sentence;
       }
