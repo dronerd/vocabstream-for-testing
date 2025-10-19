@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AuthProvider, useAuth } from "./AuthContext";
+import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
 import { Analytics } from "@vercel/analytics/react"; 
@@ -42,7 +43,15 @@ export default function App() {
   const hideBottomNav = hideBottomNavPaths.includes(path);
 
   return (
+    
     <AuthProvider>
+      
+      //ここでメタデータをつけている
+      //今後、それぞれのページについてメタデータをつけることができる
+      <HelmetProvider>
+        <LandingPage />
+      </HelmetProvider>
+
       <Header currentPath={location.pathname} isLoginPage={isLoginPage} />
 
       <div style={{ padding: 16, paddingBottom: 80 }}>

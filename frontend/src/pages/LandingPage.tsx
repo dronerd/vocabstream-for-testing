@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -136,6 +137,42 @@ export default function LandingPage() {
         /* accessibility focus */
         .landing-root a:focus, .landing-root button:focus{box-shadow:0 0 0 4px rgba(30,136,255,0.12);outline:none}
       `}</style>
+
+      //ここでメタデータをつけている
+      <Helmet>
+        {/* Basic SEO */}
+        <title>VocabStream</title>
+        <meta
+          name="description"
+          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。"
+        />
+        <meta name="keywords" content="英単語学習, Project Fluence, 黒木勇人, 英英学習, 英語アプリ" />
+        <meta name="author" content="Yuto Kuroki, 黒木 勇人" />
+
+        {/* Open Graph for Facebook, LinkedIn, etc. */}
+        <meta property="og:title" content="VocabStream | 〜英単語は「英語で」学ぶ！〜" />
+        <meta
+          property="og:description"
+          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vocabstream.vercel.app/" />
+        <meta property="og:image" content="https://vocabstream.vercel.app/logo.png" />
+        <meta property="og:locale" content="ja_JP" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VocabStream | 〜英単語は「英語で」学ぶ！〜" />
+        <meta
+          name="twitter:description"
+          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。"
+        />
+        <meta name="twitter:image" content="https://vocabstream.vercel.app/logo.png" />
+
+        {/* Favicon / theme */}
+        <link rel="icon" href="/https://vocabstream.vercel.app/logo.png" />
+        <meta name="theme-color" content="#6fa8dc" />
+      </Helmet>
 
       <section className="hero-wrap">
         <div className="hero-card" role="region" aria-labelledby="hero-title">
