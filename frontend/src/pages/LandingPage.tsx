@@ -263,7 +263,7 @@ export default function LandingPage() {
                 <br />
                 現在は安定して動作する一部の機能のみを公開しています。現在利用可能な機能は、
                 <a href="/learn" style={{ textDecoration: "underline" }}><strong>単語を３択レッスン・文章穴埋めを通して学習する機能</strong></a>
-                と、英語学習に役立つ
+                （合計約3000単語）と、英語学習に役立つ
                 <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集をコピーする機能</strong></a>
                 です。
                 <br />
@@ -281,6 +281,29 @@ export default function LandingPage() {
               </a>
               について
             </h2>
+            <div style={{ textAlign: "center" }}>
+              <a
+                href="https://projectfluence.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: "inline-block" }}
+              >
+                <img
+                  src="/projectfluence.png"
+                  alt="Project Fluence Logo"
+                  style={{
+                    width: "100%",
+                    maxWidth: 300,
+                    height: "auto",
+                    display: "block",
+                    margin: "8px 0",
+                    borderRadius: "12px",
+                    transition: "transform 0.2s ease",
+                  }}
+                />
+              </a>
+            </div>
+
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
               効率的に英語を学び、世界で活躍する力を身につける。
               <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
@@ -304,19 +327,55 @@ export default function LandingPage() {
           <article className="card">
             <h2 style={{ marginTop: 0 }}>なぜ英語を学ぶのか</h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              英語を学ぶことで出会える人や文化、広がる可能性は、学習の努力をはるかに上回る価値を持っています。英語はまさに「一生もののスキル」です。
+              <img
+                src="/learningenglish.png"
+                alt="English Learning Logo"
+                style={{
+                  width: "100%",
+                  maxWidth: 350,
+                  height: "auto",
+                  display: "block",
+                  margin: "8px auto",
+                  borderRadius: "12px",
+                }}
+              />
+              英語を学ぶことで出会える人や文化、広がる可能性は、学習の努力をはるかに上回る価値を持っています。
+              <strong>英語はまさに「一生もののスキル」です。</strong>
               <br />中高では成績や受験に、大学では授業や研究に、そして社会人になれば海外とのやり取りや情報収集に大きな力を発揮します。 翻訳を待たずに世界中の情報にアクセスでき、キャリアや人生の選択肢を大きく広がってくれるのです。
-              <br />これほどリターンの大きい学習分野は他に多くありません。
-              <br />もちろん、英語学習は時に大変で、思わず投げ出したくなる瞬間もあるでしょう。 しかし、コツコツ続けていけば必ず「自分の言葉で伝えられる」日がやってきます。 そのときの達成感は何ものにも代えがたいはずです。 そして英語を通じて海外の人とつながれれば、新しい価値観や考え方に触れ、自分の世界も大きく広がっていきます。
+              <br /><strong>これほどリターンの大きい学習分野は他に多くありません。</strong>
+              <br />もちろん、英語学習は時に大変で、思わず投げ出したくなる瞬間もあるでしょう。 
+              <strong>しかし、コツコツ続けていけば必ず「自分の言葉で伝えられる」日がやってきます。</strong> そのときの達成感は何ものにも代えがたいはずです。 そして英語を通じて海外の人とつながれれば、新しい価値観や考え方に触れ、自分の世界も大きく広がっていきます。
             </p>
           </article>
 
           <article className="card">
-            <h2 style={{ marginTop: 0 }}>効果的な学習方法 — 単語は英語で学ぶ</h2>
+            <h2 style={{ marginTop: 0 }}>効果的な英単語学習方法 — 英単語は英語で学ぶ</h2>
             <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-
-              
-              多くの日本人の英語学習には２つの特徴があります。例えば、日英変換：英単語や英文を日本語に置き換えて理解する方法。多くの単語帳やフラッシュカードはこの仕組みです。これらは試験対策には有効ですが、「学ぶ」と「使えるようになる」は別物です。
+              ＊英単語学習以外の英語学習に関する効果的な方法については、<a href="https://note.com/projectfluence" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+                <strong>Note記事</strong>
+              </a>
+              をご覧ください。
+              <br />
+              従来の学習では、英単語や英文を日本語に訳して覚える<strong>「日英変換」</strong>の方法が一般的です。
+              しかし、この方法では<strong>思考が翻訳に頼り、言いたいことがすぐに出てこない</strong>という問題があります。
+              <br />私は、本質的な英語力とは<strong>日本語と同じように意味をそのまま理解し、アイデアを直接言葉にできること</strong>だと考えます。
+              日本語を逐語的に分解しないように、英語も自然に理解・発信できる状態が理想です。
+              <br />そのためには、英単語を日本語訳で覚えるのではなく、<strong>英語の定義や例文と結びつけて学ぶこと</strong>をおすすめします。
+              これは、国語辞典で知らない日本語をよりやさしい日本語で理解するのと同じ仕組みです。
+              <br />英語の定義や例文で学ぶことで、
+              ・使われる場面
+              ・自然な文の形
+              ・微妙なニュアンスの違い
+              といった細かな部分も理解できます。
+              <br />たとえば<strong> “Perseverance” </strong>の例を見てみましょう。
+              <br />(定義) “Perseverance means keeping on and not giving up, even when something is hard or takes a long time.”
+              <br /> (例文) “She showed great perseverance by practicing the piano every day until she finally mastered the song.”
+              <br />(類義語) Determination, Persistence, Dedication, Endurance
+              <br />(対義語) Giving up, Surrender
+              <br />“Perseverance” は日本語で「忍耐」と訳されますが、英英で学ぶことでより多くの情報を得られ、
+              「忍耐」という言葉を思い出さなくても、自然に “Perseverance” が口から出てくるようになると思います。
+              <br /><strong>このように英語の定義や例文を通じて学ぶことで、単語は「生きたイメージ」として定着します。</strong>
+              <br /><strong>そして、VocabStream ではこの方法で3000語以上の単語を学習できます。</strong>
             </p>
           </article>
         </div>

@@ -20,7 +20,8 @@ export default function StillUnderDevelopment() {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">機能について</h2>
         <p className="mb-4">
-          現在、本機能は開発段階にあります。VocabStreamは現在、安定して動作する一部の機能のみを公開しています。現時点で利用可能な機能は、単語学習（全レベル対象）およびその他の機能におけるChatGPTのプロンプトのみです。
+          現在、本機能は開発段階にあります。VocabStreamは現在、安定して動作する一部の機能のみを公開しています。
+          <br />現時点で利用可能な機能は、単語学習（全レベル対象・合計3000単語程度）およびその他の機能におけるChatGPTのプロンプトのみです。
         </p>
         <p>
           今後のアップデートにて、他の学習分野や復習機能など、より多くの機能を順次提供してまいります。楽しみにしていてください！
