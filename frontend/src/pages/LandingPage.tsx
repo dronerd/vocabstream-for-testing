@@ -10,6 +10,10 @@ export default function LandingPage() {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
+  // absolute URL used for social previews — change if your real domain differs
+  const SITE_URL = "https://vocabstream.vercel.app";
+  const IMAGE_URL = `${SITE_URL}/logo.png`;
+
   return (
     <div className="landing-root" style={{ padding: "8px 2mm", paddingTop: "92px", fontFamily: "Inter, Arial, sans-serif" }}>
       <style>{`
@@ -138,39 +142,47 @@ export default function LandingPage() {
         .landing-root a:focus, .landing-root button:focus{box-shadow:0 0 0 4px rgba(30,136,255,0.12);outline:none}
       `}</style>
 
-      //ここでメタデータをつけている
+      {/* メタデータ */}
       <Helmet>
         {/* Basic SEO */}
         <title>VocabStream</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。"
+          content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。英単語を英語の定義と例文で学び、自然に英語を理解・運用する力を育てます。"
         />
         <meta name="keywords" content="英単語学習, Project Fluence, 黒木勇人, 英英学習, 英語アプリ" />
         <meta name="author" content="Yuto Kuroki, 黒木 勇人" />
+        <link rel="canonical" href={SITE_URL + "/"} />
 
-        {/* Open Graph for Facebook, LinkedIn, etc. */}
+        {/* Open Graph */}
+        <meta property="og:site_name" content="VocabStream" />
         <meta property="og:title" content="VocabStream | 〜英単語は「英語で」学ぶ！〜" />
         <meta
           property="og:description"
           content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vocabstream.vercel.app/" />
-        <meta property="og:image" content="https://vocabstream.vercel.app/logo.png" />
+        <meta property="og:url" content={SITE_URL + "/"} />
+        <meta property="og:image" content={IMAGE_URL} />
+        <meta property="og:image:alt" content="VocabStream" />
         <meta property="og:locale" content="ja_JP" />
 
-        {/* Twitter Cards */}
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@projectfluence" />
+        <meta name="twitter:creator" content="@projectfluence" />
         <meta name="twitter:title" content="VocabStream | 〜英単語は「英語で」学ぶ！〜" />
         <meta
           name="twitter:description"
           content="VocabStreamは、黒木勇人が創設・開発・運営するProject Fluenceの一環として制作された無料の英単語学習アプリです。"
         />
-        <meta name="twitter:image" content="https://vocabstream.vercel.app/logo.png" />
+        <meta name="twitter:image" content={IMAGE_URL} />
+        <meta name="twitter:image:alt" content="VocabStream" />
 
-        {/* Favicon / theme */}
-        <link rel="icon" href="/https://vocabstream.vercel.app/logo.png" />
+        {/* Favicons / theme */}
+        <link rel="icon" content={IMAGE_URL} />
         <meta name="theme-color" content="#6fa8dc" />
       </Helmet>
 
@@ -292,9 +304,9 @@ export default function LandingPage() {
                   <br />
                  現在開発中の機能：熟語の学習、専門分野の単語の学習、ビジネス英語表現の学習、復習機能、長文読解の機能、学習経過の保存機能
                   <br />
-                  今後のアップデートにてこれらの機能を順次提供してまいります。楽しみにしていてください！
+                 今後のアップデートにてこれらの機能を順次提供してまいります。楽しみにしていてください！
                   <br />
-                  大学生による趣味の開発活動であるため、アプリの一部機能が安定していない可能性があります。
+                 ＊ 大学生による趣味の開発活動であるため、アプリの一部機能が安定していない可能性があります。
               </p>
             </p>
           </article>
