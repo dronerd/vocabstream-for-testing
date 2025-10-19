@@ -461,14 +461,13 @@ const Lesson: React.FC = () => {
           <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: isSmallScreen ? "left" : "center" }}>
             <strong>意味:</strong> {lesson.words[slideStep].meaning}
             <br />
-            <strong>日本語訳:</strong> {lesson.words[slideStep].japaneseMeaning || "なし"}
-            <br />
             <strong>類義語:</strong> {lesson.words[slideStep].synonyms || "なし"}
             <br />
             <strong>対義語:</strong> {lesson.words[slideStep].antonyms || "なし"}
             <br />
             <strong>例文:</strong> {lesson.words[slideStep].example || "なし"}
           </p>
+
           <div style={{ display: "flex", justifyContent: "center" }}>
             <button onClick={() => setStep(step + 1)} style={blueButtonStyle}>
               {slideStep + 1 < totalWords ? "次の単語" : "ミニテストへ"}
@@ -626,11 +625,9 @@ const Lesson: React.FC = () => {
             {finalScore !== null ? `正答率: ${Math.round((finalScore / (quizQuestions.length || 1)) * 100)}%` : ""}
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-            {ENABLE_PARAGRAPH_FILL ? (
-              <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>
-                段落穴埋めに進む
-              </button>
-            ) : null}
+            <button onClick={() => setStep(ENABLE_PARAGRAPH_FILL ? totalWords + 3 : totalWords + 4)} style={blueButtonStyle}>
+              段落穴埋めに進む
+            </button>
             <button onClick={() => nav(-1)} style={blueButtonStyle}>
               終了する
             </button>
