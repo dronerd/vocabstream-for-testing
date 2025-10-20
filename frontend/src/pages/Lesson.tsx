@@ -32,8 +32,10 @@ const Lesson: React.FC = () => {
   const [lesson, setLesson] = useState<LessonData | null>(null);
   const nav = useNavigate();
 
+  //IMPORTANT
   // Toggle this to `true` to insert an extra "段落の穴埋め（単文）」 step after the quiz.
-  const ENABLE_PARAGRAPH_FILL = false;
+  //change this back to `false` to disable extra "段落の穴埋め（単文）」when still under development
+  const ENABLE_PARAGRAPH_FILL = true;
 
   // --- quiz state ---
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);

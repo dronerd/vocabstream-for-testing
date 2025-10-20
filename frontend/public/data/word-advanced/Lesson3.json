@@ -1,8 +1,9 @@
  {
     "lesson_id": "eiken-2-3",
     "title": "Lesson 3",
-    "paragraph": "Effort and resilience help individuals endure challenges. Persistent action and the ability to withstand obstacles are essential to recover and prevail in difficult circumstances.",
-    "words": [
+    "paragraph": "Mia decided to climb a tall, dangerous mountain by herself. On the first day, she had to endure the cold wind and hunger. Still, she didn’t give up — she chose to persist even when her legs were shaking. When a strong storm came, she had to confront her fear and tackle the problem of finding shelter quickly. Her small tent could withstand the heavy snow, but only because she built it carefully. The next morning, she felt weak but tried to sustain her energy by eating a little food and resting. She wanted to maintain her hope and keep moving, step by step. Even when she slipped on the ice, she decided to persevere and continue climbing. Finally, when she reached the top, she began to recover her strength and smiled proudly. In the end, her courage helped her prevail over the mountain.",
+
+     "words": [
       {"word": "endure", "meaning": "to suffer patiently", "japaneseMeaning": "耐える", "synonyms": "tolerate, withstand", "antonyms": "avoid, surrender", "example": "She endured the long wait without complaint."},
       {"word": "persist", "meaning": "to continue firmly in spite of difficulty", "japaneseMeaning": "持続する", "synonyms": "persevere, continue", "antonyms": "give up, cease", "example": "He persisted until he solved the problem."},
       {"word": "withstand", "meaning": "to resist or endure successfully", "japaneseMeaning": "耐える", "synonyms": "resist, endure", "antonyms": "yield, succumb", "example": "The building can withstand strong winds."},
