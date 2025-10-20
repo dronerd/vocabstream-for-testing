@@ -8,6 +8,7 @@
     "@vercel/analytics": "^1.5.0",
     "lz-string": "^1.5.0",
     "qrcode.react": "^4.2.0",
-    "react-helmet-async": "^2.0.5"
+    "react-helmet-async": "^2.0.5",
+    "sitemap": "^8.0.1"
   }
 }

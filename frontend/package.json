@@ -24,8 +24,10 @@
     "build": "react-scripts build",
     "vercel-build": "npm run build",
     "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-sitemap": "node generate-sitemap.js"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
