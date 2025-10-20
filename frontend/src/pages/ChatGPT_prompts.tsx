@@ -101,7 +101,7 @@ export default function TestPage() {
 
 
       <p style={{ marginTop: 0, marginBottom: 16, maxWidth: 760 }}>
-        下のカードのボタンでプロンプトをコピーできます。クリップボードAPIは安全なコンテキスト（https）で動作します。古いブラウザや非安全なコンテキストではフォールバック（テキストエリア経由）を使います。
+        下のカードのボタンでプロンプトをコピーできます。クリップボードAPIは安全なコンテキスト（https）で動作します。古いブラウザや非安全なコンテキストではフォールバックを組み込んでいます。
       </p>
 
       <div className="prompt-grid" role="list">

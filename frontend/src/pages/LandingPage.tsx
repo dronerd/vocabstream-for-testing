@@ -1,4 +1,3 @@
-// src/pages/LandingPage.tsx
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -20,7 +19,6 @@ export default function LandingPage() {
       style={{ padding: "8px 2mm", paddingTop: "92px", fontFamily: "Inter, Arial, sans-serif" }}
     >
       {/* META: Helmet must be rendered inside component JSX */}
-     
 
       {/* --- Styles (kept inline for single-file portability) --- */}
       <style>{`
@@ -41,8 +39,19 @@ export default function LandingPage() {
         }
 
         *{box-sizing:border-box}
-        html,body,#root{height:100%; margin:0; padding:0; background: linear-gradient(180deg, var(--page-bg-1), var(--page-bg-2));}
-        .landing-root{color:#111;width:100%;min-height:100vh;overflow-x:hidden;background:transparent}
+        /* Ensure whole viewport uses identical gradient top-to-bottom with no seams */
+        html, body, #root, .landing-root {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background: linear-gradient(180deg, var(--page-bg-1), var(--page-bg-2));
+          background-attachment: fixed; /* keep gradient consistent when scrolling */
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        /* landing-root holds the content; keep background identical and prevent transparent gaps */
+        .landing-root{color:#111;width:100%;min-height:100vh;overflow-x:hidden;background: linear-gradient(180deg, var(--page-bg-1), var(--page-bg-2));}
         :root { --base-font: clamp(13px, 1.8vw, 16px); }
         .landing-root{font-size:var(--base-font)}
 
@@ -116,6 +125,9 @@ export default function LandingPage() {
         .card{background:var(--card-bg);padding:18px;border-radius:14px;box-shadow:0 10px 26px rgba(2,6,23,0.06);border:1px solid var(--card-border);box-sizing:border-box;transition:transform 160ms ease, box-shadow 160ms ease}
         .card:hover{transform: translateY(-6px);box-shadow:0 22px 48px rgba(2,6,23,0.08)}
 
+        /* Prominent text class for mobile enlargement */
+        .prominent-text{ color:#444; line-height:1.8; }
+
         @media(min-width:760px){
           .hero-grid{grid-template-columns:1fr 380px;gap:24px}
           .hero-card{padding:32px}
@@ -135,6 +147,12 @@ export default function LandingPage() {
           .hero-title-row{flex-direction:column;align-items:flex-start;gap:8px}
           .hero-logo{height:120px}
           .hero-card{padding:14px}
+
+          /* Make the selected descriptive texts larger and easier to read on small screens */
+          .prominent-text{ font-size: 18px; line-height:1.95; }
+
+          /* Optionally center the main card headings for small screens for nicer layout */
+          .card h2{ text-align: center; font-size: 1.05rem; }
         }
 
         footer{max-width:var(--container-max);margin:28px auto 0;padding:18px;text-align:center;color:#dfeeff}
@@ -224,7 +242,7 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              <p style={{ marginTop: 12, color: "#333", fontSize: "0.95em", lineHeight: 1.5 }}>
+              <p className="prominent-text" style={{ marginTop: 12 }}>
                 英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116/120点, TOEIC満点 990/990点。ドイツ語もネイティブに近いレベル(Goethe Zertifikat C1)を達成。専門は情報工学で、ISEFなどの国際イベントにて研究発表の経験を持つ。
               </p>
 
@@ -248,8 +266,8 @@ export default function LandingPage() {
             <h2 id="about-title" style={{ marginTop: 0 }}>About</h2>
 
             {/* Use a div wrapper to avoid nested <p> tags */}
-            <div style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
-              <p className="lead">
+            <div style={{ marginTop: 8 }}>
+              <p className="lead prominent-text">
                 <strong>VocabStream</strong>は、
                 <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer"><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
@@ -304,7 +322,7 @@ export default function LandingPage() {
               </a>
             </div>
 
-            <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
+            <p className="prominent-text" style={{ marginTop: 8 }}>
               効率的に英語を学び、世界で活躍する力を身につける。
               <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
                 <strong>Project Fluence</strong>
@@ -326,7 +344,7 @@ export default function LandingPage() {
 
           <article className="card">
             <h2 style={{ marginTop: 0 }}>なぜ英語を学ぶのか</h2>
-            <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
+            <p className="prominent-text" style={{ marginTop: 8 }}>
               <img
                 src="/learningenglish.png"
                 alt="English Learning Logo"
@@ -350,7 +368,7 @@ export default function LandingPage() {
 
           <article className="card">
             <h2 style={{ marginTop: 0 }}>効果的な英単語学習方法 — 英単語は英語で学ぶ</h2>
-            <p style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
+            <p className="prominent-text" style={{ marginTop: 8 }}>
               ＊英単語学習以外の英語学習に関する効果的な方法については、<a href="https://note.com/projectfluence" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
                 <strong>Note記事</strong>
               </a>
