@@ -33,8 +33,6 @@ const Lesson: React.FC = () => {
   const nav = useNavigate();
 
   // Toggle this to `true` to insert an extra "段落の穴埋め（単文）」 step after the quiz.
-  // The app currently behaves exactly as before when this is `false` (lesson ends after the 3択 → 結果 flow).
-  // Changing this flag makes it easy to include paragraph/sentence fill-in questions later.
   const ENABLE_PARAGRAPH_FILL = false;
 
   // --- quiz state ---
@@ -125,12 +123,11 @@ const Lesson: React.FC = () => {
       } catch {
         setIsSmallScreen(window.innerWidth <= 600);
       }
-      const touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      const touch = "ontouchstart" in window || (navigator && (navigator as any).maxTouchPoints > 0);
       setIsTouchDevice(Boolean(touch));
     }
     update();
     window.addEventListener("resize", update);
-    // also listen for orientation changes as helpful
     window.addEventListener("orientationchange", update);
     return () => {
       window.removeEventListener("resize", update);
@@ -233,10 +230,79 @@ const Lesson: React.FC = () => {
     }
   }, [step, lesson, choiceWords]);
 
+  // --- PREVENT: place this BEFORE the `if (!lesson) return ...` early-return ---
+  useEffect(() => {
+    // don't run effect body unless lesson exists and we're on a slide
+    try {
+      if (!lesson) return;
+      const totalWords = lesson.words ? lesson.words.length : 0;
+      const slideStep = step - 1;
+      const isSlideLocal = step > 0 && slideStep < totalWords;
+      if (!isSlideLocal) return;
+
+      // scroll to top immediately when entering slides to avoid unexpected auto-scroll
+      if (typeof window !== "undefined" && window.scrollTo) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, [step, lesson]);
+
   if (!lesson) return <div>Loading lesson...</div>;
   const totalWords = lesson.words.length;
   const slideStep = step - 1;
   const isSlide = step > 0 && slideStep < totalWords;
+
+  // Helper: praise based on percent (safe, pure function)
+function getPraise(percent: number): string {
+  if (!Number.isFinite(percent)) percent = 0;
+  if (percent < 0) percent = 0;
+  if (percent > 100) percent = 100;
+
+  const messages = {
+    low: [
+      "よく頑張りました！次はもう少し覚えましょう。",
+      "一歩ずつ前進しています。諦めずに続けましょう！",
+      "努力のスタートラインに立ちました！ここから伸びます！",
+    ],
+    midLow: [
+      "順調です！継続が力になります。",
+      "確実に力がついてきています！",
+      "いい流れです。小さな進歩を積み重ねていきましょう！",
+    ],
+    mid: [
+      "いい調子です！あとひと息です！",
+      "素晴らしい成長です！もう少しで大きな成果に届きます！",
+      "この調子で勢いをキープしましょう！",
+    ],
+    high: [
+      "とてもよくできました！",
+      "かなりの理解度です！自信を持っていきましょう！",
+      "集中力が素晴らしいです！この調子！",
+    ],
+    nearPerfect: [
+      "素晴らしい、ほぼ完璧です！",
+      "すごい完成度！最後のひと押しです！",
+      "努力の成果が出ています！もう一歩で完全制覇！",
+    ],
+    perfect: [
+      "完璧です！おめでとうございます！",
+      "すごすぎる！努力の結晶です！",
+      "あなたの頑張りが最高の結果を生みました！",
+    ],
+  };
+
+  // Helper: pick random message
+  const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+
+  if (percent < 20) return pick(messages.low);
+  if (percent < 40) return pick(messages.midLow);
+  if (percent < 60) return pick(messages.mid);
+  if (percent < 80) return pick(messages.high);
+  if (percent < 90) return pick(messages.nearPerfect);
+  return pick(messages.perfect);
+}
 
   // responsive sizes
   const headingSize = isSmallScreen ? 20 : 32;
@@ -263,7 +329,7 @@ const Lesson: React.FC = () => {
   const nextButtonStyle: React.CSSProperties = {
     ...blueButtonStyle,
     width: isSmallScreen ? "100%" : 240,
-    backgroundColor: "#ff7f50",
+    backgroundColor: "#003366",
   };
 
   function handleChoose(choiceIndex: number) {
@@ -405,6 +471,14 @@ const Lesson: React.FC = () => {
 
   const paragraphSlotCount = slotCorrectWord.length || choiceWords.length;
 
+  // --- compute safe display values for results / summary ---
+  const displayFinalScore = finalScore ?? quizScore;
+  const quizMax = quizQuestions.length || 1;
+  const quizPercent = Math.round((displayFinalScore / quizMax) * 100);
+  const totalScore = quizScore + (paragraphScore ?? 0);
+  const totalMax = (quizQuestions.length || 0) + (slotCorrectWord.length || choiceWords.length || 0);
+  const totalPercent = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
+
   return (
     <div
       style={{
@@ -520,7 +594,6 @@ const Lesson: React.FC = () => {
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
                 {quizQuestions[quizIndex].choices.map((c: string, i: number) => {
-                  // compute styles for hover / correct / wrong with nicer color effects
                   const isHovered = hoveredQuizChoice === i && selectedChoice === null && !isTouchDevice;
                   const isCorrect = selectedChoice !== null && i === quizQuestions[quizIndex].answer_index;
                   const isWrongSelected = selectedChoice !== null && i === selectedChoice && i !== quizQuestions[quizIndex].answer_index;
@@ -530,23 +603,20 @@ const Lesson: React.FC = () => {
                   let transform = isHovered ? "translateY(-6px)" : "translateY(0)";
 
                   if (selectedChoice === null) {
-                    // not yet chosen — provide subtle hover lift
                     if (isHovered) {
                       boxShadow = "0 8px 20px rgba(0,0,0,0.12)";
                     }
                   } else {
-                    // after chosen — show cool gradients and glow
                     if (isCorrect) {
-                      background = "linear-gradient(90deg,#34d399,#16a34a)"; // green gradient
+                      background = "linear-gradient(90deg,#34d399,#16a34a)";
                       boxShadow = "0 12px 30px rgba(16,185,129,0.18)";
                       transform = "translateY(-4px) scale(1.02)";
                     } else if (isWrongSelected) {
-                      background = "linear-gradient(90deg,#ff7a7a,#ff4d4d)"; // red-ish gradient
+                      background = "linear-gradient(90deg,#ff7a7a,#ff4d4d)";
                       boxShadow = "0 12px 30px rgba(255,99,71,0.18)";
                       transform = "translateY(-2px) scale(0.99)";
                     } else {
-                      // other unselected choices — fade out a bit
-                      background = "linear-gradient(90deg,#dbeafe,#bfdbfe)"; // light bluish
+                      background = "linear-gradient(90deg,#dbeafe,#bfdbfe)";
                       boxShadow = "none";
                       transform = "translateY(0)";
                     }
@@ -582,7 +652,7 @@ const Lesson: React.FC = () => {
               {/* feedback message shown between choices and next button */}
               {selectedChoice !== null && (
                 <div style={{ marginTop: 12, display: "flex", justifyContent: "center" }}>
-                  <div style={{ fontSize: isSmallScreen ? 16 : 20, fontWeight: 700, color: selectedChoice === quizQuestions[quizIndex].answer_index ? "green" : "#ff6600" }}>
+                  <div style={{ fontSize: isSmallScreen ? 16 : 20, fontWeight: 700, color: selectedChoice === quizQuestions[quizIndex].answer_index ? "green" : "red" }}>
                     {selectedChoice === quizQuestions[quizIndex].answer_index ? "正解です！" : "惜しい！"}
                   </div>
                 </div>
@@ -619,15 +689,22 @@ const Lesson: React.FC = () => {
         <div style={{ width: "100%", maxWidth: 900 }}>
           <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>結果</h2>
           <p style={{ fontSize: paragraphFontSize }}>
-            {finalScore !== null ? `正答数: ${finalScore} / ${quizQuestions.length}` : "正答率: 0%"}
+            {displayFinalScore !== null ? `正答数: ${displayFinalScore} / ${quizQuestions.length || 0}` : "正答率: 0%"}
           </p>
           <p style={{ fontSize: isSmallScreen ? 16 : 20, marginTop: 8 }}>
-            {finalScore !== null ? `正答率: ${Math.round((finalScore / (quizQuestions.length || 1)) * 100)}%` : ""}
+            {`正答率: ${quizPercent}%`}
           </p>
+
+          {/* praise based on percent */}
+          <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>{getPraise(quizPercent)}</p>
+
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-            <button onClick={() => setStep(ENABLE_PARAGRAPH_FILL ? totalWords + 3 : totalWords + 4)} style={blueButtonStyle}>
-              段落穴埋めに進む
-            </button>
+            {/* --- IMPORTANT: only show paragraph button when enabled --- */}
+            {ENABLE_PARAGRAPH_FILL && (
+              <button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>
+                段落穴埋めに進む
+              </button>
+            )}
             <button onClick={() => nav(-1)} style={blueButtonStyle}>
               終了する
             </button>
@@ -637,7 +714,6 @@ const Lesson: React.FC = () => {
 
       {/* --- 段落穴埋め（ドラッグ＆ドロップ OR tap-to-place on mobile） --- */}
       {step === totalWords + 3 && (
-        // For small screen we split into two stacked areas: paragraph (top) and choices (bottom panel)
         <div
           style={{
             width: "100%",
@@ -649,7 +725,6 @@ const Lesson: React.FC = () => {
         >
           <h2 style={{ fontSize: headingSize, marginBottom: 8 }}>段落穴埋め</h2>
 
-          {/* top: paragraph / blanks */}
           <div
             style={{
               fontSize: paragraphFontSize,
@@ -716,7 +791,6 @@ const Lesson: React.FC = () => {
                           }}
                         >
                           <div>{choiceWords[placed]}</div>
-                          {/* small cross for desktop; on mobile tapping the placed area removes */}
                           {!isTouchDevice && (
                             <button
                               onClick={() => removeFromSlot(slotIndex)}
@@ -739,11 +813,9 @@ const Lesson: React.FC = () => {
             })}
           </div>
 
-          {/* bottom: choices area */}
           <div
             style={{
               marginTop: 4,
-              // On small screen make bottom panel more prominent and scrollable
               borderTop: isSmallScreen ? "1px solid #eee" : undefined,
               paddingTop: isSmallScreen ? 8 : 0,
             }}
@@ -756,7 +828,6 @@ const Lesson: React.FC = () => {
 
             <h3 style={{ marginBottom: 8, fontSize: isSmallScreen ? 16 : 20 }}>単語（タップして選択してください）</h3>
 
-            {/* choices container: horizontally scrollable on mobile, wrapped on desktop */}
             <div
               style={{
                 display: "flex",
@@ -768,7 +839,6 @@ const Lesson: React.FC = () => {
                 alignItems: "center",
               }}
               onClick={() => {
-                // tapping empty space clears activeChoice
                 if (isTouchDevice) setActiveChoice(null);
               }}
             >
@@ -782,7 +852,6 @@ const Lesson: React.FC = () => {
               })}
             </div>
 
-            {/* mobile helper: show currently selected choice */}
             {isTouchDevice && (
               <div style={{ marginTop: 8, display: "flex", gap: 8, alignItems: "center", justifyContent: "flex-start", overflowX: "auto" }}>
                 <div style={{ fontSize: 13, color: "#666", minWidth: 90 }}>選択中：</div>
@@ -843,11 +912,14 @@ const Lesson: React.FC = () => {
             <p>単語穴埋め: {paragraphScore ?? 0} / {slotCorrectWord.length || choiceWords.length}</p>
             <hr style={{ margin: "12px 0" }} />
             <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>
-              合計: {quizScore + (paragraphScore ?? 0)} / {quizQuestions.length + (slotCorrectWord.length || choiceWords.length)}
+              合計: {totalScore} / {totalMax}
             </p>
             <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>
-              正答率: {Math.round(((quizScore + (paragraphScore ?? 0)) / (quizQuestions.length + (slotCorrectWord.length || choiceWords.length) || 1)) * 100)}%
+              正答率: {totalPercent}%
             </p>
+
+            {/* praise for total */}
+            <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>{getPraise(totalPercent)}</p>
           </div>
 
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
