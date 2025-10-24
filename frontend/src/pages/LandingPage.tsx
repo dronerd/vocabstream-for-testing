@@ -215,7 +215,7 @@ export default function LandingPage() {
 
                   <div className="founder-meta-row">
                     <div className="founder-meta" style={{ fontSize: "0.87em" }}>
-                      早稲田大学 基幹理工学部(情報系)
+                      早稲田大学 基幹理工学部1年(情報系)
                     </div>
                     <div className="founder-meta" style={{ fontSize: "0.85em" }}>
                       yutokuroki.projectfluence@gmail.com
@@ -225,7 +225,7 @@ export default function LandingPage() {
               </div>
 
               <p style={{ marginTop: 12, color: "#333", fontSize: "0.95em", lineHeight: 1.5 }}>
-                英語を英語で学ぶ効率的な方法を追求し、中学2年時に英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116/120点, TOEIC満点 990/990点。ドイツ語もネイティブに近いレベル(Goethe Zertifikat C1)を達成。専門は情報工学で、ISEFなどの国際イベントにて研究発表の経験を持つ。
+              英語を英語で学ぶ方法を追求し、中学2年で英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116点、TOEIC満点（990点）を取得。独学でドイツ語も学び、世界最難関のドイツ語検定試験 Goethe-Zertifikat C2（読む・聞く・話す）とC1（書く）を取得。高校時代から機械学習や最適化アルゴリズムの分野で研究開発に取り組み、学会での受賞やISEFなど国際的な研究発表の経験を持つ。
               </p>
 
               <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
