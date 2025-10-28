@@ -96,7 +96,7 @@ export default function TestPage() {
           cursor: "pointer",
         }}
       >
-        その他の機能一覧に戻る
+        戻る
       </button>
 
 

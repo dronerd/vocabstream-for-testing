@@ -103,7 +103,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
           cursor: "pointer",
         }}
       >
-        復習方法選択に戻る
+        戻る
       </button>
 
       {Object.entries(categories).map(([categoryName, lessons]) => {

@@ -418,7 +418,7 @@ const Lesson: React.FC = () => {
           cursor: "pointer",
         }}
       >
-        レッスン一覧に戻る
+        戻る
       </button>
 
       {/* --- 今日の単語 --- */}

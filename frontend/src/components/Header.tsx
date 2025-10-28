@@ -303,7 +303,7 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
               <Link to="/home">
                 <img src="/logo.png" alt="App Logo" style={{ height: 60, width: "auto" }} />
               </Link>
-              <Link to="/home" className="home-link">Homeに戻る</Link>
+              <Link to="/home" className="home-link">Home🏠</Link>
               {title && <h3 className="small-title">{title}</h3>}
             </>
           )}
