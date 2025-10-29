@@ -117,62 +117,102 @@ export default function LearnGenres() {
     }
   }
 
-
   return (
-  <div
-    style={{
-      backgroundColor: pageBackground,
-      minHeight: "100vh",
-      width: "100%",
-      margin: 0,
-      padding: 0,
-      overflowX: "hidden", 
-      display: "flex",
-      justifyContent: "center",
-    }}
-  >
-    <div
-      style={{
-        width: "100%",
-        maxWidth: 1100,
-        padding: basePadding,
-        paddingTop: basePadding + HEADER_HEIGHT,
-        boxSizing: "border-box",
-      }}
-    >
-        <style>{`
+    <div className="outer-root" style={{ backgroundColor: pageBackground }}>
+      {/* Global + layout styles to remove body gaps and control container width/padding */}
+      <style>{`
+        /* Remove default margins so background covers entire viewport */
+        html, body, #root {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background: ${pageBackground};
+        }
+
+        /* Outer wrapper spans full viewport width so no white edges appear on mobile */
+        .outer-root {
+          width: 100vw; /* ensure full-bleed even when viewport uses safe-area inset */
+          min-height: 100vh;
+          box-sizing: border-box;
+          overflow-x: hidden;
+          display: flex;
+          justify-content: center;
+          /* include device safe area so background reaches edges on iOS */
+          padding-left: env(safe-area-inset-left);
+          padding-right: env(safe-area-inset-right);
+        }
+
+        /* Main content container:
+           - uses a max width but shrinks a little on very large screens so side gutters are smaller
+           - uses responsive horizontal padding for comfortable spacing
+        */
+        .main-container {
+          width: 100%;
+          box-sizing: border-box;
+          /* prefer using calc so container can expand a bit to the sides on large screens */
+          max-width: 1200px;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        /* on medium/large screens reduce side padding (content expands) */
+        @media (min-width: 1000px) {
+          .main-container {
+            padding-left: 20px;
+            padding-right: 20px;
+            /* limit width slightly larger so gutters are smaller on big screens */
+            max-width: 1280px;
+          }
+        }
+
+        /* on very large screens reduce the side gap even more */
+        @media (min-width: 1400px) {
+          .main-container {
+            padding-left: 24px;
+            padding-right: 24px;
+            max-width: 1400px;
+          }
+        }
+
+        /* lesson-card styles kept here (moved from inline to CSS for cleanliness) */
+        .lesson-card {
+          padding: 12px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        @media (hover: hover) {
+          .lesson-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+          }
+          .lesson-card:focus-visible {
+            outline: none;
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
           .lesson-card {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            transition: none;
           }
+        }
+      `}</style>
 
-          @media (hover: hover) {
-            .lesson-card:hover {
-              transform: translateY(-6px);
-              box-shadow: 0 18px 36px rgba(0,0,0,0.12);
-            }
-            .lesson-card:focus-visible {
-              outline: none;
-              transform: translateY(-6px);
-              box-shadow: 0 18px 36px rgba(0,0,0,0.12);
-            }
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .lesson-card {
-              transition: none;
-            }
-          }
-        `}</style>
-
+      <div
+        className="main-container"
+        style={{
+          paddingTop: basePadding + HEADER_HEIGHT,
+        }}
+      >
         {/* Centered titles */}
         <h2
           style={{

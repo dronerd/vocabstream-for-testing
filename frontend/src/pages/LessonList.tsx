@@ -113,33 +113,44 @@ export default function LessonList() {
 }
 
 const styles = `
+/* Global box sizing and reset to avoid overflow due to element sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Ensure full background coverage and prevent horizontal scroll */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #d5e7f7;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* prevent accidental horizontal scroll */
+}
+
+/* Page layout */
 :root{
   --card-gap: 12px;
   --card-radius: 10px;
   --card-padding: 12px;
 }
 
-/* Ensure full background coverage */
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #d5e7f7;
-  width: 100%;
-  height: 100%;
-}
-
-/* Page layout */
+/* Page root uses 100% (not 100vw) to avoid including scrollbar width */
 .page-root {
   padding: 10px 8px;
   padding-top: 92px;
   font-family: Inter, Arial, sans-serif;
   background-color: #d5e7f7;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow-x: hidden; /* defensive: ensure children can't push it horizontally */
 }
 
+/* Title */
 .page-title {
   font-size: 24px;
   margin-bottom: 10px;
@@ -165,15 +176,19 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* Grid */
+/* Grid - use flex-start to avoid uneven spacing rounding issues that can cause overflow */
 .lessons-grid {
   display: flex;
   flex-wrap: wrap;
   gap: var(--card-gap);
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0; /* defensive */
+  padding: 0; /* defensive */
+  width: 100%;
 }
 
-/* Lesson Card - darker for better visibility */
+/* Lesson Card */
 .lesson-card {
   flex: 0 0 calc(25% - var(--card-gap));
   background: linear-gradient(135deg, #b5d3f3 0%, #89bff5 100%);
@@ -190,6 +205,7 @@ html, body {
   min-height: 130px;
 }
 
+/* Hover */
 .lesson-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 28px rgba(11,75,155,0.22);
@@ -240,6 +256,7 @@ html, body {
   }
   .lessons-grid { gap: 10px; justify-content: center; }
   .lesson-card {
+    /* use calc that matches gap to avoid rounding overflow */
     flex: 0 0 calc(50% - 10px);
     padding: 10px;
     min-height: 110px;
@@ -250,6 +267,7 @@ html, body {
   .start-btn { font-size: 13px; padding: 10px 0; }
 }
 
+/* Touch devices: disable hover effects */
 @media (hover: none) {
   .lesson-card:hover { transform: none; }
 }
