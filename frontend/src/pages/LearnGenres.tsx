@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-type Lesson = {
-  id: string;
-  title: string;
-};
-
-type LevelOrder = {
-  [key: string]: string[];
-};
+type Lesson = { id: string; title: string; };
+type LevelOrder = { [key: string]: string[] };
 
 const STATIC_GENRES: Lesson[] = [
   { id: "word-intermediate", title: "単語初級~中級 (CEFR A2~B1)" },
@@ -119,62 +113,52 @@ export default function LearnGenres() {
 
   return (
     <div className="outer-root" style={{ backgroundColor: pageBackground }}>
-      {/* Global + layout styles to remove body gaps and control container width/padding */}
       <style>{`
-        /* Remove default margins so background covers entire viewport */
-        html, body, #root {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-          background: ${pageBackground};
-        }
+        /* global box sizing & remove default margins that cause bleed */
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body, #root { height: 100%; margin: 0; padding: 0; overflow-x: hidden; background: ${pageBackground}; }
 
-        /* Outer wrapper spans full viewport width so no white edges appear on mobile */
+        /* outer wrapper fills vertical space but NOT using 100vw (avoids scroll issues) */
         .outer-root {
-          width: 100vw; /* ensure full-bleed even when viewport uses safe-area inset */
           min-height: 100vh;
-          box-sizing: border-box;
-          overflow-x: hidden;
-          display: flex;
-          justify-content: center;
-          /* include device safe area so background reaches edges on iOS */
+          width: 100%;
+          display: block;
           padding-left: env(safe-area-inset-left);
           padding-right: env(safe-area-inset-right);
+          overflow-x: hidden;
         }
 
-        /* Main content container:
-           - uses a max width but shrinks a little on very large screens so side gutters are smaller
-           - uses responsive horizontal padding for comfortable spacing
-        */
+        /* center container with controlled max-width and auto margins */
         .main-container {
+          max-width: 1100px; /* keep comfortable width */
+          margin: 0 auto;    /* center */
+          padding-inline: 16px; /* left & right padding that won't cause overflow */
+        }
+
+        /* make sure flex/grid children can shrink (important to avoid overflow) */
+        .main-container, .category-block, .lessons-grid, .lesson-card {
+          min-width: 0;
+        }
+
+        /* responsive grid: cards wrap and never force horizontal scroll */
+        .lessons-grid {
+          display: grid;
+          gap: 10px;
+          /* each card will be at least 220px but can grow to fill row; auto-fit wraps */
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
           width: 100%;
-          box-sizing: border-box;
-          /* prefer using calc so container can expand a bit to the sides on large screens */
-          max-width: 1200px;
-          padding-left: 16px;
-          padding-right: 16px;
         }
 
-        /* on medium/large screens reduce side padding (content expands) */
-        @media (min-width: 1000px) {
-          .main-container {
-            padding-left: 20px;
-            padding-right: 20px;
-            /* limit width slightly larger so gutters are smaller on big screens */
-            max-width: 1280px;
-          }
+        .category-block {
+          margin-top: 10px;
+          margin-bottom: 20px;
+          padding: 12px;
+          background: white;
+          border: 3px solid #558ac9;
+          border-radius: 12px;
+          box-shadow: 0 6px 14px rgba(0,0,0,0.08);
         }
 
-        /* on very large screens reduce the side gap even more */
-        @media (min-width: 1400px) {
-          .main-container {
-            padding-left: 24px;
-            padding-right: 24px;
-            max-width: 1400px;
-          }
-        }
-
-        /* lesson-card styles kept here (moved from inline to CSS for cleanliness) */
         .lesson-card {
           padding: 12px;
           border: 1px solid #ddd;
@@ -186,7 +170,10 @@ export default function LearnGenres() {
           gap: 10px;
           transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
           box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+          overflow: hidden; /* prevent children overflowing */
         }
+
+        .lesson-card > img { display: block; max-width: 100%; height: auto; border-radius: 8px; }
 
         @media (hover: hover) {
           .lesson-card:hover {
@@ -200,41 +187,17 @@ export default function LearnGenres() {
           }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-          .lesson-card {
-            transition: none;
-          }
+        @media (max-width: 720px) {
+          .lessons-grid { grid-template-columns: 1fr; gap: 10px; }
         }
       `}</style>
 
-      <div
-        className="main-container"
-        style={{
-          paddingTop: basePadding + HEADER_HEIGHT,
-        }}
-      >
-        {/* Centered titles */}
-        <h2
-          style={{
-            fontSize: isSmall ? 26 : 38,
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: 10,
-            color: "#08335b",
-          }}
-        >
+      <div className="main-container" style={{ paddingTop: basePadding + HEADER_HEIGHT }}>
+        <h2 style={{ fontSize: isSmall ? 26 : 38, fontWeight: "bold", textAlign: "center", marginBottom: 10, color: "#08335b" }}>
           単語の学習
         </h2>
 
-        <h3
-          style={{
-            fontSize: isSmall ? 20 : 26,
-            fontWeight: 600,
-            textAlign: "center",
-            marginBottom: 20,
-            color: "#1a4e8a",
-          }}
-        >
+        <h3 style={{ fontSize: isSmall ? 20 : 26, fontWeight: 600, textAlign: "center", marginBottom: 20, color: "#1a4e8a" }}>
           学習する分野の選択
         </h3>
 
@@ -251,50 +214,21 @@ export default function LearnGenres() {
           }
 
           return (
-            <div
-              key={categoryName}
-              style={{
-                marginTop: 10,
-                marginBottom: 20,
-                padding: 12,
-                background: "white",
-                border: "3px solid #558ac9",
-                borderRadius: 12,
-                boxShadow: "0 6px 14px rgba(0,0,0,0.08)",
-              }}
-            >
-              <div
-                style={{
+            <div key={categoryName} className="category-block">
+              <div style={{
                   display: "flex",
                   alignItems: "center",
                   marginBottom: 10,
                   flexDirection: isSmall ? "column" : "row",
                   gap: isSmall ? 8 : 10,
                   textAlign: isSmall ? "center" : "left",
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: isSmall ? 18 : 24,
-                    fontWeight: "bold",
-                    margin: 0,
-                    color: "#1a4e8a",
-                  }}
-                >
+                }}>
+                <h3 style={{ fontSize: isSmall ? 18 : 24, fontWeight: "bold", margin: 0, color: "#1a4e8a" }}>
                   {categoryName}
                 </h3>
               </div>
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: isSmall
-                    ? "1fr"
-                    : "repeat(4, minmax(0, 1fr))",
-                  gap: 10,
-                  width: "100%",
-                }}
-              >
+              <div className="lessons-grid">
                 {lessons.map((lesson, index) => (
                   <div
                     key={lesson.id}
@@ -316,34 +250,25 @@ export default function LearnGenres() {
                       textAlign: isSmall ? "center" : "left",
                     }}
                   >
-                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
                       {categoryName === "専門用語" && (
                         <img
-                          src={
-                            lessonImages[lesson.id.toLowerCase()] ||
-                            "/images/default.jpg"
-                          }
+                          src={lessonImages[lesson.id.toLowerCase()] || "/images/default.jpg"}
                           alt={lesson.title}
                           style={{
                             width: isSmall ? 48 : 60,
                             height: isSmall ? 48 : 60,
                             objectFit: "cover",
                             borderRadius: 8,
+                            flex: "0 0 auto"
                           }}
                         />
                       )}
-                      <strong style={{ fontSize: isSmall ? 16 : 18 }}>
+                      <strong style={{ fontSize: isSmall ? 16 : 18, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {lesson.title}
                       </strong>
                     </div>
-                    <div
-                      style={{
-                        fontSize: isSmall ? 14 : 16,
-                        fontWeight: "bold",
-                        color: "#08335b",
-                        marginTop: isSmall ? 8 : 0,
-                      }}
-                    >
+                    <div style={{ fontSize: isSmall ? 14 : 16, fontWeight: "bold", color: "#08335b", marginTop: isSmall ? 8 : 0 }}>
                       進捗: 0%
                     </div>
                   </div>
