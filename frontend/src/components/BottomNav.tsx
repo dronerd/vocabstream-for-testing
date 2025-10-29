@@ -13,11 +13,12 @@ export default function BottomNav() {
     return null;
   }
 
+  // 各リンクの色を少し濃くしたバージョン
   const navItems = [
-    { path: "/home", label: "Home", color: "#000000", background: "#ffffff" },
-    { path: "/learn", label: "学習", color: "#000000", background: "#6fa8dc" }, // 柔らかいブルー
-    { path: "/review", label: "復習", color: "#000000", background: "#e9967a" }, // サーモン系のレッド
-    { path: "/others", label: "その他の機能", color: "#000000", background: "#77dd77" }, // パステルグリーン
+    { path: "/home", label: "Home", color: "#222222" }, // blackより少し明るめで見やすい
+    { path: "/learn", label: "学習", color: "#4a86c5" }, // 柔らかいブルーより少し濃い
+    { path: "/review", label: "復習", color: "#d4795e" }, // サーモンより少し濃い
+    { path: "/others", label: "その他の機能", color: "#5ec75e" }, // パステルグリーンより少し濃い
   ];
 
   const style = `
@@ -54,18 +55,11 @@ export default function BottomNav() {
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
-      color: #000;
-      padding: 10px 8px;
-      border-radius: 8px;
+      padding: 6px 8px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      transition: all 0.2s ease;
-    }
-
-    .nav-bottom .bottom-link.active {
-      font-weight: 800;
-      filter: brightness(0.9);
+      transition: font-weight 0.2s ease;
     }
 
     @media (max-width: 640px) {
@@ -93,16 +87,14 @@ export default function BottomNav() {
     <>
       <style>{style}</style>
       <nav className="nav-bottom" aria-label="Bottom navigation">
-        {navItems.map(({ path, label, background, color }) => (
+        {navItems.map(({ path, label, color }) => (
           <Link
             key={path}
             to={path}
-            className={`bottom-link ${location.pathname === path ? "active" : ""}`}
+            className="bottom-link"
             style={{
-              backgroundColor: background,
-              color: color,
+              color,
               fontWeight: location.pathname === path ? "800" : "600",
-              filter: location.pathname === path ? "brightness(0.9)" : "none",
             }}
             aria-current={location.pathname === path ? "page" : undefined}
           >

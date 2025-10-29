@@ -161,9 +161,9 @@ export default function LandingPage() {
 
               <p className="lead">
                 VocabStreamは、
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer"><strong>黒木勇人</strong></a>
+                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline' }}><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
-                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer"><strong>Project Fluence</strong></a>
+                <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline' }}><strong>Project Fluence</strong></a>
                 の一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。
               </p>
 
@@ -227,14 +227,24 @@ export default function LandingPage() {
               <p style={{ marginTop: 12, color: "#333", fontSize: "0.95em", lineHeight: 1.5 }}>
               英語を英語で学ぶ方法を追求し、中学2年で英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116点、TOEIC満点（990点）を保持。独学でドイツ語も学び、世界最難関のドイツ語検定試験 Goethe-Zertifikat C2（読む・聞く・話す）とC1（書く）を取得。高校時代から機械学習や最適化アルゴリズムの分野で研究開発に取り組み、学会での受賞やISEFなど国際的な研究発表の経験を持つ。
               </p>
-
               <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 800, color: '#0b3d91' }}>
-                  → プロフィール
-                </a>
-                <a href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 800, color: '#0b3d91' }}>
-                  → LinkedIn
-                </a>
+              <a
+                href="https://yutokuroki.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontWeight: 800, color: '#0b3d91', textDecoration: 'underline' }}
+              >
+                → プロフィール
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontWeight: 800, color: '#0b3d91', textDecoration: 'underline' }}
+              >
+                → LinkedIn
+              </a>
               </div>
             </aside>
           </div>
