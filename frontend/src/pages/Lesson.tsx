@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { speakEnglish } from "../pages/speech"; 
 
 interface LessonWord {
   word: string;
@@ -32,9 +33,7 @@ const Lesson: React.FC = () => {
   const [lesson, setLesson] = useState<LessonData | null>(null);
   const nav = useNavigate();
 
-  const ENABLE_PARAGRAPH_FILL = false;
-
-  // quiz/paragraph state 
+  // quiz state
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
   const [quizIndex, setQuizIndex] = useState<number>(0);
   const [quizScore, setQuizScore] = useState<number>(0);
@@ -48,31 +47,20 @@ const Lesson: React.FC = () => {
   const [particles, setParticles] = useState<any[]>([]);
   const [particleSeed, setParticleSeed] = useState<number>(0);
 
-  // paragraph drag/drop state 
-  const [placedChoices, setPlacedChoices] = useState<(number | null)[]>([]);
-  const [slotCorrectWord, setSlotCorrectWord] = useState<string[]>([]);
-  const [slotSuffixes, setSlotSuffixes] = useState<string[]>([]);
-  const [renderParts, setRenderParts] = useState<(string | { slotIndex: number })[]>([]);
-  const [graded, setGraded] = useState<boolean>(false);
-  const [slotResults, setSlotResults] = useState<("idle" | "correct" | "wrong" | "revealed")[]>([]);
-  const [showRevealButton, setShowRevealButton] = useState<boolean>(false);
-  const [paragraphScore, setParagraphScore] = useState<number | null>(null);
-
   // responsive / touch state
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
   const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
-  const [activeChoice, setActiveChoice] = useState<number | null>(null);
 
   // finish lock/overlay to avoid duplicate praise
   const [finishLock, setFinishLock] = useState<boolean>(false);
   const [showFinishOverlay, setShowFinishOverlay] = useState<boolean>(false);
   const [finishMessage, setFinishMessage] = useState<string>("");
-  const [finishScore, setFinishScore] = useState<{score:number;max:number;percent:number} | null>(null);
+  const [finishScore, setFinishScore] = useState<{ score: number; max: number; percent: number } | null>(null);
 
   // audio context ref for playing chime
   const audioCtxRef = useRef<AudioContext | null>(null);
 
-  // Helper: try fetch JSON 
+  // Helper: try fetch JSON
   async function tryFetchJson(path: string): Promise<any | null> {
     try {
       const r = await fetch(path, { cache: "no-cache" });
@@ -120,7 +108,7 @@ const Lesson: React.FC = () => {
     return () => { cancelled = true; };
   }, [lessonId]);
 
-  // detect small screen & touch 
+  // detect small screen & touch
   useEffect(() => {
     function update() {
       try {
@@ -141,7 +129,7 @@ const Lesson: React.FC = () => {
     };
   }, []);
 
-  // generate quiz when entering quiz step 
+  // generate quiz when entering quiz step
   useEffect(() => {
     if (!lesson) return;
     const totalWords = lesson.words ? lesson.words.length : 0;
@@ -166,70 +154,7 @@ const Lesson: React.FC = () => {
     }
   }, [step, lesson]);
 
-  // Build paragraph slots 
-  const choiceWords = useMemo<string[]>(() => {
-    if (!lesson) return [];
-    return lesson.words.slice(0, 10).map((w: LessonWord) => w.word);
-  }, [lesson]);
-
-  useEffect(() => {
-    const totalWords = lesson ? lesson.words.length : 0;
-    const paragraphStep = totalWords + 3;
-    if (!lesson) return;
-    if (step === paragraphStep) {
-      const paragraphRaw: string =
-        lesson.paragraph || lesson.words.map((w: LessonWord) => w.example || w.word).join(" ");
-      let processed = paragraphRaw;
-      const tokens: string[] = [];
-      const slotWords: string[] = [];
-      const detectedSuffixes: string[] = [];
-      let slotIndexCounter = 0;
-      const SUFFIX_PATTERN = "(?:'(?:s|re|ve|ll)|s|es|ed|ing|en|ly)?";
-      choiceWords.forEach((cw: string) => {
-        if (!cw) return;
-        const escaped = cw.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
-        const re = new RegExp("\\b(" + escaped + ")(" + SUFFIX_PATTERN + ")\\b", "iu");
-        processed = processed.replace(re, (match: string, p1: string, p2: string) => {
-          tokens.push(`[[SLOT_${slotIndexCounter}]]`);
-          slotWords.push(cw);
-          detectedSuffixes.push(p2 || "");
-          const token = `[[SLOT_${slotIndexCounter}]]`;
-          slotIndexCounter++;
-          return token;
-        });
-      });
-      if (tokens.length === 0) {
-        processed = `[[SLOT_0]] [[SLOT_1]] [[SLOT_2]] ` + processed;
-        slotWords.push(...choiceWords.slice(0, 3));
-        detectedSuffixes.push("", "", "");
-        tokens.push("[[SLOT_0]]", "[[SLOT_1]]", "[[SLOT_2]]");
-        slotIndexCounter = slotWords.length;
-      }
-      const parts: (string | { slotIndex: number })[] = [];
-      const tokenRe = /\[\[SLOT_(\d+)\]\]/g;
-      let lastIndex = 0;
-      let m: RegExpExecArray | null;
-      while ((m = tokenRe.exec(processed)) !== null) {
-        const idx = m.index;
-        if (idx > lastIndex) parts.push(processed.substring(lastIndex, idx));
-        const slotIndex = Number(m[1]);
-        parts.push({ slotIndex });
-        lastIndex = idx + m[0].length;
-      }
-      if (lastIndex < processed.length) parts.push(processed.substring(lastIndex));
-      setRenderParts(parts);
-      setSlotCorrectWord(slotWords);
-      setSlotSuffixes(detectedSuffixes);
-      setPlacedChoices(Array(slotWords.length).fill(null));
-      setSlotResults(Array(slotWords.length).fill("idle"));
-      setGraded(false);
-      setShowRevealButton(false);
-      setParagraphScore(null);
-      setActiveChoice(null);
-    }
-  }, [step, lesson, choiceWords]);
-
-  // prevent scroll to weird spot on slides 
+  // prevent scroll to weird spot on slides
   useEffect(() => {
     try {
       if (!lesson) return;
@@ -240,7 +165,7 @@ const Lesson: React.FC = () => {
       if (typeof window !== "undefined" && window.scrollTo) {
         window.scrollTo({ top: 0, behavior: "auto" });
       }
-    } catch (e) {}
+    } catch (e) { }
   }, [step, lesson]);
 
   if (!lesson) return <div>Loading lesson...</div>;
@@ -270,7 +195,7 @@ const Lesson: React.FC = () => {
     return pick(messages.perfect);
   }
 
-  // responsive sizes & button styles (same as before)...
+  // responsive sizes & button styles
   const headingSize = isSmallScreen ? 20 : 32;
   const mainWordSize = isSmallScreen ? 28 : 48;
   const wordListSize = isSmallScreen ? 20 : 40;
@@ -284,16 +209,19 @@ const Lesson: React.FC = () => {
   };
   const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
 
-  //show the steps
+  // show the steps
   const topSteps = ["単語スライド", "例文を使った穴埋めクイズ（3択）"];
   function currentTopIndex() {
-    if (step === 0) return 0;
-    if (isSlide) return 1;
-    if (step === totalWords + 1) return 2;
-    return 2;
+    // breadcrumb indices:
+    // 0 -> 単語スライド (step === 1 .. slide)
+    // 1 -> 例文を使った穴埋めクイズ（3択） (step === totalWords + 1)
+    if (isSlide) return 0;
+    if (step === totalWords + 1) return 1;
+    // default (start or results) -> show nothing selected (return -1) or first
+    return -1;
   }
 
-  // PLAY short chime with WebAudio 
+  // PLAY short chime with WebAudio
   function playCorrectSound() {
     try {
       if (!audioCtxRef.current) {
@@ -375,116 +303,16 @@ const Lesson: React.FC = () => {
     }
   }
 
-  // Drag/drop handlers & helpers 
-  function handleDragStart(e: React.DragEvent, choiceIndex: number) { e.dataTransfer.setData("text/plain", String(choiceIndex)); e.dataTransfer.effectAllowed = "move"; }
-  function handleDragOver(e: React.DragEvent) { e.preventDefault(); e.dataTransfer.dropEffect = "move"; }
-  function handleDrop(e: React.DragEvent, slotIndex: number) { e.preventDefault(); const data = e.dataTransfer.getData("text/plain"); const choiceIndex = Number(data); if (Number.isNaN(choiceIndex)) return; placeChoiceToSlot(choiceIndex, slotIndex); }
-  function placeChoiceToSlot(choiceIndex: number, slotIndex: number) {
-    setPlacedChoices((prev) => {
-      const next = [...prev];
-      for (let i = 0; i < next.length; i++) {
-        if (next[i] === choiceIndex) next[i] = null;
-      }
-      next[slotIndex] = choiceIndex;
-      return next;
-    });
-    setSlotResults((prev) => { const next = [...prev]; next[slotIndex] = "idle"; return next; });
-    setActiveChoice(null);
-  }
-  function removeFromSlot(slotIndex: number) {
-    setPlacedChoices((prev) => { const next = [...prev]; next[slotIndex] = null; return next; });
-    setSlotResults((prev) => { const next = [...prev]; next[slotIndex] = "idle"; return next; });
-    setActiveChoice(null);
-  }
-
-  function handleGrade() {
-    const results: ("idle" | "correct" | "wrong")[] = slotCorrectWord.map((correctWord: string, idx: number) => {
-      const placed = placedChoices[idx];
-      if (placed === null || placed === undefined) return "wrong";
-      return choiceWords[placed] === correctWord ? "correct" : "wrong";
-    });
-    setSlotResults(results.map((r) => (r === "correct" ? "correct" : "wrong")));
-    setGraded(true);
-    const anyWrong = results.some((r) => r !== "correct");
-    setShowRevealButton(anyWrong);
-    const correctCount = results.filter((r) => r === "correct").length;
-    setParagraphScore(correctCount);
-    // celebrate + sound if any correct
-    if (correctCount > 0) {
-      triggerParticles(correctCount === results.length ? "flower" : "confetti", 30);
-      playCorrectSound();
-    }
-  }
-
-  function handleRevealAnswers() {
-    const placedForSlots = slotCorrectWord.map((w: string) => {
-      const idx = choiceWords.findIndex((cw) => cw === w);
-      return idx >= 0 ? idx : null;
-    });
-    setPlacedChoices(() => {
-      const next = Array(slotCorrectWord.length).fill(null as number | null);
-      for (let i = 0; i < placedForSlots.length; i++) {
-        next[i] = placedForSlots[i];
-      }
-      return next;
-    });
-    setSlotResults(placedForSlots.map((p) => (p === null ? "wrong" : "revealed")));
-    setShowRevealButton(false);
-    const revealedCorrect = placedForSlots.filter((p) => p !== null).length;
-    setParagraphScore(revealedCorrect);
-    setGraded(true);
-    if (revealedCorrect > 0) {
-      triggerParticles(revealedCorrect === placedForSlots.length ? "flower" : "burst", 28);
-      playCorrectSound();
-    }
-  }
-
-  // ChoiceBox component 
-  function ChoiceBox({ word, idx, disabled }: { word: string; idx: number; disabled: boolean }) {
-    const isSelected = activeChoice === idx;
-    const baseStyle: React.CSSProperties = {
-      minWidth: isSmallScreen ? 92 : 120, padding: isSmallScreen ? "6px 8px" : "8px 12px",
-      borderRadius: 8, border: `2px solid ${isSelected ? "#ffcc00" : "#003366"}`,
-      backgroundColor: disabled ? "#ddd" : "#fff", cursor: disabled ? "not-allowed" : isTouchDevice ? "pointer" : "grab",
-      textAlign: "center", userSelect: "none", display: "inline-block", marginBottom: 8,
-    };
-    const handleClick = (e: React.MouseEvent) => {
-      e.stopPropagation();
-      if (disabled) return;
-      if (isTouchDevice) { setActiveChoice((prev) => (prev === idx ? null : idx)); }
-    };
-    return (
-      <div draggable={!isTouchDevice && !disabled} onDragStart={(e) => !isTouchDevice && handleDragStart(e as any, idx)}
-        onClick={handleClick} role="button" aria-pressed={isSelected} style={baseStyle}>
-        {word}
-      </div>
-    );
-  }
-
-  const paragraphSlotCount = slotCorrectWord.length || choiceWords.length;
-
-  // show values for results 
+  // show values for results
   const displayFinalScore = finalScore ?? quizScore;
   const quizMax = quizQuestions.length || 1;
   const quizPercent = Math.round((displayFinalScore / quizMax) * 100);
-  const totalScore = quizScore + (paragraphScore ?? 0);
-  const totalMax = (quizQuestions.length || 0) + (slotCorrectWord.length || choiceWords.length || 0);
+  const totalScore = quizScore;
+  const totalMax = quizQuestions.length || 0;
   const totalPercent = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
 
-  // speech synthesis unchanged
-  function speakText(text: string) {
-    try {
-      if (typeof window !== "undefined" && (window as any).speechSynthesis) {
-        const u = new SpeechSynthesisUtterance(text);
-        u.lang = "en-US";
-        (window as any).speechSynthesis.cancel();
-        (window as any).speechSynthesis.speak(u);
-      }
-    } catch (e) {}
-  }
-
   // Unified finish function to avoid duplicates
-  function finishLesson(opts?: {score?: number; max?: number}) {
+  function finishLesson(opts?: { score?: number; max?: number }) {
     if (finishLock) return; // already finishing
     setFinishLock(true);
 
@@ -537,7 +365,7 @@ const Lesson: React.FC = () => {
               zIndex: 9999,
             }}>
             <div style={{ transform: `rotate(${p.rotation}deg)` }}>
-              {p.type === "flower" ? "🌸" : p.type === "star" ? "⭐" : p.type === "burst" ? "✨" : "🎉"}
+              {p.type === "flower" ? "🌻" : p.type === "blossoms" ? "🌸" : p.type === "star" ? "⭐" : p.type === "burst" ? "✨" : "🎉"}
             </div>
           </div>
         ))}
@@ -579,14 +407,25 @@ const Lesson: React.FC = () => {
         レッスン一覧に戻る
       </button>
 
-      {/* Breadcrumb (same as before) */}
+      {/* Breadcrumb */}
       <div className="breadcrumb" style={{ width: "100%", maxWidth: 900 }}>
         {topSteps.map((t, i) => {
-          const cur = currentTopIndex() === i;
+          const curIndex = currentTopIndex();
+          const cur = curIndex === i;
           return (
             <React.Fragment key={t}>
-              <button onClick={() => { if (i === 0) setStep(0); if (i === 1) setStep(1); if (i === 2) setStep(totalWords + 1); }}
-                style={{ fontWeight: cur ? 800 : 400, color: cur ? "#000" : "#666" }}>
+              <button
+                onClick={() => {
+                  if (i === 0) {
+                    // 単語スライド
+                    setStep(1);
+                  } else if (i === 1) {
+                    // 例文穴埋めクイズ（3択）
+                    setStep(totalWords + 1);
+                  }
+                }}
+                style={{ fontWeight: cur ? 800 : 400, color: cur ? "#000" : "#666" }}
+              >
                 {cur ? <span style={{ fontWeight: 800 }}>{t}</span> : t}
               </button>
               {i < topSteps.length - 1 && <span style={{ color: "#bbb" }}>→</span>}
@@ -633,7 +472,13 @@ const Lesson: React.FC = () => {
           </p>
 
           <div style={{ marginTop: 10, display: "flex", justifyContent: "center", gap: 12 }}>
-            <button onClick={() => speakText(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)} style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc" }}>▶️ 音読する</button>
+            <button
+              onClick={() => speakEnglish(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)}
+              style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc" }}
+            >
+              ▶️ 音読する
+            </button>
+
             <div style={{ alignSelf: "center", fontSize: 10, color: "#444" }}>音読してみましょう — 記憶に残りやすくなります。</div>
           </div>
 
@@ -745,7 +590,6 @@ const Lesson: React.FC = () => {
           <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>{getPraise(quizPercent)}</p>
 
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-            {ENABLE_PARAGRAPH_FILL && (<button onClick={() => setStep(totalWords + 3)} style={blueButtonStyle}>段落穴埋めに進む</button>)}
             <button onClick={() => {
               // use unified finish
               finishLesson({ score: displayFinalScore ?? 0, max: quizQuestions.length || 1 });
@@ -754,78 +598,12 @@ const Lesson: React.FC = () => {
         </div>
       )}
 
-      {/* Paragraph filling */}
-      {step === totalWords + 3 && (
-        <div style={{ width: "100%", maxWidth: 900, display: "flex", flexDirection: "column", gap: 12 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 8 }}>段落穴埋め</h2>
-          <div style={{ fontSize: paragraphFontSize, lineHeight: 1.6, border: "1px solid #ddd", padding: isSmallScreen ? 12 : 20, borderRadius: 8, minHeight: 140, textAlign: isSmallScreen ? "left" : "center" }}>
-            {renderParts.map((p, i) => {
-              if (typeof p === "string") return <span key={i}>{p}</span>;
-              const slotIndex = p.slotIndex;
-              const placed = placedChoices[slotIndex];
-              const status = slotResults[slotIndex] || "idle";
-              const bg = status === "idle" ? "#fff" : status === "correct" || status === "revealed" ? "#c8f7c5" : "#f7c5c5";
-              const slotStyle: React.CSSProperties = {
-                display: "inline-block", minWidth: isSmallScreen ? 90 : 140, padding: isSmallScreen ? "6px 8px" : "6px 10px",
-                margin: "0 6px", border: "2px dashed #003366", borderRadius: 6, backgroundColor: bg, verticalAlign: "middle", cursor: isTouchDevice ? "pointer" : "auto",
-              };
-              const handleSlotClick = (e?: React.MouseEvent) => {
-                if (!isTouchDevice) return;
-                if (activeChoice !== null) { placeChoiceToSlot(activeChoice, slotIndex); return; }
-                if (placed !== null) { removeFromSlot(slotIndex); }
-              };
-              return (
-                <React.Fragment key={i}>
-                  <span onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, slotIndex)} onClick={handleSlotClick} style={slotStyle}>
-                    {placed === null ? <em style={{ color: "#666", fontSize: isSmallScreen ? 12 : 14 }}>ここに単語を挿入</em> : (
-                      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: isSmallScreen ? 14 : 16, fontWeight: 700 }}>
-                        <div>{choiceWords[placed]}</div>
-                        {!isTouchDevice && (<button onClick={() => removeFromSlot(slotIndex)} style={{ border: "none", background: "transparent", cursor: "pointer", fontSize: 16 }}>✕</button>)}
-                      </div>
-                    )}
-                  </span>
-                  {slotSuffixes[slotIndex] ? <span key={`suf-${i}`} style={{ marginLeft: 6, color: "#666", fontStyle: "italic", fontSize: paragraphFontSize }}>{slotSuffixes[slotIndex]}</span> : null}
-                </React.Fragment>
-              );
-            })}
-          </div>
-
-          <div style={{ marginTop: 4, borderTop: isSmallScreen ? "1px solid #eee" : undefined, paddingTop: isSmallScreen ? 8 : 0 }}>
-            {isTouchDevice && (<div style={{ fontSize: 13, color: "#444", marginBottom: 8, textAlign: "left" }}><strong>操作方法: 単語をタップ → 空欄をタップで配置。配置済みの空欄をタップすると取り外せます。</strong></div>)}
-            <h3 style={{ marginBottom: 8, fontSize: isSmallScreen ? 16 : 20 }}>単語（タップして選択してください）</h3>
-            <div style={{ display: "flex", gap: 8, flexWrap: isSmallScreen ? "nowrap" : "wrap", justifyContent: isSmallScreen ? "flex-start" : "center", overflowX: isSmallScreen ? "auto" : "visible", paddingBottom: isSmallScreen ? 8 : 0, alignItems: "center" }}
-              onClick={() => { if (isTouchDevice) setActiveChoice(null); }}>
-              {choiceWords.map((w: string, i: number) => {
-                const isPlaced = placedChoices.includes(i);
-                return (<div key={i} style={{ display: "inline-flex", alignItems: "center" }}><ChoiceBox word={w} idx={i} disabled={isPlaced} /></div>);
-              })}
-            </div>
-
-            {isTouchDevice && (<div style={{ marginTop: 8, display: "flex", gap: 8, alignItems: "center", justifyContent: "flex-start", overflowX: "auto" }}>
-              <div style={{ fontSize: 13, color: "#666", minWidth: 90 }}>選択中：</div>
-              <div style={{ minWidth: 90 }}>{activeChoice === null ? <div style={{ fontSize: 13, color: "#999" }}>なし</div> : <div style={{ fontWeight: 700 }}>{choiceWords[activeChoice]}</div>}</div>
-            </div>)}
-          </div>
-
-          {/* controls */}
-          <div style={{ marginTop: 12, display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap" }}>
-            {!graded && (<button onClick={handleGrade} style={blueButtonStyle}>採点する</button>)}
-            {showRevealButton && (<button onClick={handleRevealAnswers} style={blueButtonStyle}>解答を表示</button>)}
-            {graded && !showRevealButton && (<button onClick={() => { setStep(totalWords + 4); }} style={blueButtonStyle}>次に行く</button>)}
-            {!graded && !showRevealButton && (<button onClick={() => finishLesson()} style={{ ...blueButtonStyle, backgroundColor: "#999" }}>スキップして終了</button>)}
-          </div>
-
-          {graded && paragraphScore !== null && (<p style={{ marginTop: 12, fontSize: isSmallScreen ? 14 : 18 }}>穴埋め得点: {paragraphScore} / {slotCorrectWord.length || choiceWords.length}</p>)}
-        </div>
-      )}
-
       {/* Final summary  */}
-      {step === totalWords + 4 && (
+      {step === totalWords + 3 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
           <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
           <div style={{ fontSize: paragraphFontSize, marginBottom: 12, textAlign: "left" }}>
             <p>単語クイズ: {quizScore} / {quizQuestions.length}</p>
-            <p>単語穴埋め: {paragraphScore ?? 0} / {slotCorrectWord.length || choiceWords.length}</p>
             <hr style={{ margin: "12px 0" }} />
             <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>合計: {totalScore} / {totalMax}</p>
             <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>正答率: {totalPercent}%</p>
