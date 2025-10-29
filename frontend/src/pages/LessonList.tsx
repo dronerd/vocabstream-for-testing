@@ -124,22 +124,29 @@ const styles = `
   padding: 10px 8px;
   padding-top: 92px;
   font-family: Inter, Arial, sans-serif;
+  background-color: #d5e7f7; /* soft blue background */
+  min-height: 100vh;
 }
 .page-title {
   font-size: 24px;
   margin-bottom: 10px;
-}
-.page-title.smaller {
-  font-size: 22px;
+  color: #04204a;
 }
 .back-btn {
-  margin-bottom: 12px;
-  padding: 6px 10px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
   border-radius: 8px;
   border: none;
-  background-color: #555;
+  background-color: #1d4ed8;
   color: #fff;
+  font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.back-btn:hover {
+  background-color: #163ea8;
+  transform: translateY(-1px);
 }
 
 /* Grid */
@@ -150,10 +157,10 @@ const styles = `
   justify-content: space-between;
 }
 
-/* Card: blue version with previous original sizing */
+/* Lesson Card */
 .lesson-card {
-  flex: 0 0 calc(25% - var(--card-gap)); /* FOUR per row by default */
-  background: linear-gradient(135deg, #dbeafe 0%, #a8d1ff 100%);
+  flex: 0 0 calc(25% - var(--card-gap));
+  background: linear-gradient(135deg, #e8f3ff 0%, #b8dbff 100%);
   border-radius: var(--card-radius);
   padding: var(--card-padding);
   box-sizing: border-box;
@@ -164,58 +171,51 @@ const styles = `
   transition: transform 0.12s ease, box-shadow 0.12s ease;
   cursor: pointer;
   min-width: 100px;
-
-  /* follow previous original size */
   min-height: 130px;
 }
 
-/* Hover / focus */
 .lesson-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 28px rgba(11,75,155,0.12);
 }
-.lesson-card:focus { outline: 3px solid rgba(11,75,155,0.12); }
 
-/* Content */
-.lesson-content { padding: 0; } /* padding already on card */
+.lesson-content { padding: 0; }
 .lesson-title { font-size: 20px; font-weight: 800; margin-bottom: 6px; color: #06204a; }
 .lesson-meta { font-size: 14px; color: #0d2a56; }
 
-/* Full-width dark blue button */
+/* Button inside card */
 .start-btn {
   width: 100%;
   border: none;
   border-top: 1px solid rgba(255,255,255,0.10);
-  background: #04275f; /* darker solid blue */
+  background: #0b3b8c;
   padding: 12px 0;
   font-size: 15px;
   font-weight: 700;
   color: #ffffff;
   cursor: pointer;
+  border-radius: 6px;
   transition: background 0.15s ease, transform 0.08s ease;
 }
+.start-btn:hover { background: #082c66; transform: translateY(-1px); }
 
-.start-btn:hover { background: #02183f; transform: translateY(-1px); }
-
-/* Keep 4 columns on large and medium large screens (user requested 4 instead of 3) */
+/* Responsive tweaks */
 @media (min-width: 1200px) {
   :root { --card-gap: 16px; --card-padding: 14px; }
   .lesson-card {
     flex: 0 0 calc(25% - var(--card-gap));
-    min-height: 160px; /* slightly taller on very large screens */
+    min-height: 160px;
     padding: var(--card-padding);
   }
 }
 
-/* Ensure 4 columns also for mid-large screens (no 3-column behavior) */
 @media (min-width: 900px) and (max-width: 1199px) {
   .lesson-card {
-    flex: 0 0 calc(25% - var(--card-gap)); /* keep 4 per row */
+    flex: 0 0 calc(25% - var(--card-gap));
     min-height: 140px;
   }
 }
 
-/* Mobile: two-per-row */
 @media (max-width: 520px) {
   .lessons-grid { gap: 8px; }
   .lesson-card {
@@ -228,7 +228,6 @@ const styles = `
   .start-btn { font-size: 13px; padding: 10px 0; }
 }
 
-/* Touch devices: disable hover transform */
 @media (hover: none) {
   .lesson-card:hover { transform: none; }
 }
