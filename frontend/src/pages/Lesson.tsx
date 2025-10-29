@@ -634,7 +634,7 @@ const Lesson: React.FC = () => {
 
           <div style={{ marginTop: 10, display: "flex", justifyContent: "center", gap: 12 }}>
             <button onClick={() => speakText(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)} style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc" }}>▶️ 音読する</button>
-            <div style={{ alignSelf: "center", fontSize: 14, color: "#444" }}>音読してみましょう — 声に出すことで記憶に残りやすくなります。</div>
+            <div style={{ alignSelf: "center", fontSize: 10, color: "#444" }}>音読してみましょう — 記憶に残りやすくなります。</div>
           </div>
 
           <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 16 }}>
