@@ -117,27 +117,29 @@ export default function LearnGenres() {
     }
   }
 
+
   return (
+  <div
+    style={{
+      backgroundColor: pageBackground,
+      minHeight: "100vh",
+      width: "100%",
+      margin: 0,
+      padding: 0,
+      overflowX: "hidden", // ✅ prevent horizontal scroll
+      display: "flex",
+      justifyContent: "center",
+    }}
+  >
     <div
       style={{
-        backgroundColor: pageBackground,
-        minHeight: "100vh",
-        width: "100vw",
-        margin: 0,
-        padding: 0,
-        display: "flex",
-        justifyContent: "center",
+        width: "100%",
+        maxWidth: 1100,
+        padding: basePadding,
+        paddingTop: basePadding + HEADER_HEIGHT,
+        boxSizing: "border-box",
       }}
     >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: 1100,
-          padding: basePadding,
-          paddingTop: basePadding + HEADER_HEIGHT,
-          boxSizing: "border-box",
-        }}
-      >
         <style>{`
           .lesson-card {
             padding: 12px;
