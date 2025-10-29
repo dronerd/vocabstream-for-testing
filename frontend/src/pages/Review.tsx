@@ -128,7 +128,7 @@ export default function Review() {
       <div className="options-grid">
         <button
           className="option-btn"
-          onClick={() => nav("/review_three_choise_questions")}
+          onClick={() => nav("/still_under_development")}
           style={{ backgroundColor: buttonColors[0] }}
         >
           ３択の例文ミニテスト方式
@@ -136,7 +136,7 @@ export default function Review() {
 
         <button
           className="option-btn"
-          onClick={() => nav("/review_paragraph_fillin")}
+          onClick={() => nav("/still_under_development")}
           style={{ backgroundColor: buttonColors[1] }}
         >
           文章穴埋め方式

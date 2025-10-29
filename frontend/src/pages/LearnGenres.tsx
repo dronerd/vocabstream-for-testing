@@ -133,6 +133,9 @@ export default function LearnGenres() {
           max-width: 1100px; /* keep comfortable width */
           margin: 0 auto;    /* center */
           padding-inline: 16px; /* left & right padding that won't cause overflow */
+          /* ensure safe-area padding + comfortable gutters so header/logo won't be clipped */
+          padding-left: calc(env(safe-area-inset-left, 0px) + 16px);
+          padding-right: calc(env(safe-area-inset-right, 0px) + 16px);
         }
 
         /* make sure flex/grid children can shrink (important to avoid overflow) */
@@ -173,7 +176,22 @@ export default function LearnGenres() {
           overflow: hidden; /* prevent children overflowing */
         }
 
-        .lesson-card > img { display: block; max-width: 100%; height: auto; border-radius: 8px; }
+        /* ensure lesson image doesn't shrink and stays inside card */
+        .lesson-card > img { display: block; max-width: 100%; height: auto; border-radius: 8px; flex-shrink: 0; }
+
+        /* title behaviour: allow wrapping and breaking both on mobile and desktop */
+        .lesson-title {
+          display: block;
+          font-weight: bold;
+          overflow-wrap: anywhere; /* allows breaking long words or phrases */
+          word-break: break-word;
+          white-space: normal; /* IMPORTANT: allow multiple lines instead of truncation */
+        }
+
+        /* make sure logos/headers outside this component are not clipped on small screens
+           If you have a header with class .site-header and an img.logo, these rules help prevent clipping */
+        .site-header { box-sizing: border-box; padding-inline: 16px; }
+        .site-header .logo { max-width: 100%; height: auto; display: block; }
 
         @media (hover: hover) {
           .lesson-card:hover {
@@ -260,11 +278,12 @@ export default function LearnGenres() {
                             height: isSmall ? 48 : 60,
                             objectFit: "cover",
                             borderRadius: 8,
-                            flex: "0 0 auto"
+                            flex: "0 0 auto",
                           }}
                         />
                       )}
-                      <strong style={{ fontSize: isSmall ? 16 : 18, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {/* Use the lesson-title class so titles can wrap on multiple lines (mobile & desktop) */}
+                      <strong className="lesson-title" style={{ fontSize: isSmall ? 16 : 18, minWidth: 0 }}>
                         {lesson.title}
                       </strong>
                     </div>
