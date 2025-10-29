@@ -10,15 +10,15 @@ type LevelOrder = {
   [key: string]: string[];
 };
 
-// Static genres (copied from your backend /api/genres)
+// Static genres
 const STATIC_GENRES: Lesson[] = [
   { id: "word-intermediate", title: "単語初級~中級 (CEFR A2~B1)" },
   { id: "word-high-intermediate", title: "単語中上級 (CEFR B2)" },
   { id: "word-advanced", title: "単語上級 (CEFR C1)" },
   { id: "word-proficiency", title: "単語熟達 (CEFR C2)" },
   { id: "idioms-intermediate", title: "熟語初級~中級 (CEFR A2~B1)" },
-  { id: "idioms-advanced", title: "熟語上級 (CEFR C1)" },
   { id: "idioms-high-intermediate", title: "熟語中上級 (CEFR B2)" },
+  { id: "idioms-advanced", title: "熟語上級 (CEFR C1)" },
   { id: "idioms-proficiency", title: "熟語熟達 (CEFR C2)" },
   { id: "business-entry", title: "ビジネス入門レベル" },
   { id: "business-intermediate", title: "ビジネス実践レベル" },
@@ -32,7 +32,6 @@ const STATIC_GENRES: Lesson[] = [
 ];
 
 export default function LearnGenres() {
-  // using the static list instead of fetching from backend
   const [genres] = useState<Lesson[]>(STATIC_GENRES);
   const [isSmall, setIsSmall] = useState<boolean>(false);
   const nav = useNavigate();
@@ -48,14 +47,14 @@ export default function LearnGenres() {
   }, []);
 
   const categories: Record<string, Lesson[]> = {
-    単語: genres.filter((g) => g.id.toLowerCase().startsWith("word")),
-    熟語: genres.filter((g) => g.id.toLowerCase().startsWith("idioms")),
-    ビジネス表現: genres.filter((g) => g.id.toLowerCase().startsWith("business")),
+    単語: genres.filter((g) => g.id.startsWith("word")),
+    熟語: genres.filter((g) => g.id.startsWith("idioms")),
+    ビジネス表現: genres.filter((g) => g.id.startsWith("business")),
     専門用語: genres.filter(
       (g) =>
-        !g.id.toLowerCase().startsWith("word") &&
-        !g.id.toLowerCase().startsWith("idioms") &&
-        !g.id.toLowerCase().startsWith("business")
+        !g.id.startsWith("word") &&
+        !g.id.startsWith("idioms") &&
+        !g.id.startsWith("business")
     ),
   };
 
@@ -68,8 +67,11 @@ export default function LearnGenres() {
     "engineering": "/Engineering.png",
   };
 
-  const levelColors = ["#ffcccc", "#fff5cc", "#ccffcc", "#cce5ff"];
-  const termColors = ["#ffe4b5", "#d8bfd8", "#afeeee", "#f5deb3", "#e6e6fa", "#f08080"];
+  // blue gradient palette (light → dark)
+  const blueGradients = ["#b7d7f5", "#8fc1ee", "#5fa7e8", "#3889dc"];
+
+  // background (lighter than #6fa8dc)
+  const pageBackground = "#d5e7f7"; // soft sky blue
 
   const levelOrder: LevelOrder = {
     単語: [
@@ -78,12 +80,27 @@ export default function LearnGenres() {
       "word-advanced",
       "word-proficiency",
     ],
-    熟語: ["idioms-intermediate", "idioms-high-intermediate", "idioms-advanced", "idioms-proficiency"],
-    ビジネス表現: ["business-entry", "business-intermediate", "business-global"],
+    熟語: [
+      "idioms-intermediate",
+      "idioms-high-intermediate",
+      "idioms-advanced",
+      "idioms-proficiency",
+    ],
+    ビジネス表現: [
+      "business-entry",
+      "business-intermediate",
+      "business-global",
+      "business-proficiency",
+    ],
   };
 
   function cardBackground(categoryName: string, index: number) {
-    return levelOrder[categoryName] ? levelColors[index] || "#f9f9f9" : termColors[index % termColors.length];
+    if (categoryName === "単語" || categoryName === "熟語" || categoryName === "ビジネス表現") {
+      return blueGradients[index] || blueGradients[blueGradients.length - 1];
+    }
+    // For 専門用語, use neutral color variety
+    const termColors = ["#ffe4b5", "#d8bfd8", "#afeeee", "#f5deb3", "#e6e6fa", "#f08080"];
+    return termColors[index % termColors.length];
   }
 
   const HEADER_HEIGHT = isSmall ? 56 : 72;
@@ -106,41 +123,42 @@ export default function LearnGenres() {
   }
 
   return (
-    <div style={{ padding: basePadding, paddingTop: basePadding + HEADER_HEIGHT }}>
-      {/* 追加スタイル: カード共通のホバー/フォーカス効果 */}
+    <div
+      style={{
+        padding: basePadding,
+        paddingTop: basePadding + HEADER_HEIGHT,
+        minHeight: "100vh",
+        backgroundColor: pageBackground,
+        width: "100%",
+        boxSizing: "border-box",
+      }}
+    >
       <style>{`
         .lesson-card {
           padding: 12px;
           border: 1px solid #ddd;
-          border-radius: 6px;
+          border-radius: 8px;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 10px;
           transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
-          will-change: transform, box-shadow;
-        }
-
-        /* デフォルトのやさしい影（タッチ端末でも自然） */
-        .lesson-card {
           box-shadow: 0 4px 10px rgba(0,0,0,0.04);
         }
 
-        /* ホバー効果は hover サポートのあるデバイスだけに適用 */
         @media (hover: hover) {
           .lesson-card:hover {
-            transform: translateY(-6px); /* ここで上がる量を設定 */
-            box-shadow: 0 18px 36px rgba(0,0,0,0.10);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.12);
           }
           .lesson-card:focus-visible {
             outline: none;
             transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(0,0,0,0.10);
+            box-shadow: 0 18px 36px rgba(0,0,0,0.12);
           }
         }
 
-        /* アクセシビリティ: モーション軽減を好むユーザーにはアニメーションを減らす */
         @media (prefers-reduced-motion: reduce) {
           .lesson-card {
             transition: none;
@@ -166,7 +184,15 @@ export default function LearnGenres() {
         return (
           <div
             key={categoryName}
-            style={{ marginTop: 10, marginBottom: 20, padding: 12, background: "#fff", border: "3px solid #666", borderRadius: 10 }}
+            style={{
+              marginTop: 10,
+              marginBottom: 20,
+              padding: 12,
+              background: "white",
+              border: "3px solid #558ac9",
+              borderRadius: 12,
+              boxShadow: "0 6px 14px rgba(0,0,0,0.08)",
+            }}
           >
             <div
               style={{
@@ -178,28 +204,45 @@ export default function LearnGenres() {
                 textAlign: isSmall ? "center" : "left",
               }}
             >
-              <h3 style={{ fontSize: isSmall ? 18 : 24, fontWeight: "bold", margin: 0 }}>{categoryName}</h3>
+              <h3
+                style={{
+                  fontSize: isSmall ? 18 : 24,
+                  fontWeight: "bold",
+                  margin: 0,
+                  color: "#1a4e8a",
+                }}
+              >
+                {categoryName}
+              </h3>
             </div>
 
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: isSmall ? "1fr" : "repeat(4, minmax(0, 1fr))",
+                gridTemplateColumns: isSmall
+                  ? "1fr"
+                  : "repeat(4, minmax(0, 1fr))",
                 gap: 10,
                 width: "100%",
               }}
             >
               {lessons.map((lesson, index) => (
-                // ここで共通クラス lesson-card を付与。背景色はインラインで渡します（既存ロジックを維持）
                 <div
                   key={lesson.id}
                   role="button"
                   tabIndex={0}
                   onClick={() => handleLessonClick(lesson.id)}
-                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleLessonClick(lesson.id); } }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleLessonClick(lesson.id);
+                    }
+                  }}
                   className="lesson-card"
                   style={{
                     background: cardBackground(categoryName, index),
+                    color: "#08335b",
+                    fontWeight: "bold",
                     flexDirection: isSmall ? "column" : "row",
                     textAlign: isSmall ? "center" : "left",
                   }}
@@ -207,7 +250,10 @@ export default function LearnGenres() {
                   <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                     {categoryName === "専門用語" && (
                       <img
-                        src={lessonImages[lesson.id.toLowerCase()] || "/images/default.jpg"}
+                        src={
+                          lessonImages[lesson.id.toLowerCase()] ||
+                          "/images/default.jpg"
+                        }
                         alt={lesson.title}
                         style={{
                           width: isSmall ? 48 : 60,
@@ -217,13 +263,15 @@ export default function LearnGenres() {
                         }}
                       />
                     )}
-                    <strong style={{ fontSize: isSmall ? 16 : 18 }}>{lesson.title}</strong>
+                    <strong style={{ fontSize: isSmall ? 16 : 18 }}>
+                      {lesson.title}
+                    </strong>
                   </div>
                   <div
                     style={{
                       fontSize: isSmall ? 14 : 16,
                       fontWeight: "bold",
-                      color: "#333",
+                      color: "#08335b",
                       marginTop: isSmall ? 8 : 0,
                     }}
                   >
