@@ -126,7 +126,7 @@ export default function LearnGenres() {
       width: "100%",
       margin: 0,
       padding: 0,
-      overflowX: "hidden", // ✅ prevent horizontal scroll
+      overflowX: "hidden", 
       display: "flex",
       justifyContent: "center",
     }}
