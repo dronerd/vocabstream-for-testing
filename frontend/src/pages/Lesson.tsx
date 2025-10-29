@@ -212,17 +212,54 @@ const Lesson: React.FC = () => {
   // show the steps
   const topSteps = ["単語スライド", "例文を使った穴埋めクイズ（3択）"];
   function currentTopIndex() {
-    // breadcrumb indices:
-    // 0 -> 単語スライド (step === 1 .. slide)
-    // 1 -> 例文を使った穴埋めクイズ（3択） (step === totalWords + 1)
     if (isSlide) return 0;
     if (step === totalWords + 1) return 1;
-    // default (start or results) -> show nothing selected (return -1) or first
     return -1;
   }
 
-  // PLAY short chime with WebAudio
+  // PLAY brighter chime for correct answers using WebAudio
   function playCorrectSound() {
+    try {
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      }
+      const ctx = audioCtxRef.current!;
+
+      // Create two oscillators for a bright, pleasant chime
+      const o1 = ctx.createOscillator();
+      const o2 = ctx.createOscillator();
+      const g = ctx.createGain();
+
+      o1.type = "triangle";
+      o2.type = "sine";
+      o1.frequency.value = 1320; // bright partial
+      o2.frequency.value = 1760; // higher harmonic
+
+      g.gain.value = 0.0;
+
+      o1.connect(g);
+      o2.connect(g);
+      g.connect(ctx.destination);
+
+      const now = ctx.currentTime;
+      g.gain.cancelScheduledValues(now);
+      g.gain.setValueAtTime(0, now);
+      // quick attack to a moderate level
+      g.gain.linearRampToValueAtTime(0.18, now + 0.006);
+      // quick drop to a short sustain
+      g.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+
+      o1.start(now);
+      o2.start(now + 0.01);
+      o1.stop(now + 0.55);
+      o2.stop(now + 0.55);
+    } catch (e) {
+      // ignore if audio blocked
+    }
+  }
+
+  // play the previous (darker) chime for WRONG answers
+  function playWrongSound() {
     try {
       if (!audioCtxRef.current) {
         audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -231,7 +268,7 @@ const Lesson: React.FC = () => {
       const o = ctx.createOscillator();
       const g = ctx.createGain();
       o.type = "sine";
-      o.frequency.value = 880; // A5-ish
+      o.frequency.value = 880; // A5-ish (previous tone)
       g.gain.value = 0;
       o.connect(g);
       g.connect(ctx.destination);
@@ -243,15 +280,14 @@ const Lesson: React.FC = () => {
       g.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
       o.stop(now + 0.5);
     } catch (e) {
-      // ignore if audio blocked
+      // ignore
     }
   }
 
-  // particle helpers: now supports multiple types and bottom->up animation
+  // particle helpers: now supports multiple types and uses top-start so particles can appear across the whole screen
   function triggerParticles(requestedType: "flower" | "confetti" | "burst" | "star" | "random" = "random", count = 22) {
     const seed = particleSeed + 1;
     setParticleSeed(seed);
-    // if random: pick variety weighted
     const pickType = (rt: string) => {
       if (rt === "random") {
         const choices = ["flower", "star", "confetti", "burst"];
@@ -263,16 +299,16 @@ const Lesson: React.FC = () => {
     const arr = Array.from({ length: count }).map((_, i) => {
       const id = `${seed}-${i}`;
       const type = (() => {
-        // mix some variety across particles
         if (Math.random() < 0.15) return "star";
         if (Math.random() < 0.25) return "burst";
         return baseType;
       })();
       return {
         id,
-        left: Math.random() * 80 + 10 + "%", // 10%..90%
-        bottom: Math.random() * 6 + "%", // small variance near bottom start
-        size: Math.random() * 18 + 12,
+        // spread across entire screen
+        left: Math.random() * 100 + "%", // 0%..100%
+        top: Math.random() * 100 + "%", // 0%..100%
+        size: Math.random() * 24 + 12,
         rotation: Math.random() * 360,
         delay: Math.random() * 0.45,
         type,
@@ -295,11 +331,14 @@ const Lesson: React.FC = () => {
     setSelectedChoice(choiceIndex);
     if (isCorrect) {
       setQuizScore((s) => s + 1);
-      // random celebratory particle and sound
-      triggerParticles("random", 20);
+      // celebratory particle and bright sound
+      triggerParticles("flower", 26);
       playCorrectSound();
     } else {
-      // wrong: optional small feedback (no particle)
+      // play the previous/darker chime for wrong answers
+      playWrongSound();
+      // optional small burst so user gets visual feedback
+      triggerParticles("burst", 10);
     }
   }
 
@@ -326,14 +365,14 @@ const Lesson: React.FC = () => {
       minHeight: "100vh", padding: isSmallScreen ? "12px" : "20px", paddingTop: "92px",
       fontFamily: "sans-serif", textAlign: "center",
     }}>
-      {/* particle overlay container: uses bottom->up animation */}
+      {/* particle overlay container: uses top-start so particles are spread across the full screen */}
       <div style={{ position: "fixed", pointerEvents: "none", inset: 0, zIndex: 9999 }}>
         {particles.map((p) => (
           <div key={p.id}
             style={{
               position: "absolute",
               left: p.left,
-              bottom: `${p.bottom ?? 0}%`,
+              top: `${p.top ?? 0}%`,
               width: p.size,
               height: p.size,
               transform: `rotate(${p.rotation}deg)`,
