@@ -283,7 +283,7 @@ export default function LearnGenres() {
                         />
                       )}
                       {/* Use the lesson-title class so titles can wrap on multiple lines (mobile & desktop) */}
-                      <strong className="lesson-title" style={{ fontSize: isSmall ? 16 : 18, minWidth: 0 }}>
+                      <strong className="lesson-title" style={{ fontSize: isSmall ? 14 : 16, minWidth: 0 }}>
                         {lesson.title}
                       </strong>
                     </div>
