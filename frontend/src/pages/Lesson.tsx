@@ -198,7 +198,7 @@ const Lesson: React.FC = () => {
   // responsive sizes & button styles
   const headingSize = isSmallScreen ? 20 : 32;
   const mainWordSize = isSmallScreen ? 28 : 48;
-  const wordListSize = isSmallScreen ? 20 : 40;
+  const wordListSize = isSmallScreen ? 16 : 34;
   const paragraphFontSize = isSmallScreen ? 14 : 20;
   const quizTextSize = isSmallScreen ? 16 : 28;
   const buttonFontSize = isSmallScreen ? 16 : 24;
@@ -310,34 +310,15 @@ const Lesson: React.FC = () => {
   const totalScore = quizScore;
   const totalMax = quizQuestions.length || 0;
   const totalPercent = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
-
-  // Unified finish function to avoid duplicates
-  function finishLesson(opts?: { score?: number; max?: number }) {
-    if (finishLock) return; // already finishing
+  
+  function finishLesson() {
+    if (finishLock) return; // prevent double execution
     setFinishLock(true);
 
-    // compute score & message
-    const score = typeof opts?.score === "number" ? opts.score : totalScore;
-    const max = typeof opts?.max === "number" ? opts.max : totalMax || 1;
-    const percent = max ? Math.round((score / max) * 100) : 0;
-    const praise = getPraise(percent);
-    setFinishMessage(praise);
-    setFinishScore({ score, max, percent });
-    setShowFinishOverlay(true);
-
-    // celebrate appropriately
-    if (percent >= 90) triggerParticles("flower", 64);
-    else if (percent >= 70) triggerParticles("confetti", 44);
-    else triggerParticles("burst", 28);
-    playCorrectSound();
-
-    // navigate back once after a short delay
-    setTimeout(() => {
-      setShowFinishOverlay(false);
-      setFinishLock(false);
-      nav(-1);
-    }, 1300);
+    // go back to the previous page
+    nav(-1);
   }
+
 
   return (
     <div style={{
@@ -441,13 +422,13 @@ const Lesson: React.FC = () => {
           <div style={{ marginBottom: 12, textAlign: isSmallScreen ? "left" : "center" }}>
             <p style={{ color: "#333", fontSize: paragraphFontSize }}>
               このレッスンは「単語スライド → 例文穴埋め（3択）」の流れで進みます。<br />
-              英単語はなるべく日本語に訳さず、<strong>英語の定義や例文から意味をイメージすること</strong>を意識してみましょう。<br />
-              各単語スライドでは<strong>音読してみましょう</strong>
+              英単語はなるべく日本語に訳さず、<strong>英語の定義や例文から意味を理解すること</strong>を意識しましょう。<br />
+              各単語スライドではぜひ音読してみましょう！
             </p>
           </div>
 
           <ul style={{ listStyle: "none", padding: 0 }}>
-            {lesson.words.slice(0, 10).map((w: LessonWord, i: number) => (<li key={i} style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: 6 }}>{w.word}</li>))}
+            {lesson.words.slice(0, 10).map((w: LessonWord, i: number) => (<li key={i} style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: 2 }}>{w.word}</li>))}
           </ul>
 
           <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
@@ -476,10 +457,10 @@ const Lesson: React.FC = () => {
               onClick={() => speakEnglish(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)}
               style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc" }}
             >
-              ▶️ 音読する
+              ▶️ 音声を聞く
             </button>
 
-            <div style={{ alignSelf: "center", fontSize: 10, color: "#444" }}>音読してみましょう — 記憶に残りやすくなります。</div>
+            <div style={{ alignSelf: "center", fontSize: 12, color: "#444" }}>音読してみましょう — 記憶に残りやすくなります。</div>
           </div>
 
           <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 16 }}>
@@ -492,8 +473,8 @@ const Lesson: React.FC = () => {
       {/* Quiz */}
       {step === totalWords + 1 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>例文を使った穴埋めクイズ！（3択）</h2>
-          <p style={{ fontSize: isSmallScreen ? 14 : 16, color: "#444", marginTop: 4 }}>空欄に入るもっとも適切な単語を選んでください。3択は大きなボタンで見やすく表示します。</p>
+          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>例文を使った穴埋めクイズ（3択👆）</h2>
+          <p style={{ fontSize: isSmallScreen ? 16 : 20, color: "black", marginTop: 4 }}>空欄に入るもっとも適切な単語を選んでください</p>
 
           {quizLoading ? <p>クイズを読み込み中...</p> : quizError ? (
             <div>
@@ -543,7 +524,7 @@ const Lesson: React.FC = () => {
                       <div style={{ minWidth: 40, textAlign: "center", fontSize: 20, fontWeight: 800 }}>{` ${i + 1}`}</div>
                       <div style={{ textAlign: "left" }}>
                         <div style={{ fontWeight: 700 }}>{c}</div>
-                        <div style={{ fontSize: 12, color: "#fff", opacity: 0.9 }}>{i === quizQuestions[quizIndex].answer_index && selectedChoice !== null ? "正解" : ""}</div>
+                        <div style={{ fontSize: 14, color: "#fff", opacity: 0.9 }}>{i === quizQuestions[quizIndex].answer_index && selectedChoice !== null ? "correct!" : ""}</div>
                       </div>
                     </button>
                   );
@@ -552,8 +533,8 @@ const Lesson: React.FC = () => {
 
               {selectedChoice !== null && (
                 <div style={{ marginTop: 12, display: "flex", justifyContent: "center" }}>
-                  <div style={{ fontSize: isSmallScreen ? 16 : 20, fontWeight: 700, color: selectedChoice === quizQuestions[quizIndex].answer_index ? "green" : "red" }}>
-                    {selectedChoice === quizQuestions[quizIndex].answer_index ? "正解です！" : "惜しい！"}
+                  <div style={{ fontSize: isSmallScreen ? 18 : 24, fontWeight: 700, color: selectedChoice === quizQuestions[quizIndex].answer_index ? "green" : "red" }}>
+                    {selectedChoice === quizQuestions[quizIndex].answer_index ? "correct!" : "Nice try！"}
                   </div>
                 </div>
               )}
@@ -580,43 +561,51 @@ const Lesson: React.FC = () => {
         </div>
       )}
 
-      {/* Results page */}
-      {step === totalWords + 2 && (
-        <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>結果</h2>
-          <p style={{ fontSize: paragraphFontSize }}>{displayFinalScore !== null ? `正答数: ${displayFinalScore} / ${quizQuestions.length || 0}` : "正答率: 0%"}</p>
-          <p style={{ fontSize: isSmallScreen ? 16 : 20, marginTop: 8 }}>{`正答率: ${quizPercent}%`}</p>
+      {/* Final summary */}
+      {step === totalWords + 2 && (() => {
+      const praise = getPraise(totalPercent);
 
-          <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>{getPraise(quizPercent)}</p>
+      return (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center", 
+            alignItems: "flex-start", 
+            flexDirection: "column",
+            textAlign: "center",
+            paddingTop: "40px", 
+          }}
+        >
+          <div style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}>
+            <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
 
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-            <button onClick={() => {
-              // use unified finish
-              finishLesson({ score: displayFinalScore ?? 0, max: quizQuestions.length || 1 });
-            }} style={blueButtonStyle}>終了する</button>
+            <div style={{ fontSize: paragraphFontSize, marginBottom: 12 }}>
+              <p>単語クイズ: {quizScore} / {quizQuestions.length}</p>
+              <hr style={{ margin: "12px 0" }} />
+              <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>
+                合計: {totalScore} / {totalMax}
+              </p>
+              <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>
+                正答率: {totalPercent}%
+              </p>
+              <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>
+                {praise}
+              </p>
+            </div>
+
+            <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
+              <button
+                onClick={() => finishLesson()}
+                style={blueButtonStyle}
+              >
+                レッスンを終了
+              </button>
+            </div>
           </div>
         </div>
-      )}
-
-      {/* Final summary  */}
-      {step === totalWords + 3 && (
-        <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
-          <div style={{ fontSize: paragraphFontSize, marginBottom: 12, textAlign: "left" }}>
-            <p>単語クイズ: {quizScore} / {quizQuestions.length}</p>
-            <hr style={{ margin: "12px 0" }} />
-            <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>合計: {totalScore} / {totalMax}</p>
-            <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>正答率: {totalPercent}%</p>
-            <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>{getPraise(totalPercent)}</p>
-          </div>
-
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-            <button onClick={() => finishLesson({ score: totalScore, max: totalMax })} style={blueButtonStyle}>
-              レッスンを終了
-            </button>
-          </div>
-        </div>
-      )}
+      );
+    })()}
 
     </div>
   );
