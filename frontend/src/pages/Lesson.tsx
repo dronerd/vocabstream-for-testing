@@ -285,7 +285,7 @@ const Lesson: React.FC = () => {
   const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
 
   //show the steps
-  const topSteps = ["単語スライド", "単語スライド", "例文を使った穴埋めクイズ！（3択）"];
+  const topSteps = ["単語スライド", "例文を使った穴埋めクイズ（3択）"];
   function currentTopIndex() {
     if (step === 0) return 0;
     if (isSlide) return 1;
@@ -601,7 +601,7 @@ const Lesson: React.FC = () => {
           <h2 style={{ fontSize: headingSize, marginBottom: 6 }}>今日の単語</h2>
           <div style={{ marginBottom: 12, textAlign: isSmallScreen ? "left" : "center" }}>
             <p style={{ color: "#333", fontSize: paragraphFontSize }}>
-              このレッスンは「単語スライド → 単語スライド → 例文穴埋め（3択）」の流れで進みます。<br />
+              このレッスンは「単語スライド → 例文穴埋め（3択）」の流れで進みます。<br />
               英単語はなるべく日本語に訳さず、<strong>英語の定義や例文から意味をイメージすること</strong>を意識してみましょう。<br />
               各単語スライドでは<strong>音読してみましょう</strong>
             </p>
@@ -834,7 +834,7 @@ const Lesson: React.FC = () => {
 
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
             <button onClick={() => finishLesson({ score: totalScore, max: totalMax })} style={blueButtonStyle}>
-              レッスンを終了して一覧へ
+              レッスンを終了
             </button>
           </div>
         </div>
