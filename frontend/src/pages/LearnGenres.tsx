@@ -10,7 +10,6 @@ type LevelOrder = {
   [key: string]: string[];
 };
 
-// Static genres
 const STATIC_GENRES: Lesson[] = [
   { id: "word-intermediate", title: "単語初級~中級 (CEFR A2~B1)" },
   { id: "word-high-intermediate", title: "単語中上級 (CEFR B2)" },
@@ -67,11 +66,8 @@ export default function LearnGenres() {
     "engineering": "/Engineering.png",
   };
 
-  // blue gradient palette (light → dark)
   const blueGradients = ["#b7d7f5", "#8fc1ee", "#5fa7e8", "#3889dc"];
-
-  // background (lighter than #6fa8dc)
-  const pageBackground = "#d5e7f7"; // soft sky blue
+  const pageBackground = "#d5e7f7";
 
   const levelOrder: LevelOrder = {
     単語: [
@@ -98,7 +94,6 @@ export default function LearnGenres() {
     if (categoryName === "単語" || categoryName === "熟語" || categoryName === "ビジネス表現") {
       return blueGradients[index] || blueGradients[blueGradients.length - 1];
     }
-    // For 専門用語, use neutral color variety
     const termColors = ["#ffe4b5", "#d8bfd8", "#afeeee", "#f5deb3", "#e6e6fa", "#f08080"];
     return termColors[index % termColors.length];
   }
@@ -125,164 +120,197 @@ export default function LearnGenres() {
   return (
     <div
       style={{
-        padding: basePadding,
-        paddingTop: basePadding + HEADER_HEIGHT,
-        minHeight: "100vh",
         backgroundColor: pageBackground,
-        width: "100%",
-        boxSizing: "border-box",
+        minHeight: "100vh",
+        width: "100vw",
+        margin: 0,
+        padding: 0,
+        display: "flex",
+        justifyContent: "center",
       }}
     >
-      <style>{`
-        .lesson-card {
-          padding: 12px;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 10px;
-          transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-        }
-
-        @media (hover: hover) {
-          .lesson-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(0,0,0,0.12);
-          }
-          .lesson-card:focus-visible {
-            outline: none;
-            transform: translateY(-6px);
-            box-shadow: 0 18px 36px rgba(0,0,0,0.12);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
+      <div
+        style={{
+          width: "100%",
+          maxWidth: 1100,
+          padding: basePadding,
+          paddingTop: basePadding + HEADER_HEIGHT,
+          boxSizing: "border-box",
+        }}
+      >
+        <style>{`
           .lesson-card {
-            transition: none;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
           }
-        }
-      `}</style>
 
-      <h2 style={{ fontSize: isSmall ? 25 : 32, marginBottom: 5 }}>単語の学習</h2>
-      <h3 style={{ fontSize: isSmall ? 20 : 28, marginBottom: 10 }}>学習する分野の選択</h3>
+          @media (hover: hover) {
+            .lesson-card:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+            }
+            .lesson-card:focus-visible {
+              outline: none;
+              transform: translateY(-6px);
+              box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+            }
+          }
 
-      {Object.entries(categories).map(([categoryName, lessons]) => {
-        const order = levelOrder[categoryName];
-        if (order) {
-          lessons.sort((a, b) => {
-            const idxA = order.indexOf(a.id.toLowerCase());
-            const idxB = order.indexOf(b.id.toLowerCase());
-            const A = idxA === -1 ? 999 : idxA;
-            const B = idxB === -1 ? 999 : idxB;
-            return A - B;
-          });
-        }
+          @media (prefers-reduced-motion: reduce) {
+            .lesson-card {
+              transition: none;
+            }
+          }
+        `}</style>
 
-        return (
-          <div
-            key={categoryName}
-            style={{
-              marginTop: 10,
-              marginBottom: 20,
-              padding: 12,
-              background: "white",
-              border: "3px solid #558ac9",
-              borderRadius: 12,
-              boxShadow: "0 6px 14px rgba(0,0,0,0.08)",
-            }}
-          >
+        {/* Centered titles */}
+        <h2
+          style={{
+            fontSize: isSmall ? 26 : 38,
+            fontWeight: "bold",
+            textAlign: "center",
+            marginBottom: 10,
+            color: "#08335b",
+          }}
+        >
+          単語の学習
+        </h2>
+
+        <h3
+          style={{
+            fontSize: isSmall ? 20 : 26,
+            fontWeight: 600,
+            textAlign: "center",
+            marginBottom: 20,
+            color: "#1a4e8a",
+          }}
+        >
+          学習する分野の選択
+        </h3>
+
+        {Object.entries(categories).map(([categoryName, lessons]) => {
+          const order = levelOrder[categoryName];
+          if (order) {
+            lessons.sort((a, b) => {
+              const idxA = order.indexOf(a.id.toLowerCase());
+              const idxB = order.indexOf(b.id.toLowerCase());
+              const A = idxA === -1 ? 999 : idxA;
+              const B = idxB === -1 ? 999 : idxB;
+              return A - B;
+            });
+          }
+
+          return (
             <div
+              key={categoryName}
               style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: 10,
-                flexDirection: isSmall ? "column" : "row",
-                gap: isSmall ? 8 : 10,
-                textAlign: isSmall ? "center" : "left",
+                marginTop: 10,
+                marginBottom: 20,
+                padding: 12,
+                background: "white",
+                border: "3px solid #558ac9",
+                borderRadius: 12,
+                boxShadow: "0 6px 14px rgba(0,0,0,0.08)",
               }}
             >
-              <h3
+              <div
                 style={{
-                  fontSize: isSmall ? 18 : 24,
-                  fontWeight: "bold",
-                  margin: 0,
-                  color: "#1a4e8a",
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: 10,
+                  flexDirection: isSmall ? "column" : "row",
+                  gap: isSmall ? 8 : 10,
+                  textAlign: isSmall ? "center" : "left",
                 }}
               >
-                {categoryName}
-              </h3>
-            </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: isSmall
-                  ? "1fr"
-                  : "repeat(4, minmax(0, 1fr))",
-                gap: 10,
-                width: "100%",
-              }}
-            >
-              {lessons.map((lesson, index) => (
-                <div
-                  key={lesson.id}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => handleLessonClick(lesson.id)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      handleLessonClick(lesson.id);
-                    }
-                  }}
-                  className="lesson-card"
+                <h3
                   style={{
-                    background: cardBackground(categoryName, index),
-                    color: "#08335b",
+                    fontSize: isSmall ? 18 : 24,
                     fontWeight: "bold",
-                    flexDirection: isSmall ? "column" : "row",
-                    textAlign: isSmall ? "center" : "left",
+                    margin: 0,
+                    color: "#1a4e8a",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    {categoryName === "専門用語" && (
-                      <img
-                        src={
-                          lessonImages[lesson.id.toLowerCase()] ||
-                          "/images/default.jpg"
-                        }
-                        alt={lesson.title}
-                        style={{
-                          width: isSmall ? 48 : 60,
-                          height: isSmall ? 48 : 60,
-                          objectFit: "cover",
-                          borderRadius: 8,
-                        }}
-                      />
-                    )}
-                    <strong style={{ fontSize: isSmall ? 16 : 18 }}>
-                      {lesson.title}
-                    </strong>
-                  </div>
+                  {categoryName}
+                </h3>
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: isSmall
+                    ? "1fr"
+                    : "repeat(4, minmax(0, 1fr))",
+                  gap: 10,
+                  width: "100%",
+                }}
+              >
+                {lessons.map((lesson, index) => (
                   <div
+                    key={lesson.id}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => handleLessonClick(lesson.id)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleLessonClick(lesson.id);
+                      }
+                    }}
+                    className="lesson-card"
                     style={{
-                      fontSize: isSmall ? 14 : 16,
-                      fontWeight: "bold",
+                      background: cardBackground(categoryName, index),
                       color: "#08335b",
-                      marginTop: isSmall ? 8 : 0,
+                      fontWeight: "bold",
+                      flexDirection: isSmall ? "column" : "row",
+                      textAlign: isSmall ? "center" : "left",
                     }}
                   >
-                    進捗: 0%
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      {categoryName === "専門用語" && (
+                        <img
+                          src={
+                            lessonImages[lesson.id.toLowerCase()] ||
+                            "/images/default.jpg"
+                          }
+                          alt={lesson.title}
+                          style={{
+                            width: isSmall ? 48 : 60,
+                            height: isSmall ? 48 : 60,
+                            objectFit: "cover",
+                            borderRadius: 8,
+                          }}
+                        />
+                      )}
+                      <strong style={{ fontSize: isSmall ? 16 : 18 }}>
+                        {lesson.title}
+                      </strong>
+                    </div>
+                    <div
+                      style={{
+                        fontSize: isSmall ? 14 : 16,
+                        fontWeight: "bold",
+                        color: "#08335b",
+                        marginTop: isSmall ? 8 : 0,
+                      }}
+                    >
+                      進捗: 0%
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
