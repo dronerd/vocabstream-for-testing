@@ -4,22 +4,36 @@ import { useNavigate } from "react-router-dom";
 export default function Review() {
   const nav = useNavigate();
 
-  const baseColor = "#f6c6b3"; 
+  const baseColor = "#f6c6b3";
 
-  //Slightly lighter, reddish button tones
+  // Slightly lighter, reddish button tones
   const buttonColors = ["#f29c83", "#f08f76", "#ee836b"];
 
   return (
     <div className="review-root">
       <style>{`
+        html, body, #root {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          background-color: ${baseColor};
+          overflow-x: hidden;
+        }
+
         .review-root {
+          min-height: 100vh;
+          width: 100%;
           padding: 20px;
           padding-top: 92px;
+          box-sizing: border-box;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-          color: #111; /* darker text for good contrast */
+          color: #111;
           background-color: ${baseColor};
-          min-height: 100vh;
           transition: background-color .3s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .heading {
@@ -39,6 +53,8 @@ export default function Review() {
           grid-template-columns: 1fr 1fr;
           gap: 16px;
           align-items: stretch;
+          width: 100%;
+          max-width: 900px;
         }
 
         .option-btn {
