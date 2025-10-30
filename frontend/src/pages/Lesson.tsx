@@ -192,7 +192,7 @@ const Lesson: React.FC = () => {
   }
 
   // responsive sizes & button styles
-  const headingSize = isSmallScreen ? 16 : 32;
+  const headingSize = isSmallScreen ? 20 : 32;
   const mainWordSize = isSmallScreen ? 34 : 48; // slightly reduced but still large
   const wordListSize = isSmallScreen ? 16 : 34;
   const paragraphFontSize = isSmallScreen ? 14 : 20;
@@ -483,8 +483,8 @@ const Lesson: React.FC = () => {
               </div>
 
               {selectedChoice !== null && (
-                <div style={{ marginTop: 12, display: "flex", justifyContent: "center" }}>
-                  <div style={{ fontSize: isSmallScreen ? 18 : 24, fontWeight: 700, color: selectedChoice === quizQuestions[quizIndex].answer_index ? "green" : "red" }}>
+                <div style={{ marginTop: 6, display: "flex", justifyContent: "center" }}>
+                  <div style={{ fontSize: isSmallScreen ? 14 : 24, fontWeight: 700, color: selectedChoice === quizQuestions[quizIndex].answer_index ? "green" : "red" }}>
                     {selectedChoice === quizQuestions[quizIndex].answer_index ? "correct!" : "Nice try！"}
                   </div>
                 </div>
