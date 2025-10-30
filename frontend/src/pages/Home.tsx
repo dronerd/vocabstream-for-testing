@@ -124,10 +124,10 @@ export default function Home() {
         @media (max-width: 600px) {
           .heading {
             font-size: 28px;
-            margin-top: 10px;
+            margin-top: 1px;
           }
           .subtitle {
-            font-size: 14px;
+            font-size: 12px;
           }
           .user-box {
             font-size: 16px;
@@ -181,7 +181,11 @@ export default function Home() {
         </a>
         の一環として制作された無料の英単語学習アプリです。
         <br />
-        現在、一部の安定した機能のみを公開しています。今後のアップデートで、その他機能を順次追加予定です。お楽しみに！
+        現在は安定して動作する一部の機能のみを公開しており、
+        <a href="/learn" style={{ textDecoration: "underline" }}><strong>単語の学習機能</strong></a>
+                （合計約3000単語）と、英語学習に役立つ
+        <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集</strong></a>
+                を使用できます。今後のアップデートで、その他機能を順次追加予定です。お楽しみに！
       </p>
 
       <div className="options-grid">
