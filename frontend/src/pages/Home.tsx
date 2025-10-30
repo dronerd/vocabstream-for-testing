@@ -172,7 +172,7 @@ export default function Home() {
         >
           <strong>黒木勇人</strong>
         </a>
-        が創設し個人で開発・運営している
+        が創設し個人で開発・運営する
         <a
           href="https://projectfluence.vercel.app"
           target="_blank"
@@ -180,13 +180,13 @@ export default function Home() {
         >
           <strong>「Project Fluence」</strong>
         </a>
-        の一環として制作された無料の英単語学習アプリです。
+        の一環として制作した無料の英単語学習アプリです。
         <br />
-        現在は安定して動作する一部の機能のみを公開しており、
-        <a href="/learn" style={{ textDecoration: "underline" }}><strong>合計約3000の単語の学習機能</strong></a>
-                （合計約3000単語）と、英語学習に役立つ
-        <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集</strong></a>
-                を使用できます。今後のアップデートで、その他機能を順次追加予定です。お楽しみに！
+        現在は安定して動作する一部機能のみを公開し、
+        <a href="/learn" style={{ textDecoration: "underline" }}><strong>約3000の単語の学習機能</strong></a>
+                （熟語・ビジネス・専門用語は実装中）と、英語学習に役立つ
+        <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTプロンプト集</strong></a>
+                を使用できます。今後のアップデートをお楽しみに！
       </p>
 
       <div className="options-grid">
