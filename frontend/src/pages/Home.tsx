@@ -194,10 +194,15 @@ export default function Home() {
           color: "#ffffff",
         }}
       >
-        <a className="privacy-link" href="/privacy">
-          <strong>Privacy Policy</strong>
+       <a href="/privacy"
+          className="text-base sm:text-sm md:text-base font-semibold privacy-link"
+        >
+          Privacy Policy
         </a>
-        <div>All content © 2025 Project Fluence — 黒木 勇人</div>
+        <div className="text-base sm:text-sm md:text-base">
+          All content © 2025 Project Fluence — 黒木 勇人
+        </div>
+
       </footer>
     </div>
   );
