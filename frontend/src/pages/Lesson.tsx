@@ -43,10 +43,6 @@ const Lesson: React.FC = () => {
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [hoveredQuizChoice, setHoveredQuizChoice] = useState<number | null>(null);
 
-  // particle celebration state
-  const [particles, setParticles] = useState<any[]>([]);
-  const [particleSeed, setParticleSeed] = useState<number>(0);
-
   // responsive / touch state
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
   const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
@@ -590,7 +586,13 @@ function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
     } else blank_sentence = "____";
     questions.push({ word: correct, sentence: item.example || "", blank_sentence, choices: shuffled, answer_index });
   }
+  // Shuffle final question order
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
   return questions;
+
 }
 
 export default Lesson;
