@@ -378,7 +378,7 @@ const Lesson: React.FC = () => {
 
           <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
             <button onClick={() => setStep(1)} style={blueButtonStyle}>単語スライドから始める</button>
-            <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: 16, backgroundColor: "#e9967a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
+            <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
               例文穴埋めへ直接進む（3択）
             </button>
           </div>

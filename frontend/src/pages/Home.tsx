@@ -151,10 +151,10 @@ export default function Home() {
             text-align: left;
           }
           .privacy-link {
-            font-size: 0.5rem;
+            font-size: 0.7rem;
           }
           .footer-text {
-            font-size: 0.5rem;
+            font-size: 0.7rem;
           }
         }
       `}</style>
