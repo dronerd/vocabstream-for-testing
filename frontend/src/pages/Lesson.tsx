@@ -196,14 +196,15 @@ const Lesson: React.FC = () => {
   const mainWordSize = isSmallScreen ? 34 : 48; // slightly reduced but still large
   const wordListSize = isSmallScreen ? 16 : 34;
   const paragraphFontSize = isSmallScreen ? 14 : 20;
-  const quizTextSize = isSmallScreen ? 16 : 28;
-  const buttonFontSize = isSmallScreen ? 15 : 24; // slightly smaller on mobile
-  const buttonWidth = isSmallScreen ? "100%" : 360;
+  // *** changed quizTextSize and button defaults for small screens ***
+  const quizTextSize = isSmallScreen ? 14 : 28; // smaller sentence text on small screens
+  const buttonFontSize = isSmallScreen ? 13 : 24; // smaller choice buttons on mobile
+  const buttonWidth = isSmallScreen ? "auto" : 360;
   const blueButtonStyle: React.CSSProperties = {
-    fontSize: buttonFontSize, padding: isSmallScreen ? "8px 10px" : "10px 20px", marginTop: 12,
+    fontSize: buttonFontSize, padding: isSmallScreen ? "6px 10px" : "10px 20px", marginTop: 12,
     backgroundColor: "#003366", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth,
   };
-  const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
+  const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "auto" : 240, backgroundColor: "#003366" };
 
   // show the steps
   const topSteps = ["単語スライド", "例文を使った穴埋めクイズ（3択）"];
@@ -330,10 +331,20 @@ const Lesson: React.FC = () => {
           .slide-heading { margin-top:6px; margin-bottom:6px }
           .main-word { margin-top:6px; margin-bottom:6px }
           .prev-next-row { gap:8px }
+
+          /* QUIZ-SPECIFIC MOBILE ADJUSTMENTS */
+          .quiz-title { font-size:18px; margin-top:6px; margin-bottom:6px }
+          .quiz-sub { font-size:13px; margin-top:4px; margin-bottom:6px }
+          /* make the three choices appear side-by-side on small screens */
+          .quiz-choices-grid { grid-template-columns: repeat(3, 1fr) !important; gap:6px }
+          .quiz-choice-btn { font-size:13px; padding:8px 6px; border-radius:10px }
+          .quiz-choice-num { min-width:28px; font-size:16px }
+          .quiz-choice-word { font-weight:700; font-size:13px }
+          .quiz-choice-sub { font-size:11px }
         }
       `}</style>
 
-      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 6 : 12, padding: isSmallScreen ? "9px 9px" : (isSmallScreen ? "7px 9px" : "9px 5px"), borderRadius: 10, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
+      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 7 : 12, padding: isSmallScreen ? "7px 9px" : (isSmallScreen ? "7px 9px" : "9px 5px"), borderRadius: 8, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
         レッスン一覧に戻る
       </button>
 
@@ -407,7 +418,7 @@ const Lesson: React.FC = () => {
           <div className="audio-next-row" style={{ marginTop: isSmallScreen ? 6 : 10, display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, alignItems: "center", flexWrap: "wrap" }}>
             <button
               onClick={() => speakEnglish(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)}
-              style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc", width: isSmallScreen ? 180 : undefined, padding: isSmallScreen ? "6px 10px" : undefined, fontSize: isSmallScreen ? 14 : nextButtonStyle.fontSize }}
+              style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc", width: isSmallScreen ? 180 : undefined, padding: isSmallScreen ? "6px 10px" : undefined, fontSize: isSmallScreen ? 14 : (nextButtonStyle.fontSize as number) }}
             >
               ▶️ 音声を聞く
             </button>
@@ -416,8 +427,8 @@ const Lesson: React.FC = () => {
           </div>
 
           <div className="prev-next-row" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, marginTop: isSmallScreen ? 8 : 16 }}>
-            <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? 140 : nextButtonStyle.width }}>前へ</button>
-            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の単語" : "ミニテストへ"}</button>
+            <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? 140 : (nextButtonStyle.width as any) }}>前へ</button>
+            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : (blueButtonStyle.width as any) }}>{slideStep + 1 < totalWords ? "次の単語" : "ミニテストへ"}</button>
           </div>
         </div>
       )}
@@ -425,8 +436,8 @@ const Lesson: React.FC = () => {
       {/* Quiz */}
       {step === totalWords + 1 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>例文を使った穴埋めクイズ（3択👆）</h2>
-          <p style={{ fontSize: isSmallScreen ? 16 : 20, color: "black", marginTop: 4 }}>空欄に入るもっとも適切な単語を選んでください</p>
+          <h2 className="quiz-title" style={{ fontSize: isSmallScreen ? 18 : headingSize, marginBottom: isSmallScreen ? 6 : 12 }}>例文を使った穴埋めクイズ（3択👆）</h2>
+          <p className="quiz-sub" style={{ fontSize: isSmallScreen ? 13 : 20, color: "black", marginTop: 4, marginBottom: isSmallScreen ? 6 : 12 }}>空欄に入るもっとも適切な単語を選んでください</p>
 
           {quizLoading ? <p>クイズを読み込み中...</p> : quizError ? (
             <div>
@@ -448,7 +459,8 @@ const Lesson: React.FC = () => {
                 <span dangerouslySetInnerHTML={{ __html: quizQuestions[quizIndex].blank_sentence }} />
               </p>
 
-              <div style={{ display: "grid", gridTemplateColumns: isSmallScreen ? "1fr" : "repeat(3, 1fr)", gap: 12, alignItems: "stretch" }}>
+              {/* NOTE: for small screens we force the grid to 3 columns so buttons sit side-by-side */}
+              <div className="quiz-choices-grid" style={{ display: "grid", gridTemplateColumns: isSmallScreen ? "repeat(3, 1fr)" : "repeat(3, 1fr)", gap: isSmallScreen ? 8 : 12, alignItems: "stretch" }}>
                 {quizQuestions[quizIndex].choices.map((c: string, i: number) => {
                   const isHovered = hoveredQuizChoice === i && selectedChoice === null && !isTouchDevice;
                   const isCorrect = selectedChoice !== null && i === quizQuestions[quizIndex].answer_index;
@@ -467,16 +479,17 @@ const Lesson: React.FC = () => {
 
                   return (
                     <button key={i} onClick={() => handleChoose(i)} onMouseEnter={() => setHoveredQuizChoice(i)} onMouseLeave={() => setHoveredQuizChoice(null)}
+                      className="quiz-choice-btn"
                       style={{
-                        fontSize: isSmallScreen ? 16 : 18, padding: isSmallScreen ? "12px 10px" : "16px 18px", width: "100%",
+                        fontSize: isSmallScreen ? 13 : 18, padding: isSmallScreen ? "10px 8px" : "16px 18px", width: "100%",
                         background, color: selectedChoice !== null ? (isCorrect ? "#052e16" : isWrongSelected ? "#330000" : "#0f172a") : "#fff",
                         boxShadow, transform, transition: "transform 0.18s ease, box-shadow 0.2s ease, background 0.25s ease", border: "none", cursor: selectedChoice !== null ? "default" : "pointer",
-                        borderRadius: 12, display: "flex", gap: 12, alignItems: "center", justifyContent: "center", textAlign: "left",
+                        borderRadius: 12, display: "flex", gap: 8, alignItems: "center", justifyContent: "center", textAlign: "left",
                       }} disabled={selectedChoice !== null}>
-                      <div style={{ minWidth: 40, textAlign: "center", fontSize: 20, fontWeight: 800 }}>{` ${i + 1}`}</div>
+                      <div className="quiz-choice-num" style={{ minWidth: isSmallScreen ? 28 : 40, textAlign: "center", fontSize: isSmallScreen ? 16 : 20, fontWeight: 800 }}>{` ${i + 1}`}</div>
                       <div style={{ textAlign: "left" }}>
-                        <div style={{ fontWeight: 700 }}>{c}</div>
-                        <div style={{ fontSize: 14, color: "#fff", opacity: 0.9 }}>{i === quizQuestions[quizIndex].answer_index && selectedChoice !== null ? "correct!" : ""}</div>
+                        <div className="quiz-choice-word" style={{ fontWeight: 700 }}>{c}</div>
+                        <div className="quiz-choice-sub" style={{ fontSize: 12, color: "#fff", opacity: 0.9 }}>{i === quizQuestions[quizIndex].answer_index && selectedChoice !== null ? "correct!" : ""}</div>
                       </div>
                     </button>
                   );
