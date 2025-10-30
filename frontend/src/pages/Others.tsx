@@ -4,66 +4,87 @@ import { useNavigate } from "react-router-dom";
 export default function Review() {
   const nav = useNavigate();
 
-  // LearnGenresと統一感のある色
-  const buttonColors = ["#ffcccc", "#fff5cc", "#ccffcc", "#cce5ff"];
+  const baseColor = "#f6c6b3";
+
+  // Slightly lighter, reddish button tones
+  const buttonColors = ["#f29c83", "#f08f76", "#ee836b"];
 
   return (
     <div className="review-root">
       <style>{`
+        html, body, #root {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          background-color: ${baseColor};
+          overflow-x: hidden;
+        }
+
         .review-root {
+          min-height: 100vh;
+          width: 100%;
           padding: 20px;
           padding-top: 92px;
+          box-sizing: border-box;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-          color: #1c1c1c;
+          color: #993300;
+          background-color: ${baseColor};
+          transition: background-color .3s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .heading {
           font-size: 32px;
           margin: 4px 0 8px 0;
+          color: #993300;
         }
 
         .subheading {
           font-size: 22px;
           margin-bottom: 18px;
-          color: #333;
+          color: #cc3300;
         }
 
-        /* Grid layout: two columns on large screens */
         .options-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 16px;
           align-items: stretch;
+          width: 100%;
+          max-width: 900px;
         }
 
         .option-btn {
           padding: 20px;
-          border: 2px solid #666;
-          border-radius: 12px;
+          border: 2px solid rgba(0,0,0,0.15);
+          border-radius: 14px;
           cursor: pointer;
           height: 100px;
           font-weight: 800;
           font-size: 20px;
-          color: #1c1c1c;
+          color: #993300;
           text-align: center;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-          transition: transform .18s ease, box-shadow .18s ease;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+          transition: transform .18s ease, box-shadow .18s ease, filter .2s ease;
           display: flex;
           align-items: center;
           justify-content: center;
         }
 
-        /* 🔹ホバー時のアニメーション */
         .option-btn:hover {
           transform: translateY(-4px);
-          box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+          box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+          filter: brightness(1.05);
         }
 
         .option-btn:active {
           transform: translateY(1px);
+          filter: brightness(0.95);
         }
 
-        /* Make the third button span both columns and be centered on large screens */
         .option-third {
           grid-column: 1 / -1;
           justify-self: center;
@@ -71,7 +92,6 @@ export default function Review() {
           max-width: 520px;
         }
 
-        /* ===== Mobile / small screens ===== */
         @media (max-width: 600px) {
           .heading {
             font-size: 26px;
@@ -89,13 +109,11 @@ export default function Review() {
             font-size: 16px;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
             text-align: left;
             justify-content: flex-start;
             gap: 12px;
           }
 
-          /* On small screens the third option returns to full-width */
           .option-third {
             width: 100%;
             justify-self: stretch;
@@ -104,8 +122,8 @@ export default function Review() {
         }
       `}</style>
 
-      <h2 className="heading">その他の機能</h2>
-      <h3 className="subheading">機能を選択</h3>
+      <h2 className="heading">単語の復習</h2>
+      <h3 className="subheading">復習方法を選択</h3>
 
       <div className="options-grid">
         <button
@@ -119,17 +137,17 @@ export default function Review() {
         <button
           className="option-btn"
           onClick={() => nav("/still_under_development")}
-          style={{ backgroundColor: buttonColors[2] }}
+          style={{ backgroundColor: buttonColors[1] }}
         >
-          学習経過を他のデバイスに移動
+          アプリ使用マニュアルを見る
         </button>
 
         <button
           className="option-btn option-third"
-          onClick={() => nav("/privacy")}
-          style={{ backgroundColor: buttonColors[3] }}
+          onClick={() => nav("privacy")}
+          style={{ backgroundColor: buttonColors[2] }}
         >
-          フィードバック送信・Privacy Policyを確認
+          Privacy Policyを確認
         </button>
       </div>
     </div>
