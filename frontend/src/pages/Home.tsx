@@ -21,39 +21,51 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      {/* Inline CSS so you can drop this file in immediately */}
       <style>{`
+        body, html {
+          background-color: #081230;
+          margin: 0;
+          padding: 0;
+          color: #f1f1f1;
+        }
+
         .home-container {
           padding: 20px;
           padding-top: 92px;
           font-family: sans-serif;
-          color: #1c1c1c;
+          background-color: #081230;
+          color: #f1f1f1;
+          min-height: 100vh;
         }
 
         .heading {
           font-size: 50px;
           margin: 4px 0;
+          color: #ffffff;
         }
 
         .subtitle {
           font-size: 20px;
-          color: #000;
+          color: #e0e0e0;
           margin: 8px 0 20px 0;
           line-height: 1.6;
         }
 
+        .subtitle a {
+          color: #a8d0ff;
+        }
+
         .user-box {
           padding: 12px;
-          border: 1px solid #eee;
+          border: 1px solid rgba(255,255,255,0.1);
           border-radius: 12px;
           margin-bottom: 12px;
           font-size: 30px;
-          background: #fff;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+          background: rgba(255, 255, 255, 0.08);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+          color: #f1f1f1;
         }
 
-        /* Default (large screens) grid: two columns.
-           The third option will span both columns and be centered. */
         .options-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -65,12 +77,12 @@ export default function Home() {
           padding: 40px;
           border: none;
           border-radius: 12px;
-          color: #1c1c1c;
+          color: #081230;
           font-size: 40px;
           font-weight: 700;
           cursor: pointer;
           text-align: center;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+          box-shadow: 0 6px 18px rgba(0,0,0,0.25);
           transition: transform .14s cubic-bezier(.2,.9,.2,1), box-shadow .14s ease;
           will-change: transform, box-shadow;
         }
@@ -79,22 +91,18 @@ export default function Home() {
           transform: translateY(1px);
         }
 
-        /* Hover lift: only apply on devices that support hover */
         @media (hover: hover) {
           .option-btn:hover {
-            transform: translateY(-6px); /* ほんの少し上がる */
-            box-shadow: 0 14px 30px rgba(0,0,0,0.10); /* 影を少し強める */
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.4);
           }
-          /* slightly larger lift for keyboard focus accessibility */
           .option-btn:focus-visible {
             outline: none;
             transform: translateY(-6px);
-            box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.4);
           }
         }
 
-        /* Make the third (index 2) button span the full row and be centered
-           on large screens so it appears centered under the top two buttons. */
         .option-third {
           grid-column: 1 / -1;
           justify-self: center;
@@ -105,9 +113,9 @@ export default function Home() {
         .privacy-link {
           grid-column: 1 / -1;
           padding-top: 8px;
+          color: #a8d0ff;
         }
 
-        /* ===== Mobile / small screens ===== */
         @media (max-width: 600px) {
           .heading {
             font-size: 28px;
@@ -128,37 +136,26 @@ export default function Home() {
             padding: 14px 16px;
             font-size: 16px;
             border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25);
             font-weight: 700;
-            text-align: left; /* easier to scan on mobile */
-            transition: box-shadow .12s ease; /* keep transition but no big transform */
+            text-align: left;
           }
-
-          /* Override: on small screens the third option returns to full-width
-             and the centered narrower look is removed so mobile is unchanged. */
           .option-third {
             width: 100%;
             justify-self: stretch;
             text-align: left;
           }
-
-          .subtitle a {
-            word-break: break-word;
-          }
         }
       `}</style>
 
-      {/* Main heading */}
       <h1 className="heading">Home</h1>
 
-      {/* Subtitle / description */}
       <p className="subtitle">
         <strong>VocabStream</strong> は、
         <a
           href="https://yutokuroki.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: "underline", margin: "0 4px" }}
         >
           <strong>黒木勇人</strong>
         </a>
@@ -167,7 +164,6 @@ export default function Home() {
           href="https://projectfluence.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: "underline", margin: "0 4px" }}
         >
           <strong>「Project Fluence」</strong>
         </a>
@@ -176,17 +172,6 @@ export default function Home() {
         現在、一部の安定した機能のみを公開しています。今後のアップデートで、その他機能を順次追加予定です。お楽しみに！
       </p>
 
-      {/* User info box */}
-      <div className="user-box">
-        <div>
-          Level: <strong>{user?.level ?? "—"}</strong>
-        </div>
-        <div>
-          累計獲得単語数: <strong>{user?.total_words ?? 0}</strong>
-        </div>
-      </div>
-
-      {/* Option buttons */}
       <div className="options-grid">
         {options.map((opt, idx) => (
           <button
@@ -199,13 +184,22 @@ export default function Home() {
           </button>
         ))}
 
+        
+      </div>
+
+      <footer
+        style={{
+          maxWidth: "var(--container-max)",
+          margin: "28px auto 0",
+          padding: 18,
+          textAlign: "center",
+          color: "#ffffff",
+        }}
+      >
         <a className="privacy-link" href="/privacy">
           <strong>Privacy Policy</strong>
         </a>
-      </div>
-      <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "white" }}>
         <div>All content © 2025 Project Fluence — 黒木 勇人</div>
-        <div style={{ marginTop: 8 }}><a href="/privacy" style={{ color: 'white', textDecoration: 'underline' }}>Privacy Policy</a></div>
       </footer>
     </div>
   );

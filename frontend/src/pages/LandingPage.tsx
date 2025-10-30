@@ -28,7 +28,6 @@ export default function LandingPage() {
           --accent:#234E52;
           --muted:#666;
           --page-bg-1: #081230;
-          --page-bg-2: #0f2740;
           --card-bg: #ffffff;
           --subcard-bg: #f1f5f8;
           --chip-bg: #f1f3f4;
@@ -40,11 +39,33 @@ export default function LandingPage() {
           --hero-bottom-gap-mobile: 18px;
         }
 
-        *{box-sizing:border-box}
-        html,body,#root{height:100%; margin:0; padding:0; background: linear-gradient(180deg, var(--page-bg-1), var(--page-bg-2));}
-        .landing-root{color:#111;width:100%;min-height:100vh;overflow-x:hidden;background:transparent}
-        :root { --base-font: clamp(13px, 1.8vw, 16px); }
-        .landing-root{font-size:var(--base-font)}
+       * {
+          box-sizing: border-box;
+        }
+
+        html, body, #root {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background: var(--page-bg-1); 
+        }
+
+        .landing-root {
+          color: #111;
+          width: 100%;
+          min-height: 100vh;
+          overflow-x: hidden;
+          background: transparent;
+        }
+
+        :root {
+          --base-font: clamp(13px, 1.8vw, 16px);
+        }
+
+        .landing-root {
+          font-size: var(--base-font);
+        }
+
 
         /* HERO */
         .hero-wrap{padding:22px 3.5vw}

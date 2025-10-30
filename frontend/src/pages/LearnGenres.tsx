@@ -210,12 +210,12 @@ export default function LearnGenres() {
         }
       `}</style>
 
-      <div className="main-container" style={{ paddingTop: basePadding + HEADER_HEIGHT }}>
-        <h2 style={{ fontSize: isSmall ? 26 : 38, fontWeight: "bold", textAlign: "center", marginBottom: 10, color: "#08335b" }}>
+      <div className="main-container" style={{ paddingTop: basePadding + HEADER_HEIGHT -20 }}>
+        <h2 style={{ fontSize: isSmall ? 24 : 32, fontWeight: "bold", textAlign: "center", marginBottom: 10, color: "#08335b" }}>
           単語の学習
         </h2>
 
-        <h3 style={{ fontSize: isSmall ? 20 : 26, fontWeight: 600, textAlign: "center", marginBottom: 20, color: "#1a4e8a" }}>
+        <h3 style={{ fontSize: isSmall ? 16 : 22, fontWeight: 600, textAlign: "center", marginBottom: 20, color: "#1a4e8a" }}>
           学習する分野の選択
         </h3>
 

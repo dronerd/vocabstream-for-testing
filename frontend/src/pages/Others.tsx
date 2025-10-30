@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 export default function Review() {
   const nav = useNavigate();
 
-  const baseColor = "#f6c6b3";
+  const baseColor = "#d8f3dc";
 
   // Slightly lighter, reddish button tones
-  const buttonColors = ["#f29c83", "#f08f76", "#ee836b"];
+  const buttonColors = ["#74c69d", "#52b788", "#40916c"];
 
   return (
     <div className="review-root">
@@ -28,7 +28,7 @@ export default function Review() {
           padding-top: 92px;
           box-sizing: border-box;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-          color: #993300;
+          color: #40916c;
           background-color: ${baseColor};
           transition: background-color .3s ease;
           display: flex;
@@ -39,13 +39,13 @@ export default function Review() {
         .heading {
           font-size: 32px;
           margin: 4px 0 8px 0;
-          color: #993300;
+          color: #0d2b1d;
         }
 
         .subheading {
           font-size: 22px;
           margin-bottom: 18px;
-          color: #cc3300;
+          color: #1b4332;
         }
 
         .options-grid {
@@ -65,7 +65,7 @@ export default function Review() {
           height: 100px;
           font-weight: 800;
           font-size: 20px;
-          color: #993300;
+          color: #0d2b1d;
           text-align: center;
           box-shadow: 0 6px 18px rgba(0,0,0,0.08);
           transition: transform .18s ease, box-shadow .18s ease, filter .2s ease;
@@ -122,8 +122,8 @@ export default function Review() {
         }
       `}</style>
 
-      <h2 className="heading">単語の復習</h2>
-      <h3 className="subheading">復習方法を選択</h3>
+      <h2 className="heading">その他の機能</h2>
+      <h3 className="subheading">機能を選択</h3>
 
       <div className="options-grid">
         <button
@@ -144,7 +144,7 @@ export default function Review() {
 
         <button
           className="option-btn option-third"
-          onClick={() => nav("privacy")}
+          onClick={() => nav("/privacy")}
           style={{ backgroundColor: buttonColors[2] }}
         >
           Privacy Policyを確認
