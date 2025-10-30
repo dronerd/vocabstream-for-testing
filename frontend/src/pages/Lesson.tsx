@@ -241,7 +241,10 @@ const Lesson: React.FC = () => {
     } catch (e) { }
   }, [step, lesson]);
 
-  if (!lesson) return <div>Loading lesson...</div>;
+  if (!lesson) {
+    return <div>Loading lesson...</div>;
+  }
+
   const totalWords = lesson.words.length;
   const slideStep = step - 1;
   const isSlide = step > 0 && slideStep < totalWords;
