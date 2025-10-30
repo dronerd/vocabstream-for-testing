@@ -192,7 +192,7 @@ const Lesson: React.FC = () => {
   }
 
   // responsive sizes & button styles
-  const headingSize = isSmallScreen ? 20 : 32;
+  const headingSize = isSmallScreen ? 16 : 32;
   const mainWordSize = isSmallScreen ? 34 : 48; // slightly reduced but still large
   const wordListSize = isSmallScreen ? 16 : 34;
   const paragraphFontSize = isSmallScreen ? 14 : 20;
@@ -333,7 +333,7 @@ const Lesson: React.FC = () => {
         }
       `}</style>
 
-      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 6 : 12, padding: isSmallScreen ? "9px 9px" : (isSmallScreen ? "7px 9px" : "9px 5px"), borderRadius: 10, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
+      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 10 : 12, padding: isSmallScreen ? "12px 12px" : (isSmallScreen ? "8px 10px" : "10px 6px"), borderRadius: 10, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
         レッスン一覧に戻る
       </button>
 
@@ -424,8 +424,8 @@ const Lesson: React.FC = () => {
       {/* Quiz */}
       {step === totalWords + 1 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>例文を使った穴埋めクイズ（3択👆）</h2>
-          <p style={{ fontSize: isSmallScreen ? 16 : 20, color: "black", marginTop: 4 }}>空欄に入るもっとも適切な単語を選んでください</p>
+          <h2 style={{ fontSize: headingSize, marginBottom: 6 }}>例文を使った穴埋めクイズ（3択👆）</h2>
+          <p style={{ fontSize: isSmallScreen ? 12 : 20, color: "black", marginTop: 1 }}>空欄に入るもっとも適切な単語を選んでください</p>
 
           {quizLoading ? <p>クイズを読み込み中...</p> : quizError ? (
             <div>
