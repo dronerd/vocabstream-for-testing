@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { speakEnglish } from "../pages/speech"; 
 
-
 interface LessonWord {
   word: string;
   example?: string;
@@ -54,7 +53,7 @@ const Lesson: React.FC = () => {
   const [finishMessage, setFinishMessage] = useState<string>("");
   const [finishScore, setFinishScore] = useState<{ score: number; max: number; percent: number } | null>(null);
 
-  // Helper: try fetch JSON (unchanged)
+  // Helper: try fetch JSON
   async function tryFetchJson(path: string): Promise<any | null> {
     try {
       const r = await fetch(path, { cache: "no-cache" });
@@ -65,86 +64,42 @@ const Lesson: React.FC = () => {
     }
   }
 
-  // Preload audio elements from /public
-  const correctAudioRefs = useRef<HTMLAudioElement[]>([]);
-  const wrongAudioRef = useRef<HTMLAudioElement | null>(null);
-  const endAudioRefs = useRef<{ low: HTMLAudioElement | null; midLow: HTMLAudioElement | null; mid: HTMLAudioElement | null; high: HTMLAudioElement | null }>({
-    low: null, midLow: null, mid: null, high: null
-  });
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const audioUnlockedRef = useRef<boolean>(false);
 
-  // ensure we only play final sound once per final-screen view
-  const playedFinalRef = useRef<boolean>(false);
-
+  // create/unlock AudioContext once on first user gesture
   useEffect(() => {
-    // preload correct audios
-    correctAudioRefs.current = [
-      new Audio("/correct-1.mp3"),
-      new Audio("/correct-2.mp3"),
-    ];
-    correctAudioRefs.current.forEach(a => { a.preload = "auto"; a.load(); });
+    function unlockAudio() {
+      try {
+        if (!audioCtxRef.current) {
+          const Ctor = (window as any).AudioContext || (window as any).webkitAudioContext;
+          if (!Ctor) return;
+          audioCtxRef.current = new Ctor();
+        }
+        const ctx = audioCtxRef.current;
+        if (ctx && ctx.state === "suspended") {
+          ctx.resume().catch(() => { /* ignore */ });
+        }
+        audioUnlockedRef.current = true;
+      } catch (e) {
+        // ignore
+      } finally {
+        // remove listeners after first gesture
+        document.removeEventListener("touchstart", unlockAudio);
+        document.removeEventListener("click", unlockAudio);
+      }
+    }
 
-    // wrong audio
-    wrongAudioRef.current = new Audio("/wrong.mp3");
-    wrongAudioRef.current.preload = "auto";
-    wrongAudioRef.current.load();
+    document.addEventListener("touchstart", unlockAudio, { once: true, passive: true });
+    document.addEventListener("click", unlockAudio, { once: true, passive: true });
 
-    // end sounds
-    endAudioRefs.current.low = new Audio("/end-0-40.mp3");         // 0 - 39%
-    endAudioRefs.current.midLow = new Audio("/end-40-60.wav");     // 40 - 59%
-    endAudioRefs.current.mid = new Audio("/end-60-80.mp3");        // 60 - 79%
-    endAudioRefs.current.high = new Audio("/end-80-100.mp3");      // 80 - 100%
-
-    Object.values(endAudioRefs.current).forEach(a => { if (a) { a.preload = "auto"; a.load(); } });
-
-    // Cleanup not strictly necessary for Audio objects but keep for safety
     return () => {
-      correctAudioRefs.current.forEach(a => { try { a.pause(); a.src = ""; } catch {} });
-      if (wrongAudioRef.current) { try { wrongAudioRef.current.pause(); wrongAudioRef.current.src = ""; } catch {} }
-      Object.values(endAudioRefs.current).forEach(a => { if (a) { try { a.pause(); a.src = ""; } catch {} } });
+      document.removeEventListener("touchstart", unlockAudio);
+      document.removeEventListener("click", unlockAudio);
     };
   }, []);
 
-  function playCorrectFile() {
-    try {
-      const arr = correctAudioRefs.current;
-      if (!arr || arr.length === 0) return;
-      const idx = Math.floor(Math.random() * arr.length);
-      const audio = arr[idx];
-      // rewind & play
-      audio.currentTime = 0;
-      audio.play().catch(() => { /* ignore play errors (autoplay policies) */ });
-    } catch (e) {
-      // ignore
-    }
-  }
-
-  function playWrongFile() {
-    try {
-      const audio = wrongAudioRef.current;
-      if (!audio) return;
-      audio.currentTime = 0;
-      audio.play().catch(() => { /* ignore */ });
-    } catch (e) {}
-  }
-
-  function playEndFile(percent: number) {
-    try {
-      // choose which end audio to play based on percent ranges
-      // 0-39 -> low, 40-59 -> midLow, 60-79 -> mid, 80-100 -> high
-      let audio: HTMLAudioElement | null = null;
-      if (percent < 40) audio = endAudioRefs.current.low;
-      else if (percent < 60) audio = endAudioRefs.current.midLow;
-      else if (percent < 80) audio = endAudioRefs.current.mid;
-      else audio = endAudioRefs.current.high;
-
-      if (!audio) return;
-      audio.currentTime = 0;
-      audio.play().catch(() => { /* ignore */ });
-    } catch (e) {}
-  }
-
-
-  // load lesson data from public/data 
+  // load lesson data from public/data
   useEffect(() => {
     if (!lessonId) return;
     let cancelled = false;
@@ -181,7 +136,7 @@ const Lesson: React.FC = () => {
     return () => { cancelled = true; };
   }, [lessonId]);
 
-  // detect small screen & touch (unchanged)
+  // detect small screen & touch
   useEffect(() => {
     function update() {
       try {
@@ -202,7 +157,7 @@ const Lesson: React.FC = () => {
     };
   }, []);
 
-  // generate quiz when entering quiz step (unchanged)
+  // generate quiz when entering quiz step
   useEffect(() => {
     if (!lesson) return;
     const totalWords = lesson.words ? lesson.words.length : 0;
@@ -227,7 +182,7 @@ const Lesson: React.FC = () => {
     }
   }, [step, lesson]);
 
-  // prevent scroll to weird spot on slides (unchanged)
+  // prevent scroll to weird spot on slides
   useEffect(() => {
     try {
       if (!lesson) return;
@@ -246,7 +201,7 @@ const Lesson: React.FC = () => {
   const slideStep = step - 1;
   const isSlide = step > 0 && slideStep < totalWords;
 
-  // getPraise unchanged (copy from your original)
+  // getPraise unchanged, returns random praise string
   function getPraise(percent: number): string {
     if (!Number.isFinite(percent)) percent = 0;
     if (percent < 0) percent = 0;
@@ -268,7 +223,7 @@ const Lesson: React.FC = () => {
     return pick(messages.perfect);
   }
 
-  // responsive sizes & button styles (unchanged)
+  // responsive sizes & button styles
   const headingSize = isSmallScreen ? 22 : 32;
   const headingSize2 = isSmallScreen ? 17 : 32;
   const mainWordSize = isSmallScreen ? 34 : 48; // slightly reduced but still large
@@ -283,7 +238,7 @@ const Lesson: React.FC = () => {
   };
   const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
 
-  // show the steps (unchanged)
+  // show the steps
   const topSteps = ["単語スライド", "例文を使った穴埋めクイズ（3択）"];
   function currentTopIndex() {
     if (isSlide) return 0;
@@ -291,45 +246,88 @@ const Lesson: React.FC = () => {
     return -1;
   }
 
-  // ---------- replaced playCorrectSound / playWrongSound usage ----------
-  function handleChoose(choiceIndex: number) {
-    if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
-    const q = quizQuestions[quizIndex];
-    const isCorrect = choiceIndex === q.answer_index;
-    setSelectedChoice(choiceIndex);
-    if (isCorrect) {
-      setQuizScore((s) => s + 1);
-      // play file-based correct sound
-      playCorrectFile();
-    } else {
-      // play file-based wrong sound
-      playWrongFile();
+  // Play bright celebratory chime for correct answers
+  async function playCorrectSound() {
+    try {
+      if (!audioCtxRef.current) {
+        const Ctor = (window as any).AudioContext || (window as any).webkitAudioContext;
+        if (!Ctor) return;
+        audioCtxRef.current = new Ctor();
+      }
+      const ctx = audioCtxRef.current!;
+      // resume if suspended (important on mobile)
+      if (ctx.state === "suspended") {
+        await ctx.resume();
+      }
+
+      const freqs = [1046.5, 1318.5, 1568.0]; // C6, E6, G6
+      const gain = ctx.createGain();
+      gain.connect(ctx.destination);
+
+      const now = ctx.currentTime;
+      // start from a very small positive value to avoid exponential ramp issues
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(0.25, now + 0.02);
+      // schedule exponential fade after linear ramp -- target must be > 0
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
+
+      freqs.forEach((f, i) => {
+        const osc = ctx.createOscillator();
+        osc.type = i === 0 ? "sine" : "triangle";
+        osc.frequency.value = f;
+        osc.detune.value = (i - 1) * 10;
+        osc.connect(gain);
+        osc.start(now + i * 0.02);
+        osc.stop(now + 1.0);
+      });
+    } catch (e) {
+      // ignore or log
+      // console.warn("playCorrectSound failed", e);
     }
   }
-  // ---------- end sound replacement ----------
 
-  // show values for results (ADJUSTED so finalScore is used if set)
+  // Play darker chime for wrong answers
+  async function playWrongSound() {
+    try {
+      if (!audioCtxRef.current) {
+        const Ctor = (window as any).AudioContext || (window as any).webkitAudioContext;
+        if (!Ctor) return;
+        audioCtxRef.current = new Ctor();
+      }
+      const ctx = audioCtxRef.current!;
+      if (ctx.state === "suspended") {
+        await ctx.resume();
+      }
+
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = "sine";
+      o.frequency.value = 880; // A5-ish
+      o.connect(g);
+      g.connect(ctx.destination);
+
+      const now = ctx.currentTime;
+      g.gain.setValueAtTime(0.0001, now);
+      g.gain.linearRampToValueAtTime(0.12, now + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+
+      o.start(now);
+      o.stop(now + 0.5);
+    } catch (e) {
+      // ignore or log
+      // console.warn("playWrongSound failed", e);
+    }
+  }
+
+
+  // show values for results
   const displayFinalScore = finalScore ?? quizScore;
   const quizMax = quizQuestions.length || 1;
   const quizPercent = Math.round((displayFinalScore / quizMax) * 100);
-  const totalScore = finalScore ?? quizScore; // <-- changed to respect finalScore when set
+  const totalScore = quizScore;
   const totalMax = quizQuestions.length || 0;
   const totalPercent = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
-
-  // play final sound once when final screen appears
-  useEffect(() => {
-    if (step === totalWords + 2) {
-      if (!playedFinalRef.current) {
-        // play based on totalPercent
-        playEndFile(totalPercent);
-        playedFinalRef.current = true;
-      }
-    } else {
-      // reset when leaving final screen so it can play again next time
-      playedFinalRef.current = false;
-    }
-  }, [step, totalWords, totalPercent]);
-
+  
   function finishLesson() {
     if (finishLock) return; // prevent double execution
     setFinishLock(true);
@@ -337,9 +335,19 @@ const Lesson: React.FC = () => {
     nav(-1);
   }
 
-  // rest of render stays the same, except "Next question" button sets finalScore before going to final step
-  // ... (the JSX markup you provided remains largely unchanged) ...
-  // I will return the full JSX (unchanged) below so the component is complete.
+  function handleChoose(choiceIndex: number) {
+    if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
+    const q = quizQuestions[quizIndex];
+    const isCorrect = choiceIndex === q.answer_index;
+    setSelectedChoice(choiceIndex);
+    if (isCorrect) {
+      setQuizScore((s) => s + 1);
+      // kick off sound (no need to await)
+      playCorrectSound().catch(() => {});
+    } else {
+      playWrongSound().catch(() => {});
+    }
+  }
 
   return (
     <div style={{
@@ -607,7 +615,7 @@ const Lesson: React.FC = () => {
   );
 };
 
-/* generateQuizFromLesson (unchanged) */
+/* generateQuizFromLesson */
 function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
   const words: LessonWord[] = lesson.words || [];
   const pool = words.filter((w: LessonWord) => w.word).map((w: LessonWord) => ({ word: w.word, example: w.example || "" }));
@@ -647,9 +655,7 @@ function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
     [questions[i], questions[j]] = [questions[j], questions[i]];
   }
   return questions;
+
 }
 
 export default Lesson;
-
-
-

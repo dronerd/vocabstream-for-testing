@@ -184,9 +184,9 @@ export default function Home() {
         <br />
         現在は安定して動作する一部機能のみを公開し、
         <a href="/learn" style={{ textDecoration: "underline" }}><strong>約3000の単語の学習機能</strong></a>
-                （熟語・ビジネス・専門用語は実装中）と、英語学習に役立つ
+          （熟語・ビジネス・専門用語は実装中）と、英語学習に役立つ
         <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTプロンプト集</strong></a>
-                を使用できます。今後のアップデートをお楽しみに！
+          を使用できます。今後のアップデートをお楽しみに！
       </p>
 
       <div className="options-grid">
