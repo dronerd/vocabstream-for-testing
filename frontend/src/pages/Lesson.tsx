@@ -193,6 +193,7 @@ const Lesson: React.FC = () => {
 
   // responsive sizes & button styles
   const headingSize = isSmallScreen ? 22 : 32;
+  const headingSize2 = isSmallScreen ? 17 : 32;
   const mainWordSize = isSmallScreen ? 34 : 48; // slightly reduced but still large
   const wordListSize = isSmallScreen ? 16 : 34;
   const paragraphFontSize = isSmallScreen ? 14 : 20;
@@ -424,7 +425,7 @@ const Lesson: React.FC = () => {
       {/* Quiz */}
       {step === totalWords + 1 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: 16, marginBottom: 6 }}>例文を使った穴埋めクイズ（3択👆）</h2>
+          <h2 style={{ fontSize: headingSize2, marginBottom: 8 }}>例文を使った穴埋めクイズ（3択👆）</h2>
           <p style={{ fontSize: isSmallScreen ? 12 : 20, color: "black", marginTop: 1 }}>空欄に入るもっとも適切な単語を選んでください</p>
 
           {quizLoading ? <p>クイズを読み込み中...</p> : quizError ? (
@@ -512,51 +513,59 @@ const Lesson: React.FC = () => {
         </div>
       )}
 
+
       {/* Final summary */}
       {step === totalWords + 2 && (() => {
-      const praise = getPraise(totalPercent);
+        const praise = getPraise(totalPercent);
 
-      return (
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center", 
-            alignItems: "flex-start", 
-            flexDirection: "column",
-            textAlign: "center",
-            paddingTop: "40px", 
-          }}
-        >
-          <div style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}>
-            <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
+        return (
+          <div
+            style={{
+              width: "100vw", // use full viewport width
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "flex-start",
+              flexDirection: "column",
+              textAlign: "center",
+              paddingTop: "40px",
+              paddingLeft: isSmallScreen ? "10px" : "0",
+              paddingRight: isSmallScreen ? "10px" : "0",
+              boxSizing: "border-box",
+              overflowX: "hidden", // prevent side scrollbars
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                maxWidth: isSmallScreen ? "100%" : 900, // no width restriction on mobile
+                margin: isSmallScreen ? "0" : "0 auto", // remove horizontal margin on mobile
+              }}
+            >
+              <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
 
-            <div style={{ fontSize: paragraphFontSize, marginBottom: 12 }}>
-              <p>単語クイズ: {quizScore} / {quizQuestions.length}</p>
-              <hr style={{ margin: "12px 0" }} />
-              <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>
-                合計: {totalScore} / {totalMax}
-              </p>
-              <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>
-                正答率: {totalPercent}%
-              </p>
-              <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>
-                {praise}
-              </p>
-            </div>
+              <div style={{ fontSize: paragraphFontSize, marginBottom: 12 }}>
+                <p>単語クイズ: {quizScore} / {quizQuestions.length}</p>
+                <hr style={{ margin: "12px 0" }} />
+                <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>
+                  合計: {totalScore} / {totalMax}
+                </p>
+                <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>
+                  正答率: {totalPercent}%
+                </p>
+                <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>
+                  {praise}
+                </p>
+              </div>
 
-            <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-              <button
-                onClick={() => finishLesson()}
-                style={blueButtonStyle}
-              >
-                レッスンを終了
-              </button>
+              <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
+                <button onClick={() => finishLesson()} style={blueButtonStyle}>
+                  レッスンを終了
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      );
-    })()}
+        );
+      })()}
 
     </div>
   );
