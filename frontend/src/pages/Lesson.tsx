@@ -367,14 +367,6 @@ const Lesson: React.FC = () => {
       {/* Start screen */}
       {step === 0 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <div style={{ marginBottom: isSmallScreen ? 8 : 12, textAlign: isSmallScreen ? "left" : "center" }}>
-            <p style={{ color: "#333", fontSize: paragraphFontSize }}>
-              このレッスンは「単語スライド → 例文穴埋め（3択）」の流れで進みます。<br />
-              英単語はなるべく日本語に訳さず、<strong>英語の定義や例文から意味を理解すること</strong>を意識しましょう。<br />
-              各単語スライドではぜひ音読してみましょう！
-            </p>
-          </div>
-
           <div style={{ fontSize: headingSize, marginBottom: isSmallScreen ? 6 : 12 }}><strong>今日の単語</strong></div>
           <div style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: isSmallScreen ? 8 : 12 }}>
             {lesson.words.slice(0, 10).map((w: LessonWord, i: number) =>
@@ -382,6 +374,13 @@ const Lesson: React.FC = () => {
             )}
           </div>
 
+          <div style={{ marginBottom: isSmallScreen ? 8 : 12, textAlign: isSmallScreen ? "left" : "center" }}>
+            <p style={{ color: "#333", fontSize: paragraphFontSize }}>
+              このレッスンは「単語スライド → 例文穴埋め（3択）」の流れで進みます。<br />
+              英単語はなるべく日本語に訳さず、<strong>英語の定義や例文から意味を理解すること</strong>を意識しましょう。<br />
+              各単語スライドではぜひ音読してみましょう！
+            </p>
+          </div>
 
           <div className="start-buttons" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, flexWrap: "wrap" }}>
             <button onClick={() => setStep(1)} style={blueButtonStyle}>単語スライドから始める</button>
