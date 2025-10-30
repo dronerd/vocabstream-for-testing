@@ -226,7 +226,7 @@ html, body, #root {
   font-weight: 600;
   color: #ffffff;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 14px;
   transition: background 0.15s ease, transform 0.08s ease;
 }
 .start-btn:hover { background: #072456; transform: translateY(-1px); }

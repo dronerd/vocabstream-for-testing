@@ -112,8 +112,13 @@ export default function Home() {
 
         .privacy-link {
           grid-column: 1 / -1;
-          padding-top: 8px;
+          padding-top: 4px;
           color: #a8d0ff;
+          font-size: 1rem;
+        }
+
+        .footer-text {
+          font-size: 1rem;
         }
 
         @media (max-width: 600px) {
@@ -144,6 +149,12 @@ export default function Home() {
             width: 100%;
             justify-self: stretch;
             text-align: left;
+          }
+          .privacy-link {
+            font-size: 0.5rem;
+          }
+          .footer-text {
+            font-size: 0.5rem;
           }
         }
       `}</style>
@@ -194,14 +205,10 @@ export default function Home() {
           color: "#ffffff",
         }}
       >
-       <a href="/privacy"
-          className="text-base sm:text-sm md:text-base font-semibold privacy-link"
-        >
-          Privacy Policy
+        <a className="privacy-link" href="/privacy">
+          <strong>Privacy Policy</strong>
         </a>
-        <div className="text-base sm:text-sm md:text-base">
-          All content © 2025 Project Fluence — 黒木 勇人
-        </div>
+        <div className="footer-text">All content © 2025 Project Fluence — 黒木 勇人</div>
 
       </footer>
     </div>
