@@ -333,7 +333,7 @@ const Lesson: React.FC = () => {
         }
       `}</style>
 
-      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 6 : 12, padding: isSmallScreen ? "6px 8px" : (isSmallScreen ? "6px 8px" : "8px 4px"), borderRadius: 8, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
+      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 6 : 12, padding: isSmallScreen ? "9px 9px" : (isSmallScreen ? "7px 9px" : "9px 5px"), borderRadius: 10, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
         レッスン一覧に戻る
       </button>
 
