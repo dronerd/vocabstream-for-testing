@@ -124,6 +124,7 @@ export default function Home() {
         @media (max-width: 600px) {
           .heading {
             font-size: 28px;
+            margin-top: 10px;
           }
           .subtitle {
             font-size: 14px;
