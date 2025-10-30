@@ -193,14 +193,14 @@ const Lesson: React.FC = () => {
 
   // responsive sizes & button styles
   const headingSize = isSmallScreen ? 20 : 32;
-  const mainWordSize = isSmallScreen ? 28 : 48;
+  const mainWordSize = isSmallScreen ? 34 : 48; // slightly reduced but still large
   const wordListSize = isSmallScreen ? 16 : 34;
   const paragraphFontSize = isSmallScreen ? 14 : 20;
   const quizTextSize = isSmallScreen ? 16 : 28;
-  const buttonFontSize = isSmallScreen ? 16 : 24;
+  const buttonFontSize = isSmallScreen ? 15 : 24; // slightly smaller on mobile
   const buttonWidth = isSmallScreen ? "100%" : 360;
   const blueButtonStyle: React.CSSProperties = {
-    fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: 16,
+    fontSize: buttonFontSize, padding: isSmallScreen ? "8px 10px" : "10px 20px", marginTop: 12,
     backgroundColor: "#003366", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth,
   };
   const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
@@ -307,7 +307,7 @@ const Lesson: React.FC = () => {
   return (
     <div style={{
       display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start",
-      minHeight: "100vh", padding: isSmallScreen ? "12px" : "20px", paddingTop: "92px",
+      minHeight: "100vh", padding: isSmallScreen ? "10px" : "20px", paddingTop: isSmallScreen ? "56px" : "92px",
       fontFamily: "sans-serif", textAlign: "center",
     }}>
 
@@ -320,14 +320,25 @@ const Lesson: React.FC = () => {
 
         .breadcrumb { display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:8px }
         .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:14px }
+
+        /* mobile tweaks using media query to avoid changing desktop */
+        @media (max-width: 600px) {
+          .breadcrumb { gap:6px; margin-bottom:4px }
+          .breadcrumb button { font-size:13px; white-space:nowrap; padding:0 4px }
+          .start-buttons { gap:8px }
+          .audio-next-row { gap:8px }
+          .slide-heading { margin-top:6px; margin-bottom:6px }
+          .main-word { margin-top:6px; margin-bottom:6px }
+          .prev-next-row { gap:8px }
+        }
       `}</style>
 
-      <button onClick={() => nav(-1)} style={{ marginBottom: 12, padding: isSmallScreen ? "6px 8px" : "8px 4px", borderRadius: 8, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
+      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 6 : 12, padding: isSmallScreen ? "6px 8px" : (isSmallScreen ? "6px 8px" : "8px 4px"), borderRadius: 8, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
         レッスン一覧に戻る
       </button>
 
       {/* Breadcrumb */}
-      <div className="breadcrumb" style={{ width: "100%", maxWidth: 900 }}>
+      <div className="breadcrumb" style={{ width: "100%", maxWidth: 900, gap: isSmallScreen ? 6 : 10 }}>
         {topSteps.map((t, i) => {
           const curIndex = currentTopIndex();
           const cur = curIndex === i;
@@ -343,11 +354,11 @@ const Lesson: React.FC = () => {
                     setStep(totalWords + 1);
                   }
                 }}
-                style={{ fontWeight: cur ? 800 : 400, color: cur ? "#000" : "#666" }}
+                style={{ fontWeight: cur ? 800 : 400, color: cur ? "#000" : "#666", whiteSpace: "nowrap" }}
               >
                 {cur ? <span style={{ fontWeight: 800 }}>{t}</span> : t}
               </button>
-              {i < topSteps.length - 1 && <span style={{ color: "#bbb" }}>→</span>}
+              {i < topSteps.length - 1 && <span style={{ color: "#bbb", margin: isSmallScreen ? '0 4px' : '0 8px' }}>→</span>}
             </React.Fragment>
           );
         })}
@@ -356,7 +367,7 @@ const Lesson: React.FC = () => {
       {/* Start screen */}
       {step === 0 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <div style={{ marginBottom: 12, textAlign: isSmallScreen ? "left" : "center" }}>
+          <div style={{ marginBottom: isSmallScreen ? 8 : 12, textAlign: isSmallScreen ? "left" : "center" }}>
             <p style={{ color: "#333", fontSize: paragraphFontSize }}>
               このレッスンは「単語スライド → 例文穴埋め（3択）」の流れで進みます。<br />
               英単語はなるべく日本語に訳さず、<strong>英語の定義や例文から意味を理解すること</strong>を意識しましょう。<br />
@@ -364,17 +375,17 @@ const Lesson: React.FC = () => {
             </p>
           </div>
 
-          <div style={{ fontSize: headingSize, marginBottom: 6 }}><strong>今日の単語</strong></div>
-          <div style={{ fontWeight: "bold", fontSize: wordListSize }}>
+          <div style={{ fontSize: headingSize, marginBottom: isSmallScreen ? 6 : 12 }}><strong>今日の単語</strong></div>
+          <div style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: isSmallScreen ? 8 : 12 }}>
             {lesson.words.slice(0, 10).map((w: LessonWord, i: number) =>
               i < lesson.words.slice(0, 10).length - 1 ? `${w.word}, ` : w.word
             )}
           </div>
 
 
-          <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
+          <div className="start-buttons" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, flexWrap: "wrap" }}>
             <button onClick={() => setStep(1)} style={blueButtonStyle}>単語スライドから始める</button>
-            <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
+            <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 12 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
               例文穴埋めへ直接進む（3択）
             </button>
           </div>
@@ -384,29 +395,29 @@ const Lesson: React.FC = () => {
       {/* Word slides */}
       {isSlide && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>単語スライド</h2>
-          <p style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: 12 }}>{lesson.words[slideStep].word}</p>
-          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: isSmallScreen ? "left" : "center" }}>
+          <h2 className="slide-heading" style={{ fontSize: headingSize, marginTop: isSmallScreen ? 6 : 12, marginBottom: isSmallScreen ? 6 : 12 }}>単語スライド</h2>
+          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 6 : 12 }}>{lesson.words[slideStep].word}</p>
+          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: isSmallScreen ? "left" : "center", marginBottom: isSmallScreen ? 8 : 12 }}>
             <strong>意味:</strong> {lesson.words[slideStep].meaning}<br />
             <strong>類義語:</strong> {lesson.words[slideStep].synonyms || "なし"}<br />
             <strong>対義語:</strong> {lesson.words[slideStep].antonyms || "なし"}<br />
             <strong>例文:</strong> {lesson.words[slideStep].example || "なし"}
           </p>
 
-          <div style={{ marginTop: 10, display: "flex", justifyContent: "center", gap: 12 }}>
+          <div className="audio-next-row" style={{ marginTop: isSmallScreen ? 6 : 10, display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, alignItems: "center", flexWrap: "wrap" }}>
             <button
               onClick={() => speakEnglish(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)}
-              style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc" }}
+              style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc", width: isSmallScreen ? 180 : undefined, padding: isSmallScreen ? "6px 10px" : undefined, fontSize: isSmallScreen ? 14 : nextButtonStyle.fontSize }}
             >
               ▶️ 音声を聞く
             </button>
 
-            <div style={{ alignSelf: "center", fontSize: 12, color: "#444" }}>音読してみましょう — 記憶に残りやすくなります。</div>
+            <div style={{ alignSelf: "center", fontSize: isSmallScreen ? 12 : 12, color: "#444", marginLeft: isSmallScreen ? 0 : 0 }}>音読してみましょう — 記憶に残りやすくなります。</div>
           </div>
 
-          <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 16 }}>
-            <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999" }}>前へ</button>
-            <button onClick={() => setStep(step + 1)} style={blueButtonStyle}>{slideStep + 1 < totalWords ? "次の単語" : "ミニテストへ"}</button>
+          <div className="prev-next-row" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, marginTop: isSmallScreen ? 8 : 16 }}>
+            <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? 140 : nextButtonStyle.width }}>前へ</button>
+            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の単語" : "ミニテストへ"}</button>
           </div>
         </div>
       )}
