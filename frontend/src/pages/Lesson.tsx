@@ -217,7 +217,7 @@ const Lesson: React.FC = () => {
     return -1;
   }
 
-  // PLAY brighter chime for correct answers using WebAudio
+  // PLAY bright celebratory chime for correct answers
   function playCorrectSound() {
     try {
       if (!audioCtxRef.current) {
@@ -225,38 +225,33 @@ const Lesson: React.FC = () => {
       }
       const ctx = audioCtxRef.current!;
 
-      // Create two oscillators for a bright, pleasant chime
-      const o1 = ctx.createOscillator();
-      const o2 = ctx.createOscillator();
-      const g = ctx.createGain();
-
-      o1.type = "triangle";
-      o2.type = "sine";
-      o1.frequency.value = 1320; // bright partial
-      o2.frequency.value = 1760; // higher harmonic
-
-      g.gain.value = 0.0;
-
-      o1.connect(g);
-      o2.connect(g);
-      g.connect(ctx.destination);
+      // Create oscillators for a bright major triad (C major-like)
+      const freqs = [1046.5, 1318.5, 1568.0]; // C6, E6, G6 – bright and pleasant
+      const gain = ctx.createGain();
+      gain.connect(ctx.destination);
 
       const now = ctx.currentTime;
-      g.gain.cancelScheduledValues(now);
-      g.gain.setValueAtTime(0, now);
-      // quick attack to a moderate level
-      g.gain.linearRampToValueAtTime(0.18, now + 0.006);
-      // quick drop to a short sustain
-      g.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(0.25, now + 0.02); // quick bright attack
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9); // fade out nicely
 
-      o1.start(now);
-      o2.start(now + 0.01);
-      o1.stop(now + 0.55);
-      o2.stop(now + 0.55);
+      freqs.forEach((f, i) => {
+        const osc = ctx.createOscillator();
+        osc.type = i === 0 ? "sine" : "triangle"; // mix for sparkle
+        osc.frequency.value = f;
+
+        // gentle detune for shimmer
+        osc.detune.value = (i - 1) * 10;
+
+        osc.connect(gain);
+        osc.start(now + i * 0.02); // stagger slightly for sparkle
+        osc.stop(now + 1.0);
+      });
     } catch (e) {
       // ignore if audio blocked
     }
   }
+
 
   // play the previous (darker) chime for WRONG answers
   function playWrongSound() {
@@ -283,46 +278,6 @@ const Lesson: React.FC = () => {
       // ignore
     }
   }
-
-  // particle helpers: now supports multiple types and uses top-start so particles can appear across the whole screen
-  function triggerParticles(requestedType: "flower" | "confetti" | "burst" | "star" | "random" = "random", count = 22) {
-    const seed = particleSeed + 1;
-    setParticleSeed(seed);
-    const pickType = (rt: string) => {
-      if (rt === "random") {
-        const choices = ["flower", "star", "confetti", "burst"];
-        return choices[Math.floor(Math.random() * choices.length)];
-      }
-      return rt;
-    };
-    const baseType = pickType(requestedType);
-    const arr = Array.from({ length: count }).map((_, i) => {
-      const id = `${seed}-${i}`;
-      const type = (() => {
-        if (Math.random() < 0.15) return "star";
-        if (Math.random() < 0.25) return "burst";
-        return baseType;
-      })();
-      return {
-        id,
-        // spread across entire screen
-        left: Math.random() * 100 + "%", // 0%..100%
-        top: Math.random() * 100 + "%", // 0%..100%
-        size: Math.random() * 24 + 12,
-        rotation: Math.random() * 360,
-        delay: Math.random() * 0.45,
-        type,
-        color:
-          type === "flower"
-            ? ["#ff8da1", "#ffd27f", "#9fe3b8", "#a8d2ff"][Math.floor(Math.random() * 4)]
-            : ["#ff7a7a", "#ffd166", "#8bd3ff", "#b39ddb", "#9be7a9"][Math.floor(Math.random() * 5)],
-      };
-    });
-    setParticles(arr);
-    // clear after animation
-    setTimeout(() => setParticles([]), 2600);
-  }
-
   // --- quiz choice handler (play sound + particle on correct) ---
   function handleChoose(choiceIndex: number) {
     if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
@@ -331,14 +286,10 @@ const Lesson: React.FC = () => {
     setSelectedChoice(choiceIndex);
     if (isCorrect) {
       setQuizScore((s) => s + 1);
-      // celebratory particle and bright sound
-      triggerParticles("flower", 26);
       playCorrectSound();
     } else {
       // play the previous/darker chime for wrong answers
       playWrongSound();
-      // optional small burst so user gets visual feedback
-      triggerParticles("burst", 10);
     }
   }
 
@@ -353,11 +304,9 @@ const Lesson: React.FC = () => {
   function finishLesson() {
     if (finishLock) return; // prevent double execution
     setFinishLock(true);
-
     // go back to the previous page
     nav(-1);
   }
-
 
   return (
     <div style={{
@@ -365,52 +314,6 @@ const Lesson: React.FC = () => {
       minHeight: "100vh", padding: isSmallScreen ? "12px" : "20px", paddingTop: "92px",
       fontFamily: "sans-serif", textAlign: "center",
     }}>
-      {/* particle overlay container: uses top-start so particles are spread across the full screen */}
-      <div style={{ position: "fixed", pointerEvents: "none", inset: 0, zIndex: 9999 }}>
-        {particles.map((p) => (
-          <div key={p.id}
-            style={{
-              position: "absolute",
-              left: p.left,
-              top: `${p.top ?? 0}%`,
-              width: p.size,
-              height: p.size,
-              transform: `rotate(${p.rotation}deg)`,
-              opacity: 0.98,
-              fontSize: Math.max(12, p.size / 2),
-              animation: `floatUp 2s ${p.delay || 0}s ease-out forwards`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 9999,
-            }}>
-            <div style={{ transform: `rotate(${p.rotation}deg)` }}>
-              {p.type === "flower" ? "🌻" : p.type === "blossoms" ? "🌸" : p.type === "star" ? "⭐" : p.type === "burst" ? "✨" : "🎉"}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* finish overlay — single place to display score & praise to avoid duplicates */}
-      {showFinishOverlay && finishScore && (
-        <div style={{
-          position: "fixed", left: 0, top: 0, right: 0, bottom: 0, display: "flex",
-          alignItems: "center", justifyContent: "center", zIndex: 10010, pointerEvents: "none",
-        }}>
-          <div style={{
-            pointerEvents: "none", background: "rgba(255,255,255,0.92)", padding: 18, borderRadius: 12,
-            boxShadow: "0 10px 30px rgba(0,0,0,0.12)", textAlign: "center",
-          }}>
-            <div style={{ fontSize: isSmallScreen ? 18 : 24, fontWeight: 800 }}>
-              レッスン結果: {finishScore.score} / {finishScore.max}
-            </div>
-            <div style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>{finishMessage}</div>
-            <div style={{ fontSize: isSmallScreen ? 14 : 16, marginTop: 6, color: "#777" }}>
-              正答率: {finishScore.percent}%
-            </div>
-          </div>
-        </div>
-      )}
 
       <style>{`
         @keyframes floatUp {
@@ -457,7 +360,6 @@ const Lesson: React.FC = () => {
       {/* Start screen */}
       {step === 0 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize, marginBottom: 6 }}>今日の単語</h2>
           <div style={{ marginBottom: 12, textAlign: isSmallScreen ? "left" : "center" }}>
             <p style={{ color: "#333", fontSize: paragraphFontSize }}>
               このレッスンは「単語スライド → 例文穴埋め（3択）」の流れで進みます。<br />
@@ -466,9 +368,13 @@ const Lesson: React.FC = () => {
             </p>
           </div>
 
-          <ul style={{ listStyle: "none", padding: 0 }}>
-            {lesson.words.slice(0, 10).map((w: LessonWord, i: number) => (<li key={i} style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: 2 }}>{w.word}</li>))}
-          </ul>
+          <div style={{ fontSize: headingSize, marginBottom: 6 }}><strong>今日の単語</strong></div>
+          <div style={{ fontWeight: "bold", fontSize: wordListSize }}>
+            {lesson.words.slice(0, 10).map((w: LessonWord, i: number) =>
+              i < lesson.words.slice(0, 10).length - 1 ? `${w.word}, ` : w.word
+            )}
+          </div>
+
 
           <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
             <button onClick={() => setStep(1)} style={blueButtonStyle}>単語スライドから始める</button>

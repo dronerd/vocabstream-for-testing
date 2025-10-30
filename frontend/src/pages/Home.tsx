@@ -183,8 +183,6 @@ export default function Home() {
             {opt.label}
           </button>
         ))}
-
-        
       </div>
 
       <footer

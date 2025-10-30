@@ -191,8 +191,8 @@ html, body, #root {
 /* Lesson Card */
 .lesson-card {
   flex: 0 0 calc(25% - var(--card-gap));
-  background: linear-gradient(135deg, #b5d3f3 0%, #89bff5 100%);
-  border-radius: var(--card-radius);
+  background: linear-gradient(135deg, #7daae0 0%, #4c96e3 100%);
+  border-radius: 30px;
   padding: var(--card-padding);
   box-sizing: border-box;
   display: flex;
@@ -221,12 +221,12 @@ html, body, #root {
   border: none;
   border-top: 1px solid rgba(255,255,255,0.10);
   background: #0a2e73;
-  padding: 12px 0;
+  padding: 8px 0;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 16px;
   transition: background 0.15s ease, transform 0.08s ease;
 }
 .start-btn:hover { background: #072456; transform: translateY(-1px); }
