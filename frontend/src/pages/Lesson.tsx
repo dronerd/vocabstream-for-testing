@@ -53,9 +53,6 @@ const Lesson: React.FC = () => {
   const [finishMessage, setFinishMessage] = useState<string>("");
   const [finishScore, setFinishScore] = useState<{ score: number; max: number; percent: number } | null>(null);
 
-  // audio context ref for playing chime
-  const audioCtxRef = useRef<AudioContext | null>(null);
-
   // Helper: try fetch JSON
   async function tryFetchJson(path: string): Promise<any | null> {
     try {
@@ -66,6 +63,41 @@ const Lesson: React.FC = () => {
       return null;
     }
   }
+
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const audioUnlockedRef = useRef<boolean>(false);
+
+  // create/unlock AudioContext once on first user gesture
+  useEffect(() => {
+    function unlockAudio() {
+      try {
+        if (!audioCtxRef.current) {
+          const Ctor = (window as any).AudioContext || (window as any).webkitAudioContext;
+          if (!Ctor) return;
+          audioCtxRef.current = new Ctor();
+        }
+        const ctx = audioCtxRef.current;
+        if (ctx && ctx.state === "suspended") {
+          ctx.resume().catch(() => { /* ignore */ });
+        }
+        audioUnlockedRef.current = true;
+      } catch (e) {
+        // ignore
+      } finally {
+        // remove listeners after first gesture
+        document.removeEventListener("touchstart", unlockAudio);
+        document.removeEventListener("click", unlockAudio);
+      }
+    }
+
+    document.addEventListener("touchstart", unlockAudio, { once: true, passive: true });
+    document.addEventListener("click", unlockAudio, { once: true, passive: true });
+
+    return () => {
+      document.removeEventListener("touchstart", unlockAudio);
+      document.removeEventListener("click", unlockAudio);
+    };
+  }, []);
 
   // load lesson data from public/data
   useEffect(() => {
@@ -214,81 +246,79 @@ const Lesson: React.FC = () => {
     return -1;
   }
 
-  // PLAY bright celebratory chime for correct answers
-  function playCorrectSound() {
+  // Play bright celebratory chime for correct answers
+  async function playCorrectSound() {
     try {
       if (!audioCtxRef.current) {
-        audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        const Ctor = (window as any).AudioContext || (window as any).webkitAudioContext;
+        if (!Ctor) return;
+        audioCtxRef.current = new Ctor();
       }
       const ctx = audioCtxRef.current!;
+      // resume if suspended (important on mobile)
+      if (ctx.state === "suspended") {
+        await ctx.resume();
+      }
 
-      // Create oscillators for a bright major triad (C major-like)
-      const freqs = [1046.5, 1318.5, 1568.0]; // C6, E6, G6 – bright and pleasant
+      const freqs = [1046.5, 1318.5, 1568.0]; // C6, E6, G6
       const gain = ctx.createGain();
       gain.connect(ctx.destination);
 
       const now = ctx.currentTime;
-      gain.gain.setValueAtTime(0, now);
-      gain.gain.linearRampToValueAtTime(0.25, now + 0.02); // quick bright attack
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9); // fade out nicely
+      // start from a very small positive value to avoid exponential ramp issues
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(0.25, now + 0.02);
+      // schedule exponential fade after linear ramp -- target must be > 0
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
 
       freqs.forEach((f, i) => {
         const osc = ctx.createOscillator();
-        osc.type = i === 0 ? "sine" : "triangle"; // mix for sparkle
+        osc.type = i === 0 ? "sine" : "triangle";
         osc.frequency.value = f;
-
-        // gentle detune for shimmer
         osc.detune.value = (i - 1) * 10;
-
         osc.connect(gain);
-        osc.start(now + i * 0.02); // stagger slightly for sparkle
+        osc.start(now + i * 0.02);
         osc.stop(now + 1.0);
       });
     } catch (e) {
-      // ignore if audio blocked
+      // ignore or log
+      // console.warn("playCorrectSound failed", e);
     }
   }
 
-
-  // play the previous (darker) chime for WRONG answers
-  function playWrongSound() {
+  // Play darker chime for wrong answers
+  async function playWrongSound() {
     try {
       if (!audioCtxRef.current) {
-        audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        const Ctor = (window as any).AudioContext || (window as any).webkitAudioContext;
+        if (!Ctor) return;
+        audioCtxRef.current = new Ctor();
       }
       const ctx = audioCtxRef.current!;
+      if (ctx.state === "suspended") {
+        await ctx.resume();
+      }
+
       const o = ctx.createOscillator();
       const g = ctx.createGain();
       o.type = "sine";
-      o.frequency.value = 880; // A5-ish (previous tone)
-      g.gain.value = 0;
+      o.frequency.value = 880; // A5-ish
       o.connect(g);
       g.connect(ctx.destination);
+
       const now = ctx.currentTime;
-      g.gain.cancelScheduledValues(now);
-      g.gain.setValueAtTime(0, now);
+      g.gain.setValueAtTime(0.0001, now);
       g.gain.linearRampToValueAtTime(0.12, now + 0.01);
-      o.start(now);
       g.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+
+      o.start(now);
       o.stop(now + 0.5);
     } catch (e) {
-      // ignore
+      // ignore or log
+      // console.warn("playWrongSound failed", e);
     }
   }
-  // --- quiz choice handler (play sound + particle on correct) ---
-  function handleChoose(choiceIndex: number) {
-    if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
-    const q = quizQuestions[quizIndex];
-    const isCorrect = choiceIndex === q.answer_index;
-    setSelectedChoice(choiceIndex);
-    if (isCorrect) {
-      setQuizScore((s) => s + 1);
-      playCorrectSound();
-    } else {
-      // play the previous/darker chime for wrong answers
-      playWrongSound();
-    }
-  }
+
 
   // show values for results
   const displayFinalScore = finalScore ?? quizScore;
@@ -303,6 +333,20 @@ const Lesson: React.FC = () => {
     setFinishLock(true);
     // go back to the previous page
     nav(-1);
+  }
+
+  function handleChoose(choiceIndex: number) {
+    if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
+    const q = quizQuestions[quizIndex];
+    const isCorrect = choiceIndex === q.answer_index;
+    setSelectedChoice(choiceIndex);
+    if (isCorrect) {
+      setQuizScore((s) => s + 1);
+      // kick off sound (no need to await)
+      playCorrectSound().catch(() => {});
+    } else {
+      playWrongSound().catch(() => {});
+    }
   }
 
   return (

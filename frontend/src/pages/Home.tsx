@@ -31,7 +31,7 @@ export default function Home() {
 
         .home-container {
           padding: 20px;
-          padding-top: 92px;
+          padding-top: 70px;
           font-family: sans-serif;
           background-color: #081230;
           color: #f1f1f1;
@@ -42,6 +42,7 @@ export default function Home() {
           font-size: 50px;
           margin: 4px 0;
           color: #ffffff;
+          margin-top: 22px;
         }
 
         .subtitle {
