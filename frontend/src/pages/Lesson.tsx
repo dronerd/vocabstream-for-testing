@@ -467,12 +467,12 @@ const Lesson: React.FC = () => {
                   return (
                     <button key={i} onClick={() => handleChoose(i)} onMouseEnter={() => setHoveredQuizChoice(i)} onMouseLeave={() => setHoveredQuizChoice(null)}
                       style={{
-                        fontSize: isSmallScreen ? 16 : 18, padding: isSmallScreen ? "12px 10px" : "16px 18px", width: "100%",
+                        fontSize: isSmallScreen ? 16 : 18, padding: isSmallScreen ? "4px 5px" : "14px 16px", width: "100%",
                         background, color: selectedChoice !== null ? (isCorrect ? "#052e16" : isWrongSelected ? "#330000" : "#0f172a") : "#fff",
                         boxShadow, transform, transition: "transform 0.18s ease, box-shadow 0.2s ease, background 0.25s ease", border: "none", cursor: selectedChoice !== null ? "default" : "pointer",
                         borderRadius: 12, display: "flex", gap: 12, alignItems: "center", justifyContent: "center", textAlign: "left",
                       }} disabled={selectedChoice !== null}>
-                      <div style={{ minWidth: 40, textAlign: "center", fontSize: 20, fontWeight: 800 }}>{` ${i + 1}`}</div>
+                      <div style={{ minWidth: 40, textAlign: "center", fontSize: 18, fontWeight: 800 }}>{` ${i + 1}`}</div>
                       <div style={{ textAlign: "left" }}>
                         <div style={{ fontWeight: 700 }}>{c}</div>
                         <div style={{ fontSize: 14, color: "#fff", opacity: 0.9 }}>{i === quizQuestions[quizIndex].answer_index && selectedChoice !== null ? "correct!" : ""}</div>
