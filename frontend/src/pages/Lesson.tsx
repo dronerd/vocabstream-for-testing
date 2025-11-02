@@ -56,6 +56,30 @@ const Lesson: React.FC = () => {
   // audio context ref for playing chime
   const audioCtxRef = useRef<AudioContext | null>(null);
 
+  // call this from a real user gesture (touch/click) before playing WebAudio
+  async function unlockAudio(): Promise<void> {
+    try {
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      }
+      const ctx = audioCtxRef.current!;
+      // if suspended, resume it — this must be called from a user gesture
+      if (ctx.state === "suspended") {
+        await ctx.resume();
+        // Some browsers require a tiny silent buffer to finish unlocking; create and stop quickly:
+        const buffer = ctx.createBuffer(1, 1, ctx.sampleRate);
+        const src = ctx.createBufferSource();
+        src.buffer = buffer;
+        src.connect(ctx.destination);
+        src.start(0);
+        src.stop(0);
+      }
+    } catch (e) {
+      // ignore, we'll fallback to HTMLAudio if provided below
+      console.warn("unlockAudio failed", e);
+    }
+  }
+
   // Helper: try fetch JSON
   async function tryFetchJson(path: string): Promise<any | null> {
     try {
@@ -276,8 +300,13 @@ const Lesson: React.FC = () => {
     }
   }
   // --- quiz choice handler (play sound + particle on correct) ---
-  function handleChoose(choiceIndex: number) {
+  // needed to make it async to await unlockAudio
+  async function handleChoose(choiceIndex: number) {
     if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
+
+    // ensure audio context is resumed from this user gesture
+    await unlockAudio();
+
     const q = quizQuestions[quizIndex];
     const isCorrect = choiceIndex === q.answer_index;
     setSelectedChoice(choiceIndex);
@@ -285,7 +314,6 @@ const Lesson: React.FC = () => {
       setQuizScore((s) => s + 1);
       playCorrectSound();
     } else {
-      // play the previous/darker chime for wrong answers
       playWrongSound();
     }
   }
