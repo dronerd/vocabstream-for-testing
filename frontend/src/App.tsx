@@ -21,7 +21,6 @@ import ReviewReadingComprehensionList from "./pages/Review_ReadingComprehension_
 import LandingPage from "./pages/LandingPage";
 import Privacy from "./pages/Privacy";
 import Prompts from "./pages/ChatGPT_prompts";
-import ProgressTransport from "./pages/Progress_transport";
 import StillUnderDevelopment from "./pages/Still_under_development";
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -65,7 +64,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/prompts" element={<Prompts />} />
-          <Route path="/progress_transport" element={<ProgressTransport />} />
           <Route path="/still_under_development" element={<StillUnderDevelopment />} />
         </Routes>
       </div>
