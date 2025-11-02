@@ -180,7 +180,15 @@ export default function TestPage() {
                   
                 </li>
                 <li>
-                  スマートフォンなら「ChatGPT」アプリ（iOS/Android）を公式ストアからダウンロードして開くことをおすすめします。
+                  スマートフォンなら
+                  <a
+                    href = "https://chatgpt.com/ja-JP/download/"
+                    target = "_blank"
+                    rel = "noopener noreferrer"
+                    style = {{ fontWeight: 800, color: '#0b3d91', textDecoration: 'underline'}}
+                  >
+                  「ChatGPT」アプリ（iOS/Android）を公式ストアからダウンロードして開くことをおすすめします。
+                  </a>
                 </li>
                 <li>
                   ※会社や学校のネットワークだとアクセス制限がかかっている場合があります。その場合は家庭のWi‑Fiやモバイル回線を試してください。
