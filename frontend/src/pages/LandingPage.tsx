@@ -412,7 +412,8 @@ export default function LandingPage() {
         </div>
 
         <footer style={{ maxWidth: 'var(--container-max)', margin: "28px auto 0", padding: 18, textAlign: "center", color: "#dfeeff" }}>
-          <div>All content © 2025 Project Fluence — 黒木 勇人</div>
+          <div>All content © 2025 Project Fluence — 黒木 勇人
+          </div>
           <div style={{ marginTop: 8 }}>
             <a href="/privacy" style={{ color: '#dfeeff', textDecoration: 'underline' }}>Privacy Policy</a>
           </div>
