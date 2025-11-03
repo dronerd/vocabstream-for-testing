@@ -69,7 +69,7 @@ export default function LessonList() {
     return (
       <div className="page-root">
         <h2 className="page-title">学習分野が指定されていません</h2>
-        <button className="back-btn" onClick={() => nav("/learn")}>戻る</button>
+        <button className="back-btn" onClick={() => nav("/learn")}>← 戻る</button>
         <style>{styles}</style>
       </div>
     );
@@ -77,7 +77,7 @@ export default function LessonList() {
   return (
     <div className="page-root">
       <h2 className="page-title">{genreTitle} - レッスン一覧</h2>
-      <button className="back-btn" onClick={() => nav("/learn")}>戻る</button>
+      <button className="back-btn" onClick={() => nav("/learn")}>← 戻る</button>
 
       <div className="lessons-grid">
         {lessons.map((l) => (
@@ -155,11 +155,14 @@ html, body, #root {
   font-size: 24px;
   margin-bottom: 10px;
   color: #04204a;
+  text-align: center;
+  font-weight: 800;
 }
 
 /* Back button */
 .back-btn {
-  margin-bottom: 20px;
+  display: block; /* ★ 中央寄せのために必須 */
+  margin: 0 auto 20px auto; /* ★ 左右のautoで中央寄せ */
   padding: 10px 18px;
   border-radius: 10px;
   border: none;
@@ -175,6 +178,7 @@ html, body, #root {
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   transform: translateY(-2px);
 }
+
 
 /* Grid - use flex-start to avoid uneven spacing rounding issues that can cause overflow */
 .lessons-grid {
@@ -233,10 +237,15 @@ html, body, #root {
 
 /* Responsive tweaks */
 @media (min-width: 1200px) {
-  :root { --card-gap: 16px; --card-padding: 14px; }
+  :root { --card-gap: 18px; --card-padding: 14px; }
+  .lessons-grid {
+    justify-content: center; /* 中央寄せにして両端にスペースを確保 */
+    max-width: 1100px; 
+    margin: 0 auto;   
+
   .lesson-card {
-    flex: 0 0 calc(25% - var(--card-gap));
-    min-height: 160px;
+    flex: 0 0 calc(22% - var(--card-gap));
+    min-height: 150px;
     padding: var(--card-padding);
   }
 }

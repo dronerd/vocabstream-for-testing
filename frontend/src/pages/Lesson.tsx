@@ -42,6 +42,7 @@ const Lesson: React.FC = () => {
   const [finalScore, setFinalScore] = useState<number | null>(null);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [hoveredQuizChoice, setHoveredQuizChoice] = useState<number | null>(null);
+  const [quizAttempted, setQuizAttempted] = useState<boolean>(false);
 
   // responsive / touch state
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
@@ -70,6 +71,10 @@ const Lesson: React.FC = () => {
   const [graded, setGraded] = useState<boolean>(false);
   const [pairResults, setPairResults] = useState<{ correct: boolean }[]>([]);
   const [revealUsed, setRevealUsed] = useState<boolean>(false);
+  // retry mode: when user chooses to retry remaining pairs; correct pairs stay locked/green
+  const [retryMode, setRetryMode] = useState<boolean>(false);
+  // store the first attempt matching score so final score uses the original attempt even after retry
+  const [initialMatchingScore, setInitialMatchingScore] = useState<number | null>(null);
 
   // audio unlock
   async function unlockAudio(): Promise<void> {
@@ -213,6 +218,7 @@ const Lesson: React.FC = () => {
       setGraded(false);
       setPairResults([]);
       setRevealUsed(false);
+      setInitialMatchingScore(null);
     }
   }, [step, lesson]);
 
@@ -274,6 +280,9 @@ const Lesson: React.FC = () => {
   };
   const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
 
+  // 称賛メッセージの配列
+  const congratulationsMessages = ["All correct! Fantastic!", "All correct! Brilliant!", "All correct! Terrific!", "All correct! Excellent!"];
+  
   // show the steps (now includes matching)
   const topSteps = ["単語スライド", "単語・意味マッチング", "例文を使った穴埋めクイズ（3択）"];
   function currentTopIndex() {
@@ -284,8 +293,9 @@ const Lesson: React.FC = () => {
   }
 
   // PLAY bright celebratory chime for correct answers
-  function playCorrectSound() {
+  async function playCorrectSound() {
     try {
+      await unlockAudio();
       if (!audioCtxRef.current) {
         audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
       }
@@ -296,7 +306,8 @@ const Lesson: React.FC = () => {
       gain.connect(ctx.destination);
 
       const now = ctx.currentTime;
-      gain.gain.setValueAtTime(0, now);
+      // set a small non-zero initial gain to avoid issues with exponential ramps on some mobile browsers
+      gain.gain.setValueAtTime(0.001, now);
       gain.gain.linearRampToValueAtTime(0.25, now + 0.02);
       gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
 
@@ -304,17 +315,21 @@ const Lesson: React.FC = () => {
         const osc = ctx.createOscillator();
         osc.type = i === 0 ? "sine" : "triangle";
         osc.frequency.value = f;
-        osc.detune.value = (i - 1) * 10;
+        try { osc.detune.value = (i - 1) * 10; } catch (e) { }
         osc.connect(gain);
-        osc.start(now + i * 0.02);
-        osc.stop(now + 1.0);
+        // start slightly in the future to ensure scheduling works across platforms
+        osc.start(now + i * 0.02 + 0.01);
+        osc.stop(now + 1.0 + 0.01);
       });
-    } catch (e) { }
+    } catch (e) {
+      // swallow errors to avoid breaking UI
+    }
   }
 
   // play the previous (darker) chime for WRONG answers
-  function playWrongSound() {
+  async function playWrongSound() {
     try {
+      await unlockAudio();
       if (!audioCtxRef.current) {
         audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
       }
@@ -323,17 +338,19 @@ const Lesson: React.FC = () => {
       const g = ctx.createGain();
       o.type = "sine";
       o.frequency.value = 880;
-      g.gain.value = 0;
+      g.gain.value = 0.001; // small non-zero start
       o.connect(g);
       g.connect(ctx.destination);
       const now = ctx.currentTime;
       g.gain.cancelScheduledValues(now);
-      g.gain.setValueAtTime(0, now);
+      g.gain.setValueAtTime(0.001, now);
       g.gain.linearRampToValueAtTime(0.12, now + 0.01);
-      o.start(now);
+      o.start(now + 0.01);
       g.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
-      o.stop(now + 0.5);
-    } catch (e) { }
+      o.stop(now + 0.5 + 0.01);
+    } catch (e) {
+      // ignore audio errors
+    }
   }
 
   // --- quiz choice handler (unchanged) ---
@@ -346,6 +363,7 @@ const Lesson: React.FC = () => {
     const q = quizQuestions[quizIndex];
     const isCorrect = choiceIndex === q.answer_index;
     setSelectedChoice(choiceIndex);
+    setQuizAttempted(true);
     if (isCorrect) {
       setQuizScore((s) => s + 1);
       playCorrectSound();
@@ -356,8 +374,9 @@ const Lesson: React.FC = () => {
 
   // matching handlers
   function handleTapWord(originalIndex: number) {
-    if (graded) return; // no changes after grading
-    // if this word already paired, ignore (or allow unpair via bottom list)
+    // prevent changes when graded unless we're in retryMode
+    if (graded && !retryMode) return;
+    // if this word already paired, ignore (paired items are not selectable)
     if (pairsList.some(p => p.wordOriginal === originalIndex)) return;
     // toggle selection
     if (selectedWordOriginal === originalIndex) {
@@ -371,7 +390,7 @@ const Lesson: React.FC = () => {
     }
   }
   function handleTapMeaning(originalIndex: number) {
-    if (graded) return;
+    if (graded && !retryMode) return;
     if (pairsList.some(p => p.meaningOriginal === originalIndex)) return;
     if (selectedMeaningOriginal === originalIndex) {
       setSelectedMeaningOriginal(null);
@@ -390,13 +409,18 @@ const Lesson: React.FC = () => {
   }
 
   function removePairAt(index: number) {
-    if (graded) return; // do not allow removal after grading
+    // do not allow removal after grading; also disallow removal while in retryMode to keep correct pairs locked
+    if (graded || retryMode) return;
     setPairsList(prev => prev.filter((_, i) => i !== index));
   }
 
   async function handleGradePairs() {
     // ensure audio unlocked
     await unlockAudio();
+    // If no pairs have been created, do nothing (avoid showing correct/incorrect messages)
+    if (pairsList.length === 0) {
+      return;
+    }
 
     // build result for each created pair
     const results = pairsList.map(p => {
@@ -405,6 +429,13 @@ const Lesson: React.FC = () => {
     });
     setPairResults(results);
     setGraded(true);
+    setRetryMode(false);
+
+    // record first attempt matching score
+    if (initialMatchingScore === null) {
+      const firstScore = results.filter(r => r.correct).length;
+      setInitialMatchingScore(firstScore);
+    }
 
     const anyWrong = results.some(r => !r.correct);
     if (pairsList.length === L.words.length && !anyWrong) {
@@ -419,9 +450,11 @@ const Lesson: React.FC = () => {
     // set pairsList to correct mapping (wordOriginal -> same original meaning)
     const correctPairs = L.words.map((_, i) => ({ wordOriginal: i, meaningOriginal: i }));
     setPairsList(correctPairs);
+    // リベール時は視覚的に正解（緑）を表示するが、称賛や正誤ラベルは suppress （revealUsed）で制御する
     setPairResults(correctPairs.map(() => ({ correct: true })));
     setGraded(true);
     setRevealUsed(true);
+    setRetryMode(false);
   }
 
   function finishLesson() {
@@ -430,12 +463,19 @@ const Lesson: React.FC = () => {
     nav(-1);
   }
 
-  // show values for results (quiz part)
+  // show values for results (quiz part and matching)
   const displayFinalScore = finalScore ?? quizScore;
   const quizMax = quizQuestions.length || 1;
   const quizPercent = Math.round((displayFinalScore / quizMax) * 100);
-  const totalScore = quizScore;
-  const totalMax = quizQuestions.length || 0;
+  
+  // マッチングスコアの計算 (初回採点スコアがあればそれを最終スコアとして使う)
+  const matchingScore = initialMatchingScore !== null ? initialMatchingScore : pairResults.filter(r => r.correct).length;
+  const matchingMax = L.words.length; // 全単語数が最大スコア
+  const matchingPercent = Math.round((matchingScore / matchingMax) * 100);
+  
+  // 総合スコアの計算（マッチングと穴埋めクイズの合計）
+  const totalScore = displayFinalScore + matchingScore;
+  const totalMax = quizMax + matchingMax;
   const totalPercent = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
 
   // helpers for UI lookup
@@ -576,7 +616,7 @@ const Lesson: React.FC = () => {
       {step === totalWords + 1 && (
         <div style={{ width: "100%", maxWidth: 900, marginTop: 6 }}>
           <h2 style={{ fontSize: headingSize2, marginBottom: 8 }}>単語・意味マッチング</h2>
-          <p style={{ fontSize: isSmallScreen ? 13 : 18, marginBottom: 8 }}>各単語と意味をタップしてペアを作ってください。選択中の項目は「選択中：」で表示されます。</p>
+          <p style={{ fontSize: isSmallScreen ? 13 : 18, marginBottom: 8 }}>各単語と意味を順にタップしてペアを作ってみましょう。選択中の項目は「選択中：」で表示されます。</p>
 
           <div style={{ display: "flex", gap: 12, flexDirection: isSmallScreen ? "column" : "row", alignItems: "flex-start", justifyContent: "center" }}>
             <div style={{ flex: 1, minWidth: 0 }}>
@@ -638,7 +678,7 @@ const Lesson: React.FC = () => {
                 {selectedWordOriginal !== null && <span style={{ fontWeight: 700 }}> 単語：{wordTextByOriginal(selectedWordOriginal)} </span>}
                 {selectedMeaningOriginal !== null && <span style={{ fontWeight: 700 }}> 意味：{meaningTextByOriginal(selectedMeaningOriginal)} </span>}
               </div>
-            ) : <div style={{ color: "#666" }}>単語と意味を順にタップしてペアを作ってください。</div>}
+            ) : <div style={{ color: "#666" }}>単語と意味を順にタップしてペアを作ってみましょう。</div>}
           </div>
 
           {/* pairs list */}
@@ -650,7 +690,8 @@ const Lesson: React.FC = () => {
                 const result = pairResults[i];
                 let bg = "#fff";
                 let color = "#000";
-                if (graded && result) {
+                // show green/red when graded OR when in retryMode (keep correct pairs highlighted)
+                if ((graded || retryMode) && result) {
                   if (result.correct) { bg = "#dcfce7"; color = "#065f46"; } // greenish
                   else { bg = "#ffe4e6"; color = "#7f1d1d"; } // reddish
                 }
@@ -662,13 +703,13 @@ const Lesson: React.FC = () => {
                       <div style={{ maxWidth: isSmallScreen ? "50vw" : 420, textAlign: "left", whiteSpace: "normal" }}>{meaningTextByOriginal(p.meaningOriginal)}</div>
                     </div>
                     <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                      {!graded && (
+                      {!graded && !(retryMode && result && result.correct) && (
                         <button onClick={() => removePairAt(i)} style={{ background: "transparent", border: "1px solid #ccc", padding: "6px 8px", borderRadius: 8, cursor: "pointer" }}>
-                          削除
+                          ペアを削除
                         </button>
                       )}
-                      {graded && pairResults[i] && pairResults[i].correct && <span style={{ fontWeight: 700 }}>正解</span>}
-                      {graded && pairResults[i] && !pairResults[i].correct && <span style={{ fontWeight: 700 }}>不正解</span>}
+                      {((graded && !revealUsed) || retryMode) && pairResults[i] && pairResults[i].correct && <span style={{ fontWeight: 700 }}>正解</span>}
+                      {(graded && !revealUsed) && pairResults[i] && !pairResults[i].correct && <span style={{ fontWeight: 700 }}>不正解</span>}
                     </div>
                   </div>
                 );
@@ -676,44 +717,87 @@ const Lesson: React.FC = () => {
             </div>
           </div>
 
-          {/* controls */}
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12, flexWrap: "wrap" }}>
-            <button onClick={async () => { await handleGradePairs(); }} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 200 }}>
-              採点する
-            </button>
-
-            <button onClick={() => { setWordsShown(prev => { const copy = prev.slice(); copy.sort((a,b)=> a.originalIndex - b.originalIndex); return copy; }); setMeaningsShown(prev => { const copy = prev.slice(); copy.sort((a,b)=> a.originalIndex - b.originalIndex); return copy; }); }} style={{ padding: isSmallScreen ? "8px 10px" : "10px 16px", borderRadius: 8, border: "1px solid #ccc", background: "#fff", cursor: "pointer" }}>
-              並び替え（正順表示）
-            </button>
-
-            <button onClick={() => { setWordsShown(prev => prev.slice().reverse()); setMeaningsShown(prev => prev.slice().reverse()); }} style={{ padding: isSmallScreen ? "8px 10px" : "10px 16px", borderRadius: 8, border: "1px solid #ccc", background: "#fff", cursor: "pointer" }}>
-              ランダム
-            </button>
+          {/* controls: grade on top, wide quiz + skip buttons under it (visible from the start) */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center", marginTop: 12 }}>
+            <div style={{ width: isSmallScreen ? "100%" : undefined, display: "flex", justifyContent: "center" }}>
+              <button onClick={async () => { await handleGradePairs(); }} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 320 }}>
+                採点する
+              </button>
+            </div>
+            <div style={{ display: "flex", gap: 12, justifyContent: "center", width: isSmallScreen ? "100%" : undefined, flexWrap: isSmallScreen ? "wrap" : "nowrap" }}>
+              <button onClick={() => setStep(totalWords + 2)} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 420, height: 52, fontSize: isSmallScreen ? 12 : 14 }}>
+                例文を使った穴埋めクイズ（3択👆）に進む
+              </button>
+              <button onClick={() => setStep(totalWords + 3)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? "100%" : 420, height: 52, fontSize: isSmallScreen ? 12 : 14 }}>
+                スキップしてレッスンを終了する
+              </button>
+            </div>
           </div>
 
           {/* after grading actions */}
           {graded && (
             <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}>
-              {pairResults.length > 0 && pairResults.every(r => r.correct) ? (
-                <div style={{ fontWeight: 700, color: "#0b6623" }}>おめでとう！全問正解です！</div>
-              ) : (
-                <div style={{ fontWeight: 700, color: "#7f1d1d" }}>{pairResults.some(r => !r.correct) ? "残念、いくつか間違いがあります。" : ""}</div>
+              {(() => {
+                  const hasCorrect = pairResults.length > 0 && pairResults.some(r => r.correct);
+                  const allCorrect = !revealUsed && pairResults.length > 0 && pairResults.every(r => r.correct) && pairsList.length === L.words.length;
+                  if (allCorrect) {
+                    return (
+                      <div style={{ fontWeight: 700, color: "#0b6623" }}>
+                        {congratulationsMessages[Math.floor(Math.random() * congratulationsMessages.length)]}
+                      </div>
+                    );
+                  }
+                  // Show retry hint only if there is at least one correct pair AND reveal was NOT used.
+                  if (!revealUsed && hasCorrect) {
+                    return <div style={{ fontWeight: 700, color: "#0b6623" }}>もう一度チャレンジできます</div>;
+                  }
+                  return null;
+              })()}
+
+              {(pairResults.some(r => !r.correct) || pairsList.length < L.words.length) && !revealUsed && (
+                <>
+                  {pairResults.some(r => !r.correct) && (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                      <button onClick={() => {
+                        // 間違ったペアを削除、正解だけ残す。リトライモードを有効にして正解はロック
+                        const newPairsList = pairsList.filter((_, index) => pairResults[index]?.correct);
+                        setPairsList(newPairsList);
+                        // 正解のペアの結果だけを保持
+                        const newPairResults = pairResults.filter(r => r.correct);
+                        setPairResults(newPairResults);
+                        setGraded(false);
+                        setRetryMode(true);
+                      }} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 320 }}>
+                        もう一度チャレンジする
+                      </button>
+                      <button onClick={() => handleRevealAnswers()} style={{ ...nextButtonStyle, backgroundColor: "#ef4444", width: isSmallScreen ? "100%" : 320 }}>
+                        解答を表示する
+                      </button>
+                    </div>
+                  )}
+                  {!pairResults.some(r => !r.correct) && pairsList.length < L.words.length && (
+                    <button onClick={() => {
+                      // 残りを作成するモード: 既に採点済みの正解は残してロックする。
+                      if (pairResults.length === 0) {
+                        // 採点がされていない場合はそのまま残してリトライモードに移行
+                        setGraded(false);
+                        setRetryMode(true);
+                      } else {
+                        const newPairsList = pairsList.filter((_, index) => pairResults[index]?.correct);
+                        const newPairResults = pairResults.filter(r => r.correct);
+                        setPairsList(newPairsList);
+                        setPairResults(newPairResults);
+                        setGraded(false);
+                        setRetryMode(true);
+                      }
+                    }} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 320 }}>
+                      残りのペアを作成する
+                    </button>
+                  )}
+                </>
               )}
 
-              {pairResults.some(r => !r.correct) && !revealUsed && (
-                <button onClick={() => handleRevealAnswers()} style={{ ...nextButtonStyle, backgroundColor: "#ef4444", width: isSmallScreen ? "100%" : 280 }}>
-                  解答を表示する
-                </button>
-              )}
-
-              <div style={{ display: "flex", gap: 8, justifyContent: "center", marginTop: 6, flexWrap: "wrap" }}>
-                <button onClick={() => setStep(totalWords + 2)} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 260 }}>
-                  例文をつかった穴埋めに進む
-                </button>
-                <button onClick={() => finishLesson()} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? "100%" : 220 }}>
-                  スキップしてレッスンを終了する
-                </button>
-              </div>
+              {/* after-grading: no duplicate quiz/skip buttons here (they show under the grading controls) */}
             </div>
           )}
         </div>
@@ -812,7 +896,23 @@ const Lesson: React.FC = () => {
 
       {/* Final summary */}
       {step === totalWords + 3 && (() => {
-        const praise = getPraise(totalPercent);
+        // Determine which sections were attempted
+        const matchingAttempted = initialMatchingScore !== null || pairResults.length > 0 || revealUsed || graded || pairsList.length > 0;
+        const quizAttemptedFlag = quizAttempted;
+
+        const matchingDisplayScore = matchingAttempted ? matchingScore : 0;
+        const matchingDisplayMax = matchingAttempted ? matchingMax : 0;
+        const matchingDisplayPercent = matchingAttempted ? Math.round((matchingScore / matchingMax) * 100) : 0;
+
+        const quizDisplayScore = quizAttemptedFlag ? displayFinalScore : 0;
+        const quizDisplayMax = quizAttemptedFlag ? quizMax : 0;
+        const quizDisplayPercent = quizAttemptedFlag ? Math.round((quizDisplayScore / quizDisplayMax) * 100) : 0;
+
+        const attemptedTotalScore = matchingDisplayScore + quizDisplayScore;
+        const attemptedTotalMax = matchingDisplayMax + quizDisplayMax;
+        const attemptedPercent = attemptedTotalMax ? Math.round((attemptedTotalScore / attemptedTotalMax) * 100) : 0;
+
+        const praise = getPraise(attemptedPercent);
 
         return (
           <div
@@ -840,13 +940,14 @@ const Lesson: React.FC = () => {
               <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
 
               <div style={{ fontSize: paragraphFontSize, marginBottom: 12 }}>
-                <p>単語クイズ: {quizScore} / {quizQuestions.length}</p>
+                <p>単語マッチング: {matchingDisplayScore} / {matchingDisplayMax} ({matchingDisplayPercent}%)</p>
+                <p>単語クイズ: {quizDisplayScore} / {quizDisplayMax} ({quizDisplayPercent}%)</p>
                 <hr style={{ margin: "12px 0" }} />
                 <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>
-                  合計: {totalScore} / {totalMax}
+                  合計: {attemptedTotalScore} / {attemptedTotalMax}
                 </p>
                 <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>
-                  正答率: {totalPercent}%
+                  総合正答率: {attemptedPercent}%
                 </p>
                 <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>
                   {praise}
