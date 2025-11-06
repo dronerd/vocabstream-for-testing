@@ -602,7 +602,7 @@ const Lesson: React.FC = () => {
                   >
                     {meaningIndex + 1 < meaningQuestions.length
                       ? "次の問題へ"
-                      : "例文穴埋めクイズ（3択👆）へ"}
+                      : "例文穴埋めクイズへ"}
                   </button>
 
                 </div>
