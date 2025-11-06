@@ -61,7 +61,7 @@ export default function ReviewList() {
   const lessonImages: Record<string, string> = {
     "computer-science": "/CS.png",
     "medicine": "/Medicine.png",
-    "law": "/Law.png",
+    "law": "/law.png",
     "economics-business": "/Business.png",
     "environment": "/Environment.png",
     "engineering": "/Engineering.png",

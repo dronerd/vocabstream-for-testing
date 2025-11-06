@@ -27,13 +27,21 @@ interface QuizQuestion {
   answer_index: number;
 }
 
+// New type for meaning-mcq questions
+interface MeaningQuestion {
+  originalIndex: number; // index into lesson.words
+  prompt: string; // meaning text
+  choices: string[]; // words
+  answer_index: number;
+}
+
 const Lesson: React.FC = () => {
   const { lessonId } = useParams<{ lessonId: string }>();
   const [step, setStep] = useState<number>(0);
   const [lesson, setLesson] = useState<LessonData | null>(null);
   const nav = useNavigate();
 
-  // quiz state
+  // quiz state (example-sentence quiz)
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
   const [quizIndex, setQuizIndex] = useState<number>(0);
   const [quizScore, setQuizScore] = useState<number>(0);
@@ -43,6 +51,16 @@ const Lesson: React.FC = () => {
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [hoveredQuizChoice, setHoveredQuizChoice] = useState<number | null>(null);
   const [quizAttempted, setQuizAttempted] = useState<boolean>(false);
+
+  // meaning-mcq state (replaces the old matching UI)
+  const [meaningQuestions, setMeaningQuestions] = useState<MeaningQuestion[]>([]);
+  const [meaningIndex, setMeaningIndex] = useState<number>(0);
+  const [meaningScore, setMeaningScore] = useState<number>(0);
+  const [meaningLoading, setMeaningLoading] = useState<boolean>(false);
+  const [meaningError, setMeaningError] = useState<boolean>(false);
+  const [meaningSelectedChoice, setMeaningSelectedChoice] = useState<number | null>(null);
+  const [hoveredMeaningChoice, setHoveredMeaningChoice] = useState<number | null>(null);
+  const [meaningAttempted, setMeaningAttempted] = useState<boolean>(false);
 
   // responsive / touch state
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
@@ -56,25 +74,6 @@ const Lesson: React.FC = () => {
 
   // audio context ref for playing chime
   const audioCtxRef = useRef<AudioContext | null>(null);
-
-  // ------ matching state ------
-  // wordsShown: shuffled array of { word, originalIndex }
-  const [wordsShown, setWordsShown] = useState<{ word: string; originalIndex: number }[]>([]);
-  // meaningsShown: shuffled array of { text, originalIndex }
-  const [meaningsShown, setMeaningsShown] = useState<{ text: string; originalIndex: number }[]>([]);
-  // selected items during pairing (store originalIndex for identification)
-  const [selectedWordOriginal, setSelectedWordOriginal] = useState<number | null>(null);
-  const [selectedMeaningOriginal, setSelectedMeaningOriginal] = useState<number | null>(null);
-  // pairsList: array of { wordOriginal, meaningOriginal } in creation order
-  const [pairsList, setPairsList] = useState<{ wordOriginal: number; meaningOriginal: number }[]>([]);
-  // after grading, show results and mark correctness
-  const [graded, setGraded] = useState<boolean>(false);
-  const [pairResults, setPairResults] = useState<{ correct: boolean }[]>([]);
-  const [revealUsed, setRevealUsed] = useState<boolean>(false);
-  // retry mode: when user chooses to retry remaining pairs; correct pairs stay locked/green
-  const [retryMode, setRetryMode] = useState<boolean>(false);
-  // store the first attempt matching score so final score uses the original attempt even after retry
-  const [initialMatchingScore, setInitialMatchingScore] = useState<number | null>(null);
 
   // audio unlock
   async function unlockAudio(): Promise<void> {
@@ -166,11 +165,11 @@ const Lesson: React.FC = () => {
     };
   }, []);
 
-  // generate quiz when entering quiz step (note: quiz step is now totalWords + 2)
+  // generate quiz when entering quiz step (example-sentence quiz)
   useEffect(() => {
     if (!lesson) return;
     const totalWords = lesson.words ? lesson.words.length : 0;
-    const quizStep = totalWords + 2; // changed: matching inserted at totalWords + 1
+    const quizStep = totalWords + 2; // example-sentence quiz
     if (step === quizStep) {
       setQuizLoading(true);
       setQuizError(false);
@@ -191,34 +190,28 @@ const Lesson: React.FC = () => {
     }
   }, [step, lesson]);
 
-  // prepare matching data when entering matching step
+  // prepare meaning-mcq when entering matching step
   useEffect(() => {
     if (!lesson) return;
     const totalWords = lesson.words ? lesson.words.length : 0;
-    const matchingStep = totalWords + 1;
+    const matchingStep = totalWords + 1; // this step will now be meaning MCQ
     if (step === matchingStep) {
-      const words = lesson.words || [];
-      // build arrays with original indices
-      const wordsArr = words.map((w, i) => ({ word: w.word, originalIndex: i }));
-      const meaningsArr = words.map((w, i) => ({ text: w.meaning || w.japaneseMeaning || "", originalIndex: i }));
-      // shuffle helper
-      function shuffle<T>(arr: T[]): T[] {
-        const copy = arr.slice();
-        for (let i = copy.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [copy[i], copy[j]] = [copy[j], copy[i]];
-        }
-        return copy;
+      setMeaningLoading(true);
+      setMeaningError(false);
+      try {
+        const generated = generateMeaningQuizFromLesson(lesson);
+        setMeaningQuestions(generated);
+        setMeaningIndex(0);
+        setMeaningScore(0);
+        setMeaningSelectedChoice(null);
+        setMeaningAttempted(false);
+      } catch (e) {
+        console.error("meaning quiz generation failed", e);
+        setMeaningQuestions([]);
+        setMeaningError(true);
+      } finally {
+        setMeaningLoading(false);
       }
-      setWordsShown(shuffle(wordsArr));
-      setMeaningsShown(shuffle(meaningsArr));
-      setSelectedWordOriginal(null);
-      setSelectedMeaningOriginal(null);
-      setPairsList([]);
-      setGraded(false);
-      setPairResults([]);
-      setRevealUsed(false);
-      setInitialMatchingScore(null);
     }
   }, [step, lesson]);
 
@@ -237,7 +230,6 @@ const Lesson: React.FC = () => {
   }, [step, lesson]);
 
   if (!lesson) return <div>Loading lesson...</div>;
-  // TypeScript がこの後で lesson を non-null と扱うようローカル変数に代入
   const L = lesson!;
   const totalWords = L.words.length;
   const slideStep = step - 1;
@@ -280,17 +272,7 @@ const Lesson: React.FC = () => {
   };
   const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
 
-  // 称賛メッセージの配列
   const congratulationsMessages = ["All correct! Fantastic!", "All correct! Brilliant!", "All correct! Terrific!", "All correct! Excellent!"];
-  
-  // show the steps (now includes matching)
-  const topSteps = ["単語スライド", "単語・意味マッチング", "例文を使った穴埋めクイズ（3択）"];
-  function currentTopIndex() {
-    if (isSlide) return 0;
-    if (step === totalWords + 1) return 1; // matching
-    if (step === totalWords + 2) return 2; // quiz
-    return -1;
-  }
 
   // PLAY bright celebratory chime for correct answers
   async function playCorrectSound() {
@@ -306,7 +288,6 @@ const Lesson: React.FC = () => {
       gain.connect(ctx.destination);
 
       const now = ctx.currentTime;
-      // set a small non-zero initial gain to avoid issues with exponential ramps on some mobile browsers
       gain.gain.setValueAtTime(0.001, now);
       gain.gain.linearRampToValueAtTime(0.25, now + 0.02);
       gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
@@ -317,7 +298,6 @@ const Lesson: React.FC = () => {
         osc.frequency.value = f;
         try { osc.detune.value = (i - 1) * 10; } catch (e) { }
         osc.connect(gain);
-        // start slightly in the future to ensure scheduling works across platforms
         osc.start(now + i * 0.02 + 0.01);
         osc.stop(now + 1.0 + 0.01);
       });
@@ -353,11 +333,10 @@ const Lesson: React.FC = () => {
     }
   }
 
-  // --- quiz choice handler (unchanged) ---
+  // --- quiz choice handler (example-sentence quiz) ---
   async function handleChoose(choiceIndex: number) {
     if (!quizQuestions[quizIndex] || selectedChoice !== null) return;
 
-    // ensure audio context is resumed from this user gesture
     await unlockAudio();
 
     const q = quizQuestions[quizIndex];
@@ -372,89 +351,20 @@ const Lesson: React.FC = () => {
     }
   }
 
-  // matching handlers
-  function handleTapWord(originalIndex: number) {
-    // prevent changes when graded unless we're in retryMode
-    if (graded && !retryMode) return;
-    // if this word already paired, ignore (paired items are not selectable)
-    if (pairsList.some(p => p.wordOriginal === originalIndex)) return;
-    // toggle selection
-    if (selectedWordOriginal === originalIndex) {
-      setSelectedWordOriginal(null);
-    } else {
-      setSelectedWordOriginal(originalIndex);
-      // if meaning already selected, form pair
-      if (selectedMeaningOriginal !== null) {
-        formPair(originalIndex, selectedMeaningOriginal);
-      }
-    }
-  }
-  function handleTapMeaning(originalIndex: number) {
-    if (graded && !retryMode) return;
-    if (pairsList.some(p => p.meaningOriginal === originalIndex)) return;
-    if (selectedMeaningOriginal === originalIndex) {
-      setSelectedMeaningOriginal(null);
-    } else {
-      setSelectedMeaningOriginal(originalIndex);
-      if (selectedWordOriginal !== null) {
-        formPair(selectedWordOriginal, originalIndex);
-      }
-    }
-  }
-  function formPair(wordOrig: number, meaningOrig: number) {
-    // create new pair and clear selections
-    setPairsList(prev => [...prev, { wordOriginal: wordOrig, meaningOriginal: meaningOrig }]);
-    setSelectedWordOriginal(null);
-    setSelectedMeaningOriginal(null);
-  }
-
-  function removePairAt(index: number) {
-    // do not allow removal after grading; also disallow removal while in retryMode to keep correct pairs locked
-    if (graded || retryMode) return;
-    setPairsList(prev => prev.filter((_, i) => i !== index));
-  }
-
-  async function handleGradePairs() {
-    // ensure audio unlocked
+  // --- meaning-mcq choice handler (this mirrors the example-sentence quiz behavior) ---
+  async function handleMeaningChoose(choiceIndex: number) {
+    if (!meaningQuestions[meaningIndex] || meaningSelectedChoice !== null) return;
     await unlockAudio();
-    // If no pairs have been created, do nothing (avoid showing correct/incorrect messages)
-    if (pairsList.length === 0) {
-      return;
-    }
-
-    // build result for each created pair
-    const results = pairsList.map(p => {
-      const correct = p.meaningOriginal === p.wordOriginal; // correct mapping if original indices match
-      return { correct };
-    });
-    setPairResults(results);
-    setGraded(true);
-    setRetryMode(false);
-
-    // record first attempt matching score
-    if (initialMatchingScore === null) {
-      const firstScore = results.filter(r => r.correct).length;
-      setInitialMatchingScore(firstScore);
-    }
-
-    const anyWrong = results.some(r => !r.correct);
-    if (pairsList.length === L.words.length && !anyWrong) {
+    const q = meaningQuestions[meaningIndex];
+    const isCorrect = choiceIndex === q.answer_index;
+    setMeaningSelectedChoice(choiceIndex);
+    setMeaningAttempted(true);
+    if (isCorrect) {
+      setMeaningScore((s) => s + 1);
       playCorrectSound();
     } else {
       playWrongSound();
     }
-  }
-
-
-  function handleRevealAnswers() {
-    // set pairsList to correct mapping (wordOriginal -> same original meaning)
-    const correctPairs = L.words.map((_, i) => ({ wordOriginal: i, meaningOriginal: i }));
-    setPairsList(correctPairs);
-    // リベール時は視覚的に正解（緑）を表示するが、称賛や正誤ラベルは suppress （revealUsed）で制御する
-    setPairResults(correctPairs.map(() => ({ correct: true })));
-    setGraded(true);
-    setRevealUsed(true);
-    setRetryMode(false);
   }
 
   function finishLesson() {
@@ -463,17 +373,17 @@ const Lesson: React.FC = () => {
     nav(-1);
   }
 
-  // show values for results (quiz part and matching)
+  // display final scores
   const displayFinalScore = finalScore ?? quizScore;
   const quizMax = quizQuestions.length || 1;
   const quizPercent = Math.round((displayFinalScore / quizMax) * 100);
   
-  // マッチングスコアの計算 (初回採点スコアがあればそれを最終スコアとして使う)
-  const matchingScore = initialMatchingScore !== null ? initialMatchingScore : pairResults.filter(r => r.correct).length;
+  // matching/meaning score now uses meaningScore
+  const matchingScore = meaningScore;
   const matchingMax = L.words.length; // 全単語数が最大スコア
   const matchingPercent = Math.round((matchingScore / matchingMax) * 100);
   
-  // 総合スコアの計算（マッチングと穴埋めクイズの合計）
+  // 総合スコアの計算（マッチング(meaning MCQ)と穴埋めクイズの合計）
   const totalScore = displayFinalScore + matchingScore;
   const totalMax = quizMax + matchingMax;
   const totalPercent = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
@@ -503,21 +413,9 @@ const Lesson: React.FC = () => {
         .breadcrumb { display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:8px }
         .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:14px }
 
-        .matching-grid { display:grid; grid-template-columns: 1fr 1fr; gap:8px; align-items:start; }
-        .matching-list { display:flex; flex-direction:column; gap:8px; max-height: 48vh; overflow:auto; padding:4px; }
-        .matching-item { padding:8px 10px; border-radius:10px; background:#fff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor:pointer; text-align:left; }
-        .matching-item.selected { outline: 3px solid #ffd86b; transform: translateY(-3px); }
-        .pair-row { display:flex; gap:8px; align-items:center; justify-content:space-between; padding:6px 8px; border-radius:8px; background:#f3f4f6; }
-        .pair-word { font-weight:700; }
-
         @media (max-width: 600px) {
           .breadcrumb { gap:6px; margin-bottom:4px }
           .breadcrumb button { font-size:13px; white-space:nowrap; padding:0 4px }
-          .start-buttons { gap:8px }
-          .audio-next-row { gap:8px }
-          .slide-heading { margin-top:6px; margin-bottom:6px }
-          .main-word { margin-top:6px; margin-bottom:6px }
-          .prev-next-row { gap:8px }
         }
       `}</style>
 
@@ -527,29 +425,24 @@ const Lesson: React.FC = () => {
 
       {/* Breadcrumb */}
       <div className="breadcrumb" style={{ width: "100%", maxWidth: 900, gap: isSmallScreen ? 6 : 10 }}>
-        {topSteps.map((t, i) => {
-          const curIndex = currentTopIndex();
-          const cur = curIndex === i;
+        { ["単語スライド", "単語・意味マッチング", "例文を使った穴埋めクイズ（3択）"].map((t, i) => {
+          const cur = (isSlide && i === 0) || (step === totalWords + 1 && i === 1) || (step === totalWords + 2 && i === 2);
           return (
             <React.Fragment key={t}>
               <button
                 onClick={() => {
-                  if (i === 0) {
-                    setStep(1);
-                  } else if (i === 1) {
-                    setStep(totalWords + 1); // matching
-                  } else if (i === 2) {
-                    setStep(totalWords + 2); // quiz
-                  }
+                  if (i === 0) setStep(1);
+                  else if (i === 1) setStep(totalWords + 1);
+                  else if (i === 2) setStep(totalWords + 2);
                 }}
                 style={{ fontWeight: cur ? 800 : 400, color: cur ? "#000" : "#666", whiteSpace: "nowrap" }}
               >
                 {cur ? <span style={{ fontWeight: 800 }}>{t}</span> : t}
               </button>
-              {i < topSteps.length - 1 && <span style={{ color: "#bbb", margin: isSmallScreen ? '0 4px' : '0 8px' }}>→</span>}
+              {i < 2 && <span style={{ color: "#bbb", margin: isSmallScreen ? '0 4px' : '0 8px' }}>→</span>}
             </React.Fragment>
           );
-        })}
+        }) }
       </div>
 
       {/* Start screen */}
@@ -607,197 +500,117 @@ const Lesson: React.FC = () => {
 
           <div className="prev-next-row" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, marginTop: isSmallScreen ? 8 : 16 }}>
             <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? 140 : nextButtonStyle.width }}>前へ</button>
-            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の単語" : "単語・意味マッチングへ"}</button>
+            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の問題へ" : "単語・意味マッチングへ"}</button>
           </div>
         </div>
       )}
 
-      {/* Matching step */}
+      {/* Meaning MCQ step (replaces original matching UI) */}
       {step === totalWords + 1 && (
-        <div style={{ width: "100%", maxWidth: 900, marginTop: 6 }}>
-          <h2 style={{ fontSize: headingSize2, marginBottom: 8 }}>単語・意味マッチング</h2>
-          <p style={{ fontSize: isSmallScreen ? 13 : 18, marginBottom: 8 }}>各単語と意味を順にタップしてペアを作ってみましょう。選択中の項目は「選択中：」で表示されます。</p>
+        <div style={{ width: "100%", maxWidth: 900 }}>
+          <h2 style={{ fontSize: headingSize2, marginBottom: 8 }}>単語・意味マッチング（3択）</h2>
+          <p style={{ fontSize: isSmallScreen ? 12 : 20, color: "black", marginTop: 1 }}>表示される意味に対応する単語を選んでください</p>
 
-          <div style={{ display: "flex", gap: 12, flexDirection: isSmallScreen ? "column" : "row", alignItems: "flex-start", justifyContent: "center" }}>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontWeight: 700, marginBottom: 6 }}>単語</div>
-              <div className="matching-list">
-                {wordsShown.map((w) => {
-                  const isSelected = selectedWordOriginal === w.originalIndex;
-                  const alreadyPaired = pairsList.some(p => p.wordOriginal === w.originalIndex);
+          {meaningLoading ? <p>問題を作成中...</p> : meaningError ? (
+            <div>
+              <p>問題の作成に失敗しました。</p>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <button onClick={() => { setMeaningError(false); setStep(totalWords + 2); }} style={blueButtonStyle}>次の問題へ</button>
+              </div>
+            </div>
+          ) : meaningQuestions.length === 0 ? (
+            <div>
+              <p>問題が見つかりません。</p>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <button onClick={() => setStep(totalWords + 2)} style={blueButtonStyle}>次へ</button>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <p style={{ fontSize: quizTextSize, marginBottom: 12, textAlign: "center" }}>{meaningQuestions[meaningIndex].prompt}</p>
+
+              <div style={{ display: "grid", gridTemplateColumns: isSmallScreen ? "1fr" : "repeat(3, 1fr)", gap: 12, alignItems: "stretch" }}>
+                {meaningQuestions[meaningIndex].choices.map((c: string, i: number) => {
+                  const isHovered = hoveredMeaningChoice === i && meaningSelectedChoice === null && !isTouchDevice;
+                  const isCorrect = meaningSelectedChoice !== null && i === meaningQuestions[meaningIndex].answer_index;
+                  const isWrongSelected = meaningSelectedChoice !== null && i === meaningSelectedChoice && i !== meaningQuestions[meaningIndex].answer_index;
+
+                  let background = "#003366";
+                  let boxShadow = "none";
+                  let transform = isHovered ? "translateY(-6px)" : "translateY(0)";
+                  if (meaningSelectedChoice === null) {
+                    if (isHovered) boxShadow = "0 8px 20px rgba(0,0,0,0.12)";
+                  } else {
+                    if (isCorrect) { background = "linear-gradient(90deg,#34d399,#16a34a)"; boxShadow = "0 12px 30px rgba(16,185,129,0.18)"; transform = "translateY(-4px) scale(1.02)"; }
+                    else if (isWrongSelected) { background = "linear-gradient(90deg,#ff7a7a,#ff4d4d)"; boxShadow = "0 12px 30px rgba(255,99,71,0.18)"; transform = "translateY(-2px) scale(0.99)"; }
+                    else { background = "linear-gradient(90deg,#f8fafc,#e6eefc)"; boxShadow = "none"; transform = "translateY(0)"; }
+                  }
+
                   return (
-                    <div key={w.originalIndex}
-                      className={`matching-item ${isSelected ? "selected" : ""}`}
+                    <button key={i} onClick={() => handleMeaningChoose(i)} onMouseEnter={() => setHoveredMeaningChoice(i)} onMouseLeave={() => setHoveredMeaningChoice(null)}
                       style={{
-                        opacity: alreadyPaired ? 0.45 : 1,
-                        cursor: alreadyPaired || graded ? "default" : "pointer",
-                        border: isSelected ? "2px solid #ffd86b" : "none"
-                      }}
-                      onClick={() => handleTapWord(w.originalIndex)}
-                    >
-                      <div style={{ fontWeight: 700 }}>{w.word}</div>
-                      <div style={{ fontSize: 12, color: "#666" }}>{/* small hint area if wanted */}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div style={{ width: 12 }} />
-
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontWeight: 700, marginBottom: 6 }}>意味</div>
-              <div className="matching-list">
-                {meaningsShown.map((m) => {
-                  const isSelected = selectedMeaningOriginal === m.originalIndex;
-                  const alreadyPaired = pairsList.some(p => p.meaningOriginal === m.originalIndex);
-                  return (
-                    <div key={m.originalIndex}
-                      className={`matching-item ${isSelected ? "selected" : ""}`}
-                      style={{
-                        opacity: alreadyPaired ? 0.45 : 1,
-                        cursor: alreadyPaired || graded ? "default" : "pointer",
-                        border: isSelected ? "2px solid #ffd86b" : "none",
-                        fontSize: isSmallScreen ? 14 : 16
-                      }}
-                      onClick={() => handleTapMeaning(m.originalIndex)}
-                    >
-                      <div style={{ fontWeight: 600 }}>{m.text}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          {/* show selection status */}
-          <div style={{ marginTop: 10, fontSize: 14 }}>
-            {selectedWordOriginal !== null || selectedMeaningOriginal !== null ? (
-              <div>
-                選択中：
-                {selectedWordOriginal !== null && <span style={{ fontWeight: 700 }}> 単語：{wordTextByOriginal(selectedWordOriginal)} </span>}
-                {selectedMeaningOriginal !== null && <span style={{ fontWeight: 700 }}> 意味：{meaningTextByOriginal(selectedMeaningOriginal)} </span>}
-              </div>
-            ) : <div style={{ color: "#666" }}>単語と意味を順にタップしてペアを作ってみましょう。</div>}
-          </div>
-
-          {/* pairs list */}
-          <div style={{ marginTop: 12 }}>
-            <div style={{ fontWeight: 700, marginBottom: 6 }}>作成したペア</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {pairsList.length === 0 && <div style={{ color: "#666" }}>まだペアがありません</div>}
-              {pairsList.map((p, i) => {
-                const result = pairResults[i];
-                let bg = "#fff";
-                let color = "#000";
-                // show green/red when graded OR when in retryMode (keep correct pairs highlighted)
-                if ((graded || retryMode) && result) {
-                  if (result.correct) { bg = "#dcfce7"; color = "#065f46"; } // greenish
-                  else { bg = "#ffe4e6"; color = "#7f1d1d"; } // reddish
-                }
-                return (
-                  <div key={`${p.wordOriginal}-${p.meaningOriginal}-${i}`} className="pair-row" style={{ background: bg }}>
-                    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                      <div className="pair-word">{wordTextByOriginal(p.wordOriginal)}</div>
-                      <div style={{ opacity: 0.7 }}>—</div>
-                      <div style={{ maxWidth: isSmallScreen ? "50vw" : 420, textAlign: "left", whiteSpace: "normal" }}>{meaningTextByOriginal(p.meaningOriginal)}</div>
-                    </div>
-                    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                      {!graded && !(retryMode && result && result.correct) && (
-                        <button onClick={() => removePairAt(i)} style={{ background: "transparent", border: "1px solid #ccc", padding: "6px 8px", borderRadius: 8, cursor: "pointer" }}>
-                          ペアを削除
-                        </button>
-                      )}
-                      {((graded && !revealUsed) || retryMode) && pairResults[i] && pairResults[i].correct && <span style={{ fontWeight: 700 }}>正解</span>}
-                      {(graded && !revealUsed) && pairResults[i] && !pairResults[i].correct && <span style={{ fontWeight: 700 }}>不正解</span>}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* controls: grade on top, wide quiz + skip buttons under it (visible from the start) */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center", marginTop: 12 }}>
-            <div style={{ width: isSmallScreen ? "100%" : undefined, display: "flex", justifyContent: "center" }}>
-              <button onClick={async () => { await handleGradePairs(); }} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 320 }}>
-                採点する
-              </button>
-            </div>
-            <div style={{ display: "flex", gap: 12, justifyContent: "center", width: isSmallScreen ? "100%" : undefined, flexWrap: isSmallScreen ? "wrap" : "nowrap" }}>
-              <button onClick={() => setStep(totalWords + 2)} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 420, height: 52, fontSize: isSmallScreen ? 12 : 14 }}>
-                例文を使った穴埋めクイズ（3択👆）に進む
-              </button>
-              <button onClick={() => setStep(totalWords + 3)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? "100%" : 420, height: 52, fontSize: isSmallScreen ? 12 : 14 }}>
-                スキップしてレッスンを終了する
-              </button>
-            </div>
-          </div>
-
-          {/* after grading actions */}
-          {graded && (
-            <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 10, alignItems: "center" }}>
-              {(() => {
-                  const hasCorrect = pairResults.length > 0 && pairResults.some(r => r.correct);
-                  const allCorrect = !revealUsed && pairResults.length > 0 && pairResults.every(r => r.correct) && pairsList.length === L.words.length;
-                  if (allCorrect) {
-                    return (
-                      <div style={{ fontWeight: 700, color: "#0b6623" }}>
-                        {congratulationsMessages[Math.floor(Math.random() * congratulationsMessages.length)]}
+                        fontSize: isSmallScreen ? 16 : 18, padding: isSmallScreen ? "4px 5px" : "14px 16px", width: "100%",
+                        background, color: meaningSelectedChoice !== null ? (isCorrect ? "#052e16" : isWrongSelected ? "#330000" : "#0f172a") : "#fff",
+                        boxShadow, transform, transition: "transform 0.18s ease, box-shadow 0.2s ease, background 0.25s ease", border: "none", cursor: meaningSelectedChoice !== null ? "default" : "pointer",
+                        borderRadius: 12, display: "flex", gap: 12, alignItems: "center", justifyContent: "center", textAlign: "left",
+                      }} disabled={meaningSelectedChoice !== null}>
+                      <div style={{ minWidth: 40, textAlign: "center", fontSize: 18, fontWeight: 800 }}>{` ${i + 1}`}</div>
+                      <div style={{ textAlign: "left" }}>
+                        <div style={{ fontWeight: 700 }}>{c}</div>
+                        <div style={{ fontSize: 14, color: "#fff", opacity: 0.9 }}>{i === meaningQuestions[meaningIndex].answer_index && meaningSelectedChoice !== null ? "correct!" : ""}</div>
                       </div>
-                    );
-                  }
-                  // Show retry hint only if there is at least one correct pair AND reveal was NOT used.
-                  if (!revealUsed && hasCorrect) {
-                    return <div style={{ fontWeight: 700, color: "#0b6623" }}>もう一度チャレンジできます</div>;
-                  }
-                  return null;
-              })()}
-
-              {(pairResults.some(r => !r.correct) || pairsList.length < L.words.length) && !revealUsed && (
-                <>
-                  {pairResults.some(r => !r.correct) && (
-                    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                      <button onClick={() => {
-                        // 間違ったペアを削除、正解だけ残す。リトライモードを有効にして正解はロック
-                        const newPairsList = pairsList.filter((_, index) => pairResults[index]?.correct);
-                        setPairsList(newPairsList);
-                        // 正解のペアの結果だけを保持
-                        const newPairResults = pairResults.filter(r => r.correct);
-                        setPairResults(newPairResults);
-                        setGraded(false);
-                        setRetryMode(true);
-                      }} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 320 }}>
-                        もう一度チャレンジする
-                      </button>
-                      <button onClick={() => handleRevealAnswers()} style={{ ...nextButtonStyle, backgroundColor: "#ef4444", width: isSmallScreen ? "100%" : 320 }}>
-                        解答を表示する
-                      </button>
-                    </div>
-                  )}
-                  {!pairResults.some(r => !r.correct) && pairsList.length < L.words.length && (
-                    <button onClick={() => {
-                      // 残りを作成するモード: 既に採点済みの正解は残してロックする。
-                      if (pairResults.length === 0) {
-                        // 採点がされていない場合はそのまま残してリトライモードに移行
-                        setGraded(false);
-                        setRetryMode(true);
-                      } else {
-                        const newPairsList = pairsList.filter((_, index) => pairResults[index]?.correct);
-                        const newPairResults = pairResults.filter(r => r.correct);
-                        setPairsList(newPairsList);
-                        setPairResults(newPairResults);
-                        setGraded(false);
-                        setRetryMode(true);
-                      }
-                    }} style={{ ...blueButtonStyle, width: isSmallScreen ? "100%" : 320 }}>
-                      残りのペアを作成する
                     </button>
-                  )}
-                </>
+                  );
+                })}
+              </div>
+
+              {meaningSelectedChoice !== null && (
+                <div style={{ marginTop: 6, display: "flex", justifyContent: "center" }}>
+                  <div style={{ fontSize: isSmallScreen ? 14 : 24, fontWeight: 700, color: meaningSelectedChoice === meaningQuestions[meaningIndex].answer_index ? "green" : "red" }}>
+                    {meaningSelectedChoice === meaningQuestions[meaningIndex].answer_index ? "correct!" : "Nice try！"}
+                  </div>
+                </div>
               )}
 
-              {/* after-grading: no duplicate quiz/skip buttons here (they show under the grading controls) */}
+
+              {meaningSelectedChoice !== null && (
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <button
+                    onClick={() => {
+                      if (meaningIndex + 1 < meaningQuestions.length) {
+                        setMeaningIndex(meaningIndex + 1);
+                        setMeaningSelectedChoice(null);
+                      } else {
+                        setStep(totalWords + 2);
+                      }
+                    }}
+                    style={
+                      meaningIndex + 1 < meaningQuestions.length
+                        ? { ...nextButtonStyle, marginTop: 12 } // 「次の問題へ」の時
+                        : {                                      // 「例文へ」の時
+                            fontSize: buttonFontSize,
+                            padding: isSmallScreen ? "8px 12px" : "10px 20px",
+                            marginTop: isSmallScreen ? 12 : 16,
+                            backgroundColor: "#1a4e8a",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: 8,
+                            cursor: "pointer",
+                            width: buttonWidth,
+                          }
+                    }
+                  >
+                    {meaningIndex + 1 < meaningQuestions.length
+                      ? "次の問題へ"
+                      : "例文を使った穴埋めクイズ（3択👆）へ"}
+                  </button>
+
+                </div>
+              )}
+
+              <p style={{ marginTop: 12, fontSize: 14 }}>
+                {meaningIndex + 1} / {meaningQuestions.length}
+              </p>
             </div>
           )}
         </div>
@@ -874,20 +687,43 @@ const Lesson: React.FC = () => {
 
               {selectedChoice !== null && (
                 <div style={{ display: "flex", justifyContent: "center" }}>
-                  <button onClick={() => {
-                    if (quizIndex + 1 < quizQuestions.length) {
-                      setQuizIndex(quizIndex + 1);
-                      setSelectedChoice(null);
-                    } else {
-                      // finalize quiz, then go to score screen
-                      setFinalScore(quizScore + (selectedChoice === quizQuestions[quizIndex].answer_index ? 1 : 0));
-                      setStep(totalWords + 3);
+                  <button
+                    onClick={() => {
+                      if (quizIndex + 1 < quizQuestions.length) {
+                        // まだ次の問題がある
+                        setQuizIndex(quizIndex + 1);
+                        setSelectedChoice(null);
+                      } else {
+                        // 最後 → スコア計算 & レッスン終了画面へ
+                        setFinalScore(
+                          quizScore + (selectedChoice === quizQuestions[quizIndex].answer_index ? 1 : 0)
+                        );
+                        setStep(totalWords + 3);
+                      }
+                    }}
+                    style={
+                      quizIndex + 1 < quizQuestions.length
+                        ? { ...nextButtonStyle, marginTop: 12 }    // 「次の問題へ」
+                        : {
+                            fontSize: buttonFontSize,
+                            padding: isSmallScreen ? "8px 12px" : "10px 20px",
+                            marginTop: isSmallScreen ? 12 : 16,
+                            backgroundColor: "#1a4e8a",
+                            color: "#fff",
+                            border: "none",
+                            borderRadius: 8,
+                            cursor: "pointer",
+                            width: buttonWidth,
+                          }                  // 「レッスンを終了する」
                     }
-                  }} style={{ ...nextButtonStyle, marginTop: 12 }}>
-                    次の問題へ
+                  >
+                    {quizIndex + 1 < quizQuestions.length
+                      ? "次の問題へ"
+                      : "レッスンの結果を見る"}
                   </button>
                 </div>
               )}
+
               <p style={{ marginTop: 12, fontSize: 14 }}>{quizIndex + 1} / {quizQuestions.length}</p>
             </div>
           )}
@@ -896,8 +732,7 @@ const Lesson: React.FC = () => {
 
       {/* Final summary */}
       {step === totalWords + 3 && (() => {
-        // Determine which sections were attempted
-        const matchingAttempted = initialMatchingScore !== null || pairResults.length > 0 || revealUsed || graded || pairsList.length > 0;
+        const matchingAttempted = meaningAttempted || meaningQuestions.length > 0;
         const quizAttemptedFlag = quizAttempted;
 
         const matchingDisplayScore = matchingAttempted ? matchingScore : 0;
@@ -1002,7 +837,42 @@ function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
     } else blank_sentence = "____";
     questions.push({ word: correct, sentence: item.example || "", blank_sentence, choices: shuffled, answer_index });
   }
-  // Shuffle final question order
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+  return questions;
+}
+
+// generateMeaningQuizFromLesson: create MCQ where prompt is meaning and choices are words (one correct + two distractors)
+function generateMeaningQuizFromLesson(lesson: LessonData): MeaningQuestion[] {
+  const words: LessonWord[] = lesson.words || [];
+  const pool = words.map((w, i) => ({ word: w.word, meaning: w.meaning || w.japaneseMeaning || "", originalIndex: i }));
+  // filter out entries without a meaning or word
+  const usable = pool.filter(p => p.word && p.meaning);
+  if (usable.length === 0) return [];
+
+  function sample<T>(arr: T[], k: number): T[] {
+    const copy = arr.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy.slice(0, k);
+  }
+
+  const questions: MeaningQuestion[] = [];
+  for (const item of usable) {
+    const correct = item.word;
+    const otherWords: string[] = usable.map(u => u.word).filter(w => w !== correct);
+    const distractors = sample(otherWords, Math.min(2, otherWords.length));
+    const choices = [...distractors, correct];
+    const shuffled = sample(choices, choices.length);
+    const answer_index = shuffled.indexOf(correct);
+    questions.push({ originalIndex: item.originalIndex, prompt: item.meaning, choices: shuffled, answer_index });
+  }
+
+  // shuffle final question order
   for (let i = questions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [questions[i], questions[j]] = [questions[j], questions[i]];
