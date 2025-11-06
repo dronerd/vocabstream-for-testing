@@ -425,7 +425,7 @@ const Lesson: React.FC = () => {
 
       {/* Breadcrumb */}
       <div className="breadcrumb" style={{ width: "100%", maxWidth: 900, gap: isSmallScreen ? 6 : 10 }}>
-        { ["単語スライド", "単語・意味マッチング", "例文を使った穴埋めクイズ（3択）"].map((t, i) => {
+        { ["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"].map((t, i) => {
           const cur = (isSlide && i === 0) || (step === totalWords + 1 && i === 1) || (step === totalWords + 2 && i === 2);
           return (
             <React.Fragment key={t}>
@@ -466,10 +466,10 @@ const Lesson: React.FC = () => {
           <div className="start-buttons" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, flexWrap: "wrap" }}>
             <button onClick={() => setStep(1)} style={blueButtonStyle}>単語スライドから始める</button>
             <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 12 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
-              単語・意味マッチングへ直接進む
+              単語・意味マッチングへ進む
             </button>
             <button onClick={() => setStep(totalWords + 2)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 12 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
-              例文穴埋めへ直接進む
+              例文穴埋めへ進む
             </button>
           </div>
         </div>
