@@ -457,7 +457,7 @@ const Lesson: React.FC = () => {
 
           <div style={{ marginBottom: isSmallScreen ? 8 : 12, textAlign: isSmallScreen ? "left" : "center" }}>
             <p style={{ color: "#333", fontSize: paragraphFontSize }}>
-              このレッスンは「単語スライド → 単語・意味マッチング → 例文穴埋め（3択）」の流れで進みます。<br />
+              このレッスンは「単語スライド → 単語・意味マッチング → 例文穴埋め」の流れで進みます。<br />
               英単語はなるべく日本語に訳さず、<strong>英語の定義や例文から意味を理解すること</strong>を意識しましょう。<br />
               各単語スライドではぜひ音読してみましょう！
             </p>
@@ -466,10 +466,10 @@ const Lesson: React.FC = () => {
           <div className="start-buttons" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, flexWrap: "wrap" }}>
             <button onClick={() => setStep(1)} style={blueButtonStyle}>単語スライドから始める</button>
             <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 12 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
-              単語・意味マッチングへ進む
+              単語・意味マッチングへ直接進む
             </button>
             <button onClick={() => setStep(totalWords + 2)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 12 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
-              例文穴埋めへ直接進む（3択）
+              例文穴埋めへ直接進む
             </button>
           </div>
         </div>
@@ -602,7 +602,7 @@ const Lesson: React.FC = () => {
                   >
                     {meaningIndex + 1 < meaningQuestions.length
                       ? "次の問題へ"
-                      : "例文を使った穴埋めクイズ（3択👆）へ"}
+                      : "例文穴埋めクイズ（3択👆）へ"}
                   </button>
 
                 </div>
@@ -619,7 +619,7 @@ const Lesson: React.FC = () => {
       {/* Quiz */}
       {step === totalWords + 2 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 style={{ fontSize: headingSize2, marginBottom: 8 }}>例文を使った穴埋めクイズ（3択👆）</h2>
+          <h2 style={{ fontSize: headingSize2, marginBottom: 8 }}>例文穴埋めクイズ（3択👆）</h2>
           <p style={{ fontSize: isSmallScreen ? 12 : 20, color: "black", marginTop: 1 }}>空欄に入るもっとも適切な単語を選んでください</p>
 
           {quizLoading ? <p>クイズを読み込み中...</p> : quizError ? (
