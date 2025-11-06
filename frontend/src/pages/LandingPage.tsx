@@ -1,7 +1,6 @@
 // src/pages/LandingPage.tsx
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -182,7 +181,7 @@ export default function LandingPage() {
 
               <p className="lead">
                 VocabStreamは、
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline' }}><strong>黒木勇人</strong></a>
+                <a href="https://yutokuroki.vercel.app/ja" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline' }}><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
                 <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline' }}><strong>Project Fluence</strong></a>
                 の一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。
@@ -229,7 +228,7 @@ export default function LandingPage() {
 
                 <div style={{ minWidth: 0, flex: 1 }}>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
-                    <a className="founder-name" href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <a className="founder-name" href="https://yutokuroki.vercel.app/ja" target="_blank" rel="noopener noreferrer">
                       黒木勇人
                     </a>
                   </div>
@@ -250,7 +249,7 @@ export default function LandingPage() {
               </p>
               <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
               <a
-                href="https://yutokuroki.vercel.app"
+                href="https://yutokuroki.vercel.app/ja"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontWeight: 800, color: '#0b3d91', textDecoration: 'underline' }}
@@ -259,7 +258,7 @@ export default function LandingPage() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/yuto-kuroki-a5b32b383/"
+                href="https://www.linkedin.com/in/yutokuroki/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontWeight: 800, color: '#0b3d91', textDecoration: 'underline' }}
@@ -282,7 +281,7 @@ export default function LandingPage() {
             <div style={{ marginTop: 8, color: "#444", lineHeight: 1.8 }}>
               <p className="lead">
                 <strong>VocabStream</strong>は、
-                <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer"><strong>黒木勇人</strong></a>
+                <a href="https://yutokuroki.vercel.app/ja" target="_blank" rel="noopener noreferrer"><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
                 <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer"><strong>Project Fluence</strong></a>
                 の一環として制作された無料の英単語学習アプリです。
@@ -342,7 +341,7 @@ export default function LandingPage() {
               </a>
               はそんな学びを応援する個人プロジェクトです。英語＋専門分野の力で夢を実現する人を増やすことを目指しています。
               <br />
-              <a href="https://yutokuroki.vercel.app" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
+              <a href="https://yutokuroki.vercel.app/ja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
                 <strong>黒木勇人</strong>
               </a>
               が効果的な英語学習法を

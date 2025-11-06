@@ -166,7 +166,7 @@ export default function Home() {
       <p className="subtitle">
         <strong>VocabStream</strong> は、
         <a
-          href="https://yutokuroki.vercel.app"
+          href="https://yutokuroki.vercel.app/ja"
           target="_blank"
           rel="noopener noreferrer"
         >

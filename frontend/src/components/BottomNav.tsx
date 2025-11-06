@@ -18,7 +18,7 @@ export default function BottomNav() {
     { path: "/home", label: "Home", color: "#081230" }, // blackより少し明るめで見やすい
     { path: "/learn", label: "学習", color: "#4a86c5" }, // 柔らかいブルーより少し濃い
     { path: "/review", label: "復習", color: "#d4795e" }, // サーモンより少し濃い
-    { path: "/others", label: "その他の機能", color: "#5ec75e" }, // パステルグリーンより少し濃い
+    { path: "/others", label: "その他の機能", color: "#52b788" }, // パステルグリーンより少し濃い
   ];
 
   const style = `

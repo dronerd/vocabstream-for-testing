@@ -20,7 +20,8 @@ const STATIC_GENRES: Lesson[] = [
   { id: "medicine", title: "Medicine & Health" },
   { id: "economics-business", title: "Business & Economics" },
   { id: "environment", title: "Environmental Science & Sustainability" },
-  { id: "law", title: "Law & Politics" },
+  { id: "law", title: "Law" },
+  { id: "politics", title: "Politics" },
   { id: "engineering", title: "Engineering" },
 ];
 
@@ -52,9 +53,10 @@ export default function LearnGenres() {
   };
 
   const lessonImages: Record<string, string> = {
-    "computer-science": "/CS.png",
+    "computer-science": "/CS1.png",
     "medicine": "/Medicine.png",
-    "law": "/Law.png",
+    "law": "/law.png",
+    "politics": "/politics.png",
     "economics-business": "/Business.png",
     "environment": "/Environment.png",
     "engineering": "/Engineering.png",
@@ -88,7 +90,7 @@ export default function LearnGenres() {
     if (categoryName === "単語" || categoryName === "熟語" || categoryName === "ビジネス表現") {
       return blueGradients[index] || blueGradients[blueGradients.length - 1];
     }
-    const termColors = ["#ffe4b5", "#d8bfd8", "#afeeee", "#f5deb3", "#e6e6fa", "#f08080"];
+    const termColors = ["#f5deb3", "#d8bfd8", "#ffe4b5", "#c1ffc1", "#e6e6fa", "#afeeee", "#f08080"];
     return termColors[index % termColors.length];
   }
 

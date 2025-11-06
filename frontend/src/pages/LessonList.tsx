@@ -49,6 +49,7 @@ const LESSON_COUNT_BY_GENRE: Record<string, number> = {
   "economics-business": 71,
   "environment": 71,
   "law": 71,
+  "politics": 71,
   "engineering": 71,
 };
 

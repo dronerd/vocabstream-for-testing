@@ -7,7 +7,7 @@ export default function Review() {
   const baseColor = "#d8f3dc";
 
   // Slightly lighter, reddish button tones
-  const buttonColors = ["#74c69d", "#52b788", "#40916c"];
+  const buttonColors = ["#8ad4ae", "#74c69d", "#52b788", "#40916c"];
 
   return (
     <div className="review-root">
@@ -139,13 +139,21 @@ export default function Review() {
           onClick={() => nav("/still_under_development")}
           style={{ backgroundColor: buttonColors[1] }}
         >
+          AI会話機能
+        </button>
+
+        <button
+          className="option-btn"
+          onClick={() => nav("/still_under_development")}
+          style={{ backgroundColor: buttonColors[2] }}
+        >
           アプリ使用マニュアルを見る
         </button>
 
         <button
-          className="option-btn option-third"
+          className="option-btn"
           onClick={() => nav("/privacy")}
-          style={{ backgroundColor: buttonColors[2] }}
+          style={{ backgroundColor: buttonColors[3] }}
         >
           Privacy Policyを確認
         </button>
