@@ -500,7 +500,7 @@ const Lesson: React.FC = () => {
 
           <div className="prev-next-row" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, marginTop: isSmallScreen ? 8 : 16 }}>
             <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? 140 : nextButtonStyle.width }}>前へ</button>
-            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の問題へ" : "単語・意味マッチングへ"}</button>
+            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の単語へ" : "単語・意味マッチングへ"}</button>
           </div>
         </div>
       )}
