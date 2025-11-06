@@ -775,14 +775,14 @@ const Lesson: React.FC = () => {
               <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
 
               <div style={{ fontSize: paragraphFontSize, marginBottom: 12 }}>
-                <p>単語マッチング: {matchingDisplayScore} / {matchingDisplayMax} ({matchingDisplayPercent}%)</p>
-                <p>単語クイズ: {quizDisplayScore} / {quizDisplayMax} ({quizDisplayPercent}%)</p>
+                <p>単語・意味マッチング: {matchingDisplayScore} / {matchingDisplayMax} ({matchingDisplayPercent}%)</p>
+                <p>例文穴埋めクイズ: {quizDisplayScore} / {quizDisplayMax} ({quizDisplayPercent}%)</p>
                 <hr style={{ margin: "12px 0" }} />
                 <p style={{ fontSize: isSmallScreen ? 18 : 22, fontWeight: 700 }}>
                   合計: {attemptedTotalScore} / {attemptedTotalMax}
                 </p>
-                <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8 }}>
-                  総合正答率: {attemptedPercent}%
+                <p style={{ fontSize: isSmallScreen ? 18 : 22, marginTop: 8 }}>
+                  正答率: {attemptedPercent}%
                 </p>
                 <p style={{ fontSize: isSmallScreen ? 14 : 18, marginTop: 8, color: "#333" }}>
                   {praise}
