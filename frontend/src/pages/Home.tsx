@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../AuthContext";
 
 export default function Home() {
   const nav = useNavigate();

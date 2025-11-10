@@ -10,8 +10,6 @@ export default function LandingPage() {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const SITE_URL = "https://vocabstream.vercel.app";
-
   return (
     <div
       className="landing-root"

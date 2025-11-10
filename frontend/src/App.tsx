@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { AuthProvider, useAuth } from "./AuthContext";
+import { AuthProvider } from "./AuthContext";
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
 import { Analytics } from "@vercel/analytics/react"; 

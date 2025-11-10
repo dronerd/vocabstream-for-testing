@@ -376,10 +376,6 @@ const Lesson: React.FC = () => {
   const matchingScore = meaningScore;
   const matchingMax = L.words.length; // 全単語数が最大スコア
 
-  // 総合スコアの計算（マッチング(meaning MCQ)と穴埋めクイズの合計）
-  const totalScore = displayFinalScore + matchingScore;
-  const totalMax = quizMax + matchingMax;
-
   return (
     <div style={{
       display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start",
