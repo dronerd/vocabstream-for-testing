@@ -396,17 +396,17 @@ const Lesson: React.FC = () => {
         align-items:center; 
         justify-content:center; 
         margin-bottom:8px; 
-        max-width:900px;       
+        max-width:500px;       
         padding:0 16px;
         }
-        .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:14px }
+        .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:10px }
 
 
         @media (max-width: 600px) {
           .breadcrumb {
             gap:6px;
             margin-bottom:4px;
-            padding:0 12px;   
+            padding:0 16px;   
           }
         }
 
