@@ -376,9 +376,6 @@ const Lesson: React.FC = () => {
   const matchingScore = meaningScore;
   const matchingMax = L.words.length; // 全単語数が最大スコア
 
-  //for breadcrumbs
-  const titlesSmall = ["単語スライド", "意味マッチング", "例文穴埋め"];
-  const titlesFull = ["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"];
 
   return (
     <div style={{
@@ -465,7 +462,8 @@ const Lesson: React.FC = () => {
             maxWidth: 900,
           }}
         >
-          {(isSmallScreen ? titlesSmall : titlesFull).map((t, i) => {
+          
+          {["単語スライド", "単語・意味マッチング", "例文穴埋め"].map((t, i) => {
             const cur =
               (isSlide && i === 0) ||
               (step === totalWords + 1 && i === 1) ||
