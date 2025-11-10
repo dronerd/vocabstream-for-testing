@@ -395,7 +395,7 @@ const Lesson: React.FC = () => {
 
         @media (max-width: 600px) {
           .breadcrumb { gap:6px; margin-bottom:4px }
-          .breadcrumb button { font-size:13px; white-space:nowrap; padding:0 4px }
+          .breadcrumb button { font-size:13px; white-space:nowrap; padding:4 4px }
         }
       `}</style>
 
@@ -404,7 +404,7 @@ const Lesson: React.FC = () => {
       </button>
 
       {/* Breadcrumb Wrapper */}
-      <div style={{ padding: isSmallScreen ? "0 16px" : "0 24px" }}>
+      <div style={{ padding: isSmallScreen ? "10 16px" : "0 24px" }}>
         <div
           className="breadcrumb"
           style={{
