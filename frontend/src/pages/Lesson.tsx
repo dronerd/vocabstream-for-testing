@@ -390,28 +390,59 @@ const Lesson: React.FC = () => {
           100% { transform: translateY(-120vh) scale(1) rotate(180deg); opacity: 0; }
         }
 
-        .breadcrumb { 
-        display:flex; 
-        gap:10px; 
-        align-items:center; 
-        justify-content:center; 
-        margin-bottom:8px; 
-        max-width:900px;       
-        padding:0 16px;
+       
+
+        /* wrapper は必ず左右の余白を作る */
+        .breadcrumb-wrapper {
+          padding: 0 16px;      /* 画面端の余白（必要なら 20px 等に調整） */
+          box-sizing: border-box;
+          width: 100%;
         }
-        .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:14px }
 
+        /* 実際の breadcrumb */
+        .breadcrumb {
+          width: 100%;
+          max-width: 900px;     /* 中央寄せの最大幅 */
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          flex-wrap: nowrap;
+          gap: 6px;             /* ボタン間の最小間隔 */
+          overflow-x: auto;     /* 非表示になるよりスクロールさせる */
+          -webkit-overflow-scrolling: touch;
+          padding: 0 8px;       /* ボタン群の内側余白（左右に少し） */
+          box-sizing: border-box;
+        }
 
+        /* ボタンは折り畳まれず、見切れにくくする */
+        .breadcrumb button {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 13px;
+          padding: 6px 8px;     /* タップしやすいパディング */
+          white-space: nowrap;
+          flex: 0 0 auto;       /* 横方向に縮みすぎない */
+          min-width: 0;         /* テキストに合わせるが overflow を防止 */
+        }
+
+        /* 矢印（→） */
+        .breadcrumb .arrow {
+          color: #bbb;
+          margin: 0 4px;        /* 矢印とボタンの間隔を小さめに */
+          flex: 0 0 auto;
+        }
+
+        /* モバイル（小さい画面）用 */
         @media (max-width: 600px) {
-          .breadcrumb {
-            gap:6px;
-            align-items:center; 
-            margin-bottom:4px;
-            max-width:400px; 
-            padding:0 10px;   
-          }
-          .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:11px }
+          .breadcrumb-wrapper { padding: 0 12px; }   /* さらに狭く */
+          .breadcrumb { gap: 4px; padding: 0 6px; }
+          .breadcrumb button { font-size: 11px; padding: 4px 6px; }
+          .breadcrumb .arrow { margin: 0 3px; }
+          /* 必要ならスクロールバー非表示（見栄え） */
+          .breadcrumb::-webkit-scrollbar { height: 6px; }
         }
+
 
       `}</style>
 
@@ -419,19 +450,15 @@ const Lesson: React.FC = () => {
         レッスン一覧に戻る
       </button>
 
+
+
       {/* Breadcrumb Wrapper */}
-      <div style={{ padding: isSmallScreen ? "0 16px" : "0 24px" }}>
+      <div className="breadcrumb-wrapper" style={{ padding: isSmallScreen ? "0 12px" : "0 16px" }}>
         <div
           className="breadcrumb"
+          /* inline fallback props kept minimal */
           style={{
-            width: "100%",
             maxWidth: 900,
-            margin: "0 auto",      // centers it and adds white space when possible
-            gap: isSmallScreen ? 4 : 10,
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "nowrap",
-            overflowX: "auto"       // prevents crowding on very small screens
           }}
         >
           {["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"].map((t, i) => {
@@ -451,22 +478,20 @@ const Lesson: React.FC = () => {
                   style={{
                     fontWeight: cur ? 800 : 400,
                     color: cur ? "#000" : "#666",
-                    whiteSpace: "nowrap"
                   }}
                 >
                   {t}
                 </button>
 
                 {i < 2 && (
-                  <span style={{ color: "#bbb", margin: isSmallScreen ? "0 4px" : "0 8px" }}>
-                    →
-                  </span>
+                  <span className="arrow" aria-hidden="true">→</span>
                 )}
               </React.Fragment>
             );
           })}
         </div>
       </div>
+
 
 
       {/* Start screen */}
