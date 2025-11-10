@@ -467,15 +467,16 @@ const Lesson: React.FC = () => {
             gap: "8px",               // space between buttons/arrows
           }}
         >
-          
-          {(isSmallScreen ? ["単語スライド", "意味マッチング", "例文穴埋め"]: ["単語スライド", "単語・意味マッチング", "例文穴埋め"]).map((t, i) => {
-            const cur =
-              (isSlide && i === 0) ||
-              (step === totalWords + 1 && i === 1) ||
-              (step === totalWords + 2 && i === 2);
-
-            return (
-              <React.Fragment key={t}>
+          {(isSmallScreen 
+              ? ["単語スライド", "意味マッチング", "例文穴埋め"]
+              : ["単語スライド", "単語・意味マッチング", "例文穴埋め"]
+            ).map((t, i) => {
+              const cur =
+                (isSlide && i === 0) ||
+                (step === totalWords + 1 && i === 1) ||
+                (step === totalWords + 2 && i === 2);
+              return (
+                <React.Fragment key={t}>
                 <button
                   onClick={() => {
                     if (i === 0) setStep(1);
@@ -494,7 +495,7 @@ const Lesson: React.FC = () => {
                   <span className="arrow" aria-hidden="true">→</span>
                 )}
               </React.Fragment>
-            );
+              );
           })}
         </div>
       </div>
