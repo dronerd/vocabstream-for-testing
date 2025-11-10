@@ -7,7 +7,7 @@ export default function Review() {
   const baseColor = "#d8f3dc";
 
   // Slightly lighter, reddish button tones
-  const buttonColors = ["#8ad4ae", "#74c69d", "#52b788", "#40916c"];
+  const buttonColors = ["#b2ebcb", "#74c69d", "#449e74", "#367a5b"];
 
 
   return (
