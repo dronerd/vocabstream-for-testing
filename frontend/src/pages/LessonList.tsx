@@ -92,7 +92,6 @@ export default function LessonList() {
           >
             <div className="lesson-content">
               <div className="lesson-title">{l.title}</div>
-              <div className="lesson-meta">最終テスト: —</div>
             </div>
 
             <button
@@ -272,7 +271,7 @@ html, body, #root {
     min-height: 110px;
     background: linear-gradient(135deg, #a3c6ef 0%, #77a8e9 100%);
   }
-  .lesson-title { font-size: 16px; }
+  .lesson-title { font-size: 14px; }
   .lesson-meta { font-size: 12px; }
   .start-btn { font-size: 13px; padding: 10px 0; }
 }

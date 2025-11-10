@@ -195,7 +195,7 @@ const basePadding = isSmall ? 12 : 20; // 既存の padding
                       marginTop: isSmall ? 8 : 0,
                     }}
                   >
-                    進捗: 0%
+                    進歩: 0%
                   </div>
                 </div>
               ))}

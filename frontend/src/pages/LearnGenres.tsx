@@ -299,7 +299,7 @@ export default function LearnGenres() {
                       </strong>
                     </div>
                     <div style={{ fontSize: isSmall ? 14 : 16, fontWeight: "bold", color: "#08335b", marginTop: isSmall ? 8 : 0 }}>
-                      進捗: 0%
+                      進歩: 0%
                     </div>
                   </div>
                 ))}

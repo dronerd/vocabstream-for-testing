@@ -238,7 +238,7 @@ export default function ReviewList() {
                       marginTop: isSmall ? 8 : 0,
                     }}
                   >
-                    進捗: 0%
+                    進歩: 0%
                   </div>
                 </div>
               ))}
