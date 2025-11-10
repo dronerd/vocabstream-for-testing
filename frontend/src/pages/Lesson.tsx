@@ -390,13 +390,26 @@ const Lesson: React.FC = () => {
           100% { transform: translateY(-120vh) scale(1) rotate(180deg); opacity: 0; }
         }
 
-        .breadcrumb { display:flex; gap:10px; align-items:center; justify-content:center; margin-bottom:8px }
+        .breadcrumb { 
+        display:flex; 
+        gap:10px; 
+        align-items:center; 
+        justify-content:center; 
+        margin-bottom:8px; 
+        max-width:900px;       
+        padding:0 16px;
+        }
         .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:14px }
 
+
         @media (max-width: 600px) {
-          .breadcrumb { gap:6px; margin-bottom:4px }
-          .breadcrumb button { font-size:13px; white-space:nowrap; padding:4 4px }
+          .breadcrumb {
+            gap:6px;
+            margin-bottom:4px;
+            padding:0 12px;   
+          }
         }
+
       `}</style>
 
       <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 10 : 12, padding: isSmallScreen ? "12px 12px" : (isSmallScreen ? "8px 10px" : "10px 6px"), borderRadius: 10, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
@@ -404,7 +417,7 @@ const Lesson: React.FC = () => {
       </button>
 
       {/* Breadcrumb Wrapper */}
-      <div style={{ padding: isSmallScreen ? "10 16px" : "0 24px" }}>
+      <div style={{ padding: isSmallScreen ? "0 16px" : "0 24px" }}>
         <div
           className="breadcrumb"
           style={{
@@ -487,7 +500,7 @@ const Lesson: React.FC = () => {
       {isSlide && (
         <div style={{ width: "100%", maxWidth: 900 }}>
           <h2 className="slide-heading" style={{ fontSize: headingSize, marginTop: isSmallScreen ? 6 : 12, marginBottom: isSmallScreen ? 0 : 10 }}>単語スライド</h2>
-          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 2 : 12 }}>{lesson.words[slideStep].word}</p>
+          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 0 : 12 }}>{lesson.words[slideStep].word}</p>
           <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: isSmallScreen ? "left" : "center", marginBottom: isSmallScreen ? 8 : 12 }}>
             <strong>意味:</strong> {lesson.words[slideStep].meaning}<br />
             <strong>類義語:</strong> {lesson.words[slideStep].synonyms || "なし"}<br />
