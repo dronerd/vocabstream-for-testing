@@ -257,7 +257,7 @@ const Lesson: React.FC = () => {
   // responsive sizes & button styles
   const headingSize = isSmallScreen ? 22 : 32;
   const headingSize2 = isSmallScreen ? 17 : 32;
-  const mainWordSize = isSmallScreen ? 34 : 48; // slightly reduced but still large
+  const mainWordSize = isSmallScreen ? 32 : 48; // slightly reduced but still large
   const wordListSize = isSmallScreen ? 16 : 34;
   const paragraphFontSize = isSmallScreen ? 14 : 20;
   const quizTextSize = isSmallScreen ? 16 : 28;
@@ -405,9 +405,10 @@ const Lesson: React.FC = () => {
         @media (max-width: 600px) {
           .breadcrumb {
             gap:6px;
+            align-items:center; 
             margin-bottom:4px;
             max-width:400px; 
-            padding:0 16px;   
+            padding:0 10px;   
           }
           .breadcrumb button { background:transparent; border:none; cursor:pointer; font-size:11px }
         }
@@ -501,16 +502,16 @@ const Lesson: React.FC = () => {
       {/* Word slides */}
       {isSlide && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 className="slide-heading" style={{ fontSize: headingSize, marginTop: isSmallScreen ? 6 : 12, marginBottom: isSmallScreen ? 0 : 10 }}>単語スライド</h2>
-          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 0 : 12 }}>{lesson.words[slideStep].word}</p>
-          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: isSmallScreen ? "left" : "center", marginBottom: isSmallScreen ? 8 : 12 }}>
+          <h2 className="slide-heading" style={{ fontSize: headingSize, marginTop: isSmallScreen ? 2 : 12, marginBottom: isSmallScreen ? 0 : 10 }}>単語スライド</h2>
+          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 4 : 12 }}>{lesson.words[slideStep].word}</p>
+          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.4", textAlign: isSmallScreen ? "left" : "center", marginBottom: isSmallScreen ? 4 : 12 }}>
             <strong>意味:</strong> {lesson.words[slideStep].meaning}<br />
             <strong>類義語:</strong> {lesson.words[slideStep].synonyms || "なし"}<br />
             <strong>対義語:</strong> {lesson.words[slideStep].antonyms || "なし"}<br />
             <strong>例文:</strong> {lesson.words[slideStep].example || "なし"}
           </p>
 
-          <div className="audio-next-row" style={{ marginTop: isSmallScreen ? 6 : 10, display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, alignItems: "center", flexWrap: "wrap" }}>
+          <div className="audio-next-row" style={{ marginTop: isSmallScreen ? 4 : 10, display: "flex", justifyContent: "center", gap: isSmallScreen ? 6 : 12, alignItems: "center", flexWrap: "wrap" }}>
             <button
               onClick={() => speakEnglish(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)}
               style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc", width: isSmallScreen ? 180 : undefined, padding: isSmallScreen ? "6px 10px" : undefined, fontSize: isSmallScreen ? 14 : nextButtonStyle.fontSize }}
@@ -521,7 +522,7 @@ const Lesson: React.FC = () => {
             <div style={{ alignSelf: "center", fontSize: isSmallScreen ? 12 : 12, color: "#444", marginLeft: isSmallScreen ? 0 : 0 }}>音読してみましょう — 記憶に残りやすくなります。</div>
           </div>
 
-          <div className="prev-next-row" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, marginTop: isSmallScreen ? 8 : 16 }}>
+          <div className="prev-next-row" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 6 : 12, marginTop: isSmallScreen ? 4 : 16 }}>
             <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? 140 : nextButtonStyle.width }}>前へ</button>
             <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の単語へ" : "単語・意味マッチングへ"}</button>
           </div>
