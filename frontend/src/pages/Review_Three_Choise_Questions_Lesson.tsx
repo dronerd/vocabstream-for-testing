@@ -390,8 +390,6 @@ const Lesson: React.FC = () => {
     );
   }
 
-  const paragraphSlotCount = slotCorrectWord.length || choiceWords.length;
-
   return (
     <div
       style={{

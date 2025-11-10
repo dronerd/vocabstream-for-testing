@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 
 export default function Home() {
-  const { user } = useAuth();
   const nav = useNavigate();
 
   const buttonStyles = [
@@ -54,17 +53,6 @@ export default function Home() {
 
         .subtitle a {
           color: #a8d0ff;
-        }
-
-        .user-box {
-          padding: 12px;
-          border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 12px;
-          margin-bottom: 12px;
-          font-size: 30px;
-          background: rgba(255, 255, 255, 0.08);
-          box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-          color: #f1f1f1;
         }
 
         .options-grid {
@@ -129,11 +117,6 @@ export default function Home() {
           }
           .subtitle {
             font-size: 12px;
-          }
-          .user-box {
-            font-size: 16px;
-            padding: 10px;
-            border-radius: 10px;
           }
           .options-grid {
             grid-template-columns: 1fr;

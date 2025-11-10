@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { speakEnglish } from "../pages/speech"; 
 
@@ -68,9 +68,6 @@ const Lesson: React.FC = () => {
 
   // finish lock/overlay to avoid duplicate praise
   const [finishLock, setFinishLock] = useState<boolean>(false);
-  const [showFinishOverlay, setShowFinishOverlay] = useState<boolean>(false);
-  const [finishMessage, setFinishMessage] = useState<string>("");
-  const [finishScore, setFinishScore] = useState<{ score: number; max: number; percent: number } | null>(null);
 
   // audio context ref for playing chime
   const audioCtxRef = useRef<AudioContext | null>(null);
@@ -272,8 +269,6 @@ const Lesson: React.FC = () => {
   };
   const nextButtonStyle: React.CSSProperties = { ...blueButtonStyle, width: isSmallScreen ? "100%" : 240, backgroundColor: "#003366" };
 
-  const congratulationsMessages = ["All correct! Fantastic!", "All correct! Brilliant!", "All correct! Terrific!", "All correct! Excellent!"];
-
   // PLAY bright celebratory chime for correct answers
   async function playCorrectSound() {
     try {
@@ -376,25 +371,14 @@ const Lesson: React.FC = () => {
   // display final scores
   const displayFinalScore = finalScore ?? quizScore;
   const quizMax = quizQuestions.length || 1;
-  const quizPercent = Math.round((displayFinalScore / quizMax) * 100);
-  
+
   // matching/meaning score now uses meaningScore
   const matchingScore = meaningScore;
   const matchingMax = L.words.length; // 全単語数が最大スコア
-  const matchingPercent = Math.round((matchingScore / matchingMax) * 100);
-  
+
   // 総合スコアの計算（マッチング(meaning MCQ)と穴埋めクイズの合計）
   const totalScore = displayFinalScore + matchingScore;
   const totalMax = quizMax + matchingMax;
-  const totalPercent = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
-
-  // helpers for UI lookup
-  function meaningTextByOriginal(orig: number) {
-    return L.words[orig].meaning || L.words[orig].japaneseMeaning || "";
-  }
-  function wordTextByOriginal(orig: number) {
-    return L.words[orig].word || "";
-  }
 
   return (
     <div style={{
@@ -424,7 +408,7 @@ const Lesson: React.FC = () => {
       </button>
 
       {/* Breadcrumb */}
-      <div className="breadcrumb" style={{ width: "100%", maxWidth: 900, gap: isSmallScreen ? 6 : 10 }}>
+      <div className="breadcrumb" style={{ width: isSmallScreen ? "80%" : "100%", maxWidth: 900, gap: isSmallScreen ? 4 : 10 }}>
         { ["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"].map((t, i) => {
           const cur = (isSlide && i === 0) || (step === totalWords + 1 && i === 1) || (step === totalWords + 2 && i === 2);
           return (
@@ -463,12 +447,12 @@ const Lesson: React.FC = () => {
             </p>
           </div>
 
-          <div className="start-buttons" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 8 : 12, flexWrap: "wrap" }}>
+          <div className="start-buttons" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 4 : 12, flexWrap: "wrap" }}>
             <button onClick={() => setStep(1)} style={blueButtonStyle}>単語スライドから始める</button>
-            <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 12 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
+            <button onClick={() => setStep(totalWords + 1)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 4 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
               単語・意味マッチングへ進む
             </button>
-            <button onClick={() => setStep(totalWords + 2)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 12 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
+            <button onClick={() => setStep(totalWords + 2)} style={{ fontSize: buttonFontSize, padding: isSmallScreen ? "8px 12px" : "10px 20px", marginTop: isSmallScreen ? 4 : 16, backgroundColor: "#1a4e8a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", width: buttonWidth }}>
               例文穴埋めへ進む
             </button>
           </div>

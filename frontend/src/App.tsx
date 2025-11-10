@@ -23,12 +23,6 @@ import Privacy from "./pages/Privacy";
 import Prompts from "./pages/ChatGPT_prompts";
 import StillUnderDevelopment from "./pages/Still_under_development";
 
-const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { token } = useAuth();
-  if (!token) return <Navigate to="/login" replace />;
-  return <>{children}</>;
-};
-
 export default function App() {
   const location = useLocation();
 

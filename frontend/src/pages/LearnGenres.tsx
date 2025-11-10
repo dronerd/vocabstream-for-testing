@@ -165,7 +165,7 @@ export default function LearnGenres() {
         }
 
         .lesson-card {
-          padding: 12px;
+          padding: 20px;
           border: 1px solid #ddd;
           border-radius: 8px;
           cursor: pointer;
@@ -298,9 +298,7 @@ export default function LearnGenres() {
                         {lesson.title}
                       </strong>
                     </div>
-                    <div style={{ fontSize: isSmall ? 14 : 16, fontWeight: "bold", color: "#08335b", marginTop: isSmall ? 8 : 0 }}>
-                      進歩: 0%
-                    </div>
+                    
                   </div>
                 ))}
               </div>

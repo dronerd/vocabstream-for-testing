@@ -11,7 +11,6 @@ export default function LandingPage() {
   }, []);
 
   const SITE_URL = "https://vocabstream.vercel.app";
-  const IMAGE_URL = `${SITE_URL}/logo.png`;
 
   return (
     <div
