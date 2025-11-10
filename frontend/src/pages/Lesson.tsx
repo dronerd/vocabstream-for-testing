@@ -403,27 +403,55 @@ const Lesson: React.FC = () => {
         レッスン一覧に戻る
       </button>
 
-      {/* Breadcrumb */}
-      <div className="breadcrumb" style={{ width: isSmallScreen ? "80%" : "100%", maxWidth: 900, gap: isSmallScreen ? 4 : 10 }}>
-        { ["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"].map((t, i) => {
-          const cur = (isSlide && i === 0) || (step === totalWords + 1 && i === 1) || (step === totalWords + 2 && i === 2);
-          return (
-            <React.Fragment key={t}>
-              <button
-                onClick={() => {
-                  if (i === 0) setStep(1);
-                  else if (i === 1) setStep(totalWords + 1);
-                  else if (i === 2) setStep(totalWords + 2);
-                }}
-                style={{ fontWeight: cur ? 800 : 400, color: cur ? "#000" : "#666", whiteSpace: "nowrap" }}
-              >
-                {cur ? <span style={{ fontWeight: 800 }}>{t}</span> : t}
-              </button>
-              {i < 2 && <span style={{ color: "#bbb", margin: isSmallScreen ? '0 4px' : '0 8px' }}>→</span>}
-            </React.Fragment>
-          );
-        }) }
+      {/* Breadcrumb Wrapper */}
+      <div style={{ padding: isSmallScreen ? "0 16px" : "0 24px" }}>
+        <div
+          className="breadcrumb"
+          style={{
+            width: "100%",
+            maxWidth: 900,
+            margin: "0 auto",      // centers it and adds white space when possible
+            gap: isSmallScreen ? 4 : 10,
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "nowrap",
+            overflowX: "auto"       // prevents crowding on very small screens
+          }}
+        >
+          {["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"].map((t, i) => {
+            const cur =
+              (isSlide && i === 0) ||
+              (step === totalWords + 1 && i === 1) ||
+              (step === totalWords + 2 && i === 2);
+
+            return (
+              <React.Fragment key={t}>
+                <button
+                  onClick={() => {
+                    if (i === 0) setStep(1);
+                    else if (i === 1) setStep(totalWords + 1);
+                    else if (i === 2) setStep(totalWords + 2);
+                  }}
+                  style={{
+                    fontWeight: cur ? 800 : 400,
+                    color: cur ? "#000" : "#666",
+                    whiteSpace: "nowrap"
+                  }}
+                >
+                  {t}
+                </button>
+
+                {i < 2 && (
+                  <span style={{ color: "#bbb", margin: isSmallScreen ? "0 4px" : "0 8px" }}>
+                    →
+                  </span>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
       </div>
+
 
       {/* Start screen */}
       {step === 0 && (
@@ -458,8 +486,8 @@ const Lesson: React.FC = () => {
       {/* Word slides */}
       {isSlide && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 className="slide-heading" style={{ fontSize: headingSize, marginTop: isSmallScreen ? 6 : 12, marginBottom: isSmallScreen ? 6 : 12 }}>単語スライド</h2>
-          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 6 : 12 }}>{lesson.words[slideStep].word}</p>
+          <h2 className="slide-heading" style={{ fontSize: headingSize, marginTop: isSmallScreen ? 6 : 12, marginBottom: isSmallScreen ? 0 : 10 }}>単語スライド</h2>
+          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 2 : 12 }}>{lesson.words[slideStep].word}</p>
           <p style={{ fontSize: paragraphFontSize, lineHeight: "1.6", textAlign: isSmallScreen ? "left" : "center", marginBottom: isSmallScreen ? 8 : 12 }}>
             <strong>意味:</strong> {lesson.words[slideStep].meaning}<br />
             <strong>類義語:</strong> {lesson.words[slideStep].synonyms || "なし"}<br />
