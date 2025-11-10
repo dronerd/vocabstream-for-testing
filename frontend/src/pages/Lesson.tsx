@@ -529,32 +529,118 @@ const Lesson: React.FC = () => {
       {/* Word slides */}
       {isSlide && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <h2 className="slide-heading" style={{ fontSize: headingSize, marginTop: isSmallScreen ? 2 : 12, marginBottom: isSmallScreen ? 0 : 10 }}>単語スライド</h2>
-          <p className="main-word" style={{ fontSize: mainWordSize, fontWeight: "bold", marginBottom: isSmallScreen ? 4 : 12 }}>{lesson.words[slideStep].word}</p>
-          <p style={{ fontSize: paragraphFontSize, lineHeight: "1.4", textAlign: isSmallScreen ? "left" : "center", marginBottom: isSmallScreen ? 4 : 12 }}>
+
+          <h2
+            className="slide-heading"
+            style={{
+              fontSize: headingSize,
+              marginTop: isSmallScreen ? 0 : 12,
+              marginBottom: isSmallScreen ? 2 : 10,
+              textAlign: "center"
+            }}
+          >
+            単語スライド
+          </h2>
+
+          <p
+            className="main-word"
+            style={{
+              fontSize: mainWordSize,
+              fontWeight: "bold",
+              marginBottom: isSmallScreen ? 2 : 12,
+              textAlign: "center"
+            }}
+          >
+            {lesson.words[slideStep].word}
+          </p>
+
+          <p
+            style={{
+              fontSize: paragraphFontSize,
+              lineHeight: "1.4",
+              textAlign: isSmallScreen ? "left" : "center",
+              marginBottom: isSmallScreen ? 6 : 12
+            }}
+          >
             <strong>意味:</strong> {lesson.words[slideStep].meaning}<br />
             <strong>類義語:</strong> {lesson.words[slideStep].synonyms || "なし"}<br />
             <strong>対義語:</strong> {lesson.words[slideStep].antonyms || "なし"}<br />
             <strong>例文:</strong> {lesson.words[slideStep].example || "なし"}
           </p>
 
-          <div className="audio-next-row" style={{ marginTop: isSmallScreen ? 4 : 10, display: "flex", justifyContent: "center", gap: isSmallScreen ? 6 : 12, alignItems: "center", flexWrap: "wrap" }}>
+          <div
+            className="audio-next-row"
+            style={{
+              marginTop: isSmallScreen ? 4 : 10,
+              display: "flex",
+              justifyContent: "center",
+              gap: isSmallScreen ? 4 : 12,
+              alignItems: "center",
+              flexWrap: "wrap"
+            }}
+          >
             <button
-              onClick={() => speakEnglish(`${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`)}
-              style={{ ...nextButtonStyle, backgroundColor: "#6fa8dc", width: isSmallScreen ? 180 : undefined, padding: isSmallScreen ? "6px 10px" : undefined, fontSize: isSmallScreen ? 14 : nextButtonStyle.fontSize }}
+              onClick={() =>
+                speakEnglish(
+                  `${lesson.words[slideStep].word}. ${lesson.words[slideStep].example || ""}`
+                )
+              }
+              style={{
+                ...nextButtonStyle,
+                backgroundColor: "#6fa8dc",
+                width: isSmallScreen ? 170 : undefined,
+                padding: isSmallScreen ? "6px 8px" : undefined,
+                fontSize: isSmallScreen ? 13 : nextButtonStyle.fontSize
+              }}
             >
               ▶️ 音声を聞く
             </button>
 
-            <div style={{ alignSelf: "center", fontSize: isSmallScreen ? 12 : 12, color: "#444", marginLeft: isSmallScreen ? 0 : 0 }}>音読してみましょう — 記憶に残りやすくなります。</div>
+            <div
+              style={{
+                fontSize: isSmallScreen ? 11 : 12,
+                color: "#444",
+                textAlign: "center",
+              }}
+            >
+              音読してみましょう — 記憶に残りやすくなります。
+            </div>
           </div>
 
-          <div className="prev-next-row" style={{ display: "flex", justifyContent: "center", gap: isSmallScreen ? 6 : 12, marginTop: isSmallScreen ? 4 : 16 }}>
-            <button onClick={() => setStep(step - 1)} style={{ ...nextButtonStyle, backgroundColor: "#999", width: isSmallScreen ? 140 : nextButtonStyle.width }}>前へ</button>
-            <button onClick={() => setStep(step + 1)} style={{ ...blueButtonStyle, width: isSmallScreen ? 140 : blueButtonStyle.width }}>{slideStep + 1 < totalWords ? "次の単語へ" : "単語・意味マッチングへ"}</button>
+          <div
+            className="prev-next-row"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: isSmallScreen ? 6 : 12,
+              marginTop: isSmallScreen ? 6 : 16
+            }}
+          >
+            <button
+              onClick={() => setStep(step - 1)}
+              style={{
+                ...nextButtonStyle,
+                backgroundColor: "#999",
+                width: isSmallScreen ? 130 : nextButtonStyle.width
+              }}
+            >
+              前へ
+            </button>
+
+            <button
+              onClick={() => setStep(step + 1)}
+              style={{
+                ...blueButtonStyle,
+                width: isSmallScreen ? 130 : blueButtonStyle.width
+              }}
+            >
+              {slideStep + 1 < totalWords ? "次の単語へ" : "単語・意味マッチングへ"}
+            </button>
           </div>
+
         </div>
       )}
+
 
       {/* Meaning MCQ step (replaces original matching UI) */}
       {step === totalWords + 1 && (
