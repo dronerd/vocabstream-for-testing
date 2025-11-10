@@ -376,6 +376,10 @@ const Lesson: React.FC = () => {
   const matchingScore = meaningScore;
   const matchingMax = L.words.length; // 全単語数が最大スコア
 
+  //for breadcrumbs
+  const titlesSmall = ["単語スライド", "意味マッチング", "例文穴埋め"];
+  const titlesFull = ["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"];
+
   return (
     <div style={{
       display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start",
@@ -450,7 +454,7 @@ const Lesson: React.FC = () => {
         レッスン一覧に戻る
       </button>
 
-
+      
 
       {/* Breadcrumb Wrapper */}
       <div className="breadcrumb-wrapper" style={{ padding: isSmallScreen ? "0 12px" : "0 16px" }}>
@@ -461,7 +465,7 @@ const Lesson: React.FC = () => {
             maxWidth: 900,
           }}
         >
-          {["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"].map((t, i) => {
+          {(isSmallScreen ? titlesSmall : titlesFull).map((t, i) => {
             const cur =
               (isSlide && i === 0) ||
               (step === totalWords + 1 && i === 1) ||
