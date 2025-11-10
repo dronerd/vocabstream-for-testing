@@ -376,6 +376,11 @@ const Lesson: React.FC = () => {
   const matchingScore = meaningScore;
   const matchingMax = L.words.length; // 全単語数が最大スコア
 
+  // small screen のときに表示する短縮版
+  const titlesSmall = ["単語スライド", "意味マッチング", "例文穴埋め"];
+  // 通常
+  const titlesFull = ["単語スライド", "単語・意味マッチング", "例文穴埋め"];
+
 
   return (
     <div style={{
@@ -460,37 +465,40 @@ const Lesson: React.FC = () => {
           /* inline fallback props kept minimal */
           style={{
             maxWidth: 900,
+            textAlign: "center",
+            margin: "20px 0" 
           }}
         >
           
-          {["単語スライド", "単語・意味マッチング", "例文穴埋め"].map((t, i) => {
-            const cur =
-              (isSlide && i === 0) ||
-              (step === totalWords + 1 && i === 1) ||
-              (step === totalWords + 2 && i === 2);
+          {["単語スライド", "単語・意味マッチング", "例文穴埋めクイズ"].map((t, i) => {
+          // Use shorter labels for small screens
+          const label = isSmallScreen
+            ? ["単語スライド", "意味マッチング", "例文穴埋め"][i]
+            : t;
 
-            return (
-              <React.Fragment key={t}>
-                <button
-                  onClick={() => {
-                    if (i === 0) setStep(1);
-                    else if (i === 1) setStep(totalWords + 1);
-                    else if (i === 2) setStep(totalWords + 2);
-                  }}
-                  style={{
-                    fontWeight: cur ? 800 : 400,
-                    color: cur ? "#000" : "#666",
-                  }}
-                >
-                  {t}
-                </button>
+          // Determine which tab is current
+          const cur =
+            (isSlide && i === 0) ||
+            (step === totalWords + 1 && i === 1) ||
+            (step === totalWords + 2 && i === 2);
 
-                {i < 2 && (
-                  <span className="arrow" aria-hidden="true">→</span>
-                )}
-              </React.Fragment>
-            );
-          })}
+          return (
+            <button
+              key={i}
+              style={{
+                fontSize: isSmallScreen ? "14px" : "18px", // larger font on large screens
+                margin: "0 8px",
+                padding: "6px 12px",
+                fontWeight: cur ? "bold" : "normal",
+                textAlign: "center",
+                display: "inline-block",
+              }}
+            >
+              {label}
+            </button>
+          );
+        })}
+
         </div>
       </div>
 
