@@ -460,6 +460,11 @@ const Lesson: React.FC = () => {
           /* inline fallback props kept minimal */
           style={{
             maxWidth: 900,
+            margin: "0 auto",         // centers the div horizontally
+            display: "flex",          // make contents a row
+            justifyContent: "center", // center buttons inside
+            alignItems: "center",     // vertical alignment if needed
+            gap: "8px",               // space between buttons/arrows
           }}
         >
           
