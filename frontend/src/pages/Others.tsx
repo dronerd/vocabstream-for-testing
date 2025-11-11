@@ -137,7 +137,7 @@ export default function Review() {
 
         <button
           className="option-btn"
-          onClick={() => nav("/still_under_development")}
+          onClick={() => nav("/ai_chat")}
           style={{ backgroundColor: buttonColors[1] }}
         >
           AI会話機能

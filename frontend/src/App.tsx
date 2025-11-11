@@ -9,19 +9,14 @@ import LearnGenres from "./pages/LearnGenres";
 import LessonList from "./pages/LessonList";
 import Lesson from "./pages/Lesson";
 import Review from "./pages/Review";
-import ReviewParagraphFillin from "./pages/Review_Paragraph_Fillin";
-import ReviewParagraphFillinList from "./pages/Review_Paragraph_Fillin_list";
-import ReviewParagraphFillinLesson from "./pages/Review_Paragraph_Fillin_Lesson";
-import ReviewThreeChoiseQuestions from "./pages/Review_Three_Choise_Questions";
-import ReviewThreeChoiseQuestionsList from "./pages/Review_Three_Choise_Questions_list";
-import ReviewThreeChoiseQuestionsLesson from "./pages/Review_Three_Choise_Questions_Lesson";
 import Others from "./pages/Others";
-import ReviewReadingComprehension from "./pages/Review_ReadingComprehension";
-import ReviewReadingComprehensionList from "./pages/Review_ReadingComprehension_list";
 import LandingPage from "./pages/LandingPage";
 import Privacy from "./pages/Privacy";
 import Prompts from "./pages/ChatGPT_prompts";
 import StillUnderDevelopment from "./pages/Still_under_development";
+import ReviewLessonDecide from "./pages/ReviewLessonDecide";
+import ReviewLesson from "./pages/ReviewLesson";
+import AIchat from "./pages/AI_chat";
 
 export default function App() {
   const location = useLocation();
@@ -45,20 +40,15 @@ export default function App() {
           <Route path="/learn/:genreId" element={<LessonList />} />
           <Route path="/lesson/:lessonId" element={<Lesson />} />
           <Route path="/review" element={<Review />} />
-          <Route path="/review_paragraph_fillin" element={<ReviewParagraphFillin />} />
-          <Route path="/review_paragraph_fillin_list/:genreId" element={<ReviewParagraphFillinList />} />
-          <Route path="/review_paragraph_fillin_lesson/:lessonId" element={<ReviewParagraphFillinLesson />} />
-          <Route path="/review_three_choise_questions" element={<ReviewThreeChoiseQuestions />} />
-          <Route path="/review_three_choise_questions_list/:genreId" element={<ReviewThreeChoiseQuestionsList />} />
-          <Route path="/review_three_choise_questions_lesson/:genreId" element={<ReviewThreeChoiseQuestionsLesson />} />
           <Route path="/others" element={<Others />} />
-          <Route path="/review_reading_comprehension" element={<ReviewReadingComprehension />} />
-          <Route path="/review_reading_comprehension_list" element={<ReviewReadingComprehensionList />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/prompts" element={<Prompts />} />
           <Route path="/still_under_development" element={<StillUnderDevelopment />} />
+          <Route path="/review/:genreId" element={<ReviewLessonDecide />} />
+          <Route path="/review/:lessonId" element={<ReviewLesson />} />
+          <Route path="/ai_chat" element={<AIchat />} />
         </Routes>
       </div>
 
