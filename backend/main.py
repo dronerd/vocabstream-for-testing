@@ -73,7 +73,8 @@ def genres(): # no parameters here
             {"id": "medicine", "title": "Medicine & Health"},
             {"id": "economics-business", "title": "Business & Economics"},
             {"id": "environment", "title": "Environmental Science & Sustainability"},
-            {"id": "law", "title": "Law & Politics"},
+            {"id": "law", "title": "Law"},
+            {"id": "politics", "title": "politics"},
             {"id": "engineering", "title": "Engineering"},
         ]
     }
