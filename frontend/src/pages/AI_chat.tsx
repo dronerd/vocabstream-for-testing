@@ -14,7 +14,7 @@ export default function AI_chat() {
   const [specialty, setSpecialty] = useState("Computer Science & Technology");
   const [userInput, setUserInput] = useState("");
   const [chatLog, setChatLog] = useState<ChatEntry[]>([]); // ← 型を指定
-  const [recommendedWords, setRecommendedWords] = useState<string[]>(["example", "test", "AI"]);
+  const [recommendedWords] = useState<string[]>(["example", "test", "AI"]);
 
   const handleSend = async () => {
     if (!userInput.trim()) return;
