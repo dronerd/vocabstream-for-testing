@@ -55,11 +55,11 @@ export default function LearnGenres() {
   const lessonImages: Record<string, string> = {
     "computer-science": "/CS1.png",
     "medicine": "/Medicine.png",
-    "law": "/law.png",
     "politics": "/politics.png",
     "economics-business": "/Business.png",
     "environment": "/Environment.png",
     "engineering": "/Engineering.png",
+    "law": "/Law.png",
   };
 
   const blueGradients = ["#b7d7f5", "#8fc1ee", "#5fa7e8", "#3889dc"];
