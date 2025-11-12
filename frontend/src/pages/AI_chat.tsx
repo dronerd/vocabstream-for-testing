@@ -23,16 +23,19 @@ export default function AI_chat() {
     setChatLog(newLog);
     setUserInput("");
 
+    const API_URL = process.env.REACT_APP_API_URL;
+
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: userInput,
-          level,
-          specialty,
-        }),
-      });
+      const res = await fetch(`${API_URL}/api/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: userInput,
+        level,
+        specialty,
+      }),
+    });
+
 
       const data = await res.json();
 
