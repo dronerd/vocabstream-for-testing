@@ -24,7 +24,6 @@ export default function AI_chat() {
     setUserInput("");
 
     const API_URL = process.env.REACT_APP_API_URL;
-
     try {
       const res = await fetch(`${API_URL}/api/chat`, {
       method: "POST",
