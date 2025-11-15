@@ -14,7 +14,7 @@ export default function AI_chat() {
   const [specialty, setSpecialty] = useState("Computer Science & Technology");
   const [userInput, setUserInput] = useState("");
   const [chatLog, setChatLog] = useState<ChatEntry[]>([]); // ← 型を指定
-  const [recommendedWords] = useState<string[]>(["example", "test", "AI"]);
+  const [recommendedWords] = useState<string[]>([]);
 
   const handleSend = async () => {
     if (!userInput.trim()) return;
@@ -50,6 +50,7 @@ export default function AI_chat() {
   return (
     <main className="p-6 max-w-3xl mx-auto" style={{ paddingTop: "92px" }}>
       <h1 className="text-2xl font-bold mb-6">AI会話ページ</h1>
+      <h2 className="text-lg font-semibold mb-4">レベルと専門分野を選択すると、それに合わせて会話ができます。</h2>
 
       {/* 英語レベル選択 */}
       <div className="mb-4">
@@ -120,6 +121,7 @@ export default function AI_chat() {
       {/* おすすめ単語 */}
       <div className="border rounded-md p-4 bg-gray-100">
         <h2 className="font-semibold mb-2">おすすめ単語</h2>
+        <p className="mb-2 text-sm text-gray-600">会話に役立つ単語がいくつか紹介されます</p>
         <div className="flex flex-wrap gap-2">
           {recommendedWords.map((word, idx) => (
             <span key={idx} className="bg-green-200 px-2 py-1 rounded-md text-sm">{word}</span>

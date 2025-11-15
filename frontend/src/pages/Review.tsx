@@ -108,7 +108,7 @@ export default function LearnGenres() {
   function handleLessonClick(lessonId: string) {
     const id = lessonId.toLowerCase();
     if (allowedLessonIds.has(id)) {
-      nav(`/review/${lessonId}`);
+      nav(`/still_under_development`);
     } else {
       nav("/still_under_development");
     }
