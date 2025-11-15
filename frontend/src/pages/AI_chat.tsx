@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-type ChatEntry = {
-  sender: "user" | "llm";
-  text: string;
-};
-
-type ConversationMode = "choice" | "casual" | "lesson" | "conversation" | "lesson-chat";
+// --- Types and category/lesson metadata ---
+type ConversationMode = "choice" | "casual" | "lesson";
 type ConversationStep =
   | "initial"
   | "level"
@@ -20,47 +16,51 @@ type ConversationStep =
   | "structure"
   | "chatting";
 
-// Category and lesson count definitions
-const CATEGORIES = {
-  "word-intermediate": "単語初級~中級 (CEFR A2~B1)",
-  "word-high-intermediate": "単語中上級 (CEFR B2)",
-  "word-advanced": "単語上級 (CEFR C1)",
-  "word-proficiency": "単語熟達 (CEFR C2)",
-  "idioms-intermediate": "熟語初級~中級 (CEFR A2~B1)",
-  "idioms-high-intermediate": "熟語中上級 (CEFR B2)",
-  "idioms-advanced": "熟語上級 (CEFR C1)",
-  "idioms-proficiency": "熟語熟達 (CEFR C2)",
-  "business-entry": "ビジネス入門レベル",
-  "business-intermediate": "ビジネス実践レベル",
-  "business-global": "ビジネスグローバルレベル",
-  "computer-science": "Computer Science & Technology",
-  "medicine": "Medicine & Health",
-  "economics-business": "Business & Economics",
-  "environment": "Environmental Science & Sustainability",
-  "law": "Law & Politics",
+interface ChatEntry {
+  sender: "user" | "llm";
+  text: string;
+}
+
+const CATEGORIES: Record<string, string> = {
+  "business-entry": "Business (Entry)",
+  "business-global": "Business (Global)",
+  "business-intermediate": "Business (Intermediate)",
+  "computer-science": "Computer Science",
+  "economics-business": "Economics & Business",
   "engineering": "Engineering",
+  "environment": "Environment",
+  "idioms-advanced": "Idioms (Advanced)",
+  "idioms-high-intermediate": "Idioms (High-Intermediate)",
+  "idioms-intermediate": "Idioms (Intermediate)",
+  "idioms-proficiency": "Idioms (Proficiency)",
+  "law": "Law",
+  "medicine": "Medicine",
   "politics": "Politics",
-} as const;
+  "word-advanced": "Words (Advanced)",
+  "word-high-intermediate": "Words (High-Intermediate)",
+  "word-intermediate": "Words (Intermediate)",
+  "word-proficiency": "Words (Proficiency)",
+};
 
 const LESSON_COUNTS: Record<string, number> = {
-  "word-intermediate": 64,
-  "word-high-intermediate": 96,
-  "word-advanced": 100,
-  "word-proficiency": 100,
-  "idioms-intermediate": 50,
-  "idioms-high-intermediate": 50,
-  "idioms-advanced": 50,
-  "idioms-proficiency": 50,
-  "business-entry": 71,
-  "business-intermediate": 71,
-  "business-global": 71,
-  "computer-science": 71,
-  "medicine": 71,
-  "economics-business": 71,
-  "environment": 71,
-  "law": 71,
-  "politics": 71,
+  "business-entry": 50,
+  "business-global": 60,
+  "business-intermediate": 48,
+  "computer-science": 40,
+  "economics-business": 36,
   "engineering": 71,
+  "environment": 30,
+  "idioms-advanced": 28,
+  "idioms-high-intermediate": 32,
+  "idioms-intermediate": 34,
+  "idioms-proficiency": 26,
+  "law": 22,
+  "medicine": 18,
+  "politics": 71,
+  "word-advanced": 44,
+  "word-high-intermediate": 50,
+  "word-intermediate": 64,
+  "word-proficiency": 40,
 };
 
 const TOPICS = [
@@ -72,18 +72,42 @@ const TOPICS = [
   "Engineering",
 ];
 
-const TESTS = ["Eiken", "TOEFL", "TOEIC", "IELTS", "Cambridge", "Other"];
-const SKILLS = ["Reading", "Listening", "Writing", "Speaking"];
+const TESTS = ["英検", "TOEFL", "TOEIC", "IELTS", "ケンブリッジ英検", "特になし"];
+const SKILLS = ["リーディング", "リスニング", "ライティング", "スピーキング"];
 const COMPONENTS = [
-  "Vocab Practice",
-  "Reading Comprehension",
-  "Speaking Practice",
-  "Pronunciation Practice",
-  "Grammar",
+  "単語練習",
+  "文章読解",
+  "会話練習",
+  "文法練習",
 ];
 
 export default function AI_chat() {
   const navigate = useNavigate();
+
+  // UI styling helpers and global background
+  useEffect(() => {
+    const prev = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = "#d8f3dc";
+    return () => {
+      document.body.style.backgroundColor = prev;
+    };
+  }, []);
+
+  // Disclaimer banner for development stage
+  const disclaimerBanner = (
+    <div className="fixed top-0 left-0 right-0 bg-yellow-100 border-b-2 border-yellow-400 px-6 py-2 z-50">
+      <p className="text-sm text-yellow-900 text-center">
+        ⚠️ <strong>：</strong> 本機能は現在まだ開発実験段階であり、機能がまだ不安定です。今後の開発を楽しみにしていてください。
+      </p>
+    </div>
+  );
+
+  const containerClass = "min-h-screen flex items-center justify-center p-6";
+  const contentClass = "w-full max-w-2xl p-6 bg-transparent";
+  const btnPrimary = "bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold px-6 py-2 rounded-full shadow-lg hover:opacity-95 hover:scale-102 transform transition";
+  const btnSecondary = "bg-gray-700 text-white font-semibold px-5 py-2 rounded-full shadow-md hover:opacity-95 hover:shadow-lg transform transition";
+  const btnAccent = "bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold px-8 py-3 rounded-full shadow-xl hover:scale-105 transition transform";
+  const btnStart = "bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-full shadow-2xl text-lg transition transform hover:scale-105";
 
   // Overall conversation state
   const [mode, setMode] = useState<ConversationMode>("choice");
@@ -91,6 +115,7 @@ export default function AI_chat() {
 
   // Common settings
   const [level, setLevel] = useState("A1");
+  const [levelConfirmed, setLevelConfirmed] = useState(false);
   const [selectedTopics, setSelectedTopics] = useState<string[]>(["Computer Science & Technology"]);
   const [customTopic, setCustomTopic] = useState("");
 
@@ -129,17 +154,26 @@ export default function AI_chat() {
       
       for (let i = 0; i < structure.length; i++) {
         const componentTime = structure[i].minutes * 60;
-        if (elapsed >= cumulativeTime + componentTime && currentComponent === i) {
+            if (elapsed >= cumulativeTime + componentTime && currentComponent === i) {
           // Time to move to next component
           if (i < structure.length - 1) {
-            setCurrentComponent(i + 1);
-            // Auto-send prompt to move to next component
-            const nextComponent = structure[i + 1];
-            const movePrompt = `次は「${nextComponent.name}」に移ってください。`;
-            setChatLog((prev) => [
-              ...prev,
-              { sender: "llm", text: `⏱️ ${movePrompt}` },
-            ]);
+              const nextIndex = i + 1;
+              setCurrentComponent(nextIndex);
+              // Auto-advance to next component with announcement
+              const nextComponent = structure[nextIndex];
+              const movePrompt = `次は「${nextComponent.name}」に移ってください。`;
+              setChatLog((prev) => {
+                // avoid duplicating the same move prompt
+                if (prev.some((e) => e.text === `⏱️ ${movePrompt}`)) return prev;
+                return [
+                  ...prev,
+                  { sender: "llm", text: `⏱️ ${movePrompt}` },
+                ];
+              });
+              // Send the next component's prompt to AI
+              setTimeout(() => {
+                handleLessonStart(generateComponentContent(nextComponent.name));
+              }, 100);
           }
         }
         cumulativeTime += componentTime;
@@ -223,6 +257,56 @@ export default function AI_chat() {
     });
   };
 
+  // NOTE: Removed previous post-processing of trailing question marks per user request.
+
+  // Generate AI system prompt for a given lesson component
+  // These prompts instruct the AI to generate the lesson content and questions
+  const generateComponentContent = (componentName: string) => {
+    switch (componentName) {
+      case "単語練習":
+        return (
+          `You are an English teacher conducting a vocabulary lesson. ` +
+          `Start by saying a brief greeting (e.g., "Hi! Let's start with vocabulary practice."). ` +
+          `Then, introduce 5 vocabulary words related to the student's interests (${selectedTopics.join(", ")}). ` +
+          `For each word, provide the word, its meaning/definition, and an example sentence. ` +
+          `After presenting all 5 words, ask the student one comprehension question to test their understanding ` +
+          `(e.g., ask them to use one of the words in a sentence, or ask what a specific word means). ` +
+          `Keep the tone friendly and encouraging.`
+        );
+      case "文章読解":
+        return (
+          `You are an English teacher conducting a reading comprehension lesson. ` +
+          `Start by saying a brief greeting (e.g., "Hi! Let's do a reading comprehension activity."). ` +
+          `Then, present a short, interesting text (3-5 sentences) on a topic related to the student's interests (${selectedTopics.join(", ")}). ` +
+          `The text should be appropriate for the student's level (${level}). ` +
+          `After presenting the text, ask one comprehension question to test the student's understanding of the main idea or details. ` +
+          `Keep the tone friendly and encouraging.`
+        );
+      case "会話練習":
+        return (
+          `You are an English teacher conducting a conversation practice lesson. ` +
+          `Start by saying a brief greeting (e.g., "Hi! Let's practice conversation."). ` +
+          `Then, ask the student an open-ended question related to their interests (${selectedTopics.join(", ")}) ` +
+          `that encourages them to have a natural conversation. ` +
+          `Make sure the question is appropriate for the student's level (${level}). ` +
+          `After the student responds, continue the conversation naturally by asking follow-up questions or commenting on their response. ` +
+          `Keep the tone friendly, natural, and encouraging.`
+        );
+      case "文法練習":
+        return (
+          `You are an English teacher conducting a grammar lesson. ` +
+          `Start by saying a brief greeting (e.g., "Hi! Let's practice grammar."). ` +
+          `Then, present a grammar concept or exercise appropriate for the student's level (${level}). ` +
+          `For example, you could: (1) provide a sentence with a blank and ask the student to fill it with the correct grammar form, ` +
+          `or (2) ask the student to correct a sentence with a grammar error, or (3) ask them to write a sentence using a specific grammar pattern. ` +
+          `After the student responds, provide feedback and explain the grammar rule briefly. ` +
+          `Keep the tone friendly and encouraging.`
+        );
+      default:
+        return `You are an English teacher. Start with a brief greeting and help the student learn English in a friendly way.`;
+    }
+  };
+
   // Lesson structure preview
   const generateLessonStructure = () => {
     const durationMin = parseInt(selectedDuration);
@@ -240,6 +324,7 @@ export default function AI_chat() {
 
     const newLog: ChatEntry[] = [...chatLog, { sender: "user", text: userInput }];
     setChatLog(newLog);
+    const inputText = userInput;
     setUserInput("");
 
     // Determine API URL with fallback to local development server
@@ -259,13 +344,13 @@ export default function AI_chat() {
       const payload =
         mode === "casual"
           ? {
-              message: userInput,
+              message: inputText,
               level,
               topics: topicsToPass,
               mode: "casual",
             }
           : {
-              message: userInput,
+              message: inputText,
               level,
               topics: topicsToPass,
               tests: testsToPass,
@@ -290,7 +375,64 @@ export default function AI_chat() {
       });
 
       const data = await res.json();
-      const llmResponse: ChatEntry = { sender: "llm", text: data.reply || "No response" };
+      let replyText: string = data.reply || "No response";
+      const llmResponse: ChatEntry = { sender: "llm", text: replyText };
+      setChatLog((prev) => [...prev, llmResponse]);
+    } catch (error) {
+      console.error(error);
+      setChatLog((prev) => [
+        ...prev,
+        { sender: "llm", text: "エラー: レスポンスを取得できませんでした。" },
+      ]);
+    }
+  };
+
+  // Helper to start a lesson by sending the first component prompt to the AI
+  const handleLessonStart = async (prompt: string) => {
+    if (!prompt.trim()) return;
+
+    // Determine API URL with fallback to local development server
+    const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+    
+    try {
+      const testsToPass = selectedTests.length > 0 
+        ? selectedTests.map(t => t === "Other" ? customTest : t)
+        : [];
+
+      const vocabLessonsToPass = vocabLessonType === "range" 
+        ? getLessonNumbersFromRange()
+        : vocabIndividualLessons;
+
+      const componentTiming = generateComponentTiming();
+
+      const payload = {
+        message: prompt,
+        level,
+        topics: topicsToPass,
+        tests: testsToPass,
+        skills: selectedSkills,
+        duration: parseInt(selectedDuration),
+        durationMinutes: parseInt(selectedDuration),
+        currentComponent: currentComponent,
+        currentComponentName: selectedComponents[currentComponent] || null,
+        components: selectedComponents,
+        componentTiming: componentTiming,
+        totalTimeElapsed: timeElapsed,
+        timeElapsedSeconds: timeElapsed,
+        vocabCategory: selectedComponents.includes("Vocab Practice") ? vocabCategory : null,
+        vocabLessons: selectedComponents.includes("Vocab Practice") ? vocabLessonsToPass : null,
+        mode: "lesson",
+      };
+
+      const res = await fetch(`${API_URL}/api/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+      let replyText: string = data.reply || "No response";
+      const llmResponse: ChatEntry = { sender: "llm", text: replyText };
       setChatLog((prev) => [...prev, llmResponse]);
     } catch (error) {
       console.error(error);
@@ -304,94 +446,121 @@ export default function AI_chat() {
   // Choice screen
   if (mode === "choice") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-4">AIと何をしたいですか？</h1>
-          <p className="text-gray-600">あなたの英語学習の目的を選んでください</p>
-        </div>
+      <>
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+           {disclaimerBanner}
+          <div className={contentClass}>
+            <div className="text-center mb-8">
+              <h1 className="text-3xl font-bold mb-4">AIと何をしたいですか？</h1>
+              <p className="text-gray-600">今日のあなたの目的を選んでください</p>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <button
-            onClick={() => {
-              setMode("casual");
-              setStep("level");
-              setChatLog([]);
-              setSelectedTopics(["Computer Science & Technology"]);
-              setCustomTopic("");
-            }}
-            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-6 px-4 rounded-lg shadow-lg transition transform hover:scale-105 h-24 flex items-center justify-center"
-          >
-            楽しく会話したい
-          </button>
-          <button
-            onClick={() => {
-              setMode("lesson");
-              setStep("level");
-              setChatLog([]);
-              setSelectedTopics(["Computer Science & Technology"]);
-              setCustomTopic("");
-              setSelectedSkills([]);
-              setSelectedComponents([]);
-            }}
-            className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-6 px-4 rounded-lg shadow-lg transition transform hover:scale-105 h-24 flex items-center justify-center"
-          >
-            英語レッスンを受けたい
-          </button>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <button
+                onMouseEnter={() => {}}
+                onClick={() => {
+                  setMode("casual");
+                  setStep("level");
+                  setChatLog([]);
+                  setSelectedTopics(["Computer Science & Technology"]);
+                  setCustomTopic("");
+                  setLevelConfirmed(false);
+                }}
+                className={`${btnPrimary} h-24 flex items-center justify-center hover:scale-105`}
+              >
+                楽しく会話したい
+              </button>
+              <button
+                onClick={() => {
+                  setMode("lesson");
+                  setStep("level");
+                  setChatLog([]);
+                  setSelectedTopics(["Computer Science & Technology"]);
+                  setCustomTopic("");
+                  setSelectedSkills([]);
+                  setSelectedComponents([]);
+                  setLevelConfirmed(false);
+                }}
+                className={`${btnSecondary} h-24 flex items-center justify-center hover:scale-105`} 
+              >
+                英語レッスンを受けたい
+              </button>
+            </div>
 
-        <div className="flex justify-center">
-          <button
-            onClick={() => navigate(-1)}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            ← 戻る
-          </button>
-        </div>
-      </main>
+            <div className="flex justify-center gap-6">
+              <button
+                onClick={() => navigate(-1)}
+                className={`${btnSecondary}`}
+              >
+                ← 戻る
+              </button>
+            </div>
+          </div>
+        </main>
+      </>
     );
   }
 
   // Setup steps - Level selection
   if (step === "level") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <h1 className="text-2xl font-bold mb-2">英語レベルを選択してください</h1>
-        <p className="text-gray-600 mb-8">あなたの現在の英語レベルを選んでください</p>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className={contentClass}>
+          <h1 className="text-2xl font-bold mb-2">英語レベルの設定</h1>
+          <p className="text-gray-600 mb-4">あなたの現在の英語レベルを選んでください</p>
 
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          {["A1", "A2", "B1", "B2", "C1", "C2"].map((lvl) => (
+          <div className="mb-4">
+            <span className="text-sm text-gray-700">選択： </span>
+            <span className="font-bold text-lg text-indigo-700">{level}</span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            {["A1", "A2", "B1", "B2", "C1", "C2"].map((lvl) => (
+              <button
+                key={lvl}
+                onClick={() => {
+                  setLevel(lvl);
+                  setLevelConfirmed(true);
+                }}
+                className={`py-6 px-6 rounded-lg font-bold transition duration-200 transform hover:scale-105 ${
+                  level === lvl
+                    ? "bg-indigo-600 text-white shadow-lg scale-105"
+                    : "bg-white text-gray-800 border border-gray-200 hover:bg-gray-50"
+                }`}
+              >
+                <div className="text-2xl mb-1">{lvl}</div>
+                <div className="text-xs opacity-75">
+                  {lvl === "A1" && "初級"}
+                  {lvl === "A2" && "初中級"}
+                  {lvl === "B1" && "中級"}
+                  {lvl === "B2" && "中上級"}
+                  {lvl === "C1" && "上級"}
+                  {lvl === "C2" && "最上級"}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="flex justify-center gap-6">
             <button
-              key={lvl}
+              onClick={() => setMode("choice")}
+              className={btnSecondary}
+            >
+              ← 戻る
+            </button>
+            <button
               onClick={() => {
-                setLevel(lvl);
+                if (!levelConfirmed) {
+                  alert("レベルを選択してください（選択中が表示されます）");
+                  return;
+                }
                 setStep("topic");
               }}
-              className={`py-6 px-6 rounded-lg font-bold transition duration-200 transform hover:scale-105 ${
-                level === lvl
-                  ? "bg-blue-600 text-white shadow-lg scale-105"
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-              }`}
+              className={`px-6 py-3 rounded-lg font-bold ${levelConfirmed ? btnPrimary : "bg-gray-300 text-gray-600"}`}
             >
-              <div className="text-2xl mb-1">{lvl}</div>
-              <div className="text-xs opacity-75">
-                {lvl === "A1" && "初級"}
-                {lvl === "A2" && "初中級"}
-                {lvl === "B1" && "中級"}
-                {lvl === "B2" && "中上級"}
-                {lvl === "C1" && "上級"}
-                {lvl === "C2" && "最上級"}
-              </div>
+              次へ →
             </button>
-          ))}
-        </div>
-
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setMode("choice")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg transition"
-          >
-            ← 戻る
-          </button>
+          </div>
         </div>
       </main>
     );
@@ -400,62 +569,77 @@ export default function AI_chat() {
   // Topic selection
   if (step === "topic") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <h1 className="text-2xl font-bold mb-2">興味のあるトピックを選択してください</h1>
-        <p className="text-gray-600 mb-6">複数選択可能です</p>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className={contentClass}>
+          <h1 className="text-2xl font-bold mb-2">興味の設定</h1>
+          <p className="text-gray-600 mb-6">興味のあるトピックを選択してください。（＊複数選択可能です）</p>
 
-        <div className="grid grid-cols-1 gap-3 mb-6">
-          {TOPICS.map((topic) => (
-            <label key={topic} className="flex items-center p-3 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200">
-              <input
-                type="checkbox"
-                checked={selectedTopics.includes(topic)}
-                onChange={() => handleTopicToggle(topic)}
-                className="w-5 h-5 mr-3"
-              />
-              <span className="font-medium">{topic}</span>
-            </label>
-          ))}
-        </div>
+          <div className="flex flex-col gap-3 mb-6">
+            {TOPICS.map((topic) => (
+              <label key={topic} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
+                <input
+                  type="checkbox"
+                  checked={selectedTopics.includes(topic)}
+                  onChange={() => handleTopicToggle(topic)}
+                  className="w-5 h-5 mr-3"
+                />
+                <span className="font-medium">{topic}</span>
+              </label>
+            ))}
+          </div>
 
-        <div className="mb-6">
-          <label className="block font-semibold mb-2">その他のトピック (自由記入):</label>
-          <input
-            type="text"
-            value={customTopic}
-            onChange={(e) => setCustomTopic(e.target.value)}
-            placeholder="カスタムトピックを入力..."
-            className="w-full border rounded-lg p-3"
-          />
-        </div>
+          <div className="mb-6">
+            <label className="block font-semibold mb-2">その他のトピック (自由記入):</label>
+            <input
+              type="text"
+              value={customTopic}
+              onChange={(e) => setCustomTopic(e.target.value)}
+              placeholder="カスタムトピックを入力..."
+              className="w-full border rounded-lg p-3 bg-white"
+            />
+          </div>
 
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setStep("level")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            ← 戻る
-          </button>
-          <button
-            onClick={() => {
-              if (selectedTopics.length === 0 && !customTopic) {
-                alert("少なくとも1つのトピックを選択してください");
-                return;
-              }
-              if (mode === "casual") {
-                setStep("confirm");
-              } else {
-                setStep("test");
-              }
-            }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            次へ →
-          </button>
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setStep("level")}
+              className={btnSecondary}
+            >
+              ← 戻る
+            </button>
+            <button
+              onClick={() => {
+                if (selectedTopics.length === 0 && !customTopic) {
+                  alert("少なくとも1つのトピックを選択してください");
+                  return;
+                }
+                if (mode === "casual") {
+                  setStep("confirm");
+                } else {
+                  setStep("test");
+                }
+              }}
+              className={btnPrimary}
+            >
+              次へ →
+            </button>
+          </div>
         </div>
       </main>
     );
   }
+
+  // Helper to start casual conversation by sending a prompt to the AI
+  const handleCasualStart = async () => {
+    const casualPrompt = `You are a friendly English conversation partner. Start the conversation with a warm greeting and ask the user a simple, open-ended question to get them talking. For example, you could ask "How are you today?" or "What have you been up to?" based on their interests (${selectedTopics.join(", ")}). Keep the tone natural, friendly, and encouraging. The user is at level ${level}.`;
+    
+    setChatLog([]);
+    setStep("chatting");
+    
+    // Send the casual start prompt to AI
+    setTimeout(() => {
+      handleLessonStart(casualPrompt);
+    }, 50);
+  };
 
   // Casual mode confirmation
   if (mode === "casual" && step === "confirm") {
@@ -488,10 +672,7 @@ export default function AI_chat() {
             ← 編集
           </button>
           <button
-            onClick={() => {
-              setChatLog([]);
-              setStep("chatting");
-            }}
+            onClick={handleCasualStart}
             className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-lg"
           >
             会話を開始する
@@ -504,56 +685,58 @@ export default function AI_chat() {
   // Lesson mode - Test type selection
   if (mode === "lesson" && step === "test") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <h1 className="text-2xl font-bold mb-6">受験予定の英語試験を選択してください</h1>
-        <p className="text-sm text-gray-600 mb-6">複数選択可能です</p>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className={contentClass}>
+          <h1 className="text-2xl font-bold mb-6">英語試験への対策の設定</h1>
+          <p className="text-sm text-gray-600 mb-6">受験予定の英語試験を選択してください （＊複数選択可能です）</p>
 
-        <div className="grid grid-cols-1 gap-3 mb-6">
-          {TESTS.map((test) => (
-            <label key={test} className="flex items-center p-3 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200">
-              <input
-                type="checkbox"
-                checked={selectedTests.includes(test)}
-                onChange={() => handleTestToggle(test)}
-                className="w-5 h-5 mr-3"
-              />
-              <span className="font-medium">{test}</span>
-            </label>
-          ))}
-        </div>
-
-        {selectedTests.includes("Other") && (
-          <div className="mb-6">
-            <label className="block font-semibold mb-2">その他の試験名:</label>
-            <input
-              type="text"
-              value={customTest}
-              onChange={(e) => setCustomTest(e.target.value)}
-              placeholder="試験名を入力..."
-              className="w-full border rounded-lg p-3"
-            />
+          <div className="flex flex-col gap-3 mb-6">
+            {TESTS.map((test) => (
+              <label key={test} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
+                <input
+                  type="checkbox"
+                  checked={selectedTests.includes(test)}
+                  onChange={() => handleTestToggle(test)}
+                  className="w-5 h-5 mr-3"
+                />
+                <span className="font-medium">{test}</span>
+              </label>
+            ))}
           </div>
-        )}
 
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setStep("topic")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            ← 戻る
-          </button>
-          <button
-            onClick={() => {
-              if (selectedTests.length === 0) {
-                alert("少なくとも1つの試験を選択してください");
-                return;
-              }
-              setStep("skills");
-            }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            次へ →
-          </button>
+          {selectedTests.includes("Other") && (
+            <div className="mb-6">
+              <label className="block font-semibold mb-2">その他の試験名:</label>
+              <input
+                type="text"
+                value={customTest}
+                onChange={(e) => setCustomTest(e.target.value)}
+                placeholder="試験名を入力..."
+                className="w-full border rounded-lg p-3 bg-white"
+              />
+            </div>
+          )}
+
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setStep("topic")}
+              className={btnSecondary}
+            >
+              ← 戻る
+            </button>
+            <button
+              onClick={() => {
+                if (selectedTests.length === 0) {
+                  alert("少なくとも1つの試験を選択してください");
+                  return;
+                }
+                setStep("skills");
+              }}
+              className={btnPrimary}
+            >
+              次へ →
+            </button>
+          </div>
         </div>
       </main>
     );
@@ -562,42 +745,44 @@ export default function AI_chat() {
   // Lesson mode - Skills selection
   if (mode === "lesson" && step === "skills") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <h1 className="text-2xl font-bold mb-6">伸ばしたいスキルを選択してください</h1>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className={contentClass}>
+          <h1 className="text-2xl font-bold mb-6">伸ばしたいスキルを選択してください</h1>
 
-        <div className="grid grid-cols-1 gap-3 mb-6">
-          {SKILLS.map((skill) => (
-            <label key={skill} className="flex items-center p-3 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200">
-              <input
-                type="checkbox"
-                checked={selectedSkills.includes(skill)}
-                onChange={() => handleSkillToggle(skill)}
-                className="w-5 h-5 mr-3"
-              />
-              <span className="font-medium">{skill}</span>
-            </label>
-          ))}
-        </div>
+          <div className="flex flex-col gap-3 mb-6">
+            {SKILLS.map((skill) => (
+              <label key={skill} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
+                <input
+                  type="checkbox"
+                  checked={selectedSkills.includes(skill)}
+                  onChange={() => handleSkillToggle(skill)}
+                  className="w-5 h-5 mr-3"
+                />
+                <span className="font-medium">{skill}</span>
+              </label>
+            ))}
+          </div>
 
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setStep("test")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            ← 戻る
-          </button>
-          <button
-            onClick={() => {
-              if (selectedSkills.length === 0) {
-                alert("少なくとも1つのスキルを選択してください");
-                return;
-              }
-              setStep("duration");
-            }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            次へ →
-          </button>
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setStep("test")}
+              className={btnSecondary}
+            >
+              ← 戻る
+            </button>
+            <button
+              onClick={() => {
+                if (selectedSkills.length === 0) {
+                  alert("少なくとも1つのスキルを選択してください");
+                  return;
+                }
+                setStep("duration");
+              }}
+              className={btnPrimary}
+            >
+              次へ →
+            </button>
+          </div>
         </div>
       </main>
     );
@@ -606,44 +791,46 @@ export default function AI_chat() {
   // Lesson mode - Duration selection
   if (mode === "lesson" && step === "duration") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <h1 className="text-2xl font-bold mb-2">レッスンの希望時間を選択してください</h1>
-        <p className="text-gray-600 mb-8">レッスンに費やしたい時間を選んでください</p>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className={contentClass}>
+          <h1 className="text-2xl font-bold mb-2">レッスンの希望時間を選択してください</h1>
+          <p className="text-gray-600 mb-8">レッスンに費やしたい時間を選んでください</p>
 
-        <div className="grid grid-cols-3 gap-3 mb-8">
-          {[5, 10, 15, 20, 25, 30].map((min) => (
+          <div className="grid grid-cols-3 gap-3 mb-8">
+            {[5, 10, 15, 20, 25, 30].map((min) => (
+              <button
+                key={min}
+                onClick={() => setSelectedDuration(min.toString())}
+                className={`p-6 rounded-lg font-bold transition duration-200 transform hover:scale-105 ${
+                  selectedDuration === min.toString()
+                    ? "bg-green-600 text-white shadow-lg scale-105"
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }`}
+              >
+                <div className="text-2xl mb-1">{min}</div>
+                <div className="text-sm opacity-75">分</div>
+              </button>
+            ))}
+          </div>
+
+          <div className="bg-blue-50 p-4 rounded-lg mb-6 text-center">
+            <p className="text-sm text-gray-600">選択中: <span className="font-bold text-lg text-blue-600">{selectedDuration}分</span></p>
+          </div>
+
+          <div className="flex justify-center gap-4">
             <button
-              key={min}
-              onClick={() => setSelectedDuration(min.toString())}
-              className={`p-6 rounded-lg font-bold transition duration-200 transform hover:scale-105 ${
-                selectedDuration === min.toString()
-                  ? "bg-green-600 text-white shadow-lg scale-105"
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-              }`}
+              onClick={() => setStep("skills")}
+              className={btnSecondary}
             >
-              <div className="text-2xl mb-1">{min}</div>
-              <div className="text-sm opacity-75">分</div>
+              ← 戻る
             </button>
-          ))}
-        </div>
-
-        <div className="bg-blue-50 p-4 rounded-lg mb-6 text-center">
-          <p className="text-sm text-gray-600">選択中: <span className="font-bold text-lg text-blue-600">{selectedDuration}分</span></p>
-        </div>
-
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setStep("skills")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg transition"
-          >
-            ← 戻る
-          </button>
-          <button
-            onClick={() => setStep("components")}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition"
-          >
-            次へ →
-          </button>
+            <button
+              onClick={() => setStep("components")}
+              className={btnPrimary}
+            >
+              次へ →
+            </button>
+          </div>
         </div>
       </main>
     );
@@ -652,46 +839,48 @@ export default function AI_chat() {
   // Lesson mode - Components selection
   if (mode === "lesson" && step === "components") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <h1 className="text-2xl font-bold mb-6">レッスンに含める内容を選択してください</h1>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className={contentClass}>
+          <h1 className="text-2xl font-bold mb-6">レッスンに含める内容を選択してください</h1>
 
-        <div className="grid grid-cols-1 gap-3 mb-6">
-          {COMPONENTS.map((component) => (
-            <label key={component} className="flex items-center p-3 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200">
-              <input
-                type="checkbox"
-                checked={selectedComponents.includes(component)}
-                onChange={() => handleComponentToggle(component)}
-                className="w-5 h-5 mr-3"
-              />
-              <span className="font-medium">{component}</span>
-            </label>
-          ))}
-        </div>
+          <div className="flex flex-col gap-3 mb-6">
+            {COMPONENTS.map((component) => (
+              <label key={component} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
+                <input
+                  type="checkbox"
+                  checked={selectedComponents.includes(component)}
+                  onChange={() => handleComponentToggle(component)}
+                  className="w-5 h-5 mr-3"
+                />
+                <span className="font-medium">{component}</span>
+              </label>
+            ))}
+          </div>
 
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setStep("duration")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            ← 戻る
-          </button>
-          <button
-            onClick={() => {
-              if (selectedComponents.length === 0) {
-                alert("少なくとも1つのコンポーネントを選択してください");
-                return;
-              }
-              if (selectedComponents.includes("Vocab Practice")) {
-                setStep("vocab-category");
-              } else {
-                setStep("structure");
-              }
-            }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            次へ →
-          </button>
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setStep("duration")}
+              className={btnSecondary}
+            >
+              ← 戻る
+            </button>
+            <button
+              onClick={() => {
+                if (selectedComponents.length === 0) {
+                  alert("少なくとも1つのコンポーネントを選択してください");
+                  return;
+                }
+                if (selectedComponents.includes("Vocab Practice")) {
+                  setStep("vocab-category");
+                } else {
+                  setStep("structure");
+                }
+              }}
+              className={btnPrimary}
+            >
+              次へ →
+            </button>
+          </div>
         </div>
       </main>
     );
@@ -706,10 +895,11 @@ export default function AI_chat() {
     const allLessons = generateLessonNumbers();
 
     return (
-      <main className="p-6 max-w-4xl mx-auto" style={{ paddingTop: "92px" }}>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className="w-full max-w-4xl p-6">
         <h1 className="text-2xl font-bold mb-6">練習するカテゴリーを選択してください</h1>
 
-        <div className="grid grid-cols-1 gap-3 mb-8">
+        <div className="flex flex-col gap-3 mb-8">
           {vocabCategories.map(([key, value]) => (
             <button
               key={key}
@@ -720,10 +910,10 @@ export default function AI_chat() {
                 setVocabRangeEnd("5");
                 setVocabIndividualLessons(["1"]);
               }}
-              className={`p-4 rounded-lg font-semibold transition text-left ${
+              className={`p-4 rounded-lg font-semibold transition text-left border border-gray-200 ${
                 vocabCategory === key
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "bg-white text-gray-800 hover:shadow-sm hover:bg-gray-50"
               }`}
             >
               <div className="font-semibold">{value}</div>
@@ -822,7 +1012,7 @@ export default function AI_chat() {
         <div className="flex justify-center gap-4">
           <button
             onClick={() => setStep("components")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
+            className={btnSecondary}
           >
             ← 戻る
           </button>
@@ -841,10 +1031,11 @@ export default function AI_chat() {
               }
               setStep("structure");
             }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg"
+            className={btnPrimary}
           >
             次へ →
           </button>
+        </div>
         </div>
       </main>
     );
@@ -865,7 +1056,8 @@ export default function AI_chat() {
     }
 
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <div className={contentClass}>
         <h1 className="text-2xl font-bold mb-6">レッスン構成を確認してください</h1>
 
         <div className="bg-blue-50 p-6 rounded-lg mb-6">
@@ -926,31 +1118,41 @@ export default function AI_chat() {
           </div>
         )}
 
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => {
-              if (selectedComponents.includes("Vocab Practice")) {
-                setStep("vocab-category");
-              } else {
-                setStep("components");
-              }
-            }}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            ← 編集
-          </button>
-          <button
-            onClick={() => {
-              setChatLog([]);
-              setLessonStartTime(Date.now());
-              setTimeElapsed(0);
-              setCurrentComponent(0);
-              setStep("chatting");
-            }}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-lg"
-          >
-            レッスンを開始する
-          </button>
+          <div className="flex justify-center gap-6">
+            <button
+              onClick={() => {
+                if (selectedComponents.includes("Vocab Practice")) {
+                  setStep("vocab-category");
+                } else {
+                  setStep("components");
+                }
+              }}
+              className={btnSecondary}
+            >
+              ← 編集
+            </button>
+            <button
+              onClick={() => {
+                  // Start lesson: initialize state and then send the first component prompt
+                  const firstComp = selectedComponents && selectedComponents.length > 0 ? selectedComponents[0] : null;
+                  if (firstComp) {
+                    const prompt = generateComponentContent(firstComp);
+                    setChatLog([]);
+                    setLessonStartTime(Date.now());
+                    setTimeElapsed(0);
+                    setCurrentComponent(0);
+                    setStep("chatting");
+                    // Send the component prompt to AI in a setTimeout to ensure state updates
+                    setTimeout(() => {
+                      handleLessonStart(prompt);
+                    }, 50);
+                  }
+                }}
+              className={btnStart}
+            >
+              レッスンを開始する
+            </button>
+          </div>
         </div>
       </main>
     );
@@ -966,140 +1168,91 @@ export default function AI_chat() {
 
     const structure = generateLessonStructure();
     const componentTiming = generateComponentTiming();
-    let totalLessonTime = parseInt(selectedDuration) * 60;
+    const totalLessonTime = parseInt(selectedDuration) * 60;
 
-    // Current component timing info
     let currentComponentInfo = null;
     if (mode === "lesson" && currentComponent < componentTiming.length) {
       currentComponentInfo = componentTiming[currentComponent];
     }
 
     return (
-      <main className="p-6 max-w-3xl mx-auto" style={{ paddingTop: "92px" }}>
-        <div className="mb-4">
-          <div className="flex justify-between items-start mb-2">
-            <div>
-              <h1 className="text-2xl font-bold">
-                {mode === "casual" ? "AI会話" : "AIレッスン"}
-              </h1>
-              <p className="text-sm text-gray-600">レベル: {level}</p>
+      <main className={containerClass} style={{ paddingTop: '92px' }}>
+         {disclaimerBanner}
+        <div className={contentClass}>
+          <div className="mb-4">
+            <div className="flex justify-between items-start mb-2">
+              <div>
+                <h1 className="text-2xl font-bold">{mode === "casual" ? "AIとの会話" : "AIによるレッスン"}</h1>
+                <p className="text-sm text-gray-600">レベル: {level}</p>
+              </div>
+              {mode === "lesson" && lessonStartTime && (
+                <div className="text-right bg-blue-100 p-4 rounded-lg">
+                  <p className="text-sm text-gray-600">経過時間：{formatTime(timeElapsed)}</p>
+                  <p className="text-xs text-gray-500">合計: {selectedDuration}分</p>
+                </div>
+              )}
             </div>
-            {mode === "lesson" && lessonStartTime && (
-              <div className="text-right bg-blue-100 p-4 rounded-lg">
-                <p className="text-sm text-gray-600">経過時間</p>
-                <p className="text-3xl font-bold text-blue-600">{formatTime(timeElapsed)}</p>
-                <p className="text-xs text-gray-500">合計: {selectedDuration}分</p>
+
+            {mode === "lesson" && selectedComponents.length > 0 && currentComponentInfo && (
+              <div className="mt-3 bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border-l-4 border-purple-500">
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <p className="text-xs text-gray-600 font-semibold">現在のセッション：{selectedComponents[currentComponent]}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-600 font-semibold">このセッション時間：{currentComponentInfo.durationSeconds / 60}分</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-600 font-semibold">進捗：{currentComponent + 1}/{selectedComponents.length}</p>
+                  </div>
+                </div>
               </div>
             )}
           </div>
-          
-          {mode === "lesson" && selectedComponents.length > 0 && currentComponentInfo && (
-            <div className="mt-3 bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border-l-4 border-purple-500">
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <p className="text-xs text-gray-600 font-semibold">現在のセッション</p>
-                  <p className="text-lg font-bold text-purple-600">{selectedComponents[currentComponent]}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-600 font-semibold">このセッション時間</p>
-                  <p className="text-lg font-bold text-blue-600">{currentComponentInfo.durationSeconds / 60}分</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-600 font-semibold">進捗</p>
-                  <p className="text-lg font-bold text-green-600">{currentComponent + 1}/{selectedComponents.length}</p>
-                </div>
+
+          <div className="border rounded-lg p-4 h-96 overflow-y-auto mb-4 bg-gray-50">
+            {chatLog.length === 0 ? (
+              <div className="text-center text-gray-500 py-8">
+                <p className="mb-2">{mode === "casual" ? "AIから会話を開始するために考えています、初めに少々お待ちください" : "レッスンを開始するために考えています、初めに少々お待ちください"}</p>
+                <p className="text-xs text-gray-400 mt-4">⏳ AI が応答を準備しています...</p>
               </div>
-            </div>
-          )}
-        </div>
-
-        {/* Component schedule */}
-        {mode === "lesson" && componentTiming.length > 0 && (
-          <div className="mb-4 p-3 bg-gray-100 rounded-lg text-sm">
-            <p className="font-semibold mb-2">📅 レッスンスケジュール:</p>
-            <div className="flex flex-wrap gap-2">
-              {componentTiming.map((timing, idx) => (
-                <div 
-                  key={idx}
-                  className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    currentComponent === idx
-                      ? "bg-purple-500 text-white"
-                      : currentComponent > idx
-                      ? "bg-green-400 text-white"
-                      : "bg-gray-300 text-gray-700"
-                  }`}
-                >
-                  {timing.component.substring(0, 3)}: {Math.floor(timing.durationSeconds / 60)}m
+            ) : (
+              chatLog.map((entry, index) => (
+                <div key={index} className={`mb-3 p-3 rounded-lg ${entry.sender === "user" ? "bg-blue-100 text-right ml-12" : entry.text.startsWith("⏱️") ? "bg-yellow-100 text-left mr-12 font-semibold border-l-4 border-yellow-500" : "bg-gray-200 text-left mr-12"}`}>
+                  {entry.text}
                 </div>
-              ))}
-            </div>
+              ))
+            )}
           </div>
-        )}
 
-        {/* Chat display */}
-        <div className="border rounded-lg p-4 h-96 overflow-y-auto mb-4 bg-gray-50">
-          {chatLog.length === 0 && (
-            <div className="text-center text-gray-500 py-8">
-              {mode === "casual"
-                ? "会話を開始してください"
-                : "レッスンを開始してください"}
-            </div>
-          )}
-          {chatLog.map((entry, index) => (
-            <div
-              key={index}
-              className={`mb-3 p-3 rounded-lg ${
-                entry.sender === "user"
-                  ? "bg-blue-100 text-right ml-12"
-                  : entry.text.startsWith("⏱️")
-                  ? "bg-yellow-100 text-left mr-12 font-semibold border-l-4 border-yellow-500"
-                  : "bg-gray-200 text-left mr-12"
-              }`}
+          <div className="flex gap-2 mb-4">
+            <input
+              type="text"
+              className="flex-1 border rounded-lg p-3"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSend()}
+              placeholder="ここに入力..."
+            />
+            <button className={btnPrimary} onClick={handleSend}>送信</button>
+          </div>
+
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => {
+                setMode("choice");
+                setStep("initial");
+                setChatLog([]);
+                setLessonStartTime(null);
+                setTimeElapsed(0);
+                setCurrentComponent(0);
+              }}
+              className={btnSecondary}
             >
-              {entry.text}
-            </div>
-          ))}
-        </div>
-
-        {/* User input */}
-        <div className="flex gap-2 mb-4">
-          <input
-            type="text"
-            className="flex-1 border rounded-lg p-3"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="ここに入力..."
-          />
-          <button
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 rounded-lg transition"
-            onClick={handleSend}
-          >
-            送信
-          </button>
-        </div>
-
-        {/* Back button */}
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => {
-              setMode("choice");
-              setStep("initial");
-              setChatLog([]);
-              setLessonStartTime(null);
-              setTimeElapsed(0);
-              setCurrentComponent(0);
-            }}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg transition"
-          >
-            ← 最初に戻る
-          </button>
-          <button
-            onClick={() => navigate(-1)}
-            className="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-2 rounded-lg transition"
-          >
-            ← ページを出る
-          </button>
+              ← 最初に戻る
+            </button>
+            <button onClick={() => navigate(-1)} className={btnSecondary}>← ページを出る</button>
+          </div>
         </div>
       </main>
     );
