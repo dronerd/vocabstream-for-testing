@@ -243,7 +243,7 @@ export default function AI_chat() {
     setUserInput("");
 
     // Determine API URL with fallback to local development server
-    const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:5000";
+    const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
     
     try {
       const testsToPass = selectedTests.length > 0 
