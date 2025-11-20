@@ -242,7 +242,7 @@ export default function LandingPage() {
               </div>
 
               <p style={{ marginTop: 12, color: "#333", fontSize: "0.95em", lineHeight: 1.5 }}>
-              英語を英語で学ぶ方法を追求し、中学2年で英検1級に上位1%のスコアで合格。現在はTOEFL iBT 116点、TOEIC満点（990点）を保持。独学でドイツ語も学び、世界最難関のドイツ語検定試験 Goethe-Zertifikat C2（読む・聞く・話す）とC1（書く）を取得。高校時代から機械学習の分野で研究開発に取り組み、学会での受賞やISEF2025日本代表などの経験を持つ。
+              専門性＋英語力で夢を実現する人を増やすためにProject Fluenceを創設し、英語学習法を発信中。中2で英検1級上位1％合格。現在は TOEFL116点、TOEIC満点、ケンブリッジ英検C2 (読む・聞くは満点), 世界最難関のドイツ語検定試験 Goethe-Zertifikat C2（読む・聞く・話す）を取得。高校時代から人工知能分野で研究開発に取り組み、学会での受賞や国際学生科学技術フェア(ISEF2025)日本代表などの経験を持つ。
               </p>
               <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
               <a
