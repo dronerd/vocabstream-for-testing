@@ -1,4 +1,3 @@
-
 # dependencies
 /node_modules
 /.pnp
@@ -10,8 +9,9 @@
 # production
 /build
 
-#secrets
-.env
+# secrets
+*.env
+!.env.example
 
 # misc
 .DS_Store
