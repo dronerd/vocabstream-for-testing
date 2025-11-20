@@ -102,8 +102,8 @@ export default function AI_chat() {
     </div>
   );
 
-  const containerClass = "min-h-screen flex items-center justify-center p-6";
-  const contentClass = "w-full max-w-2xl p-6 bg-transparent";
+  const containerClass = "min-h-screen flex items-start justify-center p-6"; 
+  const contentClass = "w-full max-w-2xl p-6 bg-transparent mx-auto"; 
   const btnPrimary = "bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold px-6 py-2 rounded-full shadow-lg hover:opacity-95 hover:scale-102 transform transition";
   const btnSecondary = "bg-gray-700 text-white font-semibold px-5 py-2 rounded-full shadow-md hover:opacity-95 hover:shadow-lg transform transition";
   const btnAccent = "bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold px-8 py-3 rounded-full shadow-xl hover:scale-105 transition transform";
