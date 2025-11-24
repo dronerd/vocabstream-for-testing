@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 // --- Types and category/lesson metadata ---
@@ -98,6 +98,7 @@ export default function AI_chat() {
     <div className="fixed top-0 left-0 right-0 bg-yellow-100 border-b-2 border-yellow-400 px-6 py-2 z-50">
       <p className="text-sm text-yellow-900 text-center">
         ⚠️ <strong>：</strong> 本機能は現在まだ開発実験段階であり、機能がまだ不安定です。今後の開発を楽しみにしていてください。
+        会話の内容は保存されず、プライバシーは保護されます。
       </p>
     </div>
   );
@@ -118,7 +119,7 @@ export default function AI_chat() {
   // Common settings
   const [level, setLevel] = useState("A1");
   const [levelConfirmed, setLevelConfirmed] = useState(false);
-  const [selectedTopics, setSelectedTopics] = useState<string[]>(["Computer Science & Technology"]);
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [customTopic, setCustomTopic] = useState("");
 
   // Lesson settings
@@ -137,6 +138,11 @@ export default function AI_chat() {
   const [lessonStartTime, setLessonStartTime] = useState<number | null>(null);
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [currentComponent, setCurrentComponent] = useState(0);
+
+  // Voice / audio playback state
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [selectedVoice, setSelectedVoice] = useState<string>("alloy");
+  const [loadingVoiceIndex, setLoadingVoiceIndex] = useState<number | null>(null);
 
   // Chat state
   const [userInput, setUserInput] = useState("");
@@ -389,6 +395,50 @@ export default function AI_chat() {
     }
   };
 
+  // Fetch voice audio from backend and play it
+  const fetchAndPlayVoice = async (text: string, idx?: number) => {
+    if (!text) return;
+    const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+
+    try {
+      if (audioRef.current) {
+        try {
+          audioRef.current.pause();
+        } catch (e) {}
+        audioRef.current = null;
+      }
+      if (typeof idx === "number") setLoadingVoiceIndex(idx);
+
+      const res = await fetch(`${API_URL}/api/voice`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, voice: selectedVoice }),
+      });
+
+      if (!res.ok) {
+        console.error("Voice request failed", res.statusText);
+        setLoadingVoiceIndex(null);
+        return;
+      }
+
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      audioRef.current = audio;
+      audio.play().catch((e) => console.error("Audio play failed", e));
+      audio.onended = () => {
+        try {
+          URL.revokeObjectURL(url);
+        } catch (e) {}
+        if (typeof idx === "number") setLoadingVoiceIndex(null);
+        audioRef.current = null;
+      };
+    } catch (error) {
+      console.error(error);
+      if (typeof idx === "number") setLoadingVoiceIndex(null);
+    }
+  };
+
   // Helper to start a lesson by sending the first component prompt to the AI
   const handleLessonStart = async (prompt: string) => {
     if (!prompt.trim()) return;
@@ -464,7 +514,7 @@ export default function AI_chat() {
                   setMode("casual");
                   setStep("level");
                   setChatLog([]);
-                  setSelectedTopics(["Computer Science & Technology"]);
+                  setSelectedTopics([]);
                   setCustomTopic("");
                   setLevelConfirmed(false);
                 }}
@@ -477,7 +527,7 @@ export default function AI_chat() {
                   setMode("lesson");
                   setStep("level");
                   setChatLog([]);
-                  setSelectedTopics(["Computer Science & Technology"]);
+                  setSelectedTopics([]);
                   setCustomTopic("");
                   setSelectedSkills([]);
                   setSelectedComponents([]);
@@ -1221,7 +1271,27 @@ export default function AI_chat() {
             ) : (
               chatLog.map((entry, index) => (
                 <div key={index} className={`mb-3 p-3 rounded-lg ${entry.sender === "user" ? "bg-blue-100 text-right ml-12" : entry.text.startsWith("⏱️") ? "bg-yellow-100 text-left mr-12 font-semibold border-l-4 border-yellow-500" : "bg-gray-200 text-left mr-12"}`}>
-                  {entry.text}
+                  <div className="whitespace-pre-wrap">{entry.text}</div>
+                  {entry.sender === "llm" && !entry.text.startsWith("⏱️") && (
+                    <div className="mt-2 flex items-center gap-2">
+                      <button
+                        onClick={() => fetchAndPlayVoice(entry.text, index)}
+                        className="text-sm bg-blue-500 text-white px-3 py-1 rounded-md hover:opacity-90"
+                      >
+                        {loadingVoiceIndex === index ? "読み込み..." : "🔊 再生"}
+                      </button>
+                      <span className="text-xs text-gray-500">声: </span>
+                      <select
+                        value={selectedVoice}
+                        onChange={(e) => setSelectedVoice(e.target.value)}
+                        className="text-xs border rounded px-2 py-1"
+                      >
+                        <option value="alloy">alloy</option>
+                        <option value="verse">verse</option>
+                        <option value="none">none</option>
+                      </select>
+                    </div>
+                  )}
                 </div>
               ))
             )}
