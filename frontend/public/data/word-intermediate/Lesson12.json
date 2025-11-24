@@ -5,7 +5,7 @@
     "words": [
       { "word": "army", "meaning": "a country's land military force", "japaneseMeaning": "軍隊、陸軍", "synonyms": "military, forces", "antonyms": "civilian", "example": "The army trained near the border." },
       { "word": "authority", "meaning": "power to make decisions and enforce rules", "japaneseMeaning": "権威、当局", "synonyms": "power, control", "antonyms": "subordination", "example": "The authority closed the road for safety." },
-      { "word": "capital (city)", "meaning": "the city where a government is based", "japaneseMeaning": "首都", "synonyms": "seat of government", "antonyms": "", "example": "Tokyo is the capital of Japan." },
+      { "word": "capital", "meaning": "the city where a government is based", "japaneseMeaning": "首都", "synonyms": "seat of government", "antonyms": "", "example": "Tokyo is the capital of Japan." },
       { "word": "citizen", "meaning": "a legally recognized member of a country", "japaneseMeaning": "市民、国民", "synonyms": "resident, national", "antonyms": "foreigner, alien", "example": "Every citizen has the right to vote." },
       { "word": "community", "meaning": "a group of people living in the same area or sharing interests", "japaneseMeaning": "コミュニティ、地域社会", "synonyms": "society, group", "antonyms": "isolation", "example": "The community organised a clean-up day." },
       { "word": "crime", "meaning": "an action that breaks the law", "japaneseMeaning": "犯罪", "synonyms": "offence, wrongdoing", "antonyms": "lawfulness, innocence", "example": "The police investigated the crime." },

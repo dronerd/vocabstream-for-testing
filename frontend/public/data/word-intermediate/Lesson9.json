@@ -35,15 +35,7 @@
       { "word": "signal", "meaning": "a sound or action that sends information", "japaneseMeaning": "信号、合図", "synonyms": "sign, indication", "antonyms": "noise, confusion", "example": "The signal indicated the train's arrival." },
       { "word": "text", "meaning": "written words, especially in a message or document", "japaneseMeaning": "テキスト、本文", "synonyms": "message, passage", "antonyms": "", "example": "Send me a text when you arrive." },
       { "word": "translate", "meaning": "to change words from one language to another", "japaneseMeaning": "翻訳する", "synonyms": "interpret, render", "antonyms": "", "example": "Can you translate this sentence to Japanese?" },
-      { "word": "website", "meaning": "a set of web pages on the internet", "japaneseMeaning": "ウェブサイト", "synonyms": "site, web page", "antonyms": "", "example": "Find the schedule on the event website." },
-      { "word": "headline", "meaning": "the title of a news story", "japaneseMeaning": "見出し", "synonyms": "title, heading", "antonyms": "", "example": "The headline attracted many readers." },
-      { "word": "journal", "meaning": "a newspaper or academic publication", "japaneseMeaning": "雑誌、学術誌", "synonyms": "periodical, magazine", "antonyms": "", "example": "Her work was published in a journal." },
-      { "word": "link", "meaning": "a connection from one web page to another", "japaneseMeaning": "リンク", "synonyms": "URL, connection", "antonyms": "", "example": "Click the link to open the article." },
-      { "word": "magazine", "meaning": "a periodical publication with articles and photos", "japaneseMeaning": "雑誌", "synonyms": "periodical, journal", "antonyms": "", "example": "He subscribes to a monthly magazine." },
-      { "word": "podcast", "meaning": "a digital audio program available online", "japaneseMeaning": "ポッドキャスト", "synonyms": "audio show, webcast", "antonyms": "live broadcast (different format)", "example": "I listen to a podcast during my commute." },
-      { "word": "record (verb)", "meaning": "to save sound or images for later playback", "japaneseMeaning": "録音する、記録する", "synonyms": "tape, capture", "antonyms": "erase, delete", "example": "They will record the meeting for those who can't attend." },
-      { "word": "speech", "meaning": "a formal talk delivered to an audience", "japaneseMeaning": "スピーチ、演説", "synonyms": "address, oration", "antonyms": "silence", "example": "He gave a speech at the graduation." },
-      { "word": "story", "meaning": "an account of events, real or imagined", "japaneseMeaning": "物語、記事", "synonyms": "narrative, tale", "antonyms": "fact (when fictional)", "example": "The reporter wrote a story about the festival." }
+      { "word": "website", "meaning": "a set of web pages on the internet", "japaneseMeaning": "ウェブサイト", "synonyms": "site, web page", "antonyms": "", "example": "Find the schedule on the event website." }
     ]
   }
   

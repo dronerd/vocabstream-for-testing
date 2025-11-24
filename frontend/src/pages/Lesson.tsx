@@ -51,6 +51,8 @@ const Lesson: React.FC = () => {
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [hoveredQuizChoice, setHoveredQuizChoice] = useState<number | null>(null);
   const [quizAttempted, setQuizAttempted] = useState<boolean>(false);
+  // store mistaken quiz question objects so we can replay exact items
+  const [wrongQuizItems, setWrongQuizItems] = useState<QuizQuestion[]>([]);
 
   // meaning-mcq state (replaces the old matching UI)
   const [meaningQuestions, setMeaningQuestions] = useState<MeaningQuestion[]>([]);
@@ -61,6 +63,12 @@ const Lesson: React.FC = () => {
   const [meaningSelectedChoice, setMeaningSelectedChoice] = useState<number | null>(null);
   const [hoveredMeaningChoice, setHoveredMeaningChoice] = useState<number | null>(null);
   const [meaningAttempted, setMeaningAttempted] = useState<boolean>(false);
+  // store mistaken meaning question objects (they include originalIndex)
+  const [wrongMeaningItems, setWrongMeaningItems] = useState<MeaningQuestion[]>([]);
+
+  // state 追加（既存 state の近くに）
+  const [isReplayMode, setIsReplayMode] = useState(false);
+  const [replayType, setReplayType] = useState<"meaning" | "quiz" | null>(null);
 
   // responsive / touch state
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
@@ -232,6 +240,10 @@ const Lesson: React.FC = () => {
   const slideStep = step - 1;
   const isSlide = step > 0 && slideStep < totalWords;
 
+  // derive genre folder and lesson number from lessonId like "business-lesson-1"
+  const genreFolder = lessonId && lessonId.includes("-lesson-") ? lessonId.split("-lesson-")[0] : null;
+  const lessonNumber = lessonId && lessonId.includes("-lesson-") ? parseInt(lessonId.split("-lesson-")[1], 10) : null;
+
   // getPraise unchanged
   function getPraise(percent: number): string {
     if (!Number.isFinite(percent)) percent = 0;
@@ -341,8 +353,16 @@ const Lesson: React.FC = () => {
     if (isCorrect) {
       setQuizScore((s) => s + 1);
       playCorrectSound();
+      // remove from wrong items if it was previously mistaken
+      setWrongQuizItems((prev) => prev.filter((qq) => !(qq.blank_sentence === q.blank_sentence && qq.word === q.word)));
     } else {
       playWrongSound();
+      // record wrong question object if not already recorded (use blank_sentence+word as identifier)
+      setWrongQuizItems((prev) => {
+        const exists = prev.some((qq) => qq.blank_sentence === q.blank_sentence && qq.word === q.word);
+        if (exists) return prev;
+        return [...prev, q];
+      });
     }
   }
 
@@ -357,8 +377,16 @@ const Lesson: React.FC = () => {
     if (isCorrect) {
       setMeaningScore((s) => s + 1);
       playCorrectSound();
+      // remove from wrong meaning items if present (use originalIndex as key)
+      setWrongMeaningItems((prev) => prev.filter((m) => m.originalIndex !== q.originalIndex));
     } else {
       playWrongSound();
+      // add wrong meaning question object if not already present
+      setWrongMeaningItems((prev) => {
+        const exists = prev.some((m) => m.originalIndex === q.originalIndex);
+        if (exists) return prev;
+        return [...prev, q];
+      });
     }
   }
 
@@ -367,6 +395,100 @@ const Lesson: React.FC = () => {
     setFinishLock(true);
     nav(-1);
   }
+
+  // try to navigate to the next numbered lesson within the same genre folder
+  async function goToNextLesson() {
+    if (!lessonId) return;
+    if (!lessonId.includes("-lesson-")) {
+      alert("このレッスンIDは次のレッスンを自動判定できません。");
+      return;
+    }
+    const [genreFolder, numStr] = lessonId.split("-lesson-");
+    const currentNum = parseInt(numStr, 10);
+    if (Number.isNaN(currentNum)) {
+      alert("レッスン番号が不正です");
+      return;
+    }
+
+    // try a reasonable range ahead (stop early when found)
+    const maxLookahead = 50;
+    for (let next = currentNum + 1; next <= currentNum + maxLookahead; next++) {
+      const candidates = [
+        `/data/${genreFolder}/Lesson${next}.json`,
+        `/data/${genreFolder}/lesson${next}.json`,
+        `/data/${genreFolder}/Lesson${Number(next)}.json`,
+        `/data/${genreFolder}/lesson${Number(next)}.json`,
+      ];
+      for (const path of candidates) {
+        const found = await tryFetchJson(path);
+        if (found) {
+          // reset UI state so the new lesson shows the start page
+          setStep(0);
+          setQuizQuestions([]);
+          setQuizIndex(0);
+          setQuizScore(0);
+          setSelectedChoice(null);
+          setQuizAttempted(false);
+          setMeaningQuestions([]);
+          setMeaningIndex(0);
+          setMeaningScore(0);
+          setMeaningSelectedChoice(null);
+          setMeaningAttempted(false);
+          setWrongQuizItems([]);
+          setWrongMeaningItems([]);
+          // navigate to new lesson route
+          nav(`/lesson/${genreFolder}-lesson-${next}`);
+          return;
+        }
+      }
+    }
+    alert("次の番号のレッスンが見つかりませんでした。別のレッスンを選んでください。");
+  }
+
+  // 再生が終わったときに通常モードへ戻すヘルパー
+  function finishReplayAndReturn() {
+    setIsReplayMode(false);
+    setReplayType(null);
+    // 必要なら元の meaningQuestions / quizQuestions を再セットするか
+    // 全体の進行へ戻すための step をセット
+    setStep(0); // 例：トップ or summary
+  }
+  
+  // Replay mistakes: filter meaningQuestions and quizQuestions to include only previously-wrong items
+  function replayMistakes() {
+    // まず再生モードを true にして、どちらを再生するか設定する
+    if (wrongMeaningItems.length > 0) {
+      setMeaningQuestions(wrongMeaningItems.slice()); // subset に置き換え
+      setMeaningIndex(0);
+      setMeaningScore(0);
+      setMeaningSelectedChoice(null);
+      setMeaningAttempted(false);
+
+      setIsReplayMode(true);
+      setReplayType("meaning");
+
+      // もはや step を totalWords 基準で動かす必要はない。
+      // もし UI が step によって表示を切り替えているなら、
+      // 切替用の小さなヘルパー関数を使って明示的に意味画面に移動する:
+      setStep(/* 意味問題画面の step 番号（例えば 1）または専用の表示フラグ */ 1);
+      return;
+    }
+
+    if (wrongQuizItems.length > 0) {
+      setQuizQuestions(wrongQuizItems.slice());
+      setQuizIndex(0);
+      setQuizScore(0);
+      setSelectedChoice(null);
+      setQuizAttempted(false);
+
+      setIsReplayMode(true);
+      setReplayType("quiz");
+
+      setStep(/* クイズ画面の step 番号（例えば totalWords + 1 の代わりに特定の定数） */ totalWords + 1);
+      return;
+    }
+  }
+
 
   // display final scores
   const displayFinalScore = finalScore ?? quizScore;
@@ -447,7 +569,7 @@ const Lesson: React.FC = () => {
 
       `}</style>
 
-      <button onClick={() => nav(-1)} style={{ marginBottom: isSmallScreen ? 10 : 12, padding: isSmallScreen ? "12px 12px" : (isSmallScreen ? "8px 10px" : "10px 6px"), borderRadius: 10, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
+      <button onClick={() => { if (genreFolder) nav(`/learn/${genreFolder}`); else nav('/learn'); }} style={{ marginBottom: isSmallScreen ? 10 : 12, padding: isSmallScreen ? "12px 12px" : (isSmallScreen ? "8px 10px" : "10px 6px"), borderRadius: 10, border: "none", backgroundColor: "#555", color: "#fff", cursor: "pointer" }}>
         レッスン一覧に戻る
       </button>
 
@@ -505,7 +627,11 @@ const Lesson: React.FC = () => {
       {/* Start screen */}
       {step === 0 && (
         <div style={{ width: "100%", maxWidth: 900 }}>
-          <div style={{ fontSize: headingSize, marginBottom: isSmallScreen ? 6 : 12 }}><strong>今日の単語</strong></div>
+              <div style={{ fontSize: headingSize, marginBottom: isSmallScreen ? 6 : 12 }}>
+                <strong>
+                  {`今日の単語${lessonNumber && Number.isFinite(lessonNumber) ? ` (Lesson ${lessonNumber})` : ""}`}
+                </strong>
+              </div>
           <div style={{ fontWeight: "bold", fontSize: wordListSize, marginBottom: isSmallScreen ? 8 : 12 }}>
             {lesson.words.slice(0, 10).map((w: LessonWord, i: number) =>
               i < lesson.words.slice(0, 10).length - 1 ? `${w.word}, ` : w.word
@@ -857,7 +983,7 @@ const Lesson: React.FC = () => {
                             borderRadius: 8,
                             cursor: "pointer",
                             width: buttonWidth,
-                          }                  // 「レッスンを終了する」
+                          }                  // 「了する」
                     }
                   >
                     {quizIndex + 1 < quizQuestions.length
@@ -915,7 +1041,10 @@ const Lesson: React.FC = () => {
                 margin: isSmallScreen ? "0" : "0 auto",
               }}
             >
-              <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>レッスン合計スコア</h2>
+              <h2 style={{ fontSize: headingSize, marginBottom: 12 }}>
+                 {`レッスン合計スコア${lessonNumber && Number.isFinite(lessonNumber) ? ` (Lesson ${lessonNumber})` : ""}`}
+   
+              </h2>
 
               <div style={{ fontSize: paragraphFontSize, marginBottom: 12 }}>
                 <p>単語・意味マッチング: {matchingDisplayScore} / {matchingDisplayMax} ({matchingDisplayPercent}%)</p>
@@ -933,10 +1062,33 @@ const Lesson: React.FC = () => {
               </div>
 
               <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 12 }}>
-                <button onClick={() => finishLesson()} style={blueButtonStyle}>
-                  レッスンを終了
+                <button 
+                 onClick={() => { if (genreFolder) nav(`/learn/${genreFolder}`); else nav('/learn'); }}
+                 style={blueButtonStyle}>
+                  レッスンを終了し、一覧ページに戻る
                 </button>
+
+              <button
+                onClick={() => goToNextLesson()}
+                style={{ ...blueButtonStyle, backgroundColor: "#16a34a" }}
+              >
+                {`次のレッスン${
+                  lessonNumber && Number.isFinite(lessonNumber)
+                    ? ` (Lesson ${lessonNumber + 1})`
+                    : ""
+                } に進む`}
+              </button>
+
+                {(wrongMeaningItems.length > 0 || wrongQuizItems.length > 0) && (
+                  <button
+                    onClick={() => replayMistakes()}
+                    style={{ ...blueButtonStyle, backgroundColor: "#f59e0b" }}
+                  >
+                    間違えた問題をもう一度解いてみる
+                  </button>
+                )}
               </div>
+
             </div>
           </div>
         );
@@ -949,7 +1101,11 @@ const Lesson: React.FC = () => {
 /* generateQuizFromLesson (unchanged except location) */
 function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
   const words: LessonWord[] = lesson.words || [];
-  const pool = words.filter((w: LessonWord) => w.word).map((w: LessonWord) => ({ word: w.word, example: w.example || "" }));
+  // build a pool of unique words (dedupe by word) to avoid duplicated questions
+  const rawPool = words.filter((w: LessonWord) => w.word).map((w: LessonWord) => ({ word: w.word, example: w.example || "" }));
+  const mapByWord = new Map<string, { word: string; example: string }>();
+  for (const p of rawPool) mapByWord.set(p.word, p);
+  const pool = Array.from(mapByWord.values());
   if (pool.length < 3) throw new Error("not enough words for quiz");
   function sample<T>(arr: T[], k: number): T[] {
     const copy = arr.slice();
@@ -990,7 +1146,14 @@ function generateQuizFromLesson(lesson: LessonData): QuizQuestion[] {
 // generateMeaningQuizFromLesson: create MCQ where prompt is meaning and choices are words (one correct + two distractors)
 function generateMeaningQuizFromLesson(lesson: LessonData): MeaningQuestion[] {
   const words: LessonWord[] = lesson.words || [];
-  const pool = words.map((w, i) => ({ word: w.word, meaning: w.meaning || w.japaneseMeaning || "", originalIndex: i }));
+  // build pool and dedupe by word to prevent duplicated meaning questions
+  const rawPool = words.map((w, i) => ({ word: w.word, meaning: w.meaning || w.japaneseMeaning || "", originalIndex: i }));
+  const seen = new Map<string, { word: string; meaning: string; originalIndex: number }>();
+  for (const p of rawPool) {
+    if (!p.word) continue;
+    if (!seen.has(p.word)) seen.set(p.word, p);
+  }
+  const pool = Array.from(seen.values());
   // filter out entries without a meaning or word
   const usable = pool.filter(p => p.word && p.meaning);
   if (usable.length === 0) return [];
