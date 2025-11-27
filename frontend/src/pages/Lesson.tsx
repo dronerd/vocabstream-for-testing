@@ -449,8 +449,6 @@ const Lesson: React.FC = () => {
   function finishReplayAndReturn() {
     setIsReplayMode(false);
     setReplayType(null);
-    // 必要なら元の meaningQuestions / quizQuestions を再セットするか
-    // 全体の進行へ戻すための step をセット
     setStep(0); // 例：トップ or summary
   }
   
