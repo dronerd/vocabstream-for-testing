@@ -454,9 +454,13 @@ const Lesson: React.FC = () => {
   
   // Replay mistakes: filter meaningQuestions and quizQuestions to include only previously-wrong items
   function replayMistakes() {
-    // まず再生モードを true にして、どちらを再生するか設定する
+    // compute the step numbers used elsewhere in this component
+    const matchingStep = totalWords + 1; // meaning-mcq screen
+    const quizStep = totalWords + 2;     // example-sentence quiz screen
+
+    // 優先順位: まず意味問題の間違いがあればそれを再生
     if (wrongMeaningItems.length > 0) {
-      setMeaningQuestions(wrongMeaningItems.slice()); // subset に置き換え
+      setMeaningQuestions(wrongMeaningItems.slice()); // wrong items を問題セットとして使う
       setMeaningIndex(0);
       setMeaningScore(0);
       setMeaningSelectedChoice(null);
@@ -465,13 +469,15 @@ const Lesson: React.FC = () => {
       setIsReplayMode(true);
       setReplayType("meaning");
 
-      // もはや step を totalWords 基準で動かす必要はない。
-      // もし UI が step によって表示を切り替えているなら、
-      // 切替用の小さなヘルパー関数を使って明示的に意味画面に移動する:
-      setStep(/* 意味問題画面の step 番号（例えば 1）または専用の表示フラグ */ 1);
+      // finalScore が残っていると混乱するためクリア（任意）
+      setFinalScore(null);
+
+      // 正しい step 値へ移動（totalWords + 1）
+      setStep(matchingStep);
       return;
     }
 
+    // 次に例文クイズの間違いがあればそれを再生
     if (wrongQuizItems.length > 0) {
       setQuizQuestions(wrongQuizItems.slice());
       setQuizIndex(0);
@@ -482,11 +488,16 @@ const Lesson: React.FC = () => {
       setIsReplayMode(true);
       setReplayType("quiz");
 
-      setStep(/* クイズ画面の step 番号（例えば totalWords + 1 の代わりに特定の定数） */ totalWords + 1);
+      setFinalScore(null);
+
+      // 正しい step 値へ移動（totalWords + 2）
+      setStep(quizStep);
       return;
     }
-  }
 
+    // 間違いが無ければ何もしない（必要なら通知を出す）
+    // alert("間違えた問題はありません。");
+  }
 
   // display final scores
   const displayFinalScore = finalScore ?? quizScore;
@@ -494,7 +505,7 @@ const Lesson: React.FC = () => {
 
   // matching/meaning score now uses meaningScore
   const matchingScore = meaningScore;
-  const matchingMax = L.words.length; // 全単語数が最大スコア
+  const matchingMax = L.words.length; 
 
 
   return (
@@ -510,8 +521,6 @@ const Lesson: React.FC = () => {
           20% { opacity: 1; }
           100% { transform: translateY(-120vh) scale(1) rotate(180deg); opacity: 0; }
         }
-
-       
 
         /* wrapper は必ず左右の余白を作る */
         .breadcrumb-wrapper {
@@ -1077,14 +1086,19 @@ const Lesson: React.FC = () => {
                 } に進む`}
               </button>
 
-                {(wrongMeaningItems.length > 0 || wrongQuizItems.length > 0) && (
-                  <button
-                    onClick={() => replayMistakes()}
-                    style={{ ...blueButtonStyle, backgroundColor: "#f59e0b" }}
-                  >
-                    間違えた問題をもう一度解いてみる
-                  </button>
-                )}
+
+              {/*
+              // Replay mistakes button (disabled for now)これを今後有効にする！
+              {(wrongMeaningItems.length > 0 || wrongQuizItems.length > 0) && (
+                <button
+                  onClick={() => replayMistakes()}
+                  style={{ ...blueButtonStyle, backgroundColor: "#f59e0b" }}
+                >
+                  間違えた問題をもう一度解いてみる
+                </button>
+              )}
+              */}
+
               </div>
 
             </div>
