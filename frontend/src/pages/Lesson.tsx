@@ -825,7 +825,7 @@ const Lesson: React.FC = () => {
                   return (
                     <button key={i} onClick={() => handleMeaningChoose(i)} onMouseEnter={() => setHoveredMeaningChoice(i)} onMouseLeave={() => setHoveredMeaningChoice(null)}
                       style={{
-                        fontSize: isSmallScreen ? 16 : 18, padding: isSmallScreen ? "4px 5px" : "14px 16px", width: "100%",
+                        fontSize: isSmallScreen ? 16 : 18, padding: isSmallScreen ? "14px 16px" : "14px 16px", width: "100%",
                         background, color: meaningSelectedChoice !== null ? (isCorrect ? "#052e16" : isWrongSelected ? "#330000" : "#0f172a") : "#fff",
                         boxShadow, transform, transition: "transform 0.18s ease, box-shadow 0.2s ease, background 0.25s ease", border: "none", cursor: meaningSelectedChoice !== null ? "default" : "pointer",
                         borderRadius: 12, display: "flex", gap: 12, alignItems: "center", justifyContent: "center", textAlign: "left",
