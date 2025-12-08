@@ -13,7 +13,7 @@ export default function Home() {
 
   const options = [
     { label: "単語を学習する", path: "/learn" },
-    { label: "AIと話す", path: "/ai_chat" },
+    { label: "AIと会話・レッスンを行う", path: "/ai_chat" },
     { label: "その他の機能", path: "/others" },
   ];
 
