@@ -1,3 +1,4 @@
+// src/pages/AI_chat.tsx
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -93,24 +94,24 @@ export default function AI_chat() {
     };
   }, []);
 
-  // Disclaimer banner for development stage
+  // Disclaimer banner for development stage - will be styled below
   const disclaimerBanner = (
-    <div className="fixed top-0 left-0 right-0 bg-yellow-100 border-b-2 border-yellow-400 px-6 py-2 z-50">
-      <p className="text-sm text-yellow-900 text-center">
-        ⚠️ <strong>：</strong> 本機能は現在まだ開発実験段階であり、機能がまだ不安定です。今後の開発を楽しみにしていてください。
-        会話の内容は保存されず、プライバシーは保護されます。
+    <div className="disclaimer">
+      <p>
+        ⚠️ <strong>実験機能：</strong> 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
       </p>
     </div>
   );
 
-  const containerClass =
-  "min-h-screen w-full flex justify-center bg-[#d8f3dc] px-4 py-10";
-  const contentClass =
-  "w-full max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8";
-  const btnPrimary = "bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold px-6 py-2 rounded-full shadow-lg hover:opacity-95 hover:scale-102 transform transition";
-  const btnSecondary = "bg-gray-700 text-white font-semibold px-5 py-2 rounded-full shadow-md hover:opacity-95 hover:shadow-lg transform transition";
-  const btnAccent = "bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold px-8 py-3 rounded-full shadow-xl hover:scale-105 transition transform";
-  const btnStart = "bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-full shadow-2xl text-lg transition transform hover:scale-105";
+  // Styling class names (used in JSX)
+  const containerClass = "app-container";
+  const contentClass = "card";
+
+  // Button class names
+  const btnPrimary = "btn btn-primary";
+  const btnSecondary = "btn btn-secondary";
+  const btnAccent = "btn btn-accent";
+  const btnStart = "btn btn-start";
 
   // Overall conversation state
   const [mode, setMode] = useState<ConversationMode>("choice");
@@ -160,7 +161,6 @@ export default function AI_chat() {
       const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
       setServerWarming(true);
       try {
-        // send a lightweight warmup request; backend should treat mode: 'warmup' specially
         await fetch(`${API_URL}/api/chat`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -168,7 +168,6 @@ export default function AI_chat() {
         });
         if (!mounted) return;
         setServerWarmed(true);
-        // optional: insert an invisible system message so user knows the backend is ready
         setChatLog((prev) => [
           ...prev,
           { sender: "llm", text: "システム: サーバーが準備完了しました。" },
@@ -186,7 +185,7 @@ export default function AI_chat() {
     };
   }, []);
 
-  // Timer effect for lessons - MUST be at top level, not inside conditional
+  // Timer effect for lessons
   useEffect(() => {
     if (mode !== "lesson" || !lessonStartTime || step !== "chatting") return;
 
@@ -197,29 +196,23 @@ export default function AI_chat() {
       // Calculate component timing
       const structure = generateLessonStructure();
       let cumulativeTime = 0;
-      
+
       for (let i = 0; i < structure.length; i++) {
         const componentTime = structure[i].minutes * 60;
-            if (elapsed >= cumulativeTime + componentTime && currentComponent === i) {
+        if (elapsed >= cumulativeTime + componentTime && currentComponent === i) {
           // Time to move to next component
           if (i < structure.length - 1) {
-              const nextIndex = i + 1;
-              setCurrentComponent(nextIndex);
-              // Auto-advance to next component with announcement
-              const nextComponent = structure[nextIndex];
-              const movePrompt = `次は「${nextComponent.name}」に移ってください。`;
-              setChatLog((prev) => {
-                // avoid duplicating the same move prompt
-                if (prev.some((e) => e.text === `⏱️ ${movePrompt}`)) return prev;
-                return [
-                  ...prev,
-                  { sender: "llm", text: `⏱️ ${movePrompt}` },
-                ];
-              });
-              // Send the next component's prompt to AI
-              setTimeout(() => {
-                handleLessonStart(generateComponentContent(nextComponent.name));
-              }, 100);
+            const nextIndex = i + 1;
+            setCurrentComponent(nextIndex);
+            const nextComponent = structure[nextIndex];
+            const movePrompt = `次は「${nextComponent.name}」に移ってください。`;
+            setChatLog((prev) => {
+              if (prev.some((e) => e.text === `⏱️ ${movePrompt}`)) return prev;
+              return [...prev, { sender: "llm", text: `⏱️ ${movePrompt}` }];
+            });
+            setTimeout(() => {
+              handleLessonStart(generateComponentContent(nextComponent.name));
+            }, 100);
           }
         }
         cumulativeTime += componentTime;
@@ -303,10 +296,7 @@ export default function AI_chat() {
     });
   };
 
-  // NOTE: Removed previous post-processing of trailing question marks per user request.
-
   // Generate AI system prompt for a given lesson component
-  // These prompts instruct the AI to generate the lesson content and questions
   const generateComponentContent = (componentName: string) => {
     switch (componentName) {
       case "単語練習":
@@ -373,15 +363,14 @@ export default function AI_chat() {
     const inputText = userInput;
     setUserInput("");
 
-    // Determine API URL with fallback to local development server
     const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
-    
+
     try {
-      const testsToPass = selectedTests.length > 0 
+      const testsToPass = selectedTests.length > 0
         ? selectedTests.map(t => t === "Other" ? customTest : t)
         : [];
 
-      const vocabLessonsToPass = vocabLessonType === "range" 
+      const vocabLessonsToPass = vocabLessonType === "range"
         ? getLessonNumbersFromRange()
         : vocabIndividualLessons;
 
@@ -481,15 +470,14 @@ export default function AI_chat() {
   const handleLessonStart = async (prompt: string) => {
     if (!prompt.trim()) return;
 
-    // Determine API URL with fallback to local development server
     const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
-    
+
     try {
-      const testsToPass = selectedTests.length > 0 
+      const testsToPass = selectedTests.length > 0
         ? selectedTests.map(t => t === "Other" ? customTest : t)
         : [];
 
-      const vocabLessonsToPass = vocabLessonType === "range" 
+      const vocabLessonsToPass = vocabLessonType === "range"
         ? getLessonNumbersFromRange()
         : vocabIndividualLessons;
 
@@ -537,17 +525,112 @@ export default function AI_chat() {
   if (mode === "choice") {
     return (
       <>
-        <main className={containerClass} style={{ paddingTop: '92px' }}>
-           {disclaimerBanner}
+        {/* Page styles are embedded here for single-file portability */}
+        <style>{`
+          :root{
+            --bg: #d8f3dc;
+            --card-bg: #fff;
+            --muted: #666;
+            --accent-a: #3b82f6; /* blue-500 */
+            --accent-b: #6366f1; /* indigo-500 */
+            --accent-c: #10b981; /* green-500 */
+            --radius: 16px;
+            --container-max: 900px;
+          }
+          *{box-sizing:border-box}
+          .disclaimer{
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            background: #fff7c2;
+            border-bottom: 1px solid #f5d36b;
+            color:#6b4a00;
+            padding:10px 16px;
+            text-align:center;
+            z-index:60;
+            font-size:14px;
+          }
+          .app-container{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding: 110px 20px 60px; /* leave space for disclaimer */
+            background: transparent;
+          }
+          .card{
+            width:100%;
+            max-width:var(--container-max);
+            background:var(--card-bg);
+            border-radius:var(--radius);
+            box-shadow: 0 18px 40px rgba(2,6,23,0.08);
+            padding:32px;
+            text-align:center;
+          }
+          h1{margin:0 0 8px 0;font-size:28px}
+          p.lead{color:var(--muted);margin:0 0 18px 0}
+
+          .options{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:18px;
+            margin:26px 0;
+          }
+          @media(min-width:720px){
+            .options{grid-template-columns:1fr 1fr}
+          }
+
+          .btn{
+            border:none;
+            padding:0;
+            cursor:pointer;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:14px;
+            font-weight:700;
+            transition: transform .18s ease, box-shadow .18s ease;
+          }
+          .btn:active{transform:translateY(1px)}
+          .btn-primary{
+            height:80px;
+            background: linear-gradient(90deg,var(--accent-a),var(--accent-b));
+            color:white;
+            box-shadow: 0 12px 30px rgba(99,102,241,0.18);
+            font-size:18px;
+          }
+          .btn-secondary{
+            height:80px;
+            background: linear-gradient(90deg,#10b981,#059669);
+            color:white;
+            box-shadow: 0 12px 30px rgba(16,185,129,0.14);
+            font-size:18px;
+          }
+          .btn:hover{transform:translateY(-6px)}
+          .back-row{display:flex;justify-content:center;margin-top:8px}
+          .btn-accent{
+            padding:10px 18px;
+            background:white;
+            border:1px solid #e5e7eb;
+            color:#374151;
+            border-radius:12px;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+            font-weight:600;
+          }
+        `}</style>
+
+        <main className={containerClass}>
+          {disclaimerBanner}
+
           <div className={contentClass}>
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold mb-4">AIと何をしたいですか？</h1>
-              <p className="text-gray-600">今日のあなたの目的を選んでください</p>
+            <div style={{ marginBottom: 10 }}>
+              <h1>AIと何をしたいですか？</h1>
+              <p className="lead">今日のあなたの目的を選んでください</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="options">
               <button
-                onMouseEnter={() => {}}
                 onClick={() => {
                   setMode("casual");
                   setStep("level");
@@ -556,10 +639,12 @@ export default function AI_chat() {
                   setCustomTopic("");
                   setLevelConfirmed(false);
                 }}
-                className={`${btnPrimary} h-24 flex items-center justify-center hover:scale-105`}
+                className={btnPrimary}
+                aria-label="楽しく会話したい"
               >
                 楽しく会話したい
               </button>
+
               <button
                 onClick={() => {
                   setMode("lesson");
@@ -571,16 +656,17 @@ export default function AI_chat() {
                   setSelectedComponents([]);
                   setLevelConfirmed(false);
                 }}
-                className={`${btnSecondary} h-24 flex items-center justify-center hover:scale-105`} 
+                className={btnSecondary}
+                aria-label="英語レッスンを受けたい"
               >
                 英語レッスンを受けたい
               </button>
             </div>
 
-            <div className="flex justify-center gap-6">
+            <div className="back-row">
               <button
                 onClick={() => navigate(-1)}
-                className={`${btnSecondary}`}
+                className="btn-accent"
               >
                 ← 戻る
               </button>
@@ -591,113 +677,128 @@ export default function AI_chat() {
     );
   }
 
-  // Setup steps - Level selection
+  // Level selection
   if (step === "level") {
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className={contentClass}>
-          <h1 className="text-2xl font-bold mb-2">英語レベルの設定</h1>
-          <p className="text-gray-600 mb-4">あなたの現在の英語レベルを選んでください</p>
+      <>
+        <style>{`
+          .app-container{padding:110px 20px 60px}
+          .card{padding:28px}
+          .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+          @media(min-width:720px){.levels{grid-template-columns:repeat(6,1fr)}}
+          .level-btn{
+            padding:18px;border-radius:12px;border:1px solid #e6e9ef;background:white;cursor:pointer;
+            transition:transform .14s ease, box-shadow .14s ease;
+            display:flex;flex-direction:column;align-items:center;
+          }
+          .level-btn.active{background:linear-gradient(180deg,#4f46e5,#4338ca);color:white;box-shadow:0 12px 30px rgba(67,56,202,0.18);transform:scale(1.03)}
+          .actions-row{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+          .next-btn{padding:12px 20px;border-radius:12px;background:#efefef;border:none;cursor:pointer}
+        `}</style>
 
-          <div className="mb-4">
-            <span className="text-sm text-gray-700">選択： </span>
-            <span className="font-bold text-lg text-indigo-700">{level}</span>
-          </div>
+        <main className={containerClass}>
+          <div className={contentClass}>
+            <h1 style={{ fontSize: 22, marginBottom: 6 }}>英語レベルの設定</h1>
+            <p className="lead">あなたの現在の英語レベルを選んでください</p>
 
-          <div className="grid grid-cols-2 gap-6 mb-8">
-            {["A1", "A2", "B1", "B2", "C1", "C2"].map((lvl) => (
+            <div style={{ marginBottom: 12 }}>
+              <span style={{ color: "#374151" }}>選択： </span>
+              <span style={{ fontWeight: 800, color: "#3730a3" }}>{level}</span>
+            </div>
+
+            <div className="levels">
+              {["A1", "A2", "B1", "B2", "C1", "C2"].map((lvl) => (
+                <button
+                  key={lvl}
+                  onClick={() => {
+                    setLevel(lvl);
+                    setLevelConfirmed(true);
+                  }}
+                  className={`level-btn ${level === lvl ? "active" : ""}`}
+                >
+                  <div style={{ fontSize: 18, marginBottom: 4 }}>{lvl}</div>
+                  <div style={{ fontSize: 12, opacity: 0.8 }}>
+                    {lvl === "A1" && "初級"}
+                    {lvl === "A2" && "初中級"}
+                    {lvl === "B1" && "中級"}
+                    {lvl === "B2" && "中上級"}
+                    {lvl === "C1" && "上級"}
+                    {lvl === "C2" && "最上級"}
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <div className="actions-row">
               <button
-                key={lvl}
-                onClick={() => {
-                  setLevel(lvl);
-                  setLevelConfirmed(true);
-                }}
-                className={`py-6 px-6 rounded-lg font-bold transition duration-200 transform hover:scale-105 ${
-                  level === lvl
-                    ? "bg-indigo-600 text-white shadow-lg scale-105"
-                    : "bg-white text-gray-800 border border-gray-200 hover:bg-gray-50"
-                }`}
+                onClick={() => setMode("choice")}
+                className="btn-accent"
               >
-                <div className="text-2xl mb-1">{lvl}</div>
-                <div className="text-xs opacity-75">
-                  {lvl === "A1" && "初級"}
-                  {lvl === "A2" && "初中級"}
-                  {lvl === "B1" && "中級"}
-                  {lvl === "B2" && "中上級"}
-                  {lvl === "C1" && "上級"}
-                  {lvl === "C2" && "最上級"}
-                </div>
+                ← 戻る
               </button>
-            ))}
+              <button
+                onClick={() => {
+                  if (!levelConfirmed) {
+                    alert("レベルを選択してください（選択中が表示されます）");
+                    return;
+                  }
+                  setStep("topic");
+                }}
+                className={levelConfirmed ? btnPrimary : "btn-accent"}
+                style={levelConfirmed ? undefined : { opacity: 0.8 }}
+              >
+                次へ →
+              </button>
+            </div>
           </div>
-
-          <div className="flex justify-center gap-6">
-            <button
-              onClick={() => setMode("choice")}
-              className={btnSecondary}
-            >
-              ← 戻る
-            </button>
-            <button
-              onClick={() => {
-                if (!levelConfirmed) {
-                  alert("レベルを選択してください（選択中が表示されます）");
-                  return;
-                }
-                setStep("topic");
-              }}
-              className={`px-6 py-3 rounded-lg font-bold ${levelConfirmed ? btnPrimary : "bg-gray-300 text-gray-600"}`}
-            >
-              次へ →
-            </button>
-          </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
   // Topic selection
   if (step === "topic") {
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className={contentClass}>
-          <h1 className="text-2xl font-bold mb-2">興味の設定</h1>
-          <p className="text-gray-600 mb-6">興味のあるトピックを選択してください。（＊複数選択可能です）</p>
+      <>
+        <style>{`
+          .form-list{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+          .check-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid #edf2f7;background:white}
+          .input-text{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+          .actions-row{display:flex;gap:12px;justify-content:center;margin-top:8px}
+        `}</style>
 
-          <div className="flex flex-col gap-3 mb-6">
-            {TOPICS.map((topic) => (
-              <label key={topic} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
-                <input
-                  type="checkbox"
-                  checked={selectedTopics.includes(topic)}
-                  onChange={() => handleTopicToggle(topic)}
-                  className="w-5 h-5 mr-3"
-                />
-                <span className="font-medium">{topic}</span>
-              </label>
-            ))}
-          </div>
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+          <div className={contentClass}>
+            <h1 style={{ fontSize: 22 }}>興味の設定</h1>
+            <p className="lead">興味のあるトピックを選択してください。（＊複数選択可能です）</p>
 
-          <div className="mb-6">
-            <label className="block font-semibold mb-2">その他のトピック (自由記入):</label>
-            <input
-              type="text"
-              value={customTopic}
-              onChange={(e) => setCustomTopic(e.target.value)}
-              placeholder="カスタムトピックを入力..."
-              className="w-full border rounded-lg p-3 bg-white"
-            />
-          </div>
+            <div className="form-list">
+              {TOPICS.map((topic) => (
+                <label key={topic} className="check-row">
+                  <input
+                    type="checkbox"
+                    checked={selectedTopics.includes(topic)}
+                    onChange={() => handleTopicToggle(topic)}
+                  />
+                  <span style={{ fontWeight: 600 }}>{topic}</span>
+                </label>
+              ))}
+            </div>
 
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => setStep("level")}
-              className={btnSecondary}
-            >
-              ← 戻る
-            </button>
-            <button
-              onClick={() => {
+            <div style={{ marginBottom: 10 }}>
+              <label style={{ display: "block", fontWeight: 700, marginBottom: 6 }}>その他のトピック (自由記入):</label>
+              <input
+                type="text"
+                value={customTopic}
+                onChange={(e) => setCustomTopic(e.target.value)}
+                placeholder="カスタムトピックを入力..."
+                className="input-text"
+              />
+            </div>
+
+            <div className="actions-row">
+              <button onClick={() => setStep("level")} className="btn-accent">← 戻る</button>
+              <button onClick={() => {
                 if (selectedTopics.length === 0 && !customTopic) {
                   alert("少なくとも1つのトピックを選択してください");
                   return;
@@ -707,24 +808,21 @@ export default function AI_chat() {
                 } else {
                   setStep("test");
                 }
-              }}
-              className={btnPrimary}
-            >
-              次へ →
-            </button>
+              }} className={btnPrimary}>次へ →</button>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
   // Helper to start casual conversation by sending a prompt to the AI
   const handleCasualStart = async () => {
     const casualPrompt = `You are a friendly English conversation partner. Start the conversation with a warm greeting and ask the user a simple, open-ended question to get them talking. For example, you could ask "How are you today?" or "What have you been up to?" based on their interests (${selectedTopics.join(", ")}). Keep the tone natural, friendly, and encouraging. The user is at level ${level}.`;
-    
+
     setChatLog([]);
     setStep("chatting");
-    
+
     // Send the casual start prompt to AI
     setTimeout(() => {
       handleLessonStart(casualPrompt);
@@ -734,228 +832,220 @@ export default function AI_chat() {
   // Casual mode confirmation
   if (mode === "casual" && step === "confirm") {
     return (
-      <main className="p-6 max-w-2xl mx-auto" style={{ paddingTop: "92px" }}>
-        <h1 className="text-2xl font-bold mb-6">設定の確認</h1>
+      <>
+        <style>{`
+          .summary{max-width:720px;margin:0 auto}
+          .summary-box{background:#eef2ff;padding:14px;border-radius:10px;margin-bottom:12px}
+          .summary-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+          .tag{background:#dbeafe;padding:6px 10px;border-radius:999px;font-size:13px}
+          .controls{display:flex;gap:10px;justify-content:center}
+        `}</style>
 
-        <div className="bg-blue-50 p-6 rounded-lg mb-6">
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-700">英語レベル:</h3>
-            <p className="text-lg font-bold">{level}</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-gray-700">トピック:</h3>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {topicsToPass.map((topic) => (
-                <span key={topic} className="bg-blue-200 px-3 py-1 rounded-full text-sm">
-                  {topic}
-                </span>
-              ))}
+        <main style={{ paddingTop: 92 }} className="app-container">
+          <div className="card summary">
+            <h1 style={{ fontSize: 22 }}>設定の確認</h1>
+
+            <div className="summary-box">
+              <div style={{ marginBottom: 8 }}>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>英語レベル:</h3>
+                <p style={{ margin: "6px 0 0", fontSize: 18 }}>{level}</p>
+              </div>
+              <div style={{ marginTop: 10 }}>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>トピック:</h3>
+                <div className="summary-tags">
+                  {topicsToPass.map((topic) => (
+                    <div key={topic} className="tag">{topic}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="controls">
+              <button onClick={() => setStep("topic")} className="btn-accent">← 編集</button>
+              <button onClick={handleCasualStart} className="btn btn-primary">会話を開始する</button>
             </div>
           </div>
-        </div>
-
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setStep("topic")}
-            className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg"
-          >
-            ← 編集
-          </button>
-          <button
-            onClick={handleCasualStart}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-lg"
-          >
-            会話を開始する
-          </button>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
   // Lesson mode - Test type selection
   if (mode === "lesson" && step === "test") {
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className={contentClass}>
-          <h1 className="text-2xl font-bold mb-6">英語試験への対策の設定</h1>
-          <p className="text-sm text-gray-600 mb-6">受験予定の英語試験を選択してください （＊複数選択可能です）</p>
+      <>
+        <style>{`
+          .list-col{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+          .check-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f6;background:white}
+          .small-input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+          .controls{display:flex;gap:10px;justify-content:center}
+        `}</style>
 
-          <div className="flex flex-col gap-3 mb-6">
-            {TESTS.map((test) => (
-              <label key={test} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
-                <input
-                  type="checkbox"
-                  checked={selectedTests.includes(test)}
-                  onChange={() => handleTestToggle(test)}
-                  className="w-5 h-5 mr-3"
-                />
-                <span className="font-medium">{test}</span>
-              </label>
-            ))}
-          </div>
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+          <div className={contentClass}>
+            <h1 style={{ fontSize: 22 }}>英語試験への対策の設定</h1>
+            <p className="lead">受験予定の英語試験を選択してください （＊複数選択可能です）</p>
 
-          {selectedTests.includes("Other") && (
-            <div className="mb-6">
-              <label className="block font-semibold mb-2">その他の試験名:</label>
-              <input
-                type="text"
-                value={customTest}
-                onChange={(e) => setCustomTest(e.target.value)}
-                placeholder="試験名を入力..."
-                className="w-full border rounded-lg p-3 bg-white"
-              />
+            <div className="list-col">
+              {TESTS.map((test) => (
+                <label key={test} className="check-row">
+                  <input
+                    type="checkbox"
+                    checked={selectedTests.includes(test)}
+                    onChange={() => handleTestToggle(test)}
+                  />
+                  <span style={{ fontWeight: 600 }}>{test}</span>
+                </label>
+              ))}
             </div>
-          )}
 
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => setStep("topic")}
-              className={btnSecondary}
-            >
-              ← 戻る
-            </button>
-            <button
-              onClick={() => {
+            {selectedTests.includes("Other") && (
+              <div style={{ marginBottom: 12 }}>
+                <label style={{ display: "block", fontWeight: 700, marginBottom: 6 }}>その他の試験名:</label>
+                <input
+                  type="text"
+                  value={customTest}
+                  onChange={(e) => setCustomTest(e.target.value)}
+                  placeholder="試験名を入力..."
+                  className="small-input"
+                />
+              </div>
+            )}
+
+            <div className="controls">
+              <button onClick={() => setStep("topic")} className="btn-accent">← 戻る</button>
+              <button onClick={() => {
                 if (selectedTests.length === 0) {
                   alert("少なくとも1つの試験を選択してください");
                   return;
                 }
                 setStep("skills");
-              }}
-              className={btnPrimary}
-            >
-              次へ →
-            </button>
+              }} className={btnPrimary}>次へ →</button>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
   // Lesson mode - Skills selection
   if (mode === "lesson" && step === "skills") {
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className={contentClass}>
-          <h1 className="text-2xl font-bold mb-6">伸ばしたいスキルを選択してください</h1>
+      <>
+        <style>{`
+          .list-col{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+          .check-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f6;background:white}
+          .controls{display:flex;gap:10px;justify-content:center}
+        `}</style>
 
-          <div className="flex flex-col gap-3 mb-6">
-            {SKILLS.map((skill) => (
-              <label key={skill} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
-                <input
-                  type="checkbox"
-                  checked={selectedSkills.includes(skill)}
-                  onChange={() => handleSkillToggle(skill)}
-                  className="w-5 h-5 mr-3"
-                />
-                <span className="font-medium">{skill}</span>
-              </label>
-            ))}
-          </div>
 
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => setStep("test")}
-              className={btnSecondary}
-            >
-              ← 戻る
-            </button>
-            <button
-              onClick={() => {
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+          <div className={contentClass}>
+            <h1 style={{ fontSize: 22 }}>伸ばしたいスキルを選択してください</h1>
+
+            <div className="list-col">
+              {SKILLS.map((skill) => (
+                <label key={skill} className="check-row">
+                  <input
+                    type="checkbox"
+                    checked={selectedSkills.includes(skill)}
+                    onChange={() => handleSkillToggle(skill)}
+                  />
+                  <span style={{ fontWeight: 600 }}>{skill}</span>
+                </label>
+              ))}
+            </div>
+
+            <div className="controls">
+              <button onClick={() => setStep("test")} className="btn-accent">← 戻る</button>
+              <button onClick={() => {
                 if (selectedSkills.length === 0) {
                   alert("少なくとも1つのスキルを選択してください");
                   return;
                 }
                 setStep("duration");
-              }}
-              className={btnPrimary}
-            >
-              次へ →
-            </button>
+              }} className={btnPrimary}>次へ →</button>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
   // Lesson mode - Duration selection
   if (mode === "lesson" && step === "duration") {
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className={contentClass}>
-          <h1 className="text-2xl font-bold mb-2">レッスンの希望時間を選択してください</h1>
-          <p className="text-gray-600 mb-8">レッスンに費やしたい時間を選んでください</p>
+      <>
+        <style>{`
+          .dur-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+          @media(min-width:720px){.dur-grid{grid-template-columns:repeat(6,1fr)}}
+          .dur-btn{padding:16px;border-radius:10px;border:1px solid #e6e9ef;background:#f3f4f6;cursor:pointer}
+          .dur-btn.active{background:#059669;color:white;box-shadow:0 10px 28px rgba(5,150,105,0.12);transform:scale(1.03)}
+          .summary-box{background:#eff6ff;padding:12px;border-radius:10px;margin-bottom:12px;text-align:center}
+        `}</style>
 
-          <div className="grid grid-cols-3 gap-3 mb-8">
-            {[5, 10, 15, 20, 25, 30].map((min) => (
-              <button
-                key={min}
-                onClick={() => setSelectedDuration(min.toString())}
-                className={`p-6 rounded-lg font-bold transition duration-200 transform hover:scale-105 ${
-                  selectedDuration === min.toString()
-                    ? "bg-green-600 text-white shadow-lg scale-105"
-                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                }`}
-              >
-                <div className="text-2xl mb-1">{min}</div>
-                <div className="text-sm opacity-75">分</div>
-              </button>
-            ))}
-          </div>
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+          <div className={contentClass}>
+            <h1 style={{ fontSize: 22 }}>レッスンの希望時間を選択してください</h1>
+            <p className="lead">レッスンに費やしたい時間を選んでください</p>
 
-          <div className="bg-blue-50 p-4 rounded-lg mb-6 text-center">
-            <p className="text-sm text-gray-600">選択中: <span className="font-bold text-lg text-blue-600">{selectedDuration}分</span></p>
-          </div>
+            <div className="dur-grid">
+              {[5, 10, 15, 20, 25, 30].map((min) => (
+                <button
+                  key={min}
+                  onClick={() => setSelectedDuration(min.toString())}
+                  className={`dur-btn ${selectedDuration === min.toString() ? "active" : ""}`}
+                >
+                  <div style={{ fontSize: 18 }}>{min}</div>
+                  <div style={{ fontSize: 12, opacity: 0.8 }}>分</div>
+                </button>
+              ))}
+            </div>
 
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => setStep("skills")}
-              className={btnSecondary}
-            >
-              ← 戻る
-            </button>
-            <button
-              onClick={() => setStep("components")}
-              className={btnPrimary}
-            >
-              次へ →
-            </button>
+            <div className="summary-box">
+              <p style={{ margin: 0 }}>選択中: <strong style={{ fontSize: 16 }}>{selectedDuration}分</strong></p>
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "center", gap: 12 }}>
+              <button onClick={() => setStep("skills")} className="btn-accent">← 戻る</button>
+              <button onClick={() => setStep("components")} className={btnPrimary}>次へ →</button>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
   // Lesson mode - Components selection
   if (mode === "lesson" && step === "components") {
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className={contentClass}>
-          <h1 className="text-2xl font-bold mb-6">レッスンに含める内容を選択してください</h1>
+      <>
+        <style>{`
+          .list-col{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+          .check-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f6;background:white}
+          .controls{display:flex;gap:10px;justify-content:center}
+        `}</style>
 
-          <div className="flex flex-col gap-3 mb-6">
-            {COMPONENTS.map((component) => (
-              <label key={component} className="flex items-center p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:shadow-md hover:bg-gray-50 transition">
-                <input
-                  type="checkbox"
-                  checked={selectedComponents.includes(component)}
-                  onChange={() => handleComponentToggle(component)}
-                  className="w-5 h-5 mr-3"
-                />
-                <span className="font-medium">{component}</span>
-              </label>
-            ))}
-          </div>
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+          <div className={contentClass}>
+            <h1 style={{ fontSize: 22 }}>レッスンに含める内容を選択してください</h1>
 
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => setStep("duration")}
-              className={btnSecondary}
-            >
-              ← 戻る
-            </button>
-            <button
-              onClick={() => {
+            <div className="list-col">
+              {COMPONENTS.map((component) => (
+                <label key={component} className="check-row">
+                  <input
+                    type="checkbox"
+                    checked={selectedComponents.includes(component)}
+                    onChange={() => handleComponentToggle(component)}
+                  />
+                  <span style={{ fontWeight: 600 }}>{component}</span>
+                </label>
+              ))}
+            </div>
+
+            <div className="controls">
+              <button onClick={() => setStep("duration")} className="btn-accent">← 戻る</button>
+              <button onClick={() => {
                 if (selectedComponents.length === 0) {
                   alert("少なくとも1つのコンポーネントを選択してください");
                   return;
@@ -965,14 +1055,11 @@ export default function AI_chat() {
                 } else {
                   setStep("structure");
                 }
-              }}
-              className={btnPrimary}
-            >
-              次へ →
-            </button>
+              }} className={btnPrimary}>次へ →</button>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
@@ -985,149 +1072,105 @@ export default function AI_chat() {
     const allLessons = generateLessonNumbers();
 
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className="w-full max-w-4xl p-6">
-        <h1 className="text-2xl font-bold mb-6">練習するカテゴリーを選択してください</h1>
+      <>
+        <style>{`
+          .vocab-wrap{max-width:960px;margin:0 auto}
+          .cat-list{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+          .cat-btn{padding:12px;border-radius:10px;border:1px solid #e6e9ef;text-align:left;background:white;cursor:pointer}
+          .cat-btn.active{background:#2563eb;color:white;box-shadow:0 10px 28px rgba(37,99,235,0.12)}
+          .small-box{background:#f8fafc;padding:12px;border-radius:10px}
+          .grid-lessons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-height:320px;overflow:auto;padding:8px;background:white;border-radius:8px;border:1px solid #eef2f6}
+        `}</style>
 
-        <div className="flex flex-col gap-3 mb-8">
-          {vocabCategories.map(([key, value]) => (
-            <button
-              key={key}
-              onClick={() => {
-                setVocabCategory(key);
-                setVocabLessonType("range");
-                setVocabRangeStart("1");
-                setVocabRangeEnd("5");
-                setVocabIndividualLessons(["1"]);
-              }}
-              className={`p-4 rounded-lg font-semibold transition text-left border border-gray-200 ${
-                vocabCategory === key
-                  ? "bg-blue-600 text-white shadow-md"
-                  : "bg-white text-gray-800 hover:shadow-sm hover:bg-gray-50"
-              }`}
-            >
-              <div className="font-semibold">{value}</div>
-              <div className="text-sm opacity-75">({LESSON_COUNTS[key]}レッスン)</div>
-            </button>
-          ))}
-        </div>
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+          <div className={`${contentClass} vocab-wrap`}>
+            <h1 style={{ fontSize: 22 }}>練習するカテゴリーを選択してください</h1>
 
-        {/* Lesson selection mode */}
-        <div className="bg-gray-50 p-6 rounded-lg mb-6">
-          <h2 className="text-xl font-bold mb-4">レッスン選択方法</h2>
-
-          <div className="flex gap-4 mb-6">
-            <label className="flex items-center cursor-pointer">
-              <input
-                type="radio"
-                name="lessonSelectType"
-                value="range"
-                checked={vocabLessonType === "range"}
-                onChange={() => setVocabLessonType("range")}
-                className="w-4 h-4 mr-2"
-              />
-              <span className="font-medium">範囲で選択 (例: Lesson 1～10)</span>
-            </label>
-            <label className="flex items-center cursor-pointer">
-              <input
-                type="radio"
-                name="lessonSelectType"
-                value="individual"
-                checked={vocabLessonType === "individual"}
-                onChange={() => setVocabLessonType("individual")}
-                className="w-4 h-4 mr-2"
-              />
-              <span className="font-medium">個別に選択</span>
-            </label>
-          </div>
-
-          {/* Range selection */}
-          {vocabLessonType === "range" && (
-            <div className="space-y-4">
-              <div>
-                <label className="block font-semibold mb-2">開始レッスン:</label>
-                <input
-                  type="number"
-                  min="1"
-                  max={maxLessonsForCategory}
-                  value={vocabRangeStart}
-                  onChange={(e) => setVocabRangeStart(e.target.value)}
-                  className="w-full border rounded-lg p-3"
-                />
-              </div>
-              <div>
-                <label className="block font-semibold mb-2">終了レッスン:</label>
-                <input
-                  type="number"
-                  min="1"
-                  max={maxLessonsForCategory}
-                  value={vocabRangeEnd}
-                  onChange={(e) => setVocabRangeEnd(e.target.value)}
-                  className="w-full border rounded-lg p-3"
-                />
-              </div>
-              <div className="bg-blue-100 p-3 rounded-lg">
-                <p className="text-sm">
-                  選択中: Lesson {vocabRangeStart} ～ {vocabRangeEnd} 
-                  ({Math.max(0, parseInt(vocabRangeEnd) - parseInt(vocabRangeStart) + 1)}レッスン)
-                </p>
-              </div>
+            <div className="cat-list">
+              {vocabCategories.map(([key, value]) => (
+                <button
+                  key={key}
+                  onClick={() => {
+                    setVocabCategory(key);
+                    setVocabLessonType("range");
+                    setVocabRangeStart("1");
+                    setVocabRangeEnd("5");
+                    setVocabIndividualLessons(["1"]);
+                  }}
+                  className={`cat-btn ${vocabCategory === key ? "active" : ""}`}
+                >
+                  <div style={{ fontWeight: 700 }}>{value}</div>
+                  <div style={{ fontSize: 13, opacity: 0.8 }}>({LESSON_COUNTS[key]}レッスン)</div>
+                </button>
+              ))}
             </div>
-          )}
 
-          {/* Individual selection */}
-          {vocabLessonType === "individual" && (
-            <div>
-              <p className="font-semibold mb-4">個別にレッスンを選択してください</p>
-              <div className="grid grid-cols-4 gap-2 max-h-80 overflow-y-auto border rounded-lg p-4 bg-white">
-                {allLessons.map((lesson) => (
-                  <label key={lesson} className="flex items-center cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={vocabIndividualLessons.includes(lesson)}
-                      onChange={() => handleVocabLessonToggle(lesson)}
-                      className="w-4 h-4 mr-2"
-                    />
-                    <span className="text-sm">L{lesson}</span>
-                  </label>
-                ))}
+            <div className="small-box" style={{ marginBottom: 12 }}>
+              <h2 style={{ margin: "0 0 8px 0" }}>レッスン選択方法</h2>
+
+              <div style={{ display: "flex", gap: 16, marginBottom: 10 }}>
+                <label style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <input type="radio" checked={vocabLessonType === "range"} onChange={() => setVocabLessonType("range")} />
+                  <span style={{ fontWeight: 600 }}>範囲で選択 (例: Lesson 1～10)</span>
+                </label>
+                <label style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <input type="radio" checked={vocabLessonType === "individual"} onChange={() => setVocabLessonType("individual")} />
+                  <span style={{ fontWeight: 600 }}>個別に選択</span>
+                </label>
               </div>
-              <p className="text-sm text-gray-600 mt-3">
-                選択中: {vocabIndividualLessons.length}レッスン
-              </p>
-            </div>
-          )}
-        </div>
 
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => setStep("components")}
-            className={btnSecondary}
-          >
-            ← 戻る
-          </button>
-          <button
-            onClick={() => {
-              if (vocabLessonType === "range") {
-                const start = parseInt(vocabRangeStart);
-                const end = parseInt(vocabRangeEnd);
-                if (start < 1 || end > maxLessonsForCategory || start > end) {
-                  alert(`レッスン番号は1～${maxLessonsForCategory}の範囲で、開始≤終了となるように入力してください`);
+              {vocabLessonType === "range" && (
+                <div style={{ display: "grid", gap: 8 }}>
+                  <div>
+                    <label style={{ display: "block", fontWeight: 700, marginBottom: 6 }}>開始レッスン:</label>
+                    <input type="number" min={1} max={maxLessonsForCategory} value={vocabRangeStart} onChange={(e) => setVocabRangeStart(e.target.value)} style={{ width: "100%", padding: 10, borderRadius: 8, border: "1px solid #e6e9ef" }} />
+                  </div>
+                  <div>
+                    <label style={{ display: "block", fontWeight: 700, marginBottom: 6 }}>終了レッスン:</label>
+                    <input type="number" min={1} max={maxLessonsForCategory} value={vocabRangeEnd} onChange={(e) => setVocabRangeEnd(e.target.value)} style={{ width: "100%", padding: 10, borderRadius: 8, border: "1px solid #e6e9ef" }} />
+                  </div>
+                  <div style={{ background: "#e6f0ff", padding: 10, borderRadius: 8 }}>
+                    <p style={{ margin: 0 }}>選択中: Lesson {vocabRangeStart} ～ {vocabRangeEnd} ({Math.max(0, parseInt(vocabRangeEnd) - parseInt(vocabRangeStart) + 1)}レッスン)</p>
+                  </div>
+                </div>
+              )}
+
+              {vocabLessonType === "individual" && (
+                <div>
+                  <p style={{ fontWeight: 700 }}>個別にレッスンを選択してください</p>
+                  <div className="grid-lessons" style={{ marginBottom: 8 }}>
+                    {allLessons.map((lesson) => (
+                      <label key={lesson} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <input type="checkbox" checked={vocabIndividualLessons.includes(lesson)} onChange={() => handleVocabLessonToggle(lesson)} />
+                        <span style={{ fontSize: 13 }}>L{lesson}</span>
+                      </label>
+                    ))}
+                  </div>
+                  <p style={{ color: "#6b7280" }}>選択中: {vocabIndividualLessons.length}レッスン</p>
+                </div>
+              )}
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "center", gap: 12 }}>
+              <button onClick={() => setStep("components")} className="btn-accent">← 戻る</button>
+              <button onClick={() => {
+                if (vocabLessonType === "range") {
+                  const start = parseInt(vocabRangeStart);
+                  const end = parseInt(vocabRangeEnd);
+                  if (start < 1 || end > maxLessonsForCategory || start > end) {
+                    alert(`レッスン番号は1～${maxLessonsForCategory}の範囲で、開始≤終了となるように入力してください`);
+                    return;
+                  }
+                } else if (vocabIndividualLessons.length === 0) {
+                  alert("少なくとも1つのレッスンを選択してください");
                   return;
                 }
-              } else if (vocabIndividualLessons.length === 0) {
-                alert("少なくとも1つのレッスンを選択してください");
-                return;
-              }
-              setStep("structure");
-            }}
-            className={btnPrimary}
-          >
-            次へ →
-          </button>
-        </div>
-        </div>
-      </main>
+                setStep("structure");
+              }} className={btnPrimary}>次へ →</button>
+            </div>
+          </div>
+        </main>
+      </>
     );
   }
 
@@ -1135,7 +1178,7 @@ export default function AI_chat() {
   if (mode === "lesson" && step === "structure") {
     const structure = generateLessonStructure();
     const testsDisplay = selectedTests.map(t => t === "Other" ? customTest : t).join(", ");
-    
+
     let vocabDisplay = "";
     if (selectedComponents.includes("Vocab Practice")) {
       if (vocabLessonType === "range") {
@@ -1146,105 +1189,101 @@ export default function AI_chat() {
     }
 
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-        <div className={contentClass}>
-        <h1 className="text-2xl font-bold mb-6">レッスン構成を確認してください</h1>
+      <>
+        <style>{`
+          .summary-block{background:#eff6ff;padding:12px;border-radius:10px;margin-bottom:12px}
+          .green-block{background:#ecfdf5;padding:12px;border-radius:10px;margin-bottom:12px}
+          .struct-item{display:flex;justify-content:space-between;align-items:center;padding:10px;background:white;border-radius:8px;border:1px solid #eef2f6}
+          .controls{display:flex;gap:12px;justify-content:center}
+        `}</style>
 
-        <div className="bg-blue-50 p-6 rounded-lg mb-6">
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-700">英語レベル:</h3>
-            <p className="text-lg font-bold">{level}</p>
-          </div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-700">トピック:</h3>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {topicsToPass.map((topic) => (
-                <span key={topic} className="bg-blue-200 px-3 py-1 rounded-full text-sm">
-                  {topic}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-700">試験:</h3>
-            <p className="text-lg font-bold">{testsDisplay}</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-gray-700">スキル:</h3>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {selectedSkills.map((skill) => (
-                <span key={skill} className="bg-green-200 px-3 py-1 rounded-full text-sm">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+          <div className={contentClass}>
+            <h1 style={{ fontSize: 22 }}>レッスン構成を確認してください</h1>
 
-        <div className="bg-green-50 p-6 rounded-lg mb-6">
-          <h2 className="text-xl font-bold mb-4">レッスン時間と構成</h2>
-          <div className="mb-4">
-            <h3 className="font-semibold text-gray-700 mb-2">希望時間:</h3>
-            <p className="text-lg font-bold">{selectedDuration}分</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-gray-700 mb-3">内容構成:</h3>
-            <div className="space-y-2">
-              {structure.map((item, idx) => (
-                <div key={idx} className="flex justify-between items-center p-3 bg-white rounded-lg border">
-                  <span className="font-semibold">{item.name}</span>
-                  <span className="bg-green-200 px-3 py-1 rounded-full font-bold">{item.minutes}分</span>
+            <div className="summary-block">
+              <div style={{ marginBottom: 8 }}>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>英語レベル:</h3>
+                <p style={{ margin: "6px 0 0", fontSize: 18 }}>{level}</p>
+              </div>
+
+              <div style={{ marginTop: 10 }}>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>トピック:</h3>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
+                  {topicsToPass.map((topic) => (
+                    <div key={topic} style={{ background: "#dbeafe", padding: "6px 10px", borderRadius: 999 }}>{topic}</div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div style={{ marginTop: 10 }}>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>試験:</h3>
+                <p style={{ margin: "6px 0 0", fontSize: 16 }}>{testsDisplay}</p>
+              </div>
+
+              <div style={{ marginTop: 10 }}>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>スキル:</h3>
+                <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+                  {selectedSkills.map((skill) => (
+                    <div key={skill} style={{ background: "#bbf7d0", padding: "6px 10px", borderRadius: 999 }}>{skill}</div>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {vocabDisplay && (
-          <div className="bg-purple-50 p-4 rounded-lg mb-6">
-            <p className="text-sm">
-              <strong>単語練習:</strong> {vocabDisplay}
-            </p>
-          </div>
-        )}
+            <div className="green-block">
+              <h2 style={{ margin: "0 0 8px 0" }}>レッスン時間と構成</h2>
+              <div style={{ marginBottom: 8 }}>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>希望時間:</h3>
+                <p style={{ margin: "6px 0 0", fontSize: 18 }}>{selectedDuration}分</p>
+              </div>
 
-          <div className="flex justify-center gap-6">
-            <button
-              onClick={() => {
+              <div>
+                <h3 style={{ margin: 0, fontWeight: 800 }}>内容構成:</h3>
+                <div style={{ marginTop: 8, display: "grid", gap: 8 }}>
+                  {structure.map((item, idx) => (
+                    <div key={idx} className="struct-item">
+                      <span style={{ fontWeight: 700 }}>{item.name}</span>
+                      <span style={{ background: "#bbf7d0", padding: "6px 10px", borderRadius: 999, fontWeight: 700 }}>{item.minutes}分</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {vocabDisplay && (
+              <div style={{ background: "#f3e8ff", padding: 12, borderRadius: 10, marginBottom: 12 }}>
+                <p style={{ margin: 0 }}><strong>単語練習:</strong> {vocabDisplay}</p>
+              </div>
+            )}
+
+            <div className="controls">
+              <button onClick={() => {
                 if (selectedComponents.includes("Vocab Practice")) {
                   setStep("vocab-category");
                 } else {
                   setStep("components");
                 }
-              }}
-              className={btnSecondary}
-            >
-              ← 編集
-            </button>
-            <button
-              onClick={() => {
-                  // Start lesson: initialize state and then send the first component prompt
-                  const firstComp = selectedComponents && selectedComponents.length > 0 ? selectedComponents[0] : null;
-                  if (firstComp) {
-                    const prompt = generateComponentContent(firstComp);
-                    setChatLog([]);
-                    setLessonStartTime(Date.now());
-                    setTimeElapsed(0);
-                    setCurrentComponent(0);
-                    setStep("chatting");
-                    // Send the component prompt to AI in a setTimeout to ensure state updates
-                    setTimeout(() => {
-                      handleLessonStart(prompt);
-                    }, 50);
-                  }
-                }}
-              className={btnStart}
-            >
-              レッスンを開始する
-            </button>
+              }} className="btn-accent">← 編集</button>
+
+              <button onClick={() => {
+                const firstComp = selectedComponents && selectedComponents.length > 0 ? selectedComponents[0] : null;
+                if (firstComp) {
+                  const prompt = generateComponentContent(firstComp);
+                  setChatLog([]);
+                  setLessonStartTime(Date.now());
+                  setTimeElapsed(0);
+                  setCurrentComponent(0);
+                  setStep("chatting");
+                  setTimeout(() => {
+                    handleLessonStart(prompt);
+                  }, 50);
+                }
+              }} className={btnStart} style={{ padding: "14px 22px", borderRadius: 14 }}>レッスンを開始する</button>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
@@ -1266,105 +1305,109 @@ export default function AI_chat() {
     }
 
     return (
-      <main className={containerClass} style={{ paddingTop: '92px' }}>
-         {disclaimerBanner}
-        <div className={contentClass}>
-          <div className="mb-4">
-            <div className="flex justify-between items-start mb-2">
-              <div>
-                <h1 className="text-2xl font-bold">{mode === "casual" ? "AIとの会話" : "AIによるレッスン"}</h1>
-                <p className="text-sm text-gray-600">レベル: {level}</p>
+      <>
+        <style>{`
+          .chat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
+          .chat-meta{background:#eef2ff;padding:10px;border-radius:8px;text-align:right}
+          .current-session{background:linear-gradient(90deg,#f3e8ff,#eef2ff);padding:10px;border-radius:10px;margin-bottom:12px;border-left:4px solid #a78bfa}
+          .chat-window{background:#f8fafc;border-radius:10px;padding:12px;height:360px;overflow:auto;margin-bottom:12px;border:1px solid #eef2f6}
+          .msg-user{background:#dbeafe;padding:10px;border-radius:10px;margin-left:36px;text-align:right}
+          .msg-llm{background:#e5e7eb;padding:10px;border-radius:10px;margin-right:36px;text-align:left}
+          .msg-timer{background:#fff7cc;padding:10px;border-left:4px solid #f59e0b;border-radius:8px;margin-right:36px;font-weight:700}
+          .chat-controls{display:flex;gap:8px}
+          .input-text{flex:1;padding:10px;border-radius:10px;border:1px solid #e6e9ef}
+          .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
+        `}</style>
+
+        <main className={containerClass} style={{ paddingTop: '92px' }}>
+           {disclaimerBanner}
+          <div className={contentClass}>
+            <div style={{ marginBottom: 12 }}>
+              <div className="chat-top">
+                <div>
+                  <h1 style={{ margin: 0, fontSize: 20 }}>{mode === "casual" ? "AIとの会話" : "AIによるレッスン"}</h1>
+                  <p style={{ margin: "6px 0 0", color: "#6b7280" }}>レベル: {level}</p>
+                </div>
+                {mode === "lesson" && lessonStartTime && (
+                  <div className="chat-meta">
+                    <p style={{ margin: 0, fontSize: 13, color: "#6b7280" }}>経過時間：{formatTime(timeElapsed)}</p>
+                    <p style={{ margin: 0, fontSize: 11, color: "#9ca3af" }}>合計: {selectedDuration}分</p>
+                  </div>
+                )}
               </div>
-              {mode === "lesson" && lessonStartTime && (
-                <div className="text-right bg-blue-100 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600">経過時間：{formatTime(timeElapsed)}</p>
-                  <p className="text-xs text-gray-500">合計: {selectedDuration}分</p>
+
+              {mode === "lesson" && selectedComponents.length > 0 && currentComponentInfo && (
+                <div className="current-session">
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
+                    <div><p style={{ margin: 0, fontSize: 12, color: "#6b7280" }}>現在のセッション：{selectedComponents[currentComponent]}</p></div>
+                    <div><p style={{ margin: 0, fontSize: 12, color: "#6b7280" }}>このセッション時間：{currentComponentInfo.durationSeconds / 60}分</p></div>
+                    <div><p style={{ margin: 0, fontSize: 12, color: "#6b7280" }}>進捗：{currentComponent + 1}/{selectedComponents.length}</p></div>
+                  </div>
                 </div>
               )}
             </div>
 
-            {mode === "lesson" && selectedComponents.length > 0 && currentComponentInfo && (
-              <div className="mt-3 bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg border-l-4 border-purple-500">
-                <div className="grid grid-cols-3 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-600 font-semibold">現在のセッション：{selectedComponents[currentComponent]}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-600 font-semibold">このセッション時間：{currentComponentInfo.durationSeconds / 60}分</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-600 font-semibold">進捗：{currentComponent + 1}/{selectedComponents.length}</p>
-                  </div>
+            <div className="chat-window" role="log" aria-live="polite">
+              {chatLog.length === 0 ? (
+                <div style={{ textAlign: "center", color: "#9ca3af", paddingTop: 40 }}>
+                  <p style={{ marginBottom: 8 }}>{mode === "casual" ? "AIから会話を開始するために考えています、初めに少々お待ちください" : "レッスンを開始するために考えています、初めに少々お待ちください"}</p>
+                  <p style={{ fontSize: 12, color: "#c7d2fe" }}>⏳ AI が応答を準備しています...</p>
                 </div>
-              </div>
-            )}
-          </div>
+              ) : (
+                chatLog.map((entry, index) => (
+                  <div key={index} style={{ marginBottom: 10 }}>
+                    {entry.sender === "user" ? (
+                      <div className="msg-user">{entry.text}</div>
+                    ) : entry.text.startsWith("⏱️") ? (
+                      <div className="msg-timer">{entry.text}</div>
+                    ) : (
+                      <div className="msg-llm">
+                        <div style={{ whiteSpace: "pre-wrap" }}>{entry.text}</div>
+                        <div style={{ marginTop: 8, display: "flex", gap: 8, alignItems: "center" }}>
+                          <button onClick={() => fetchAndPlayVoice(entry.text, index)} style={{ background: "#2563eb", color: "white", border: "none", padding: "6px 10px", borderRadius: 8, cursor: "pointer" }}>
+                            {loadingVoiceIndex === index ? "読み込み中..." : "🔊 再生"}
+                          </button>
+                          <div style={{ fontSize: 12, color: "#6b7280" }}>声:</div>
+                          <select value={selectedVoice} onChange={(e) => setSelectedVoice(e.target.value)} style={{ padding: "6px 8px", borderRadius: 6 }}>
+                            <option value="alloy">音声１</option>
+                            <option value="verse">音声２</option>
+                          </select>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
 
-          <div className="border rounded-lg p-4 h-96 overflow-y-auto mb-4 bg-gray-50">
-            {chatLog.length === 0 ? (
-              <div className="text-center text-gray-500 py-8">
-                <p className="mb-2">{mode === "casual" ? "AIから会話を開始するために考えています、初めに少々お待ちください" : "レッスンを開始するために考えています、初めに少々お待ちください"}</p>
-                <p className="text-xs text-gray-400 mt-4">⏳ AI が応答を準備しています...</p>
-              </div>
-            ) : (
-              chatLog.map((entry, index) => (
-                <div key={index} className={`mb-3 p-3 rounded-lg ${entry.sender === "user" ? "bg-blue-100 text-right ml-12" : entry.text.startsWith("⏱️") ? "bg-yellow-100 text-left mr-12 font-semibold border-l-4 border-yellow-500" : "bg-gray-200 text-left mr-12"}`}>
-                  <div className="whitespace-pre-wrap">{entry.text}</div>
-                  {entry.sender === "llm" && !entry.text.startsWith("⏱️") && (
-                    <div className="mt-2 flex items-center gap-2">
-                      <button
-                        onClick={() => fetchAndPlayVoice(entry.text, index)}
-                        className="text-sm bg-blue-500 text-white px-3 py-1 rounded-md hover:opacity-90"
-                      >
-                        {loadingVoiceIndex === index ? "読み込み..." : "🔊 再生"}
-                      </button>
-                      <span className="text-xs text-gray-500">声: </span>
-                      <select
-                        value={selectedVoice}
-                        onChange={(e) => setSelectedVoice(e.target.value)}
-                        className="text-xs border rounded px-2 py-1"
-                      >
-                        <option value="alloy">alloy</option>
-                        <option value="verse">verse</option>
-                        <option value="none">none</option>
-                      </select>
-                    </div>
-                  )}
-                </div>
-              ))
-            )}
-          </div>
+            <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+              <input
+                type="text"
+                className="input-text"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSend()}
+                placeholder="ここに入力..."
+                style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid #e6e9ef" }}
+              />
+              <button onClick={handleSend} className={btnPrimary} style={{ padding: "10px 14px", borderRadius: 10 }}>送信</button>
+            </div>
 
-          <div className="flex gap-2 mb-4">
-            <input
-              type="text"
-              className="flex-1 border rounded-lg p-3"
-              value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSend()}
-              placeholder="ここに入力..."
-            />
-            <button className={btnPrimary} onClick={handleSend}>送信</button>
-          </div>
-
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => {
+            <div className="chat-actions">
+              <button onClick={() => {
                 setMode("choice");
                 setStep("initial");
                 setChatLog([]);
                 setLessonStartTime(null);
                 setTimeElapsed(0);
                 setCurrentComponent(0);
-              }}
-              className={btnSecondary}
-            >
-              ← 最初に戻る
-            </button>
-            <button onClick={() => navigate(-1)} className={btnSecondary}>← ページを出る</button>
+              }} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← 最初に戻る</button>
+
+              <button onClick={() => navigate(-1)} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← ページを出る</button>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </>
     );
   }
 
