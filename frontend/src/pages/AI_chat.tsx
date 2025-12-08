@@ -566,6 +566,12 @@ export default function AI_chat() {
             z-index:60;
             font-size:14px;
           }
+          @media (max-width: 480px) {
+            .disclaimer {
+              padding: 6px 12px;   /* ← 高さが小さくなる */
+              font-size: 13px;     /*（オプション）文字も少し小さく */
+            }
+          }
           .app-container{
             min-height:100vh;
             display:flex;
@@ -1463,83 +1469,157 @@ export default function AI_chat() {
 
         <main className={containerClass} >
           <div className={contentClass}>
+
+
+
+
+
+
+
+           
             <div style={{ marginBottom: 12 }}>
-              <div className="chat-top">
-                <div>
-                  <h1 style={{ margin: 0, fontSize: 20 }}>{mode === "casual" ? "AIとの会話" : "AIによるレッスン"}</h1>
-                  <p>
+              <div className="chat-top" style={{ display: "flex", gap: 16, alignItems: "flex-start", justifyContent: "space-between" }}>
+                <div style={{ flex: 1 }}>
+                  <h1 style={{ margin: 0, fontSize: 20 }}>
+                    {mode === "casual" ? "AIとの会話" : "AIによるレッスン"}
+                  </h1>
+                  <p style={{ marginTop: 6 }}>
                     ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
                   </p>
-                  <p style={{ margin: "6px 0 0", color: "#6b7280" }}>レベル: {level}</p>
-                </div>
 
-                <div className="chat-actions">
-                  <button
-                    onClick={() => {
-                      setMode("choice");
-                      setStep("initial");
-                      setChatLog([]);
-                      setLessonStartTime(null);
-                      setTimeElapsed(0);
-                      setCurrentComponent(0);
-                    }}
-                    style={{
-                      padding: "10px 14px",
-                      borderRadius: "10px",
-                      background: "#fff7f0",
-                      color: "#ff6a00",
-                      border: "2px solid #ff8a3d",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      fontSize: "14px",
-                      transition: "background 0.2s ease, transform 0.15s ease",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
-                    onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
-                    onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                  >
-                    ← 最初に戻る
-                  </button>
+                  {/* 下段：レベル・戻る・出る・経過時間・合計 を横並び */}
+                  <div style={{
+                    marginTop: 10,
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "center",
+                    flexWrap: "wrap"
+                  }}>
+                    <div style={{ fontSize: 14, color: "#374151", minWidth: 88 }}>
+                      <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
+                    </div>
 
-                  <button
-                    onClick={() => navigate("/home")}
-                    style={{
-                      padding: "10px 14px",
-                      borderRadius: "10px",
-                      background: "#fff7f0",
-                      color: "#ff6a00",
-                      border: "2px solid #ff8a3d",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      fontSize: "14px",
-                      transition: "background 0.2s ease, transform 0.15s ease",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
-                    onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
-                    onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                  >
-                    ← ページを出る
-                  </button>
-                </div>
-                {mode === "lesson" && lessonStartTime && (
-                  <div className="chat-meta">
-                    <p style={{ margin: 0, fontSize: 13, color: "#6b7280" }}>経過時間：{formatTime(timeElapsed)}</p>
-                    <p style={{ margin: 0, fontSize: 11, color: "#9ca3af" }}>合計: {selectedDuration}分</p>
+                    <button
+                      onClick={() => {
+                        setMode("choice");
+                        setStep("initial");
+                        setChatLog([]);
+                        setLessonStartTime(null);
+                        setTimeElapsed(0);
+                        setCurrentComponent(0);
+                      }}
+                      style={{
+                        padding: "8px 12px",
+                        borderRadius: "10px",
+                        background: "#fff7f0",
+                        color: "#ff6a00",
+                        border: "2px solid #ff8a3d",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        transition: "background 0.2s ease, transform 0.15s ease"
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
+                      onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
+                      onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                    >
+                      ← 最初に戻る
+                    </button>
+
+                    <button
+                      onClick={() => navigate("/home")}
+                      style={{
+                        padding: "8px 12px",
+                        borderRadius: "10px",
+                        background: "#fff7f0",
+                        color: "#ff6a00",
+                        border: "2px solid #ff8a3d",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        transition: "background 0.2s ease, transform 0.15s ease"
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
+                      onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
+                      onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                    >
+                      ← ページを出る
+                    </button>
+
+                    {/* 右寄せ的に経過時間・合計を表示（狭い画面では折り返します） */}
+                    {mode === "lesson" && lessonStartTime && (
+                      <>
+                        <div style={{ marginLeft: "auto", display: "flex", gap: 10, alignItems: "center" }}>
+                          <div style={{ fontSize: 13, color: "#6b7280" }}>
+                            経過時間：{formatTime(timeElapsed)}
+                          </div>
+                          <div style={{ fontSize: 12, color: "#9ca3af" }}>
+                            合計: {selectedDuration}分
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
-                )}
+                </div>
               </div>
 
+              {/* 現在のセッション情報（横並び3列） */}
               {mode === "lesson" && selectedComponents.length > 0 && currentComponentInfo && (
-                <div className="current-session">
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
-                    <div><p style={{ margin: 0, fontSize: 12, color: "#6b7280" }}>現在のセッション：{selectedComponents[currentComponent]}</p></div>
-                    <div><p style={{ margin: 0, fontSize: 12, color: "#6b7280" }}>このセッション時間：{currentComponentInfo.durationSeconds / 60}分</p></div>
-                    <div><p style={{ margin: 0, fontSize: 12, color: "#6b7280" }}>進捗：{currentComponent + 1}/{selectedComponents.length}</p></div>
+                <div
+                  className="current-session"
+                  style={{
+                    marginTop: 12,
+                    position: "sticky",
+                    top: 92,               
+                    zIndex: 50,
+                    background: "#f3e8ff",
+                    padding: "12px 20px",  
+                    borderRadius: 12,      
+                    marginLeft: "auto",    
+                    marginRight: "auto",  
+                    boxShadow: "0 2px 6px rgba(0,0,0,0.08)" 
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr 1fr",
+                      gap: 12,
+                      alignItems: "center"
+                    }}
+                  >
+                    <div>
+                      <p style={{ margin: 0, fontSize: 13, color: "#374151" }}>
+                        <strong>現在のセッション：</strong>
+                        <span style={{ marginLeft: 6, color: "#6b7280" }}>
+                          {selectedComponents[currentComponent]}
+                        </span>
+                      </p>
+                    </div>
+
+                    <div style={{ textAlign: "center" }}>
+                      <p style={{ margin: 0, fontSize: 13, color: "#374151" }}>
+                        <strong>このセッション時間：</strong>
+                        <span style={{ marginLeft: 6, color: "#6b7280" }}>
+                          {Math.ceil((currentComponentInfo.durationSeconds || 0) / 60)}分
+                        </span>
+                      </p>
+                    </div>
+
+                    <div style={{ textAlign: "right" }}>
+                      <p style={{ margin: 0, fontSize: 13, color: "#374151" }}>
+                        <strong>進歩：</strong>
+                        <span style={{ marginLeft: 6, color: "#6b7280" }}>
+                          {currentComponent + 1}/{selectedComponents.length}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
+
             </div>
 
             <div className="chat-window" role="log" aria-live="polite">
@@ -1562,7 +1642,7 @@ export default function AI_chat() {
                           <button onClick={() => fetchAndPlayVoice(entry.text, index)} style={{ background: "#2563eb", color: "white", border: "none", padding: "6px 10px", borderRadius: 8, cursor: "pointer" }}>
                             {loadingVoiceIndex === index ? "読み込み中..." : "🔊 再生"}
                           </button>
-                          <div style={{ fontSize: 12, color: "#6b7280" }}>声:</div>
+                          <div style={{ fontSize: 12, color: "#6b7280" }}>声を選択:</div>
                           <select value={selectedVoice} onChange={(e) => setSelectedVoice(e.target.value)} style={{ padding: "6px 8px", borderRadius: 6 }}>
                             <option value="alloy">音声１</option>
                             <option value="verse">音声２</option>
@@ -1578,12 +1658,17 @@ export default function AI_chat() {
             <div className="chat-input-row fixed-bottom">
               <input
                 type="text"
-                className="input-text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="ここに入力..."
-                style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid #e6e9ef" }}
+                style={{
+                  flex: 1,
+                  padding: 12,
+                  borderRadius: 10,
+                  border: "2px solid #000",
+                  outline: "none", // ← フォーカス時の青枠を無効化
+                }}
               />
               <button
                 onClick={handleSend}
