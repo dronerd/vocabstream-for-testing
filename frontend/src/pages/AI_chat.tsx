@@ -637,7 +637,7 @@ export default function AI_chat() {
         <main className={containerClass}>
           <div className={`${contentClass} chat-layout`}>
             <div style={{ marginBottom: 30 }}>
-              <h1>AIと何をしたいですか？</h1>
+              <h1>AIとしたいことは何ですか？</h1>
               <p className="lead">今日のあなたの目的を選んでください</p>
             </div>
 
