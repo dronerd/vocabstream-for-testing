@@ -73,7 +73,7 @@ const TOPICS = [
   "Engineering",
 ];
 
-const TESTS = ["英検", "TOEFL", "TOEIC", "IELTS", "ケンブリッジ英検", "特になし"];
+const TESTS = ["特になし", "英検", "TOEFL", "TOEIC", "IELTS", "ケンブリッジ英検", "GTEC", "TEAP", "SAT", "ACT"];
 const SKILLS = ["リーディング", "リスニング", "ライティング", "スピーキング"];
 const COMPONENTS = [
   "単語練習",
@@ -88,7 +88,7 @@ export default function AI_chat() {
   // UI styling helpers and global background
   useEffect(() => {
     const prev = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = "#d8f3dc";
+    document.body.style.backgroundColor = "#f7e1db";
     return () => {
       document.body.style.backgroundColor = prev;
     };
@@ -98,7 +98,7 @@ export default function AI_chat() {
   const disclaimerBanner = (
     <div className="disclaimer">
       <p>
-        ⚠️ <strong>実験機能：</strong> 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
+        ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
       </p>
     </div>
   );
@@ -111,14 +111,13 @@ export default function AI_chat() {
   const btnPrimary = "btn btn-primary";
   const btnSecondary = "btn btn-secondary";
   const btnAccent = "btn btn-accent";
-  const btnStart = "btn btn-start";
 
   // Overall conversation state
   const [mode, setMode] = useState<ConversationMode>("choice");
   const [step, setStep] = useState<ConversationStep>("initial");
 
   // Common settings
-  const [level, setLevel] = useState("A1");
+  const [level, setLevel] = useState("");
   const [levelConfirmed, setLevelConfirmed] = useState(false);
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [customTopic, setCustomTopic] = useState("");
@@ -618,6 +617,7 @@ export default function AI_chat() {
             box-shadow: 0 6px 18px rgba(2,6,23,0.04);
             font-weight:600;
           }
+
         `}</style>
 
         <main className={containerClass}>
@@ -662,22 +662,13 @@ export default function AI_chat() {
                 英語レッスンを受けたい
               </button>
             </div>
-
-            <div className="back-row">
-              <button
-                onClick={() => navigate(-1)}
-                className="btn-accent"
-              >
-                ← 戻る
-              </button>
-            </div>
           </div>
         </main>
       </>
     );
   }
 
-  // Level selection
+  // Level selection 
   if (step === "level") {
     return (
       <>
@@ -686,14 +677,13 @@ export default function AI_chat() {
           .card{padding:28px}
           .levels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
           @media(min-width:720px){.levels{grid-template-columns:repeat(6,1fr)}}
-          .level-btn{
-            padding:18px;border-radius:12px;border:1px solid #e6e9ef;background:white;cursor:pointer;
-            transition:transform .14s ease, box-shadow .14s ease;
-            display:flex;flex-direction:column;align-items:center;
-          }
-          .level-btn.active{background:linear-gradient(180deg,#4f46e5,#4338ca);color:white;box-shadow:0 12px 30px rgba(67,56,202,0.18);transform:scale(1.03)}
+          .level-btn, .option-btn, .dur-btn, .cat-btn{padding:18px;border-radius:12px;border:1px solid #e6e9ef;background:white;cursor:pointer;transition:transform .14s ease, box-shadow .14s ease;display:flex;flex-direction:column;align-items:center}
+          .level-btn.active, .option-btn.active{background:linear-gradient(180deg,#4f46e5,#4338ca);color:white;box-shadow:0 12px 30px rgba(67,56,202,0.18);transform:scale(1.03)}
           .actions-row{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap}
           .next-btn{padding:12px 20px;border-radius:12px;background:#efefef;border:none;cursor:pointer}
+          .selected-display{margin-bottom:12px}
+          .selected-display .label{color:#374151}
+          .selected-display .items{font-weight:800;color:#3730a3}
         `}</style>
 
         <main className={containerClass}>
@@ -701,9 +691,9 @@ export default function AI_chat() {
             <h1 style={{ fontSize: 22, marginBottom: 6 }}>英語レベルの設定</h1>
             <p className="lead">あなたの現在の英語レベルを選んでください</p>
 
-            <div style={{ marginBottom: 12 }}>
-              <span style={{ color: "#374151" }}>選択： </span>
-              <span style={{ fontWeight: 800, color: "#3730a3" }}>{level}</span>
+            <div className="selected-display">
+              <span className="label">選択中： </span>
+              <span className="items">{level || "未選択"}</span>
             </div>
 
             <div className="levels">
@@ -756,15 +746,19 @@ export default function AI_chat() {
     );
   }
 
-  // Topic selection
+  // Topic selection (updated to use option buttons + selected summary)
   if (step === "topic") {
     return (
       <>
         <style>{`
           .form-list{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-          .check-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;border:1px solid #edf2f7;background:white}
+          .option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+          @media(min-width:720px){.option-grid{grid-template-columns:repeat(4,1fr)}}
+          .option-btn{padding:12px;border-radius:10px;border:1px solid #e6e9ef;background:white;cursor:pointer;display:flex;align-items:center;gap:8px;justify-content:center}
+          .option-btn.active{background:linear-gradient(180deg,#4f46e5,#4338ca);color:white;box-shadow:0 12px 30px rgba(67,56,202,0.12);transform:scale(1.02)}
           .input-text{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
           .actions-row{display:flex;gap:12px;justify-content:center;margin-top:8px}
+          .selected-line{margin-bottom:12px}
         `}</style>
 
         <main className={containerClass} style={{ paddingTop: '92px' }}>
@@ -772,16 +766,23 @@ export default function AI_chat() {
             <h1 style={{ fontSize: 22 }}>興味の設定</h1>
             <p className="lead">興味のあるトピックを選択してください。（＊複数選択可能です）</p>
 
-            <div className="form-list">
+            <div className="selected-line">
+              <span style={{ color: "#374151" }}>選択中： </span>
+              <span style={{ fontWeight: 800, color: "#3730a3" }}>
+                {selectedTopics.length > 0 ? selectedTopics.join('・') : '未選択'}
+              </span>
+            </div>
+
+            <div className="option-grid">
               {TOPICS.map((topic) => (
-                <label key={topic} className="check-row">
-                  <input
-                    type="checkbox"
-                    checked={selectedTopics.includes(topic)}
-                    onChange={() => handleTopicToggle(topic)}
-                  />
+                <button
+                  key={topic}
+                  onClick={() => handleTopicToggle(topic)}
+                  className={`option-btn ${selectedTopics.includes(topic) ? 'active' : ''}`}
+                  aria-pressed={selectedTopics.includes(topic)}
+                >
                   <span style={{ fontWeight: 600 }}>{topic}</span>
-                </label>
+                </button>
               ))}
             </div>
 
@@ -816,7 +817,7 @@ export default function AI_chat() {
     );
   }
 
-  // Helper to start casual conversation by sending a prompt to the AI
+  // Casual helper unchanged (kept here for context)
   const handleCasualStart = async () => {
     const casualPrompt = `You are a friendly English conversation partner. Start the conversation with a warm greeting and ask the user a simple, open-ended question to get them talking. For example, you could ask "How are you today?" or "What have you been up to?" based on their interests (${selectedTopics.join(", ")}). Keep the tone natural, friendly, and encouraging. The user is at level ${level}.`;
 
@@ -829,7 +830,7 @@ export default function AI_chat() {
     }, 50);
   };
 
-  // Casual mode confirmation
+  // Casual confirm (unchanged)
   if (mode === "casual" && step === "confirm") {
     return (
       <>
@@ -839,6 +840,30 @@ export default function AI_chat() {
           .summary-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
           .tag{background:#dbeafe;padding:6px 10px;border-radius:999px;font-size:13px}
           .controls{display:flex;gap:10px;justify-content:center}
+                    .modern-orange-btn {
+            background: linear-gradient(135deg, #ff9a3c, #ff6a00);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+          }
+
+          .modern-orange-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 0, 0.45);
+            opacity: 0.95;
+          }
+
+          .modern-orange-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 8px rgba(255, 107, 0, 0.35);
+            opacity: 0.9;
+          }
         `}</style>
 
         <main style={{ paddingTop: 92 }} className="app-container">
@@ -862,7 +887,7 @@ export default function AI_chat() {
 
             <div className="controls">
               <button onClick={() => setStep("topic")} className="btn-accent">← 編集</button>
-              <button onClick={handleCasualStart} className="btn btn-primary">会話を開始する</button>
+              <button onClick={handleCasualStart} className="modern-orange-btn">会話を開始する</button>
             </div>
           </div>
         </main>
@@ -870,15 +895,19 @@ export default function AI_chat() {
     );
   }
 
-  // Lesson mode - Test type selection
+  // Test selection (updated to option buttons + selected summary)
   if (mode === "lesson" && step === "test") {
     return (
       <>
         <style>{`
           .list-col{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-          .check-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f6;background:white}
+          .option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+          @media(min-width:720px){.option-grid{grid-template-columns:repeat(3,1fr)}}
+          .option-btn{padding:12px;border-radius:10px;border:1px solid #eef2f6;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center}
+          .option-btn.active{background:linear-gradient(180deg,#4f46e5,#4338ca);color:white;box-shadow:0 12px 30px rgba(67,56,202,0.12)}
           .small-input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
           .controls{display:flex;gap:10px;justify-content:center}
+          .selected-line{margin-bottom:12px}
         `}</style>
 
         <main className={containerClass} style={{ paddingTop: '92px' }}>
@@ -886,16 +915,23 @@ export default function AI_chat() {
             <h1 style={{ fontSize: 22 }}>英語試験への対策の設定</h1>
             <p className="lead">受験予定の英語試験を選択してください （＊複数選択可能です）</p>
 
-            <div className="list-col">
+            <div className="selected-line">
+              <span style={{ color: "#374151" }}>選択中： </span>
+              <span style={{ fontWeight: 800, color: "#3730a3" }}>
+                {selectedTests.length > 0 ? selectedTests.join('・') : '未選択'}
+              </span>
+            </div>
+
+            <div className="option-grid">
               {TESTS.map((test) => (
-                <label key={test} className="check-row">
-                  <input
-                    type="checkbox"
-                    checked={selectedTests.includes(test)}
-                    onChange={() => handleTestToggle(test)}
-                  />
+                <button
+                  key={test}
+                  onClick={() => handleTestToggle(test)}
+                  className={`option-btn ${selectedTests.includes(test) ? 'active' : ''}`}
+                  aria-pressed={selectedTests.includes(test)}
+                >
                   <span style={{ fontWeight: 600 }}>{test}</span>
-                </label>
+                </button>
               ))}
             </div>
 
@@ -928,31 +964,41 @@ export default function AI_chat() {
     );
   }
 
-  // Lesson mode - Skills selection
+  // Skills selection (updated to option buttons + summary)
   if (mode === "lesson" && step === "skills") {
     return (
       <>
         <style>{`
           .list-col{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-          .check-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f6;background:white}
+          .option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+          @media(min-width:720px){.option-grid{grid-template-columns:repeat(3,1fr)}}
+          .option-btn{padding:12px;border-radius:10px;border:1px solid #eef2f6;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center}
+          .option-btn.active{background:linear-gradient(180deg,#4f46e5,#4338ca);color:white;box-shadow:0 12px 30px rgba(67,56,202,0.12)}
           .controls{display:flex;gap:10px;justify-content:center}
+          .selected-line{margin-bottom:12px}
         `}</style>
-
 
         <main className={containerClass} style={{ paddingTop: '92px' }}>
           <div className={contentClass}>
             <h1 style={{ fontSize: 22 }}>伸ばしたいスキルを選択してください</h1>
 
-            <div className="list-col">
+            <div className="selected-line">
+              <span style={{ color: "#374151" }}>選択中： </span>
+              <span style={{ fontWeight: 800, color: "#3730a3" }}>
+                {selectedSkills.length > 0 ? selectedSkills.join('・') : '未選択'}
+              </span>
+            </div>
+
+            <div className="option-grid">
               {SKILLS.map((skill) => (
-                <label key={skill} className="check-row">
-                  <input
-                    type="checkbox"
-                    checked={selectedSkills.includes(skill)}
-                    onChange={() => handleSkillToggle(skill)}
-                  />
+                <button
+                  key={skill}
+                  onClick={() => handleSkillToggle(skill)}
+                  className={`option-btn ${selectedSkills.includes(skill) ? 'active' : ''}`}
+                  aria-pressed={selectedSkills.includes(skill)}
+                >
                   <span style={{ fontWeight: 600 }}>{skill}</span>
-                </label>
+                </button>
               ))}
             </div>
 
@@ -972,7 +1018,7 @@ export default function AI_chat() {
     );
   }
 
-  // Lesson mode - Duration selection
+  // Duration selection (kept similar, but updated selected display style)
   if (mode === "lesson" && step === "duration") {
     return (
       <>
@@ -989,6 +1035,15 @@ export default function AI_chat() {
             <h1 style={{ fontSize: 22 }}>レッスンの希望時間を選択してください</h1>
             <p className="lead">レッスンに費やしたい時間を選んでください</p>
 
+            <div className="selected-display">
+              <span className="label">選択中： </span>
+          
+              <span className="items" style={{ fontWeight: 800, color: "#3730a3" }}>
+                {selectedDuration ? `${selectedDuration}分` : "未選択"}
+                <br/>
+              </span>
+            </div>
+
             <div className="dur-grid">
               {[5, 10, 15, 20, 25, 30].map((min) => (
                 <button
@@ -1002,10 +1057,6 @@ export default function AI_chat() {
               ))}
             </div>
 
-            <div className="summary-box">
-              <p style={{ margin: 0 }}>選択中: <strong style={{ fontSize: 16 }}>{selectedDuration}分</strong></p>
-            </div>
-
             <div style={{ display: "flex", justifyContent: "center", gap: 12 }}>
               <button onClick={() => setStep("skills")} className="btn-accent">← 戻る</button>
               <button onClick={() => setStep("components")} className={btnPrimary}>次へ →</button>
@@ -1016,30 +1067,41 @@ export default function AI_chat() {
     );
   }
 
-  // Lesson mode - Components selection
+  // Components selection (updated to option buttons + selected summary)
   if (mode === "lesson" && step === "components") {
     return (
       <>
         <style>{`
           .list-col{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-          .check-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f6;background:white}
+          .option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+          @media(min-width:720px){.option-grid{grid-template-columns:repeat(3,1fr)}}
+          .option-btn{padding:12px;border-radius:10px;border:1px solid #eef2f6;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center}
+          .option-btn.active{background:linear-gradient(180deg,#4f46e5,#4338ca);color:white;box-shadow:0 12px 30px rgba(67,56,202,0.12)}
           .controls{display:flex;gap:10px;justify-content:center}
+          .selected-line{margin-bottom:12px}
         `}</style>
 
         <main className={containerClass} style={{ paddingTop: '92px' }}>
           <div className={contentClass}>
             <h1 style={{ fontSize: 22 }}>レッスンに含める内容を選択してください</h1>
 
-            <div className="list-col">
+            <div className="selected-line">
+              <span style={{ color: "#374151" }}>選択中： </span>
+              <span style={{ fontWeight: 800, color: "#3730a3" }}>
+                {selectedComponents.length > 0 ? selectedComponents.join('・') : '未選択'}
+              </span>
+            </div>
+
+            <div className="option-grid">
               {COMPONENTS.map((component) => (
-                <label key={component} className="check-row">
-                  <input
-                    type="checkbox"
-                    checked={selectedComponents.includes(component)}
-                    onChange={() => handleComponentToggle(component)}
-                  />
+                <button
+                  key={component}
+                  onClick={() => handleComponentToggle(component)}
+                  className={`option-btn ${selectedComponents.includes(component) ? 'active' : ''}`}
+                  aria-pressed={selectedComponents.includes(component)}
+                >
                   <span style={{ fontWeight: 600 }}>{component}</span>
-                </label>
+                </button>
               ))}
             </div>
 
@@ -1063,7 +1125,7 @@ export default function AI_chat() {
     );
   }
 
-  // Lesson mode - Vocab category selection
+  // Vocab category section kept mostly the same (cat-btn already fits the style)
   if (mode === "lesson" && step === "vocab-category") {
     const vocabCategories = Object.entries(CATEGORIES).filter(([key]) =>
       key.includes("word") || key.includes("idioms") || key.includes("business")
@@ -1174,10 +1236,13 @@ export default function AI_chat() {
     );
   }
 
+
+
   // Lesson mode - Lesson structure preview
   if (mode === "lesson" && step === "structure") {
     const structure = generateLessonStructure();
-    const testsDisplay = selectedTests.map(t => t === "Other" ? customTest : t).join(", ");
+    // Keep testsDisplay as an array so we can map it like topicsToPass/selectedSkills
+    const testsDisplay = selectedTests.length > 0 ? selectedTests.map(t => t === "Other" ? customTest : t) : [];
 
     let vocabDisplay = "";
     if (selectedComponents.includes("Vocab Practice")) {
@@ -1191,17 +1256,48 @@ export default function AI_chat() {
     return (
       <>
         <style>{`
-          .summary-block{background:#eff6ff;padding:12px;border-radius:10px;margin-bottom:12px}
-          .green-block{background:#ecfdf5;padding:12px;border-radius:10px;margin-bottom:12px}
+          .summary-grid{display:block;gap:12px}
+          @media(min-width:920px){
+            .summary-grid{display:flex;align-items:stretch;gap:12px}
+            .summary-block, .green-block{flex:1;margin-bottom:0;display:flex;flex-direction:column}
+            .summary-block{margin-right:12px}
+          }
+          .summary-block{background:#eff6ff;padding:12px;border-radius:10px;margin-bottom:12px;display:flex;flex-direction:column}
+          .green-block{background:#ecfdf5;padding:12px;border-radius:10px;margin-bottom:12px;display:flex;flex-direction:column}
           .struct-item{display:flex;justify-content:space-between;align-items:center;padding:10px;background:white;border-radius:8px;border:1px solid #eef2f6}
           .controls{display:flex;gap:12px;justify-content:center}
+                    .modern-orange-btn {
+            background: linear-gradient(135deg, #ff9a3c, #ff6a00);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+          }
+
+          .modern-orange-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 0, 0.45);
+            opacity: 0.95;
+          }
+
+          .modern-orange-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 8px rgba(255, 107, 0, 0.35);
+            opacity: 0.9;
+          }
         `}</style>
 
         <main className={containerClass} style={{ paddingTop: '92px' }}>
           <div className={contentClass}>
-            <h1 style={{ fontSize: 22 }}>レッスン構成を確認してください</h1>
+            <h1 style={{ fontSize: 22 }}>レッスンの設定を確認してください</h1>
 
-            <div className="summary-block">
+            <div className="summary-grid">
+              <div className="summary-block">
               <div style={{ marginBottom: 8 }}>
                 <h3 style={{ margin: 0, fontWeight: 800 }}>英語レベル:</h3>
                 <p style={{ margin: "6px 0 0", fontSize: 18 }}>{level}</p>
@@ -1218,20 +1314,25 @@ export default function AI_chat() {
 
               <div style={{ marginTop: 10 }}>
                 <h3 style={{ margin: 0, fontWeight: 800 }}>試験:</h3>
-                <p style={{ margin: "6px 0 0", fontSize: 16 }}>{testsDisplay}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
+                  {testsDisplay.map((test) => (
+                    <div key={test} style={{ background: "#dbeafe", padding: "6px 10px", borderRadius: 999 }}>{test}</div>
+                  ))}
+                </div>
+                
               </div>
 
               <div style={{ marginTop: 10 }}>
                 <h3 style={{ margin: 0, fontWeight: 800 }}>スキル:</h3>
                 <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
                   {selectedSkills.map((skill) => (
-                    <div key={skill} style={{ background: "#bbf7d0", padding: "6px 10px", borderRadius: 999 }}>{skill}</div>
+                    <div key={skill} style={{ background: "#dbeafe", padding: "6px 10px", borderRadius: 999 }}>{skill}</div>
                   ))}
                 </div>
               </div>
-            </div>
+              </div>
 
-            <div className="green-block">
+              <div className="green-block">
               <h2 style={{ margin: "0 0 8px 0" }}>レッスン時間と構成</h2>
               <div style={{ marginBottom: 8 }}>
                 <h3 style={{ margin: 0, fontWeight: 800 }}>希望時間:</h3>
@@ -1248,6 +1349,7 @@ export default function AI_chat() {
                     </div>
                   ))}
                 </div>
+              </div>
               </div>
             </div>
 
@@ -1279,7 +1381,7 @@ export default function AI_chat() {
                     handleLessonStart(prompt);
                   }, 50);
                 }
-              }} className={btnStart} style={{ padding: "14px 22px", borderRadius: 14 }}>レッスンを開始する</button>
+              }} className="modern-orange-btn"  style={{ padding: "14px 22px", borderRadius: 14 }}>レッスンを開始する</button>
             </div>
           </div>
         </main>
@@ -1320,13 +1422,27 @@ export default function AI_chat() {
         `}</style>
 
         <main className={containerClass} style={{ paddingTop: '92px' }}>
-           {disclaimerBanner}
+          
+          {disclaimerBanner}
           <div className={contentClass}>
             <div style={{ marginBottom: 12 }}>
               <div className="chat-top">
                 <div>
                   <h1 style={{ margin: 0, fontSize: 20 }}>{mode === "casual" ? "AIとの会話" : "AIによるレッスン"}</h1>
                   <p style={{ margin: "6px 0 0", color: "#6b7280" }}>レベル: {level}</p>
+                </div>
+
+                <div className="chat-actions">
+                  <button onClick={() => {
+                    setMode("choice");
+                    setStep("initial");
+                    setChatLog([]);
+                    setLessonStartTime(null);
+                    setTimeElapsed(0);
+                    setCurrentComponent(0);
+                  }} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← 最初に戻る</button>
+
+                  <button onClick={() => navigate("/home")} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← ページを出る</button>
                 </div>
                 {mode === "lesson" && lessonStartTime && (
                   <div className="chat-meta">
@@ -1393,18 +1509,7 @@ export default function AI_chat() {
               <button onClick={handleSend} className={btnPrimary} style={{ padding: "10px 14px", borderRadius: 10 }}>送信</button>
             </div>
 
-            <div className="chat-actions">
-              <button onClick={() => {
-                setMode("choice");
-                setStep("initial");
-                setChatLog([]);
-                setLessonStartTime(null);
-                setTimeElapsed(0);
-                setCurrentComponent(0);
-              }} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← 最初に戻る</button>
 
-              <button onClick={() => navigate(-1)} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← ページを出る</button>
-            </div>
           </div>
         </main>
       </>

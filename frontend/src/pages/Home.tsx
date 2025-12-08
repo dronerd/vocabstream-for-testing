@@ -13,7 +13,7 @@ export default function Home() {
 
   const options = [
     { label: "単語を学習する", path: "/learn" },
-    { label: "単語を復習する", path: "/review" },
+    { label: "AIと話す", path: "/ai_chat" },
     { label: "その他の機能", path: "/others" },
   ];
 
@@ -164,11 +164,13 @@ export default function Home() {
         </a>
         の一環として制作した無料の英単語学習アプリです。
         <br />
-        現在は安定して動作する一部機能のみを公開し、
+        現在は一部機能のみを公開し、
         <a href="/learn" style={{ textDecoration: "underline" }}><strong>約3000の単語の学習機能</strong></a>
-          （熟語・ビジネス・専門用語は実装中）と、英語学習に役立つ
+          （熟語・ビジネス・専門用語は実装中）と
         <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTプロンプト集</strong></a>
-          を使用できます。今後のアップデートをお楽しみに！
+            、
+        <a href="/ai_chat" style={{ textDecoration: "underline" }}><strong>AI会話機能</strong></a>
+          を使用できます。今後のアップデートをお楽しみに！ ＊パソコンでの使用を推奨します。
       </p>
 
       <div className="options-grid">

@@ -16,8 +16,8 @@ export default function BottomNav() {
   // 各リンクの色を少し濃くしたバージョン
   const navItems = [
     { path: "/home", label: "Home", color: "#081230" }, // blackより少し明るめで見やすい
-    { path: "/learn", label: "学習", color: "#4a86c5" }, // 柔らかいブルーより少し濃い
-    { path: "/review", label: "復習", color: "#d4795e" }, // サーモンより少し濃い
+    { path: "/learn", label: "単語学習", color: "#4a86c5" }, // 柔らかいブルーより少し濃い
+    { path: "/ai_chat", label: "AIと話す", color: "#d4795e" }, // サーモンより少し濃い
     { path: "/others", label: "その他の機能", color: "#52b788" }, // パステルグリーンより少し濃い
   ];
 
@@ -87,20 +87,36 @@ export default function BottomNav() {
     <>
       <style>{style}</style>
       <nav className="nav-bottom" aria-label="Bottom navigation">
-        {navItems.map(({ path, label, color }) => (
-          <Link
-            key={path}
-            to={path}
-            className="bottom-link"
-            style={{
-              color,
-              fontWeight: location.pathname === path ? "800" : "600",
-            }}
-            aria-current={location.pathname === path ? "page" : undefined}
-          >
-            {label}
-          </Link>
-        ))}
+        {navItems.map(({ path, label, color }) => {
+          const isActive = location.pathname === path;
+
+          const activeStyle = isActive
+            ? {
+                fontWeight: "800",
+                background: `${color}20`, // 透明度つき背景
+                border: `1.5px solid ${color}55`,
+                padding: "6px 10px",
+                borderRadius: "8px",
+              }
+            : {};
+
+          return (
+            <Link
+              key={path}
+              to={path}
+              className="bottom-link"
+              style={{
+                color,
+                fontWeight: isActive ? "800" : "600",
+                ...activeStyle,
+              }}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {label}
+            </Link>
+          );
+        })}
+
       </nav>
     </>
   );

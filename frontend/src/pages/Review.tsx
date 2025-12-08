@@ -1,4 +1,7 @@
 
+// Review.tsxは、単語復習ページのコンポーネントであり、
+// 復習機能を青色の単語学習ページと統合したため、現在は使用されていません。
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

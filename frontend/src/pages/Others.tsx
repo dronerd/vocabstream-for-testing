@@ -7,8 +7,12 @@ export default function Review() {
   const baseColor = "#d8f3dc";
 
   // Slightly lighter, reddish button tones
-  const buttonColors = ["#b2ebcb", "#74c69d", "#449e74", "#367a5b"];
-
+  const buttonColors = [
+    "#b2ebcb", // ① 薄い
+    "#7acfa5", // ② やや薄い
+    "#449e74", // ③ 中間
+    "#367a5b"  // ④ 濃い
+  ];
 
   return (
     <div className="review-root">
@@ -75,6 +79,14 @@ export default function Review() {
           justify-content: center;
         }
 
+        a.option-btn {
+          display: flex;
+          height: 100px;
+          text-decoration: none;
+          color: #0d2b1d;
+        }
+
+
         .option-btn:hover {
           transform: translateY(-4px);
           box-shadow: 0 10px 24px rgba(0,0,0,0.12);
@@ -137,26 +149,18 @@ export default function Review() {
 
         <button
           className="option-btn"
-          onClick={() => nav("/ai_chat")}
-          style={{ backgroundColor: buttonColors[1] }}
+          onClick={() => nav("/privacy")}
+          style={{ backgroundColor: buttonColors[2] }}
         >
-          AI会話機能
+          Privacy Policyを確認
         </button>
 
         <button
           className="option-btn"
           onClick={() => nav("/still_under_development")}
-          style={{ backgroundColor: buttonColors[2] }}
-        >
-          アプリ使用マニュアルを見る
-        </button>
-
-        <button
-          className="option-btn"
-          onClick={() => nav("/privacy")}
           style={{ backgroundColor: buttonColors[3] }}
         >
-          Privacy Policyを確認
+          アプリ使用マニュアルを見る
         </button>
       </div>
     </div>
