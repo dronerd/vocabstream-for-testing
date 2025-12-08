@@ -94,15 +94,6 @@ export default function AI_chat() {
     };
   }, []);
 
-  // Disclaimer banner for development stage - will be styled below
-  const disclaimerBanner = (
-    <div className="disclaimer" style={{ paddingTop: '92px' }}>
-      <p>
-        ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
-      </p>
-    </div>
-  );
-
   // Styling class names (used in JSX)
   const containerClass = "app-container";
   const contentClass = "card";
@@ -642,11 +633,10 @@ export default function AI_chat() {
 
         `}</style>
 
+     
         <main className={containerClass}>
-          {disclaimerBanner}
-
           <div className={`${contentClass} chat-layout`}>
-            <div style={{ marginBottom: 10 }}>
+            <div style={{ marginBottom: 30 }}>
               <h1>AIと何をしたいですか？</h1>
               <p className="lead">今日のあなたの目的を選んでください</p>
             </div>
@@ -686,6 +676,9 @@ export default function AI_chat() {
                 英語レッスンを受けたい
               </button>
             </div>
+            <p style={{ marginTop: 6 }}>
+              ⚠️ 本機能は現在まだ開発実験段階であるため、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
+            </p>
           </div>
         </main>
       </>
@@ -1440,7 +1433,7 @@ export default function AI_chat() {
           .chat-meta{background:#eef2ff;padding:10px;border-radius:8px;text-align:right}
           .current-session{background:linear-gradient(90deg,#f3e8ff,#eef2ff);padding:10px;border-radius:10px;margin-bottom:12px;border-left:4px solid #a78bfa}
           /* Make the content area a column flex container so chat-window can grow and input stays at bottom */
-          .chat-layout{display:flex;flex-direction:column;height:calc(100vh - 24px);min-height:400px;padding-bottom:8px}
+          .chat-layout{display:flex;flex-direction:column;height:calc(100vh - 24px);min-height:400px;padding-bottom:8px; margin-top: 0;padding-top: 0;}
           .chat-window{background:#f8fafc;border-radius:10px;padding:12px;flex:1;min-height:0;overflow:auto;margin-bottom:8px;border:1px solid #eef2f6;padding-bottom:88px}
           .msg-user{background:#dbeafe;padding:10px;border-radius:10px;margin-left:36px;text-align:right}
           .msg-llm{background:#e5e7eb;padding:10px;border-radius:10px;margin-right:36px;text-align:left}
@@ -1469,13 +1462,6 @@ export default function AI_chat() {
 
         <main className={containerClass} >
           <div className={contentClass}>
-
-
-
-
-
-
-
            
             <div style={{ marginBottom: 12 }}>
               <div className="chat-top" style={{ display: "flex", gap: 16, alignItems: "flex-start", justifyContent: "space-between" }}>
