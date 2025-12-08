@@ -139,6 +139,10 @@ export default function AI_chat() {
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [currentComponent, setCurrentComponent] = useState(0);
 
+  // Server warmup state
+  const [serverWarmed, setServerWarmed] = useState(false);
+  const [serverWarming, setServerWarming] = useState(false);
+
   // Voice / audio playback state
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [selectedVoice, setSelectedVoice] = useState<string>("alloy");
@@ -147,6 +151,40 @@ export default function AI_chat() {
   // Chat state
   const [userInput, setUserInput] = useState("");
   const [chatLog, setChatLog] = useState<ChatEntry[]>([]);
+
+  // ページマウント時にRenderのバックエンドサーバーをウォームアップ
+  useEffect(() => {
+    // only warm once per page mount
+    let mounted = true;
+    const warmUp = async () => {
+      const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+      setServerWarming(true);
+      try {
+        // send a lightweight warmup request; backend should treat mode: 'warmup' specially
+        await fetch(`${API_URL}/api/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: "__warmup__", mode: "warmup" }),
+        });
+        if (!mounted) return;
+        setServerWarmed(true);
+        // optional: insert an invisible system message so user knows the backend is ready
+        setChatLog((prev) => [
+          ...prev,
+          { sender: "llm", text: "システム: サーバーが準備完了しました。" },
+        ]);
+      } catch (err) {
+        console.error("Warmup failed", err);
+      } finally {
+        if (mounted) setServerWarming(false);
+      }
+    };
+
+    warmUp();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   // Timer effect for lessons - MUST be at top level, not inside conditional
   useEffect(() => {
