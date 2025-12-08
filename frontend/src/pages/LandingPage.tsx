@@ -181,7 +181,7 @@ export default function LandingPage() {
                 <a href="https://yutokuroki.vercel.app/ja" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline' }}><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
                 <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline' }}><strong>Project Fluence</strong></a>
-                の一環として制作された無料の英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。
+                の一環として制作されたの英単語学習アプリです。英単語を日本語訳と結び付けて覚えるのではなく、英語による定義と例文と結び付けて、自然に英語を理解・運用する力を育てます。
               </p>
 
               <div className="actions" role="navigation" aria-label="Primary actions">

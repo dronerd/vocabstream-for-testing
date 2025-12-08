@@ -96,7 +96,7 @@ export default function AI_chat() {
 
   // Disclaimer banner for development stage - will be styled below
   const disclaimerBanner = (
-    <div className="disclaimer">
+    <div className="disclaimer" style={{ paddingTop: '92px' }}>
       <p>
         ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
       </p>
@@ -639,7 +639,7 @@ export default function AI_chat() {
         <main className={containerClass}>
           {disclaimerBanner}
 
-          <div className={contentClass}>
+          <div className={`${contentClass} chat-layout`}>
             <div style={{ marginBottom: 10 }}>
               <h1>AIと何をしたいですか？</h1>
               <p className="lead">今日のあなたの目的を選んでください</p>
@@ -703,6 +703,7 @@ export default function AI_chat() {
           .selected-display .label{color:#374151}
           .selected-display .items{font-weight:800;color:#3730a3}
         `}</style>
+
 
         <main className={containerClass}>
           <div className={contentClass}>
@@ -1428,29 +1429,31 @@ export default function AI_chat() {
       <>
         <style>{`
           .chat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
-          /* Keep the chat header and controls pinned to the top of the viewport
-             while the chat content scrolls. When the global header is hidden
-             we stick to a small top offset; otherwise sticky still works. */
+          /* Keep the chat header and controls pinned to the top of the viewport */
           .chat-top{position:sticky;top:8px;z-index:90;background:transparent;padding:4px 0}
           .chat-meta{background:#eef2ff;padding:10px;border-radius:8px;text-align:right}
           .current-session{background:linear-gradient(90deg,#f3e8ff,#eef2ff);padding:10px;border-radius:10px;margin-bottom:12px;border-left:4px solid #a78bfa}
-          .chat-window{background:#f8fafc;border-radius:10px;padding:12px;height:360px;overflow:auto;margin-bottom:12px;border:1px solid #eef2f6}
+          /* Make the content area a column flex container so chat-window can grow and input stays at bottom */
+          .chat-layout{display:flex;flex-direction:column;height:calc(100vh - 24px);min-height:400px;padding-bottom:8px}
+          .chat-window{background:#f8fafc;border-radius:10px;padding:12px;flex:1;min-height:0;overflow:auto;margin-bottom:8px;border:1px solid #eef2f6}
           .msg-user{background:#dbeafe;padding:10px;border-radius:10px;margin-left:36px;text-align:right}
           .msg-llm{background:#e5e7eb;padding:10px;border-radius:10px;margin-right:36px;text-align:left}
           .msg-timer{background:#fff7cc;padding:10px;border-left:4px solid #f59e0b;border-radius:8px;margin-right:36px;font-weight:700}
           .chat-controls{display:flex;gap:8px}
           .input-text{flex:1;padding:10px;border-radius:10px;border:1px solid #e6e9ef}
+          .chat-input-row{display:flex;gap:8px;margin-top:6px}
           .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
         `}</style>
 
         <main className={containerClass} >
-          
-          {disclaimerBanner}
           <div className={contentClass}>
             <div style={{ marginBottom: 12 }}>
               <div className="chat-top">
                 <div>
                   <h1 style={{ margin: 0, fontSize: 20 }}>{mode === "casual" ? "AIとの会話" : "AIによるレッスン"}</h1>
+                  <p>
+                    ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
+                  </p>
                   <p style={{ margin: "6px 0 0", color: "#6b7280" }}>レベル: {level}</p>
                 </div>
 
@@ -1556,7 +1559,7 @@ export default function AI_chat() {
               )}
             </div>
 
-            <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+            <div className="chat-input-row">
               <input
                 type="text"
                 className="input-text"
