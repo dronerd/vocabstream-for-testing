@@ -1435,13 +1435,29 @@ export default function AI_chat() {
           .current-session{background:linear-gradient(90deg,#f3e8ff,#eef2ff);padding:10px;border-radius:10px;margin-bottom:12px;border-left:4px solid #a78bfa}
           /* Make the content area a column flex container so chat-window can grow and input stays at bottom */
           .chat-layout{display:flex;flex-direction:column;height:calc(100vh - 24px);min-height:400px;padding-bottom:8px}
-          .chat-window{background:#f8fafc;border-radius:10px;padding:12px;flex:1;min-height:0;overflow:auto;margin-bottom:8px;border:1px solid #eef2f6}
+          .chat-window{background:#f8fafc;border-radius:10px;padding:12px;flex:1;min-height:0;overflow:auto;margin-bottom:8px;border:1px solid #eef2f6;padding-bottom:88px}
           .msg-user{background:#dbeafe;padding:10px;border-radius:10px;margin-left:36px;text-align:right}
           .msg-llm{background:#e5e7eb;padding:10px;border-radius:10px;margin-right:36px;text-align:left}
           .msg-timer{background:#fff7cc;padding:10px;border-left:4px solid #f59e0b;border-radius:8px;margin-right:36px;font-weight:700}
           .chat-controls{display:flex;gap:8px}
           .input-text{flex:1;padding:10px;border-radius:10px;border:1px solid #e6e9ef}
           .chat-input-row{display:flex;gap:8px;margin-top:6px}
+          /* Fix the input row to the bottom of the viewport so it stays visible while messages scroll */
+          .chat-input-row.fixed-bottom{
+            position:fixed;
+            left:50%;
+            transform:translateX(-50%);
+            bottom:12px;
+            width:calc(100% - 48px);
+            max-width:900px;
+            z-index:110;
+            background:transparent;
+            padding:6px 0;
+            box-sizing:border-box;
+          }
+          @media (max-width:640px){
+            .chat-input-row.fixed-bottom{width:calc(100% - 24px);bottom:10px}
+          }
           .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
         `}</style>
 
@@ -1559,7 +1575,7 @@ export default function AI_chat() {
               )}
             </div>
 
-            <div className="chat-input-row">
+            <div className="chat-input-row fixed-bottom">
               <input
                 type="text"
                 className="input-text"
