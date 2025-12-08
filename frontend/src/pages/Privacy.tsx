@@ -9,11 +9,27 @@ export default function PrivacyPage() {
       {/* 戻るボタン */}
       <div className="mt-8 flex justify-center">
         <button
-          onClick={() => navigate(-1)} //goes back to previous page, not home
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-xl shadow-md transition duration-200 hover:scale-105 active:scale-95"
+          onClick={() => navigate(-1)}
+          style={{
+            padding: "10px 18px",
+            borderRadius: "12px",
+            background: "linear-gradient(135deg, #3a8dff, #0066ff)",
+            color: "white",
+            fontWeight: "600",
+            border: "none",
+            cursor: "pointer",
+            fontSize: "15px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
+            transition: "transform 0.15s ease, boxShadow 0.15s ease",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 6px 14px rgba(0,0,0,0.18)")}
+          onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.15)")}
+          onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.95)")}
+          onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
-          <strong> ← Go Back / 戻る</strong>
+          <strong>← Go Back / 戻る</strong>
         </button>
+
       </div>
 
       {/* 英語版 */}

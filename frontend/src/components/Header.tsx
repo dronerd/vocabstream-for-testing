@@ -259,6 +259,8 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
 
         /* small accessibility tweak so focus is always visible when keyboard navigating */
         .app-header button:focus, .app-header a:focus { box-shadow: 0 0 0 3px rgba(0,123,255,0.12); }
+        /* When a page requests hiding global navs (e.g. AI chat), allow a simple body class to hide header */
+        .hide-global-navs .app-header { display: none !important; }
       `}</style>
 
       <header className="app-header" role="banner">

@@ -1,7 +1,11 @@
 /* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* Prevent iOS Safari auto-zoom on focus by ensuring text-size-adjust
+   is not applied and inputs have at least 16px font-size. */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
 
 /* ユーザーのグローバルスタイルは tailwind の後に置く（必要に応じて上書き） */
 body {
@@ -12,5 +16,6 @@ body {
   color: #111;
 }
 a { color: inherit; text-decoration: none; }
-button { padding: 8px 12px; border-radius: 6px; border: 1px solid #bbb; background: #fff; cursor: pointer; }
-input { padding: 8px; border: 1px solid #ddd; border-radius: 6px; }
+/* Keep button/input defaults but ensure readable font-size on mobile to avoid auto-zoom */
+button { padding: 8px 12px; border-radius: 6px; border: 1px solid #bbb; background: #fff; cursor: pointer; font-size: 16px; }
+input, textarea, select { padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }

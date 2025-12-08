@@ -162,7 +162,7 @@ export default function Home() {
         >
           <strong>「Project Fluence」</strong>
         </a>
-        の一環として制作した無料の英単語学習アプリです。
+        の一環として制作した英単語学習アプリです。
         <br />
         現在は一部機能のみを公開し、
         <a href="/learn" style={{ textDecoration: "underline" }}><strong>約3000の単語の学習機能</strong></a>

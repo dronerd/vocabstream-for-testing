@@ -281,20 +281,20 @@ export default function LandingPage() {
                 <a href="https://yutokuroki.vercel.app/ja" target="_blank" rel="noopener noreferrer"><strong>黒木勇人</strong></a>
                 が創設・開発・運営する
                 <a href="https://projectfluence.vercel.app" target="_blank" rel="noopener noreferrer"><strong>Project Fluence</strong></a>
-                の一環として制作された無料の英単語学習アプリです。
+                の一環として制作された英単語学習アプリです。
                 <br />
                 <strong>Project Fluenceでは英語を英語で学ぶことで、より本質的な英語力を得ることができると考えています。</strong>Noteでご紹介している英語学習方法を効率的に実行するためのアプリを開発しており、
                 <strong>VocabStream</strong>は単語学習にフォーカスを当てたアプリとなっています。
                 <br />
-                アプリは完全無料で提供し、広告により収益を得ることもありません。
-                <br />
                 現在は安定して動作する一部の機能のみを公開しています。現在利用可能な機能は、
                 <a href="/learn" style={{ textDecoration: "underline" }}><strong>単語を３択レッスン・文章穴埋めを通して学習する機能</strong></a>
                 （合計約3000単語）と、英語学習に役立つ
-                <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集をコピーする機能</strong></a>
+                <a href="/prompts" style={{ textDecoration: "underline" }}><strong>ChatGPTのプロンプト集</strong></a>
+                、
+                <a href="/ai_chat" style={{ textDecoration: "underline" }}><strong>AI会話機能</strong></a>
                 です。
                 <br />
-                現在開発中の機能：熟語の学習、専門分野の単語の学習、ビジネス英語表現の学習、復習機能、長文読解の機能、学習経過の保存機能
+                現在開発中の機能：熟語の学習、専門分野の単語の学習、ビジネス英語表現の学習、復習機能、AIチャット機能など。
                 <br />
                 今後のアップデートにてこれらの機能を順次提供してまいります。楽しみにしていてください！
               </p>
@@ -345,7 +345,7 @@ export default function LandingPage() {
               <a href="https://note.com/projectfluence" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>
                 <strong>Note</strong>
               </a>
-              で紹介し、自ら開発した無料の英語学習アプリを提供します。
+              で紹介し、自ら開発した英語学習アプリを提供します。
               <br />
               ＊ 大学生による趣味の開発活動であるため、アプリの一部機能が安定していない可能性があります。
             </p>

@@ -221,6 +221,22 @@ export default function AI_chat() {
     return () => clearInterval(interval);
   }, [lessonStartTime, currentComponent, mode, step, selectedDuration, selectedComponents]);
 
+  // When in chatting step, hide global Header/BottomNav by adding a body class
+  useEffect(() => {
+    try {
+      if (step === "chatting") {
+        document.body.classList.add("hide-global-navs");
+      } else {
+        document.body.classList.remove("hide-global-navs");
+      }
+    } catch (e) {
+      // ignore in SSR or environments without document
+    }
+    return () => {
+      try { document.body.classList.remove("hide-global-navs"); } catch (e) {}
+    };
+  }, [step]);
+
   // Helper functions
   const handleTopicToggle = (topic: string) => {
     if (selectedTopics.includes(topic)) {
@@ -633,11 +649,12 @@ export default function AI_chat() {
               <button
                 onClick={() => {
                   setMode("casual");
+                  setLevel("");
+                  setLevelConfirmed(false);
                   setStep("level");
                   setChatLog([]);
                   setSelectedTopics([]);
                   setCustomTopic("");
-                  setLevelConfirmed(false);
                 }}
                 className={btnPrimary}
                 aria-label="楽しく会話したい"
@@ -648,13 +665,14 @@ export default function AI_chat() {
               <button
                 onClick={() => {
                   setMode("lesson");
+                  setLevel("");
+                  setLevelConfirmed(false);
                   setStep("level");
                   setChatLog([]);
                   setSelectedTopics([]);
                   setCustomTopic("");
                   setSelectedSkills([]);
                   setSelectedComponents([]);
-                  setLevelConfirmed(false);
                 }}
                 className={btnSecondary}
                 aria-label="英語レッスンを受けたい"
@@ -798,7 +816,7 @@ export default function AI_chat() {
             </div>
 
             <div className="actions-row">
-              <button onClick={() => setStep("level")} className="btn-accent">← 戻る</button>
+              <button onClick={() => { setLevel(""); setLevelConfirmed(false); setStep("level"); }} className="btn-accent">← 戻る</button>
               <button onClick={() => {
                 if (selectedTopics.length === 0 && !customTopic) {
                   alert("少なくとも1つのトピックを選択してください");
@@ -1410,6 +1428,10 @@ export default function AI_chat() {
       <>
         <style>{`
           .chat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
+          /* Keep the chat header and controls pinned to the top of the viewport
+             while the chat content scrolls. When the global header is hidden
+             we stick to a small top offset; otherwise sticky still works. */
+          .chat-top{position:sticky;top:8px;z-index:90;background:transparent;padding:4px 0}
           .chat-meta{background:#eef2ff;padding:10px;border-radius:8px;text-align:right}
           .current-session{background:linear-gradient(90deg,#f3e8ff,#eef2ff);padding:10px;border-radius:10px;margin-bottom:12px;border-left:4px solid #a78bfa}
           .chat-window{background:#f8fafc;border-radius:10px;padding:12px;height:360px;overflow:auto;margin-bottom:12px;border:1px solid #eef2f6}
@@ -1421,7 +1443,7 @@ export default function AI_chat() {
           .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
         `}</style>
 
-        <main className={containerClass} style={{ paddingTop: '92px' }}>
+        <main className={containerClass} >
           
           {disclaimerBanner}
           <div className={contentClass}>
@@ -1433,16 +1455,54 @@ export default function AI_chat() {
                 </div>
 
                 <div className="chat-actions">
-                  <button onClick={() => {
-                    setMode("choice");
-                    setStep("initial");
-                    setChatLog([]);
-                    setLessonStartTime(null);
-                    setTimeElapsed(0);
-                    setCurrentComponent(0);
-                  }} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← 最初に戻る</button>
+                  <button
+                    onClick={() => {
+                      setMode("choice");
+                      setStep("initial");
+                      setChatLog([]);
+                      setLessonStartTime(null);
+                      setTimeElapsed(0);
+                      setCurrentComponent(0);
+                    }}
+                    style={{
+                      padding: "10px 14px",
+                      borderRadius: "10px",
+                      background: "#fff7f0",
+                      color: "#ff6a00",
+                      border: "2px solid #ff8a3d",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                      fontSize: "14px",
+                      transition: "background 0.2s ease, transform 0.15s ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
+                    onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
+                    onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                  >
+                    ← 最初に戻る
+                  </button>
 
-                  <button onClick={() => navigate("/home")} className={btnSecondary} style={{ padding: "10px 14px", borderRadius: 10 }}>← ページを出る</button>
+                  <button
+                    onClick={() => navigate("/home")}
+                    style={{
+                      padding: "10px 14px",
+                      borderRadius: "10px",
+                      background: "#fff7f0",
+                      color: "#ff6a00",
+                      border: "2px solid #ff8a3d",
+                      fontWeight: "bold",
+                      cursor: "pointer",
+                      fontSize: "14px",
+                      transition: "background 0.2s ease, transform 0.15s ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
+                    onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
+                    onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                  >
+                    ← ページを出る
+                  </button>
                 </div>
                 {mode === "lesson" && lessonStartTime && (
                   <div className="chat-meta">
@@ -1506,7 +1566,26 @@ export default function AI_chat() {
                 placeholder="ここに入力..."
                 style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid #e6e9ef" }}
               />
-              <button onClick={handleSend} className={btnPrimary} style={{ padding: "10px 14px", borderRadius: 10 }}>送信</button>
+              <button
+                onClick={handleSend}
+                style={{
+                  padding: "10px 18px",
+                  borderRadius: "12px",
+                  background: "linear-gradient(135deg, #ff914d, #ff6a00)",
+                  color: "white",
+                  border: "none",
+                  fontWeight: "bold",
+                  fontSize: "15px",
+                  cursor: "pointer",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
+                  transition: "transform 0.15s ease, box-shadow 0.15s ease",
+                }}
+                onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
+                onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              >
+                送信
+              </button>
+
             </div>
 
 

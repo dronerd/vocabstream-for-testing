@@ -9,6 +9,7 @@ export default function BottomNav() {
     location.pathname === "/privacy" ||
     location.pathname === "/" ||
     location.pathname.startsWith("/lesson/")
+    
   ) {
     return null;
   }
@@ -81,6 +82,8 @@ export default function BottomNav() {
       .nav-bottom { width: calc(100% - 12px); max-width: 360px; }
       .nav-bottom .bottom-link { font-size: 12px; }
     }
+    /* allow pages to request hiding the bottom nav (e.g. full-screen chat) */
+    .hide-global-navs .nav-bottom { display: none !important; }
   `;
 
   return (
