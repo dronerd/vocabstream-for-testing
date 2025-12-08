@@ -677,7 +677,8 @@ export default function AI_chat() {
               </button>
             </div>
             <p style={{ marginTop: 6 }}>
-              ⚠️ 本機能は現在まだ開発実験段階であるため、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
+              ⚠️ 本機能は現在まだ開発実験段階であるため、機能が不安定な場合があります。
+              <br/>会話の内容は保存されず、プライバシーは保護されます。
             </p>
           </div>
         </main>
@@ -1481,9 +1482,7 @@ export default function AI_chat() {
                     alignItems: "center",
                     flexWrap: "wrap"
                   }}>
-                    <div style={{ fontSize: 14, color: "#374151", minWidth: 88 }}>
-                      <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
-                    </div>
+                    
 
                     <button
                       onClick={() => {
@@ -1533,6 +1532,10 @@ export default function AI_chat() {
                     >
                       ← ページを出る
                     </button>
+
+                    <div style={{ fontSize: 14, color: "#374151", minWidth: 88 }}>
+                      <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
+                    </div>
 
                     {/* 右寄せ的に経過時間・合計を表示（狭い画面では折り返します） */}
                     {mode === "lesson" && lessonStartTime && (
