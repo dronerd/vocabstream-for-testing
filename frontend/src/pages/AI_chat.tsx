@@ -148,7 +148,7 @@ export default function AI_chat() {
     // only warm once per page mount
     let mounted = true;
     const warmUp = async () => {
-      const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+      const API_URL = process.env.REACT_APP_API_URL;
       setServerWarming(true);
       try {
         await fetch(`${API_URL}/api/chat`, {
@@ -158,10 +158,6 @@ export default function AI_chat() {
         });
         if (!mounted) return;
         setServerWarmed(true);
-        setChatLog((prev) => [
-          ...prev,
-          { sender: "llm", text: "システム: サーバーが準備完了しました。" },
-        ]);
       } catch (err) {
         console.error("Warmup failed", err);
       } finally {

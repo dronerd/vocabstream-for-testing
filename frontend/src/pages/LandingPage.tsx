@@ -1,5 +1,5 @@
 // src/pages/LandingPage.tsx
-import React, { useCallback } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
@@ -8,6 +8,39 @@ export default function LandingPage() {
   const scrollToTop = useCallback((e?: React.MouseEvent<HTMLElement>) => {
     e?.preventDefault?.();
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+
+  // Server warmup state
+  const [serverWarmed, setServerWarmed] = useState(false);
+  const [serverWarming, setServerWarming] = useState(false);
+
+  // ページマウント時にRenderのバックエンドサーバーをウォームアップ
+  useEffect(() => {
+      // only warm once per page mount
+      let mounted = true;
+      const warmUp = async () => {
+        const API_URL = process.env.REACT_APP_API_URL;
+        setServerWarming(true);
+        try {
+          await fetch(`${API_URL}/api/chat`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: "__warmup__", mode: "warmup" }),
+          });
+          if (!mounted) return;
+          setServerWarmed(true);
+        } catch (err) {
+          console.error("Warmup failed", err);
+        } finally {
+          if (mounted) setServerWarming(false);
+        }
+      };
+  
+      warmUp();
+      return () => {
+        mounted = false;
+      };
   }, []);
 
   return (
