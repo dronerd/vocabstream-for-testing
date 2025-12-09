@@ -197,7 +197,10 @@ export default function AI_chat() {
               return [...prev, { sender: "llm", text: `⏱️ ${movePrompt}` }];
             });
             setTimeout(() => {
-              handleLessonStart(generateComponentContent(nextComponent.name));
+              (async () => {
+                const p = await getComponentPrompt(nextComponent.name);
+                handleLessonStart(p);
+              })();
             }, 100);
           }
         }
@@ -298,8 +301,13 @@ export default function AI_chat() {
     });
   };
 
-  // Generate AI system prompt for a given lesson component
-  const generateComponentContent = (componentName: string) => {
+  // Load prompts from public/prompts/*.json with simple templating fallback
+  const [promptsCache, setPromptsCache] = useState<Record<string, string>>({});
+
+  const PROMPTS_BASE = process.env.PUBLIC_URL ? `${process.env.PUBLIC_URL}/prompts` : '/prompts';
+
+  const generateComponentContentFallback = (componentName: string) => {
+    // keep the previous hardcoded prompts as a fallback if fetch fails
     switch (componentName) {
       case "単語練習":
         return (
@@ -309,7 +317,7 @@ export default function AI_chat() {
           `For each word, provide the word, its meaning/definition, and an example sentence. ` +
           `After presenting all 5 words, ask the student one comprehension question to test their understanding ` +
           `(e.g., ask them to use one of the words in a sentence, or ask what a specific word means). ` +
-          `Keep the tone friendly and encouraging.`
+          `Keep the tone friendly and encouraging. The student's level is ${level}.`
         );
       case "文章読解":
         return (
@@ -342,6 +350,53 @@ export default function AI_chat() {
         );
       default:
         return `You are an English teacher. Start with a brief greeting and help the student learn English in a friendly way.`;
+    }
+  };
+
+  const getPromptFilename = (componentName: string) => {
+    switch (componentName) {
+      case "単語練習":
+        return 'vocab_practice.json';
+      case "文章読解":
+        return 'reading_comprehension.json';
+      case "会話練習":
+        return 'conversation_practice.json';
+      case "文法練習":
+        return 'grammar_practice.json';
+      default:
+        return null;
+    }
+  };
+
+  const fillTemplate = (template: string) => {
+    const topics = selectedTopics.concat(customTopic ? [customTopic] : []).join(', ');
+    return template.replace(/{{\s*topics\s*}}/g, topics || 'general topics').replace(/{{\s*level\s*}}/g, level || 'appropriate level');
+  };
+
+  const getComponentPrompt = async (componentName: string) => {
+    // return cached if available
+    if (promptsCache[componentName]) return promptsCache[componentName];
+
+    const filename = getPromptFilename(componentName);
+    if (!filename) {
+      const fallback = generateComponentContentFallback(componentName);
+      setPromptsCache((s) => ({ ...s, [componentName]: fallback }));
+      return fallback;
+    }
+
+    try {
+      const res = await fetch(`${PROMPTS_BASE}/${filename}`);
+      if (!res.ok) throw new Error('prompt fetch failed');
+      const json = await res.json();
+      const template = typeof json.prompt === 'string' ? json.prompt : JSON.stringify(json);
+      const filled = fillTemplate(template);
+      setPromptsCache((s) => ({ ...s, [componentName]: filled }));
+      return filled;
+    } catch (e) {
+      // fallback
+      const fallback = generateComponentContentFallback(componentName);
+      setPromptsCache((s) => ({ ...s, [componentName]: fallback }));
+      return fallback;
     }
   };
 
@@ -1386,14 +1441,16 @@ export default function AI_chat() {
               <button onClick={() => {
                 const firstComp = selectedComponents && selectedComponents.length > 0 ? selectedComponents[0] : null;
                 if (firstComp) {
-                  const prompt = generateComponentContent(firstComp);
                   setChatLog([]);
                   setLessonStartTime(Date.now());
                   setTimeElapsed(0);
                   setCurrentComponent(0);
                   setStep("chatting");
                   setTimeout(() => {
-                    handleLessonStart(prompt);
+                    (async () => {
+                      const prompt = await getComponentPrompt(firstComp);
+                      handleLessonStart(prompt);
+                    })();
                   }, 50);
                 }
               }} className="modern-orange-btn"  style={{ padding: "14px 22px", borderRadius: 14 }}>レッスンを開始する</button>
@@ -1632,7 +1689,6 @@ export default function AI_chat() {
                             <option value="alloy">音声１</option>
                             <option value="verse">音声２</option>
                             <option value="sage">音声３</option>
-                            <option value="fable">音声４</option>
                           </select>
                         </div>
                       </div>
