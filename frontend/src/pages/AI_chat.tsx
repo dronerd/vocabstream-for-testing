@@ -143,6 +143,15 @@ export default function AI_chat() {
   const [userInput, setUserInput] = useState("");
   const [chatLog, setChatLog] = useState<ChatEntry[]>([]);
 
+  // Experimental EIKEN Grade 1 speaking practice state
+  const [eikenActive, setEikenActive] = useState(false);
+  const [eikenStage, setEikenStage] = useState<string | null>(null);
+  const [conversationHistory, setConversationHistory] = useState<any[]>([]);
+  const [eikenDisplayText, setEikenDisplayText] = useState<string | null>(null);
+  const [eikenTTS, setEikenTTS] = useState<string | null>(null);
+  const [eikenMuted, setEikenMuted] = useState(false);
+  const [eikenUserInput, setEikenUserInput] = useState("");
+
   // ページマウント時にRenderのバックエンドサーバーをウォームアップ
   useEffect(() => {
     // only warm once per page mount
@@ -174,6 +183,7 @@ export default function AI_chat() {
   // Timer effect for lessons
   useEffect(() => {
     if (mode !== "lesson" || !lessonStartTime || step !== "chatting") return;
+    if (eikenActive) return; // experimental flow handles its own timing
 
     const interval = setInterval(() => {
       const elapsed = Math.floor((Date.now() - lessonStartTime) / 1000);
@@ -224,6 +234,10 @@ export default function AI_chat() {
     }
     return () => {
       try { document.body.classList.remove("hide-global-navs"); } catch (e) {}
+      // stop experimental flow if leaving chat
+      if (step !== 'chatting' && eikenActive) {
+        stopEikenSession();
+      }
     };
   }, [step]);
 
@@ -398,6 +412,98 @@ export default function AI_chat() {
       setPromptsCache((s) => ({ ...s, [componentName]: fallback }));
       return fallback;
     }
+  };
+
+  // Experimental: EIKEN Grade 1 speaking practice helpers
+  const isEikenEligible = () => {
+    const levelOk = level === 'C1' || level === 'C2';
+    const testOk = selectedTests.some((t) => /英検|EIKEN/i.test(t));
+    const compOk = selectedComponents.some((c) => /会話|会話練習|Conversation|Speaking|スピーキング/i.test(c));
+    const skillOk = selectedSkills.some((s) => /スピーキング|Speaking/i.test(s));
+    return levelOk && testOk && (compOk || skillOk);
+  };
+
+  const startEikenSession = async () => {
+    setEikenActive(true);
+    setConversationHistory([]);
+    setChatLog([]);
+    setLessonStartTime(Date.now());
+    setTimeElapsed(0);
+    setCurrentComponent(0);
+    // initial stage
+    await eikenStep('start_session', {
+      user_profile: {
+        level,
+        topics: topicsToPass,
+        preferred_voice: selectedVoice,
+        duration: selectedDuration,
+      }
+    });
+  };
+
+  const stopEikenSession = () => {
+    setEikenActive(false);
+    setEikenStage(null);
+    setEikenDisplayText(null);
+    setEikenTTS(null);
+  };
+
+  const eikenStep = async (stage: string, extra: any = {}) => {
+    const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
+    try {
+      setEikenStage(stage);
+      const payload = {
+        mode: 'eiken1',
+        stage,
+        conversation_history: conversationHistory,
+        user_profile: { level, topics: topicsToPass, preferred_voice: selectedVoice },
+        ...extra,
+      };
+
+      const res = await fetch(`${API_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      // Normalize response: prefer structured fields for eiken flow
+      const display = data.display_text || data.reply || '';
+      const tts = data.tts || null;
+
+      if (display) {
+        setChatLog((prev) => [...prev, { sender: 'llm', text: display }]);
+        setConversationHistory((prev) => [...prev, { role: 'assistant', stage, text: display }]);
+        setEikenDisplayText(display);
+      }
+      if (tts) {
+        setEikenTTS(tts);
+        setConversationHistory((prev) => [...prev, { role: 'assistant', stage, tts }]);
+        if (!eikenMuted) fetchAndPlayVoice(tts);
+      }
+
+      // Handle immediate next action signal from model
+      if (data.next_action) {
+        setEikenStage(data.next_action);
+        // auto-advance for some stages
+        if (data.next_action === 'warmup' || data.next_action === 'presentation' || data.next_action === 'start_prep') {
+          // wait a tick then invoke next stage
+          setTimeout(() => eikenStep(data.next_action), 400);
+        }
+      }
+
+      return data;
+    } catch (e) {
+      console.error('EIKEN step failed', e);
+    }
+  };
+
+  const eikenSubmitResponse = async (text: string, extras: any = {}) => {
+    // append user's response to history and send to API as user_response
+    setChatLog((prev) => [...prev, { sender: 'user', text }] );
+    setConversationHistory((prev) => [...prev, { role: 'user', text }]);
+    await eikenStep('user_response', { response: text, ...extras });
   };
 
   // Lesson structure preview
@@ -1441,17 +1547,23 @@ export default function AI_chat() {
               <button onClick={() => {
                 const firstComp = selectedComponents && selectedComponents.length > 0 ? selectedComponents[0] : null;
                 if (firstComp) {
-                  setChatLog([]);
-                  setLessonStartTime(Date.now());
-                  setTimeElapsed(0);
-                  setCurrentComponent(0);
-                  setStep("chatting");
-                  setTimeout(() => {
-                    (async () => {
-                      const prompt = await getComponentPrompt(firstComp);
-                      handleLessonStart(prompt);
-                    })();
-                  }, 50);
+                  // If experimental EIKEN Grade 1 speaking practice conditions are met, start special flow
+                  if (isEikenEligible()) {
+                    setStep("chatting");
+                    startEikenSession();
+                  } else {
+                    setChatLog([]);
+                    setLessonStartTime(Date.now());
+                    setTimeElapsed(0);
+                    setCurrentComponent(0);
+                    setStep("chatting");
+                    setTimeout(() => {
+                      (async () => {
+                        const prompt = await getComponentPrompt(firstComp);
+                        handleLessonStart(prompt);
+                      })();
+                    }, 50);
+                  }
                 }
               }} className="modern-orange-btn"  style={{ padding: "14px 22px", borderRadius: 14 }}>レッスンを開始する</button>
             </div>
@@ -1512,6 +1624,9 @@ export default function AI_chat() {
             .chat-input-row.fixed-bottom{width:calc(100% - 24px);bottom:10px}
           }
           .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
+          .eiken-panel{background:#fffaf0;border-radius:10px;padding:10px;border:1px solid #ffd8b5;margin-bottom:10px}
+          .eiken-controls button{padding:8px 10px;border-radius:8px;border:none;cursor:pointer}
+          .eiken-controls button.ghost{background:transparent;border:1px solid #f3f4f6}
         `}</style>
 
         <main className={containerClass} >
@@ -1663,6 +1778,32 @@ export default function AI_chat() {
               )}
 
             </div>
+
+            {eikenActive && (
+              <div className="eiken-panel">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div>
+                    <strong>実験機能: 英検1級 面接練習</strong>
+                    <div style={{ fontSize: 13, color: '#374151' }}>{eikenStage ? `Stage: ${eikenStage}` : ''}</div>
+                  </div>
+                  <div className="eiken-controls" style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                    <button onClick={() => { if (eikenTTS && !eikenMuted) fetchAndPlayVoice(eikenTTS); }} style={{ background: '#2563eb', color: 'white' }}>🔊 再生</button>
+                    <button onClick={() => setEikenMuted(!eikenMuted)} style={{ background: eikenMuted ? '#f3f4f6' : '#fff', border: '1px solid #e6e9ef' }}>{eikenMuted ? 'ミュート解除' : 'ミュート'}</button>
+                    <button onClick={() => eikenStep(eikenStage || 'next')} className="ghost" style={{ background: '#fff', border: '1px solid #e6e9ef' }}>次へ</button>
+                    <button onClick={() => eikenStep('skip')} className="ghost" style={{ background: '#fff', border: '1px solid #e6e9ef' }}>スキップ</button>
+                  </div>
+                </div>
+
+                {eikenDisplayText && (
+                  <div style={{ marginTop: 8, padding: 8, background: '#fff', borderRadius: 8 }}>{eikenDisplayText}</div>
+                )}
+
+                <div style={{ marginTop: 8, display: 'flex', gap: 8 }}>
+                  <input value={eikenUserInput} onChange={(e) => setEikenUserInput(e.target.value)} placeholder="発話をテキストで入力（STTの代替）" style={{ flex: 1, padding: 8, borderRadius: 8, border: '1px solid #e6e9ef' }} />
+                  <button onClick={() => { if (eikenUserInput.trim()) { eikenSubmitResponse(eikenUserInput.trim()); setEikenUserInput(''); } }} style={{ background: 'linear-gradient(135deg,#ff914d,#ff6a00)', color: 'white', border: 'none', padding: '8px 12px', borderRadius: 8 }}>送信</button>
+                </div>
+              </div>
+            )}
 
             <div className="chat-window" role="log" aria-live="polite">
               {chatLog.length === 0 ? (
