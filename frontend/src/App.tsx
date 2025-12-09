@@ -18,6 +18,12 @@ import ReviewLessonDecide from "./pages/ReviewLessonDecide";
 import ReviewLesson from "./pages/ReviewLesson";
 import AIchat from "./pages/AI_chat";
 
+// for indivdual AI lessons
+import Eiken1Listening from "./pages/eiken/eiken1_listening";
+import Eiken1Reading from "./pages/eiken/eiken1_reading";
+import Eiken1Writing from "./pages/eiken/eiken1_writing";
+import Eiken1Speaking from "./pages/eiken/eiken1_speaking";
+
 export default function App() {
   const location = useLocation();
 
@@ -49,6 +55,11 @@ export default function App() {
           <Route path="/review/:genreId" element={<ReviewLessonDecide />} />
           <Route path="/review/:lessonId" element={<ReviewLesson />} />
           <Route path="/ai_chat" element={<AIchat />} />
+          {/* Individual AI lesson routes */}
+          <Route path="/eiken1_listening" element={<Eiken1Listening />} />
+          <Route path="/eiken1_reading" element={<Eiken1Reading />} />
+          <Route path="/eiken1_writing" element={<Eiken1Writing />} />
+          <Route path="/eiken1_speaking" element={<Eiken1Speaking />} />
         </Routes>
       </div>
 
