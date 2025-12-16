@@ -1830,10 +1830,7 @@ export default function AI_chat() {
                           <select value={selectedVoice} onChange={(e) => setSelectedVoice(e.target.value)} style={{ padding: "6px 8px", borderRadius: 6 }}>
                             <option value="alloy">音声１</option>
                             <option value="verse">音声２</option>
-                            <option value="sage">音声３</option>
-                            <option value="nova">音声４</option>
-                            <option value="amber">音声５</option>
-                            <option value="coral">音声６</option>
+                           
 
                           </select>
                         </div>
