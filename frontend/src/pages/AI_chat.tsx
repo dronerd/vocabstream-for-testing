@@ -415,17 +415,13 @@ export default function AI_chat() {
     }
   };
 
-  // ここで今度英検の機能を復活させる
-  // 後で機能を復活させるには、同じ関数内のreturn false;を削除し、コメントアウトした元のコードを有効化してください。
   // Experimental: EIKEN Grade 1 speaking practice helpers
   const isEikenEligible = () => {
-    // Temporarily disabled for Eiken speaking feature
-    return false;
-    // const levelOk = level === 'C1' || level === 'C2';
-    // const testOk = selectedTests.some((t) => /英検|EIKEN/i.test(t));
-    // const compOk = selectedComponents.some((c) => /会話|会話練習|Conversation|Speaking|スピーキング/i.test(c));
-    // const skillOk = selectedSkills.some((s) => /スピーキング|Speaking/i.test(s));
-    // return levelOk && testOk && (compOk || skillOk);
+    const levelOk = level === 'C1' || level === 'C2';
+    const testOk = selectedTests.some((t) => /英検|EIKEN/i.test(t));
+    const compOk = selectedComponents.some((c) => /会話|会話練習|Conversation|Speaking|スピーキング/i.test(c));
+    const skillOk = selectedSkills.some((s) => /スピーキング|Speaking/i.test(s));
+    return levelOk && testOk && (compOk || skillOk);
   };
 
   const startEikenSession = async () => {
@@ -1834,8 +1830,6 @@ export default function AI_chat() {
                           <select value={selectedVoice} onChange={(e) => setSelectedVoice(e.target.value)} style={{ padding: "6px 8px", borderRadius: 6 }}>
                             <option value="alloy">音声１</option>
                             <option value="verse">音声２</option>
-                           
-
                           </select>
                         </div>
                       </div>
