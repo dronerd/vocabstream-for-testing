@@ -1830,17 +1830,9 @@ export default function AI_chat() {
                             <option value="alloy">音声１</option>
                             <option value="verse">音声２</option>
                             <option value="sage">音声３</option>
-                            <option value="opal">音声４</option>
-                            <option value="nova">音声５</option>
-                            <option value="amber">音声６</option>
-                            <option value="coral">音声７</option>
-                            <option value="river">音声８</option>
-                            <option value="sol">音声９</option>
-                            <option value="sapphire">音声１０</option>
-                            <option value="onyx">音声１１</option>
-                           
-
-
+                            <option value="nova">音声４</option>
+                            <option value="amber">音声５</option>
+                            <option value="coral">音声６</option>
 
                           </select>
                         </div>
