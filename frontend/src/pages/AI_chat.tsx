@@ -145,13 +145,7 @@ export default function AI_chat() {
   const [chatLog, setChatLog] = useState<ChatEntry[]>([]);
 
   // Experimental EIKEN Grade 1 speaking practice state
-  const [eikenActive, setEikenActive] = useState(false);
-  const [eikenStage, setEikenStage] = useState<string | null>(null);
-  const [conversationHistory, setConversationHistory] = useState<any[]>([]);
-  const [eikenDisplayText, setEikenDisplayText] = useState<string | null>(null);
-  const [eikenTTS, setEikenTTS] = useState<string | null>(null);
-  const [eikenMuted, setEikenMuted] = useState(false);
-  const [eikenUserInput, setEikenUserInput] = useState("");
+  // Removed: eikenActive, eikenStage, conversationHistory, eikenDisplayText, eikenTTS, eikenMuted, eikenUserInput
 
   // ページマウント時にRenderのバックエンドサーバーをウォームアップ
   useEffect(() => {
@@ -184,7 +178,6 @@ export default function AI_chat() {
   // Timer effect for lessons
   useEffect(() => {
     if (mode !== "lesson" || !lessonStartTime || step !== "chatting") return;
-    if (eikenActive) return; // experimental flow handles its own timing
 
     const interval = setInterval(() => {
       const elapsed = Math.floor((Date.now() - lessonStartTime) / 1000);
@@ -235,10 +228,7 @@ export default function AI_chat() {
     }
     return () => {
       try { document.body.classList.remove("hide-global-navs"); } catch (e) {}
-      // stop experimental flow if leaving chat
-      if (step !== 'chatting' && eikenActive) {
-        stopEikenSession();
-      }
+      // Removed: stop experimental flow if leaving chat
     };
   }, [step]);
 
@@ -415,101 +405,38 @@ export default function AI_chat() {
     }
   };
 
-  // ここで今度英検の機能を復活させる
-  // 後で機能を復活させるには、同じ関数内のreturn false;を削除し、コメントアウトした元のコードを有効化してください。
   // Experimental: EIKEN Grade 1 speaking practice helpers
-  const isEikenEligible = () => {
-    // Temporarily disabled for Eiken speaking feature
-    return false;
-    // const levelOk = level === 'C1' || level === 'C2';
-    // const testOk = selectedTests.some((t) => /英検|EIKEN/i.test(t));
-    // const compOk = selectedComponents.some((c) => /会話|会話練習|Conversation|Speaking|スピーキング/i.test(c));
-    // const skillOk = selectedSkills.some((s) => /スピーキング|Speaking/i.test(s));
-    // return levelOk && testOk && (compOk || skillOk);
-  };
-
-  const startEikenSession = async () => {
-    setEikenActive(true);
-    setConversationHistory([]);
-    setChatLog([]);
-    setLessonStartTime(Date.now());
-    setTimeElapsed(0);
-    setCurrentComponent(0);
-    // initial stage
-    await eikenStep('start_session', {
-      user_profile: {
-        level,
-        topics: topicsToPass,
-        preferred_voice: selectedVoice,
-        duration: selectedDuration,
-      }
-    });
-  };
-
-  const stopEikenSession = () => {
-    setEikenActive(false);
-    setEikenStage(null);
-    setEikenDisplayText(null);
-    setEikenTTS(null);
-  };
-
-  const eikenStep = async (stage: string, extra: any = {}) => {
-    const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000';
-    try {
-      setEikenStage(stage);
-      const payload = {
-        mode: 'eiken1',
-        stage,
-        conversation_history: conversationHistory,
-        user_profile: { level, topics: topicsToPass, preferred_voice: selectedVoice },
-        ...extra,
-      };
-
-      const res = await fetch(`${API_URL}/api/chat`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-
-      // Normalize response: prefer structured fields for eiken flow
-      const display = data.display_text || data.reply || '';
-      const tts = data.tts || null;
-
-      if (display) {
-        setChatLog((prev) => [...prev, { sender: 'llm', text: display }]);
-        setConversationHistory((prev) => [...prev, { role: 'assistant', stage, text: display }]);
-        setEikenDisplayText(display);
-      }
-      if (tts) {
-        setEikenTTS(tts);
-        setConversationHistory((prev) => [...prev, { role: 'assistant', stage, tts }]);
-        if (!eikenMuted) fetchAndPlayVoice(tts);
-      }
-
-      // Handle immediate next action signal from model
-      if (data.next_action) {
-        setEikenStage(data.next_action);
-        // auto-advance for some stages
-        if (data.next_action === 'warmup' || data.next_action === 'presentation' || data.next_action === 'start_prep') {
-          // wait a tick then invoke next stage
-          setTimeout(() => eikenStep(data.next_action), 400);
-        }
-      }
-
-      return data;
-    } catch (e) {
-      console.error('EIKEN step failed', e);
+  const getTestPath = () => {
+    // Temporarily disabled to continue conversation/lesson normally
+    return null;
+    /*
+    const test = selectedTests.find(t => ['英検', 'TOEIC', 'IELTS', 'TOEFL'].includes(t));
+    if (!test) return null;
+    const skill = selectedSkills.find(s => ['リスニング', 'スピーキング', 'リーディング', 'ライティング'].includes(s));
+    if (!skill) return null;
+    let grade = '';
+    if (test === '英検') {
+      if (level === 'C1' || level === 'C2') grade = '1';
+      else if (level === 'B2') grade = 'pre1';
+      else if (level === 'B1') grade = 'pre2';
+      else if (level === 'A2') grade = '3';
+      else return null;
     }
+    const skillPath = skill === 'リスニング' ? 'listening' : skill === 'スピーキング' ? 'speaking' : skill === 'リーディング' ? 'reading' : 'writing';
+    if (test === '英検') {
+      return `/${grade}_${skillPath}`;
+    } else {
+      const testLower = test.toLowerCase();
+      return `/${testLower}_${skillPath}`;
+    }
+    */
   };
 
-  const eikenSubmitResponse = async (text: string, extras: any = {}) => {
-    // append user's response to history and send to API as user_response
-    setChatLog((prev) => [...prev, { sender: 'user', text }] );
-    setConversationHistory((prev) => [...prev, { role: 'user', text }]);
-    await eikenStep('user_response', { response: text, ...extras });
+  const isTestEligible = () => {
+    return getTestPath() !== null;
   };
+
+  // Removed: startEikenSession, stopEikenSession, eikenStep, eikenSubmitResponse
 
   // Lesson structure preview
   const generateLessonStructure = () => {
@@ -1552,10 +1479,10 @@ export default function AI_chat() {
               <button onClick={() => {
                 const firstComp = selectedComponents && selectedComponents.length > 0 ? selectedComponents[0] : null;
                 if (firstComp) {
-                  // If experimental EIKEN Grade 1 speaking practice conditions are met, start special flow
-                  if (isEikenEligible()) {
-                    setStep("chatting");
-                    startEikenSession();
+                  // If test practice conditions are met, jump to specific test page
+                  const testPath = getTestPath();
+                  if (testPath) {
+                    navigate(testPath);
                   } else {
                     setChatLog([]);
                     setLessonStartTime(Date.now());
@@ -1629,9 +1556,7 @@ export default function AI_chat() {
             .chat-input-row.fixed-bottom{width:calc(100% - 24px);bottom:10px}
           }
           .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
-          .eiken-panel{background:#fffaf0;border-radius:10px;padding:10px;border:1px solid #ffd8b5;margin-bottom:10px}
-          .eiken-controls button{padding:8px 10px;border-radius:8px;border:none;cursor:pointer}
-          .eiken-controls button.ghost{background:transparent;border:1px solid #f3f4f6}
+          /* Removed: eiken-panel and eiken-controls CSS */
         `}</style>
 
         <main className={containerClass} >
@@ -1784,31 +1709,7 @@ export default function AI_chat() {
 
             </div>
 
-            {eikenActive && (
-              <div className="eiken-panel">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <strong>実験機能: 英検1級 面接練習</strong>
-                    <div style={{ fontSize: 13, color: '#374151' }}>{eikenStage ? `Stage: ${eikenStage}` : ''}</div>
-                  </div>
-                  <div className="eiken-controls" style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                    <button onClick={() => { if (eikenTTS && !eikenMuted) fetchAndPlayVoice(eikenTTS); }} style={{ background: '#2563eb', color: 'white' }}>🔊 再生</button>
-                    <button onClick={() => setEikenMuted(!eikenMuted)} style={{ background: eikenMuted ? '#f3f4f6' : '#fff', border: '1px solid #e6e9ef' }}>{eikenMuted ? 'ミュート解除' : 'ミュート'}</button>
-                    <button onClick={() => eikenStep(eikenStage || 'next')} className="ghost" style={{ background: '#fff', border: '1px solid #e6e9ef' }}>次へ</button>
-                    <button onClick={() => eikenStep('skip')} className="ghost" style={{ background: '#fff', border: '1px solid #e6e9ef' }}>スキップ</button>
-                  </div>
-                </div>
-
-                {eikenDisplayText && (
-                  <div style={{ marginTop: 8, padding: 8, background: '#fff', borderRadius: 8 }}>{eikenDisplayText}</div>
-                )}
-
-                <div style={{ marginTop: 8, display: 'flex', gap: 8 }}>
-                  <input value={eikenUserInput} onChange={(e) => setEikenUserInput(e.target.value)} placeholder="発話をテキストで入力（STTの代替）" style={{ flex: 1, padding: 8, borderRadius: 8, border: '1px solid #e6e9ef' }} />
-                  <button onClick={() => { if (eikenUserInput.trim()) { eikenSubmitResponse(eikenUserInput.trim()); setEikenUserInput(''); } }} style={{ background: 'linear-gradient(135deg,#ff914d,#ff6a00)', color: 'white', border: 'none', padding: '8px 12px', borderRadius: 8 }}>送信</button>
-                </div>
-              </div>
-            )}
+            {/* Removed: Eiken panel */}
 
             <div className="chat-window" role="log" aria-live="polite">
               {chatLog.length === 0 ? (
@@ -1834,8 +1735,6 @@ export default function AI_chat() {
                           <select value={selectedVoice} onChange={(e) => setSelectedVoice(e.target.value)} style={{ padding: "6px 8px", borderRadius: 6 }}>
                             <option value="alloy">音声１</option>
                             <option value="verse">音声２</option>
-                           
-
                           </select>
                         </div>
                       </div>
