@@ -407,6 +407,9 @@ export default function AI_chat() {
 
   // Experimental: EIKEN Grade 1 speaking practice helpers
   const getTestPath = () => {
+    // Temporarily disabled to continue conversation/lesson normally
+    return null;
+    /*
     const test = selectedTests.find(t => ['英検', 'TOEIC', 'IELTS', 'TOEFL'].includes(t));
     if (!test) return null;
     const skill = selectedSkills.find(s => ['リスニング', 'スピーキング', 'リーディング', 'ライティング'].includes(s));
@@ -426,6 +429,7 @@ export default function AI_chat() {
       const testLower = test.toLowerCase();
       return `/${testLower}_${skillPath}`;
     }
+    */
   };
 
   const isTestEligible = () => {
