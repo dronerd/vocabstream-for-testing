@@ -2238,9 +2238,9 @@ export default function AI_chat() {
             <div style={{ marginBottom: 12 }}>
               <div className="chat-top" style={{ display: "flex", gap: 16, alignItems: "flex-start", justifyContent: "space-between" }}>
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
                     <h1 style={{ margin: 0, fontSize: 20 }}>
-                      {mode === "casual" ? "AIとの会話" : "AIによるレッスン"}
+                      {mode === "casual" ? "AIとの会話" : "AIレッスン"}
                     </h1>
                     <button
                       onClick={() => navigate("/home")}
@@ -2250,9 +2250,9 @@ export default function AI_chat() {
                         background: "#fff7f0",
                         color: "#ff6a00",
                         border: "2px solid #ff8a3d",
-                        fontWeight: "bold",
+                        fontWeight: 800,
                         cursor: "pointer",
-                        fontSize: "13px",
+                        fontSize: "14px",
                         transition: "background 0.2s ease, transform 0.15s ease"
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
