@@ -2245,14 +2245,14 @@ export default function AI_chat() {
                     <button
                       onClick={() => navigate("/home")}
                       style={{
-                        padding: "8px 12px",
+                        padding: "4px 6px",
                         borderRadius: "10px",
                         background: "#fff7f0",
                         color: "#ff6a00",
                         border: "2px solid #ff8a3d",
                         fontWeight: "bold",
                         cursor: "pointer",
-                        fontSize: "14px",
+                        fontSize: "13px",
                         transition: "background 0.2s ease, transform 0.15s ease"
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
@@ -2262,6 +2262,9 @@ export default function AI_chat() {
                     >
                       ← ページを出る
                     </button>
+                    <div style={{ fontSize: 13, color: "#374151", minWidth: 88 }}>
+                      <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
+                    </div>
                   </div>
                   <p className="warning-text" style={{ marginTop: 6 }}>
                     ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
@@ -2278,38 +2281,6 @@ export default function AI_chat() {
                     zIndex: 90
                   }}>
                     
-
-                    <button
-                      onClick={() => {
-                        setMode("choice");
-                        setStep("initial");
-                        setChatLog([]);
-                        setLessonStartTime(null);
-                        setTimeElapsed(0);
-                        setCurrentComponent(0);
-                      }}
-                      style={{
-                        padding: "8px 12px",
-                        borderRadius: "10px",
-                        background: "#fff7f0",
-                        color: "#ff6a00",
-                        border: "2px solid #ff8a3d",
-                        fontWeight: "bold",
-                        cursor: "pointer",
-                        fontSize: "14px",
-                        transition: "background 0.2s ease, transform 0.15s ease"
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
-                      onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
-                      onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                    >
-                      ← 最初に戻る
-                    </button>
-
-                    <div style={{ fontSize: 14, color: "#374151", minWidth: 88 }}>
-                      <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
-                    </div>
 
                     {/* 右寄せ的に経過時間・合計を表示（狭い画面では折り返します） */}
                     {mode === "lesson" && lessonStartTime && (
