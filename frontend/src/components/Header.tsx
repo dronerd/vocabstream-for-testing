@@ -269,8 +269,8 @@ export default function Header({ title, isLoginPage, isAIChatPage, mode, level, 
 
       <header className="app-header" role="banner">
         {isAIChatPage ? (
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 4, position: "sticky", top: "0", zIndex: 1100, background: "white", padding: "4px 0", borderBottom: "1px solid #e5e7eb" }}>
-            <h1 style={{ margin: 0, fontSize: 18 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 1100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
+            <h1 style={{ margin: 0, fontSize: 20 }}>
               {mode === "casual" ? "AIとの会話" : "AIレッスン"}
             </h1>
             <button
@@ -283,7 +283,7 @@ export default function Header({ title, isLoginPage, isAIChatPage, mode, level, 
                 border: "2px solid #ff8a3d",
                 fontWeight: 800,
                 cursor: "pointer",
-                fontSize: "12px",
+                fontSize: "14px",
                 transition: "background 0.2s ease, transform 0.15s ease"
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
@@ -293,7 +293,7 @@ export default function Header({ title, isLoginPage, isAIChatPage, mode, level, 
             >
               ← ページを出る
             </button>
-            <div style={{ fontSize: 12, color: "#374151", minWidth: 88 }}>
+            <div style={{ fontSize: 13, color: "#374151", minWidth: 88 }}>
               <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
             </div>
           </div>

@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <AuthProvider>
-      {path !== "/ai_chat" && <Header currentPath={location.pathname} isLoginPage={isLoginPage} />}
+      <Header currentPath={location.pathname} isLoginPage={isLoginPage} />
 
       <div style={{ padding: 16, paddingBottom: 80 }}>
         <Routes>
