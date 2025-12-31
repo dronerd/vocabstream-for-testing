@@ -26,7 +26,7 @@ export default function App() {
   const isLoginPage = path === "/login";
 
   // Hide BottomNav for these paths
-  const hideBottomNavPaths = ["/login", "/landing_page"];
+  const hideBottomNavPaths = ["/login", "/landing_page", "/ai_chat"];
   const hideBottomNav = hideBottomNavPaths.includes(path);
 
   // Hide Header for AI chat page

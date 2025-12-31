@@ -2217,7 +2217,7 @@ export default function AI_chat() {
           @media (max-width: 768px) { .warning-text { font-size: 11px; } }
         `}</style>
 
-        <main className={containerClass} >
+        <main className={containerClass} style={{ paddingTop: '92px' }} >
           <div className={contentClass}>
            
             {/* 現在のセッション情報（横並び3列） */}
