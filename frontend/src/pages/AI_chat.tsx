@@ -2198,7 +2198,7 @@ export default function AI_chat() {
         <style>{`
           .chat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
           /* Keep the chat header and controls pinned to the top of the viewport */
-          .chat-top{position:sticky;top:8px;z-index:90;background:transparent;padding:4px 0}
+          .chat-top{position:static;z-index:90;background:transparent;padding:4px 0}
           .chat-meta{background:#eef2ff;padding:10px;border-radius:8px;text-align:right}
           .current-session{background:linear-gradient(90deg,#f3e8ff,#eef2ff);padding:10px;border-radius:10px;margin-bottom:12px;border-left:4px solid #a78bfa}
           /* Make the content area a column flex container so chat-window can grow and input stays at bottom */
@@ -2239,17 +2239,19 @@ export default function AI_chat() {
                   <h1 style={{ margin: 0, fontSize: 20 }}>
                     {mode === "casual" ? "AIとの会話" : "AIによるレッスン"}
                   </h1>
-                  <p style={{ marginTop: 6 }}>
+                  <p style={{ marginTop: 6, fontSize: 12 }}>
                     ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
                   </p>
-
                   {/* 下段：レベル・戻る・出る・経過時間・合計 を横並び */}
                   <div style={{
                     marginTop: 10,
                     display: "flex",
                     gap: 12,
                     alignItems: "center",
-                    flexWrap: "wrap"
+                    flexWrap: "wrap",
+                    position: "sticky",
+                    top: "8px",
+                    zIndex: 90
                   }}>
                     
 
