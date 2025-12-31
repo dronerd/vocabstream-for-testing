@@ -10,9 +10,10 @@ type HeaderProps = {
   mode?: string;
   level?: string;
   onNavigateHome?: () => void;
+  step?: string;
 };
 
-export default function Header({ title, isLoginPage, isAIChatPage, mode, level, onNavigateHome }: HeaderProps) {
+export default function Header({ title, isLoginPage, isAIChatPage, mode, level, onNavigateHome, step }: HeaderProps) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -268,7 +269,7 @@ export default function Header({ title, isLoginPage, isAIChatPage, mode, level, 
       `}</style>
 
       <header className="app-header" role="banner">
-        {isAIChatPage ? (
+        {isAIChatPage || step === "chatting" ? (
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 1100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
             <h1 style={{ margin: 0, fontSize: 20 }}>
               {mode === "casual" ? "AIとの会話" : "AIレッスン"}
