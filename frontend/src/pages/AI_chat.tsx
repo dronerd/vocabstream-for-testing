@@ -334,12 +334,14 @@ const TextInputWithVocab: React.FC<TextInputWithVocabProps> = ({ value, onChange
 // ④ 音声入力 → テキスト変換 → 提出
 interface SpeechToTextInputProps {
   onSubmit: (text: string) => void;
+  isIOS?: boolean;
 }
 
-const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
+const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit, isIOS = false }) => {
   const [isRecording, setIsRecording] = useState(false);
   const [transcribedText, setTranscribedText] = useState('');
   const [interimText, setInterimText] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   useEffect(() => {
@@ -376,11 +378,16 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
         console.error('Speech recognition error', event.error);
         setIsRecording(false);
         setInterimText('');
+        setErrorMessage(`音声認識エラー: ${event.error}。ブラウザのマイク許可を確認してください。`);
       };
     }
   }, []);
 
   const startRecording = () => {
+    if (isIOS) {
+      setErrorMessage('iOSデバイスでは音声認識が制限されている場合があります。Safariのマイク許可を確認し、HTTPS接続を使用してください。');
+      return;
+    }
     if (recognitionRef.current && !isRecording) {
       setIsRecording(true);
       recognitionRef.current.start();
@@ -482,6 +489,16 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
           fontStyle: 'italic'
         }}>
           リアルタイム: {interimText}
+        </div>
+      )}
+      {errorMessage && (
+        <div style={{
+          marginTop: '4px',
+          fontSize: '12px',
+          color: '#dc2626',
+          fontWeight: 'bold'
+        }}>
+          {errorMessage}
         </div>
       )}
     </div>
@@ -632,6 +649,7 @@ export default function AI_chat() {
   // Speech recognition state for chat input
   const [isRecordingChat, setIsRecordingChat] = useState(false);
   const [interimChatText, setInterimChatText] = useState("");
+  const [chatErrorMessage, setChatErrorMessage] = useState("");
   const chatRecognitionRef = useRef<SpeechRecognition | null>(null);
 
   // Initialize speech recognition for chat
@@ -669,6 +687,7 @@ export default function AI_chat() {
         console.error('Speech recognition error', event.error);
         setIsRecordingChat(false);
         setInterimChatText('');
+        setChatErrorMessage(`音声認識エラー: ${event.error}。ブラウザのマイク許可を確認してください。`);
       };
     }
   }, []);
@@ -680,6 +699,7 @@ export default function AI_chat() {
   const [userText, setUserText] = useState("");
   const [recommendedVocabs, setRecommendedVocabs] = useState(["vocabulary1", "vocabulary2", "vocabulary3"]);
   const [isMobile, setIsMobile] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
 
   // Function to generate audio for AI text
   const generateAudio = async () => {
@@ -717,6 +737,10 @@ export default function AI_chat() {
 
   // Functions for chat speech recognition
   const startChatRecording = () => {
+    if (isIOS) {
+      setChatErrorMessage('iOSデバイスでは音声認識が制限されている場合があります。Safariのマイク許可を確認し、HTTPS接続を使用してください。');
+      return;
+    }
     if (chatRecognitionRef.current && !isRecordingChat) {
       setIsRecordingChat(true);
       chatRecognitionRef.current.start();
@@ -765,6 +789,12 @@ export default function AI_chat() {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Check if iOS
+  useEffect(() => {
+    const userAgent = navigator.userAgent;
+    setIsIOS(/iPad|iPhone|iPod/.test(userAgent));
   }, []);
 
   // Timer effect for lessons
@@ -2458,7 +2488,7 @@ export default function AI_chat() {
               }}>
                 ④ Speech to Text Input
               </h3>
-              <SpeechToTextInput onSubmit={handleSpeechSubmit} />
+              <SpeechToTextInput onSubmit={handleSpeechSubmit} isIOS={isIOS} />
             </div>
 
             <div className="chat-window" role="log" aria-live="polite">
@@ -2576,6 +2606,17 @@ export default function AI_chat() {
               </button>
             </div>
 
+            {chatErrorMessage && (
+              <div style={{
+                color: '#dc2626',
+                marginTop: '8px',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                textAlign: 'center'
+              }}>
+                {chatErrorMessage}
+              </div>
+            )}
 
           </div>
         </main>
