@@ -2487,14 +2487,16 @@ export default function AI_chat() {
               <button
                 onClick={isRecordingChat ? stopChatRecording : startChatRecording}
                 style={{
-                  padding: "10px",
+                  padding: "10px 12px",
                   borderRadius: "10px",
                   background: isRecordingChat ? "#dc2626" : "#2563eb",
                   color: "white",
                   border: "none",
                   cursor: "pointer",
-                  fontSize: "16px",
-                  flexShrink: 0
+                  fontSize: "14px",
+                  flexShrink: 0,
+                  height: "40px",
+                  boxSizing: "border-box"
                 }}
                 title={isRecordingChat ? "音声入力を停止" : "音声入力開始"}
               >
@@ -2552,7 +2554,9 @@ export default function AI_chat() {
                   cursor: "pointer",
                   boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
                   transition: "transform 0.15s ease, box-shadow 0.15s ease",
-                  flexShrink: 0
+                  flexShrink: 0,
+                  height: "40px",
+                  boxSizing: "border-box"
                 }}
                 onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
                 onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
