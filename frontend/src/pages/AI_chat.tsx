@@ -2,6 +2,7 @@
 // src/pages/AI_chat.tsx
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 // Type declarations for Web Speech API
 declare global {
@@ -836,23 +837,6 @@ export default function AI_chat() {
 
     return () => clearInterval(interval);
   }, [lessonStartTime, currentComponent, mode, step, selectedDuration, selectedComponents]);
-
-  // When in chatting step, hide global Header/BottomNav by adding a body class
-  useEffect(() => {
-    try {
-      if (step === "chatting") {
-        document.body.classList.add("hide-global-navs");
-      } else {
-        document.body.classList.remove("hide-global-navs");
-      }
-    } catch (e) {
-      // ignore in SSR or environments without document
-    }
-    return () => {
-      try { document.body.classList.remove("hide-global-navs"); } catch (e) {}
-      // Removed: stop experimental flow if leaving chat
-    };
-  }, [step]);
 
   // Helper functions
   const handleTopicToggle = (topic: string) => {
@@ -2195,6 +2179,7 @@ export default function AI_chat() {
 
     return (
       <>
+        <Header isAIChatPage={true} mode={mode} level={level} onNavigateHome={() => navigate("/home")} />
         <style>{`
           .chat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
           /* Keep the chat header and controls pinned to the top of the viewport */
@@ -2263,9 +2248,7 @@ export default function AI_chat() {
                     >
                       ← ページを出る
                     </button>
-                    <div style={{ fontSize: 13, color: "#374151", minWidth: 88 }}>
-                      <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
-                    </div>
+
                   </div>
                   <p className="warning-text" style={{ marginTop: 6 }}>
                     ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。

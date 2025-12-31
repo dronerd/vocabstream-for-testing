@@ -5,10 +5,14 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 type HeaderProps = {
   title?: string;
   currentPath?: string;
-  isLoginPage: boolean;
+  isLoginPage?: boolean;
+  isAIChatPage?: boolean;
+  mode?: string;
+  level?: string;
+  onNavigateHome?: () => void;
 };
 
-export default function Header({ title, isLoginPage }: HeaderProps) {
+export default function Header({ title, isLoginPage, isAIChatPage, mode, level, onNavigateHome }: HeaderProps) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -264,7 +268,38 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
       `}</style>
 
       <header className="app-header" role="banner">
-        <div className="header-left">
+        {isAIChatPage ? (
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 1100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
+            <h1 style={{ margin: 0, fontSize: 20 }}>
+              {mode === "casual" ? "AIとの会話" : "AIレッスン"}
+            </h1>
+            <button
+              onClick={onNavigateHome || (() => navigate("/home"))}
+              style={{
+                padding: "4px 6px",
+                borderRadius: "10px",
+                background: "#fff7f0",
+                color: "#ff6a00",
+                border: "2px solid #ff8a3d",
+                fontWeight: 800,
+                cursor: "pointer",
+                fontSize: "14px",
+                transition: "background 0.2s ease, transform 0.15s ease"
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
+              onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
+              onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            >
+              ← ページを出る
+            </button>
+            <div style={{ fontSize: 13, color: "#374151", minWidth: 88 }}>
+              <strong>レベル:</strong> <span style={{ marginLeft: 6 }}>{level}</span>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="header-left">
           {isLoginPage ? (
             <img
               src="/logo.png"
@@ -353,6 +388,8 @@ export default function Header({ title, isLoginPage }: HeaderProps) {
             null
           )}
         </div>
+          </>
+        )}
       </header>
     </>
   );
