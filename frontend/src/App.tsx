@@ -26,16 +26,12 @@ export default function App() {
   const isLoginPage = path === "/login";
 
   // Hide BottomNav for these paths
-  const hideBottomNavPaths = ["/login", "/landing_page", "/ai_chat"];
+  const hideBottomNavPaths = ["/login", "/landing_page"];
   const hideBottomNav = hideBottomNavPaths.includes(path);
-
-  // Hide Header for AI chat page
-  const hideHeaderPaths = ["/ai_chat"];
-  const hideHeader = hideHeaderPaths.includes(path);
 
   return (
     <AuthProvider>
-      {!hideHeader && <Header currentPath={location.pathname} isLoginPage={isLoginPage} />}
+      <Header currentPath={location.pathname} isLoginPage={isLoginPage} />
 
       <div style={{ padding: 16, paddingBottom: 80 }}>
         <Routes>
