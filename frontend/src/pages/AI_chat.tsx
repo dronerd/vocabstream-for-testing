@@ -422,7 +422,7 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
       border: '1px solid #e5e7eb',
       boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
     }}>
-      <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '12px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'stretch' }}>
         <button
           onClick={isRecording ? stopRecording : startRecording}
           style={{
@@ -434,12 +434,12 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
             cursor: 'pointer',
             fontSize: '14px',
             fontWeight: '500',
-            flexShrink: 0
+            alignSelf: 'flex-start'
           }}
         >
           {isRecording ? '⏹️ 停止' : '🎤 音声入力開始'}
         </button>
-        <div style={{ flex: 1, padding: '12px', borderRadius: '8px', backgroundColor: '#f9fafb', border: '1px solid #e5e7eb', minHeight: '60px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ padding: '12px', borderRadius: '8px', backgroundColor: '#f9fafb', border: '1px solid #e5e7eb', minHeight: '60px', display: 'flex', alignItems: 'center' }}>
           <textarea
             value={transcribedText + (interimText ? ` ${interimText}` : '')}
             onChange={(e) => setTranscribedText(e.target.value)}
@@ -468,7 +468,7 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
             cursor: transcribedText.trim() ? 'pointer' : 'not-allowed',
             fontSize: '14px',
             fontWeight: '500',
-            flexShrink: 0
+            alignSelf: 'flex-start'
           }}
         >
           📤 提出
@@ -679,6 +679,7 @@ export default function AI_chat() {
   const [isGeneratingAudio, setIsGeneratingAudio] = useState(false);
   const [userText, setUserText] = useState("");
   const [recommendedVocabs, setRecommendedVocabs] = useState(["vocabulary1", "vocabulary2", "vocabulary3"]);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Function to generate audio for AI text
   const generateAudio = async () => {
@@ -754,6 +755,16 @@ export default function AI_chat() {
     return () => {
       mounted = false;
     };
+  }, []);
+
+  // Check if mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Timer effect for lessons
@@ -2500,7 +2511,7 @@ export default function AI_chat() {
                 }}
                 title={isRecordingChat ? "音声入力を停止" : "音声入力開始"}
               >
-                {isRecordingChat ? "⏹️音声入力を停止" : "🎤音声入力"}
+                {isRecordingChat ? (isMobile ? "⏹️" : "⏹️音声入力を停止") : (isMobile ? "🎤" : "🎤音声入力")}
               </button>
               <div style={{ flex: 1, position: "relative", minWidth: 0 }}>
                 <textarea
