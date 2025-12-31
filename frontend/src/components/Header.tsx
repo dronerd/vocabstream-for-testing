@@ -64,6 +64,8 @@ export default function Header({ title, isLoginPage, isAIChatPage, mode, level, 
     }
   };
 
+  const headerClass = isAIChatPage || step === "chatting" ? "app-header ai-chat-header" : "app-header";
+
   return (
     <>
       <style>{`
@@ -85,6 +87,12 @@ export default function Header({ title, isLoginPage, isAIChatPage, mode, level, 
           width: 100%;
           box-sizing: border-box;
           overflow-x: hidden;
+        }
+
+        .ai-chat-header {
+          display: block;
+          padding: 0;
+          min-height: auto;
         }
 
         .header-left { position: relative; display:flex; gap:12px; align-items:center; z-index: 3; }
@@ -268,7 +276,7 @@ export default function Header({ title, isLoginPage, isAIChatPage, mode, level, 
         .hide-global-navs .app-header { display: none !important; }
       `}</style>
 
-      <header className="app-header" role="banner">
+      <header className={headerClass} role="banner">
         {isAIChatPage || step === "chatting" ? (
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 1100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
             <h1 style={{ margin: 0, fontSize: 20 }}>

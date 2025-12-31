@@ -2191,7 +2191,7 @@ export default function AI_chat() {
 
     return (
       <>
-        <Header isAIChatPage={true} mode={mode} level={level} onNavigateHome={() => navigate("/home")} />
+        <Header isAIChatPage={true} mode={mode} level={level} onNavigateHome={() => navigate("/home")} step={step} />
         <style>{`
           .chat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
           /* Keep the chat header and controls pinned to the top of the viewport */
