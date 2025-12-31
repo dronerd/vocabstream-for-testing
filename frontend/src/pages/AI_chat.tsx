@@ -386,7 +386,7 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit, isIOS =
 
   const startRecording = () => {
     if (isIOS) {
-      setErrorMessage('iOSデバイスでは音声認識が制限されている場合があります。Safariのマイク許可を確認し、HTTPS接続を使用してください。');
+      setErrorMessage('スマホなどでは、🎤音声認識機能ボタンが使えない場合があります。キーボード操作からの音声入力機能を使用してください。');
       return;
     }
     if (recognitionRef.current && !isRecording) {
@@ -739,7 +739,7 @@ export default function AI_chat() {
   // Functions for chat speech recognition
   const startChatRecording = () => {
     if (isIOS) {
-      setChatErrorMessage('iOSデバイスでは音声認識が制限されている場合があります。Safariのマイク許可を確認し、HTTPS接続を使用してください。');
+      setChatErrorMessage('スマホなどでは、🎤音声認識機能ボタンが使えない場合があります。キーボード操作からの音声入力機能を使用してください。');
       return;
     }
     if (chatRecognitionRef.current && !isRecordingChat) {
