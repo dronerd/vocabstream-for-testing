@@ -2219,69 +2219,17 @@ export default function AI_chat() {
 
         <main className={containerClass} >
           <div className={contentClass}>
-            <div className="chat-layout">
            
-            <div style={{ marginBottom: 12 }}>
-              <div className="chat-top" style={{ display: "flex", gap: 16, alignItems: "flex-start", justifyContent: "space-between" }}>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 1100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
-                    <h1 style={{ margin: 0, fontSize: 20 }}>
-                      {mode === "casual" ? "AIとの会話" : "AIレッスン"}
-                    </h1>
-                    <button
-                      onClick={() => navigate("/home")}
-                      style={{
-                        padding: "4px 6px",
-                        borderRadius: "10px",
-                        background: "#fff7f0",
-                        color: "#ff6a00",
-                        border: "2px solid #ff8a3d",
-                        fontWeight: 800,
-                        cursor: "pointer",
-                        fontSize: "14px",
-                        transition: "background 0.2s ease, transform 0.15s ease"
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
-                      onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
-                      onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                    >
-                      ← ページを出る
-                    </button>
+            {/* 現在のセッション情報（横並び3列） */}
+            {/* 現在のセッション情報（横並び3列） */}
+            {/* 現在のセッション情報（横並び3列） */}
+            {/* 現在のセッション情報（横並び3列） */}
+            {/* 現在のセッション情報（横並び3列） */}
+            {/* 現在のセッション情報（横並び3列） */}
 
-                  </div>
-                  <p className="warning-text" style={{ marginTop: 6 }}>
-                    ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
-                  </p>
-                  {/* 下段：レベル・戻る・出る・経過時間・合計 を横並び */}
-                  <div style={{
-                    marginTop: 10,
-                    display: "flex",
-                    gap: 12,
-                    alignItems: "center",
-                    flexWrap: "wrap",
-                    position: "sticky",
-                    top: "8px",
-                    zIndex: 90
-                  }}>
-                    
-
-                    {/* 右寄せ的に経過時間・合計を表示（狭い画面では折り返します） */}
-                    {mode === "lesson" && lessonStartTime && (
-                      <>
-                        <div style={{ marginLeft: "auto", display: "flex", gap: 10, alignItems: "center" }}>
-                          <div style={{ fontSize: 13, color: "#6b7280" }}>
-                            経過時間：{formatTime(timeElapsed)}
-                          </div>
-                          <div style={{ fontSize: 12, color: "#9ca3af" }}>
-                            合計: {selectedDuration}分
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
+            {/* 現在のセッション情報（横並び3列） */}
+            {/* 現在のセッション情報（横並び3列） */}
+            {/* 現在のセッション情報（横並び3列） */}
 
               {/* 現在のセッション情報（横並び3列） */}
               {mode === "lesson" && selectedComponents.length > 0 && currentComponentInfo && (
@@ -2484,8 +2432,6 @@ export default function AI_chat() {
               )}
             </div>
 
-            </div>
-
             <div className="chat-input-row fixed-bottom" style={{ display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'space-between' }}>
               <button
                 onClick={isRecordingChat ? stopChatRecording : startChatRecording}
@@ -2580,7 +2526,6 @@ export default function AI_chat() {
               </div>
             )}
 
-          </div>
         </main>
       </>
     );
@@ -2588,3 +2533,4 @@ export default function AI_chat() {
 
   return null;
 }
+
