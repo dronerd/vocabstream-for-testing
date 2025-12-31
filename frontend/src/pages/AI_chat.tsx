@@ -2234,11 +2234,12 @@ export default function AI_chat() {
 
         <main className={containerClass} >
           <div className={contentClass}>
+            <div className="chat-layout">
            
             <div style={{ marginBottom: 12 }}>
               <div className="chat-top" style={{ display: "flex", gap: 16, alignItems: "flex-start", justifyContent: "space-between" }}>
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6, position: "sticky", top: "0", zIndex: 1100, background: "white", padding: "8px 0", borderBottom: "1px solid #e5e7eb" }}>
                     <h1 style={{ margin: 0, fontSize: 20 }}>
                       {mode === "casual" ? "AIとの会話" : "AIレッスン"}
                     </h1>
@@ -2498,6 +2499,8 @@ export default function AI_chat() {
                   </div>
                 ))
               )}
+            </div>
+
             </div>
 
             <div className="chat-input-row fixed-bottom" style={{ display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'space-between' }}>
