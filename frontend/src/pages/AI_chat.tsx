@@ -222,9 +222,58 @@ const TextInputWithVocab: React.FC<TextInputWithVocabProps> = ({ value, onChange
   };
 
   return (
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'stretch' }}>
       <div style={{
-        flex: 2,
+        padding: '16px',
+        borderRadius: '12px',
+        backgroundColor: '#ffffff',
+        border: '1px solid #e5e7eb',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+      }}>
+        <h4 style={{
+          margin: '0 0 12px 0',
+          fontSize: '16px',
+          fontWeight: '600',
+          color: '#374151'
+        }}>
+          Recommended Vocabularies
+        </h4>
+        <div style={{
+          maxHeight: '120px',
+          overflowY: 'auto',
+          padding: '8px',
+          backgroundColor: '#f9fafb',
+          borderRadius: '8px',
+          border: '1px solid #e5e7eb'
+        }}>
+          {recommendedVocabularies.length > 0 ? (
+            <ul style={{
+              margin: 0,
+              padding: 0,
+              listStyle: 'none',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '8px'
+            }}>
+              {recommendedVocabularies.map((vocab, index) => (
+                <li key={index} style={{
+                  backgroundColor: '#e0e7ff',
+                  color: '#3730a3',
+                  padding: '4px 8px',
+                  borderRadius: '6px',
+                  fontSize: '12px',
+                  fontWeight: '500'
+                }}>
+                  {vocab}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div style={{ color: '#9ca3af', fontSize: '14px' }}>No recommendations available</div>
+          )}
+        </div>
+      </div>
+      <div style={{
         padding: '16px',
         borderRadius: '12px',
         backgroundColor: '#ffffff',
@@ -277,58 +326,6 @@ const TextInputWithVocab: React.FC<TextInputWithVocabProps> = ({ value, onChange
             </button>
           </div>
         )}
-      </div>
-      <div style={{
-        flex: 1,
-        padding: '16px',
-        borderRadius: '12px',
-        backgroundColor: '#ffffff',
-        border: '1px solid #e5e7eb',
-        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-        maxWidth: '250px'
-      }}>
-        <h4 style={{
-          margin: '0 0 12px 0',
-          fontSize: '16px',
-          fontWeight: '600',
-          color: '#374151'
-        }}>
-          Recommended Vocabularies
-        </h4>
-        <div style={{
-          maxHeight: '120px',
-          overflowY: 'auto',
-          padding: '8px',
-          backgroundColor: '#f9fafb',
-          borderRadius: '8px',
-          border: '1px solid #e5e7eb'
-        }}>
-          {recommendedVocabularies.length > 0 ? (
-            <ul style={{
-              margin: 0,
-              padding: 0,
-              listStyle: 'none',
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '8px'
-            }}>
-              {recommendedVocabularies.map((vocab, index) => (
-                <li key={index} style={{
-                  backgroundColor: '#e0e7ff',
-                  color: '#3730a3',
-                  padding: '4px 8px',
-                  borderRadius: '6px',
-                  fontSize: '12px',
-                  fontWeight: '500'
-                }}>
-                  {vocab}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div style={{ color: '#9ca3af', fontSize: '14px' }}>No recommendations available</div>
-          )}
-        </div>
       </div>
     </div>
   );
@@ -423,12 +420,9 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
       borderRadius: '12px',
       backgroundColor: '#ffffff',
       border: '1px solid #e5e7eb',
-      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '12px'
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
     }}>
-      <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+      <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '12px' }}>
         <button
           onClick={isRecording ? stopRecording : startRecording}
           style={{
@@ -439,11 +433,29 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
             borderRadius: '8px',
             cursor: 'pointer',
             fontSize: '14px',
-            fontWeight: '500'
+            fontWeight: '500',
+            flexShrink: 0
           }}
         >
           {isRecording ? '⏹️ 停止' : '🎤 音声入力開始'}
         </button>
+        <div style={{ flex: 1, padding: '12px', borderRadius: '8px', backgroundColor: '#f9fafb', border: '1px solid #e5e7eb', minHeight: '60px', display: 'flex', alignItems: 'center' }}>
+          <textarea
+            value={transcribedText + (interimText ? ` ${interimText}` : '')}
+            onChange={(e) => setTranscribedText(e.target.value)}
+            placeholder="変換されたテキストがここに表示されます。編集可能です。"
+            style={{
+              width: '100%',
+              border: 'none',
+              backgroundColor: 'transparent',
+              outline: 'none',
+              fontSize: '14px',
+              lineHeight: '1.5',
+              resize: 'none',
+              minHeight: '40px'
+            }}
+          />
+        </div>
         <button
           onClick={handleSubmit}
           disabled={!transcribedText.trim()}
@@ -455,45 +467,23 @@ const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
             borderRadius: '8px',
             cursor: transcribedText.trim() ? 'pointer' : 'not-allowed',
             fontSize: '14px',
-            fontWeight: '500'
+            fontWeight: '500',
+            flexShrink: 0
           }}
         >
           📤 提出
         </button>
       </div>
-      <div style={{
-        padding: '12px',
-        borderRadius: '8px',
-        backgroundColor: '#f9fafb',
-        border: '1px solid #e5e7eb',
-        minHeight: '80px'
-      }}>
-        <textarea
-          value={transcribedText + (interimText ? ` ${interimText}` : '')}
-          onChange={(e) => setTranscribedText(e.target.value)}
-          placeholder="変換されたテキストがここに表示されます。編集可能です。"
-          style={{
-            width: '100%',
-            minHeight: '60px',
-            border: 'none',
-            backgroundColor: 'transparent',
-            outline: 'none',
-            fontSize: '14px',
-            lineHeight: '1.5',
-            resize: 'vertical'
-          }}
-        />
-        {interimText && (
-          <div style={{
-            marginTop: '4px',
-            fontSize: '12px',
-            color: '#9ca3af',
-            fontStyle: 'italic'
-          }}>
-            リアルタイム: {interimText}
-          </div>
-        )}
-      </div>
+      {interimText && (
+        <div style={{
+          marginTop: '4px',
+          fontSize: '12px',
+          color: '#9ca3af',
+          fontStyle: 'italic'
+        }}>
+          リアルタイム: {interimText}
+        </div>
+      )}
     </div>
   );
 };
@@ -2493,7 +2483,7 @@ export default function AI_chat() {
               )}
             </div>
 
-            <div className="chat-input-row fixed-bottom">
+            <div className="chat-input-row fixed-bottom" style={{ display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'space-between' }}>
               <button
                 onClick={isRecordingChat ? stopChatRecording : startChatRecording}
                 style={{
@@ -2503,14 +2493,14 @@ export default function AI_chat() {
                   color: "white",
                   border: "none",
                   cursor: "pointer",
-                  marginRight: "8px",
-                  fontSize: "16px"
+                  fontSize: "16px",
+                  flexShrink: 0
                 }}
                 title={isRecordingChat ? "音声入力を停止" : "音声入力開始"}
               >
-                {isRecordingChat ? "⏹️" : "🎤"}
+                {isRecordingChat ? "⏹️音声入力を停止" : "🎤音声入力"}
               </button>
-              <div style={{ flex: 1, position: "relative" }}>
+              <div style={{ flex: 1, position: "relative", minWidth: 0 }}>
                 <textarea
                   value={userInput + (interimChatText ? ` ${interimChatText}` : '')}
                   onChange={(e) => setUserInput(e.target.value)}
@@ -2531,7 +2521,8 @@ export default function AI_chat() {
                     minHeight: "40px",
                     maxHeight: "120px",
                     fontSize: "14px",
-                    lineHeight: "1.4"
+                    lineHeight: "1.4",
+                    boxSizing: "border-box"
                   }}
                   rows={1}
                 />
@@ -2561,14 +2552,13 @@ export default function AI_chat() {
                   cursor: "pointer",
                   boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
                   transition: "transform 0.15s ease, box-shadow 0.15s ease",
-                  marginLeft: "8px"
+                  flexShrink: 0
                 }}
                 onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
                 onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
               >
                 送信
               </button>
-
             </div>
 
 
