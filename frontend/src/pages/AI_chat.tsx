@@ -2228,7 +2228,7 @@ export default function AI_chat() {
           }
           .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
           /* Removed: eiken-panel and eiken-controls CSS */
-          .warning-text { font-size: 14px; }
+          .warning-text { font-size: 15px; }
           @media (max-width: 768px) { .warning-text { font-size: 11px; } }
         `}</style>
 
@@ -2238,9 +2238,31 @@ export default function AI_chat() {
             <div style={{ marginBottom: 12 }}>
               <div className="chat-top" style={{ display: "flex", gap: 16, alignItems: "flex-start", justifyContent: "space-between" }}>
                 <div style={{ flex: 1 }}>
-                  <h1 style={{ margin: 0, fontSize: 20 }}>
-                    {mode === "casual" ? "AIとの会話" : "AIによるレッスン"}
-                  </h1>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
+                    <h1 style={{ margin: 0, fontSize: 20 }}>
+                      {mode === "casual" ? "AIとの会話" : "AIによるレッスン"}
+                    </h1>
+                    <button
+                      onClick={() => navigate("/home")}
+                      style={{
+                        padding: "8px 12px",
+                        borderRadius: "10px",
+                        background: "#fff7f0",
+                        color: "#ff6a00",
+                        border: "2px solid #ff8a3d",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        transition: "background 0.2s ease, transform 0.15s ease"
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
+                      onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
+                      onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                    >
+                      ← ページを出る
+                    </button>
+                  </div>
                   <p className="warning-text" style={{ marginTop: 6 }}>
                     ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
                   </p>
@@ -2283,27 +2305,6 @@ export default function AI_chat() {
                       onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
                     >
                       ← 最初に戻る
-                    </button>
-
-                    <button
-                      onClick={() => navigate("/home")}
-                      style={{
-                        padding: "8px 12px",
-                        borderRadius: "10px",
-                        background: "#fff7f0",
-                        color: "#ff6a00",
-                        border: "2px solid #ff8a3d",
-                        fontWeight: "bold",
-                        cursor: "pointer",
-                        fontSize: "14px",
-                        transition: "background 0.2s ease, transform 0.15s ease"
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = "#ffe0c4")}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = "#fff7f0")}
-                      onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
-                      onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                    >
-                      ← ページを出る
                     </button>
 
                     <div style={{ fontSize: 14, color: "#374151", minWidth: 88 }}>
