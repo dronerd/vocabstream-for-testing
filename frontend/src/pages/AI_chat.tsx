@@ -2228,6 +2228,8 @@ export default function AI_chat() {
           }
           .chat-actions{display:flex;gap:8px;justify-content:center;margin-top:10px}
           /* Removed: eiken-panel and eiken-controls CSS */
+          .warning-text { font-size: 14px; }
+          @media (max-width: 768px) { .warning-text { font-size: 11px; } }
         `}</style>
 
         <main className={containerClass} >
@@ -2239,7 +2241,7 @@ export default function AI_chat() {
                   <h1 style={{ margin: 0, fontSize: 20 }}>
                     {mode === "casual" ? "AIとの会話" : "AIによるレッスン"}
                   </h1>
-                  <p style={{ marginTop: 6, fontSize: 12 }}>
+                  <p className="warning-text" style={{ marginTop: 6 }}>
                     ⚠️ 本機能は現在まだ開発実験段階であり、機能が不安定な場合があります。会話の内容は保存されず、プライバシーは保護されます。
                   </p>
                   {/* 下段：レベル・戻る・出る・経過時間・合計 を横並び */}
