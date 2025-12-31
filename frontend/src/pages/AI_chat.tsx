@@ -3,6 +3,501 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Type declarations for Web Speech API
+declare global {
+  interface Window {
+    SpeechRecognition: typeof SpeechRecognition;
+    webkitSpeechRecognition: typeof SpeechRecognition;
+  }
+}
+
+interface SpeechRecognitionEvent extends Event {
+  results: SpeechRecognitionResultList;
+  resultIndex: number;
+}
+
+interface SpeechRecognitionErrorEvent extends Event {
+  error: string;
+  message: string;
+}
+
+interface SpeechRecognition extends EventTarget {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  start(): void;
+  stop(): void;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onend: ((event: Event) => void) | null;
+  onerror: ((event: SpeechRecognitionErrorEvent) => void) | null;
+}
+
+declare var SpeechRecognition: {
+  prototype: SpeechRecognition;
+  new (): SpeechRecognition;
+};
+
+// --- Reusable Components ---
+
+// ① AIが生成した文章を表示するテキストボックス
+interface AITextDisplayBoxProps {
+  text: string;
+}
+
+const AITextDisplayBox: React.FC<AITextDisplayBoxProps> = ({ text }) => {
+  return (
+    <div style={{
+      maxHeight: '300px',
+      overflowY: 'auto',
+      border: '1px solid #e5e7eb',
+      padding: '16px',
+      borderRadius: '12px',
+      backgroundColor: '#ffffff',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+      fontSize: '14px',
+      lineHeight: '1.5'
+    }}>
+      <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', margin: 0 }}>{text}</pre>
+    </div>
+  );
+};
+
+// ② リスニング音声生成・再生UI
+interface AudioPlayerUIProps {
+  audioUrl?: string;
+  isGenerating: boolean;
+}
+
+const AudioPlayerUI: React.FC<AudioPlayerUIProps> = ({ audioUrl, isGenerating }) => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    const updateDuration = () => setDuration(audio.duration);
+    const handleEnded = () => setIsPlaying(false);
+
+    audio.addEventListener('timeupdate', updateTime);
+    audio.addEventListener('loadedmetadata', updateDuration);
+    audio.addEventListener('ended', handleEnded);
+
+    return () => {
+      audio.removeEventListener('timeupdate', updateTime);
+      audio.removeEventListener('loadedmetadata', updateDuration);
+      audio.removeEventListener('ended', handleEnded);
+    };
+  }, [audioUrl]);
+
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const newTime = parseFloat(e.target.value);
+    audio.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  if (isGenerating) {
+    return (
+      <div style={{
+        padding: '16px',
+        borderRadius: '12px',
+        backgroundColor: '#ffffff',
+        border: '1px solid #e5e7eb',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+        textAlign: 'center',
+        color: '#6b7280'
+      }}>
+        リスニング音声を生成しています…
+      </div>
+    );
+  }
+
+  if (!audioUrl) {
+    return (
+      <div style={{
+        padding: '16px',
+        borderRadius: '12px',
+        backgroundColor: '#ffffff',
+        border: '1px solid #e5e7eb',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+        textAlign: 'center',
+        color: '#6b7280'
+      }}>
+        音声がありません
+      </div>
+    );
+  }
+
+  return (
+    <div style={{
+      padding: '16px',
+      borderRadius: '12px',
+      backgroundColor: '#ffffff',
+      border: '1px solid #e5e7eb',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '12px'
+    }}>
+      <audio ref={audioRef} src={audioUrl} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <button
+          onClick={togglePlay}
+          style={{
+            background: '#2563eb',
+            color: 'white',
+            border: 'none',
+            padding: '8px 16px',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}
+        >
+          {isPlaying ? '⏸️ 一時停止' : '▶️ 再生'}
+        </button>
+        <div style={{ fontSize: '14px', color: '#374151' }}>
+          {Math.floor(currentTime)} / {Math.floor(duration)} 秒
+        </div>
+      </div>
+      <input
+        type="range"
+        min="0"
+        max={duration}
+        value={currentTime}
+        onChange={handleSeek}
+        style={{
+          width: '100%',
+          height: '6px',
+          borderRadius: '3px',
+          background: '#e5e7eb',
+          outline: 'none'
+        }}
+      />
+    </div>
+  );
+};
+
+// ③ 文章入力ボックス + 文字数カウント + Recommended Vocabularies
+interface TextInputWithVocabProps {
+  value: string;
+  onChange: (value: string) => void;
+  recommendedVocabularies: string[];
+  onSubmit?: (text: string) => void;
+}
+
+const TextInputWithVocab: React.FC<TextInputWithVocabProps> = ({ value, onChange, recommendedVocabularies, onSubmit }) => {
+  const [charCount, setCharCount] = useState(0);
+  const [wordCount, setWordCount] = useState(0);
+
+  useEffect(() => {
+    setCharCount(value.length);
+    // Count words by splitting on whitespace and filtering empty strings
+    const words = value.trim().split(/\s+/).filter(word => word.length > 0);
+    setWordCount(words.length);
+  }, [value]);
+
+  const handleSubmit = () => {
+    if (value.trim() && onSubmit) {
+      onSubmit(value);
+    }
+  };
+
+  return (
+    <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+      <div style={{
+        flex: 2,
+        padding: '16px',
+        borderRadius: '12px',
+        backgroundColor: '#ffffff',
+        border: '1px solid #e5e7eb',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+      }}>
+        <textarea
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="ここに文章を入力してください"
+          style={{
+            width: '100%',
+            height: '120px',
+            padding: '12px',
+            borderRadius: '8px',
+            border: '1px solid #d1d5db',
+            backgroundColor: '#f9fafb',
+            outline: 'none',
+            fontSize: '14px',
+            lineHeight: '1.5',
+            resize: 'vertical',
+            boxSizing: 'border-box'
+          }}
+        />
+        <div style={{
+          marginTop: '8px',
+          fontSize: '12px',
+          color: '#6b7280',
+          textAlign: 'right'
+        }}>
+          文字数: {charCount} | 単語数: {wordCount}
+        </div>
+        {onSubmit && (
+          <div style={{ marginTop: '12px', textAlign: 'right' }}>
+            <button
+              onClick={handleSubmit}
+              disabled={!value.trim()}
+              style={{
+                background: value.trim() ? "linear-gradient(135deg, #ff914d, #ff6a00)" : '#d1d5db',
+                color: 'white',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                cursor: value.trim() ? 'pointer' : 'not-allowed',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}
+            >
+              📤 提出
+            </button>
+          </div>
+        )}
+      </div>
+      <div style={{
+        flex: 1,
+        padding: '16px',
+        borderRadius: '12px',
+        backgroundColor: '#ffffff',
+        border: '1px solid #e5e7eb',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+        maxWidth: '250px'
+      }}>
+        <h4 style={{
+          margin: '0 0 12px 0',
+          fontSize: '16px',
+          fontWeight: '600',
+          color: '#374151'
+        }}>
+          Recommended Vocabularies
+        </h4>
+        <div style={{
+          maxHeight: '120px',
+          overflowY: 'auto',
+          padding: '8px',
+          backgroundColor: '#f9fafb',
+          borderRadius: '8px',
+          border: '1px solid #e5e7eb'
+        }}>
+          {recommendedVocabularies.length > 0 ? (
+            <ul style={{
+              margin: 0,
+              padding: 0,
+              listStyle: 'none',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '8px'
+            }}>
+              {recommendedVocabularies.map((vocab, index) => (
+                <li key={index} style={{
+                  backgroundColor: '#e0e7ff',
+                  color: '#3730a3',
+                  padding: '4px 8px',
+                  borderRadius: '6px',
+                  fontSize: '12px',
+                  fontWeight: '500'
+                }}>
+                  {vocab}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div style={{ color: '#9ca3af', fontSize: '14px' }}>No recommendations available</div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ④ 音声入力 → テキスト変換 → 提出
+interface SpeechToTextInputProps {
+  onSubmit: (text: string) => void;
+}
+
+const SpeechToTextInput: React.FC<SpeechToTextInputProps> = ({ onSubmit }) => {
+  const [isRecording, setIsRecording] = useState(false);
+  const [transcribedText, setTranscribedText] = useState('');
+  const [interimText, setInterimText] = useState('');
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
+
+  useEffect(() => {
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognitionRef.current = new SpeechRecognition();
+      recognitionRef.current.continuous = false;
+      recognitionRef.current.interimResults = true; // Enable interim results for real-time display
+      recognitionRef.current.lang = 'en-US'; // 英語に設定、必要に応じて変更
+
+      recognitionRef.current.onresult = (event: SpeechRecognitionEvent) => {
+        let finalTranscript = '';
+        let interimTranscript = '';
+
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript;
+          } else {
+            interimTranscript += transcript;
+          }
+        }
+
+        setTranscribedText(prev => prev + finalTranscript);
+        setInterimText(interimTranscript);
+      };
+
+      recognitionRef.current.onend = () => {
+        setIsRecording(false);
+        setInterimText(''); // Clear interim when recording ends
+      };
+
+      recognitionRef.current.onerror = (event: SpeechRecognitionErrorEvent) => {
+        console.error('Speech recognition error', event.error);
+        setIsRecording(false);
+        setInterimText('');
+      };
+    }
+  }, []);
+
+  const startRecording = () => {
+    if (recognitionRef.current && !isRecording) {
+      setIsRecording(true);
+      recognitionRef.current.start();
+    }
+  };
+
+  const stopRecording = () => {
+    if (recognitionRef.current && isRecording) {
+      recognitionRef.current.stop();
+    }
+  };
+
+  const handleSubmit = async () => {
+    if (transcribedText.trim()) {
+      try {
+        const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+        const response = await fetch(`${API_URL}/api/speech-text`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: transcribedText }),
+        });
+        if (response.ok) {
+          onSubmit(transcribedText);
+          setTranscribedText('');
+        } else {
+          console.error('Failed to submit text');
+        }
+      } catch (error) {
+        console.error('Error submitting text', error);
+      }
+    }
+  };
+
+  return (
+    <div style={{
+      padding: '16px',
+      borderRadius: '12px',
+      backgroundColor: '#ffffff',
+      border: '1px solid #e5e7eb',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '12px'
+    }}>
+      <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <button
+          onClick={isRecording ? stopRecording : startRecording}
+          style={{
+            background: isRecording ? '#dc2626' : '#2563eb',
+            color: 'white',
+            border: 'none',
+            padding: '8px 16px',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}
+        >
+          {isRecording ? '⏹️ 停止' : '🎤 音声入力開始'}
+        </button>
+        <button
+          onClick={handleSubmit}
+          disabled={!transcribedText.trim()}
+          style={{
+            background: transcribedText.trim() ? "linear-gradient(135deg, #ff914d, #ff6a00)" : '#d1d5db',
+            color: 'white',
+            border: 'none',
+            padding: '8px 16px',
+            borderRadius: '8px',
+            cursor: transcribedText.trim() ? 'pointer' : 'not-allowed',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}
+        >
+          📤 提出
+        </button>
+      </div>
+      <div style={{
+        padding: '12px',
+        borderRadius: '8px',
+        backgroundColor: '#f9fafb',
+        border: '1px solid #e5e7eb',
+        minHeight: '80px'
+      }}>
+        <textarea
+          value={transcribedText + (interimText ? ` ${interimText}` : '')}
+          onChange={(e) => setTranscribedText(e.target.value)}
+          placeholder="変換されたテキストがここに表示されます。編集可能です。"
+          style={{
+            width: '100%',
+            minHeight: '60px',
+            border: 'none',
+            backgroundColor: 'transparent',
+            outline: 'none',
+            fontSize: '14px',
+            lineHeight: '1.5',
+            resize: 'vertical'
+          }}
+        />
+        {interimText && (
+          <div style={{
+            marginTop: '4px',
+            fontSize: '12px',
+            color: '#9ca3af',
+            fontStyle: 'italic'
+          }}>
+            リアルタイム: {interimText}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 // --- Types and category/lesson metadata ---
 type ConversationMode = "choice" | "casual" | "lesson";
 type ConversationStep =
@@ -144,8 +639,104 @@ export default function AI_chat() {
   const [userInput, setUserInput] = useState("");
   const [chatLog, setChatLog] = useState<ChatEntry[]>([]);
 
-  // Experimental EIKEN Grade 1 speaking practice state
-  // Removed: eikenActive, eikenStage, conversationHistory, eikenDisplayText, eikenTTS, eikenMuted, eikenUserInput
+  // Speech recognition state for chat input
+  const [isRecordingChat, setIsRecordingChat] = useState(false);
+  const [interimChatText, setInterimChatText] = useState("");
+  const chatRecognitionRef = useRef<SpeechRecognition | null>(null);
+
+  // Initialize speech recognition for chat
+  useEffect(() => {
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      chatRecognitionRef.current = new SpeechRecognition();
+      chatRecognitionRef.current.continuous = false;
+      chatRecognitionRef.current.interimResults = true;
+      chatRecognitionRef.current.lang = 'en-US';
+
+      chatRecognitionRef.current.onresult = (event: SpeechRecognitionEvent) => {
+        let finalTranscript = '';
+        let interimTranscript = '';
+
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript;
+          } else {
+            interimTranscript += transcript;
+          }
+        }
+
+        setUserInput(prev => prev + finalTranscript);
+        setInterimChatText(interimTranscript);
+      };
+
+      chatRecognitionRef.current.onend = () => {
+        setIsRecordingChat(false);
+        setInterimChatText('');
+      };
+
+      chatRecognitionRef.current.onerror = (event: SpeechRecognitionErrorEvent) => {
+        console.error('Speech recognition error', event.error);
+        setIsRecordingChat(false);
+        setInterimChatText('');
+      };
+    }
+  }, []);
+
+  // New states for the reusable components
+  const [aiText, setAiText] = useState("これはAIが生成したサンプルテキストです。長い文章をここに表示して、スクロールできるかどうかをテストします。");
+  const [audioUrl, setAudioUrl] = useState<string | undefined>();
+  const [isGeneratingAudio, setIsGeneratingAudio] = useState(false);
+  const [userText, setUserText] = useState("");
+  const [recommendedVocabs, setRecommendedVocabs] = useState(["vocabulary1", "vocabulary2", "vocabulary3"]);
+
+  // Function to generate audio for AI text
+  const generateAudio = async () => {
+    setIsGeneratingAudio(true);
+    try {
+      const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+      const res = await fetch(`${API_URL}/api/voice`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: aiText, voice: selectedVoice }),
+      });
+      if (res.ok) {
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        setAudioUrl(url);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsGeneratingAudio(false);
+    }
+  };
+
+  // Function to handle text input submission
+  const handleTextSubmit = (text: string) => {
+    console.log("Submitted text:", text);
+    // Here you can send to backend or process
+  };
+
+  // Function to handle speech text submission
+  const handleSpeechSubmit = (text: string) => {
+    console.log("Submitted speech text:", text);
+    // Here you can send to backend or process
+  };
+
+  // Functions for chat speech recognition
+  const startChatRecording = () => {
+    if (chatRecognitionRef.current && !isRecordingChat) {
+      setIsRecordingChat(true);
+      chatRecognitionRef.current.start();
+    }
+  };
+
+  const stopChatRecording = () => {
+    if (chatRecognitionRef.current && isRecordingChat) {
+      chatRecognitionRef.current.stop();
+    }
+  };
 
   // ページマウント時にRenderのバックエンドサーバーをウォームアップ
   useEffect(() => {
@@ -517,7 +1108,7 @@ export default function AI_chat() {
     }
   };
 
-  // Fetch voice audio from backend and play it
+  // Fetch voice audio from backend and play it with real-time streaming
   const fetchAndPlayVoice = async (text: string, idx?: number) => {
     if (!text) return;
     const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
@@ -543,18 +1134,67 @@ export default function AI_chat() {
         return;
       }
 
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const audio = new Audio(url);
+      // Use MediaSource for real-time streaming
+      const mediaSource = new MediaSource();
+      const audio = new Audio();
+      audio.src = URL.createObjectURL(mediaSource);
       audioRef.current = audio;
-      audio.play().catch((e) => console.error("Audio play failed", e));
-      audio.onended = () => {
-        try {
-          URL.revokeObjectURL(url);
-        } catch (e) {}
+
+      let sourceBuffer: SourceBuffer | null = null;
+      let queue: ArrayBuffer[] = [];
+
+      mediaSource.addEventListener('sourceopen', () => {
+        sourceBuffer = mediaSource.addSourceBuffer('audio/mpeg');
+
+        sourceBuffer.addEventListener('updateend', () => {
+          if (queue.length > 0 && !sourceBuffer!.updating) {
+            sourceBuffer!.appendBuffer(queue.shift()!);
+          }
+        });
+
+        // Start reading the stream
+        const reader = res.body?.getReader();
+        if (reader) {
+          const readStream = async () => {
+            try {
+              while (true) {
+                const { done, value } = await reader.read();
+                if (done) {
+                  if (sourceBuffer && !sourceBuffer.updating) {
+                    mediaSource.endOfStream();
+                  }
+                  break;
+                }
+
+                if (sourceBuffer!.updating) {
+                  queue.push(value.buffer);
+                } else {
+                  sourceBuffer!.appendBuffer(value.buffer);
+                }
+              }
+            } catch (error) {
+              console.error('Stream reading error', error);
+            }
+          };
+          readStream();
+        }
+      });
+
+      audio.addEventListener('canplay', () => {
+        audio.play().catch((e) => console.error("Audio play failed", e));
+      });
+
+      audio.addEventListener('ended', () => {
+        URL.revokeObjectURL(audio.src);
         if (typeof idx === "number") setLoadingVoiceIndex(null);
         audioRef.current = null;
-      };
+      });
+
+      audio.addEventListener('error', (e) => {
+        console.error("Audio error", e);
+        if (typeof idx === "number") setLoadingVoiceIndex(null);
+      });
+
     } catch (error) {
       console.error(error);
       if (typeof idx === "number") setLoadingVoiceIndex(null);
@@ -1711,6 +2351,115 @@ export default function AI_chat() {
 
             {/* Removed: Eiken panel */}
 
+            {/* New reusable components for demonstration */}
+            <div style={{
+              marginTop: '20px',
+              padding: '20px',
+              borderRadius: '12px',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h3 style={{
+                margin: '0 0 16px 0',
+                fontSize: '18px',
+                fontWeight: '600',
+                color: '#374151'
+              }}>
+                ① AI Text Display Box
+              </h3>
+              <AITextDisplayBox text={aiText} />
+              <button
+                onClick={() => setAiText(aiText + " 追加のテキストをここに追加します。")}
+                style={{
+                  marginTop: '12px',
+                  background: '#2563eb',
+                  color: 'white',
+                  border: 'none',
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  fontWeight: '500'
+                }}
+              >
+                テキスト追加
+              </button>
+            </div>
+
+            <div style={{
+              marginTop: '20px',
+              padding: '20px',
+              borderRadius: '12px',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h3 style={{
+                margin: '0 0 16px 0',
+                fontSize: '18px',
+                fontWeight: '600',
+                color: '#374151'
+              }}>
+                ② Audio Player UI
+              </h3>
+              <button
+                onClick={generateAudio}
+                style={{
+                  marginBottom: '12px',
+                  background: '#2563eb',
+                  color: 'white',
+                  border: 'none',
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  fontWeight: '500'
+                }}
+              >
+                🔊 音声生成
+              </button>
+              <AudioPlayerUI audioUrl={audioUrl} isGenerating={isGeneratingAudio} />
+            </div>
+
+            <div style={{
+              marginTop: '20px',
+              padding: '20px',
+              borderRadius: '12px',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h3 style={{
+                margin: '0 0 16px 0',
+                fontSize: '18px',
+                fontWeight: '600',
+                color: '#374151'
+              }}>
+                ③ Text Input with Vocab
+              </h3>
+              <TextInputWithVocab value={userText} onChange={setUserText} recommendedVocabularies={recommendedVocabs} onSubmit={handleTextSubmit} />
+            </div>
+
+            <div style={{
+              marginTop: '20px',
+              padding: '20px',
+              borderRadius: '12px',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h3 style={{
+                margin: '0 0 16px 0',
+                fontSize: '18px',
+                fontWeight: '600',
+                color: '#374151'
+              }}>
+                ④ Speech to Text Input
+              </h3>
+              <SpeechToTextInput onSubmit={handleSpeechSubmit} />
+            </div>
+
             <div className="chat-window" role="log" aria-live="polite">
               {chatLog.length === 0 ? (
                 <div style={{ textAlign: "center", color: "#9ca3af", paddingTop: 40 }}>
@@ -1745,20 +2494,60 @@ export default function AI_chat() {
             </div>
 
             <div className="chat-input-row fixed-bottom">
-              <input
-                type="text"
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                placeholder="ここに入力..."
+              <button
+                onClick={isRecordingChat ? stopChatRecording : startChatRecording}
                 style={{
-                  flex: 1,
-                  padding: 12,
-                  borderRadius: 10,
-                  border: "2px solid #000",
-                  outline: "none", // ← フォーカス時の青枠を無効化
+                  padding: "10px",
+                  borderRadius: "10px",
+                  background: isRecordingChat ? "#dc2626" : "#2563eb",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
+                  marginRight: "8px",
+                  fontSize: "16px"
                 }}
-              />
+                title={isRecordingChat ? "音声入力を停止" : "音声入力開始"}
+              >
+                {isRecordingChat ? "⏹️" : "🎤"}
+              </button>
+              <div style={{ flex: 1, position: "relative" }}>
+                <textarea
+                  value={userInput + (interimChatText ? ` ${interimChatText}` : '')}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSend();
+                    }
+                  }}
+                  placeholder="ここに入力..."
+                  style={{
+                    width: "100%",
+                    padding: 12,
+                    borderRadius: 10,
+                    border: "2px solid #000",
+                    outline: "none",
+                    resize: "none",
+                    minHeight: "40px",
+                    maxHeight: "120px",
+                    fontSize: "14px",
+                    lineHeight: "1.4"
+                  }}
+                  rows={1}
+                />
+                {interimChatText && (
+                  <div style={{
+                    position: "absolute",
+                    bottom: "-20px",
+                    left: "12px",
+                    fontSize: "12px",
+                    color: "#9ca3af",
+                    fontStyle: "italic"
+                  }}>
+                    リアルタイム: {interimChatText}
+                  </div>
+                )}
+              </div>
               <button
                 onClick={handleSend}
                 style={{
@@ -1772,6 +2561,7 @@ export default function AI_chat() {
                   cursor: "pointer",
                   boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
                   transition: "transform 0.15s ease, box-shadow 0.15s ease",
+                  marginLeft: "8px"
                 }}
                 onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
                 onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
