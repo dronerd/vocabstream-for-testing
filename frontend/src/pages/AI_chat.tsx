@@ -838,6 +838,18 @@ export default function AI_chat() {
     return () => clearInterval(interval);
   }, [lessonStartTime, currentComponent, mode, step, selectedDuration, selectedComponents]);
 
+  // Hide global navs during chatting
+  useEffect(() => {
+    if (step === "chatting") {
+      document.body.classList.add("hide-global-navs");
+    } else {
+      document.body.classList.remove("hide-global-navs");
+    }
+    return () => {
+      document.body.classList.remove("hide-global-navs");
+    };
+  }, [step]);
+
   // Helper functions
   const handleTopicToggle = (topic: string) => {
     if (selectedTopics.includes(topic)) {
@@ -2219,17 +2231,6 @@ export default function AI_chat() {
 
         <main className={containerClass} style={{ paddingTop: '92px' }} >
           <div className={contentClass}>
-           
-            {/* 現在のセッション情報（横並び3列） */}
-            {/* 現在のセッション情報（横並び3列） */}
-            {/* 現在のセッション情報（横並び3列） */}
-            {/* 現在のセッション情報（横並び3列） */}
-            {/* 現在のセッション情報（横並び3列） */}
-            {/* 現在のセッション情報（横並び3列） */}
-
-            {/* 現在のセッション情報（横並び3列） */}
-            {/* 現在のセッション情報（横並び3列） */}
-            {/* 現在のセッション情報（横並び3列） */}
 
               {/* 現在のセッション情報（横並び3列） */}
               {mode === "lesson" && selectedComponents.length > 0 && currentComponentInfo && (
