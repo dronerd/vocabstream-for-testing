@@ -198,7 +198,7 @@ export default function Home() {
         <a className="privacy-link" href="/privacy">
           <strong>Privacy Policy</strong>
         </a>
-        <div className="footer-text">All content © 2025 Project Fluence — 黒木 勇人</div>
+        <div className="footer-text">All content © 2026 Project Fluence — 黒木 勇人</div>
 
       </footer>
     </div>
